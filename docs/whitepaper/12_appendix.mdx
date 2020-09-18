@@ -1,30 +1,12 @@
 ---
-id: whitepaper_11_appendix
+id: 12_appendix
 title: Appendix
 sidebar_label: Appendix
 ---
 
 ## BLS12-381 and the Jubjub curve
 
-[BLS12-381](https://github.com/zkcrypto/pairing/tree/e72660056e00c93d6b054dfb08ff34a1c67cb799/src/bls12_381) is a pairing-friendly elliptic curve with an inner twisted Edwards curve (of the form $$\−x^2 + y^2 = 1 + dx^2y^2$$) called Jubjub. Parameters for the BLS12-381 curve are taken from [Bowe2017](https://github.com/ebfull/pairing/tree/e72660056e00c93d6b054dfb08ff34a1c67cb799/ src/bls12_381). Jubjub was designed in such a way that its base field has the same size as the group of BLS12-381, allowing for efficient curve operations inside a BLS12-381 zk-SNARK. The parameters for the Jubjub curve are taken from the [Sapling](https://github.com/zcash/zips/blob/master/protocol/sapling.pdf) specifications.
-$$
-\begin{aligned}
-\underline{q}(\hat{x},d\phi)
-& = \begin{bmatrix}\sin{\cfrac{d\phi}{2}} & 0 & 0 & \cos{\cfrac{d\phi}{2}}\end{bmatrix}^T
-& \approx \begin{bmatrix}\cfrac{d\phi}{2} & 0 & 0 & 1\end{bmatrix}^T
-& (d\phi \to 0)
-\\
-\underline{q}(\hat{y},d\theta)
-& = \begin{bmatrix}0 & \sin{\cfrac{d\theta}{2}} & 0 & \cos{\cfrac{d\theta}{2}}\end{bmatrix}^T
-& \approx \begin{bmatrix}0 & \cfrac{d\theta}{2} & 0 & 1\end{bmatrix}^T
-& (d\theta \to 0)
-\\
-\underline{q}(\hat{z},d\psi)
-& = \begin{bmatrix}0 & 0 &\sin{\cfrac{d\psi}{2}} & \cos{\cfrac{d\psi}{2}}\end{bmatrix}^T
-& \approx \begin{bmatrix}0 & 0 & \cfrac{d\psi}{2} & 1\end{bmatrix}^T
-& (d\psi \to 0)
-\end{aligned}
-$$
+[BLS12-381](https://github.com/zkcrypto/pairing/tree/e72660056e00c93d6b054dfb08ff34a1c67cb799/src/bls12_381) is a pairing-friendly elliptic curve with an inner twisted Edwards curve (of the form $$−x^2 + y^2 = 1 + dx^2y^2$$) called Jubjub. Parameters for the BLS12-381 curve are taken from [Bowe2017](https://github.com/ebfull/pairing/tree/e72660056e00c93d6b054dfb08ff34a1c67cb799/src/bls12_381). Jubjub was designed in such a way that its base field has the same size as the group of BLS12-381, allowing for efficient curve operations inside a BLS12-381 zk-SNARK. The parameters for the Jubjub curve are taken from the [Sapling](https://github.com/zcash/zips/blob/master/protocol/sapling.pdf) specifications.
 
 ## Coin Emission Graph
 

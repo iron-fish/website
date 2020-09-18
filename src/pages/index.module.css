@@ -10,7 +10,7 @@
   text-align: center;
   position: relative;
   overflow: hidden;
-  background: var(--ifm-navbar-background-color) url('/img/splash.svg') no-repeat center 20px;
+  background: var(--ifm-navbar-background-color) url('/img/splash.svg') no-repeat center center;
   min-height: 100vh;
   max-height: 800px;
 }

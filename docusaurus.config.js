@@ -23,7 +23,7 @@ module.exports = {
       },
       items: [
         {
-          to: 'docs/whitepaper_1_introduction',
+          to: 'docs/whitepaper/1_introduction',
           activeBasePath: 'docs',
           label: 'Whitepaper',
           position: 'right',
@@ -54,7 +54,7 @@ module.exports = {
             },
             {
               label: 'Iron Fish specs',
-              to: 'docs/whitepaper_1_introduction',
+              to: 'docs/whitepaper/1_introduction',
             },
           ],
         },
@@ -105,4 +105,7 @@ module.exports = {
       },
     ],
   ],
+  stylesheets: [
+    'https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css',
+  ]
 };

@@ -1,5 +1,5 @@
 ---
-id: whitepaper_1_introduction
+id: 1_introduction
 title: IRON FISH
 sidebar_label: Introduction
 ---
@@ -20,24 +20,17 @@ This paper outlines the Iron Fish protocol to enable a fully private cryptocurre
 
 This paper is organized as follows:
 
-Data Structures and Models to first familiarize yourself with all the various components of this blockchain to later understand how they interact
-
-Transactions and how they’re created and validated
-
-Note Encryption and Decryption on how transactions result in encrypted notes that only the sender’s outgoing view key and recipient’s incoming view key can decrypt
-
-Consensus and Verification on how transactions and blocks are accepted and when they’re propagated to the network
-
-Block Creation
-
-Block Verification
-
-Optimistic Sync
-
-Networking
-
-Light Client Capabilities
-
-Performance Goals
-
-Appendix
+- [Data Structures and Models](2_data_structure_models.md)
+To first familiarize yourself with all the various components of this blockchain to later understand how they interact
+- [Transactions](3_transactions.md)
+And how they’re created and validated
+- [Note Encryption and Decryption](4_note_encryption_decryption.md)
+On how transactions result in encrypted notes that only the sender’s outgoing view key and recipient’s incoming view key can decrypt
+- [Block Creation](5_block_creation.md)
+- [Block Verification](6_block_verification.md)
+- [Consensus and Verification](7_consensus_verification.md) on how transactions and blocks are accepted and when they’re propagated to the network
+- [Optimistic Sync](8_optimistic_sync.md)
+- [Networking](9_networking.md)
+- [Light Client Capabilities](10_light_client_capabilities.md)
+- [Performance Goals](11_performance_goals.md)
+- [Appendix](12_appendix.mdx)
