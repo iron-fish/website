@@ -1,0 +1,85 @@
+/* stylelint-disable docusaurus/copyright-header */
+
+/**
+ * CSS files with the .module.css suffix will be treated as CSS modules
+ * and scoped locally.
+ */
+
+.heroBanner {
+  padding: 4rem 0;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  background: var(--ifm-navbar-background-color) url('/img/splash.svg') no-repeat center 20px;
+  min-height: 100vh;
+  max-height: 800px;
+}
+.heroTitle {
+  font-size: 2.5rem;
+  text-align: center;
+  max-width: 655px;
+  margin: 0 auto;
+}
+
+.heroSubtitle {
+  font-size: 1em;
+  margin-top: 40px;
+  margin-bottom: 50px;
+}
+
+.buttonWhitePaper {
+  text-transform: uppercase;
+  color: var(--ifm-navbar-link-color);
+}
+.buttonWhitePaper:first-of-type {
+  margin-right: 20px;
+}
+
+.buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.features {
+  display: flex;
+  align-items: center;
+  padding: 4rem 0;
+  width: 100%;
+}
+.features:last-of-type {
+  border-top: 1px solid var(--ifm-features-separator-color);
+}
+
+
+.featureImage {
+  height: 200px;
+  width: 200px;
+}
+
+.companiesList {
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.investorImage {
+  margin-right: 30px;
+  margin-bottom: 15px;
+}
+
+@media screen and (max-width: 966px) {
+  .heroBanner {
+    padding: 1rem;
+  }
+  .heroTitle {
+    font-size: 2rem;
+  }
+  .buttons {
+    flex-direction: column;
+    align-items: normal;
+    justify-content: normal;
+  }
+  .buttonWhitePaper:first-of-type {
+    margin-right: 0px;
+    margin-bottom: 20px;
+  }
+}
