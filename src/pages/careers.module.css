@@ -22,3 +22,9 @@
   color:var(--ifm-navbar-link-color);
   text-decoration: underline;
 }
+
+@media screen and (max-width: 966px) {
+  .listJobs {
+    flex-direction: column;
+  }
+}

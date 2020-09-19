@@ -69,7 +69,7 @@ function Home() {
                 'button button--outline button--lg',
                 styles.buttonWhitePaper
               )}
-              to={useBaseUrl('docs/1_introduction')}>
+              to={useBaseUrl('docs/whitepaper/1_introduction')}>
               Whitepaper
             </Link>
             <Link
