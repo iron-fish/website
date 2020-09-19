@@ -4,7 +4,7 @@ const rehypeKatex = require("rehype-katex");
 
 module.exports = {
   title: 'Iron Fish is a new cryptocurrency that takes no shortcuts on privacy.',
-  tagline: 'Enable the free flow of assets through easy-to-use, accessible, private cryptocurrency.',
+  tagline: 'Enable the free flow of assets through accessible and private cryptocurrency.',
   url: 'https://ironfish.network',
   baseUrl: '/',
   onBrokenLinks: 'throw',

@@ -9,7 +9,7 @@ import styles from './index.module.css';
 
 const features = [
   {
-    title: 'Accessible & Easy to Use',
+    title: 'Easy to use',
     imageUrl: 'img/undraw_Devices_re_dxae.svg',
     description: (
       <>
@@ -22,7 +22,7 @@ const features = [
     imageUrl: 'img/undraw_two_factor_authentication_namy.svg',
     description: (
       <>
-        Designed to support strong privacy guarantees on every transaction. Only you and the destination will know when you use Iron Fish.
+        Designed to support strong privacy guarantees on every transaction. Only you and the recipient will know when you use Iron Fish.
       </>
     ),
   },
@@ -105,7 +105,7 @@ function Home() {
               </div>
               <div className={clsx('col', styles.feature)}>
                 <h3>A fair & equitable project</h3>
-                <p>Fully backed by reputable investors who also backed in these great companies:</p>
+                <p>Fully backed by reputable investors who also backed these great companies:</p>
                 <div className={clsx('row', styles.companiesList)}>
                   <img className={styles.investorImage} src={'img/companies/airbnb.svg'} alt={'Airbnb'} />
                   <img className={styles.investorImage} src={'img/companies/airtable.svg'} alt={'Airtable'} />

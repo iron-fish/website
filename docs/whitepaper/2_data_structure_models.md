@@ -121,7 +121,7 @@ previous_block_hash – The hash of the previous block in the chain.
 - `timestamp` – Unix timestamp according to the miner who mined the block. This value must be taken with a grain of salt, but miners will want to verify that it's an appropriate distance to the previous block's timestamp.
 - `miners_fee` – A single (simplified) transaction representing the miners fee consisting only of one Output Description
 
-### Block
+## Block
 
 The block is simply a list of transactions and the Block Header.
 
