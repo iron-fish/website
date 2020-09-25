@@ -4,6 +4,7 @@ title: FAQ
 sidebar_label: FAQ
 ---
 
+# FAQ
 ## What are we building?
 
 A cryptocurrency that does not compromise on privacy.
