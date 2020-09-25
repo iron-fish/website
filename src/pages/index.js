@@ -12,7 +12,7 @@ const features = [
     title: 'Fully private payments.',
     description: (
       <>
-        Strongest privacy gaurantees on every transaction. You have full control over who sees your account details.
+        Strongest privacy guarantees on every transaction. You have full control over who sees your account details.
       </>
     ),
     button: 'Learn more about our privacy approach',
