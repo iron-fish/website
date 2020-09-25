@@ -63,7 +63,7 @@ const features = [
     description: (
       <>
         We are extremely proud and honored to be working with some of the most incredible investors and angels.
-        Our current team members were all previously engineers at companies such as:
+        Our current team members were all previously engineers at companies such as Airbnb, Facebook, Microsoft, and Uber.
       </>
     ),
   },
@@ -99,20 +99,10 @@ function Home() {
         <header className={clsx(styles.section)}>
           <h1 className={clsx('hero__title', styles.heroTitle, styles.h1Title)}>{siteConfig.title}</h1>
           <Link
-            className={clsx(
-              'button button--outline'
-            )}
+            className='button button--outline'
             to={useBaseUrl('docs/whitepaper/1_introduction')}>
-            Get Started →
-                  </Link>
-          {/* <div className={clsx(styles.headerLinks)}>
-              <a href="https://twitter.com/ironfishcrypto" target="_blank">
-                <img src={'img/twitter.svg'} alt={'Twitter'} />
-              </a>
-              <a href="mailto:contact@ironfish.network" target="_blank">
-                <img src={'img/mail.svg'} alt={'E-mail'} />
-              </a>
-            </div> */}
+              Get Started →
+          </Link>
         </header>
         <main>
           {features && features.length > 0 && (

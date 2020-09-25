@@ -15,6 +15,9 @@ module.exports = {
     colorMode: {
       disableSwitch: true,
     },
+    prism: {
+      theme: require('prism-react-renderer/themes/shadesOfPurple'),
+    },
     navbar: {
       title: 'Iron Fish',
       logo: {
@@ -43,42 +46,12 @@ module.exports = {
       ],
     },
     footer: {
-      // links: [
-      //   {
-      //     title: 'More info',
-      //     items: [
-      //       {
-      //         label: 'Join us!',
-      //         to: 'careers',
-      //       },
-      //       {
-      //         label: 'Iron Fish specs',
-      //         to: 'docs/whitepaper/1_introduction',
-      //       },
-      //     ],
-      //   },
-      //   {
-      //     title: 'Community',
-      //     items: [
-      //       {
-      //         label: 'Twitter',
-      //         href: 'https://twitter.com/leanthebean',
-      //       },
-      //     ],
-      //   },
-      //   {
-      //     title: 'Stay in touch',
-      //     items: [
-      //       {
-      //         label: 'Email',
-      //         href: 'mailto:contact@ironfish.network',
-      //       },
-      //     ],
-      //   },
-      // ],
-      // copyright: `Copyright © ${new Date().getFullYear()} Iron Fish`,
+      logo: {
+        src: 'img/logo-fish.svg',
+      },
     },
   },
+
   presets: [
     [
       '@docusaurus/preset-classic',

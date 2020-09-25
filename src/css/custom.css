@@ -48,6 +48,7 @@
   --ifm-button-background-color: #fff;
   --ifm-button-font-weight: normal;
   --ifm-button-padding-horizontal: 0.7rem;
+  --ifm-footer-padding-vertical: 0.7rem;
 }
 .button--outline {
   border: none;
@@ -97,4 +98,15 @@ h1, h2, h3 {
   display: block;
   margin: 0 calc(-1 * var(--ifm-pre-padding));
   padding: 0 var(--ifm-pre-padding);
+}
+
+/* footer */
+.footer .text--center {
+  text-align: left;
+}
+
+@media screen and (max-width: 966px) {
+  :root {
+    --ifm-spacing-horizontal: 0.7rem;
+  }
 }

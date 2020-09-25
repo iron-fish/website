@@ -7,7 +7,7 @@ import styles from './careers.module.css';
 
 function Careers() {
   const context = useDocusaurusContext();
-  const { siteConfig = {} } = context;
+
   return (
     <Layout
       title='Careers at Iron Fish'
