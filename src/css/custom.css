@@ -6,62 +6,103 @@
  */
 
 /* You can override the default Infima variables here. */
+@font-face {
+  font-family: 'Grenette Pro';
+  src: url('/font/GrenettePro.eot');
+  src: url('/font/GrenettePro.eot?#iefix') format('embedded-opentype'),
+      url('/font/GrenettePro.woff2') format('woff2'),
+      url('/font/GrenettePro.woff') format('woff'),
+      url('/font/GrenettePro.ttf') format('truetype'),
+      url('/font/GrenettePro.svg#GrenettePro') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
-  --ifm-color-primary: #2A53C0;
-  --ifm-color-primary-dark: #2A53C0;
-  --ifm-color-primary-darker: #2A53C0;
-  --ifm-color-primary-darkest: #2A53C0;
-  --ifm-color-primary-light: #2A53C0;
-  --ifm-color-primary-lighter: #2A53C0;
-  --ifm-color-primary-lightest: #2A53C0;
-  --ifm-code-font-size: 95%;
-  --ifm-navbar-background-color: #000;
-  --ifm-navbar-link-color: #fff;
-  --ifm-navbar-link-hover-color: #dadada;
+  --ifm-background-color: #FFF6E4;
+  --ifm-heading-color: #F15929;
+  --ifm-font-color-base: #F15929;
+  --ifm-index-color-primary: #252120;
   --ifm-features-separator-color: #dadada;
-  --ifm-color-secondary: #2A53C0;
-  --ifm-color-secondary-hover: #0938b3;
+  --ifm-spacing-horizontal: 0px;
+  --ifm-table-stripe-background: #ce430114;
+
+  --ifm-color-primary: #F15929;
+  --ifm-color-primary-dark: #2301ce;
+  --ifm-color-primary-darker: #2301ce;
+  --ifm-color-primary-darkest: #2301ce;
+  --ifm-color-primary-light: #2301ce;
+  --ifm-color-primary-lighter: #2301ce;
+  --ifm-color-primary-lightest: #2301ce;
+  --ifm-color-secondary: #2301ce;
+  --ifm-color-secondary-hover: #2301ce;
+  --ifm-color-emphasis-300: transparent;
+
+  --ifm-button-border-color: #2301ce;
+  --ifm-button-background-color: #fff;
+  --ifm-button-font-weight: normal;
+  --ifm-button-padding-horizontal: 0.7rem;
+
+  --ifm-navbar-background-color: #FFF6E4;
+  --ifm-navbar-link-color: #2301ce;
+  --ifm-navbar-link-hover-color: #dadada;
+  --ifm-navbar-shadow: none;
+  --ifm-navbar-height: 100px;
+  --ifm-navbar-padding-vertical: 30px;
+  --ifm-navbar-link-hover-color: #2301ce;
+
+  --ifm-menu-color-background-active: none;
+  --ifm-menu-color-background-hover: none;
+  --ifm-menu-color: #F15929;
+  --ifm-menu-color-active: #2301ce;
+
+  --ifm-link-color: #2301ce;
+  --ifm-link-decoration: underline;
+
+  --ifm-toc-border-color: transparent;
+  --ifm-toc-link-color: #F15929;
+
+  --ifm-footer-padding-vertical: 0.7rem;
+  --ifm-footer-background-color: #FFF6E4;
   --ifm-footer-link-color: #fff;
+
+  --ifm-code-font-size: 95%;
+  --ifm-code-background: #ce430114;
 }
 
-/* Navigation */
-.button.button--secondary {
-  --ifm-button-border-color: var(--ifm-color-secondary);
-  --ifm-button-background-color: var(--ifm-color-secondary);
-  color: var(--ifm-navbar-link-color);
-
-}
-.button.button--secondary.button--outline:hover {
-  --ifm-button-border-color: var(--ifm-color-secondary-hover);
-  --ifm-button-background-color: var(--ifm-color-secondary-hover);
-}
-.button.button--secondary.button--outline:not(.button--active):not(:hover) {
-  color: var(--ifm-navbar-link-color);
-  --ifm-button-background-color: var(--ifm-color-secondary);
+/* Buttons */
+.button--outline {
+  border: none;
+  text-transform: capitalize;
+  --ifm-button-background-color: #fff;
+  --ifm-button-color: var(--ifm-button-border-color);
 }
 
+  /* General elements */
+h1, h2, h3 {
+  font-family: 'Grenette Pro';
+  font-weight: normal;
+}
+td, th {
+  text-align: left;
+}
 /* Header */
 .navbar__inner {
   margin: 0 auto;
   max-width: var(--ifm-container-width);
+  background: var(--ifm-navbar-background-color) url(/img/index-wave.svg) center bottom;
+  background-repeat: repeat-x;
+  padding-bottom: 70px;
 }
-
 .navbar__logo {
   max-width: 200px;
 }
-
 .navbar__title {
   display: none;
 }
-
-/* Footer */
-.footer--dark {
-  --ifm-footer-background-color: #000;
-  --ifm-footer-title-color: var(--ifm-color-white);
-  color: var(--ifm-navbar-link-color);
-}
-.footer--dark a {
-  color: var(--ifm-navbar-link-color);
+.navbar__link {
+  font-weight: bold;
 }
 
 .docusaurus-highlight-code-line {
@@ -69,4 +110,30 @@
   display: block;
   margin: 0 calc(-1 * var(--ifm-pre-padding));
   padding: 0 var(--ifm-pre-padding);
+}
+
+/* footer */
+.footer .text--center {
+  text-align: left;
+}
+
+/* MDX pages */
+.container.margin-vert--lg.padding-vert--lg {
+  margin-top: 0px!important;
+}
+
+/* documentation */
+.menu__link {
+  line-height: 1rem;
+  font-size: 0.8rem;
+  text-decoration: none;
+}
+.table-of-contents {
+  --ifm-color-primary: var(--ifm-color-primary-dark);
+}
+
+@media screen and (max-width: 966px) {
+  :root {
+    --ifm-spacing-horizontal: 0.7rem;
+  }
 }

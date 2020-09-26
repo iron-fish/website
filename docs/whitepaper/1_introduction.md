@@ -1,6 +1,6 @@
 ---
 id: 1_introduction
-title: IRON FISH
+title: Introduction
 sidebar_label: Introduction
 ---
 

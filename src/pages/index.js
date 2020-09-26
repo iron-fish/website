@@ -9,46 +9,82 @@ import styles from './index.module.css';
 
 const features = [
   {
-    title: 'Easy to use',
-    imageUrl: 'img/undraw_Devices_re_dxae.svg',
+    title: 'Fully private payments.',
     description: (
       <>
-        No obscure setup, no need to invest in specific equipment. As long as you have a browser, you can use Iron Fish!
+        Strongest privacy guarantees on every transaction. You have full control over who sees your account details.
       </>
     ),
+    button: 'Learn more about our privacy approach',
   },
   {
-    title: 'Fully private payments',
-    imageUrl: 'img/undraw_two_factor_authentication_namy.svg',
-    description: (
+    title: (
       <>
-        Designed to support strong privacy guarantees on every transaction. Only you and the recipient will know when you use Iron Fish.
+        Truly Accessible.
+        <br />
+        Completely Decentralized.
       </>
     ),
-  },
-  {
-    title: 'Decentralized blockchain project',
-    imageUrl: 'img/undraw_Around_the_world_re_n353.svg',
     description: (
       <>
-        Iron Fish is a decentralized blockchain project with a novel fast syncing technique.
+        Become a full node participating in the Iron Fish network with just a browser. Easy setup for a light client on mobile too!
+        <br />
+        <br />
+        Start solo mining in minutes with a loss-less blazing-fast syncing technique via a desktop app. Connect to any mining pool with just a config setting.
+      </>
+    ),
+    button: 'Learn more',
+  },
+  {
+    title: (
+      <>
+        Browser first.
+        <br />
+        Compatible with every OS.
+      </>
+    ),
+    description: (
+      <>
+        Full node, miner, and wallet can be started from a browser or in terminal.
+        <br />
+        No installation required.
+      </>
+    ),
+    button: 'Learn more',
+  },
+  {
+    title: (
+      <>
+        Backed by prominent investors.
+        <br />
+        Built by a top talent team.
+      </>
+    ),
+    description: (
+      <>
+        We are extremely proud and honored to be working with some of the most incredible investors and angels.
+        Our current team members were all previously engineers at companies such as Airbnb, Facebook, Microsoft, and Uber.
       </>
     ),
   },
 ];
 
-function Feature({ imageUrl, title, description }) {
-  const imgUrl = useBaseUrl(imageUrl);
+function Feature({ button, title, description }) {
   return (
-    <div className={clsx('col col--4', styles.feature)}>
-      {imgUrl && (
-        <div className="text--center">
-          <img className={styles.featureImage} src={imgUrl} alt={title} />
-        </div>
-      )}
+    <section className={styles.section}>
       <h3>{title}</h3>
       <p>{description}</p>
-    </div>
+      {button && (
+        <Link
+          className={clsx(
+            'button button--outline'
+          )}
+          to={useBaseUrl('docs/whitepaper/1_introduction')}>
+          {`${button} →`}
+        </Link>
+
+      )}
+    </section>
   );
 }
 
@@ -59,70 +95,26 @@ function Home() {
     <Layout
       title={`Hello from ${siteConfig.title}`}
       description="Description will go into a meta tag in <head />">
-      <header className={clsx('hero hero--primary', styles.heroBanner)}>
-        <div className="container">
-          <h1 className={clsx('hero__title', styles.heroTitle)}>{siteConfig.title}</h1>
-          <p className={clsx('hero__subtitle', styles.heroSubtitle)}>{siteConfig.tagline}</p>
-          <div className={styles.buttons}>
-            <Link
-              className={clsx(
-                'button button--outline button--lg',
-                styles.buttonWhitePaper
-              )}
-              to={useBaseUrl('docs/whitepaper/1_introduction')}>
-              Whitepaper
-            </Link>
-            <Link
-              className={clsx(
-                'button button--secondary button--outline button--lg',
-                styles.buttonWhitePaper
-              )}
-              to={useBaseUrl('careers')}>
-              JOIN US
-            </Link>
-          </div>
-        </div>
-      </header>
-      <main>
-        {features && features.length > 0 && (
-          <section className={styles.features}>
-            <div className="container">
-              <div className="row">
-                {features.map((props, idx) => (
-                  <Feature key={idx} {...props} />
-                ))}
-              </div>
-            </div>
-          </section>
-        )}
-        <section className={styles.features}>
-          <div className="container">
-            <div className="row">
-              <div className={clsx('col', styles.feature)}>
-                <div className="text--center">
-                  <img className={styles.featureImage} src={'img/undraw_Savings_re_eq4w.svg'} alt={'Backed by VC investors'} />
-                </div>
-              </div>
-              <div className={clsx('col', styles.feature)}>
-                <h3>A fair & equitable project</h3>
-                <p>Fully backed by reputable investors who also backed these great companies:</p>
-                <div className={clsx('row', styles.companiesList)}>
-                  <img className={styles.investorImage} src={'img/companies/airbnb.svg'} alt={'Airbnb'} />
-                  <img className={styles.investorImage} src={'img/companies/airtable.svg'} alt={'Airtable'} />
-                  <img className={styles.investorImage} src={'img/companies/coinbase.svg'} alt={'Coinbase'} />
-                  <img className={styles.investorImage} src={'img/companies/hims.svg'} alt={'Hims'} />
-                  <img className={styles.investorImage} src={'img/companies/notion.svg'} alt={'Notion'} />
-                  <img className={styles.investorImage} src={'img/companies/pinterest.svg'} alt={'Pinterest'} />
-                  <img className={styles.investorImage} src={'img/companies/slack.svg'} alt={'Slack'} />
-                  <img className={styles.investorImage} src={'img/companies/stripe.svg'} alt={'Stripe'} />
-                  <img className={styles.investorImage} src={'img/companies/wish.svg'} alt={'Wish'} />
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-      </main>
-    </Layout>
+      <div className="container">
+        <header className={clsx(styles.section)}>
+          <h1 className={clsx('hero__title', styles.heroTitle, styles.h1Title)}>{siteConfig.title}</h1>
+          <Link
+            className='button button--outline'
+            to={useBaseUrl('docs/whitepaper/1_introduction')}>
+              Get Started →
+          </Link>
+        </header>
+        <main>
+          {features && features.length > 0 && (
+            <>
+              {features.map((props, idx) => (
+                <Feature key={idx} {...props} />
+              ))}
+            </>
+          )}
+        </main>
+      </div>
+    </Layout >
   );
 }
 

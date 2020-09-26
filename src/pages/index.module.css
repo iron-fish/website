@@ -4,28 +4,54 @@
  * CSS files with the .module.css suffix will be treated as CSS modules
  * and scoped locally.
  */
-
-.heroBanner {
-  padding: 4rem 0;
-  text-align: center;
-  position: relative;
-  overflow: hidden;
-  background: var(--ifm-navbar-background-color) url('/img/splash.svg') no-repeat center center;
-  min-height: 100vh;
-  max-height: 800px;
+.section {
+  background: var(--ifm-navbar-background-color) url(/img/index-wave.svg) center bottom;
+  background-repeat: repeat-x;
+  padding: 20px 0 40px 0;
 }
 .heroTitle {
   font-size: 2.5rem;
-  text-align: center;
-  max-width: 655px;
-  margin: 0 auto;
+  max-width: 650px;
+}
+.section h3 {
+  font-size: 2rem;
+}
+.section p {
+  max-width: 420px;
 }
 
-.heroSubtitle {
-  font-size: 1em;
-  margin-top: 40px;
-  margin-bottom: 50px;
+.headerLinks {
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 30px;
 }
+.headerLinks img {
+  width: 30px;
+  margin-left: 10px;
+}
+.indexHeader {
+  display: flex;
+  /* reverse for SEO purpose so H1 is first*/
+  flex-direction: column-reverse;
+}
+
+.mainIndexContainer {
+  color: var(--ifm-index-color-primary);
+}
+
+
+.indexSection {
+  display: flex;
+  /* first section has the navbar */
+  height: 100vh;
+  height: calc(100vh - 60px);
+  background-position: 0px 0px;
+  background-repeat: no-repeat;
+  background-size: auto 100%;
+  align-items: center;
+  justify-content: center;
+}
+
 
 .buttonWhitePaper {
   text-transform: uppercase;
