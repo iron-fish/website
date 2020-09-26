@@ -94,7 +94,7 @@ function Home() {
   return (
     <Layout
       title={''}
-      description={`${siteConfig.description}`}>
+      description={`${siteConfig.tagline}`}>
       <div className="container">
         <header className={clsx(styles.section)}>
           <h1 className={clsx('hero__title', styles.heroTitle, styles.h1Title)}>Iron Fish is a new cryptocurrency that takes no shortcuts on privacy.</h1>
