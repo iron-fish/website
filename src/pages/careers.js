@@ -67,7 +67,7 @@ const features = [
 function Feature({ button, title, description }) {
   return (
     <section className={styles.section}>
-      <h3>{title}</h3>
+      <h2>{title}</h2>
       <p>{description}</p>
       {button && (
         <Link
