@@ -93,11 +93,11 @@ function Home() {
   const { siteConfig = {} } = context;
   return (
     <Layout
-      title={`Hello from ${siteConfig.title}`}
-      description="Description will go into a meta tag in <head />">
+      title={''}
+      description={`${siteConfig.description}`}>
       <div className="container">
         <header className={clsx(styles.section)}>
-          <h1 className={clsx('hero__title', styles.heroTitle, styles.h1Title)}>{siteConfig.title}</h1>
+          <h1 className={clsx('hero__title', styles.heroTitle, styles.h1Title)}>Iron Fish is a new cryptocurrency that takes no shortcuts on privacy.</h1>
           <Link
             className='button button--outline'
             to={useBaseUrl('docs/whitepaper/1_introduction')}>

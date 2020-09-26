@@ -3,7 +3,7 @@ const remarkMath = require("remark-math");
 const rehypeKatex = require("rehype-katex");
 
 module.exports = {
-  title: 'Iron Fish is a new cryptocurrency that takes no shortcuts on privacy.',
+  title: 'Iron Fish - Private, anonynous, and easy to use cryptocurrency',
   tagline: 'Enable the free flow of assets through accessible and private cryptocurrency.',
   url: 'https://ironfish.network',
   baseUrl: '/',
@@ -12,6 +12,7 @@ module.exports = {
   organizationName: 'iron-fish', // Usually your GitHub org/user name.
   projectName: 'landing_page', // Usually your repo name.
   themeConfig: {
+    image: 'img/ogimage.png',
     colorMode: {
       disableSwitch: true,
     },
