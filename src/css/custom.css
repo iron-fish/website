@@ -91,9 +91,15 @@ td, th {
 .navbar__inner {
   margin: 0 auto;
   max-width: var(--ifm-container-width);
-  background: var(--ifm-navbar-background-color) url(/img/index-wave.svg) center bottom;
-  background-repeat: repeat-x;
   padding-bottom: 70px;
+}
+.navbar__inner::after {
+  background: transparent url(/img/wave.svg) center bottom;
+  background-repeat: repeat-x;
+  max-width: var(--ifm-container-width);
+  content: ' ';
+  width: 100%;
+  height: 44px;
 }
 .navbar__logo {
   max-width: 200px;
