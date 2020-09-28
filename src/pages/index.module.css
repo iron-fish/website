@@ -5,7 +5,7 @@
  * and scoped locally.
  */
 .section {
-  background: var(--ifm-navbar-background-color) url(/img/index-wave.svg) center bottom;
+  background: transparent url(/img/wave.svg) center bottom;
   background-repeat: repeat-x;
   padding: 20px 0 40px 0;
 }

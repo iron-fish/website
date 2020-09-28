@@ -50,7 +50,7 @@ Every account comes with a secret key, a spending key pair, a nullifier key pair
 
 1. The secret key is simply a 32-byte random number. This is the seed necessary to construct all other parts of your wallet.
 
-<img src='./assets/2_data_structure_models_secret_key.svg' height="500" />
+<img src='/img/docs/2_data_structure_models_secret_key.svg' height="500" />
 
 ### Spend Authorization Key and Authorization Key
 1. The _Spend Authorization Key_ ($$ask$$) is derived by hashing the secret key and a modifier using the [Blake2b](https://blake2.net/) hashing algorithm (with personalization params) and then converting it into a scalar for the Jubjub curve. Think of this as the derived private key for spending notes.
@@ -61,7 +61,7 @@ $$ak = ask * G_{ak}$$
 $$ak$$ is then the _public key of the spend authorization key_
 $$ak$$ is used to sign each _Spend description_
 
-<img src='./assets/2_data_structure_models_secret_key_spend_authorization_key.svg' height="500" />
+<img src='/img/docs/2_data_structure_models_secret_key_spend_authorization_key.svg' height="500" />
 
 ### Proof Authorization Key and Nullifier Deriving Key
 1. The _Proof Authorization Key_ ($$nsk$$) is derived by hashing the secret key and a modifier using Blake2b (with params) and then converting it into a scalar (integer) for the Jubjub curve
@@ -72,7 +72,7 @@ $$ak$$ is used to sign each _Spend description_
     2. $$nk$$ is then the _public key_ of the proof authorization key
     3. $$nk$$ is used to create a _nullifier per note_
 
-<img src='./assets/2_data_structure_models_nullifier_deriving_key.svg' height="500" />
+<img src='/img/docs/2_data_structure_models_nullifier_deriving_key.svg' height="500" />
 
 
 ### Incoming and Outgoing View Key
@@ -81,7 +81,7 @@ $$ak$$ is used to sign each _Spend description_
 2. The Incoming View Key `(ivk)` allows for decrypting incoming transactions. It is derived by hashing (via blake2s) the bytes of the authorizing key with the bytes of the nullifier deriving key and converting it into a Jubjub scalar
     1. `ivk = hash(ak, nk) → jubjub scalar`
 
-<img src='./assets/2_data_structure_models_outgoing_view_key.svg' height="500" />
+<img src='/img/docs/2_data_structure_models_outgoing_view_key.svg' height="500" />
 
 ### Public Key
 1. The public key consists of a Transmission Key and a Diversifier. Together, they enable a single wallet with a single private key to contain unlimited public addresses
@@ -94,7 +94,7 @@ $$ak$$ is used to sign each _Spend description_
     1. $$(d, pk_d)$$ is the public key
         1. 43-byte number (11 bytes for diversifier + 32 bytes for transmission key)
 
-<img src='./assets/2_data_structure_models_public_key.svg' height="500" />
+<img src='/img/docs/2_data_structure_models_public_key.svg' height="500" />
 
 The complexity of this construction comes from separating out the spending power from the viewing keys. This way, the key is constructed such that one derived key pair is responsible for signing the notes in a Spend description and another to view incoming and outgoing transactions.
 

@@ -13,7 +13,7 @@ The transaction, in plaintext, has the numerical difference between inputs(spend
 
 $$inputs - outputs = transaction fee$$
 
-<img src='./assets/2_data_structure_models_transaction.svg' height="450" />
+<img src='/img/docs/2_data_structure_models_transaction.svg' height="450" />
 
 ## Spend Description
 

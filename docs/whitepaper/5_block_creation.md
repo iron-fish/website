@@ -19,7 +19,7 @@ The reward for mining a block with 0 or more transactions is: `block reward + su
 
 As always, `inputs - outputs = transaction_fee`, except for this specially marked transaction, the transaction fee is negative. Below is an example where the miner’s reward is 12 coins.
 
-<img src='./assets/5_block_creation_transaction.svg' height="450" />
+<img src='/img/docs/5_block_creation_transaction.svg' height="450" />
 
 Similarly to how the transaction was verified above, we check that `inputs - outputs = transaction_fee`:
 
