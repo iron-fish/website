@@ -27,13 +27,13 @@ BlockHeader {
 
 ## How it Works
 
-### Step 0:
+### Step 0
 
 Every node has a hardcoded genesis block built-in. The genesis block has two notes and one nullifier.
 
 <img src='/img/docs/8_optimistic_sync_genesis.png' width="186" />
 
-### Step 1:
+### Step 1
 
 The node asks the network for the latest block. Generally, it will ask several nodes to make sure it has a consistent answer and assume the latest block is honest.
 If the latest block is not honest, the node will find this out very quickly when attempting to sync more data using its information and switch to a chain that has the most work.
@@ -42,7 +42,7 @@ The latest block will give the total number of notes and the total number of nul
 
 <img src='/img/docs/8_optimistic_sync_latest_block.png' width="157" />
 
-### Step 2:
+### Step 2
 
 Now that you know how many notes and nullifiers there are, and that they are added sequentially and in order at every block, you can start asking the network for those leaf notes to start rebuilding your two sets.
 
@@ -56,7 +56,7 @@ For example, if we had a Notes Merkle tree of height 3 (so $$2^3$$ leaves) and t
 
 This happens until the node downloads a block that contains the Merkle tree root that it already has from requesting the notes and rebuilding its tree locally (in this case, it would be the orange Merkle tree root).
 
-### Step 5:
+### Step 3
 We need to finish building our Merkle tree of notes up to the latest block (the blue block). At this point, we've downloaded all the blocks between the orange one that we have all the data for already in our tree, up to the blue one. We don't need to sync any more data because the data that we are missing from our tree is in the blocks we've downloaded, so we add the notes in the blocks we have to our tree.
 
 <img src='/img/docs/8_optimistic_sync_merkle_tree_partial.png' width="874" />

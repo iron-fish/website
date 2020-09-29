@@ -5,19 +5,23 @@
  * and scoped locally.
  */
 .section {
-  background: transparent url(/img/wave.svg) center bottom;
+  padding: 35px 0 30px 0;
+  background: transparent url(/img/wave-gray.svg) center top;
   background-repeat: repeat-x;
-  padding: 20px 0 40px 0;
+  background-size: 26px auto;
+}
+header.section {
+  background: none;
 }
 .heroTitle {
-  font-size: 2.5rem;
-  max-width: 650px;
+  font-size: 3.2rem;
+  max-width: 810px;
 }
 .section h2 {
   font-size: 2rem;
 }
 .section p {
-  max-width: 420px;
+  max-width: 480px;
 }
 
 .headerLinks {
@@ -34,77 +38,32 @@
   /* reverse for SEO purpose so H1 is first*/
   flex-direction: column-reverse;
 }
-
 .mainIndexContainer {
   color: var(--ifm-index-color-primary);
 }
-
-
-.indexSection {
-  display: flex;
-  /* first section has the navbar */
+header.sectionHomePage {
   height: 100vh;
-  height: calc(100vh - 60px);
-  background-position: 0px 0px;
-  background-repeat: no-repeat;
-  background-size: auto 100%;
-  align-items: center;
-  justify-content: center;
-}
-
-
-.buttonWhitePaper {
-  text-transform: uppercase;
-  color: var(--ifm-navbar-link-color);
-}
-.buttonWhitePaper:first-of-type {
-  margin-right: 20px;
-}
-
-.buttons {
+  background: transparent no-repeat url(/img/index-background.svg) center center;
+  background-size: 100% auto;
+  max-height: 590px;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+  margin-top: 20px;
+  margin-bottom: 30px;
 }
 
-.features {
-  display: flex;
-  align-items: center;
-  padding: 4rem 0;
-  width: 100%;
-}
-.features:last-of-type {
-  border-top: 1px solid var(--ifm-features-separator-color);
-}
-
-.featureImage {
-  height: 200px;
-  width: 200px;
-}
-
-.companiesList {
-  justify-content: center;
-  flex-wrap: wrap;
-}
-.investorImage {
-  margin-right: 30px;
-  margin-bottom: 15px;
+.sectionHomePage .heroTitle {
+  text-align: center;
 }
 
 @media screen and (max-width: 966px) {
-  .heroBanner {
-    padding: 1rem;
+  .sectionHomePage {
+    background-repeat: repeat;
+    max-height: calc(100vh - 180px);
   }
   .heroTitle {
     font-size: 2rem;
-  }
-  .buttons {
-    flex-direction: column;
-    align-items: normal;
-    justify-content: normal;
-  }
-  .buttonWhitePaper:first-of-type {
-    margin-right: 0px;
-    margin-bottom: 20px;
   }
 }

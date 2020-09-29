@@ -17,7 +17,7 @@ module.exports = {
       disableSwitch: true,
     },
     prism: {
-      theme: require('prism-react-renderer/themes/shadesOfPurple'),
+      theme: require('prism-react-renderer/themes/github'),
     },
     navbar: {
       title: 'Iron Fish',
@@ -80,5 +80,6 @@ module.exports = {
   ],
   stylesheets: [
     'https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css',
+    'https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap',
   ]
 };
