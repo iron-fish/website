@@ -59,7 +59,7 @@ header.sectionHomePage {
 }
 
 @media screen and (max-width: 966px) {
-  .sectionHomePage {
+  header.sectionHomePage {
     background-repeat: repeat;
     max-height: calc(100vh - 180px);
   }

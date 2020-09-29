@@ -96,6 +96,9 @@
   --ifm-button-background-color: #EBE5E5;
   --ifm-button-color: var(--ifm-color-primary);
 }
+.menu--responsive .menu__button {
+  color: #FFF;
+}
 
   /* General elements */
 h1 {
