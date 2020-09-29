@@ -64,7 +64,7 @@
   --ifm-navbar-link-color: #1D0070;
   --ifm-navbar-link-hover-color: #dadada;
   --ifm-navbar-shadow: none;
-  --ifm-navbar-height: 100px;
+  --ifm-navbar-height: 90px;
   --ifm-navbar-padding-vertical: 30px;
   --ifm-navbar-link-hover-color: #1D0070;
 
@@ -133,7 +133,7 @@ p, li {
   background-size: 26px auto;
   content: ' ';
   width: 100%;
-  height: 26px;
+  height: 28px;
 }
 .navbar__logo {
   max-width: 190px;
