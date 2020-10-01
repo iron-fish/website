@@ -45,9 +45,7 @@ const features = [
     ),
     description: (
       <>
-        Full node, miner, and wallet can be started from a browser or in terminal.
-        <br />
-        No installation required.
+        Full node, miner, and wallet can be started from a browser or in terminal. No installation required.
       </>
     ),
     button: 'Learn more',

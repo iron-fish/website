@@ -50,7 +50,7 @@ Every account comes with a secret key, a spending key pair, a nullifier key pair
 
 1. The secret key is simply a 32-byte random number. This is the seed necessary to construct all other parts of your wallet.
 
-<img src='/img/docs/2_data_structure_models_secret_key.svg' height="500" />
+<img src='/img/docs/2_data_structure_models_secret_key.svg' height="150" />
 
 ### Spend Authorization Key and Authorization Key
 1. The _Spend Authorization Key_ ($$ask$$) is derived by hashing the secret key and a modifier using the [Blake2b](https://blake2.net/) hashing algorithm (with personalization params) and then converting it into a scalar for the Jubjub curve. Think of this as the derived private key for spending notes.
@@ -61,7 +61,7 @@ $$ak = ask * G_{ak}$$
 $$ak$$ is then the _public key of the spend authorization key_
 $$ak$$ is used to sign each _Spend description_
 
-<img src='/img/docs/2_data_structure_models_secret_key_spend_authorization_key.svg' height="500" />
+<img src='/img/docs/2_data_structure_models_secret_key_spend_authorization_key.svg' height="350" />
 
 ### Proof Authorization Key and Nullifier Deriving Key
 1. The _Proof Authorization Key_ ($$nsk$$) is derived by hashing the secret key and a modifier using Blake2b (with params) and then converting it into a scalar (integer) for the Jubjub curve
