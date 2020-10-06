@@ -42,26 +42,33 @@ header.section {
   color: var(--ifm-index-color-primary);
 }
 header.sectionHomePage {
-  height: 100vh;
-  background: transparent no-repeat url(/img/index-background.svg) center center;
-  background-size: 100% auto;
-  max-height: 590px;
+  background: transparent no-repeat url(/img/index-background.svg) 0 0;
+  background-size: 1140px 545px;
+  height: 545px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-top: 20px;
-  margin-bottom: 30px;
+  margin-top: 30px;
+  margin-bottom: 22px;
 }
 
 .sectionHomePage .heroTitle {
   text-align: center;
 }
 
+@media screen and (max-width: 1190px) {
+  header.sectionHomePage {
+    background-size: 990px auto;
+    height: 473px;
+  }
+}
 @media screen and (max-width: 966px) {
   header.sectionHomePage {
-    background-repeat: repeat;
-    max-height: calc(100vh - 180px);
+    background-size: auto 473px;
+    margin-top: 22px;
+    height: 473px;
+    background-position: center;
   }
   .heroTitle {
     font-size: 2rem;

@@ -27,7 +27,7 @@ const features = [
     ),
     description: (
       <>
-        Become a full node participating in the Iron Fish network with just a browser. Easy setup for a light client on mobile too!
+        Become a full node participating in the Iron Fish network with just a browser. Easy setup for a light client on mobile&#8239;too!
         <br />
         <br />
         Start solo mining in minutes with a loss-less blazing-fast syncing technique via a desktop app. Connect to any mining pool with just a config setting.

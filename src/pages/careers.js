@@ -54,11 +54,11 @@ const features = [
     title: 'Our Benefits',
     description: (
       <>
-        <ul>
-          <li>We cover 100% of insurance premiums and offer generous parental and family leave.</li>
-          <li>We cover your laptop and the equipment you need to perform your work at your best!</li>
-          <li>We want you to take the time you need to relax and recharge.</li>
-        </ul>
+        <p>We cover 100% of insurance premiums and offer generous parental and family leave.</p>
+        <span class="split" />
+        <p>We cover your laptop and the equipment you need to perform your work at your best!</p>
+        <span class="split" />
+        <p>We want you to take the time you need to relax and recharge.</p>
       </>
     ),
   },

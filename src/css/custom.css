@@ -44,6 +44,7 @@
   --ifm-spacing-horizontal: 0px;
   --ifm-table-stripe-background: #1e016f0a;
   --ifm-list-left-padding: 1rem;
+  --ifm-list-border-color: #FFE7BA;
 
   --ifm-color-primary: #1D0070;
   --ifm-color-primary-dark: #1D0070;
@@ -99,7 +100,8 @@
   --ifm-button-color: var(--ifm-color-primary);
 }
 .button--outline:hover {
-  --ifm-button-background-color: var(--ifm-button-background-active-color);
+  --ifm-button-background-color: var(--ifm-color-primary);
+  --ifm-button-color:  #fbebcf;
 }
 .menu--responsive .menu__button {
   color: #FFF;
@@ -127,7 +129,7 @@ p, li {
   font-size: 1rem;
 }
 ul, ol {
-  border-left: 3px solid #FFE7BA;
+  border-left: 3px solid var(--ifm-list-border-color);
   list-style: none;
   padding-bottom: 5px;
 }
@@ -152,12 +154,16 @@ ul ul, ol ol {
 }
 .navbar__logo {
   max-width: 190px;
+  margin-left: 1px;
 }
 .navbar__title {
   display: none;
 }
 .navbar__link {
   font-size: 1.2rem;
+}
+.navbar__link:last-of-type {
+  padding-right: 0;
 }
 
 .docusaurus-highlight-code-line {
@@ -179,6 +185,10 @@ ul ul, ol ol {
 /* MDX pages */
 .container.margin-vert--lg.padding-vert--lg {
   margin-top: 0px!important;
+}
+
+.maxWidthContainer {
+  max-width: 760px;
 }
 
 /* documentation */
@@ -215,21 +225,36 @@ ul ul, ol ol {
   border-radius: var(--ifm-button-border-radius);
   background: #00000014;
   margin-top: 10px;
+  margin-left: 0.3rem;
   --ifm-color-primary: var(--ifm-color-primary-dark);
 }
 .table-of-contents ul {
   border-left: none;
   padding-bottom: 0;
 }
+.split {
+  border-bottom: 2px solid var(--ifm-list-border-color);
+  width: 500px;
+  display: block;
+  margin-bottom: 15px;
+}
+.info {
+  background: var(--ifm-button-background-color);
+  padding: 15px 15px 1px 15px;
+  border-radius: var(--ifm-global-radius);
+}
 
-@media screen and (max-width: 1160px) {
+@media screen and (max-width: 1190px) {
   :root {
     --ifm-container-width: 990px;
   }
 }
 
-@media screen and (max-width: 966px) {
+@media screen and (max-width: 999px) {
   :root {
     --ifm-spacing-horizontal: 0.7rem;
+  }
+  .navbar__inner::after {
+    height: 33px;
   }
 }

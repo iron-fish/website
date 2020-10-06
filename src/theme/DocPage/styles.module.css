@@ -40,7 +40,9 @@
   max-width: var(--ifm-container-width);
 }
 .docMainContainer > div {
-  padding-left: 0.25rem;
+  padding-left: 0.4rem;
+  padding-right: 0px;
+  max-width: var(--ifm-container-width);
 }
 .docMainContainer p, .docMainContainer li {
   font-size: 1.3rem;
