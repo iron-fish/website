@@ -9,65 +9,56 @@ import styles from './index.module.css';
 
 const features = [
   {
-    title: 'Fully private payments.',
+    title: 'We take no shortcuts on privacy',
     description: (
       <>
-        Strongest privacy guarantees on every transaction. You have full control over who sees your account details.
+        We believe privacy is a right—offering fully-private payments, with every transaction. You will have complete control over who sees your account details. Your data is decentralized and end-to-end encrypted, ensuring that you’re safe from third parties and hackers.
       </>
     ),
-    button: 'Learn more about our privacy approach',
+    buttonLink: 'docs/whitepaper/3_transactions',
+    button: 'How we guarantee privacy with zero-knowledge proofs',
   },
   {
     title: (
       <>
-        Truly Accessible.
-        <br />
-        Completely Decentralized.
+        Cryptocurrency you can actually use
       </>
     ),
     description: (
       <>
-        Become a full node participating in the Iron Fish network with just a browser. Easy setup for a light client on mobile&#8239;too!
-        <br />
-        <br />
-        Start solo mining in minutes with a loss-less blazing-fast syncing technique via a desktop app. Connect to any mining pool with just a config setting.
+        No experience (or professional equipment) necessary—just launch our app or open a browser. In minutes you can open a new wallet, become a full node, and start mining.
       </>
     ),
+    buttonLink: 'docs/whitepaper/1_introduction',
     button: 'Learn more',
   },
   {
     title: (
       <>
-        Browser first.
-        <br />
-        Compatible with every OS.
+        Borderless, private banking for everyone
       </>
     ),
     description: (
       <>
-        Full node, miner, and wallet can be started from a browser or in terminal. No installation required.
+        IRF is censorship-resistant and available to everyone—regardless of location, identity or citizenship. Anyone can create a wallet and be their own global, digital bank.
       </>
     ),
-    button: 'Learn more',
   },
   {
     title: (
       <>
-        Backed by prominent investors.
-        <br />
-        Built by a top talent team.
+        Backed by prominent investors. Built by experts
       </>
     ),
     description: (
       <>
-        We are extremely proud and honored to be working with some of the most incredible investors and angels.
-        Our current team members were all previously engineers at companies such as Airbnb, Facebook, Microsoft, and Uber.
+        We are honored to be working with incredible investors and angels. Our team members are tech veterans, with resumes spanning Airbnb, Facebook, Uber, and more.
       </>
     ),
   },
 ];
 
-function Feature({ button, title, description }) {
+function Feature({ button, buttonLink, title, description }) {
   return (
     <section className={styles.section}>
       <h2>{title}</h2>
@@ -77,7 +68,7 @@ function Feature({ button, title, description }) {
           className={clsx(
             'button button--outline'
           )}
-          to={useBaseUrl('docs/whitepaper/1_introduction')}>
+          to={useBaseUrl(buttonLink)}>
           {`${button} →`}
         </Link>
 
@@ -95,7 +86,7 @@ function Home() {
       description={`${siteConfig.description}`}>
       <div className="container">
         <header className={clsx(styles.section, styles.sectionHomePage)}>
-          <h1 className={clsx('hero__title', styles.heroTitle, styles.h1Title)}>Iron Fish is a new cryptocurrency that takes no shortcuts on privacy.</h1>
+          <h1 className={clsx('hero__title', styles.heroTitle, styles.h1Title)}>Iron Fish is a novel cryptocurrency<br />focused on privacy and accessibility</h1>
           <Link
             className='button button--outline'
             to={useBaseUrl('docs/whitepaper/1_introduction')}>
