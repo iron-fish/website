@@ -71,6 +71,9 @@ header.sectionHomePage {
     background-position: center;
   }
   .heroTitle {
-    font-size: 2rem;
+    font-size: 1.8rem;
+  }
+  .section h2 {
+    font-size: 1.6rem;
   }
 }

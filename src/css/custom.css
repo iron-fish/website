@@ -94,6 +94,7 @@
 /* Buttons */
 .button--outline {
   border: none;
+  white-space: break-spaces;
   font-weight: 500;
   text-transform: capitalize;
   --ifm-button-background-color: #fbebcf;
