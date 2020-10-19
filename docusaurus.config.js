@@ -12,7 +12,7 @@ module.exports = {
   organizationName: 'iron-fish', // Usually your GitHub org/user name.
   projectName: 'landing_page', // Usually your repo name.
   themeConfig: {
-    googleAnalytics: {
+    gtag: {
       trackingID: 'G-GJD73W9V3M',
       anonymizeIP: true,
     },
