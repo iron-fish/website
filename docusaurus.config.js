@@ -12,6 +12,10 @@ module.exports = {
   organizationName: 'iron-fish', // Usually your GitHub org/user name.
   projectName: 'landing_page', // Usually your repo name.
   themeConfig: {
+    googleAnalytics: {
+      trackingID: 'G-GJD73W9V3M',
+      anonymizeIP: true,
+    },
     image: 'img/ogimage.png',
     colorMode: {
       disableSwitch: true,
@@ -78,6 +82,7 @@ module.exports = {
       },
     ],
   ],
+  plugins: ['@docusaurus/plugin-google-analytics'],
   stylesheets: [
     'https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css',
     'https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap',
