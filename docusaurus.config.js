@@ -59,6 +59,7 @@ module.exports = {
 
   presets: [
     [
+      '@docusaurus/preset-classic',
       {
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
@@ -81,7 +82,6 @@ module.exports = {
       },
     ],
   ],
-  plugins: ['@docusaurus/plugin-google-analytics'],
   stylesheets: [
     'https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css',
     'https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap',
