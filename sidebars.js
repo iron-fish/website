@@ -1,5 +1,5 @@
 module.exports = {
-  someSidebar: [
+  whitepaper: [
     'whitepaper/1_introduction',
     'whitepaper/2_data_structure_models',
     'whitepaper/3_transactions',
@@ -12,5 +12,13 @@ module.exports = {
     'whitepaper/10_light_client_capabilities',
     'whitepaper/11_performance_goals',
     'whitepaper/12_appendix',
+  ],
+  university: [
+    {
+      'Merkle Trees': [
+        'university/merkle_trees/introduction',
+        'university/merkle_trees/what_is_merkle_tree',
+      ]
+    }
   ]
 };

@@ -203,6 +203,10 @@ ul ul, ol ol {
   margin-top: 35px;
   border: none;
 }
+.menu__list .menu__list {
+  margin-top: 0;
+  background: none;
+}
 .navbar-sidebar__items .menu__list {
   margin-top: 0px;
 }

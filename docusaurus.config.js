@@ -43,6 +43,12 @@ module.exports = {
           position: 'right',
         },
         {
+          to: 'docs/university/merkle_trees/introduction',
+          activeBasePath: 'docs',
+          label: 'IRF University',
+          position: 'right',
+        },
+        {
           to: 'docs/whitepaper/1_introduction',
           activeBasePath: 'docs',
           label: 'Whitepaper',
