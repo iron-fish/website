@@ -239,10 +239,27 @@ ul ul, ol ol {
   display: block;
   margin-bottom: 15px;
 }
+
 .info {
   background: var(--ifm-button-background-color);
   padding: 15px 15px 1px 15px;
   border-radius: var(--ifm-global-radius);
+}
+
+div.item {
+  vertical-align: top;
+  display: inline-block;
+  text-align: center;
+  width: 110px;
+  margin-right: 40px;
+}
+
+.caption {
+  display: block;
+}
+
+.company-logo { 
+  margin: 10px
 }
 
 @media screen and (max-width: 1190px) {
