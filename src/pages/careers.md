@@ -108,7 +108,6 @@ sidebar_label: FAQ
   
 ### Engineering 
   * <a href="/jd-backend">Backend Engineer</a>
-  * <a href="/jd-senior-backend">Senior / Staff Backend Engineer</a>
-  * <a href="/jd-mobile">Senior / Staff Mobile Engineer</a>
+  * <a href="/jd-mobile">Mobile Engineer</a>
 
 </div>
