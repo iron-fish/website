@@ -60,7 +60,7 @@ const features = [
 
 function Feature({ button, buttonLink, title, description }) {
   return (
-    <section className={styles.section}>
+    <section className="section">
       <h2>{title}</h2>
       <p>{description}</p>
       {button && (
