@@ -16,9 +16,9 @@ sidebar_label: FAQ
   Our combination of privacy and accessibility means that anyone, anywhere, can have access to private, decentralized money. 
 
   ## Why focus on privacy?
-  Right now, digital payments are fundamentally lacking in privacy—they are surveilled, analyzed, collected, and sold. With every online purchase, your metadata for that transaction is stored (from what IP you used, to your physical location, to your purchase history, and more). 
+  Right now, digital payments are fundamentally lacking in privacy — they are surveilled, analyzed, collected, and sold. With every online purchase, your metadata for that transaction is stored (from what IP you used, to your physical location, to your purchase history, and more). 
 
-  Privacy leads to innovation, social evolution. Much like https paved the way for entire industries through online ecommerce, we believe private transactions over a blockchain will enable frictionless global payments and new industries of borderless products and companies. Historically, this type of financial privacy has only been available to the rich, via offshore accounts. With Iron Fish, anyone can have [       ] Swiss bank account on their phone.
+  Privacy leads to innovation, social evolution. Much like https paved the way for entire industries through online ecommerce, we believe private transactions over a blockchain will enable frictionless global payments and new industries of borderless products and companies. Historically, this type of financial privacy has only been available to the rich, via offshore accounts. With Iron Fish, anyone can have an even better alternative to a Swiss bank account on their phone.
   
   ## How are you achieving privacy?
   We are working with cutting edge cryptography using zero-knowledge. Zero-knowledge proofs (ZKPs) are a breakthrough tool in cryptography that prove honest computation. By using ZKPs we can build private transactions that fully hide the sender, the recipient and the amount, while providing a proof that the transaction is valid. Every transaction on Iron Fish is private—no one sees the details of an account unless the owner grants read-only permissions via view keys. 
@@ -38,9 +38,4 @@ sidebar_label: FAQ
   
   Yes! We’re working with some of the most exciting tools in cryptography and decentralized systems to create a frictionless, internet-native global currency system. Interested? Check out our <a href="/careers">Careers page</a>.
   
-  
 </div>
-
-
-  
-

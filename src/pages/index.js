@@ -85,14 +85,16 @@ function Home() {
       title={''}
       description={`${siteConfig.description}`}>
       <div className="container">
-        <header className={clsx(styles.section, styles.sectionHomePage)}>
-          <h1 className={clsx('hero__title', styles.heroTitle, styles.h1Title)}>Iron Fish is a novel cryptocurrency<br />focused on privacy and accessibility</h1>
-          <Link
-            className='button button--outline'
-            to={useBaseUrl('docs/whitepaper/1_introduction')}>
+        <section className="section">
+          <header className={clsx('section', styles.sectionHomePage)}>
+            <h1 className={clsx('hero__title', styles.heroTitle, styles.h1Title)}>Iron Fish is a novel cryptocurrency<br />focused on privacy and accessibility</h1>
+            <Link
+              className='button button--outline'
+              to={useBaseUrl('docs/whitepaper/1_introduction')}>
               Get Started →
-          </Link>
-        </header>
+            </Link>
+          </header>
+        </section>
         <main>
           {features && features.length > 0 && (
             <>

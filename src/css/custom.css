@@ -253,13 +253,24 @@ div.item {
   width: 110px;
   margin-right: 40px;
 }
-
-.caption {
-  display: block;
-}
-
 .company-logo { 
   margin: 10px
+}
+
+.section {
+  padding: 35px 0 30px 0;
+  background: transparent url(/img/wave-gray.svg) center top;
+  background-repeat: repeat-x;
+  background-size: 26px auto;
+}
+header.section {
+  background: none;
+}
+.section h2 {
+  font-size: 2rem;
+}
+.section p {
+  max-width: 510px;
 }
 
 @media screen and (max-width: 1190px) {
