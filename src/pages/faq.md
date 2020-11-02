@@ -3,7 +3,7 @@ id: faq
 title: FAQ
 sidebar_label: FAQ
 ---
-<div class="maxWidthContainer">
+<div className="maxWidthContainer">
 
   # FAQ
   

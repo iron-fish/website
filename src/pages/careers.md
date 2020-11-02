@@ -6,7 +6,7 @@ sidebar_label: FAQ
 
 import Team from './components/Team';
 
-<div class="maxWidthContainer">
+<div className="maxWidthContainer">
 
 # We use cryptography for good. 
 
