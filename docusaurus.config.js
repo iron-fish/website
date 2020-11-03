@@ -37,6 +37,12 @@ module.exports = {
           position: 'right',
         },
         {
+          to: 'about/',
+          activeBasePath: 'docs',
+          label: 'About',
+          position: 'right',
+        },
+        {
           to: 'faq/',
           activeBasePath: 'docs',
           label: 'FAQ',

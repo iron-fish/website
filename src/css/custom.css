@@ -239,10 +239,38 @@ ul ul, ol ol {
   display: block;
   margin-bottom: 15px;
 }
+
 .info {
   background: var(--ifm-button-background-color);
   padding: 15px 15px 1px 15px;
   border-radius: var(--ifm-global-radius);
+}
+
+div.item {
+  vertical-align: top;
+  display: inline-block;
+  text-align: center;
+  width: 110px;
+  margin-right: 40px;
+}
+.company-logo { 
+  margin: 10px
+}
+
+.section {
+  padding: 35px 0 30px 0;
+  background: transparent url(/img/wave-gray.svg) center top;
+  background-repeat: repeat-x;
+  background-size: 26px auto;
+}
+header.section {
+  background: none;
+}
+.section h2 {
+  font-size: 2rem;
+}
+.section p {
+  max-width: 510px;
 }
 
 @media screen and (max-width: 1190px) {
