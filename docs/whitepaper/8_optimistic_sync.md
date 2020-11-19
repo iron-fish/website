@@ -1,6 +1,7 @@
 ---
 id: 8_optimistic_sync
 title: Optimistic Sync
+description: Optimistic Sync | Iron Fish Whitepaper
 ---
 
 ## Background Context

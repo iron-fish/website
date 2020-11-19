@@ -1,6 +1,8 @@
 ---
 id: 4_note_encryption_decryption
 title: Note Encryption and Decryption
+description: Note Encryption and Decryption | Iron Fish Whitepaper
+
 ---
 
 The **note plaintext** is $$np = (d, v, rcm, memo)$$ where `d` is the _diversifier_ of the note owner, `v` is the plaintext value of the note, `rcm` is the randomness used for the note commitment and memo. The note plaintext is encrypted using a symmetric key and becomes $$C^{enc}$$ in the `Output Description`. The sender of the transaction knows the full address of the recipient, ($$d$$, $$pk_d$$), and creates this shared secret by doing:

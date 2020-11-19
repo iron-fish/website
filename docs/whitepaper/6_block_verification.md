@@ -1,6 +1,7 @@
 ---
 id: 6_block_verification
 title: Block Verification
+description: Block Verification | Iron Fish Whitepaper
 ---
 
 Block verification comes in two steps:

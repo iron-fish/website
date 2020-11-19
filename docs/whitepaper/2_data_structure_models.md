@@ -1,6 +1,7 @@
 ---
 id: 2_data_structure_models
 title: Data Structures and Models
+description: Data Structures and Models | Iron Fish Whitepaper
 ---
 
 The only way to modify the global state of the Iron Fish blockchain is to generate a transaction. We’ll start first describing the structure of all the necessary components and later describe how transactions are made and verified.

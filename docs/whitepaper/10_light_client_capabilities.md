@@ -1,6 +1,7 @@
 ---
 id: 10_light_client_capabilities
 title: Light Client Capabilities
+description: Light Client Capabilities | Iron Fish Whitepaper
 ---
 
 So far we’ve discussed features for a full node, but many users will want to interact with this system using a web browser or a phone. For Ethereum one of the more popular examples of a Light Client is [Metamask](https://metamask.io/), which is a web browser extension that does no heavy lifting of its own and relies entirely on a third party service provider to sync and process blocks as well as propagate messages. Infura is one of the largest such providers that powers Metamask and countless phone apps. For privacy coins, implementing a similar system is more difficult because since account details are private a light client cannot simply ask a full node on the details of their own account.

@@ -2,6 +2,7 @@
 id: 1_introduction
 title: Introduction
 sidebar_label: Introduction
+description: Introduction | Iron Fish Whitepaper
 ---
 
 ## Abstract

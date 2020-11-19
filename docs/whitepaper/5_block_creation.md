@@ -1,6 +1,7 @@
 ---
 id: 5_block_creation
 title: Block Creation
+description: Block Creation | Iron Fish Whitepaper
 ---
 
 A block has a list of transactions and a block header. When creating the block header, the two global Merkle trees for notes and nullifiers must be updated to include all the transactions in a block, and their new roots recorded as part of the block header. A miner must also provide an appropriate hash to satisfy the target difficulty with the given nonce.

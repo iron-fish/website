@@ -1,6 +1,7 @@
 ---
 id: 3_transactions
 title: Transactions
+description: Transactions | Iron Fish Whitepaper
 ---
 
 In IronFish, each transaction has 0 or more `Spend Descriptions` and 0 or more `Output Descriptions`. Every transaction uses zk-SNARK (groth16) Sapling proof both on the Spend and Output description. The circuit construction for these proofs is taken from Sapling [primitive](https://github.com/zcash/librustzcash/tree/master/zcash_primitives) gadgets which in turn were constructed using the [bellman](https://github.com/zkcrypto/bellman) circuit building tool.
