@@ -1,20 +1,20 @@
 ---
-id: faq
-title: FAQ
-sidebar_label: FAQ
+id: careers
+title: Careers
+description: We are growing quickly, and Iron Fish is rapidly evolving. Come join us!
 ---
 
 import Team from './components/Team';
 
 <div className="maxWidthContainer">
 
-# We use cryptography for good. 
+# We use cryptography for good.
 
-## Come join us! 
+## Come join us!
 
-  We are craftspeople who are excited to work on uncharted territory in decentralized computing and cutting edge cryptography. While currently headquartered in San Francisco, we are a remote-first company. We welcome talented people from all backgrounds, throughout the United States and Canada. 
-  
-  We are growing quickly, and Iron Fish is rapidly evolving. Our team members and investors are experts in their fields, and each person brings a diverse set of skills and experiences.  
+  We are craftspeople who are excited to work on uncharted territory in decentralized computing and cutting edge cryptography. While currently headquartered in San Francisco, we are a remote-first company. We welcome talented people from all backgrounds, throughout the United States and Canada.
+
+  We are growing quickly, and Iron Fish is rapidly evolving. Our team members and investors are experts in their fields, and each person brings a diverse set of skills and experiences.
 
   <Team />
 
@@ -40,7 +40,7 @@ import Team from './components/Team';
   * The <b>equipment</b> you need to feel comfortable at work — from a powerful machine to the right desk.
   <br />
   <br />
-  * We want team members to have a real stake in our success, and offer <b>significant equity</b>. 
+  * We want team members to have a real stake in our success, and offer <b>significant equity</b>.
   <br />
   <br />
   * <b>Paid Time Off</b> – We want you to take the time off you need to relax and recharge. In addition to federal holidays, we offer accrued time off of up to 15 days per calendar year, we close the office for winter break, and sick time is accrued at up to 8 days per calendar year.
@@ -48,15 +48,15 @@ import Team from './components/Team';
   <br />
   * <b>Lunch</b> if you’re in the San Francisco office!
 
-<section className="section"> 
+<section className="section">
 
 # Open Positions
-  Interested? We'd love to hear from you. We're currently hiring for the following positions. If you don’t see the right role for you but are passionate about our mission, please contact us at joinus@ironfish.network. 
+  Interested? We'd love to hear from you. We're currently hiring for the following positions. If you don’t see the right role for you but are passionate about our mission, please contact us at joinus@ironfish.network.
 
-### Design 
+### Design
   * <a href="/jd-designer">Principal UI/UX Designer</a>
-  
-### Engineering 
+
+### Engineering
   * <a href="/jd-backend">Backend Engineer</a>
   * <a href="/jd-mobile">Mobile Engineer</a>
 

@@ -83,7 +83,7 @@ function Home() {
   return (
     <Layout
       title={''}
-      description={`${siteConfig.description}`}>
+      description={siteConfig.tagline}>
       <div className="container">
         <section className="section">
           <header className={clsx('section', styles.sectionHomePage)}>
