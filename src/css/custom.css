@@ -7,151 +7,185 @@
 
 /* You can override the default Infima variables here. */
 @font-face {
-  font-family: 'Grenette Pro';
-  src: url('/font/GrenettePro-Regular.eot');
-  src: url('/font/GrenettePro-Regular.eot?#iefix') format('embedded-opentype'),
-      url('/font/GrenettePro-Regular.woff2') format('woff2'),
-      url('/font/GrenettePro-Regular.woff') format('woff'),
-      url('/font/GrenettePro-Regular.ttf') format('truetype'),
-      url('/font/GrenettePro-Regular.svg#GrenettePro-Regular') format('svg');
+  font-family: "extended-regular";
+  src: url("/font/extendedregular/favoritextended-regular-webfont.eot");
+  src: url("/font/extendedregular/favoritextended-regular-webfont.eot?#iefix")
+      format("embedded-opentype"),
+    url("/font/extendedregular/favoritextended-regular-webfont.woff2")
+      format("woff2"),
+    url("/font/extendedregular/favoritextended-regular-webfont.woff")
+      format("woff"),
+    url("/font/extendedregular/favoritextended-regular-webfont.ttf")
+      format("truetype"),
+    url("/font/extendedregular/favoritextended-regular-webfont.svg#_.book")
+      format("svg");
   font-weight: normal;
   font-style: normal;
-  font-display: swap;
 }
 @font-face {
-  font-family: 'Nitti Grotesk SL';
-  src: url('/font/NittiGroteskBM-SuperLight.eot');
-  src: url('/font/NittiGroteskBM-SuperLight.eot?#iefix') format('embedded-opentype'),
-      url('/font/NittiGroteskBM-SuperLight.woff2') format('woff2'),
-      url('/font/NittiGroteskBM-SuperLight.woff') format('woff'),
-      url('/font/NittiGroteskBM-SuperLight.ttf') format('truetype'),
-      url('/font/NittiGroteskBM-SuperLight.svg#NittiGroteskBM-SuperLight') format('svg');
+  font-family: "mono-regular";
+  src: url("/font/monoregular/favoritmono-regular-webfont.eot");
+  src: url("/font/monoregular/favoritmono-regular-webfont.eot?#iefix")
+      format("embedded-opentype"),
+    url("/font/monoregular/favoritmono-regular-webfont.woff2") format("woff2"),
+    url("/font/monoregular/favoritmono-regular-webfont.woff") format("woff"),
+    url("/font/monoregular/favoritmono-regular-webfont.ttf") format("truetype"),
+    url("/font/monoregular/favoritmono-regular-webfont.svg#_.book")
+      format("svg");
   font-weight: normal;
   font-style: normal;
-  font-display: swap;
 }
-
+@font-face {
+  font-family: "favorit-regular";
+  src: url("/font/regular/favorit-regular-webfont.eot");
+  src: url("/font/regular/favorit-regular-webfont.eot?#iefix")
+      format("embedded-opentype"),
+    url("/font/regular/favorit-regular-webfont.woff2") format("woff2"),
+    url("/font/regular/favorit-regular-webfont.woff") format("woff"),
+    url("/font/regular/favorit-regular-webfont.ttf") format("truetype"),
+    url("/font/regular/favorit-regular-webfont.svg#_.book") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
 :root {
+  --ifm-container-width: 1111px;
   --ifm-global-radius: 0.2rem;
-  --ifm-background-color: #FFF;
-  --ifm-font-family-base: 'Inter', sans-serif;
+  --ifm-background-color: #fff;
+  --ifm-font-family-base: favorit-regular, "Helvetica", "Inter", sans-serif;
   --ifm-font-size-base: 100%;
   --ifm-font-color-base-inverse: #000;
-  --ifm-heading-color: #100060;
-  --ifm-font-color-base: #100060;
+  --ifm-heading-color: #000;
+  --ifm-font-color-base: #000;
   --ifm-index-color-primary: #252120;
   --ifm-features-separator-color: #dadada;
   --ifm-spacing-horizontal: 0px;
   --ifm-table-stripe-background: #1e016f0a;
   --ifm-list-left-padding: 1rem;
-  --ifm-list-border-color: #FFE7BA;
+  --ifm-list-border-color: #ffe7ba;
 
-  --ifm-color-primary: #1D0070;
-  --ifm-color-primary-dark: #1D0070;
-  --ifm-color-primary-darker: #1D0070;
-  --ifm-color-primary-darkest: #1D0070;
-  --ifm-color-primary-light: #1D0070;
-  --ifm-color-primary-lighter: #1D0070;
-  --ifm-color-primary-lightest: #1D0070;
-  --ifm-color-secondary: #1D0070;
-  --ifm-color-secondary-hover: #1D0070;
+  --ifm-color-primary: #000;
+  --ifm-color-primary-dark: #1d0070;
+  --ifm-color-primary-darker: #1d0070;
+  --ifm-color-primary-darkest: #1d0070;
+  --ifm-color-primary-light: #fff;
+  --ifm-color-primary-lighter: #1d0070;
+  --ifm-color-primary-lightest: #1d0070;
+  --ifm-color-secondary: #1d0070;
+  --ifm-color-secondary-hover: #1d0070;
   --ifm-color-emphasis-300: transparent;
 
-  --ifm-button-border-color: #EBE5E5;
+  --ifm-button-color: #fff;
+  --ifm-button-border-color: #ebe5e5;
   --ifm-button-background-color: #fbebcf;
-  --ifm-button-background-active-color: #EBE5E5;
+  --ifm-button-background-active-color: #ebe5e5;
   --ifm-button-font-weight: normal;
   --ifm-button-padding-horizontal: 0.7rem;
 
-  --ifm-navbar-background-color: #FFF;
-  --ifm-navbar-link-color: #1D0070;
+  --ifm-navbar-background-color: #fff;
+  --ifm-navbar-link-color: #1d0070;
   --ifm-navbar-link-hover-color: #dadada;
   --ifm-navbar-shadow: none;
   --ifm-navbar-height: 90px;
   --ifm-navbar-padding-vertical: 30px;
-  --ifm-navbar-link-hover-color: #1D0070;
+  --ifm-navbar-link-hover-color: #fff;
 
   --ifm-menu-color-background-active: none;
   --ifm-menu-color-background-hover: none;
   --ifm-menu-color: #100060;
-  --ifm-menu-color-active: #1D0070;
-  --ifm-menu-link-padding-vertical:0.2rem;
+  --ifm-menu-color-active: #1d0070;
+  --ifm-menu-link-padding-vertical: 0.2rem;
 
-  --ifm-link-color: #2300CE;
+  --ifm-link-color: #1d0070;
   --ifm-link-decoration: underline;
 
   --ifm-toc-border-color: transparent;
   --ifm-toc-link-color: #100060;
 
   --ifm-footer-padding-vertical: 0.7rem;
-  --ifm-footer-background-color: #FFF;
+  --ifm-footer-background-color: #fff;
   --ifm-footer-link-color: #fff;
 
   --ifm-code-font-size: 1rem;
   --ifm-code-background: #1e016f0a;
 }
 
+/* Inputs */
+input[type="email"] {
+  font-family: "extended-regular", "helvetica", sans-serif;
+  border-radius: 90px;
+  padding: 22px 27px;
+  border: none;
+}
+
 /* Buttons */
 .button--outline {
+  font-family: "extended-regular", "helvetica", sans-serif;
   border: none;
   white-space: break-spaces;
   font-weight: 500;
+  font-size: 20px;
+  padding: 15px 30px 15px 30px;
   text-transform: capitalize;
-  --ifm-button-background-color: #fbebcf;
-  --ifm-button-color: var(--ifm-color-primary);
+  --ifm-button-background-color: #000;
+  --ifm-button-color: #fff;
+  border-radius: 90px;
 }
 .button--outline:hover {
   --ifm-button-background-color: var(--ifm-color-primary);
-  --ifm-button-color:  #fbebcf;
+  --ifm-button-color: #fbebcf;
+}
+.button--secondary {
+  background-color: #ffa8de;
+  color: #1D0070!important;
 }
 .menu--responsive .menu__button {
-  color: #FFF;
+  color: #fff;
   bottom: 25px;
 }
 
-  /* General elements */
+/* General elements */
 h1 {
   color: var(--ifm-color-primary-light);
 }
-h1, h2, h3 {
-  font-family: 'Grenette Pro', sans-serif;
+h1,
+h2,
+h3 {
+  font-family: "extended-regular", "helvetica", sans-serif;
   font-weight: normal;
 }
-td, th {
+td,
+th {
   text-align: left;
 }
-p, li {
-  font-family: 'Nitti Grotesk SL', sans-serif;
-  font-size: 1.4rem;
+p,
+li {
+  font-size: 20px;
   font-weight: lighter;
-  line-height: 1.6rem;
+  line-height: 30px;
 }
 .math {
   font-size: 1rem;
 }
-ul, ol {
+ul,
+ol {
   border-left: 3px solid var(--ifm-list-border-color);
   list-style: none;
   padding-bottom: 5px;
 }
-ul ul, ol ol {
+ul ul,
+ol ol {
   border-left: none;
   padding-bottom: 0px;
 }
 /* Header */
-.navbar__inner {
-  margin: 0 auto;
-  max-width: var(--ifm-container-width);
-  padding-bottom: 70px;
+.navbar {
+  position: absolute;
+  background-color: transparent;
 }
-.navbar__inner::after {
-  background: transparent url(/img/wave.svg) center bottom;
-  background-repeat: repeat-x;
-  max-width: var(--ifm-container-width);
-  background-size: 26px auto;
-  content: ' ';
-  width: 100%;
-  height: 28px;
+.navbar__inner {
+  padding-left: 64px;
+  padding-right: 64px;
+  padding-bottom: 70px;
 }
 .navbar__logo {
   max-width: 190px;
@@ -161,7 +195,9 @@ ul ul, ol ol {
   display: none;
 }
 .navbar__link {
-  font-size: 1.2rem;
+  color: white;
+  font-size: 20px;
+  font-family: "extended-regular", "helvetica", sans-serif;
 }
 .navbar__link:last-of-type {
   padding-right: 0;
@@ -185,7 +221,7 @@ ul ul, ol ol {
 
 /* MDX pages */
 .container.margin-vert--lg.padding-vert--lg {
-  margin-top: 0px!important;
+  margin-top: 0px !important;
 }
 
 .maxWidthContainer {
@@ -194,10 +230,11 @@ ul ul, ol ol {
 
 /* documentation */
 .menu {
-  padding: 0!important;
+  padding: 0 !important;
 }
 .menu__list {
-  padding: var(--ifm-menu-link-padding-vertical) 0 var(--ifm-menu-link-padding-vertical) 0;
+  padding: var(--ifm-menu-link-padding-vertical) 0
+    var(--ifm-menu-link-padding-vertical) 0;
   border-radius: var(--ifm-button-border-radius);
   background: #1e016f0a;
   margin-top: 35px;
@@ -222,7 +259,8 @@ ul ul, ol ol {
 }
 .table-of-contents {
   border-left: none;
-  padding: var(--ifm-menu-link-padding-vertical) 0 var(--ifm-menu-link-padding-vertical) 0;
+  padding: var(--ifm-menu-link-padding-vertical) 0
+    var(--ifm-menu-link-padding-vertical) 0;
   border-radius: var(--ifm-button-border-radius);
   background: #00000014;
   margin-top: 10px;
@@ -253,29 +291,23 @@ div.item {
   width: 110px;
   margin-right: 40px;
 }
-.company-logo { 
-  margin: 10px
+.company-logo {
+  margin: 10px;
 }
 
-.section {
-  padding: 35px 0 30px 0;
-  background: transparent url(/img/wave-gray.svg) center top;
-  background-repeat: repeat-x;
-  background-size: 26px auto;
-}
-header.section {
-  background: none;
-}
-.section h2 {
-  font-size: 2rem;
-}
-.section p {
-  max-width: 510px;
-}
-
-@media screen and (max-width: 1190px) {
+@media screen and (max-width: 1205px) {
   :root {
-    --ifm-container-width: 990px;
+    --ifm-container-width: 1036.41px;
+  }
+}
+@media screen and (max-width: 1045px) {
+  :root {
+    --ifm-container-width: 525px;
+  }
+}
+@media screen and (max-width: 700px) {
+  :root {
+    --ifm-container-width: 330px;
   }
 }
 
@@ -283,7 +315,17 @@ header.section {
   :root {
     --ifm-spacing-horizontal: 0.7rem;
   }
-  .navbar__inner::after {
-    height: 33px;
+}
+@media screen and (max-width: 700px) {
+  .navbar__inner {
+    padding-left: 0px;
+  }
+  .navbar__toggle {
+    position: absolute;
+    right: 0;
+    color: white;
+  }
+  .button--outline {
+    padding: 12px 30px 12px 30px;
   }
 }
