@@ -94,6 +94,9 @@ module.exports = {
       },
     ],
   ],
+  scripts: [
+    'https://chimpstatic.com/mcjs-connected/js/users/faf0318a641ddbad058a4ad2f/c5c42882a25d689b6106b5656.js',
+  ],
   stylesheets: [
     'https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css',
     'https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap',
