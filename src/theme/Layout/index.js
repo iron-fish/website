@@ -25,7 +25,6 @@ function Providers({children}) {
 
 function Layout(props) {
   const {siteConfig} = useDocusaurusContext();
-  console.log(props)
   const {
     favicon,
     title: siteTitle,

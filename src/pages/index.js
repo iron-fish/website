@@ -108,13 +108,9 @@ function Home() {
         </div>
       </section>
       <main>
-        {features && features.length > 0 && (
-          <>
-            {features.map((props) => (
-              <Feature key={props.className} {...props} />
-            ))}
-          </>
-        )}
+        {features &&
+          features.length > 0 &&
+          features.map((props) => <Feature key={props.className} {...props} />)}
         <section className={clsx(styles.section, styles.sectionNewsletter)}>
           <div className="container">
             <p className={clsx(styles.newsletterTitle)}>

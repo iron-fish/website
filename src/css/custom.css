@@ -148,6 +148,7 @@ h1 {
   color: var(--ifm-color-primary-light);
 }
 h1,
+.main--title,
 h2,
 h3 {
   font-family: "extended-regular", "helvetica", sans-serif;
@@ -179,7 +180,6 @@ ol ol {
 }
 /* Header */
 .navbar {
-  position: absolute;
   background-color: transparent;
 }
 .navbar__inner {
@@ -195,28 +195,24 @@ ol ol {
   display: none;
 }
 .navbar__link {
-  color: white;
+  color: #1D0070;
   font-size: 20px;
   font-family: "extended-regular", "helvetica", sans-serif;
 }
 .navbar__link:last-of-type {
   padding-right: 0;
 }
-
+.navbar--home {
+  position: absolute;
+}
+.navbar--home .navbar__link {
+  color: white;
+}
 .docusaurus-highlight-code-line {
   background-color: rgb(72, 77, 91);
   display: block;
   margin: 0 calc(-1 * var(--ifm-pre-padding));
   padding: 0 var(--ifm-pre-padding);
-}
-
-/* footer */
-.footer .container .text--center {
-  background: transparent url(/img/wave.svg) center top;
-  background-repeat: repeat-x;
-  background-size: 26px auto;
-  padding-top: 20px;
-  text-align: left;
 }
 
 /* MDX pages */
@@ -320,10 +316,13 @@ div.item {
   .navbar__inner {
     padding-left: 0px;
   }
+  .navbar--home .navbar__toggle {
+    color: white;
+  }
   .navbar__toggle {
     position: absolute;
     right: 0;
-    color: white;
+    color: var(--ifm-navbar-link-color);
   }
   .button--outline {
     padding: 12px 30px 12px 30px;

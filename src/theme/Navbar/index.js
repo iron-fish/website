@@ -7,6 +7,7 @@
 import React, { useCallback, useState, useEffect } from "react";
 import clsx from "clsx";
 import Link from "@docusaurus/Link";
+import { useLocation } from "@docusaurus/router";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import SearchBar from "@theme/SearchBar";
 import Toggle from "@theme/Toggle";
@@ -53,7 +54,7 @@ function Navbar() {
   const [isSearchBarExpanded, setIsSearchBarExpanded] = useState(false);
   const { isDarkTheme, setLightTheme, setDarkTheme } = useThemeContext();
   const { navbarRef, isNavbarVisible } = useHideableNavbar(hideOnScroll);
-  const { logoLink, logoLinkProps, logoImageUrl, logoAlt } = useLogo();
+  let { logoLink, logoLinkProps, logoImageUrl, logoAlt } = useLogo();
   useLockBodyScroll(sidebarShown);
   const showSidebar = useCallback(() => {
     setSidebarShown(true);
@@ -72,10 +73,16 @@ function Navbar() {
     }
   }, [windowSize]);
   const { leftItems, rightItems } = splitNavItemsByPosition(items);
+  const location = useLocation();
+  const isHomepage = location.pathname === "/";
+  logoImageUrl = isHomepage
+    ? logoImageUrl.replace(".svg", "-white.svg")
+    : logoImageUrl;
   return (
     <nav
       ref={navbarRef}
       className={clsx("navbar", {
+        "navbar--home": location.pathname === "/",
         "navbar--dark": style === "dark",
         "navbar--primary": style === "primary",
         "navbar-sidebar--show": sidebarShown,

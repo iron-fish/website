@@ -39,7 +39,7 @@ function Footer() {
         <div className={classes.container}>
           <div className={classes.about}>
             <a href="https://www.ironfish.network">
-              <img src="/img/logo-blue.svg" role="decorative" />
+              <img src="/img/logo.svg" role="decorative" />
             </a>
             <p>
               Iron Fish is a novel cryptocurrency focused on privacy and
