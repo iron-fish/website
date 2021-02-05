@@ -73,6 +73,7 @@
   background-image: url(/img/index/experts.svg);
 }
 .sectionBorderless {
+  max-height: 894px;
   background: #ffe5f5 url(/img/index/globe.svg) no-repeat top right;
 }
 .sectionBorderlessImg {

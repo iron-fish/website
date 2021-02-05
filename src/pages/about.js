@@ -13,7 +13,7 @@ function AboutUs() {
           <div className={clsx(styles.container)}>
             <p className={clsx(styles.mainTitle, "main--title")}>About Us</p>
             <img
-              src="/img/about/about.svg"
+              src="/img/about/about.png"
               role="decorative"
               className={clsx(styles.mainImage)}
             />
