@@ -24,11 +24,11 @@
   width: 100%;
   margin: 0 auto;
   padding-top: 96px;
-  padding-bottom: 128px;
+  padding-bottom: var(--ifm-large-container-vertical-padding);
 }
 .container {
-  padding-left: 84px;
-  padding-right: 84px;
+  padding-left: var(--ifm-large-container-horizontal-padding);
+  padding-right: var(--ifm-large-container-horizontal-padding);
 }
 .header {
   position: relative;

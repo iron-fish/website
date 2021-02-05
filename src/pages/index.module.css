@@ -125,8 +125,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-top: 128px;
-    padding-bottom: 128px;
+    padding-top: var(--ifm-large-container-vertical-padding);
+    padding-bottom: var(--ifm-large-container-vertical-padding);
     justify-content: center;
     height: auto;
     min-height: auto;

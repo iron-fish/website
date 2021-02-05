@@ -1,7 +1,7 @@
 .section {
   position: relative;
   border-top: 1px solid #e1e1e1;
-  padding-top: 128px;
+  padding-top: var(--ifm-large-container-vertical-padding);
   padding-bottom: 56px;
 }
 .container {
@@ -82,8 +82,8 @@
   .about {
     flex-direction: column;
     max-width: 800px;
-    padding-left: 84px;
-    padding-right: 84px;
+    padding-left: var(--ifm-large-container-horizontal-padding);
+    padding-right: var(--ifm-large-container-horizontal-padding);
     margin-left: 0;
     margin-bottom: 41px;
   }
@@ -92,8 +92,8 @@
   }
   .positions {
     width: 100%;
-    padding-left: 84px;
-    padding-right: 84px;
+    padding-left: var(--ifm-large-container-horizontal-padding);
+    padding-right: var(--ifm-large-container-horizontal-padding);
   }
 }
 @media screen and (max-width: 740px) {

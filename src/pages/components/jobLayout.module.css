@@ -15,8 +15,8 @@
   max-width: 1117px;
   text-align: left;
   margin: 0 auto;
-  margin-top: 128px;
-  padding-bottom: 108px;
+  margin-top: var(--ifm-large-container-vertical-padding);
+  padding-bottom: calc(var(--ifm-large-container-vertical-padding) - 20px);
   padding-left: 35px;
   padding-right: 35px;
 }

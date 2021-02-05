@@ -1,15 +1,9 @@
-.careers {
-  position: relative;
-}
-.h1 {
-  color: black;
-}
 .careersMainSection {
   display: flex;
   flex-direction: row;
   width: 100%;
-  padding-left: 84px;
-  padding-right: 84px;
+  padding-left: var(--ifm-large-container-horizontal-padding);
+  padding-right: var(--ifm-large-container-horizontal-padding);
   max-width: 1574px;
   margin: 0 auto;
   justify-content: space-between;
@@ -46,15 +40,15 @@
 .blueSection {
   background: #1d0070;
   color: white;
-  padding-top: 128px;
+  padding-top: --ifm-large-container-vertical-padding;
   padding-bottom: 60px;
   margin-top: 173px;
   font-family: var(--ifm-font-header-button);
 }
 .blueSection > div {
   width: calc(100% - 168px);
-  padding-left: 84px;
-  padding-right: 84px;
+  padding-left: var(--ifm-large-container-horizontal-padding);
+  padding-right: var(--ifm-large-container-horizontal-padding);
   max-width: 1574px;
   margin: 0 auto;
   display: flex;
@@ -123,7 +117,7 @@
   }
   .fish1 {
     position: absolute;
-    right: 84px;
+    right: var(--ifm-large-container-horizontal-padding);
     top: 0px;
   }
   .fish3 {
