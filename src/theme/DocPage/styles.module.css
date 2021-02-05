@@ -33,7 +33,9 @@
 
 /* Start modification */
 .docSidebarContainer {
-  width: 268px;
+  width: 294px;
+  margin-right: var(--ifm-docs-column-margin-right);
+  padding-bottom: 30px;
 }
 .docPage {
   margin: 0 auto;

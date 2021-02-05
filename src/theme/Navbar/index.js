@@ -74,15 +74,22 @@ function Navbar() {
   }, [windowSize]);
   const { leftItems, rightItems } = splitNavItemsByPosition(items);
   const location = useLocation();
-  const isHomepage = location.pathname === "/";
-  logoImageUrl = isHomepage
+  const isBlueHeader = [
+    "/",
+    "/about/",
+    "/jd-backend",
+    "/jd-cryptographer",
+    "/jd-mobile",
+  ].includes(location.pathname);
+  logoImageUrl = isBlueHeader
     ? logoImageUrl.replace(".svg", "-white.svg")
     : logoImageUrl;
+
   return (
     <nav
       ref={navbarRef}
       className={clsx("navbar", {
-        "navbar--home": location.pathname === "/",
+        "navbar--home": isBlueHeader,
         "navbar--dark": style === "dark",
         "navbar--primary": style === "primary",
         "navbar-sidebar--show": sidebarShown,

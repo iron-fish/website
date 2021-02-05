@@ -1,0 +1,126 @@
+.section {
+  position: relative;
+  border-top: 1px solid #e1e1e1;
+  padding-top: 128px;
+  padding-bottom: 56px;
+}
+.container {
+  width: 100%;
+  max-width: 1406px;
+  margin: 0 auto;
+}
+.background {
+  background: #ffcd85;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  height: 409px;
+}
+.title {
+  font-size: 46px;
+  line-height: 55px;
+  font-family: var(--ifm-font-header-button);
+}
+.description {
+  max-width: 818px;
+  width: 57%;
+}
+.about {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 82px;
+}
+.position p {
+  margin: 0;
+}
+.position {
+  background: white;
+  position: relative;
+  display: flex;
+  box-sizing: border-box;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  max-width: 1114px;
+  height: 93px;
+  border: 1px solid black;
+  justify-content: space-between;
+  padding: 32px;
+  margin-bottom: 40px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.position .title {
+  font-family: var(--ifm-font-header-button);
+  font-size: 24px;
+  color: black;
+  text-decoration: none;
+}
+.position .title a {
+  color: black;
+  text-decoration: none;
+}
+.position .location,
+.position .time {
+  font-family: var(--ifm-font-header-button);
+  font-size: 18px;
+  color: #687086;
+  height: 25px;
+}
+.position .button {
+  height: 18px;
+}
+@media screen and (max-width: 1440px) {
+  .about {
+    max-width: 1114px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+@media screen and (max-width: 1140px) {
+  .about {
+    flex-direction: column;
+    max-width: 800px;
+    padding-left: 84px;
+    padding-right: 84px;
+    margin-left: 0;
+    margin-bottom: 41px;
+  }
+  .description {
+    width: 100%;
+  }
+  .positions {
+    width: 100%;
+    padding-left: 84px;
+    padding-right: 84px;
+  }
+}
+@media screen and (max-width: 740px) {
+  .about {
+    padding-left: 35px;
+    padding-right: 35px;
+    margin-bottom: 41px;
+  }
+  .positions {
+    padding-left: 35px;
+    padding-right: 35px;
+  }
+  .position {
+    flex-wrap: wrap;
+    height: 132px;
+    padding-top: 18px;
+  }
+  .title {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 705px) {
+  .section {
+    padding-top: 40px;
+    padding-bottom: 1px;
+  }
+  .position img {
+    display: none;
+  }
+}

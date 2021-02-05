@@ -6,7 +6,7 @@
   border-top: 1px solid #dfe1e4;
   padding-top: 55px;
   color: "#1D0070";
-  font-family: "extended-regular", "helvetica", sans-serif;
+  font-family: var(--ifm-font-header-button);
 }
 
 .container {
@@ -79,7 +79,7 @@
 .linksBlock a {
   text-decoration: none;
   font-size: 16px;
-  color: var(--ifm-link-color);
+  color: var(--ifm-footer-link-color);
 }
 @media screen and (max-width: 1045px) {
   .container,

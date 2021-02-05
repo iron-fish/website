@@ -1,0 +1,67 @@
+.mainTitle,
+.h2 {
+  font-family: var(--ifm-font-header-button);
+  font-size: 46px;
+  line-height: 55px;
+}
+.mainTitle {
+  color: white;
+  margin-bottom: 0;
+}
+.containerJob {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 1117px;
+  text-align: left;
+  margin: 0 auto;
+  margin-top: 128px;
+  padding-bottom: 108px;
+  padding-left: 35px;
+  padding-right: 35px;
+}
+.header {
+  height: 371px;
+  overflow: hidden;
+  position: relative;
+}
+.header .containerJob {
+  margin-top: 163px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.button {
+  align-self: center;
+}
+.containerJob p {
+  max-width: 819px;
+}
+.layoutTitle {
+  font-family: var(--ifm-font-header-button);
+  font-size: 32px;
+  line-height: 38px;
+  margin-top: 44px;
+}
+.containerJob ul {
+  border-left: none;
+}
+.containerJob ul li {
+  list-style-type: disc;
+}
+@media screen and (max-width: 700px) {
+  .header .containerJob {
+    flex-direction: column;
+  }
+  .header {
+    height: 400px;
+  }
+  .button {
+    margin-top: 30px;
+    width: 100%;
+  }
+  .containerJob {
+    margin-top: 40px;
+    padding-bottom: 40px;
+  }
+}

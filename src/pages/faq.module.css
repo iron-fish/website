@@ -11,16 +11,12 @@
   padding-top: 32px;
   margin-top: 32px;
 }
-.mainTitle {
-  font-size: 80px;
-  line-height: 83px;
-  margin-top: 128px;
-  margin-bottom: 128px;
-  text-align: center;
-}
 .title {
   font-size: 32px;
   line-height: 38px;
+}
+.mainTitle {
+  color: var(--ifm-heading-color);
 }
 .questionImage {
   display: flex;

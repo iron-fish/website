@@ -5,11 +5,11 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: calc(100vh - 90px);
+  height: calc(100vh - 10px);
   min-height: 700px;
 }
 .sectionContainer {
-  max-width: var(--ifm-container-width);
+  max-width: 1111px;
   font-size: 20px;
   line-height: 30px;
   margin: 0 auto;
@@ -45,7 +45,7 @@
 .sectionHomePage {
   text-align: center;
   background: #1d0070 url(/img/index/ironloop.svg) no-repeat center center;
-  background-size: 100% auto;
+  background-size: 90% auto;
 }
 .sectionHomePage .sectionContainer {
   justify-content: center;
@@ -97,7 +97,7 @@
   color: #6B6F76;
 }
 .sectionNewsletter .newsletterTitle {
-  font-family: "extended-regular", "helvetica", sans-serif;
+  font-family: var(--ifm-font-header-button);
   font-size: 46px;
   font-weight: 400;
   line-height: 55px;
@@ -110,6 +110,7 @@
   line-height: 83px;
   margin-bottom: 20px;
   text-align: center;
+  color: var(--ifm-color-primary-contrast);
 }
 @media screen and (max-width: 1045px) {
   .sectionContainer {

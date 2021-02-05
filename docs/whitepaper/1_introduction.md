@@ -5,6 +5,8 @@ sidebar_label: Introduction
 description: Introduction | Iron Fish Whitepaper
 ---
 
+<img src ="/img/whitepaper/index.png" width="100%" role="decorative" style={{paddingTop:'40px', marginBottom:'40px'}} />
+
 ## Abstract
 
 Iron Fish is a decentralized, proof of work (PoW) based, censorship-resistant, and publicly accessible blockchain project. It is designed to support strong privacy guarantees on every transaction. Similarly to how the invention of the SSL/TLS layer in the 90s paved the way to e-commerce and benefited countless industries, we believe that privacy is a fundamental requirement to protect the user and expand the use of cryptocurrency.
@@ -22,11 +24,11 @@ This paper outlines the Iron Fish protocol to enable a fully private cryptocurre
 This paper is organized as follows:
 
 - [Data Structures and Models](2_data_structure_models.md)
-To first familiarize yourself with all the various components of this blockchain to later understand how they interact
+  To first familiarize yourself with all the various components of this blockchain to later understand how they interact
 - [Transactions](3_transactions.md)
-And how they’re created and validated
+  And how they’re created and validated
 - [Note Encryption and Decryption](4_note_encryption_decryption.md)
-On how transactions result in encrypted notes that only the sender’s outgoing view key and recipient’s incoming view key can decrypt
+  On how transactions result in encrypted notes that only the sender’s outgoing view key and recipient’s incoming view key can decrypt
 - [Block Creation](5_block_creation.md)
 - [Block Verification](6_block_verification.md)
 - [Consensus and Verification](7_consensus_verification.md) on how transactions and blocks are accepted and when they’re propagated to the network

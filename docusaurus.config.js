@@ -31,15 +31,19 @@ module.exports = {
       },
       items: [
         {
-          to: 'careers/',
-          activeBasePath: 'docs',
-          label: 'Careers',
+          to: 'https://explorer.ironfish.network',
+          label: 'Explorer',
           position: 'right',
         },
         {
           to: 'about/',
           activeBasePath: 'docs',
           label: 'About',
+          position: 'right',
+        },
+        {
+          to: 'careers/',
+          label: 'Careers',
           position: 'right',
         },
         {

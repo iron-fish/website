@@ -7,6 +7,7 @@
 import React from "react";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import classes from "./styles.module.css";
+import Link from "@docusaurus/Link";
 
 const LinksBlock = ({ title, links, classes }) => {
   return (
@@ -15,7 +16,7 @@ const LinksBlock = ({ title, links, classes }) => {
       <ul>
         {links.map((link) => (
           <li key={link.link}>
-            <a href={link.link}>{link.name}</a>
+            <Link to={link.link}>{link.name}</Link>
           </li>
         ))}
       </ul>
@@ -38,9 +39,9 @@ function Footer() {
       <div className={classes.root}>
         <div className={classes.container}>
           <div className={classes.about}>
-            <a href="https://www.ironfish.network">
+            <Link to="https://www.ironfish.network">
               <img src="/img/logo.svg" role="decorative" />
-            </a>
+            </Link>
             <p>
               Iron Fish is a novel cryptocurrency focused on privacy and
               accessibility
@@ -52,11 +53,11 @@ function Footer() {
             title="Company"
             links={[
               {
-                link: "https://ironfish.network/about/",
+                link: "/about/",
                 name: "About Us",
               },
               {
-                link: "https://ironfish.network/careers/",
+                link: "/careers/",
                 name: "Careers",
               },
               // { link: 'https://ironfish.network/blog/', name: t('app.footer.blog') },
@@ -71,11 +72,11 @@ function Footer() {
                 name: "Block Explorer",
               },
               {
-                link: "https://ironfish.network/docs/whitepaper/1_introduction",
+                link: "/docs/whitepaper/1_introduction",
                 name: "White Paper",
               },
               {
-                link: "https://ironfish.network/faq/",
+                link: "/faq/",
                 name: "FAQ",
               },
             ]}
