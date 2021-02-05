@@ -83,6 +83,7 @@
   --ifm-button-font-weight: normal;
   --ifm-button-padding-horizontal: 0.7rem;
 
+  --ifm-contrast-background-color: #1d0070;
   --ifm-navbar-background-color: #1d0070;
   --ifm-navbar-background-contrast-color: #1d0070;
   --ifm-navbar-link-color: #1d0070;
@@ -120,6 +121,9 @@
   --ifm-main-title-width: 100%;
   --ifm-main-title-font-size: 80px;
   --ifm-main-title-line-height: 83px;
+  --ifm-main-title-align: center;
+  --ifm-main-title-padding: 0px;
+  --ifm-navbar--toggle-right: 35px;
 }
 
 /* Inputs */
@@ -211,10 +215,11 @@ ol ol {
   line-height: var(--ifm-main-title-line-height);
   padding-top: var(--ifm-large-container-vertical-padding);
   margin-bottom: var(--ifm-large-container-vertical-padding);
-  text-align: center;
+  text-align: var(--ifm-main-title-align);
   color: var(--ifm-color-primary);
   max-width: var(--ifm-main-title-width);
   margin-left: auto;
+  padding-left: var(--ifm-main-title-padding);
   margin-right: auto;
   width: 100%;
 }
@@ -222,7 +227,7 @@ ol ol {
 .navbar {
   background-color: transparent;
   position: relative;
-  z-index: 2;
+  z-index: 3;
 }
 .navbar__inner {
   padding-left: 64px;
@@ -255,7 +260,8 @@ ol ol {
   padding: 0 var(--ifm-pre-padding);
 }
 .navbar-sidebar {
-  --ifm-menu-color: var(--ifm-color-primary-contrast)
+  --ifm-menu-color: var(--ifm-color-primary-contrast);
+  --ifm-navbar-link-hover-color: var(--ifm-color-primary-contrast)
 }
 /* MDX pages */
 .container.margin-vert--lg.padding-vert--lg {
@@ -375,7 +381,7 @@ div.item {
 }
 .blue--header--background {
   height: 582px;
-  background-color: #1d0070;
+  background-color: var(--ifm-contrast-background-color);
   position: absolute;
   z-index: 1;
   width: 100%;
@@ -406,6 +412,11 @@ div.item {
     --ifm-container-width: 900px;
     --ifm-container-index-width: 525px;
   }
+  .navbar__toggle {
+    position: absolute;
+    right: var(--ifm-navbar--toggle-right);
+    color: var(--ifm-navbar-link-color);
+  }
 }
 @media screen and (max-width: 999px) {
   :root {
@@ -417,17 +428,16 @@ div.item {
     --ifm-container-width: 5000px;
     --ifm-container-index-width: 330px;
     --ifm-large-container-vertical-padding: 96px;
+    --ifm-large-container-horizontal-padding: 35px;
     --ifm-main-title-width: 100%;
     --ifm-main-title-font-size: 45px;
     --ifm-main-title-line-height: 55px;
+    --ifm-main-title-align: 'left';
+    --ifm-main-title-padding: 35px;
+    --ifm-navbar--toggle-right: 0px;
   }
   .navbar__inner {
     padding-left: 0px;
-  }
-  .navbar__toggle {
-    position: absolute;
-    right: 0;
-    color: var(--ifm-navbar-link-color);
   }
   .button--outline {
     padding: 12px 30px 12px 30px;
@@ -436,6 +446,7 @@ div.item {
 @media screen and (max-width: 400px) {
   :root {
     --ifm-large-container-vertical-padding: 60px;
+    --ifm-main-title-font-size: 36px;
+    --ifm-main-title-line-height: 45px;
   }
 }
-

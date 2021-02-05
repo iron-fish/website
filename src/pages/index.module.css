@@ -1,17 +1,27 @@
 /* stylelint-disable docusaurus/copyright-header */
-
+:root {
+  --ifm-newsletter-flex-direction: row;
+  --ifm-newsletter-flex-height: 364px;
+  --ifm-newsletter-title-vertical-margin: 0;
+}
 .section {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: calc(100vh - 10px);
+  height: 100vh;
   min-height: 700px;
+  padding-top: var(--ifm-large-container-vertical-padding);
+  padding-bottom: var(--ifm-large-container-vertical-padding);
 }
 .sectionContainer {
-  max-width: 1111px;
-  font-size: 20px;
-  line-height: 30px;
+  padding-left: var(--ifm-large-container-horizontal-padding);
+  padding-right: var(--ifm-large-container-horizontal-padding);
+  max-width: calc(
+    var(--ifm-container-index-width) +
+      var(--ifm-large-container-horizontal-padding) +
+      var(--ifm-large-container-horizontal-padding)
+  );
   margin: 0 auto;
   display: flex;
   flex-direction: row;
@@ -57,7 +67,7 @@
   background-image: url(/img/index/fish.svg);
 }
 .sectionCryptocurrency {
-  background-color: #FFCD85;
+  background-color: #ffcd85;
 }
 .sectionCryptocurrencyImg {
   width: 585px;
@@ -81,13 +91,13 @@
   width: 936px;
 }
 .sectionNewsletter {
-  background-color: #1d0070;
-  height: 364px;
+  background-color: var(--ifm-contrast-background-color);
+  height: var(--ifm-newsletter-flex-height);
   min-height: 364px;
 }
 .sectionNewsletter > div {
   display: flex;
-  flex-direction: row;
+  flex-direction: var(--ifm-newsletter-flex-direction);
   justify-content: space-between;
   align-items: center;
 }
@@ -95,7 +105,7 @@
   width: 410px;
   margin-right: 16px;
   font-size: 18px;
-  color: #6B6F76;
+  color: #6b6f76;
 }
 .sectionNewsletter .newsletterTitle {
   font-family: var(--ifm-font-header-button);
@@ -104,18 +114,29 @@
   line-height: 55px;
   color: #fff;
   max-width: 406px;
-  margin: 0;
+  margin: 0 0 var(--ifm-newsletter-title-vertical-margin) 0;
 }
 .h1Title {
-  font-size: 80px;
-  line-height: 83px;
+  font-size: var(--ifm-main-title-font-size);
+  line-height: var(--ifm-main-title-line-height);
   margin-bottom: 20px;
   text-align: center;
   color: var(--ifm-color-primary-contrast);
 }
+@media screen and (max-width: 1200px) {
+  :root {
+    --ifm-newsletter-flex-direction: column;
+    --ifm-newsletter-flex-height: auto;
+    --ifm-newsletter-title-vertical-margin: 40px
+  }
+  .sectionContent {
+    max-width: 349px;
+  }
+}
 @media screen and (max-width: 1045px) {
   .sectionContainer {
     flex-direction: column;
+    align-items: center;
   }
   .sectionHomePage > div {
     max-width: 690px;
@@ -159,6 +180,7 @@
   .sectionBorderless {
     background-position: bottom right;
     background-size: 500px;
+    max-height: inherit;
   }
   .sectionBorderless .sectionBorderlessImg {
     height: 300px;
@@ -175,14 +197,6 @@
 @media screen and (max-width: 700px) {
   .button {
     width: 100%;
-  }
-  .h1Title {
-    font-size: 42px;
-    line-height: 52px;
-  }
-  .section {
-    padding-top: 96px;
-    padding-bottom: 96px;
   }
   .sectionHomePage {
     background: #1d0070 url(/img/index/splash-small-top.svg) no-repeat top

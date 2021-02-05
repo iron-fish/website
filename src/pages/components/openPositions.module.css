@@ -124,3 +124,9 @@
     display: none;
   }
 }
+@media screen and (max-width: 360px) {
+  .position .location,
+  .position .time {
+    display: none;
+  }
+}

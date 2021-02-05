@@ -1,8 +1,12 @@
-.mainTitle,
+:root {
+  --ifm-job-title-font-size: 46px;
+  --ifm-job-title-line-height: 55px;
+}
+.containerJob .mainTitle,
 .h2 {
   font-family: var(--ifm-font-header-button);
-  font-size: 46px;
-  line-height: 55px;
+  font-size: var(--ifm-job-title-font-size);
+  line-height: var(--ifm-job-title-line-height);
 }
 .mainTitle {
   color: white;
@@ -50,6 +54,10 @@
   list-style-type: disc;
 }
 @media screen and (max-width: 700px) {
+  :root {
+    --ifm-job-title-font-size: 42px;
+    --ifm-job-title-line-height: 45px;
+  }
   .header .containerJob {
     flex-direction: column;
   }
@@ -63,5 +71,11 @@
   .containerJob {
     margin-top: 40px;
     padding-bottom: 40px;
+  }
+}
+@media screen and (max-width: 400px) {
+  :root {
+    --ifm-job-title-font-size: 34px;
+    --ifm-job-title-line-height: 45px;
   }
 }

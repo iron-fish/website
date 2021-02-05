@@ -13,7 +13,8 @@
   display: flex;
   justify-content: space-between;
   padding-bottom: 30px;
-  max-width: var(--ifm-container-width);
+  padding-left: var(--ifm-large-container-horizontal-padding);
+  padding-right: var(--ifm-large-container-horizontal-padding);
   margin: 0 auto;
 }
 .about {
@@ -41,7 +42,8 @@
   display: flex;
   width: 100%;
   margin: 0 auto;
-  max-width: var(--ifm-container-width);
+  padding-left: var(--ifm-large-container-horizontal-padding);
+  padding-right: var(--ifm-large-container-horizontal-padding);
   justify-content: space-between;
   border-top: 1px solid #dfe1e4;
 }

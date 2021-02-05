@@ -54,7 +54,7 @@ function Navbar() {
   const [isSearchBarExpanded, setIsSearchBarExpanded] = useState(false);
   const { isDarkTheme, setLightTheme, setDarkTheme } = useThemeContext();
   const { navbarRef, isNavbarVisible } = useHideableNavbar(hideOnScroll);
-  let { logoLink, logoLinkProps, logoImageUrl, logoAlt } = useLogo();
+  const { logoLink, logoLinkProps, logoImageUrl, logoAlt } = useLogo();
   useLockBodyScroll(sidebarShown);
   const showSidebar = useCallback(() => {
     setSidebarShown(true);
@@ -81,8 +81,9 @@ function Navbar() {
     "/jd-cryptographer",
     "/jd-mobile",
   ].includes(location.pathname);
-  logoImageUrl = isBlueHeader
-    ? logoImageUrl.replace(".svg", "-white.svg")
+  const logoImageUrlWhite = logoImageUrl.replace(".svg", "-white.svg")
+  const logoImageUrlPerPage = isBlueHeader
+    ? logoImageUrlWhite
     : logoImageUrl;
 
   return (
@@ -100,11 +101,11 @@ function Navbar() {
       <div className="navbar__inner">
         <div className="navbar__items">
           <Link className="navbar__brand" to={logoLink} {...logoLinkProps}>
-            {logoImageUrl != null && (
+            {logoImageUrlPerPage != null && (
               <img
                 key={isClient}
                 className="navbar__logo"
-                src={logoImageUrl}
+                src={logoImageUrlPerPage}
                 alt={logoAlt}
               />
             )}
@@ -181,11 +182,11 @@ function Navbar() {
             to={logoLink}
             {...logoLinkProps}
           >
-            {logoImageUrl != null && (
+            {logoImageUrlWhite != null && (
               <img
                 key={isClient}
                 className="navbar__logo"
-                src={logoImageUrl}
+                src={logoImageUrlWhite}
                 alt={logoAlt}
               />
             )}
