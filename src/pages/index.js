@@ -14,7 +14,7 @@ const features = [
     title: "We don’t take shortcuts on privacy",
     description:
       "We believe privacy is a right—offering fully-private payments, with every transaction. You will have complete control over who sees your account details. Your data is decentralized and end-to-end encrypted, ensuring that you’re safe from third parties and hackers.",
-    buttonLink: "docs/whitepaper/3_transactions",
+    buttonLink: "docs/whitepaper/6_transaction",
     button: "Learn more",
   },
   {
