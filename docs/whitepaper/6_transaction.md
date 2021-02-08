@@ -4,7 +4,7 @@ title: Transaction Creation
 description: Transaction Creation | Iron Fish Whitepaper
 ---
 
-<img src ="/img/whitepaper/transaction.png" width="100%" role="decorative" style={{paddingTop:'40px', marginBottom:'40px'}} />
+<img src ="/img/whitepaper/transaction.png" width="100%" role="decorative" style={{marginBottom:'25px'}} />
 
 Just like accounts, transactions are heavily influenced by the [Sapling protocol](https://github.com/zcash/zips/blob/master/protocol/sapling.pdf) with some differences. All Iron Fish transactions are shielded transactions, meaning they do not reveal any information to any onlooker who does not have explicit access.
 
@@ -125,7 +125,7 @@ The **merkle path** is the Merkle path from the given root (the **rt**, root anc
 
 The $$g_d$$ is the diversifier (converted into an affine point on the Jubjub curve) of the sender, and $$pk_d$$ being the transmission key of the sender. The proof checks that $$g_d$$ is not of small order and that $$pk_d$$ was properly computed.
 
-Remember that $$pk_d = g_d * ivk$$ (the incoming view key). Even though the incoming view key isn’t passed in here directly, we have everything we need to recompute it  since *ivk* is derived from hashing (using the blake2s hash function) the authorization key (*ak*) and nullifier deriving key (*nk*) along with some params. We don’t have the nullifier deriving key (*nk*) directly here either, but we can derive it using the passed in proof authorization key (*nsk*) since $$nk = G_{proofgenerationkey} * nsk$$.
+Remember that $$pk_d = g_d * ivk$$ (the incoming view key). Even though the incoming view key isn’t passed in here directly, we have everything we need to recompute it  since *ivk* is derived from hashing (using the blake2s hash function) the authorization key (*ak*) and nullifier deriving key (*nk*) along with some params. We don’t have the nullifier deriving key (*nk*) directly here either, but we can derive it using the passed in proof authorization key (*nsk*) since $$nk = G_{proof\_generation\_key} * nsk$$.
 
 Also remember that the value commitment is computed as $$cv = v * G_v + rcv * G_{rcv}$$ and so we pass in the value (**v**) and the randomness for the value (**rcv**) into the proof to validate the construction of the value commitment.
 The note commitment (**cm**) is a Pedersen commitment (resulting in a full point) of the note’s contents (value(v),  $$g_d$$, $$pk_d$$) and the randomness used for the note commitment (**rcm**)
@@ -135,7 +135,7 @@ The alpha (α) along with the authorization key (ak) is used to construct the ra
 
 $$rk = α *  G_{spendingkeygenerator} + ak$$
 
-Finally, we check that the nullifier is computed correctly. The proof first checks that $$nk = nsk * G_{proofgenerationkey}$$ and then checks that the nullifier was indeed computed as:
+Finally, we check that the nullifier is computed correctly. The proof first checks that $$nk = nsk * G_{proof\_generation\_key}$$ and then checks that the nullifier was indeed computed as:
 
 $$nf = blake2s(nk \enspace | \enspace cm + note \_ position * G_{nullifierposition})$$
 
@@ -347,8 +347,7 @@ The Miner Reward transaction looks a lot like a regular [transaction](6_transact
 
 Let’s say that a Miner awards itself five coins for mining a block, then that Miner Reward transaction would look like this:
 
-<code>
-
+```
     allotted_amount: 5 coins
 
     Transaction:
@@ -358,8 +357,7 @@ Let’s say that a Miner awards itself five coins for mining a block, then that 
           allotted_amount * Gv + rcv * Grcv
       Transaction fee: -1 * allotted_amount
       Binding Signature
-
-</code>
+```
 
 Note that this transaction will balance with the negative transaction fee. The miner is able to preserve their privacy by making a transaction with all the privacy guarantees of a regular transaction.
 

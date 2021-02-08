@@ -3,7 +3,7 @@ const remarkMath = require("remark-math");
 const rehypeKatex = require("rehype-katex");
 
 module.exports = {
-  title: 'Iron Fish - Private, anonynous, and easy to use cryptocurrency',
+  title: 'Iron Fish - $IRON - Private, anonynous, and easy to use cryptocurrency',
   tagline: 'Enable the free flow of assets through accessible and private cryptocurrency.',
   url: 'https://ironfish.network',
   baseUrl: '/',
@@ -30,11 +30,11 @@ module.exports = {
         src: 'img/logo.svg',
       },
       items: [
-        {
-          to: 'https://explorer.ironfish.network',
-          label: 'Explorer',
-          position: 'right',
-        },
+        // {
+        //   to: 'https://explorer.ironfish.network',
+        //   label: 'Explorer',
+        //   position: 'right',
+        // },
         {
           to: 'about/',
           activeBasePath: 'docs',

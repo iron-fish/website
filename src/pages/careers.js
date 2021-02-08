@@ -22,7 +22,13 @@ function Employee({ firstName, title, linkedin, id }) {
 function Careers() {
   return (
     <>
-      <Layout className={clsx(styles.careers)}>
+      <Layout
+        title={"We are Hiring!"}
+        description={
+          "Join the team! We are growing quickly, and Iron Fish is rapidly evolving. Come join us on our path to changing the currency world!"
+        }
+        className={clsx(styles.careers)}
+      >
         <header>
           <h1 className={clsx(styles.h1, "main--title")}>
             Using Cryptography
@@ -204,8 +210,3 @@ function Careers() {
 }
 
 export default Careers;
-// ---
-// id: careers
-// title: Careers
-// description: We are growing quickly, and Iron Fish is rapidly evolving. Come join us!
-// ---

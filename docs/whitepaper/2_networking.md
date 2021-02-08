@@ -4,7 +4,7 @@ title: Networking
 description: Networking | Iron Fish Whitepaper
 ---
 
-<img src ="/img/whitepaper/networking.png" width="100%" role="decorative" style={{paddingTop:'40px', marginBottom:'40px'}} />
+<img src ="/img/whitepaper/networking.png" width="100%" role="decorative" style={{marginBottom:'25px'}} />
 
 ## Networking
 When building any decentralized [peer-to-peer](https://en.wikipedia.org/wiki/Peer-to-peer) (P2P) system, it must address [Network Address Translation](https://docs.libp2p.io/concepts/nat/) (NAT). Most of our machines, laptops, tablets, and phones are behind routers and firewalls, making it difficult for peers to establish direct connections. This is where the networking layer comes in.

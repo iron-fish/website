@@ -5,7 +5,7 @@ sidebar_label: Introduction
 description: Introduction | Iron Fish Whitepaper
 ---
 
-<img src ="/img/whitepaper/introduction.png" width="100%" role="decorative" style={{paddingTop:'40px', marginBottom:'40px'}} />
+<img src ="/img/whitepaper/introduction.png" width="100%" role="decorative" />
 
 ## Abstract
 Iron Fish is a decentralized, proof-of-work (PoW) based, censorship-resistant, and publicly accessible blockchain project. It is designed to support strong privacy guarantees on every transaction. Similarly to how the invention of the SSL/TLS layer in the 90s paved the way to e-commerce and benefited countless industries, we believe that privacy is a fundamental requirement to protect the user and expand the use of cryptocurrency.

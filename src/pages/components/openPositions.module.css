@@ -1,3 +1,6 @@
+:root {
+  --ifm-background-height: 409px;
+}
 .section {
   position: relative;
   border-top: 1px solid #e1e1e1;
@@ -14,7 +17,7 @@
   width: 100%;
   position: absolute;
   bottom: 0;
-  height: 409px;
+  height: var(--ifm-background-height);
 }
 .title {
   font-size: 46px;
@@ -49,13 +52,20 @@
   padding: 32px;
   margin-bottom: 40px;
   margin-left: auto;
+  box-sizing: border-box;
+  box-shadow: 0px 7px 15px rgba(0, 0, 0, 0.08);
+  border-radius: 3px;
   margin-right: auto;
+}
+.position:hover {
+  border: 1px solid var(--ifm-link-color);
 }
 .position .title {
   font-family: var(--ifm-font-header-button);
   font-size: 24px;
   color: black;
   text-decoration: none;
+  width: 260px;
 }
 .position .title a {
   color: black;
@@ -122,6 +132,16 @@
   }
   .position img {
     display: none;
+  }
+}
+@media screen and (max-width: 400px) {
+  :root {
+    --ifm-background-height: 450px;
+  }
+}
+@media screen and (max-width: 375px) {
+  :root {
+    --ifm-background-height: 455px;
   }
 }
 @media screen and (max-width: 360px) {

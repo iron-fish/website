@@ -10,9 +10,12 @@
   align-items: center;
   justify-content: center;
   height: 100vh;
-  min-height: 700px;
+  min-height: 770px;
   padding-top: var(--ifm-large-container-vertical-padding);
   padding-bottom: var(--ifm-large-container-vertical-padding);
+}
+.section .button {
+  margin-top: 0px;
 }
 .sectionContainer {
   padding-left: var(--ifm-large-container-horizontal-padding);
@@ -26,7 +29,7 @@
   display: flex;
   flex-direction: row;
   width: 100%;
-  overflow: hidden;
+  overflow: visible;
   justify-content: space-between;
 }
 .sectionTitle {
@@ -72,23 +75,20 @@
 .sectionCryptocurrencyImg {
   width: 585px;
   height: 710px;
-  background-image: url(/img/index/explorer.svg);
+  background-size: 585px auto;
+  background-image: url(/img/index/explorer-3.png);
 }
 .sectionExperts {
   background-color: #fff;
 }
 .sectionExpertsImg {
-  width: 586px;
-  height: 426px;
-  background-image: url(/img/index/experts.svg);
+  width: 646px;
+  height: 492px;
+  background-image: url(/img/index/experts-2.svg);
 }
 .sectionBorderless {
   max-height: 894px;
   background: #ffe5f5 url(/img/index/globe.svg) no-repeat top right;
-}
-.sectionBorderlessImg {
-  height: 894px;
-  width: 936px;
 }
 .sectionNewsletter {
   background-color: var(--ifm-contrast-background-color);
@@ -127,10 +127,14 @@
   :root {
     --ifm-newsletter-flex-direction: column;
     --ifm-newsletter-flex-height: auto;
-    --ifm-newsletter-title-vertical-margin: 40px
+    --ifm-newsletter-title-vertical-margin: 40px;
   }
   .sectionContent {
     max-width: 349px;
+  }
+  .sectionBorderless {
+    background-size: 50%;
+    background-position: center right;
   }
 }
 @media screen and (max-width: 1045px) {
@@ -182,6 +186,9 @@
     background-size: 500px;
     max-height: inherit;
   }
+  .sectionBorderless .sectionContent {
+    padding-bottom: 70px;
+  }
   .sectionBorderless .sectionBorderlessImg {
     height: 300px;
   }
@@ -222,8 +229,8 @@
   .sectionExpertsImg {
     height: 240px;
   }
-  .sectionBorderless .sectionBorderlessImg {
-    height: 400px;
+  .sectionBorderless .sectionImg {
+    height: 380px;
   }
   .sectionDescription {
     font-size: 18px;
@@ -246,5 +253,20 @@
   .sectionNewsletter button {
     width: 100%;
     margin-top: 16px;
+  }
+}
+@media screen and (max-width: 450px) {
+  .sectionBorderless {
+    background: #ffe5f5 url(/img/index/globe-vertical.svg) no-repeat bottom left;
+  }
+  .sectionBorderless .sectionImg {
+    height: 300px;
+  }
+  .sectionNewsletter {
+    padding-top: 90px;
+    padding-bottom: 100px;
+  }
+  .sectionNewsletter .newsletterTitle {
+    margin-bottom: 0px;
   }
 }

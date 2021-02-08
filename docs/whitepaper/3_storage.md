@@ -4,7 +4,7 @@ title: Storage
 description: Storage | Iron Fish Whitepaper
 ---
 
-<img src ="/img/whitepaper/storage.png" width="100%" role="decorative" style={{paddingTop:'40px', marginBottom:'40px'}} />
+<img src ="/img/whitepaper/storage.png" width="100%" role="decorative" style={{marginBottom:'25px'}} />
 
 In this section, we’ll start by reviewing what we store (the data structures and models of Iron Fish), and then move into how we store it (using both LevelDB and IndexDB). We’ll start by looking at the most basic data structures that represent the Iron Fish global state: notes and nullifiers.
 
@@ -20,7 +20,7 @@ The plaintext contents of a note are:
 - $$rcm$$    : note randomness used to generate a Pedersen hash for the note
 - $$memo$$   : a 32-byte memo field
 
-## Nullifier
+### Nullifier
 
 A *nullifier* is a unique identifier to a note, but is unlinkable to its note. A note can only be spent if its nullifier is revealed as part of the transaction. Once the nullifier is revealed it is saved in one of the two Iron Fish global data structures that all nodes keep track of — the Merkle Tree of Notes and the Merkle Tree of Nullifiers (more on these in a moment).
 
@@ -79,7 +79,7 @@ The steps necessary for another node (e.g. device or user) to validate a block a
  6. That the **minersFee** that the Miner rewards themselves for presenting this Block is valid, meaning that it is exactly the agreed upon block reward plus all the transaction fees in the Transactions (more on this in the Mining section).
  7. And finally, that after all the transactions are added to the two global Merkle Trees of Notes and Nullifiers, the appropriate Merkle tree roots are updated and referenced in the BlockHeader correctly as **noteCommitment** for the Merkle root for the Notes tree, and **nullifierCommitment** for the Merkle root for the Nullifier tree.
 
-### How Iron Fish Stores Data
+## How Iron Fish Stores Data
 So far, we’ve been talking about what is necessary for an Iron Fish node to store, but not the how. In this section, we’ll go over exactly how Iron Fish stores these notes, nullifiers, blocks, transactions, and block headers such that the storage layer works both as a Command Line Interface (CLI) tool running as a program on your computer, and also entirely in the browser.
 
 Since we knew that running a full implementation of Iron Fish in the browser was going to be more challenging than running it in the NodeJS terminal environment, we focused on that first. The most robust database choice for applications wanting a database in the browser is [IndexedDB](https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API). Unfortunately, there wasn’t an accompanying IndexedDB implementation for NodeJS, so we chose [LevelDB](https://github.com/google/leveldb) for our NodeJS implementation.
@@ -88,6 +88,6 @@ To prevent having to juggle two separate storage implementations for the two dif
 
 <img src ="/img/whitepaper/storage/storage1.svg" width="50%" role="decorative" />
 
-#### The Storage Layer API
+### The Storage Layer API
 
 In simple terms, the storage layer is an API over its underlying data stores — it  can create stores from schemas and operate on them with all the normal key-value store operations like GET, PUT, DEL, and HAS. For a full overview of the specific implementation of our storage layer, please reference the storage layer README in our Github repository.

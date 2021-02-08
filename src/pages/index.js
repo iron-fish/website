@@ -48,7 +48,7 @@ const features = [
     title: "Borderless, private banking for everyone",
     description: (
       <>
-        IRF is censorship-resistant and available to everyone—regardless of
+        IRON is censorship-resistant and available to everyone—regardless of
         location, identity or citizenship. Anyone can create a wallet and be
         their own global, digital bank.
       </>

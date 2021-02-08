@@ -4,7 +4,7 @@ title: Mining
 description: Mining | Iron Fish Whitepaper
 ---
 
-<img src ="/img/whitepaper/mining.png" width="100%" role="decorative" style={{paddingTop:'40px', marginBottom:'40px'}} />
+<img src ="/img/whitepaper/mining.png" width="100%" role="decorative" style={{marginBottom:'25px'}} />
 
 So far, we’ve gone over the structure of the Iron Fish blockchain; this section will focus on how the Iron Fish blockchain is expanded with new blocks. Note that we use the terms nodes and peers interchangeably; a node in Iron Fish is always a peer. A few other quick definitions:
 
@@ -34,11 +34,11 @@ A block with an invalid transaction will be rejected by other nodes — so befor
 #### Difficulty
 The purpose of the difficulty is simple. It is adjusted, if needed, at every block to make it harder or easier for miners to produce blocks such that new blocks are added to the blockchain every 10 to 20 seconds (with an average of 15 seconds). If the network (e.g. all the nodes in the network) has not produced a block in over 20 seconds, the difficulty for the upcoming block is decreased (in comparison to the previous block’s difficulty) every second until a block is produced (or minimum difficulty is met). Conversely, if a miner wishes to produce a block in under 10 seconds, the difficulty for a block with that timestamp would be greater than that of the previous block.
 
-The Iron FIsh difficulty calculation is largely influenced by Ethereum’s difficulty calculation as described in [EIP-2](https://eips.ethereum.org/EIPS/eip-2), with a few differences. The pseudocode for calculating difficulty is as follows:
+The Iron Fish difficulty calculation is largely influenced by Ethereum’s difficulty calculation as described in [EIP-2](https://eips.ethereum.org/EIPS/eip-2), with a few differences. The pseudocode for calculating difficulty is as follows:
 
-<code>
-
-    const diffInSeconds = (time.getTime() - previousBlockTimestamp.getTime()) / 1000
+```js
+    const diffTime = time.getTime() - previousBlockTime.getTime()
+    const diffInSeconds = diffTime / 1000
     const sign = max(1 - floor(diffInSeconds / 10), -99)
     const offset = previousBlockDifficulty / 2048
 
@@ -46,8 +46,7 @@ The Iron FIsh difficulty calculation is largely influenced by Ethereum’s diffi
       previousBlockDifficulty + offset * sign,
       MIN_DIFFICULTY
     )
-
-</code>
+```
 
 Currently, `MIN_DIFFICULTY`, is `131072`, but this is subject to change.
 
@@ -76,7 +75,7 @@ Given that the genesis block is 42 million coins, and the total supply increase 
 
 To claim the block reward for successfully mining a new block, the miner constructs a special miner fee transaction in the block header. The value of the miner fee transaction is publicly visible so that others can verify that it is exactly the block reward plus all the transaction fees from the transactions included in that block. The recipient’s address for that miner fee transaction remains hidden. Learn more about the miner reward in the Transaction Creation section.
 
-## Construct the Block Header
+### Construct the Block Header
 After determining the block body, the miner can then construct the [block header](3_storage.md#block-header) for it.
 
 A Block Header consists of the following data:

@@ -100,7 +100,10 @@ function Question({ title, id, description, imageLeft, imageRight }) {
 
 function FAQ() {
   return (
-    <Layout>
+    <Layout
+      title="FAQ"
+      description="What is Iron Fish - $IRON - Why is privacy important - Why build a new anonymous coin"
+    >
       <main className={clsx(styles.faqMain)}>
         <p className={clsx(styles.mainTitle, "main--title")}>
           Frequently Asked Questions
@@ -114,10 +117,3 @@ function FAQ() {
 }
 
 export default FAQ;
-
-// ---
-// id: faq
-// title: FAQ
-// sidebar_label: FAQ
-// description: What is Iron Fish - IRF - Why is privacy important - Why build a new anonymous coin
-// ---

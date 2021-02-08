@@ -73,7 +73,7 @@ function Footer() {
               },
               {
                 link: "/docs/whitepaper/1_introduction",
-                name: "White Paper",
+                name: "WhitePaper",
               },
               {
                 link: "/faq/",

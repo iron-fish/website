@@ -14,7 +14,6 @@
   box-sizing: border-box;
   width: 300px;
   position: relative;
-  margin-top: calc(-1 * var(--ifm-navbar-height));
 }
 
 .docMainContainer {
@@ -32,6 +31,9 @@
 }
 
 /* Start modification */
+.docSidebarContainer > div {
+  padding-top: 40px;
+}
 .docSidebarContainer {
   width: 294px;
   margin-right: var(--ifm-docs-column-margin-right);
@@ -46,7 +48,8 @@
   padding-right: 0px;
   max-width: var(--ifm-container-width);
 }
-.docMainContainer p, .docMainContainer li {
+.docMainContainer p,
+.docMainContainer li {
   font-size: 1.3rem;
 }
 /* End modification */

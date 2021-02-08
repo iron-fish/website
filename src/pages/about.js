@@ -7,13 +7,23 @@ import styles from "./about.module.css";
 function AboutUs() {
   return (
     <>
-      <Layout>
+      <Layout
+        title={"About us"}
+        description={
+          "Who is behind Iron Fish - a fully secure, private, and untraceable cryptocurrency. Iron Fish is rapidly evolving. Our team and investors are experts in their fields."
+        }
+      >
         <header className={clsx(styles.header, "blue--header")}>
-          <div className={clsx(styles.headerBackground, "blue--header--background")} />
+          <div
+            className={clsx(
+              styles.headerBackground,
+              "blue--header--background"
+            )}
+          />
           <div className={clsx(styles.container)}>
             <p className={clsx(styles.mainTitle, "main--title")}>About Us</p>
             <img
-              src="/img/about/about.png"
+              src="/img/about/about-3.png"
               role="decorative"
               className={clsx(styles.mainImage)}
             />
@@ -56,9 +66,3 @@ function AboutUs() {
 }
 
 export default AboutUs;
-
-// ---
-// id: about
-// title: About
-// description: About Iron Fish. Iron Fish is rapidly evolving. Our team and investors are experts in their fields.
-// ---
