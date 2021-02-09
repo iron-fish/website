@@ -1,16 +1,14 @@
-.mainTitle {
-  color: white;
+:root {
+  --ifm-image-margin-bottom: 90px;
 }
 .mainImage {
   margin: 0 auto;
-  position: relative;
-  z-index: 2;
 }
 .subTitle {
   font-family: var(--ifm-font-header-button);
-  font-size: 46px;
   line-height: 50px;
   margin-bottom: 30px;
+  font-size: var(--ifm-font-size-subtitle);
 }
 .subTitle2 {
   margin-top: 64px;
@@ -20,29 +18,29 @@
   margin-bottom: 30px;
 }
 .mainSection {
-  max-width: 820px;
+  max-width: 988px;
   width: 100%;
   margin: 0 auto;
-  padding-top: 96px;
   padding-bottom: var(--ifm-large-container-vertical-padding);
-}
-.container {
   padding-left: var(--ifm-large-container-horizontal-padding);
   padding-right: var(--ifm-large-container-horizontal-padding);
+}
+.mainSection .mainImage {
+  margin-bottom: var(--ifm-image-margin-bottom);
+}
+.blueContainer {
+  padding-left: var(--ifm-large-container-horizontal-padding);
+  padding-right: var(--ifm-large-container-horizontal-padding);
+  display: flex;
+  flex-direction: column;
 }
 .header {
   position: relative;
 }
 
 @media screen and (max-width: 900px) {
-  .mainSection {
-    width: 100%;
-    padding-left: 35px;
-    padding-right: 35px;
-  }
-  .headerBackground,
-  .header {
-    height: 650px;
+  :root {
+    --ifm-image-margin-bottom: 70px;
   }
   .header .mainTitle {
     text-align: left;
@@ -50,50 +48,25 @@
     padding-left: 0;
     margin-bottom: 32px;
   }
-  .mainSection {
-    padding-top: 180px;
-  }
 }
 @media screen and (max-width: 800px) {
-  .headerBackground,
-  .header {
-    height: 500px;
-  }
-  .mainSection {
-    padding-top: 220px;
-    padding-bottom: 40px;
+  :root {
+    --ifm-image-margin-bottom: 70px;
   }
 }
 @media screen and (max-width: 700px) {
-  .headerBackground,
-  .header {
-    height: 351px;
-  }
   .header .mainTitle {
     margin-top: 0px;
     padding-top: 140px;
   }
-  .container {
-    padding-left: 35px;
-    padding-right: 35px;
-  }
   .subTitle {
-    font-size: 42px;
     line-height: 50px;
     margin-bottom: 20px;
   }
-  .mainSection {
-    padding-top: 276px;
-    padding-bottom: 40px;
-  }
 }
-@media screen and (max-width: 550px) {
-  .mainSection {
-    padding-top: 176px;
-  }
-}
+
 @media screen and (max-width: 400px) {
-  .mainSection {
-    padding-top: 96px;
+  :root {
+    --ifm-image-margin-bottom: 50px;
   }
 }

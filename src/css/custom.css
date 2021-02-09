@@ -94,9 +94,10 @@
 
   --ifm-menu-color-background-active: none;
   --ifm-menu-color-background-hover: none;
-  --ifm-menu-color: #786d98;
+  --ifm-menu-color: #9976FF;
   --ifm-menu-color-active: #fff;
-  --ifm-menu-link-padding-vertical: 10px;
+  --ifm-menu-link-padding-vertical: 5px;
+  --ifm-menu-padding-vertical: 15px;
   --ifm-menu-link-padding-horizontal: 20px;
 
   --ifm-link-color: #0055ff;
@@ -123,6 +124,7 @@
   --ifm-main-title-line-height: 83px;
   --ifm-main-title-align: center;
   --ifm-main-title-padding: 0px;
+  --ifm-font-size-subtitle: 46px;
   --ifm-navbar--toggle-right: 35px;
   --ifm-markdown-horizontal-padding: 0px;
   --ifm-prism-code: 770px;
@@ -170,7 +172,6 @@ input[type="email"] {
   position: absolute;
 }
 .pagination-nav {
-  border-top: 1px solid #e1e1e1;
   margin-top: 100px;
   padding-top: 10px;
 }
@@ -283,8 +284,7 @@ ol ol {
   padding: 0 !important;
 }
 .menu__list {
-  padding: var(--ifm-menu-link-padding-vertical) 0
-    var(--ifm-menu-link-padding-vertical) 0;
+  padding: var(--ifm-menu-padding-vertical) 0 var(--ifm-menu-padding-vertical) 0;
   border-radius: var(--ifm-button-border-radius);
   background: #1d0070;
   border: none;
@@ -357,8 +357,8 @@ ol ol {
 }
 .table-of-contents {
   border-left: none;
-  padding: var(--ifm-menu-link-padding-vertical) 0
-    var(--ifm-menu-link-padding-vertical) 0;
+  padding: var(--ifm-menu-padding-vertical) 0
+    var(--ifm-menu-padding-vertical) 0;
   border-radius: var(--ifm-button-border-radius);
   background: #f9fafb;
   margin-top: 10px;
@@ -394,15 +394,9 @@ div.item {
 }
 
 .blue--header {
-  height: 841px;
+  height: auto;
   text-align: center;
-}
-.blue--header--background {
-  height: 582px;
   background-color: var(--ifm-contrast-background-color);
-  position: absolute;
-  z-index: 1;
-  width: 100%;
 }
 .blue--header .main--title {
   padding-top: 163px;
@@ -460,6 +454,7 @@ div.item {
     --ifm-main-title-align: "left";
     --ifm-main-title-padding: 35px;
     --ifm-navbar--toggle-right: 0px;
+    --ifm-font-size-subtitle: 42px;
   }
   .navbar__inner {
     padding-left: 0px;
@@ -471,7 +466,8 @@ div.item {
 @media screen and (max-width: 400px) {
   :root {
     --ifm-large-container-vertical-padding: 60px;
-    --ifm-main-title-font-size: 45px;
-    --ifm-main-title-line-height: 50px;
+    --ifm-main-title-font-size: 40px;
+    --ifm-main-title-line-height: 47px;
+    --ifm-font-size-subtitle: 38px;
   }
 }

@@ -20,7 +20,6 @@ function JobLayout({ title, locationJob, children }) {
     <>
       <Layout>
         <header className={clsx(styles.header, "blue--header")}>
-          <div className="blue--header--background" />
           <div className={clsx(styles.containerJob)}>
             <h1 className={clsx(styles.mainTitle)}>
               {title}

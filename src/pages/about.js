@@ -14,22 +14,21 @@ function AboutUs() {
         }
       >
         <header className={clsx(styles.header, "blue--header")}>
-          <div
-            className={clsx(
-              styles.headerBackground,
-              "blue--header--background"
-            )}
-          />
-          <div className={clsx(styles.container)}>
+          <div className={clsx(styles.blueContainer)}>
             <p className={clsx(styles.mainTitle, "main--title")}>About Us</p>
             <img
-              src="/img/about/about-3.png"
+              src="/img/about/about-top.png"
               role="decorative"
               className={clsx(styles.mainImage)}
             />
           </div>
         </header>
         <section className={clsx(styles.mainSection)}>
+          <img
+            src="/img/about/about-bottom.png"
+            role="decorative"
+            className={clsx(styles.mainImage)}
+          />
           <p className={clsx(styles.subTitle)}>Who we are today</p>
           <p>
             We are growing quickly, and Iron Fish is rapidly evolving. Our team
