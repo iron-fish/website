@@ -105,6 +105,7 @@
 }
 .subTitle {
   font-family: var(--ifm-font-header-button);
+  font-size: var(--ifm-font-size-subtitle);
   line-height: 55px;
   margin-bottom: 20px;
 }
