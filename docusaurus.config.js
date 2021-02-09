@@ -3,7 +3,7 @@ const remarkMath = require("remark-math");
 const rehypeKatex = require("rehype-katex");
 
 module.exports = {
-  title: 'Iron Fish - Private, anonynous, and easy to use cryptocurrency',
+  title: 'Iron Fish - $IRON - Private, anonymous, and easy to use cryptocurrency',
   tagline: 'Enable the free flow of assets through accessible and private cryptocurrency.',
   url: 'https://ironfish.network',
   baseUrl: '/',
@@ -30,16 +30,20 @@ module.exports = {
         src: 'img/logo.svg',
       },
       items: [
-        {
-          to: 'careers/',
-          activeBasePath: 'docs',
-          label: 'Careers',
-          position: 'right',
-        },
+        // {
+        //   to: 'https://explorer.ironfish.network',
+        //   label: 'Explorer',
+        //   position: 'right',
+        // },
         {
           to: 'about/',
           activeBasePath: 'docs',
           label: 'About',
+          position: 'right',
+        },
+        {
+          to: 'careers/',
+          label: 'Careers',
           position: 'right',
         },
         {
@@ -94,9 +98,9 @@ module.exports = {
       },
     ],
   ],
-  scripts: [
-    'https://chimpstatic.com/mcjs-connected/js/users/faf0318a641ddbad058a4ad2f/c5c42882a25d689b6106b5656.js',
-  ],
+  // scripts: [
+  //   'https://chimpstatic.com/mcjs-connected/js/users/faf0318a641ddbad058a4ad2f/c5c42882a25d689b6106b5656.js',
+  // ],
   stylesheets: [
     'https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css',
     'https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap',

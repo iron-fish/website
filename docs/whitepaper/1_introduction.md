@@ -5,33 +5,41 @@ sidebar_label: Introduction
 description: Introduction | Iron Fish Whitepaper
 ---
 
+<img src ="/img/whitepaper/introduction.png" width="100%" role="decorative" />
+
 ## Abstract
+Iron Fish is a decentralized, proof-of-work (PoW) based, censorship-resistant, and publicly accessible blockchain project. It is designed to support strong privacy guarantees on every transaction. Similarly to how the invention of the SSL/TLS layer in the 90s paved the way to e-commerce and benefited countless industries, we believe that privacy is a fundamental requirement to protect the user and expand the use of cryptocurrency.
 
-Iron Fish is a decentralized, proof of work (PoW) based, censorship-resistant, and publicly accessible blockchain project. It is designed to support strong privacy guarantees on every transaction. Similarly to how the invention of the SSL/TLS layer in the 90s paved the way to e-commerce and benefited countless industries, we believe that privacy is a fundamental requirement to protect the user and expand the use of cryptocurrency.
+We have designed Iron Fish to be a new cryptocurrency from the ground up to enable easy-to-use, fully-private payments by closely following the [Sapling protocol](https://github.com/zcash/zips/blob/master/protocol/sapling.pdf). Every account is equipped with a view-key to grant its holder read-only permission for the details of that account.
 
-We have designed Iron Fish to be a new cryptocurrency from the ground up to enable easy-to-use, fully-private payments by closely following the [Sapling](https://github.com/zcash/zips/blob/master/protocol/sapling.pdf) protocol. Every account is equipped with a view-key to grant its holder read-only permission for the details of that account. The protocol is built with light-client support in mind to enable clients on mobile devices and even natively on the web. The protocol is also structured in a way to enable a novel fast syncing technique with no loss to security guarantees to get users and miners alike running in as little time as possible
+With this protocol we are challenging previous patterns of full node usability. The Iron Fish networking layer supports WebRTC with WebSockets, making it trivial for all users to make a true P2P connection with no other setup requirements. Our first Iron Fish implementation is built such that it can be extended to run a full node directly in the browser in future iterations. And our focus is to lower the barrier to entry so that any person with a computer feels comfortable enough to run a full node.
 
 ## Introduction
 
-The goal of the Iron Fish project is to preserve the concept of cash as we move towards being global citizens in a fully digital world. Privacy is not only essential for true global e-commerce, but it is also essential to protect the people and to allow society to evolve and move forward. We aim for this project to address the use cases of global payments and banking for everyone and to build the underlying protocol in a way that’ll allow the tools, wallets, and apps to be quick, efficient, and easy to use.
+Privacy is controversial, but it shouldn’t be. In fact, privacy leads to innovation — social evolution through changing laws, and the freedom to simply be you. Take doors on houses or passwords for bank accounts, both of which are precautions most people take even though they might say they have nothing to hide.
 
-This paper outlines the Iron Fish protocol to enable a fully private cryptocurrency with a fast syncing technique and a clear path to support low-resource clients such as phones and websites. We have built on the learnings of past and existing blockchain projects and have come up with a protocol that takes no shortcuts in guaranteeing privacy and decentralization. We understand the importance of regulation, and as such, every wallet comes with a view key giving the holder a full uncensored view of the account without the ability to spend. This will allow exchanges to keep all records of their client’s spendings on the blockchain if need be.
+At Iron Fish, we are building something we’re truly proud of: a cryptocurrency that does not compromise on privacy or accessibility. Digital cash that embodies using privacy for good.  We are all moving towards becoming fully digital global citizens where our every activity and purchase is carefully logged, analyzed and sold. In this world, privacy is more important than ever and has growing demand worldwide.
+
+Popular cryptocurrencies like Bitcoin, Ethereum, and others are the least private way of transacting — their protocols fundamentally work on complete transparency to verify transactions. Though other privacy coins exist, they all either lack the privacy guarantees they’ve promised or are so hard to use they barely have any real usage (and oftentimes both).
+
+There is huge untapped potential here — but only if users feel truly protected by their cryptocurrency, and are able to access it. Just like the introduction of SSL/TLS in the 90s opened up the floodgates to ecommerce (the predecessors of https), we believe that an accessible privacy coin will lead to a new class of industries of borderless products and companies.
+
+In this paper, we cover how Iron Fish works, and why we’ve built it this way. While we endeavor to explain things as much as possible, and go over all relevant terminology, some parts will require a basic understanding of elliptic curve cryptography.
 
 ## Organization of this paper
 
-This paper is organized as follows:
+All blockchains, regardless of their feature sets, have six main ingredients: the networking layer, storage layer, mining (or mechanism of block creation), account creation, transaction creation, and consensus (the rules for accepting new blocks). We go over each of these ingredients, as follows:
 
-- [Data Structures and Models](2_data_structure_models.md)
-To first familiarize yourself with all the various components of this blockchain to later understand how they interact
-- [Transactions](3_transactions.md)
-And how they’re created and validated
-- [Note Encryption and Decryption](4_note_encryption_decryption.md)
-On how transactions result in encrypted notes that only the sender’s outgoing view key and recipient’s incoming view key can decrypt
-- [Block Creation](5_block_creation.md)
-- [Block Verification](6_block_verification.md)
-- [Consensus and Verification](7_consensus_verification.md) on how transactions and blocks are accepted and when they’re propagated to the network
-- [Optimistic Sync](8_optimistic_sync.md)
-- [Networking](9_networking.md)
-- [Light Client Capabilities](10_light_client_capabilities.md)
-- [Performance Goals](11_performance_goals.md)
-- [Appendix](12_appendix.mdx)
+- [Networking](2_networking.md)
+  This section goes over the basic networking stack, startup sequence, message types, and gossip protocol implementation.
+- [Storage](3_storage.md)
+  The Storage section familiarizes the reader with the main data structures and models for Iron Fish, as well our first implementation of how the storage layer is accessible in both the CLI and browser full node implementation.
+- [Mining](4_mining.md)
+  The Mining section describes how new blocks are constructed containing the necessary randomness for proof of work (PoW), as well the miners reward calculation.
+- [Account Creation](5_account.md)
+  The Accounts Creation section describes how Iron Fish accounts are created following the Sapling protocol and breaks down the uses of all the necessary key components for an account.
+- [Transaction Creation](6_transaction.md)
+  Iron Fish transactions also closely follow the Sapling protocol, and this section goes over exactly where and how zero-knowledge proofs are applied, how transaction fees are included, and how to balance and validate any existing transaction.
+- [Verification and Consensus](7_consensus_verification.md)
+  Finally, the last section ties everything together by outlining the rules for how new blocks containing user transactions are accepted.
+

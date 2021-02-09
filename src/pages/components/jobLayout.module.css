@@ -1,0 +1,81 @@
+:root {
+  --ifm-job-title-font-size: 46px;
+  --ifm-job-title-line-height: 55px;
+}
+.containerJob .mainTitle,
+.h2 {
+  font-family: var(--ifm-font-header-button);
+  font-size: var(--ifm-job-title-font-size);
+  line-height: var(--ifm-job-title-line-height);
+}
+.mainTitle {
+  color: white;
+  margin-bottom: 0;
+}
+.containerJob {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 1117px;
+  text-align: left;
+  margin: 0 auto;
+  margin-top: var(--ifm-large-container-vertical-padding);
+  padding-bottom: calc(var(--ifm-large-container-vertical-padding) - 20px);
+  padding-left: 35px;
+  padding-right: 35px;
+}
+.header {
+  height: 371px;
+  overflow: hidden;
+  position: relative;
+}
+.header .containerJob {
+  margin-top: 163px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.button {
+  align-self: center;
+}
+.containerJob p {
+  max-width: 819px;
+}
+.layoutTitle {
+  font-family: var(--ifm-font-header-button);
+  font-size: 32px;
+  line-height: 38px;
+  margin-top: 44px;
+}
+.containerJob ul {
+  border-left: none;
+}
+.containerJob ul li {
+  list-style-type: disc;
+}
+@media screen and (max-width: 700px) {
+  :root {
+    --ifm-job-title-font-size: 42px;
+    --ifm-job-title-line-height: 45px;
+  }
+  .header .containerJob {
+    flex-direction: column;
+  }
+  .header {
+    height: 400px;
+  }
+  .button {
+    margin-top: 30px;
+    width: 100%;
+  }
+  .containerJob {
+    margin-top: 40px;
+    padding-bottom: 40px;
+  }
+}
+@media screen and (max-width: 400px) {
+  :root {
+    --ifm-job-title-font-size: 34px;
+    --ifm-job-title-line-height: 45px;
+  }
+}
