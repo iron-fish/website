@@ -12,19 +12,20 @@ Accounts and transactions in Iron Fish are heavily influenced by the [Sapling pr
 
 We’ll start with the key components that are used to view an account’s balance, send transactions, or view past transactions. All of the key components for an Iron Fish account are derived from a single secret key. Though the underlying account construction may seem complex, the high level overview is that, in addition to the secret key, each account has a set of keys for spending that account’s funds, viewing keys to be given to any third party for read-only access, and a public address to be used to receive funds from others.
 
- <img src='/img/whitepaper/account/account1.svg' width="100%" style={{paddingTop:'40px', marginBottom:'40px'}} />
-
+<img src='/img/whitepaper/account/account1.svg' width="100%" style={{paddingTop:'40px', marginBottom:'40px'}} />
 
 Note that the term `key` pair here refers to [public key cryptography](https://en.wikipedia.org/wiki/Public-key_cryptography), meaning that the key pair consists of a private key and an accompanying public key.
 
 We’ll explain why all these parts are needed as we go along.
 
 ## Secret key
+
 The secret key is simply a 32-byte random number. This is the seed necessary to construct all other parts of your wallet.
 
 <img src='/img/whitepaper/account/2_data_structure_models_secret_key.svg' width="250px" />
 
 ## Spending Key Pair (Spending Authorization Key and Authorization Key)
+
 This key pair is used for spending notes associated with an account, and is derived directly from the secret key.
 
 The **Spend Authorization Key (ask)** is the private key component of this key pair and is derived by hashing the secret key and a modifier using the [Blake2b](https://blake2.net/) hashing algorithm (with personalization params) and then converting it into a scalar for the Jubjub curve.
@@ -44,6 +45,7 @@ This key is used in the [Spend description](6_transaction.md#spend-description) 
 <em>The secret key is used to derive the spend authorization key (ask) which in turn is used to derive the authorization key (ak)</em>
 
 ## Nullifier Key Pair (Proof Authorization Key and Nullifier Deriving Key)
+
 These keys are responsible for creating the nullifiers that are necessary to spend a note, derived from the secret key.
 
 The **Proof Authorization Key (nsk)** is the private key component of the nullifier key pair and is derived by hashing the secret key and a modifier using the Blake2b (with parameters) hashing function and then converting it into a scalar (a.k.a. an integer) for the Jubjub curve. The proof authorization key is used in the [Spend description](6_transaction.md#spend-description) of a transaction proving that the revealed nullifier was computed correctly. Remember that to spend a note a user must reveal its unique nullifier as part of the transaction. The zero-knowledge proof of the Spend description ensures that the revealed nullifier was properly created using the owner’s proof authorization key.
@@ -59,6 +61,7 @@ Where **nk** is the nullifier deriving key, **nsk** is the proof authorization k
 <em>The secret key is used to derive the proof authorization key (nsk) which in turn is used to derive the nullifier deriving key (nk)</em>
 
 ## View Key Pair (Incoming and Outgoing View Key)
+
 The **Outgoing View Key (ovk)** allows for decrypting outgoing transactions. It is derived by hashing the secret key and a modifier using the blake2b hash function with additional params and then taking the first 32 bytes of the result.
 
 The **Incoming View Key (ivk)** allows for decrypting incoming transactions. It is derived by using the blake2s hash function to hash the bytes of the authorizing key with the bytes of the nullifier deriving key and converting it into a Jubjub scalar:
@@ -70,12 +73,15 @@ $$ivk = blake2s(ak, nk)$$ <em>converted into a</em> **jubjub scalar**
 <em>The secret key is used to derive the outgoing view key. The incoming view key is derived from the authorization key (ak) and the nullifier deriving key (nk).</em>
 
 ## Public Address
+
 The public address consists of a Transmission Key and a Diversifier. Together, they enable a single wallet with a single private key to contain up to $$2^{11}$$ public addresses.
 
 ### Diversifier
+
 The diversifier **(d)** is a random 11-byte number used to randomize the final public address. The diversifier is converted into an affine point on the Jubjub curve ($$g_d$$) to be used to create the Transmission Key.
 
-Transmission Key
+### Transmission Key
+
 The Transmission Key ($$pk_d$$) is derived by multiplying the diversifier (converted to an affine point on the Jubjub curve, $$g_d$$) by the incoming view key:
 
 $$pk_d = g_d * ivk$$
@@ -90,7 +96,7 @@ The public address is a 43-byte number (11 bytes for diversifier + 32 bytes for 
 <br />
 <br />
 
-*The diversifier is converted into a point on the Jubjub curve, represented as $$g_{d'}$$, and is used to derive the transmission key. Concatenated together, the diversifier and the transmission key make up the public address.*
+_The diversifier is converted into a point on the Jubjub curve, represented as $$g_{d'}$$, and is used to derive the transmission key. Concatenated together, the diversifier and the transmission key make up the public address.\_
 
 And that’s it! Those are all the parts of the account. The complexity of this construction comes from separating out the spending power from the viewing keys. This way, the account is constructed such that the keys responsible for spending notes are not the same ones used to decrypt information in the transactions.
 
