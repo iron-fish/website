@@ -19,6 +19,7 @@ import NotFound from '@theme/NotFound';
 import {matchPath} from '@docusaurus/router';
 import Head from '@docusaurus/Head';
 import styles from './styles.module.css';
+import clsx from "clsx";
 
 // This theme is not coupled to Algolia, but can we do something else?
 // Note the last version is also indexed with "last", to avoid breaking search on new releases
@@ -43,13 +44,21 @@ function DocPageContent({currentDocRoute, versionMetadata, children}) {
   const {permalinkToSidebar, docsSidebars, version, isLast} = versionMetadata;
   const sidebarName = permalinkToSidebar[currentDocRoute.path];
   const sidebar = docsSidebars[sidebarName];
+  const isOnboarding = sidebarName === 'onboarding'
+
   return (
     <>
       <DocSearchVersionHeader version={version} isLast={isLast} />
       <Layout key={isClient}>
         <div className={styles.docPage}>
           {sidebar && (
-            <div className={styles.docSidebarContainer} role="complementary">
+            <div
+              className={clsx(
+                styles.docSidebarContainer,
+                isOnboarding && styles.docSidebarContainerOnboarding
+              )}
+              role="complementary"
+            >
               <DocSidebar
                 key={
                   // Reset sidebar state on sidebar changes

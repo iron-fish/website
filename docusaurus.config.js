@@ -21,9 +21,6 @@ module.exports = {
     colorMode: {
       disableSwitch: true,
     },
-    prism: {
-      theme: require("prism-react-renderer/themes/github"),
-    },
     navbar: {
       title: "Iron Fish",
       logo: {
@@ -36,6 +33,12 @@ module.exports = {
         //   label: 'Explorer',
         //   position: 'right',
         // },
+        {
+          to: "docs/onboarding/iron-fish-tutorial",
+          activeBasePath: "docs",
+          label: "Get started",
+          position: "right",
+        },
         {
           to: "about/",
           activeBasePath: "docs",

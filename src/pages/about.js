@@ -1,7 +1,7 @@
 import React from "react";
 import Layout from "@theme/Layout";
 import clsx from "clsx";
-import OpenPositions from "./components/OpenPositions";
+import OpenPositions from "../theme/components/OpenPositions";
 import styles from "./about.module.css";
 
 function AboutUs() {
