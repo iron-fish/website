@@ -9,8 +9,8 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh;
-  min-height: 770px;
+  height: auto;
+  min-height: auto;
   padding-top: var(--ifm-large-container-vertical-padding);
   padding-bottom: var(--ifm-large-container-vertical-padding);
 }
@@ -34,7 +34,7 @@
 }
 .sectionTitle {
   font-size: 46px;
-  line-height: 50px;
+  line-height: 55px;
   margin-bottom: 30px;
   white-space: break-spaces;
 }
@@ -54,8 +54,11 @@
   height: 544px;
   display: block;
   background-repeat: no-repeat;
+  align-self: center;
 }
 .sectionHomePage {
+  height: 100vh;
+  min-height: 770px;
   text-align: center;
   background: #1d0070 url(/img/index/ironloop.svg) no-repeat center center;
   background-size: 90% auto;
@@ -88,7 +91,16 @@
 }
 .sectionBorderless {
   max-height: 894px;
-  background: #ffe5f5 url(/img/index/globe.svg) no-repeat top right;
+  background: #fff url(/img/index/globe.svg) no-repeat;
+  background-position: calc(100vw - 47vw) center;
+}
+.sectionRegulatory {
+  background: #fff4e0;
+}
+.sectionRegulatoryImg {
+  width: 647px;
+  height: 616px;
+  background-image: url(/img/index/regulatory.svg);
 }
 .sectionNewsletter {
   background-color: var(--ifm-contrast-background-color);
@@ -129,12 +141,24 @@
     --ifm-newsletter-flex-height: auto;
     --ifm-newsletter-title-vertical-margin: 40px;
   }
-  .sectionContent {
-    max-width: 349px;
+  .sectionPrivacyImg {
+    width: 527px;
+    height: 485px;
+    background-size: 527px 485px;
   }
-  .sectionBorderless {
-    background-size: 50%;
-    background-position: center right;
+  .sectionRegulatoryImg {
+    width: 530px;
+    height: 504px;
+    background-size: 530px 504px;
+  }
+  .sectionExpertsImg {
+    width: 527px;
+    height: 402px;
+    background-size: 527px 402px;
+  }
+  .sectionCryptocurrencyImg {
+    width: 528px;
+    background-size: 528px auto;
   }
 }
 @media screen and (max-width: 1045px) {
@@ -157,7 +181,7 @@
     min-height: auto;
   }
   .sectionContent {
-    max-width: 521px;
+    max-width: 524px;
     text-align: center;
   }
   .sectionImg {
@@ -182,7 +206,7 @@
     height: 380px;
   }
   .sectionBorderless {
-    background-position: bottom right;
+    background-position: center 630px;
     background-size: 500px;
     max-height: inherit;
   }
@@ -190,7 +214,7 @@
     padding-bottom: 70px;
   }
   .sectionBorderless .sectionBorderlessImg {
-    height: 300px;
+    height: 60px;
   }
   .sectionNewsletter > div {
     text-align: center;
@@ -229,8 +253,15 @@
   .sectionExpertsImg {
     height: 240px;
   }
+  .sectionBorderless {
+    background: none;
+  }
   .sectionBorderless .sectionImg {
-    height: 380px;
+    background: #fff url(/img/index/globe.svg) no-repeat;
+    background-position: center;
+    background-size: 330px 320px;
+    margin-top: 0px;
+    height: 320px;
   }
   .sectionDescription {
     font-size: 18px;
@@ -256,17 +287,21 @@
   }
 }
 @media screen and (max-width: 450px) {
-  .sectionBorderless {
-    background: #ffe5f5 url(/img/index/globe-vertical.svg) no-repeat bottom left;
-  }
-  .sectionBorderless .sectionImg {
-    height: 300px;
-  }
   .sectionNewsletter {
     padding-top: 90px;
     padding-bottom: 100px;
   }
   .sectionNewsletter .newsletterTitle {
     margin-bottom: 0px;
+  }
+}
+@media screen and (max-width: 400px) {
+  .sectionBorderless .sectionContent {
+    padding-bottom: 0px;
+  }
+  .sectionBorderless .sectionImg {
+    background-size: 300px 290px;
+    height: 290px;
+    margin-top: 65px;
   }
 }

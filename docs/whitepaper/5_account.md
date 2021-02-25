@@ -4,7 +4,7 @@ title: Account Creation
 description: Account Creation | Iron Fish Whitepaper
 ---
 
-<img src ="/img/whitepaper/account_creation.png" width="100%" role="decorative" style={{marginBottom:'25px'}} />
+<img src ="/img/whitepaper/account_creation.png" width="100%" role="presentation" style={{marginBottom:'25px'}} />
 
 Now that we have gone over the logistics of supporting a privacy-focused cryptocurrency, we’ll focus on the core details of how an Iron Fish wallet is created to support fully private transactions.
 

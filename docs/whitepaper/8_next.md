@@ -4,7 +4,7 @@ title: Next Steps
 description: Next Steps | Iron Fish Whitepaper
 ---
 
-<img src ="/img/whitepaper/conclusion.png" width="100%" role="decorative" style={{marginBottom:'25px'}} />
+<img src ="/img/whitepaper/conclusion.png" width="100%" role="presentation" style={{marginBottom:'25px'}} />
 
 This initial iteration of Iron Fish sets up the groundwork for private transactions that anyone can reliably use, with a low barrier of entry. We are proud of what we’ve built, and look forward to the next iterations, which will include, among other things:
 

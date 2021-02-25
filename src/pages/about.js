@@ -18,7 +18,7 @@ function AboutUs() {
             <p className={clsx(styles.mainTitle, "main--title")}>About Us</p>
             <img
               src="/img/about/about-top.png"
-              role="decorative"
+              role="presentation"
               className={clsx(styles.mainImage)}
             />
           </div>
@@ -26,7 +26,7 @@ function AboutUs() {
         <section className={clsx(styles.mainSection)}>
           <img
             src="/img/about/about-bottom.png"
-            role="decorative"
+            role="presentation"
             className={clsx(styles.mainImage)}
           />
           <p className={clsx(styles.subTitle)}>Who we are today</p>

@@ -4,7 +4,7 @@ title: Verification and Consensus
 description: Verification and Consensus | Iron Fish Whitepaper
 ---
 
-<img src ="/img/whitepaper/verification.png" width="100%" role="decorative" style={{marginBottom:'25px'}} />
+<img src ="/img/whitepaper/verification.png" width="100%" role="presentation" style={{marginBottom:'25px'}} />
 
 The prior sections explained how a network gets created and how nodes construct new blocks, but not *why* the nodes construct blocks that certain way. Consensus is the Iron Fish verification layer that sets rules by which nodes accept incoming blocks. These rules *implicitly* force nodes to construct a block following these rules since otherwise that block won’t be accepted by other nodes in the network.
 

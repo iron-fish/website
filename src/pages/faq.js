@@ -78,7 +78,7 @@ function Question({ title, id, description, imageLeft, imageRight }) {
   return (
     <section className={clsx(styles.questionSection, { [styles[id]]: true })}>
       <div className={clsx(styles.questionImage)}>
-        {imageLeft && <img role="decorative" src={imageLeft} />}
+        {imageLeft && <img role="presentation" src={imageLeft} />}
       </div>
       <div className={clsx(styles.container)}>
         <div className={clsx(styles.sectionContent)}>
@@ -92,7 +92,7 @@ function Question({ title, id, description, imageLeft, imageRight }) {
         </div>
       </div>
       <div className={clsx(styles.questionImage)}>
-        {imageRight && <img role="decorative" src={imageRight} />}
+        {imageRight && <img role="presentation" src={imageRight} />}
       </div>
     </section>
   );

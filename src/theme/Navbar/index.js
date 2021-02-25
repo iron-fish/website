@@ -107,6 +107,8 @@ function Navbar() {
                 className="navbar__logo"
                 src={logoImageUrlPerPage}
                 alt={logoAlt}
+                width="190"
+                height="32"
               />
             )}
             {title != null && (
@@ -188,6 +190,8 @@ function Navbar() {
                 className="navbar__logo"
                 src={logoImageUrlWhite}
                 alt={logoAlt}
+                width="190"
+                height="32"
               />
             )}
             {title != null && (

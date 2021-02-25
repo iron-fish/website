@@ -4,7 +4,7 @@ title: Storage
 description: Storage | Iron Fish Whitepaper
 ---
 
-<img src ="/img/whitepaper/storage.png" width="100%" role="decorative" style={{marginBottom:'25px'}} />
+<img src ="/img/whitepaper/storage.png" width="100%" role="presentation" style={{marginBottom:'25px'}} />
 
 In this section, we’ll start by reviewing what we store (the data structures and models of Iron Fish), and then move into how we store it (using both LevelDB and IndexDB). We’ll start by looking at the most basic data structures that represent the Iron Fish global state: notes and nullifiers.
 
@@ -100,7 +100,7 @@ Since we knew that running a full implementation of Iron Fish in the browser was
 
 To prevent having to juggle two separate storage implementations for the two different databases, our implementation of Iron Fish has a generic layer of abstraction for data stores and database access based on [LevelUp](https://github.com/Level/levelup). This abstraction layer takes care of the specific implementations of the underlying database, and exposes a generic layer that can be used both in the browser and NodeJS environment, offering a simple datastore-agnostic API.
 
-<img src ="/img/whitepaper/storage/storage1.svg" width="50%" role="decorative" />
+<img src ="/img/whitepaper/storage/storage1.svg" width="50%" role="presentation" />
 
 ### The Storage Layer API
 
