@@ -4,7 +4,7 @@ title: Transaction Creation
 description: Transaction Creation | Iron Fish Whitepaper
 ---
 
-<img src ="/img/whitepaper/transaction.png" width="100%" role="decorative" style={{marginBottom:'25px'}} />
+<img src ="/img/whitepaper/transaction.png" width="100%" role="presentation" style={{marginBottom:'25px'}} />
 
 Just like accounts, transactions are heavily influenced by the [Sapling protocol](https://github.com/zcash/zips/blob/master/protocol/sapling.pdf) with some differences. All Iron Fish transactions are shielded transactions, meaning they do not reveal any information to any onlooker who does not have explicit access.
 
@@ -246,9 +246,9 @@ And the **public** parameters that are used to verify the proof are
 
 The proof validates that:
 
-1. $$g_d$$ for the recipient is not of small order and that the ephemeral public key was computed as:  
+1. $$g_d$$ for the recipient is not of small order and that the ephemeral public key was computed as:
    $$epk = g_d * esk$$
-2. That the value commitment (**cm**) is properly computed as a Pedersen commitment of:  
+2. That the value commitment (**cm**) is properly computed as a Pedersen commitment of:
    $$cm = pedersen\_hash(v, g_d, pk_d) + rcm * G_{note\_commitment\_randomness}$$
 
 ### Adding a Merkle Tree Note from the Outgoing description

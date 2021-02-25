@@ -4,7 +4,7 @@ title: Mining
 description: Mining | Iron Fish Whitepaper
 ---
 
-<img src ="/img/whitepaper/mining.png" width="100%" role="decorative" style={{marginBottom:'25px'}} />
+<img src ="/img/whitepaper/mining.png" width="100%" role="presentation" style={{marginBottom:'25px'}} />
 
 So far, we’ve gone over the structure of the Iron Fish blockchain; this section will focus on how the Iron Fish blockchain is expanded with new blocks. Note that we use the terms nodes and peers interchangeably; a node in Iron Fish is always a peer. A few other quick definitions:
 

@@ -11,50 +11,43 @@ import Mailchimp from "./components/MailChimp";
 const features = [
   {
     className: "sectionPrivacy",
-    title: "We don’t take shortcuts on privacy",
+    title: "A new chain with the strongest privacy",
     description:
-      "We believe privacy is a right—offering fully-private payments, with every transaction. You will have complete control over who sees your account details. Your data is decentralized and end-to-end encrypted, ensuring that you’re safe from third parties and hackers.",
+      "Iron Fish is a Layer 1 blockchain that provides the strongest privacy guarantees on every single transaction, based on a variation of the Sapling protocol, leveraging zero-knowledge proofs (zk-SNARKs), and the highest industry standards for encryption. Iron Fish gives you complete control over who sees transaction details via account view keys or transaction decryption keys. \nYour data. Your information. Your coins.",
     buttonLink: "docs/whitepaper/6_transaction",
     button: "Learn more",
   },
   {
     className: "sectionCryptocurrency",
-    title: "Cryptocurrency you can actually use",
-    description: (
-      <>
-        No experience (or professional equipment) necessary—just launch our app.
-        In minutes you can open a new wallet, become a full node, and start
-        mining.
-      </>
-    ),
+    title: "We care about usability",
+    description:
+      "We’ve struggled with many cryptocurrencies to learn how to build Iron Fish to be intuitive for both developers and users alike. We are building a complete set of tools for you to have the best end-to-end experience running and transacting $IRON on every platform, while always guaranteeing your privacy.",
     buttonLink: "docs/whitepaper/1_introduction",
-    button: "Learn more",
-  },
-  {
-    className: "sectionExperts",
-    title: "Built by experts and backed by leading investors",
-    description: (
-      <>
-        We are honored to be working with incredible investors and angels. Our
-        team members are tech veterans, with resumes spanning Airbnb, Facebook,
-        Uber, and more.
-      </>
-    ),
-    buttonLink: "about",
     button: "Learn more",
   },
   {
     className: "sectionBorderless",
-    title: "Borderless, private banking for everyone",
-    description: (
-      <>
-        IRON is censorship-resistant and available to everyone—regardless of
-        location, identity or citizenship. Anyone can create a wallet and be
-        their own global, digital bank.
-      </>
-    ),
+    title: "Borderless, decentralized, built for everyone",
+    description:
+      "We care about decentralization. Iron Fish is a proof-of-work (PoW) chain that is censorship-resistant and available to everyone—regardless of location, identity or citizenship. Anyone can create a wallet, run their own node, and mine $IRON. With Iron Fish, you own the bank.",
     buttonLink: "docs/whitepaper/1_introduction",
-    button: "Learn more",
+    button: "Read Our Whitepaper",
+  },
+  {
+    className: "sectionRegulatory",
+    title: "Regulatory compliance",
+    description:
+      "Privacy doesn't mean that Iron Fish can't be compliant. Every Iron Fish account comes with a set of view keys allowing an exchange or financial organization to provide a full audit of the accounts they manage and complying with all their AML obligations.",
+    buttonLink: "docs/whitepaper/1_introduction",
+    button: "Read Our Whitepaper",
+  },
+  {
+    className: "sectionExperts",
+    title: "Built by experts and backed by leading investors",
+    description:
+      "We are honored to be working with incredible investors and angels. Our team members are tech veterans, with resumes spanning Airbnb, Microsoft, Uber, and more.",
+    buttonLink: "about",
+    button: "About Us",
   },
 ];
 

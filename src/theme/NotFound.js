@@ -30,7 +30,7 @@ function NotFound() {
         >
           You must be lost if you’re down here.
         </h1>
-        <img src="/img/notFound.svg" role="decorative" />
+        <img src="/img/notFound.svg" role="presentation" />
       </div>
     </Layout>
   );

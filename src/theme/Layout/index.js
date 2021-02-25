@@ -4,18 +4,19 @@
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  */
-import React from 'react';
-import Head from '@docusaurus/Head';
-import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
-import useBaseUrl from '@docusaurus/useBaseUrl';
-import ThemeProvider from '@theme/ThemeProvider';
-import UserPreferencesProvider from '@theme/UserPreferencesProvider';
-import AnnouncementBar from '@theme/AnnouncementBar';
-import Navbar from '@theme/Navbar';
-import Footer from '@theme/Footer';
-import './styles.css';
+import React from "react";
+import Head from "@docusaurus/Head";
+import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
+import useBaseUrl from "@docusaurus/useBaseUrl";
+import { useRouteMatch } from "@docusaurus/router";
+import ThemeProvider from "@theme/ThemeProvider";
+import UserPreferencesProvider from "@theme/UserPreferencesProvider";
+import AnnouncementBar from "@theme/AnnouncementBar";
+import Navbar from "@theme/Navbar";
+import Footer from "@theme/Footer";
+import "./styles.css";
 
-function Providers({children}) {
+function Providers({ children }) {
   return (
     <ThemeProvider>
       <UserPreferencesProvider>{children}</UserPreferencesProvider>
@@ -24,11 +25,11 @@ function Providers({children}) {
 }
 
 function Layout(props) {
-  const {siteConfig} = useDocusaurusContext();
+  const { siteConfig } = useDocusaurusContext();
   const {
     favicon,
     title: siteTitle,
-    themeConfig: {image: defaultImage, metadatas},
+    themeConfig: { image: defaultImage, metadatas },
     url: siteUrl,
   } = siteConfig;
   const {
@@ -45,6 +46,7 @@ function Layout(props) {
   const metaImageUrl = useBaseUrl(metaImage, {
     absolute: true,
   });
+  const location = useRouteMatch();
   const faviconUrl = useBaseUrl(favicon);
   return (
     <Providers>
@@ -58,7 +60,7 @@ function Layout(props) {
           <meta property="og:description" content={description} />
         )}
         {keywords && keywords.length && (
-          <meta name="keywords" content={keywords.join(',')} />
+          <meta name="keywords" content={keywords.join(",")} />
         )}
         {metaImage && <meta property="og:image" content={metaImageUrl} />}
         {metaImage && <meta property="twitter:image" content={metaImageUrl} />}
@@ -68,6 +70,27 @@ function Layout(props) {
         {permalink && <meta property="og:url" content={siteUrl + permalink} />}
         {permalink && <link rel="canonical" href={siteUrl + permalink} />}
         <meta name="twitter:card" content="summary_large_image" />
+
+        <link
+          rel="preload"
+          href="/font/extendedregular/favoritextended-regular-webfont.woff2"
+          as="font"
+          type="font/woff2"
+          crossorigin="anonymous"
+        />
+        <link
+          rel="preload"
+          href="/font/regular/favorit-regular-webfont.woff2"
+          as="font"
+          type="font/woff2"
+          crossorigin="anonymous"
+        />
+        {location.path === "/docs" && (
+          <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css"
+          />
+        )}
       </Head>
 
       <Head // it's important to have an additional <Head> element here,

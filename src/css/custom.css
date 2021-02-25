@@ -21,6 +21,7 @@
       format("svg");
   font-weight: normal;
   font-style: normal;
+  font-display: swap;
 }
 @font-face {
   font-family: "mono-regular";
@@ -34,6 +35,7 @@
       format("svg");
   font-weight: normal;
   font-style: normal;
+  font-display: swap;
 }
 @font-face {
   font-family: "favorit-regular";
@@ -46,13 +48,14 @@
     url("/font/regular/favorit-regular-webfont.svg#_.book") format("svg");
   font-weight: normal;
   font-style: normal;
+  font-display: swap;
 }
 :root {
   --ifm-container-width: 1406px;
-  --ifm-container-index-width: 1111px;
+  --ifm-container-index-width: 1171px;
   --ifm-global-radius: 0.2rem;
   --ifm-background-color: #fff;
-  --ifm-font-family-base: favorit-regular, "Helvetica", "Inter", sans-serif;
+  --ifm-font-family-base: favorit-regular, "Helvetica", sans-serif;
   --ifm-font-size-base: 100%;
   --ifm-font-color-base-inverse: #000;
   --ifm-heading-color: #000;
@@ -117,7 +120,7 @@
   --ifm-docs-column-margin-right: 55px;
 
   --ifm-font-header-button: "extended-regular", "helvetica", sans-serif;
-  --ifm-large-container-horizontal-padding: 84px;
+  --ifm-large-container-horizontal-padding: 81px;
   --ifm-large-container-vertical-padding: 128px;
   --ifm-main-title-width: 100%;
   --ifm-main-title-font-size: 80px;

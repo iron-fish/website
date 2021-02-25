@@ -4,7 +4,7 @@ title: Networking
 description: Networking | Iron Fish Whitepaper
 ---
 
-<img src ="/img/whitepaper/networking.png" width="100%" role="decorative" style={{marginBottom:'25px'}} />
+<img src ="/img/whitepaper/networking.png" width="100%" role="presentation" style={{marginBottom:'25px'}} />
 
 The networking layer is a significant part of any blockchain and helps support all the features that make that protocol unique. Specifically, the networking layer dictates how nodes interact with one another — what transport layers they can use to communicate, how they gossip messages to all the other peers, and how they request/respond to specific messages from other peers.
 
@@ -70,7 +70,7 @@ When a new node comes online and connects with a peer, the peer communicates the
 
 Let’s imagine that our current network is composed of a new Node A, connected to the nodes B and C. C itself is connected to nodes D and E. D itself is connected to F and G. Visually, this would look like the image below.
 
-<img src ="/img/whitepaper/network/nodes.svg" width="50%" role="decorative" />
+<img src ="/img/whitepaper/network/nodes.svg" width="50%" role="presentation" />
 <br />
 <em>Visualization of how our example nodes are connected.</em>
 <br />
@@ -84,14 +84,14 @@ Node A can now decide to connect to some of the peers, and will store a copy of 
 
 When node A decides to broadcast a new message, it’ll send out a Gossip-type message to all of its connected peers (in this example, C and B).
 
-<img src ="/img/whitepaper/network/nodes2.svg" width="50%" role="decorative" />
+<img src ="/img/whitepaper/network/nodes2.svg" width="50%" role="presentation" />
 <br />
 <br />
 
 Then, each subsequent node will broadcast the message to their other peers, until the entire network receives the message. In this example, C broadcasts the message to D and G. Then D broadcasts the message to F and G.
 
-<img src ="/img/whitepaper/network/nodes3.svg" width="50%" role="decorative" />
-<img src ="/img/whitepaper/network/nodes4.svg" width="50%" role="decorative" />
+<img src ="/img/whitepaper/network/nodes3.svg" width="50%" role="presentation" />
+<img src ="/img/whitepaper/network/nodes4.svg" width="50%" role="presentation" />
 
 #### Optimization
 
@@ -115,7 +115,7 @@ When Node A gossips a message, the propagation happens in two steps:
 1. Node A broadcasts to Nodes B, C, D and E.
 2. Node B forwards the message to G. It does not forward it to C and E because it knows that Node A is connected to them and already sent it. Node C forwards the message to H. Node D forwards to I and Node E to F.
 
-<img src ="/img/whitepaper/network/nodes5.svg" width="100%" role="decorative" />
+<img src ="/img/whitepaper/network/nodes5.svg" width="100%" role="presentation" />
 
 When Node F gossips a message, in this example, the propagation happens in four steps:
 
@@ -124,7 +124,7 @@ When Node F gossips a message, in this example, the propagation happens in four 
 3. Node B forward to G. It does not forward to A because it knows that E is connected to A. It does not forward to C, because it knows it is connected to A.
 4. Node C and Node D both forward the message to H and I .
 
-<img src ="/img/whitepaper/network/nodes6.svg" width="100%" role="decorative" />
+<img src ="/img/whitepaper/network/nodes6.svg" width="100%" role="presentation" />
 
 ##### Looking Forward
 

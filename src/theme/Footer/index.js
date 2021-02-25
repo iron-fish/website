@@ -40,7 +40,7 @@ function Footer() {
         <div className={classes.container}>
           <div className={classes.about}>
             <Link to="https://www.ironfish.network">
-              <img src="/img/logo.svg" role="decorative" />
+              <img src="/img/logo.svg" alt="Iron Fish index" width="165" height="18" role="presentation" />
             </Link>
             <p>
               Iron Fish is a novel cryptocurrency focused on privacy and
@@ -95,19 +95,19 @@ function Footer() {
           </p>
           <div className={classes.links}>
             <a href="https://t.me/ironfishcrypto">
-              <img src="/img/footer/telegram.svg" alt="Telegram" />
+              <img src="/img/footer/telegram.svg" width="14" height="16" alt="Telegram" />
             </a>
             <a href="https://github.com/iron-fish">
-              <img src="/img/footer/github.svg" alt="Github" />
+              <img src="/img/footer/github.svg" width="16" height="16" alt="Github" />
             </a>
             <a href="http://reddit.com/r/ironfish">
-              <img src="/img/footer/reddit.svg" alt="Reddit" />
+              <img src="/img/footer/reddit.svg" width="17" height="16" alt="Reddit" />
             </a>
             <a href="https://twitter.com/ironfishcrypto">
-              <img src="/img/footer/twitter.svg" alt="Twitter" />
+              <img src="/img/footer/twitter.svg" width="17" height="16" alt="Twitter" />
             </a>
             <a href="https://discord.gg/H7Mk3qacyM">
-              <img src="/img/footer/discord.svg" alt="Discord" />
+              <img src="/img/footer/discord.svg" width="15" height="16" alt="Discord" />
             </a>
           </div>
         </div>
