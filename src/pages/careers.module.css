@@ -1,53 +1,71 @@
 :root {
-  --ifm-employee-width: 33%;
-  --ifm-employee-bottom: 40px;
+  --ifm-employee-width: 32%;
+  --ifm-employee-bottom: 64px;
   --ifm-benefits-title: 444px;
+  --ifm-intro-text-align: center;
+  --ifm-intro-align-items: center;
 }
-.careersMainSection {
+.sectionCareers {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   width: 100%;
   max-width: 1574px;
   margin: 0 auto;
-  justify-content: space-between;
+  justify-content: center;
+  align-items: var(--ifm-intro-align-items);
   padding-left: var(--ifm-large-container-horizontal-padding);
   padding-right: var(--ifm-large-container-horizontal-padding);
 }
+.sectionCareersEmployees {
+  margin-top: var(--ifm-large-container-vertical-padding);
+}
+.sectionCareers .button {
+  margin-top: 12px;
+}
 .intro {
-  width: 440px;
+  width: 824px;
+  text-align: var(--ifm-intro-text-align);
 }
 .employees {
-  width: 800px;
+  width: 100%;
+  max-width: 1114px;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-between;
-  margin-top: 25px;
+  margin-top: 34px;
 }
 .employees > div {
   width: var(--ifm-employee-width);
   margin-bottom: var(--ifm-employee-bottom);
   text-align: center;
 }
+.employees > div > p,
+.employees > div > img {
+  margin-bottom: 16px;
+}
 .employees .firstName {
   font-family: var(--ifm-font-header-button);
   font-size: 26px;
   line-height: 31px;
-  margin-top: 6px;
   margin-bottom: 0px;
+  text-decoration: none;
+  color: var(--ifm-heading-color);
+  white-space: break-spaces;
 }
-.employees .title {
+.employees .tagline {
   font-family: var(--ifm-font-header-button);
-  font-size: 16px;
+  max-width: 352px;
+  margin: 0 auto;
   line-height: 25px;
-  margin-bottom: 4px;
+  font-size: 16px;
 }
 .blueSection {
   background: #1d0070;
   color: white;
   padding-top: var(--ifm-large-container-vertical-padding);
   padding-bottom: 60px;
-  margin-top: 173px;
+  margin-top: 64px;
   font-family: var(--ifm-font-header-button);
 }
 .blueSection > div {
@@ -109,9 +127,6 @@
   line-height: 55px;
   margin-bottom: 20px;
 }
-.button {
-  margin-top: 30px;
-}
 @media screen and (max-width: 1440px) {
   .blueSection > div {
     position: relative;
@@ -139,19 +154,13 @@
   }
 }
 @media screen and (max-width: 1240px) {
-  :root {
-    --ifm-employee-width: 50%;
-  }
   .benefits > div {
     width: 340px;
-  }
-  .employees {
-    width: 500px;
   }
 }
 @media screen and (max-width: 1050px) {
   :root {
-    --ifm-employee-width: 33%;
+    --ifm-employee-width: 45%;
   }
   .intro {
     width: 100%;
@@ -176,6 +185,10 @@
   }
 }
 @media screen and (max-width: 800px) {
+  :root {
+    --ifm-intro-text-align: left;
+    --ifm-intro-align-items: baseline;
+  }
   .careersMainSection {
     width: 100%;
   }
@@ -221,11 +234,6 @@
 @media screen and (max-width: 500px) {
   :root {
     --ifm-benefits-title: 100%;
-    --ifm-employee-width: 50%;
-  }
-}
-@media screen and (max-width: 330px) {
-  :root {
     --ifm-employee-width: 100%;
   }
 }
