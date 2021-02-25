@@ -10,8 +10,8 @@ module.exports = {
   baseUrl: "/",
   onBrokenLinks: "throw",
   favicon: "img/favicon.ico",
-  organizationName: "iron-fish", // Usually your GitHub org/user name.
-  projectName: "landing_page", // Usually your repo name.
+  organizationName: "iron-fish",
+  projectName: "landing_page",
   themeConfig: {
     gtag: {
       trackingID: "G-GJD73W9V3M",

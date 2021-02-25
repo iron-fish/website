@@ -13,7 +13,7 @@ const features = [
     className: "sectionPrivacy",
     title: "A new chain with the strongest privacy",
     description:
-      "Iron Fish is a Layer 1 blockchain that provides the strongest privacy guarantees on every single transaction, based on a variation of the Sapling protocol, leveraging zero-knowledge proofs (zk-SNARKs), and the highest industry standards for encryption. Iron Fish gives you complete control over who sees transaction details via account view keys or transaction decryption keys. \nYour data. Your information. Your coins.",
+      "Iron Fish is a Layer 1 blockchain that provides the strongest privacy guarantees on every single transaction, based on a variation of the Sapling protocol, leveraging zero-knowledge proofs (zk-SNARKs), and the highest industry standards for encryption. Iron Fish gives you complete control over who sees transaction details via account view keys or transaction decryption keys. Your data. Your information. Your coins.",
     buttonLink: "docs/whitepaper/6_transaction",
     button: "Learn more",
   },

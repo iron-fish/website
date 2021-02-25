@@ -9,8 +9,8 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh;
-  min-height: 770px;
+  height: auto;
+  min-height: auto;
   padding-top: var(--ifm-large-container-vertical-padding);
   padding-bottom: var(--ifm-large-container-vertical-padding);
 }
@@ -57,6 +57,8 @@
   align-self: center;
 }
 .sectionHomePage {
+  height: 100vh;
+  min-height: 770px;
   text-align: center;
   background: #1d0070 url(/img/index/ironloop.svg) no-repeat center center;
   background-size: 90% auto;
@@ -90,7 +92,7 @@
 .sectionBorderless {
   max-height: 894px;
   background: #fff url(/img/index/globe.svg) no-repeat;
-  background-position: calc(100vw - 50vw) center;
+  background-position: calc(100vw - 47vw) center;
 }
 .sectionRegulatory {
   background: #fff4e0;
@@ -259,7 +261,7 @@
     background-position: center;
     background-size: 330px 320px;
     margin-top: 0px;
-    height: 380px;
+    height: 320px;
   }
   .sectionDescription {
     font-size: 18px;
@@ -294,7 +296,12 @@
   }
 }
 @media screen and (max-width: 400px) {
+  .sectionBorderless .sectionContent {
+    padding-bottom: 0px;
+  }
   .sectionBorderless .sectionImg {
-    background-size: 300px auto;
+    background-size: 300px 290px;
+    height: 290px;
+    margin-top: 65px;
   }
 }
