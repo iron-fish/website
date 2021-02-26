@@ -94,7 +94,7 @@ function Home() {
             </h1>
             <Link
               className="button button--outline button--secondary"
-              to={useBaseUrl("docs/onboarding/iron-fish-tutorial")}
+              to={useBaseUrl("/docs/whitepaper/1_introduction")}
             >
               Get Started
             </Link>
