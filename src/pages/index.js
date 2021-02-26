@@ -6,7 +6,7 @@ import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import useBaseUrl from "@docusaurus/useBaseUrl";
 
 import styles from "./index.module.css";
-import Mailchimp from "./components/MailChimp";
+import Mailchimp from "../theme/components/MailChimp";
 
 const features = [
   {
@@ -89,11 +89,12 @@ function Home() {
           <header>
             <h1 className={clsx(styles.h1Title)}>
               The Private
-              <br /> Cryptocurrency
+              <br />
+              Cryptocurrency
             </h1>
             <Link
               className="button button--outline button--secondary"
-              to={useBaseUrl("docs/whitepaper/1_introduction")}
+              to={useBaseUrl("/docs/whitepaper/1_introduction")}
             >
               Get Started
             </Link>

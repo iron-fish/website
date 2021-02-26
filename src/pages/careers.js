@@ -4,7 +4,7 @@ import Link from "@docusaurus/Link";
 
 import clsx from "clsx";
 import styles from "./careers.module.css";
-import OpenPositions from "./components/OpenPositions";
+import OpenPositions from "../theme/components/OpenPositions";
 
 function Employee({ firstName, title, linkedin, id }) {
   return (

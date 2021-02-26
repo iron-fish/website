@@ -1,5 +1,5 @@
 import React from "react";
-import JobLayout, { JobLayoutSection } from "./components/JobLayout";
+import JobLayout, { JobLayoutSection } from "../theme/components/JobLayout";
 
 function JDCrypto() {
   return (
