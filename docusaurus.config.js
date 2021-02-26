@@ -33,12 +33,12 @@ module.exports = {
         //   label: 'Explorer',
         //   position: 'right',
         // },
-        // {
-        //   to: "docs/onboarding/iron-fish-tutorial",
-        //   activeBasePath: "docs",
-        //   label: "Get started",
-        //   position: "right",
-        // },
+        {
+          to: "docs/onboarding/iron-fish-tutorial",
+          activeBasePath: "docs",
+          label: "Get started",
+          position: "right",
+        },
         {
           to: "/crypto-privacy-comparison",
           label: "Privacy Features",

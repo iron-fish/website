@@ -22,8 +22,8 @@ const features = [
     title: "We care about usability",
     description:
       "Cryptocurrencies have struggled with usability. Iron Fish is built to be intuitive for both developers and users alike. We are building a complete set of tools for you to have the best end-to-end experience running and transacting $IRON on every platform, while always guaranteeing your privacy.",
-    buttonLink: "docs/whitepaper/1_introduction",
-    button: "Read Our Whitepaper",
+    buttonLink: "docs/onboarding/installation-iron-fish",
+    button: "Download Iron Fish",
   },
   {
     className: "sectionBorderless",
@@ -94,7 +94,7 @@ function Home() {
             </h1>
             <Link
               className="button button--outline button--secondary"
-              to={useBaseUrl("/docs/whitepaper/1_introduction")}
+              to={useBaseUrl("/docs/onboarding/iron-fish-tutorial")}
             >
               Get Started
             </Link>
