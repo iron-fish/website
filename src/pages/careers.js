@@ -39,21 +39,24 @@ function Careers() {
           </h1>
         </header>
         <section className={clsx(styles.sectionCareers)}>
-          <div className={clsx(styles.intro)}>
-            <p className={clsx(styles.subTitle)}>About the team</p>
-            <p>
-              We are craftspeople who are excited to work on uncharted territory
-              in decentralized computing and cutting edge cryptography. While
-              currently headquartered in San Francisco, we are a remote-first
-              company. We welcome talented people from all backgrounds,
-              throughout the United States and Canada.
-            </p>
-            <Link
-              className={clsx(styles.button, "button button--outline")}
-              to="#open-positions"
-            >
-              View Open Positions
-            </Link>
+          <div className={clsx(styles.sectionRow)}>
+            <div className={clsx(styles.intro)}>
+              <p className={clsx(styles.subTitle)}>About the team</p>
+              <p>
+                We are craftspeople who are excited to work on uncharted
+                territory in decentralized computing and cutting edge
+                cryptography. While currently headquartered in San Francisco, we
+                are a remote-first company. We welcome talented people from all
+                backgrounds, throughout the United States and Canada.
+              </p>
+              <Link
+                className={clsx(styles.button, "button button--outline")}
+                to="#open-positions"
+              >
+                View Open Positions
+              </Link>
+            </div>
+            <img src="/img/careers/submarine.gif" alt="" role="presentation" />
           </div>
         </section>
         <section
@@ -69,42 +72,42 @@ function Careers() {
               firstName="Elena"
               title="CEO"
               linkedin="https://www.linkedin.com/in/elenanadolinski/"
-              description="Elena is the Founder and CEO of Iron Fish - she previously worked at Microsoft and Airbnb. Felt in love with cryptocurrencies and privacy in 2017"
+              description=" Elena is the Founder and CEO of Iron Fish. Previously worked at Microsoft and Airbnb. She really didn't want her insurance to know when she eats pizza."
             />
             <Employee
               id="3"
               firstName="Derek"
               title="Engineer"
               linkedin="https://www.linkedin.com/in/derek-guenther/"
-              description="🚀 5X Hazel-eyed Technologist 🤩 Working on the intersection of Crypto and Bass Pro Shops 📈 A rising tide lifts all boats ⛵ Almost approached Bill Gates once"
+              description="Former Microsoft & Uber, he enjoys experimenting with new technologies when he’s not catching up on fiction or eating a bowl of Reese’s Puffs."
             />
             <Employee
               id="5"
               firstName="Jason"
               title="Engineer"
               linkedin="https://www.linkedin.com/in/jason-spafford-14892511/"
-              description="Full of flavor and made only from the best ingredients, making for a better-tasting noodle straightener and complex bug finder"
+              description="Former Uber. He is capable of writing complex weighted graph algorithms while dancing to electro music. A crypto noodle straightener if you will."
             />
             <Employee
               id="4"
               firstName="Johann"
               title="VPE"
               linkedin="https://www.linkedin.com/in/johann-kerbrat-a19389b/"
-              description="Former Airbnb, Uber with a strong interest for payments and building products. Always looking for where to find a good baguette in America"
+              description="Former Airbnb and Uber with a strong interest for payments and building easy-to-use products. Always looking for where to find a good baguette in North America."
             />
             <Employee
               id="2"
               firstName="Skylar"
               title="Designer"
               linkedin="https://www.linkedin.com/in/skylar-richard-1b8999a4/"
-              description="International award winning designer who hates the snow and cold whether albeit lives in Canada, complains about it relentless yet reluctant to move."
+              description="International award winning designer who hates the snow and cold weather, albeit lives in Canada, complains about it relentlessly yet reluctant to move."
             />
             <Employee
               id="6"
               firstName="You?"
               title="Fish"
               linkedin="mailto:joinus@ironfish.network"
-              description="We are growing quickly, and Iron Fish is rapidly evolving. If you are interested in working with Cryptocurrency and having an impact, <a href='mailto:joinus@ironfish.network'>contact us</a>"
+              description="We are growing quickly, and Iron Fish is rapidly evolving. If you are interested in working with Cryptocurrency and having an impact, <a href='mailto:joinus@ironfish.network'>contact us</a>."
             />
           </div>
         </section>
