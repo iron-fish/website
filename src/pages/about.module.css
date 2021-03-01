@@ -6,7 +6,7 @@
 }
 .subTitle {
   font-family: var(--ifm-font-header-button);
-  line-height: 50px;
+  line-height: var(--ifm-line-height-subtitle);
   margin-bottom: 30px;
   font-size: var(--ifm-font-size-subtitle);
 }
@@ -60,7 +60,6 @@
     padding-top: 140px;
   }
   .subTitle {
-    line-height: 50px;
     margin-bottom: 20px;
   }
 }

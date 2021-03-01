@@ -134,7 +134,7 @@
 .subTitle {
   font-family: var(--ifm-font-header-button);
   font-size: var(--ifm-font-size-subtitle);
-  line-height: 55px;
+  line-height: var(--ifm-font-line-height-subtitle);
   margin-bottom: 20px;
 }
 @media screen and (max-width: 1440px) {
@@ -248,6 +248,7 @@
     --ifm-benefits-title: 100%;
     --ifm-employee-width: 100%;
     --ifm-intro-text-align: left;
+    --ifm-font-line-height-subtitle: 46px;
   }
   .sectionCareersEmployees {
     text-align: center;
