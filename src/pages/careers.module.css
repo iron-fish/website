@@ -18,6 +18,9 @@
   padding-left: var(--ifm-large-container-horizontal-padding);
   padding-right: var(--ifm-large-container-horizontal-padding);
 }
+.sectionCareers img {
+  max-width: 590px;
+}
 .sectionCareersEmployees {
   margin-top: var(--ifm-large-container-vertical-padding);
 }
