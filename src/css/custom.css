@@ -351,6 +351,12 @@ ol ol {
   margin-bottom: 4px !important;
   margin-top: 4px !important;
 }
+.markdown > h2 {
+  margin-bottom: 10px;
+}
+.markdown > h3 {
+  margin-top: 20px;
+}
 .prism-code {
   max-width: 100%;
   overflow: auto;
