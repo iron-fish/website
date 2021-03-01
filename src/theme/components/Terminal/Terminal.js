@@ -35,7 +35,7 @@ function Terminal({ command }) {
     <InView as="div" onChange={startAnimation}>
       <div className={clsx(styles.terminalContainer)}>
         <img
-          src="/img/copyClipboard.svg"
+          src="/img/refresh.svg"
           className={clsx(styles.refreshButton)}
           onClick={playAnimation}
           alt="Restart the animation"

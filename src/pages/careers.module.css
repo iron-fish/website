@@ -6,6 +6,7 @@
   --ifm-intro-text-align: left;
   --ifm-intro-text-width: 582px;
   --ifm-intro-column-direction: row;
+  --ifm-intro-img-max-width: 590px;
 }
 .sectionCareers {
   display: flex;
@@ -19,7 +20,7 @@
   padding-right: var(--ifm-large-container-horizontal-padding);
 }
 .sectionCareers img {
-  max-width: 590px;
+  max-width: var(--ifm-intro-img-max-width);
 }
 .sectionCareersEmployees {
   margin-top: var(--ifm-large-container-vertical-padding);
@@ -134,11 +135,8 @@
   margin-top: 190px;
   margin-left: 80px;
 }
-.subTitle {
-  font-family: var(--ifm-font-header-button);
-  font-size: var(--ifm-font-size-subtitle);
-  line-height: var(--ifm-font-line-height-subtitle);
-  margin-bottom: 20px;
+.button {
+  margin-top: 30px;
 }
 @media screen and (max-width: 1440px) {
   .blueSection > div {
@@ -252,6 +250,7 @@
     --ifm-employee-width: 100%;
     --ifm-intro-text-align: left;
     --ifm-font-line-height-subtitle: 46px;
+    --ifm-intro-img-max-width: 100%;
   }
   .sectionCareersEmployees {
     text-align: center;

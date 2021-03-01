@@ -230,10 +230,36 @@ ol ol {
   text-align: var(--ifm-main-title-align);
   color: var(--ifm-color-primary);
   max-width: var(--ifm-main-title-width);
-  margin-left: auto;
   padding-left: var(--ifm-main-title-padding);
+  padding-right: var(--ifm-main-title-padding);
+  margin-left: auto;
   margin-right: auto;
   width: 100%;
+  max-width: 1200px;
+}
+.main--subtitle {
+  font-family: var(--ifm-font-header-button);
+  font-size: var(--ifm-font-size-subtitle);
+  text-align: var(--ifm-main-title-align);
+  line-height: 55px;
+  margin-bottom: 20px;
+}
+.tagline {
+  font-family: var(--ifm-font-header-button);
+  font-size: 32px;
+  line-height: 42px;
+  width: 100%;
+  text-align: var(--ifm-main-title-align);
+  max-width: calc(
+    820px + var(--ifm-large-container-horizontal-padding) +
+      var(--ifm-large-container-horizontal-padding)
+  );
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: var(--ifm-large-container-vertical-padding);
+  padding-left: var(--ifm-large-container-horizontal-padding);
+  padding-right: var(--ifm-large-container-horizontal-padding);
+
 }
 /* Header */
 .navbar {
