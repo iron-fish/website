@@ -1,4 +1,5 @@
 import React, { useCallback, useRef, createRef } from "react";
+import clsx from "clsx";
 
 import { InView } from "react-intersection-observer";
 
@@ -32,13 +33,17 @@ function Terminal({ command }) {
 
   return (
     <InView as="div" onChange={startAnimation}>
-      <div
-        ref={ref}
-        onClick={playAnimation}
-        title="Restart the animation"
-        data-termynal
-      >
-        {children}
+      <div className={clsx(styles.terminalContainer)}>
+        <img
+          src="/img/copyClipboard.svg"
+          className={clsx(styles.refreshButton)}
+          onClick={playAnimation}
+          alt="Restart the animation"
+        />
+
+        <div ref={ref} data-termynal>
+          {children}
+        </div>
       </div>
     </InView>
   );

@@ -226,9 +226,6 @@
   }
 }
 @media screen and (max-width: 700px) {
-  .button {
-    width: 100%;
-  }
   .sectionHomePage {
     background: #1d0070 url(/img/index/splash-small-top.svg) no-repeat top
       center;

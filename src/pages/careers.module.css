@@ -1,53 +1,84 @@
 :root {
-  --ifm-employee-width: 33%;
-  --ifm-employee-bottom: 40px;
+  --ifm-employee-width: 32%;
+  --ifm-employee-bottom: 64px;
   --ifm-benefits-title: 444px;
+  --ifm-intro-align-items: center;
+  --ifm-intro-text-align: left;
+  --ifm-intro-text-width: 582px;
+  --ifm-intro-column-direction: row;
 }
-.careersMainSection {
+.sectionCareers {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   width: 100%;
   max-width: 1574px;
   margin: 0 auto;
-  justify-content: space-between;
+  justify-content: center;
+  align-items: var(--ifm-intro-align-items);
   padding-left: var(--ifm-large-container-horizontal-padding);
   padding-right: var(--ifm-large-container-horizontal-padding);
 }
+.sectionCareers img {
+  max-width: 590px;
+}
+.sectionCareersEmployees {
+  margin-top: var(--ifm-large-container-vertical-padding);
+}
+.sectionCareers .button {
+  margin-top: 12px;
+}
+.sectionRow {
+  display: flex;
+  flex-direction: var(--ifm-intro-column-direction);
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1236px;
+}
 .intro {
-  width: 440px;
+  width: var(--ifm-intro-text-width);
+  text-align: var(--ifm-intro-text-align);
 }
 .employees {
-  width: 800px;
+  width: 100%;
+  max-width: 1114px;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-between;
-  margin-top: 25px;
+  margin-top: 34px;
 }
 .employees > div {
   width: var(--ifm-employee-width);
   margin-bottom: var(--ifm-employee-bottom);
   text-align: center;
 }
+.employees > div > p,
+.employees > div > img {
+  margin-bottom: 16px;
+}
 .employees .firstName {
   font-family: var(--ifm-font-header-button);
   font-size: 26px;
   line-height: 31px;
-  margin-top: 6px;
   margin-bottom: 0px;
+  text-decoration: none;
+  color: var(--ifm-heading-color);
+  white-space: break-spaces;
 }
-.employees .title {
+.employees .tagline {
   font-family: var(--ifm-font-header-button);
-  font-size: 16px;
+  max-width: 352px;
+  margin: 0 auto;
   line-height: 25px;
-  margin-bottom: 4px;
+  font-size: 16px;
 }
 .blueSection {
   background: #1d0070;
   color: white;
   padding-top: var(--ifm-large-container-vertical-padding);
   padding-bottom: 60px;
-  margin-top: 173px;
+  margin-top: 64px;
   font-family: var(--ifm-font-header-button);
 }
 .blueSection > div {
@@ -106,11 +137,8 @@
 .subTitle {
   font-family: var(--ifm-font-header-button);
   font-size: var(--ifm-font-size-subtitle);
-  line-height: 55px;
+  line-height: var(--ifm-font-line-height-subtitle);
   margin-bottom: 20px;
-}
-.button {
-  margin-top: 30px;
 }
 @media screen and (max-width: 1440px) {
   .blueSection > div {
@@ -139,19 +167,16 @@
   }
 }
 @media screen and (max-width: 1240px) {
-  :root {
-    --ifm-employee-width: 50%;
-  }
   .benefits > div {
     width: 340px;
-  }
-  .employees {
-    width: 500px;
   }
 }
 @media screen and (max-width: 1050px) {
   :root {
-    --ifm-employee-width: 33%;
+    --ifm-employee-width: 45%;
+    --ifm-intro-text-width: 100%;
+    --ifm-intro-text-align: center;
+    --ifm-intro-column-direction: column;
   }
   .intro {
     width: 100%;
@@ -176,6 +201,9 @@
   }
 }
 @media screen and (max-width: 800px) {
+  :root {
+    --ifm-intro-align-items: baseline;
+  }
   .careersMainSection {
     width: 100%;
   }
@@ -221,11 +249,11 @@
 @media screen and (max-width: 500px) {
   :root {
     --ifm-benefits-title: 100%;
-    --ifm-employee-width: 50%;
-  }
-}
-@media screen and (max-width: 330px) {
-  :root {
     --ifm-employee-width: 100%;
+    --ifm-intro-text-align: left;
+    --ifm-font-line-height-subtitle: 46px;
+  }
+  .sectionCareersEmployees {
+    text-align: center;
   }
 }

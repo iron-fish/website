@@ -97,7 +97,7 @@
 
   --ifm-menu-color-background-active: none;
   --ifm-menu-color-background-hover: none;
-  --ifm-menu-color: #9976FF;
+  --ifm-menu-color: #9976ff;
   --ifm-menu-color-active: #fff;
   --ifm-menu-link-padding-vertical: 5px;
   --ifm-menu-padding-vertical: 15px;
@@ -128,9 +128,10 @@
   --ifm-main-title-align: center;
   --ifm-main-title-padding: 0px;
   --ifm-font-size-subtitle: 46px;
+  --ifm-line-height-subtitle: 55px;
   --ifm-navbar--toggle-right: 35px;
   --ifm-markdown-horizontal-padding: 0px;
-  --ifm-code-background-color: #1A395B;
+  --ifm-code-background-color: #1a395b;
   --ifm-toc-width: 233px;
 }
 
@@ -350,6 +351,12 @@ ol ol {
   margin-bottom: 4px !important;
   margin-top: 4px !important;
 }
+.markdown > h2 {
+  margin-bottom: 10px;
+}
+.markdown > h3 {
+  margin-top: 20px;
+}
 .prism-code {
   max-width: 100%;
   overflow: auto;
@@ -360,8 +367,7 @@ ol ol {
 }
 .table-of-contents {
   border-left: none;
-  padding: var(--ifm-menu-padding-vertical) 0
-    var(--ifm-menu-padding-vertical) 0;
+  padding: var(--ifm-menu-padding-vertical) 0 var(--ifm-menu-padding-vertical) 0;
   border-radius: var(--ifm-button-border-radius);
   background: #f9fafb;
   margin-top: 10px;
@@ -457,6 +463,9 @@ div.item {
     --ifm-navbar--toggle-right: 0px;
     --ifm-font-size-subtitle: 42px;
   }
+  .button {
+    width: 100%;
+  }
   .navbar__inner {
     padding-left: 0px;
   }
@@ -475,5 +484,9 @@ div.item {
     --ifm-main-title-font-size: 40px;
     --ifm-main-title-line-height: 47px;
     --ifm-font-size-subtitle: 38px;
+    --ifm-line-height-subtitle: 46px;
+  }
+  .notVisibleOnMobile {
+    display: none !important;
   }
 }

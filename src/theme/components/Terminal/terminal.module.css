@@ -13,9 +13,12 @@
   --button-size: 10px;
 }
 
+.terminalContainer {
+  position: relative;
+}
+
 [data-termynal] {
   width: 1200px;
-  cursor: pointer;
   max-width: 100%;
   font-family: var(--ifm-font-family-monospace);
   background: var(--ifm-code-background-color);
@@ -88,8 +91,22 @@
   -webkit-animation: blink 1s infinite;
           animation: blink 1s infinite;
 }
-
-
+.refreshButton {
+  background: transparent;
+  z-index: 1;
+  border: none;
+  border-radius: var(--ifm-global-radius);
+  color: var(--ifm-color-white);
+  cursor: pointer;
+  outline: none;
+  display: flex;
+  align-items:center;
+  justify-content: center;
+  padding: 12px 0.5rem;
+  position: absolute;
+  right: calc(var(--ifm-pre-padding) / 2);
+  top: calc(var(--ifm-pre-padding) / 2);
+}
 /* Cursor animation */
 
 @-webkit-keyframes blink {

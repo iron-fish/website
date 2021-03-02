@@ -6,15 +6,19 @@ import clsx from "clsx";
 import styles from "./careers.module.css";
 import OpenPositions from "../theme/components/OpenPositions";
 
-function Employee({ firstName, title, linkedin, id }) {
+function Employee({ firstName, title, description, linkedin, id }) {
   return (
     <div>
-      <img src={`/img/careers/block-${id}.svg`} role="decorative" />
-      <p className={clsx(styles.firstName)}>{firstName}</p>
-      <p className={clsx(styles.title)}>&#x3c;{title}&#x3e;</p>
-      <a className={clsx(styles.linkedin)} href={linkedin} target="_blank">
-        <img src={`/img/careers/linkedin.svg`} alt="Linkedin" />
-      </a>
+      <img src={`/img/careers/block-${id}.svg`} role="presentation" />
+      <p>
+        <a className={clsx(styles.firstName)} href={linkedin} target="_blank">
+          {`${firstName}\n${title}`}
+        </a>
+      </p>
+      <p
+        className={clsx(styles.tagline)}
+        dangerouslySetInnerHTML={{ __html: description }}
+      />
     </div>
   );
 }
@@ -31,69 +35,79 @@ function Careers() {
       >
         <header>
           <h1 className={clsx(styles.h1, "main--title")}>
-            Using Cryptography
-            <br />
-            for the Good
+            Careers at Iron Fish
           </h1>
         </header>
-        <section className={clsx(styles.careersMainSection)}>
-          <div className={clsx(styles.intro)}>
-            <p className={clsx(styles.subTitle)}>Come join us!</p>
-            <p>
-              We are craftspeople who are excited to work on uncharted territory
-              in decentralized computing and cutting edge cryptography. While
-              currently headquartered in San Francisco, we are a remote-first
-              company. We welcome talented people from all backgrounds,
-              throughout the United States and Canada.
-              <br />
-              <br />
-              We are growing quickly, and Iron Fish is rapidly evolving. Our
-              team members and investors are experts in their fields, and each
-              person brings a diverse set of skills and experiences.
-            </p>
-            <Link
-              className={clsx(styles.button, "button button--outline")}
-              to="#open-positions"
-            >
-              View Open Positions
-            </Link>
+        <section className={clsx(styles.sectionCareers)}>
+          <div className={clsx(styles.sectionRow)}>
+            <div className={clsx(styles.intro)}>
+              <p className={clsx(styles.subTitle)}>About the team</p>
+              <p>
+                We are craftspeople who are excited to work on uncharted
+                territory in decentralized computing and cutting edge
+                cryptography. While currently headquartered in San Francisco, we
+                are a remote-first company. We welcome talented people from all
+                backgrounds, throughout the United States and Canada.
+              </p>
+              <Link
+                className={clsx(styles.button, "button button--outline")}
+                to="#open-positions"
+              >
+                View Open Positions
+              </Link>
+            </div>
+            <img src="/img/careers/submarine.gif" alt="" role="presentation" />
           </div>
+        </section>
+        <section
+          className={clsx(
+            styles.sectionCareers,
+            styles.sectionCareersEmployees
+          )}
+        >
+          <p className={clsx(styles.subTitle)}>Who you'll work with</p>
           <div className={clsx(styles.employees)}>
             <Employee
               id="1"
               firstName="Elena"
-              title="Founder/CEO"
+              title="CEO"
               linkedin="https://www.linkedin.com/in/elenanadolinski/"
+              description=" Elena is the Founder and CEO of Iron Fish. Previously worked at Microsoft and Airbnb. She really didn't want her insurance to know when she eats pizza."
             />
             <Employee
               id="3"
               firstName="Derek"
               title="Engineer"
               linkedin="https://www.linkedin.com/in/derek-guenther/"
+              description="Former Microsoft & Uber, he enjoys experimenting with new technologies when he’s not catching up on fiction or eating a bowl of Reese’s Puffs."
             />
             <Employee
               id="5"
               firstName="Jason"
               title="Engineer"
               linkedin="https://www.linkedin.com/in/jason-spafford-14892511/"
+              description="Former Uber. He is capable of writing complex weighted graph algorithms while dancing to electro music. A crypto noodle straightener if you will."
             />
             <Employee
               id="4"
               firstName="Johann"
               title="VPE"
               linkedin="https://www.linkedin.com/in/johann-kerbrat-a19389b/"
+              description="Former Airbnb and Uber with a strong interest for payments and building easy-to-use products. Always looking for where to find a good baguette in North America."
             />
             <Employee
               id="2"
               firstName="Skylar"
               title="Designer"
               linkedin="https://www.linkedin.com/in/skylar-richard-1b8999a4/"
+              description="International award winning designer who hates the snow and cold weather, albeit lives in Canada, complains about it relentlessly yet reluctant to move."
             />
             <Employee
               id="6"
               firstName="You?"
-              title="Iron Fisher"
+              title="Fish"
               linkedin="mailto:joinus@ironfish.network"
+              description="We are growing quickly, and Iron Fish is rapidly evolving. If you are interested in working with Cryptocurrency and having an impact, <a href='mailto:joinus@ironfish.network'>contact us</a>."
             />
           </div>
         </section>
@@ -104,12 +118,12 @@ function Careers() {
               <img
                 className={clsx(styles.fish1)}
                 src="/img/careers/fish-large-left.svg"
-                role="decorative"
+                role="presentation"
               />
               <img
                 className={clsx(styles.fish2)}
                 src="/img/careers/fish-small-right.svg"
-                role="decorative"
+                role="presentation"
               />
             </div>
             <div className={clsx(styles.benefits)}>
@@ -149,12 +163,12 @@ function Careers() {
               <img
                 className={clsx(styles.fish3)}
                 src="/img/careers/fish-large-right.svg"
-                role="decorative"
+                role="presentation"
               />
               <img
                 className={clsx(styles.fish4)}
                 src="/img/careers/fish-small-left.svg"
-                role="decorative"
+                role="presentation"
               />
             </div>
             <div className={clsx(styles.benefits)}>

@@ -49,15 +49,15 @@
 .docMainContainer li {
   font-size: 1.3rem;
 }
-.docSidebarContainerOnboarding ul a {
+.docSidebarContainer ul a {
   color: #a4a4a4;
 }
-.docSidebarContainerOnboarding ul a:hover,
-.docSidebarContainerOnboarding ul a[aria-current="page"] {
+.docSidebarContainer ul a:hover,
+.docSidebarContainer ul a[aria-current="page"] {
   color: #000;
   text-decoration: underline;
 }
-.docSidebarContainerOnboarding ul {
+.docSidebarContainer ul {
   border: 1px solid #dadce0;
   width: 244px;
   background-color: #fff;
