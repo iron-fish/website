@@ -13,7 +13,7 @@ const features = [
     className: "sectionPrivacy",
     title: "A new chain with the strongest privacy",
     description:
-      "Iron Fish is a Layer 1 blockchain that provides the strongest privacy guarantees on every single transaction, based on a variation of the Sapling protocol, leveraging zero-knowledge proofs (zk-SNARKs), and the highest industry standards for encryption. Iron Fish gives you complete control over who sees transaction details via account view keys or transaction decryption keys. Your data. Your information. Your coins.",
+      "Iron Fish is a Layer 1 blockchain that provides the strongest privacy guarantees on every single transaction. Leveraging zero-knowledge proofs (zk-SNARKs), and the highest industry standards for encryption, Iron Fish gives you complete control over who sees transaction details via account view keys or transaction decryption keys. Your data. Your information. Your coins.",
     buttonLink: "docs/whitepaper/6_transaction",
     button: "Learn more",
   },
@@ -21,7 +21,7 @@ const features = [
     className: "sectionCryptocurrency",
     title: "We care about usability",
     description:
-      "We’ve struggled with many cryptocurrencies to learn how to build Iron Fish to be intuitive for both developers and users alike. We are building a complete set of tools for you to have the best end-to-end experience running and transacting $IRON on every platform, while always guaranteeing your privacy.",
+      "We’ve struggled with usability with many cryptocurrencies. Iron Fish is built to be intuitive for both developers and users alike. We are building a complete set of tools for you to have the best end-to-end experience running and transacting $IRON on every platform, while always guaranteeing your privacy.",
     buttonLink: "docs/whitepaper/1_introduction",
     button: "Learn more",
   },
@@ -37,7 +37,7 @@ const features = [
     className: "sectionRegulatory",
     title: "Regulatory compliance",
     description:
-      "Privacy doesn't mean that Iron Fish can't be compliant. Every Iron Fish account comes with a set of view keys allowing an exchange or financial organization to provide a full audit of the accounts they manage and complying with all their AML obligations.",
+      "Privacy doesn't mean that Iron Fish can't be compliant. Every Iron Fish account comes with a set of view keys allowing an exchange or financial organization to see a full audit of the accounts they manage and comply with all their AML obligations.",
     buttonLink: "docs/whitepaper/1_introduction",
     button: "Read Our Whitepaper",
   },
@@ -45,7 +45,7 @@ const features = [
     className: "sectionExperts",
     title: "Built by experts and backed by leading investors",
     description:
-      "We are honored to be working with incredible investors and angels. Our team members are tech veterans, with resumes spanning Airbnb, Microsoft, Uber, and more.",
+      "We are honored to be working with incredible investors and angels. Our team members are tech veterans, with experience spanning Airbnb, Microsoft, Uber, and more.",
     buttonLink: "about",
     button: "About Us",
   },
