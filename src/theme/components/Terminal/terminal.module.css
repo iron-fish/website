@@ -104,7 +104,7 @@
   justify-content: center;
   padding: 12px 0.5rem;
   position: absolute;
-  right: calc(var(--ifm-pre-padding) / 2);
+  right: 9px;
   top: calc(var(--ifm-pre-padding) / 2);
 }
 /* Cursor animation */

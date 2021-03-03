@@ -1,14 +1,16 @@
 :root {
-  --ifm-faucet-background: #ffb54b url(/img/onboarding/faucetAd.svg) no-repeat right;
+  --ifm-faucet-background-position: center right;
   --ifm-faucet-button-width: auto;
   --ifm-faucet-container-padding: 65px;
   --ifm-faucet-container-align: left;
   --ifm-faucet-container-height: 253px;
   --ifm-faucet-container-justify-content: center;
 }
-
 .adContainer {
-  background: var(--ifm-faucet-background);
+  background-color: #ffb54b;
+  background-image: url(/img/onboarding/faucetAd.svg);
+  background-repeat: no-repeat;
+  background-position: var(--ifm-faucet-background-position);
   width: 100%;
   height: var(--ifm-faucet-container-height);
   display: flex;
@@ -16,15 +18,16 @@
   justify-content: var(--ifm-faucet-container-justify-content);
   flex-direction: column;
   padding: var(--ifm-faucet-container-padding);
+  overflow: visible;
 }
 .adContainer .button {
   width: var(--ifm-faucet-button-width);
   align-self: flex-start;
   margin-top: 10px;
 }
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 1200px) {
   :root {
-    --ifm-faucet-background: #ffb54b url(/img/onboarding/faucetAd.svg) no-repeat bottom right;
+    --ifm-faucet-background-position: bottom right;
     --ifm-faucet-button-width: 100%;
     --ifm-faucet-container-justify-content: flex-start;
     --ifm-faucet-container-height: 540px;

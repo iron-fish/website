@@ -76,7 +76,6 @@ function Navbar() {
   const location = useLocation();
   const isBlueHeader = [
     "/",
-    "/about/",
     "/jd-backend",
     "/jd-cryptographer",
     "/jd-mobile",

@@ -41,7 +41,7 @@ function Careers() {
         <section className={clsx(styles.sectionCareers)}>
           <div className={clsx(styles.sectionRow)}>
             <div className={clsx(styles.intro)}>
-              <p className={clsx(styles.subTitle)}>About the team</p>
+              <p className="main--subtitle">About the team</p>
               <p>
                 We are craftspeople who are excited to work on uncharted
                 territory in decentralized computing and cutting edge
@@ -65,7 +65,7 @@ function Careers() {
             styles.sectionCareersEmployees
           )}
         >
-          <p className={clsx(styles.subTitle)}>Who you'll work with</p>
+          <p className="main--subtitle">Who you'll work with</p>
           <div className={clsx(styles.employees)}>
             <Employee
               id="1"
