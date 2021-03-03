@@ -79,15 +79,15 @@ function AboutUs() {
           title="The introduction of e-Commerce"
           description={
             <>
-              In just a few years after the arrival of the internet, the first
-              transaction on an e-commerce site was made. The convenience of
-              shopping online quickly spread to account to 20%+ of total retail
-              sales today. But it was still a risky operation at that time,
-              vulnerable to many types of attack over the network until the
-              adoption of the SSL layer. However, governments were worried about
-              this new security technology preventing them from controlling what
-              was happening online. To this day, many governments are still
-              censoring websites that are using HTTPS.
+              Almost as soon as the internet was created, so was e-commerce. For
+              financial transactions to happen online, a secure communication
+              channel was needed to protect user credit card data. The invention
+              and adoption of SSL, what is now HTTPS, opened up the floodgates
+              to e-commerce. Today, online shopping accounts for 20% of all
+              retail sales, with HTTPS being the standard for almost all
+              websites. At the time however, governments put heavy restrictions
+              on even this type of encryption, scrutinizing it for being used
+              for nefarious purposes.
             </>
           }
           image="ecommerce"
@@ -98,14 +98,14 @@ function AboutUs() {
           description={
             <>
               Following the 2008 financial collapse, the trust in the
-              centralized economic system declined. The sentiment spreads across
-              the world after various events like the Greek government-debt
-              crisis or the Venezuelan bolivar depreciation. The Bitcoin network
-              started in 2009 as a medium for daily transactions or digital cash
-              without the traditional centralized banking infrastructure.
-              However, to this day, Bitcoin has been primarily used as a store
-              of value and a hedge against inflation because of the lack of
-              privacy, slow transaction time, and costly transaction cost.
+              centralized economic system declined. The Greece government had a
+              debt crisis, the Venezuelan bolivar depreciated, and many
+              economies went into a recession. It was during this time that
+              Bitcoin, a decentralized and trust-less cryptocurrency system was
+              born — a true innovation in forming a new type of currency. Today
+              Bitcoin is primarily used as a store of value and a hedge against
+              inflation. However, Bitcoin lacks privacy and suffers from slow
+              transaction time and costly transaction cost.
             </>
           }
           image="houses"
@@ -116,31 +116,35 @@ function AboutUs() {
           description={
             <>
               Day to day payments accelerated their progression to being
-              digital-only. Following the pandemic, cash is replaced by
-              contactless payments in stores. Credit card companies are now able
-              to track and share your data like never before. Governments and
-              users are slowly realizing that privacy matters and how tech
-              companies are profiting from the data they collect. But major
-              cryptocurrencies like Bitcoin or Ethereum are still not private.
-              Other privacy coins have major flaws and are difficult to use for
-              most.
+              digital-only. Following the pandemic, cash was replaced by
+              contactless or online payments. Never before in human history has
+              an individual been this traced in what we do, what we buy, or
+              where we go, and credit card companies profit greatly from selling
+              your payments data. While major cryptocurrencies like Bitcoin or
+              Ethereum offer alternative solutions to payments, they are
+              fundamentally not private, allowing anyone in the world to view
+              all transaction details. Though privacy preserving tools and other
+              privacy coins exist, they all have flaws that prevent them to be
+              safe or usable.
             </>
           }
           image="donuts"
         />
         <SectionStory
           date="TODAY"
-          title="Iron Fish to the rescue!"
+          title="Iron Fish"
           description={
             <>
-              Why ‘Iron Fish’? During WW2, the US recruited Native Americans to
-              use their tribal languages to send secret communications to and
-              from the battlefield. One of their code systems contained words
-              that were directly translated from English to Navajo for military
-              words. The term for ‘submarine’ became what directly translates to
-              as ‘iron fish’. We chose this as our name because it shows the
-              power of cryptography and how a complex modern concept can be
-              described using relatively simple words.
+              Bitcoin was born out of the 2008 recession. Iron Fish is being
+              born out of the 2020 pandemic, during a time when digital payments
+              are dominant and our privacy has never before been this violated.
+              We are working on providing a currency that makes privacy
+              approachable and easy to use, while providing the strongest
+              privacy guarantees available. Not only is privacy a right, but it
+              also leads to innovation, creativity, and safety. We chose the
+              name ‘Iron Fish’ because during WW2 the US Navajo Code Talkers
+              used it as a codename for a submarine — displaying the power of
+              cryptography to protect and defend.
             </>
           }
           image="coins"
@@ -155,13 +159,14 @@ function AboutUs() {
               link="docs/whitepaper/6_transaction"
               description={
                 <>
-                  We decided to not cut any corners and adopt the highest
+                  We have decided to not cut any corners and adopt the highest
                   privacy-guaranteed technique – using shielded transactions
                   with the help of zero-knowledge proofs. All of our
                   transactions are fully private and anonymous. Each Iron Fish
                   account comes with a set of view keys allowing the user to
                   give out read-only access to their account, or disclose a
-                  particular transaction in the case of a dispute.
+                  particular transaction in the case of a dispute or regulatory
+                  compliance.
                 </>
               }
             />
@@ -172,12 +177,12 @@ function AboutUs() {
               description={
                 <>
                   Most cryptocurrencies are made by engineers, for engineers,
-                  which results in a high barrier to entry. We are working on
+                  which results in a high barrier to entry for most users. We are working on
                   developing an improved user experience and offering a full end
                   to end product: from your mobile phone wallet to your own bank
                   account in a tab of your browser. If we want to have a truly
-                  decentralized banking system, we need to make it easier to use
-                  for anyone.
+                  decentralized banking system, we need to make it easy for
+                  anyone to use and accessible.
                 </>
               }
             />
