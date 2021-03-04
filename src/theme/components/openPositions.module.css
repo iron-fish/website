@@ -4,7 +4,7 @@
 .section {
   position: relative;
   border-top: 1px solid #e1e1e1;
-  padding-top: var(--ifm-large-container-vertical-padding);
+  padding-top: var(--ifm-large-vertical-padding);
   padding-bottom: 56px;
 }
 .container {
@@ -49,7 +49,7 @@
   height: 93px;
   border: 1px solid black;
   justify-content: space-between;
-  padding: 32px;
+  padding: var(--ifm-small-vertical-padding);
   margin-bottom: 40px;
   margin-left: auto;
   box-sizing: border-box;
@@ -75,7 +75,7 @@
 .position .time {
   font-family: var(--ifm-font-header-button);
   font-size: 18px;
-  color: #687086;
+  color: var(--ifm-color-thirty);
   height: 25px;
 }
 .position .button {

@@ -1,6 +1,6 @@
 :root {
   --ifm-employee-width: 32%;
-  --ifm-employee-bottom: 64px;
+  --ifm-employee-bottom: var(--ifm-medium-vertical-padding);
   --ifm-benefits-title: 444px;
   --ifm-intro-align-items: center;
   --ifm-intro-text-align: left;
@@ -23,7 +23,7 @@
   max-width: var(--ifm-intro-img-max-width);
 }
 .sectionCareersEmployees {
-  margin-top: var(--ifm-large-container-vertical-padding);
+  margin-top: var(--ifm-large-vertical-padding);
 }
 .sectionCareers .button {
   margin-top: 12px;
@@ -77,9 +77,9 @@
 .blueSection {
   background: #1d0070;
   color: white;
-  padding-top: var(--ifm-large-container-vertical-padding);
+  padding-top: var(--ifm-large-vertical-padding);
   padding-bottom: 60px;
-  margin-top: 64px;
+  margin-top: var(--ifm-medium-vertical-padding);
   font-family: var(--ifm-font-header-button);
 }
 .blueSection > div {
@@ -161,7 +161,7 @@
     display: none;
   }
   .benefitsTitle {
-    margin-bottom: 64px;
+    margin-bottom: var(--ifm-medium-vertical-padding);
   }
 }
 @media screen and (max-width: 1240px) {

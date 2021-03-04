@@ -96,7 +96,7 @@
     padding-top: 63px;
   }
   .container {
-    padding-bottom: 64px;
+    padding-bottom: var(--ifm-medium-vertical-padding);
     flex-direction: column;
     align-items: center;
   }
@@ -114,7 +114,7 @@
     width: 210px;
   }
   .button {
-    margin-bottom: 64px;
+    margin-bottom: var(--ifm-medium-vertical-padding);
     width: 210px;
   }
   .contact {
