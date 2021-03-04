@@ -1,0 +1,83 @@
+/**
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+ :root {
+  --author-story-flex-direction: row;
+  --author-story-photo-margin: 0;
+  --author-story-padding: var(--ifm-medium-vertical-padding);
+}
+.blogPostTitle {
+  font-size: 3rem;
+}
+
+.blogPostDate {
+  font-size: 0.9rem;
+}
+.blogArticle {
+  max-width: 818px;
+  width: 100%;
+  margin: 0 auto;
+  margin-top: var(--ifm-medium-vertical-padding);
+}
+.blogArticle .image {
+  height: 550px;
+  width: 100%;
+  display: block;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-top: var(--ifm-small-vertical-padding);
+  margin-bottom: var(--ifm-medium-vertical-padding);
+}
+.author {
+  margin-top: 24px;
+}
+.authorStory a,
+.author a {
+  text-decoration: none;
+  color: var(--ifm-color-primary);
+  font-family: var(--ifm-font-header-button);
+  font-size: 18px;
+  font-weight: normal;
+}
+
+.author small {
+  font-family: var(--ifm-font-header-button);
+  color: var(--ifm-color-thirty);
+  font-size: 14px;
+}
+.authorStory {
+  display: flex;
+  font-family: var(--ifm-font-header-button);
+  background: #f9fafb;
+  margin-top: 96px;
+  margin-bottom: 96px;
+  width: 100%;
+  padding: var(--author-story-padding);
+  flex-direction: var(--author-story-flex-direction);
+}
+.authorStory h4 {
+  margin-top: 8px;
+  margin-bottom: 16px;
+}
+.authorStory p {
+  color: var(--ifm-color-thirty);
+  font-size: 14px;
+  line-height: 22px;
+  margin: 0;
+}
+.authorStory .avatarPhoto {
+  height: 87px;
+  width: 87px;
+  margin-bottom: var(--author-story-photo-margin);
+}
+@media screen and (max-width: 600px) {
+  :root {
+    --author-story-photo-margin: 10px;
+    --author-story-flex-direction: column;
+    --author-story-padding: 35px;
+  }
+}

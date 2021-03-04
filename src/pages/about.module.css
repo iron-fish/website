@@ -20,7 +20,7 @@
   --ifm-feature-flex-direction: row;
   --ifm-feature-max-width: 527px;
   --ifm-feature-horizontal-margin: 0 20px 0 0;
-  --ifm-feature-section-padding-vertical: 64px;
+  --ifm-feature-section-padding-vertical: var(--ifm-medium-vertical-padding);
   --ifm-feature-padding: 50px;
 }
 .aboutSection {
@@ -109,8 +109,8 @@
   margin-top: 12px;
 }
 .blueAboutSection div {
-  padding-top: var(--ifm-large-container-vertical-padding);
-  padding-bottom: var(--ifm-large-container-vertical-padding);
+  padding-top: var(--ifm-large-vertical-padding);
+  padding-bottom: var(--ifm-large-vertical-padding);
   padding-left: var(--ifm-large-container-horizontal-padding);
   padding-right: var(--ifm-large-container-horizontal-padding);
   max-width: calc(
@@ -189,7 +189,8 @@
 @media screen and (max-width: 750px) {
   :root {
     --ifm-feature-max-width: 100%;
-    --ifm-feature-horizontal-margin: 0 0 32px 0;
+    --ifm-feature-horizontal-margin: 0 0 var(--ifm-small-vertical-padding)
+      0;
     --ifm-feature-flex-direction: column;
     --ifm-story-container-background-display: block;
   }

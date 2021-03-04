@@ -11,8 +11,8 @@
   justify-content: center;
   height: auto;
   min-height: auto;
-  padding-top: var(--ifm-large-container-vertical-padding);
-  padding-bottom: var(--ifm-large-container-vertical-padding);
+  padding-top: var(--ifm-large-vertical-padding);
+  padding-bottom: var(--ifm-large-vertical-padding);
 }
 .section .button {
   margin-top: 0px;
@@ -174,8 +174,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-top: var(--ifm-large-container-vertical-padding);
-    padding-bottom: var(--ifm-large-container-vertical-padding);
+    padding-top: var(--ifm-large-vertical-padding);
+    padding-bottom: var(--ifm-large-vertical-padding);
     justify-content: center;
     height: auto;
     min-height: auto;
@@ -276,7 +276,7 @@
   .sectionNewsletter input {
     text-align: center;
     width: 100%;
-    margin-top: 32px;
+    margin-top: var(--ifm-small-vertical-padding);
   }
   .sectionNewsletter button {
     width: 100%;

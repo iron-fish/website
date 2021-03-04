@@ -3,13 +3,13 @@
   justify-content: center;
 }
 .faqMain {
-  margin-bottom: var(--ifm-large-container-vertical-padding);
+  margin-bottom: var(--ifm-large-vertical-padding);
 }
 .questionSection .container {
   width: 820px;
   border-top: 1px solid #d2d2d2;
-  padding-top: 32px;
-  margin-top: 32px;
+  padding-top: var(--ifm-small-vertical-padding);
+  margin-top: var(--ifm-small-vertical-padding);
 }
 .questionSection .container p {
   margin-bottom: 0;
@@ -24,7 +24,7 @@
 .questionImage {
   display: flex;
   width: 146px;
-  padding-top: 32px;
+  padding-top: var(--ifm-small-vertical-padding);
   flex-grow: 1;
   text-align: center;
   justify-content: center;

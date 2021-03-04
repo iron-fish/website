@@ -74,16 +74,13 @@ function Navbar() {
   }, [windowSize]);
   const { leftItems, rightItems } = splitNavItemsByPosition(items);
   const location = useLocation();
-  const isBlueHeader = [
-    "/",
-    "/jd-backend",
-    "/jd-cryptographer",
-    "/jd-mobile",
-  ].includes(location.pathname);
-  const logoImageUrlWhite = logoImageUrl.replace(".svg", "-white.svg")
-  const logoImageUrlPerPage = isBlueHeader
-    ? logoImageUrlWhite
-    : logoImageUrl;
+
+  const isBlueHeader =
+    ["/", "/jd-backend", "/jd-cryptographer", "/jd-mobile", "/blog", "/blog/"].includes(
+      location.pathname
+    );
+  const logoImageUrlWhite = logoImageUrl.replace(".svg", "-white.svg");
+  const logoImageUrlPerPage = isBlueHeader ? logoImageUrlWhite : logoImageUrl;
 
   return (
     <nav

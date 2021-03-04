@@ -19,8 +19,8 @@
   max-width: 1117px;
   text-align: left;
   margin: 0 auto;
-  margin-top: var(--ifm-large-container-vertical-padding);
-  padding-bottom: calc(var(--ifm-large-container-vertical-padding) - 20px);
+  margin-top: var(--ifm-large-vertical-padding);
+  padding-bottom: calc(var(--ifm-large-vertical-padding) - 20px);
   padding-left: 35px;
   padding-right: 35px;
 }
@@ -30,7 +30,7 @@
   position: relative;
 }
 .header .containerJob {
-  margin-top: 163px;
+  margin-top: var(--ifm-blue-header-padding-top);
   display: flex;
   flex-direction: row;
   justify-content: space-between;

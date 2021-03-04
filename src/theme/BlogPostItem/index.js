@@ -99,7 +99,7 @@ function BlogPostItem(props) {
         {image && <meta property="twitter:image" content={imageUrl} />}
         {image && (
           <meta name="twitter:image:alt" content={`Image for ${title}`} />
-        )}git pu
+        )}
       </Head>
 
       <article
