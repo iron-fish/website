@@ -83,7 +83,7 @@ function Question({ title, id, description, imageLeft, imageRight }) {
       <div className={clsx(styles.container)}>
         <div className={clsx(styles.sectionContent)}>
           <div>
-            <h2 className={clsx(styles.title)}>{title}</h2>
+            <h2>{title}</h2>
             <p
               className={clsx(styles.sectionDescription)}
               dangerouslySetInnerHTML={description}

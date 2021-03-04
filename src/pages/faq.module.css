@@ -6,17 +6,13 @@
   margin-bottom: var(--ifm-large-vertical-padding);
 }
 .questionSection .container {
-  width: 820px;
+  width: var(--ifm-text-container-width);
   border-top: 1px solid #d2d2d2;
   padding-top: var(--ifm-small-vertical-padding);
   margin-top: var(--ifm-small-vertical-padding);
 }
 .questionSection .container p {
   margin-bottom: 0;
-}
-.title {
-  font-size: 32px;
-  line-height: 38px;
 }
 .mainTitle {
   color: var(--ifm-heading-color);
@@ -42,7 +38,6 @@
     padding-right: 35px;
   }
   .questionSection .container {
-    width: 100%;
     padding-left: 0;
     padding-right: 0;
     margin-left: 35px;
