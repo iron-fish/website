@@ -138,6 +138,7 @@
   --ifm-toc-width: 233px;
 
   --ifm-blue-header-padding-top: 163px;
+  --ifm-text-container-width: 820px;
 }
 
 /* Inputs */
@@ -205,6 +206,15 @@ h2,
 h3 {
   font-family: var(--ifm-font-header-button);
   font-weight: normal;
+}
+h2 {
+  font-size: 32px;
+  line-height: 38px;
+}
+h3 {
+  font-size: 28px;
+  line-height: 45px;
+  font-family: var(--ifm-font-family-base);
 }
 td,
 th {
@@ -510,6 +520,7 @@ div.item {
 }
 @media screen and (max-width: 400px) {
   :root {
+    --ifm-text-container-width: 100%;
     --ifm-large-vertical-padding: 60px;
     --ifm-main-title-font-size: 40px;
     --ifm-main-title-line-height: 47px;

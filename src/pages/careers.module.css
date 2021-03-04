@@ -19,6 +19,9 @@
   padding-left: var(--ifm-large-container-horizontal-padding);
   padding-right: var(--ifm-large-container-horizontal-padding);
 }
+.careersSubtitle {
+  text-align: left;
+}
 .sectionCareers img {
   max-width: var(--ifm-intro-img-max-width);
 }

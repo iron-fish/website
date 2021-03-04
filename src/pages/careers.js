@@ -41,7 +41,9 @@ function Careers() {
         <section className={clsx(styles.sectionCareers)}>
           <div className={clsx(styles.sectionRow)}>
             <div className={clsx(styles.intro)}>
-              <p className="main--subtitle">About the team</p>
+              <p className={clsx(styles.careersSubtitle, "main--subtitle")}>
+                About the team
+              </p>
               <p>
                 We are craftspeople who are excited to work on uncharted
                 territory in decentralized computing and cutting edge

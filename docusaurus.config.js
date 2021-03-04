@@ -39,11 +39,21 @@ module.exports = {
         //   label: "Get started",
         //   position: "right",
         // },
-        { to: "blog", label: "Blog", position: "right" },
+        {
+          to: "/crypto-privacy-comparison",
+          label: "Privacy Features",
+          position: "right",
+        },
+        {
+          to: "docs/whitepaper/1_introduction",
+          activeBasePath: "docs",
+          label: "Whitepaper",
+          position: "right",
+        },
         {
           to: "about/",
           activeBasePath: "docs",
-          label: "About",
+          label: "About Us",
           position: "right",
         },
         {
@@ -57,12 +67,7 @@ module.exports = {
           label: "FAQ",
           position: "right",
         },
-        {
-          to: "docs/whitepaper/1_introduction",
-          activeBasePath: "docs",
-          label: "Whitepaper",
-          position: "right",
-        },
+        { to: "blog", label: "Blog", position: "right" },
       ],
     },
     footer: {
