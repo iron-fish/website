@@ -4,9 +4,17 @@ import Link from "@docusaurus/Link";
 import clsx from "clsx";
 import styles from "./openPositions.module.css";
 
+import { useHistory } from "@docusaurus/router";
+
 function Position({ title, time, location, link }) {
+  const history = useHistory();
+
+  function handleClick() {
+    history.push(link);
+  }
+
   return (
-    <div className={clsx(styles.position)}>
+    <div className={clsx(styles.position)} onClick={handleClick}>
       <p className={clsx(styles.title)}>
         <Link className={clsx(styles.button)} to={link}>
           {title}
@@ -14,9 +22,7 @@ function Position({ title, time, location, link }) {
       </p>
       <p className={clsx(styles.time)}>{time}</p>
       <p className={clsx(styles.location)}>{location}</p>
-      <Link className={clsx(styles.button)} to={link}>
-        <img src="/img/careers/arrow.svg" alt="link" />
-      </Link>
+      <img src="/img/careers/arrow.svg" alt="link" />
     </div>
   );
 }
@@ -42,19 +48,19 @@ function OpenPositions() {
             time="Full-Time"
             location="SF / Remote"
             link="/jd-cryptographer"
-            />
+          />
           <Position
             title="Full-Stack Engineer"
             time="Full-Time"
             location="SF / Remote"
             link="/jd-full-stack"
-            />
+          />
           <Position
             title="Backend Engineer"
             time="Full-Time"
             location="SF / Remote"
             link="/jd-backend"
-            />
+          />
           <Position
             title="Mobile Engineer"
             time="Full-Time"

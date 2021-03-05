@@ -1,5 +1,6 @@
 :root {
-  --ifm-background-height: 409px;
+  --ifm-background-height: 539px;
+  --ifm-position-title-font-size: 24px;
 }
 .section {
   position: relative;
@@ -40,6 +41,7 @@
 .position {
   background: white;
   position: relative;
+  cursor: pointer;
   display: flex;
   box-sizing: border-box;
   flex-direction: row;
@@ -62,7 +64,7 @@
 }
 .position .title {
   font-family: var(--ifm-font-header-button);
-  font-size: 24px;
+  font-size: var(--ifm-position-title-font-size);
   color: black;
   text-decoration: none;
   width: 260px;
@@ -137,11 +139,12 @@
 @media screen and (max-width: 400px) {
   :root {
     --ifm-background-height: 450px;
+    --ifm-position-title-font-size: 22px;
   }
 }
 @media screen and (max-width: 375px) {
   :root {
-    --ifm-background-height: 455px;
+    --ifm-background-height: 625px;
   }
 }
 @media screen and (max-width: 360px) {
