@@ -44,6 +44,12 @@ function OpenPositions() {
             link="/jd-cryptographer"
             />
           <Position
+            title="Full-Stack Engineer"
+            time="Full-Time"
+            location="SF / Remote"
+            link="/jd-full-stack"
+            />
+          <Position
             title="Backend Engineer"
             time="Full-Time"
             location="SF / Remote"
