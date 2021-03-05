@@ -156,8 +156,10 @@
   margin-bottom: 0;
 }
 .feature .title {
-  max-width: 213px;
+  max-width: 243px;
   margin-top: 10px;
+  font-size: var(--ifm-font-size-subtitle);
+  line-height: var(--ifm-line-height-subtitle);
 }
 .feature a {
   text-decoration: none;
@@ -189,8 +191,7 @@
 @media screen and (max-width: 750px) {
   :root {
     --ifm-feature-max-width: 100%;
-    --ifm-feature-horizontal-margin: 0 0 var(--ifm-small-vertical-padding)
-      0;
+    --ifm-feature-horizontal-margin: 0 0 var(--ifm-small-vertical-padding) 0;
     --ifm-feature-flex-direction: column;
     --ifm-story-container-background-display: block;
   }

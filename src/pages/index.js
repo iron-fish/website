@@ -23,7 +23,7 @@ const features = [
     description:
       "We’ve struggled with usability with many cryptocurrencies. Iron Fish is built to be intuitive for both developers and users alike. We are building a complete set of tools for you to have the best end-to-end experience running and transacting $IRON on every platform, while always guaranteeing your privacy.",
     buttonLink: "docs/whitepaper/1_introduction",
-    button: "Learn more",
+    button: "Read Our Whitepaper",
   },
   {
     className: "sectionBorderless",
