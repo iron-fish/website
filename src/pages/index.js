@@ -21,7 +21,7 @@ const features = [
     className: "sectionCryptocurrency",
     title: "We care about usability",
     description:
-      "We’ve struggled with usability with many cryptocurrencies. Iron Fish is built to be intuitive for both developers and users alike. We are building a complete set of tools for you to have the best end-to-end experience running and transacting $IRON on every platform, while always guaranteeing your privacy.",
+      "Cryptocurrencies have struggled with usability. Iron Fish is built to be intuitive for both developers and users alike. We are building a complete set of tools for you to have the best end-to-end experience running and transacting $IRON on every platform, while always guaranteeing your privacy.",
     buttonLink: "docs/whitepaper/1_introduction",
     button: "Read Our Whitepaper",
   },
@@ -29,7 +29,7 @@ const features = [
     className: "sectionBorderless",
     title: "Borderless, decentralized, built for everyone",
     description:
-      "We care about decentralization. Iron Fish is a proof-of-work (PoW) chain that is censorship-resistant and available to everyone—regardless of location, identity or citizenship. Anyone can create a wallet, run their own node, and mine $IRON. With Iron Fish, you own the bank.",
+      "We care about decentralization. Iron Fish is a proof-of-work (PoW) chain that is censorship-resistant and available to everyone—regardless of location, identity or citizenship. Anyone can create a wallet, run their own node, and mine $IRON. With Iron Fish you own the bank.",
     buttonLink: "docs/whitepaper/1_introduction",
     button: "Read Our Whitepaper",
   },
