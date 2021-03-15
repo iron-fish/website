@@ -139,6 +139,7 @@
 
   --ifm-blue-header-padding-top: 163px;
   --ifm-text-container-width: 820px;
+  --ifm-navbar-sidebar-width: 100vw;
 }
 
 /* Inputs */
@@ -341,8 +342,28 @@ ol ol {
   margin-bottom: 0;
   margin-top: 0;
 }
+.navbar-sidebar__items {
+  padding-left: 16px;
+  padding-top: 20px;
+}
+.navbar-sidebar__brand {
+  padding-left: 23px;
+  padding-top: 50px;
+}
 .navbar-sidebar__items .menu__list {
   margin-top: 0px;
+  margin-bottom: 20px;
+  padding-top: 0px;
+}
+.navbar-sidebar__items .menu__list li a {
+  font-size: 35px;
+  padding-left: 5px;
+  line-height: 49px;
+}
+.navbar-sidebar .close-menu {
+  position: absolute;
+  right: 20px;
+  top: 42px;
 }
 .menu--responsive .menu__button {
   display: none;

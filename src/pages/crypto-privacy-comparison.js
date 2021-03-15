@@ -171,7 +171,7 @@ function Privacy() {
 
           <div className={clsx(styles.tableRow)}>
             <span>
-              Confidential
+              Ring Confidential
               <br />
               Transactions
             </span>
@@ -261,7 +261,7 @@ function Privacy() {
               <br />
               Privacy Tools
             </span>
-            <span>Mixers, Coinjoin</span>
+            <span>Mixers, CoinJoin, etc</span>
             <span>
               <img alt="Yes" src="/img/privacy/check-blue.svg" />
             </span>
@@ -359,7 +359,7 @@ function Privacy() {
             A Mixer (aka tumbler), is used to hide a direct link between a
             sender and the recipient. If Alice wanted to send 1 bitcoin to Bob,
             instead of sending it directly, she can instead use a Mixer. A Mixer
-            service will wait to collect other such requests from others, and
+            service will wait to collect such requests from other users, and
             eventually distribute intended funds to recipients, but not from
             their original senders.
           </p>

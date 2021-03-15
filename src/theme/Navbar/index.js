@@ -8,6 +8,7 @@ import React, { useCallback, useState, useEffect } from "react";
 import clsx from "clsx";
 import Link from "@docusaurus/Link";
 import { useLocation } from "@docusaurus/router";
+import useBaseUrl from "@docusaurus/useBaseUrl";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import SearchBar from "@theme/SearchBar";
 import Toggle from "@theme/Toggle";
@@ -75,10 +76,14 @@ function Navbar() {
   const { leftItems, rightItems } = splitNavItemsByPosition(items);
   const location = useLocation();
 
-  const isBlueHeader =
-    ["/", "/jd-backend", "/jd-cryptographer", "/jd-mobile", "/blog", "/blog/"].includes(
-      location.pathname
-    );
+  const isBlueHeader = [
+    "/",
+    "/jd-backend",
+    "/jd-cryptographer",
+    "/jd-mobile",
+    "/blog",
+    "/blog/",
+  ].includes(location.pathname);
   const logoImageUrlWhite = logoImageUrl.replace(".svg", "-white.svg");
   const logoImageUrlPerPage = isBlueHeader ? logoImageUrlWhite : logoImageUrl;
 
@@ -173,6 +178,15 @@ function Navbar() {
         onClick={hideSidebar}
       />
       <div className="navbar-sidebar">
+        <img
+          className="close-menu"
+          onClick={hideSidebar}
+          src="/img/close-menu.svg"
+          alt="Close menu"
+          width="25"
+          height="25"
+        />
+
         <div className="navbar-sidebar__brand">
           <Link
             className="navbar__brand"
@@ -210,6 +224,12 @@ function Navbar() {
                 <NavbarItem mobile {...item} onClick={hideSidebar} key={i} />
               ))}
             </ul>
+            <Link
+              className="button button--outline button--secondary"
+              to={useBaseUrl("/docs/whitepaper/1_introduction")}
+            >
+              Get Started
+            </Link>
           </div>
         </div>
       </div>
