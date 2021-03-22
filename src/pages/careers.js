@@ -184,7 +184,7 @@ function Careers() {
               <div>
                 <p>Family leave</p>
                 <p>
-                  We offer parental an family leave. We know the importance of
+                  We offer parental and family leave. We know the importance of
                   loved ones!
                 </p>
               </div>
