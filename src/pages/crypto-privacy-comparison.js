@@ -286,7 +286,7 @@ function Privacy() {
           </div>
         </div>
 
-        <PrivacyComponent title="Sappling Zero Knowledge Proofs">
+        <PrivacyComponent title="Sapling Zero Knowledge Proofs">
           <PrivacyList
             name="Iron Fish"
             offline
