@@ -91,13 +91,6 @@ function Careers() {
               description="Former Uber. He is capable of writing complex weighted graph algorithms while dancing to electro music. A crypto noodle straightener if you will."
             />
             <Employee
-              id="4"
-              firstName="Johann"
-              title="VPE"
-              linkedin="https://www.linkedin.com/in/johann-kerbrat-a19389b/"
-              description="Former Airbnb and Uber with a strong interest for payments and building easy-to-use products. Always looking for where to find a good baguette in North America."
-            />
-            <Employee
               id="2"
               firstName="Skylar"
               title="Designer"
@@ -111,6 +104,7 @@ function Careers() {
               linkedin="mailto:joinus@ironfish.network"
               description="We are growing quickly, and Iron Fish is rapidly evolving. If you are interested in working with Cryptocurrency and having an impact, <a href='mailto:joinus@ironfish.network'>contact us</a>."
             />
+            <div></div>
           </div>
         </section>
         <section className={clsx(styles.blueSection)}>
