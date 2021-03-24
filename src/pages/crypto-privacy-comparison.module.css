@@ -129,4 +129,7 @@
     --ifm-text-card-text-align: flex-start;
     --ifm-text-card-link-margin-top: 10px;
   }
+  .privacyComponent p span {
+    margin-top: 3px;
+  }
 }
