@@ -2,17 +2,31 @@
   --ifm-privacy-table-display: block;
   --ifm-text-content-h3-margin: var(--ifm-small-vertical-padding);
   --ifm-text-content-paragraph-margin: var(--ifm-small-vertical-padding);
+  --ifm-text-card-title-font-size: 28px;
+  --ifm-text-card-title-line-height: 33px;
+  --ifm-text-card-subtitle-font-size: 22px;
+  --ifm-text-card-subtitle-line-height: 26px;
+  --ifm-text-card-text-font-size: 16px;
+  --ifm-text-card-title-margin-top: 24px;
+  --ifm-text-card-title-margin-bottom: 16px;
+  --ifm-text-card-text-line-height: 18px;
+  --ifm-text-card-horizontal-padding: 83px;
+  --ifm-text-card-left-border: 3px solid #2c72ff;
+  --ifm-text-card-text-align: center;
+  --ifm-text-card-link-margin-top: 24px;
 }
 
 .privacySubtitle {
   padding-left: var(--ifm-main-title-padding);
   padding-right: var(--ifm-main-title-padding);
+  margin-bottom: 32px;
 }
 .textContent {
   max-width: calc(
     var(--ifm-text-container-width) + var(--ifm-main-title-padding) * 2
   );
   margin: 0 auto;
+  margin-top: var(--ifm-large-vertical-padding);
   padding-bottom: var(--ifm-large-vertical-padding);
   padding-left: var(--ifm-main-title-padding);
   padding-right: var(--ifm-main-title-padding);
@@ -37,63 +51,63 @@
   text-decoration: none;
 }
 
-.privacyTable {
+.privacyComponentList {
+  padding-left: var(--ifm-large-container-horizontal-padding);
+  padding-right: var(--ifm-large-container-horizontal-padding);
+  margin-left: auto;
+  margin-right: auto;
+  max-width: calc(1114px + var(--ifm-large-container-horizontal-padding) * 2);
+}
+.privacyComponent {
+  display: block;
+  border: 1px solid #dadce0;
+  box-shadow: 0px 3px 7px rgba(0, 0, 0, 0.07);
   font-family: var(--ifm-font-header-button);
-  margin: 0 auto;
-  margin-top: 32px;
-  display: var(--ifm-privacy-table-display);
-  width: 1029px;
-  margin-bottom: var(--ifm-large-vertical-padding);
+  margin-bottom: 32px;
+  border-radius: 3px;
 }
-.tableRow {
+.privacyComponent > div {
+  width: 100%;
+  border-left: var(--ifm-text-card-left-border);
+  padding: 24px var(--ifm-text-card-horizontal-padding) 10px
+    var(--ifm-text-card-horizontal-padding);
+  box-shadow: 0px 3px 7px rgba(0, 0, 0, 0.07);
+  border-radius: 2px;
+}
+.privacyComponent .title {
+  font-size: var(--ifm-text-card-subtitle-font-size);
+  line-height: var(--ifm-text-card-subtitle-line-height);
+  color: var(--ifm-color-primary);
+}
+.privacyComponent > div > .title {
+  font-size: var(--ifm-text-card-title-font-size);
+  line-height: var(--ifm-text-card-title-line-height);
+  margin-top: 0px;
+}
+.privacyComponent div div .title {
+  margin-top: var(--ifm-text-card-title-margin-top);
+  margin-bottom: var(--ifm-text-card-title-margin-bottom);
+}
+.privacyComponent p img {
+  width: 24px;
+  margin-right: 10px;
+}
+.privacyComponent .link {
+  margin-top: var(--ifm-text-card-link-margin-top);
+}
+.privacyComponent .link a {
+  text-decoration: none;
+}
+.privacyComponent p {
+  font-size: var(--ifm-text-card-text-font-size);
+  line-height: var(--ifm-text-card-text-line-height);
   display: flex;
-  flex-direction: row;
-  margin-bottom: 12px;
-}
-.tableSubRow {
-  margin-bottom: 0px;
-}
-.greyCell {
-  color: #cdcdcd;
-}
-.tableRow span {
-  width: 147px;
-  min-height: 37px;
-  font-size: 12px;
-  line-height: 15px;
-  border-top: 1px solid #e1e1e1;
-  border-right: 1px solid #e1e1e1;
-  border-bottom: 1px solid #e1e1e1;
-  display: flex;
-  align-items: center;
-  text-align: center;
-  justify-content: center;
-  position: relative;
-}
-.tableRow:not(.tableSubRow):not(.tableHeader) > span:first-of-type {
-  border-left: 1px solid #e1e1e1;
-}
-.tableRow.tableHeader span {
-  border: none;
-  font-size: 14px;
-  line-height: 17px;
+  margin-bottom: 14px;
+  align-items: var(--ifm-text-card-text-align);
   color: #687086;
 }
-.tableRowBlue {
-  background-color: #1d0070;
-  color: white;
-}
-.tableRowBlue span {
-  border-color: #1d0070;
-}
-.tableRow .details {
-  display: flex;
-  position: absolute;
-  right: 11px;
-}
-
-.privacyComponent {
-  display: none;
+.privacyComponent p {
+  color: #687086;
 }
 
 @media screen and (max-width: 1030px) {
@@ -101,44 +115,18 @@
     --ifm-privacy-table-display: none;
     --ifm-text-content-h3-margin: 20px;
     --ifm-text-content-paragraph-margin: 30px;
-  }
-  .privacyComponent {
-    display: block;
-    border: 1px solid #e1e1e1;
-    border-bottom: none;
-    font-family: var(--ifm-font-header-button);
-    margin-left: 5px;
-    margin-right: 5px;
-    padding: 24px 20px 14px 20px;
-  }
-  .privacyComponent.last {
-    border-bottom: 1px solid #e1e1e1;
-    margin-bottom: var(--ifm-medium-vertical-padding);
-  }
-  .privacyComponent .title {
-    font-size: 18px;
-    color: var(--ifm-color-primary);
-  }
-  .privacyComponent > .title {
-    font-size: 24px;
-    line-height: 32px;
-  }
-  .privacyComponent div .title {
-    margin-top: 24px;
-  }
-  .privacyComponent p img {
-    width: 16px;
-    margin-right: 5px;
-  }
-  .privacyComponent p {
-    font-size: 16px;
-    line-height: 18px;
-    display: flex;
-    margin-bottom: 14px;
-    align-items: center;
-    color: #687086;
-  }
-  .privacyComponent p.enabled {
-    color: #2c72ff;
+
+    --ifm-text-card-left-border: none;
+    --ifm-text-card-horizontal-padding: 24px;
+    --ifm-text-card-title-font-size: 17px;
+    --ifm-text-card-title-line-height: 20px;
+    --ifm-text-card-subtitle-font-size: 14px;
+    --ifm-text-card-subtitle-line-height: 17px;
+    --ifm-text-card-text-font-size: 12px;
+    --ifm-text-card-text-line-height: 19px;
+    --ifm-text-card-title-margin-top: 16px;
+    --ifm-text-card-title-margin-bottom: 6px;
+    --ifm-text-card-text-align: flex-start;
+    --ifm-text-card-link-margin-top: 10px;
   }
 }

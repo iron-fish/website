@@ -3,59 +3,39 @@ import Layout from "@theme/Layout";
 import clsx from "clsx";
 import styles from "./crypto-privacy-comparison.module.css";
 
-function PrivacyComponent({ title, children, last }) {
+function PrivacyComponent({ title, children }) {
   return (
-    <div className={clsx(styles.privacyComponent, { [styles.last]: last })}>
-      <p className={clsx(styles.title)}>{title}</p>
-      {children}
+    <div className={clsx(styles.privacyComponent)}>
+      <div>
+        <p className={clsx(styles.title)}>{title}</p>
+        {children}
+      </div>
     </div>
   );
 }
 
-function PrivacyList({
-  name,
-  offline,
-  unlinkable,
-  defaultPrivate,
-  view,
-  unbreached,
-  shielded,
-}) {
+function PrivacyList({ name, bullets, link, linkName }) {
   const image = (enabled) =>
     enabled ? (
-      <img alt="Yes" src="/img/privacy/check-blue.svg" />
+      <img alt="Yes" src="/img/privacy/good.svg" />
     ) : (
-      <img alt="No" src="/img/privacy/cross.svg" />
+      <img alt="No" src="/img/privacy/bad.svg" />
     );
 
   return (
     <div>
       <p className={clsx(styles.title)}>{name}</p>
       <div>
-        <p className={clsx({ [styles.enabled]: offline })}>
-          {image(offline)} <span>Can send to offline recipient</span>
-        </p>
-        <p className={clsx({ [styles.enabled]: unlinkable })}>
-          {image(unlinkable)}{" "}
-          <span>
-            Unlinkable transactions
-            {shielded ? " - if shielded*" : ""}
-          </span>
-        </p>
-        <p className={clsx({ [styles.enabled]: defaultPrivate })}>
-          {image(defaultPrivate)} <span>Private by default</span>
-        </p>
-        <p className={clsx({ [styles.enabled]: view })}>
-          {image(view)} <span>View key support for compliance</span>
-        </p>
-        <p className={clsx({ [styles.enabled]: unbreached })}>
-          {image(unbreached)}{" "}
-          <span>
-            Unbreached privacy
-            {shielded ? " - if shielded*" : ""}
-          </span>
-        </p>
+        {bullets &&
+          bullets.map(({ good, value }, index) => (
+            <p key={index}>
+              {image(good)} <span>{value}</span>
+            </p>
+          ))}
       </div>
+      <p className={clsx(styles.link)}>
+        <a href={link}>Learn More about {linkName}</a>
+      </p>
     </div>
   );
 }
@@ -79,272 +59,120 @@ function Privacy() {
         </header>
 
         <p className={clsx(styles.privacySubtitle, "main--subtitle")}>
-          Different privacy mechanisms
+          Privacy mechanisms
         </p>
 
-        <div className={clsx(styles.privacyTable)}>
-          <div className={clsx(styles.tableRow, styles.tableHeader)}>
-            <span>
-              Privacy
-              <br />
-              Method
-            </span>
-            <span>
-              Crypto
-              <br />
-              Project
-            </span>
-            <span>
-              Can send to offline
-              <br />
-              recipient
-            </span>
-            <span>
-              Unlinkable
-              <br />
-              Transactions
-            </span>
-            <span>
-              Private by
-              <br />
-              Default
-            </span>
-            <span>
-              View key support
-              <br />
-              for compliance
-            </span>
-            <span>
-              Unbreached
-              <br />
-              Privacy
-            </span>
-          </div>
-
-          <div className={clsx(styles.tableRow)}>
-            <span>
-              Sapling
-              <br />
-              with ZKP
-            </span>
-            <div>
-              <div
-                className={clsx(
-                  styles.tableRow,
-                  styles.tableSubRow,
-                  styles.tableRowBlue
-                )}
-              >
-                <span>Iron Fish</span>
-                <span>
-                  <img alt="Yes" src="/img/privacy/check-white.svg" />
-                </span>
-                <span>
-                  <img alt="Yes" src="/img/privacy/check-white.svg" />
-                </span>
-                <span>
-                  <img alt="Yes" src="/img/privacy/check-white.svg" />
-                </span>
-                <span>
-                  <img alt="Yes" src="/img/privacy/check-white.svg" />
-                </span>
-                <span>
-                  <img alt="Yes" src="/img/privacy/check-white.svg" />
-                </span>
-              </div>
-              <div className={clsx(styles.tableRow, styles.tableSubRow)}>
-                <span>Zcash</span>
-                <span>
-                  <img alt="Yes" src="/img/privacy/check-blue.svg" />
-                </span>
-                <span className={clsx(styles.greyCell)}>If Shielded</span>
-                <span>
-                  <img alt="Yes" src="/img/privacy/cross.svg" />
-                </span>
-                <span>
-                  <img alt="Yes" src="/img/privacy/check-blue.svg" />
-                </span>
-                <span className={clsx(styles.greyCell)}>If Shielded</span>
-              </div>
-            </div>
-          </div>
-
-          <div className={clsx(styles.tableRow)}>
-            <span>
-              Ring Confidential
-              <br />
-              Transactions
-            </span>
-            <span>Monero, Mobilecoin</span>
-            <span>
-              <img alt="Yes" src="/img/privacy/check-blue.svg" />
-            </span>
-            <span>
-              <img alt="No" src="/img/privacy/cross.svg" />
-              <a
-                href="#confidential_transactions"
-                className={clsx(styles.details)}
-              >
-                <img alt="More details" src="/img/privacy/help.svg" />
-              </a>
-            </span>
-            <span>
-              <img alt="Yes" src="/img/privacy/check-blue.svg" />
-            </span>
-            <span>
-              <img alt="Yes" src="/img/privacy/check-blue.svg" />
-            </span>
-            <span>
-              <img alt="Yes" src="/img/privacy/cross.svg" />
-            </span>
-          </div>
-
-          <div className={clsx(styles.tableRow)}>
-            <span>
-              Ethereum
-              <br />
-              Smart Contracts
-            </span>
-            <span>Aztec, Tornado cash</span>
-            <span>
-              <img alt="Yes" src="/img/privacy/check-blue.svg" />
-            </span>
-            <span>
-              <img alt="No" src="/img/privacy/cross.svg" />
-              <a href="#ethereum" className={clsx(styles.details)}>
-                <img alt="More details" src="/img/privacy/help.svg" />
-              </a>
-            </span>
-            <span>
-              <img alt="No" src="/img/privacy/cross.svg" />
-            </span>
-            <span>
-              <img alt="Yes" src="/img/privacy/check-blue.svg" />
-            </span>
-            <span>
-              <img alt="No" src="/img/privacy/cross.svg" />
-            </span>
-          </div>
-
-          <div className={clsx(styles.tableRow)}>
-            <span>Mimblewimble</span>
-            <span>Grin, Beam</span>
-            <span>
-              <img alt="No" src="/img/privacy/cross.svg" />
-              <a href="#mimblewimble" className={clsx(styles.details)}>
-                <img alt="More details" src="/img/privacy/help.svg" />
-              </a>
-            </span>
-            <span>
-              <img alt="No" src="/img/privacy/cross.svg" />
-              <a href="#mimblewimble" className={clsx(styles.details)}>
-                <img alt="More details" src="/img/privacy/help.svg" />
-              </a>
-            </span>
-            <span>
-              <img alt="Yes" src="/img/privacy/check-blue.svg" />
-            </span>
-            <span>
-              <img alt="No" src="/img/privacy/cross.svg" />
-              <a href="#mimblewimble" className={clsx(styles.details)}>
-                <img alt="More details" src="/img/privacy/help.svg" />
-              </a>
-            </span>
-            <span>
-              <img alt="No" src="/img/privacy/cross.svg" />
-            </span>
-          </div>
-
-          <div className={clsx(styles.tableRow)}>
-            <span>
-              Bitcoin
-              <br />
-              Privacy Tools
-            </span>
-            <span>Mixers, CoinJoin, etc</span>
-            <span>
-              <img alt="Yes" src="/img/privacy/check-blue.svg" />
-            </span>
-            <span>
-              <img alt="No" src="/img/privacy/cross.svg" />
-              <a href="#bitcoin" className={clsx(styles.details)}>
-                <img alt="More details" src="/img/privacy/help.svg" />
-              </a>
-            </span>
-            <span>
-              <img alt="No" src="/img/privacy/cross.svg" />
-            </span>
-            <span>
-              <img alt="No" src="/img/privacy/cross.svg" />
-              <a href="#bitcoin" className={clsx(styles.details)}>
-                <img alt="More details" src="/img/privacy/help.svg" />
-              </a>
-            </span>
-            <span>
-              <img alt="No" src="/img/privacy/cross.svg" />
-            </span>
-          </div>
+        <div className={clsx(styles.privacyComponentList)}>
+          <PrivacyComponent title="Sapling Zero Knowledge Proofs">
+            <PrivacyList
+              name="Iron Fish"
+              link="#ironfish"
+              linkName="Sappling Zero Knowledge Proofs (Iron Fish)"
+              bullets={[
+                {
+                  good: true,
+                  value:
+                    "All transactions private with strongest zk-SNARK based privacy mechanism (Sapling)",
+                },
+                {
+                  good: true,
+                  value: "View key and memo field support for compliance",
+                },
+                {
+                  good: true,
+                  value: "Full node can be ran entirely in the browser",
+                },
+                {
+                  good: true,
+                  value: "Future support for custom assets, fully private",
+                },
+                {
+                  good: true,
+                  value:
+                    "Built to be simple — 15s block times, WebRTC based networking layer ",
+                },
+              ]}
+            />
+            <PrivacyList
+              name="Zcash"
+              link="#zcash"
+              linkName="Learn More about Sappling Zero Knowledge Proofs (Zcash)"
+              bullets={[
+                {
+                  good: true,
+                  value:
+                    "Pioneered ZKP-based privacy and invented Sapling with the help of world leading cryptographers",
+                },
+                {
+                  good: true,
+                  value:
+                    "Optional privacy (95% of Zcash transactions are not fully shielded)",
+                },
+                {
+                  good: true,
+                  value: "View key and memo field support for compliance",
+                },
+              ]}
+            />
+          </PrivacyComponent>
+          <PrivacyComponent title="Ethereum Smart Contracts">
+            <PrivacyList
+              name="Ethereum, Aztec, Tornado Cash"
+              link="#ethereum"
+              linkName="Ethereum Smart Contracts"
+              bullets={[
+                {
+                  good: true,
+                  value:
+                    "Smart contract solutions with ZKPs to provide some privacy",
+                },
+                {
+                  good: false,
+                  value: "Linkable in practice",
+                },
+                {
+                  good: true,
+                  value: "View key and memo field support for compliance",
+                },
+              ]}
+            />
+          </PrivacyComponent>
+          <PrivacyComponent title="Mimblewimble">
+            <PrivacyList
+              name="Grin, Beam, Tari (upcoming)"
+              link="#mimblewimble"
+              linkName="Mimblewimble"
+              bullets={[
+                {
+                  good: false,
+                  value: "Linkable transactions by design weakens privacy",
+                },
+                {
+                  good: false,
+                  value:
+                    "Interactive protocol requires both parties to be online to form a transaction",
+                },
+              ]}
+            />
+          </PrivacyComponent>
+          <PrivacyComponent title="Bitcoin Privacy Tools">
+            <PrivacyList
+              name="Mixers, Coinjoin"
+              link="#bitcoin"
+              linkName="Bitcoin privacy tools"
+              bullets={[
+                {
+                  good: false,
+                  value: "Can send to offline recipient",
+                },
+                {
+                  good: false,
+                  value: "Slow down the transaction time. Can be expensive",
+                },
+              ]}
+            />
+          </PrivacyComponent>
         </div>
-
-        <PrivacyComponent title="Sapling Zero Knowledge Proofs">
-          <PrivacyList
-            name="Iron Fish"
-            offline
-            unlinkable
-            defaultPrivate
-            view
-            unbreached
-          />
-          <PrivacyList
-            name="Zcash"
-            offline
-            unlinkable
-            defaultPrivate={false}
-            view
-            unbreached
-            shielded
-          />
-        </PrivacyComponent>
-        <PrivacyComponent title="Confidential Transactions">
-          <PrivacyList
-            name="Monero, Mobilecoin"
-            offline
-            unlinkable={false}
-            defaultPrivate
-            view
-            unbreached={false}
-          />
-        </PrivacyComponent>
-        <PrivacyComponent title="Ethereum Smart Contracts">
-          <PrivacyList
-            name="Aztec, Tornado cash"
-            offline
-            unlinkable={false}
-            defaultPrivate={false}
-            view
-            unbreached={false}
-          />
-        </PrivacyComponent>
-        <PrivacyComponent title="Mimblewimble">
-          <PrivacyList
-            name="Grin, Beam"
-            offline={false}
-            unlinkable={false}
-            defaultPrivate
-            view={false}
-            unbreached={false}
-          />
-        </PrivacyComponent>
-        <PrivacyComponent last title="Bitcoin Privacy Tools">
-          <PrivacyList
-            name="Mixers, Coinjoin"
-            offline
-            unlinkable={false}
-            defaultPrivate={false}
-            view={false}
-            unbreached={false}
-          />
-        </PrivacyComponent>
 
         <div className={clsx(styles.textContent)}>
           <h2 id="bitcoin">Bitcoin Privacy Tools (Mixers, CoinJoin, etc)</h2>
@@ -602,7 +430,7 @@ function Privacy() {
             .
           </p>
 
-          <h2>Sapling with Zero Knowledge Proofs (Zcash)</h2>
+          <h2 id="zcash">Sapling with Zero Knowledge Proofs (Zcash)</h2>
 
           <p>
             The Sapling protocol utilizing Zero-Knowledge Proofs (specifically
@@ -623,7 +451,7 @@ function Privacy() {
             difficult for a normal user to use, with limited wallet support.
           </p>
 
-          <h2>Sapling with Zero Knowledge Proofs (Iron Fish)</h2>
+          <h2 id="ironfish">Sapling with Zero Knowledge Proofs (Iron Fish)</h2>
 
           <p>
             Iron Fish is built on top of the Sapling protocol utilizing

@@ -199,9 +199,9 @@ function AboutUs() {
             </p>
             <Link
               className="button button--outline button--secondary"
-              to={useBaseUrl("/docs/whitepaper/1_introduction")}
+              to={useBaseUrl("/careers/")}
             >
-              Get Started
+              Explore Careers
             </Link>
           </div>
         </section>
