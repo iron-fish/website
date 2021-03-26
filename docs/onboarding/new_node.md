@@ -26,6 +26,17 @@ E.g.
 ironfish start --datadir=~./myCustomFolder
 ```
 
+## Using a different bootstrap node
+By default, your node will connect to the official Iron Fish bootstrap nodes.
+If you are developing and want to use a different bootstrap node, you can make the node connect to a different address with the `--bootstrap` flag.
+
+**Do not use a not officialy endorsed Iron Fish bootstrap node for production, you might end up on a malicious network.**
+
+E.g.
+```sh
+ironfish start --bootstrap=localhost:9031
+```
+
 ## Using a different port
 By default, Iron Fish runs on port 9033. If you wishes to use a different port, you can use the `--port` flag.
 

@@ -35,18 +35,18 @@ Run `ironfish accounts:pay --help` to see the different options available.
 
 E.g. To send 2 coins from the account `Savings`
 ```sh
-ironfish accounts:pay -a 2 -t 997c...7fc52ed -f Savings
+ironfish accounts:pay -a 1 -o 0.00000001 -t 997c...7fc52ed -f Savings
 ```
 
 ## Receive a transaction
 To receive a transaction, you just need to communicate the public key of your account to the sender. If you don't know your public key, run the following command:
 ```sh
-ironfish accounts:publicKey
+ironfish accounts:publickey
 ```
 
 E.g. To get the public key of a different account on your node
 ```sh
-ironfish accounts:publicKey -a Savings
+ironfish accounts:publickey -a Savings
 ```
 
 ## Balance

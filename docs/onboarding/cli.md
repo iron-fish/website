@@ -125,15 +125,15 @@ Creating a new account in command line
 ironfish accounts:create MyNewAccount
 ```
 
-#### accounts:publicKey
+#### accounts:publickey
 Gets the current account's public key
 ```sh
-ironfish accounts:publicKey
+ironfish accounts:publickey
 ```
 
 Gets a specific account's public key
 ```sh
-ironfish accounts:publicKey -a MyNewAccount
+ironfish accounts:publickey -a MyNewAccount
 ```
 
 #### accounts:balance
