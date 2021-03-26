@@ -18,6 +18,29 @@ To change the default account used by the CLI
 ironfish accounts:use MyAccount
 ```
 
+### Import an Account
+To import an account from a file:
+```sh
+ironfish accounts:import filename
+```
+
+To import an account manually:
+```sh
+ironfish accounts:import
+```
+Enter the JSON of the account and press enter
+
+### Export an Account
+To export an account to a file:
+```sh
+ironfish accounts:export AccountName filename
+```
+
+To export an account to the terminal:
+```sh
+ironfish accounts:export AccountName
+```
+
 ### See current default account
 To display the current default account used by the CLI
 ```sh
@@ -33,7 +56,7 @@ ironfish accounts:list
 ### Account key
 To see a specific account public key
 ```sh
-ironfish accounts:publicKey
+ironfish accounts:publickey
 ```
 
 ### Account balance
@@ -53,3 +76,4 @@ To delete an account
 ```sh
 ironfish accounts:remove MyAccount
 ```
+
