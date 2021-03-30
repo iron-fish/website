@@ -5,15 +5,11 @@ author_url: https://www.linkedin.com/in/elenanadolinski/
 author_image_url: /img/blog/elena.png
 author_description: Elena is the Founder and CEO of Iron Fish — previously worked at Microsoft and Airbnb. Fell down the cryptocurrency rabbit hole in 2017. Really didn't want her insurance to know she eats pizza.
 hide_table_of_contents: true
-title: The Iron Fish Story
+title: Why the name Iron Fish?
 description: Read about the history of Iron Fish as a company and how we decided to name it Iron Fish.
 image: /img/blog/why-iron-fish.png
 tags: [history, name, native americans, ironfish]
 ---
-
-## Origin of Iron Fish
-
-Iron Fish (previously known as Beanstalk) was founded in 2018 by Elena Nadolinski. The idea came after seeing how payments accelerated their progression to being digital-only. Bitcoin was initially created with the goal of digital cash, but the initial promise has never been fulfilled. Transactions are slow, expensive, and fully public. Elena wanted to offer a new cryptocurrency that is fast, fully private, and anonymous.
 
 ## Why the name Iron Fish?
 
@@ -32,3 +28,5 @@ We chose this as our name because it shows the power of
 cryptography, how a complex modern concept can be described using
 relatively simple words, and it even has two tradable commodities
 (iron and fish) right in its name.
+
+Interested in learning more? Read more about the Code Talkers on the [companion website](https://americanindian.si.edu/education/codetalkers/html/chapter4.html) to the traveling Smithsonian Institution exhibition, Native Words, Native Warriors.
