@@ -13,7 +13,7 @@ import Ironfish from '../../src/theme/components/Terminal/Ironfish'
 ### Homebrew
 Install Iron Fish from Homebrew
 ```sh
-brew install ironfish
+brew tap iron-fish/brew && brew install ironfish
 ```
 
 Run the Iron Fish CLI
