@@ -42,7 +42,7 @@ Docker images will be published soon. In the meantime, you can install Iron Fish
 Download our source code from the [official repository](https://github.com/iron-fish/ironfish)
 
 ### Requirements
-1. Install [Node.js 12.x](https://nodejs.org/en/download/)
+1. Install [Node.js 14.x](https://nodejs.org/en/download/)
 1. Install [Rust](https://www.rust-lang.org/learn/get-started)
 1. Install [yarn](https://classic.yarnpkg.com/en/docs/install)
 
