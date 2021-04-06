@@ -8,7 +8,7 @@ hide_table_of_contents: false
 
 Miners are essential to the health of the Iron Fish network. Without them, blocks won't be generated and transactions won't be transmitted. Iron Fish is still at the testnet stage.
 
-We are offering incentive for users to mine blocks on the testnet [(more details)](mailto:contact@ironfish.network).
+In the future, we plan to offer incentives for users to mine blocks on the testnet. Join our [Discord](https://discord.gg/kpKeGkA3) to stay up-to-date with our upcoming announcements!
 
 ## Requirements
 Install Iron Fish by following the instructions [here](onboarding/installation.md).
@@ -25,7 +25,7 @@ ironfish miners:start
 ```
 
 ## Changing the default account
-If you want to use a different account to store the miners fee, you can create a new account by runnning the following command:
+If you want to use a different account to store the miners fee, you can create a new account by running the following command:
 ```sh
 ironfish accounts:create newAccount
 ```
@@ -35,8 +35,16 @@ And then set it up as default:
 ironfish accounts:use newAccount
 ```
 
+## Set block graffiti (optional)
+
+Iron Fish blocks contain a 32-byte publicly-visible field called `graffiti` that can be set by the block's miner. To set this value to a UTF-8 encoded string on the blocks you mine, update the `blockGraffiti` config option:
+
+```sh
+ironfish config:set blockGraffiti "<your graffiti here>"
+```
+
 ## Join a mining pool
-$IRON is not available on a mining pool at the moment. [Contact us](mailto:contact@ironfish.network) if you would like to create a pool for Iron Fish.
+$IRON is not available on a mining pool at the moment. [Join our Discord](https://discord.gg/kpKeGkA3) if you're interested in creating a pool for Iron Fish.
 
 ## Troubleshooting
 
@@ -45,9 +53,8 @@ $IRON is not available on a mining pool at the moment. [Contact us](mailto:conta
 - Make sure you are correctly connected to the Iron Fish network (you should see `Connected to the Iron Fish network` in your node logs).
 
 #### Not connected to a node - waiting 5s before retrying
-Make sure that your node is currently running. If you are using a different `datadir` argument to start your node, make sure to use it as well when starting the miner.
+Make sure that your node is currently running. If you are using a different `datadir` argument to start your node, make sure to use it as well when starting the miner. For example:
 
-E.g.
 ```sh
 ironfish miners:start --datadir=~./ironfish2/
 ```

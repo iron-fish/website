@@ -29,24 +29,25 @@ You can change the working directory by passing the flag `--datadir` when runnin
 
 | Element              | Description |
 | :--------            | :-------------------------------------------------------------------------------------: |
-| account              | Default user account to use with the CLI |
-| bootstrapNodes       | List of bootstrap nodes addresses |
-| databaseName         | Default name for the dabase |
+| accountName          | Default account to use with the CLI |
+| blockGraffiti        | When mining, value to set on the `graffiti` field of new blocks. Truncated to 32 bytes |
+| bootstrapNodes       | List of addresses to connect to when launching the node |
+| databaseName         | Default name for the database |
 | editor               | Path for the default code editor for the config file |
-| enableListenP2P      | Enable the web socket listen server |
+| enableListenP2P      | Enable the WebSocket listen server |
 | enableRpc            | Enable the RPC server |
 | enableRpcIpc         | Enable the RPC to be served on IPC |
 | enableRpcTcp         | Enable the RPC to be served on TCP |
 | enableTelemetry      | Enable anonymous telemetry collection |
 | enableMetrics        | Enable internal metrics collection (required for Status command) |
 | getFundsApi          | HTTP URL for the Faucet API |
-| ipcPath              | Path for the IPC directory |
-| logLevel             | Log level of the node (`*:warn,tag:info`) |
-| logPrefix            | String to be prefixed to all logs. Accepts the following replacements: [%time%] [%level%] [%tag%] |
-| nodeName             | Name of the node to be broadcaster to peers (optional) |
-| peerPort             | Port of the node |
-| rpcTcpHost           | IP of the bootstrap node |
-| rpcTcpPort           | Port of the bootstrap node |
+| ipcPath              | Path for the RPC IPC directory |
+| logLevel             | Log level of the node. Log levels can be applied to tagged logs like so: `*:warn,tag:info` |
+| logPrefix            | String to be prefixed to all logs. If any of the following strings are included, will replace them with the corresponding value: `%time%`, `%level%`, `%tag%` |
+| nodeName             | Name of the node to be broadcasted to peers (optional) |
+| peerPort             | Port on which to host the WebSocket listen server |
+| rpcTcpHost           | Address to connect to when establishing an RPC connection |
+| rpcTcpPort           | Port to connect to when establishing an RPC connection |
 | maxPeers             | The maximum number of peers the node can be connected to at a time |
 | targetPeers          | The ideal number of peers we'd like to be connected to. The node will attempt to establish new connections when below this number. |
 | telemetryApi         | HTTP URL for the Telemetry API |
