@@ -28,7 +28,7 @@ ironfish
 Iron Fish is now ready to use. Follow the [next step](new_node.md) of the tutorial or jump directly to the [the CLI commands list](cli.md).
 
 ## Windows
-Windows installer packages will be published soon. In the meantime, you can install Iron Fish directly [from the source](#from-source)
+Windows installer packages will be published soon. In the meantime, you can install Iron Fish directly [from the source](#from-source) or [use Docker](#using-docker).
 
 ## Linux
 Linux installer packages will be published soon. In the meantime, you can install Iron Fish directly [from the source](#from-source) or [use Docker](#using-docker)
