@@ -31,10 +31,19 @@ Iron Fish is now ready to use. Follow the [next step](new_node.md) of the tutori
 Windows installer packages will be published soon. In the meantime, you can install Iron Fish directly [from the source](#from-source)
 
 ## Linux
-Linux installer packages will be published soon. In the meantime, you can install Iron Fish directly [from the source](#from-source)
+Linux installer packages will be published soon. In the meantime, you can install Iron Fish directly [from the source](#from-source) or [use Docker](#using-docker)
 
 ## Using Docker
-Docker images will be published soon. In the meantime, you can install Iron Fish directly [from the source](#from-source)
+
+Pull down the docker image from the github registry and run the node and mount the node's data directory into your home directory
+```sh
+docker run --rm --tty --interactive --network host --volume $HOME/.ironfish:/root/.ironfish ghcr.io/iron-fish/ironfish:latest
+```
+
+Now check the status of your node using ICP over the docker host network, you can also use the CLI / RPC layer over TCP as well by starting your node with `--rpc.tcp` which connects over the default port port 8020.
+```sh
+docker run --rm --tty --interactive --network host --volume $HOME/.ironfish:/root/.ironfish ghcr.io/iron-fish/ironfish:latest status -f
+```
 
 ## From source
 
