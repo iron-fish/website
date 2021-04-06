@@ -210,7 +210,7 @@ h3 {
 }
 h2 {
   font-size: 32px;
-  line-height: 38px;
+  line-height: 45px;
 }
 h3 {
   font-size: 28px;
@@ -402,18 +402,20 @@ ol ol {
   padding-right: var(--ifm-markdown-horizontal-padding);
 }
 .markdown > p {
-  font-size: 16px !important;
+  font-size: 20px !important;
+  line-height: 32px;
 }
 .markdown li p {
-  font-size: 16px !important;
+  font-size: 20px !important;
+  line-height: 32px;
 }
 .markdown li {
-  font-size: 16px !important;
+  font-size: 20px !important;
   margin-bottom: 4px !important;
   margin-top: 4px !important;
 }
 .markdown > h2 {
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 .markdown > h3 {
   margin-top: 20px;

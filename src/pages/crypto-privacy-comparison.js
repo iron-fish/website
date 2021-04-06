@@ -67,7 +67,7 @@ function Privacy() {
             <PrivacyList
               name="Iron Fish"
               link="#ironfish"
-              linkName="Sappling Zero Knowledge Proofs (Iron Fish)"
+              linkName="Sapling Zero Knowledge Proofs (Iron Fish)"
               bullets={[
                 {
                   good: true,
@@ -96,7 +96,7 @@ function Privacy() {
             <PrivacyList
               name="Zcash"
               link="#zcash"
-              linkName="Learn More about Sappling Zero Knowledge Proofs (Zcash)"
+              linkName="Learn More about Sapling Zero Knowledge Proofs (Zcash)"
               bullets={[
                 {
                   good: true,
