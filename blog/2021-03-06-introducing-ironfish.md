@@ -17,7 +17,7 @@ Today, Iron Fish enters its first public testnet phase—anyone (yes, you too!) 
 
 If you have feedback, questions, trouble running your node, or just want to drop in and say ‘hi’, please join us in [Discord](https://discord.com/invite/H7Mk3qacyM).
 
-Many angels and organizations have helped us get here, and we’re thankful for the funding we’ve raised to date ($5.3M) from Electric Capital (Avichal Garg), Elad Gil, Metastable (Naval Ravikant and Lucas Ryan), A Capital (Kartik Talwar), Slow Ventures (Jill Carlson), Dylan Field (Figma), John Lilly, Jack Abraham (Atomic), Juan Benet (Filecoin), Jack Chou, Balaji Srinivasan, Lemniscap (Roderic van der Graaf), James Prestwich, and Linda Xie. We are honored to work with such amazing people.
+Many angels and organizations have helped us get here, and we’re thankful for the funding we’ve raised to date ($5.3M) from Electric Capital (Avichal Garg), Elad Gil, Metastable (Naval Ravikant and Lucas Ryan), A Capital (Kartik Talwar), Slow Ventures (Jill Carlson), Dylan Field (Figma), John Lilly, Jack Abraham (Atomic), Juan Benet (Filecoin), Jack Chou, Balaji Srinivasan, Lemniscap (Roderik van der Graaf), James Prestwich, and Linda Xie. We are honored to work with such amazing people.
 
 ## A privacy coin that just works
 
