@@ -117,7 +117,7 @@ function Privacy() {
           </PrivacyComponent>
           <PrivacyComponent title="Ethereum Smart Contracts">
             <PrivacyList
-              name="Ethereum, Aztec, Tornado Cash"
+              name="Zether, EY's Nightfall, Tornado Cash, and others"
               link="#ethereum"
               linkName="Ethereum Smart Contracts"
               bullets={[
@@ -223,9 +223,7 @@ function Privacy() {
             .
           </p>
 
-          <h2 id="ethereum">
-            Ethereum Smart Contracts (Aztec, Tornado Cash, etc)
-          </h2>
+          <h2 id="ethereum">Ethereum Smart Contracts (Tornado Cash, etc)</h2>
 
           <p>
             <a href="/blog/2021/03/03/bitcoin-ethreum-privacy">
@@ -234,16 +232,16 @@ function Privacy() {
             . However, Ethereum does support smart contracts (arbitrary programs
             validated on the blockchain) and various projects have created
             “shielded pool” smart contracts to obfuscate ether (ETH) and other
-            Ethereum assets. Some examples of these are Aztec, Zether, EY’s
-            Nightfall, and Tornado Cash. These privacy mechanisms vary, but a
-            high level perspective they all work something like this:
+            Ethereum assets. Some examples of these are Zether, EY’s Nightfall,
+            and Tornado Cash. These privacy mechanisms vary, but a high level
+            perspective they all work something like this:
           </p>
           <p>
             A user wanting to obfuscate their funds would first deposit funds
-            into a shielded pool smart contract (be it Tornado Cash, or Aztec).
-            They can then move those funds privately within that smart contract
-            to other accounts. The recipient would then withdraw those funds
-            when they’re ready.
+            into a shielded pool smart contract (e.g. Tornado Cash). They can
+            then move those funds privately within that smart contract to other
+            accounts. The recipient would then withdraw those funds when they’re
+            ready.
           </p>
 
           <img src="/img/privacy/ethereum-smart-contract.svg" />
