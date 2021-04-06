@@ -150,7 +150,7 @@ function Privacy() {
                 {
                   good: false,
                   value:
-                    "Interactive protocol requires both parties to be online to form a transaction",
+                    "Interactive protocol requires both parties to be online to form a transaction (Note: Beam uses a variation that abstracts the interactive nature of Mimblewimble)",
                 },
               ]}
             />
