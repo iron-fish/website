@@ -86,7 +86,7 @@ function Footer() {
               },
               {
                 link: "/docs/whitepaper/1_introduction",
-                name: "WhitePaper",
+                name: "Whitepaper",
               },
               {
                 link: "/faq/",
@@ -107,7 +107,7 @@ function Footer() {
             Copyright {new Date().getFullYear()} Iron Fish. All rights reserved.
           </p>
           <div className={classes.links}>
-            <a href="https://t.me/ironfishcrypto">
+            <a href="https://t.me/ironfishcryptochat">
               <img
                 src="/img/footer/telegram.svg"
                 width="14"
