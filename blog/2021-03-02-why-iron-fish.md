@@ -1,17 +1,17 @@
 ---
 author: Elena Nadolinski
 author_title: CEO & Founder @ Iron Fish
-author_url: https://www.linkedin.com/in/elenanadolinski/
+author_url: https://twitter.com/leanthebean
 author_image_url: /img/blog/elena.png
 author_description: Elena is the Founder and CEO of Iron Fish — previously worked at Microsoft and Airbnb. Fell down the cryptocurrency rabbit hole in 2017. Really didn't want her insurance to know she eats pizza.
 hide_table_of_contents: true
-title: Why the name Iron Fish?
+title: Why the name 'Iron Fish'?
 description: Read about the history of Iron Fish as a company and how we decided to name it Iron Fish.
 image: /img/blog/why-iron-fish.png
 tags: [history, name, native americans, ironfish]
 ---
 
-## Why the name Iron Fish?
+## Why the name 'Iron Fish'?
 
 During World War 2, the US recruited Native Americans to use their tribal
 languages to send secret communications to and from the battlefield

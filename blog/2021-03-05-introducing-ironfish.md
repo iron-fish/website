@@ -1,0 +1,45 @@
+---
+author: Elena Nadolinski
+author_title: CEO & Founder @ Iron Fish
+author_url: https://twitter.com/leanthebean
+author_image_url: /img/blog/elena.png
+author_description: Elena is the Founder and CEO of Iron Fish — previously worked at Microsoft and Airbnb. Fell down the cryptocurrency rabbit hole in 2017. Really didn't want her insurance to know she eats pizza.
+hide_table_of_contents: true
+title: Announcing Iron Fish - Privacy for Everyone
+description: Announcing the first Iron Fish testnet and comapny funding to date
+image: /img/blog/ironfish.png
+tags: [history, name, native americans, ironfish]
+---
+
+# Announcing Iron Fish: Privacy for Everyone
+
+Today, Iron Fish enters its first public testnet phase—anyone (yes, you too!) can now [run and mine a full Iron Fish node](https://ironfish.network/docs/onboarding/iron-fish-tutorial). After roughly two years of building Iron Fish, I am so excited to share our vision with the world. Iron Fish is a privacy-first cryptocurrency that anyone can use, without compromising on privacy or usability.
+
+If you have feedback, questions, trouble running your node, or just want to drop in and say ‘hi’, please join us in [Discord](https://discord.com/invite/H7Mk3qacyM).
+
+Many angels and organizations have helped us get here, and we’re thankful for the funding we’ve raised to date ($5.3M) from Electric Capital (Avichal Garg), Elad Gil, Metastable (Naval Ravikant and Lucas Ryan), A Capital (Kartik Talwar), Slow Ventures (Jill Carlson), Dylan Field (Figma), John Lilly, Jack Abraham (Atomic), Juan Benet (Filecoin), Jack Chou, Balaji Srinivasan, Lemniscap (Roderic van der Graaf), James Prestwich, and Linda Xie. We are honored to work with such amazing people.
+
+## A privacy coin that just works
+
+Iron Fish is a brand new cryptocurrency that protects _every_ single transaction, using zk-SNARKs and the Sapling protocol (learn more in our [whitepaper](https://ironfish.network/docs/whitepaper/1_introduction)). Anyone can [run a node](https://ironfish.network/docs/onboarding/iron-fish-tutorial) and contribute to our [codebase](https://github.com/iron-fish/ironfish). As we continue to add features, Iron Fish will become a shielded layer for many assets, even ones on different chains, and provide a platform for true digital cash—the full realization of Satoshi’s vision.
+
+In future iterations, you will be able to run Iron Fish directly in the browser: no installs, no messing with router settings, no installing arcane dependencies. For now, Iron Fish is a CLI tool, designed to be intuitive and easy to use. 🌈
+
+Why focus on a fully private, accessible currency? Cash is disappearing, and we _still have no digital cash alternative_.
+
+## Life after cash
+
+To date, most cryptocurrencies provide the least private way of transacting, permanently saving all transactions in plaintext for the world to see. Privacy is even considered controversial, and yet privacy is critical for innovation, open communication, and social evolution. Most importantly, your entire life happens online (shopping, meetings, birthdays, and now even funerals)—with all your data logged, analyzed, and sold. Privacy protects you.
+
+In 2021 it is apparent that people’s relationship with privacy is changing. Signal installs skyrocketed 4,200% after Whatsapp announced it would force users to share personal data with Facebook. ProtonMail saw a 3x rise in usage. DuckDuckGo’s growth has become exponential.
+
+As cash continues to disappear, crypto will only become a viable alternative to traditional banking if we truly embrace privacy.
+
+Interested in participating? Check out our [Discord](https://discord.com/invite/H7Mk3qacyM) on how to get started with Iron Fish today and for future announcements, as well as our [careers page](https://ironfish.network/careers/) for full-time positions. Incentivized testnet will be announced at a future date.
+
+See you on the Iron Fish network!
+
+📚 Tutorial: https://ironfish.network/docs/onboarding/iron-fish-tutorial  
+🎤 Discord: https://discord.gg/kpKeGkA3  
+🐦 Twitter: https://twitter.com/ironfishcrypto  
+📢 Telegram: https://t.me/joinchat/ID2sTtsLV7ZjOWIx

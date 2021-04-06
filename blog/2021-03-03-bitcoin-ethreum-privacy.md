@@ -1,17 +1,17 @@
 ---
 author: Elena Nadolinski
 author_title: CEO & Founder @ Iron Fish
-author_url: https://www.linkedin.com/in/elenanadolinski/
+author_url: https://twitter.com/leanthebean
 author_image_url: /img/blog/elena.png
 author_description: Elena is the Founder and CEO of Iron Fish — previously worked at Microsoft and Airbnb. Fell down the cryptocurrency rabbit hole in 2017. Really didn't want her insurance to know she eats pizza.
 hide_table_of_contents: true
-title: Is Bitcoin / Ethereum private?
+title: Is Bitcoin & Ethereum really private?
 description: Transparent cryptocurrency systems like Bitcoin and Ethereum are natively the least private way of transacting.
 image: /img/blog/bitcoin-ethreum-privacy/cover.png
 tags: [history, name, native americans, ironfish]
 ---
 
-## Why is Bitcoin / Ethereum the least private way of transacting?
+## Bitcoin & Ethereum — the least private way of transacting
 
 Transparent cryptocurrency systems like Bitcoin and Ethereum are natively the least private way of transacting. Validation of transactions for those systems rely on full transparency. Bitcoin might sometimes be labeled as anonymous, or pseudonymous, but this should not be mistaken for being private, in fact all Bitcoin transactions are entirely traceable by design.
 
@@ -24,7 +24,6 @@ Bitcoin works on a UTXO model. UTXO stands for “Unspent Transaction Output”.
 Let’s say you’re a miner, and for successfully mining the block, your reward is a fresh $20 bill that belongs to you.
 
 ![alt text](/img/blog/bitcoin-ethreum-privacy/single.jpg "Single $20 bill")
-
 
 And now you want to give your friend $10. Your transaction would then have **one input UTXO** (the $20) and **two output UTXOs** (one $10 for your friend, and one $10 as change for you)
 
@@ -46,7 +45,6 @@ Every such UTXO can be traced through all the relevant transactions that came be
 There are many companies that specialize in analyzing transactions on public blockchains such as Bitcoin, and Ethereum. One such company is Chainanalysis, that does extensive static analysis to form relationship graphs that link wallets together.
 
 ![alt text](/img/blog/bitcoin-ethreum-privacy/chainanalysis.jpg "Chainanalysis Dashboard")
-
 
 While some consider such level of traceability and transparency a feature for catching bad actors and illegal activity, it’s also a hindrance for legitimate businesses and individuals to transact freely. Not many businesses find it appealing to operate entirely in the open, giving away who their customers or vendors are.
 
