@@ -35,15 +35,18 @@ Linux installer packages will be published soon. In the meantime, you can instal
 
 ## Using Docker
 
-Pull down the docker image from the github registry and run the node and mount the node's data directory into your home directory
+Pull down the docker image from the github registry, and mount the node's data directory into your home directory, and run the node.
 ```sh
 docker run --rm --tty --interactive --network host --volume $HOME/.ironfish:/root/.ironfish ghcr.io/iron-fish/ironfish:latest
 ```
 
-Now check the status of your node using ICP over the docker host network, you can also use the CLI / RPC layer over TCP as well by starting your node with `--rpc.tcp` which connects over the default port port 8020.
+Now check the status of your node using ICP.
 ```sh
 docker run --rm --tty --interactive --network host --volume $HOME/.ironfish:/root/.ironfish ghcr.io/iron-fish/ironfish:latest status -f
 ```
+
+__Note:__ Network host is needed for 2 docker containers to connet over IPC.
+__Note:__ You can also use the CLI / RPC layer over TCP as well by starting your node with `--rpc.tcp` which connects using the default port 8020.
 
 ## From source
 
