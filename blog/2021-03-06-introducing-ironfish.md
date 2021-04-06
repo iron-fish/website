@@ -42,4 +42,4 @@ See you on the Iron Fish network!
 📚 Tutorial: https://ironfish.network/docs/onboarding/iron-fish-tutorial  
 🎤 Discord: https://discord.gg/kpKeGkA3  
 🐦 Twitter: https://twitter.com/ironfishcrypto  
-📢 Telegram: https://t.me/joinchat/ID2sTtsLV7ZjOWIx
+📢 Telegram: https://t.me/ironfishcryptochat
