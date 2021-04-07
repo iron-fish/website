@@ -17,7 +17,7 @@ const questions = [
     id: "different",
     title: "How do you differ from other cryptocurrencies?",
     description: {
-      __html: `Many popular cryptocurrencies are permanent ledgers that broadcast all the details of a transaction—similar to tweeting out your bank statement. Yet privacy is a requirement for a true global currency. Participating in the network of other coins is cumbersome  both to the end user and the miner. We have developed a fast syncing technique that lets miners download significantly less data and onboard faster than existing cryptocurrency systems.
+      __html: `Many popular cryptocurrencies are permanent ledgers that broadcast all the details of a transaction—similar to tweeting out your bank statement. Yet privacy is a requirement for a true global currency. Participating in the network of other coins is cumbersome  both to the end user and the miner.
       <br/><br/>
       Our combination of privacy and accessibility means that anyone, anywhere, can have access to private, decentralized money.
     `,

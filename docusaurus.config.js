@@ -40,11 +40,6 @@ module.exports = {
           position: "right",
         },
         {
-          to: "/crypto-privacy-comparison",
-          label: "Privacy Features",
-          position: "right",
-        },
-        {
           to: "docs/whitepaper/1_introduction",
           activeBasePath: "docs",
           label: "Whitepaper",
