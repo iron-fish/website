@@ -53,6 +53,11 @@ To see live updates:
 ironfish status -f
 ```
 
+#### reset
+Deletes your chain and wallet state, but preserves your accounts. It will import your accounts afterwards into a fresh node state.
+```sh
+ironfish reset
+```
 
 ### Config
 #### config:show
