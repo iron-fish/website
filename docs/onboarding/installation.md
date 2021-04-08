@@ -9,9 +9,11 @@ hide_table_of_contents: false
 import Terminal from '../../src/theme/components/Terminal/Terminal'
 import Ironfish from '../../src/theme/components/Terminal/Ironfish'
 
-## Mac OS
+## macOS
 
 ### Homebrew
+
+> **Note:** Our Homebrew tap does not yet support **M1/arm64**. However, you can install Iron Fish directly [from the source](#from-source) [with these workarounds](https://github.com/iron-fish/ironfish/issues/9#issuecomment-814928578) or [use Docker](#using-docker) with x86_64 support.
 
 Start by adding our Homebrew tap and installing Iron Fish.
 
@@ -39,7 +41,7 @@ Iron Fish is now ready to use. Follow the [next step](new_node.md) of the tutori
 
 ## Windows
 
-Windows installer packages will be published soon. In the meantime, you can install Iron Fish directly [from the source](#from-source) or [use Docker](#using-docker).
+Windows support is still in development (See [this Github issue](https://github.com/iron-fish/ironfish/issues/11)). In the meantime, you can install Iron Fish [using Docker](#using-docker).
 
 ## Linux
 
@@ -47,25 +49,25 @@ Linux installer packages will be published soon. In the meantime, you can instal
 
 ## Using Docker
 
-Run the Docker image from the Github registry, mounting the node's data directory into your home directory and using the host network.
+Run the Docker image from the Github registry, mounting the node's data directory into your home directory and using the host network. (Replace `<home-directory>` with `%USERPROFILE%` on Windows or `$HOME` on others)
 
 ```sh
-docker run --rm --tty --interactive --network host --volume $HOME/.ironfish:/root/.ironfish ghcr.io/iron-fish/ironfish:latest
+docker run --rm --tty --interactive --network host --volume <home-directory>/.ironfish:/root/.ironfish ghcr.io/iron-fish/ironfish:latest
 ```
 
-Now check the status of your node using IPC.
+Now check the status of your node using IPC, again replacing `<home-directory>` according to your OS.
 
 ```sh
-docker run --rm --tty --interactive --network host --volume $HOME/.ironfish:/root/.ironfish ghcr.io/iron-fish/ironfish:latest status -f
+docker run --rm --tty --interactive --network host --volume <home-directory>/.ironfish:/root/.ironfish ghcr.io/iron-fish/ironfish:latest status -f
 ```
 
-**Note:** Network host is needed for 2 Docker containers to connect over IPC.
+**Note:** `--network host` is needed for 2 Docker containers to connect over IPC.
 
 **Note:** You can also use the RPC layer over TCP by starting your node with `--rpc.tcp`, which connects over the default port 8020.
 
 ### Updating
 
-To update your image, first use `docker pull` before running the image.
+To update your image, use `docker pull` before running the image.
 
 ```sh
 docker pull ghcr.io/iron-fish/ironfish:latest
