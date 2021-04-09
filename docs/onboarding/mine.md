@@ -8,7 +8,7 @@ hide_table_of_contents: false
 
 Miners are essential to the health of the Iron Fish network. Without them, blocks won't be generated and transactions won't be transmitted. Iron Fish is still at the testnet stage.
 
-In the future, we plan to offer incentives for users to mine blocks on the testnet. Join our [Discord](https://discord.gg/kpKeGkA3) to stay up-to-date with our upcoming announcements!
+In the future, we plan to offer incentives for users to mine blocks on the testnet. Join our [Discord](https://discord.gg/EkQkEcm8DH) to stay up-to-date with our upcoming announcements!
 
 ## Requirements
 Install Iron Fish by following the instructions [here](onboarding/installation.md).
@@ -44,7 +44,7 @@ ironfish config:set blockGraffiti "<your graffiti here>"
 ```
 
 ## Join a mining pool
-$IRON is not available on a mining pool at the moment. [Join our Discord](https://discord.gg/kpKeGkA3) if you're interested in creating a pool for Iron Fish.
+$IRON is not available on a mining pool at the moment. [Join our Discord](https://discord.gg/EkQkEcm8DH) if you're interested in creating a pool for Iron Fish.
 
 ## Troubleshooting
 

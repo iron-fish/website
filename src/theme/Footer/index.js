@@ -139,7 +139,7 @@ function Footer() {
                 alt="Twitter"
               />
             </a>
-            <a href="https://discord.gg/kpKeGkA3">
+            <a href="https://discord.gg/EkQkEcm8DH">
               <img
                 src="/img/footer/discord.svg"
                 width="15"
