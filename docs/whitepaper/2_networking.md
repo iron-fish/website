@@ -88,7 +88,7 @@ When node A decides to broadcast a new message, it’ll send out a Gossip-type m
 <br />
 <br />
 
-Then, each subsequent node will broadcast the message to their other peers, until the entire network receives the message. In this example, C broadcasts the message to D and G. Then D broadcasts the message to F and G.
+Then, each subsequent node will broadcast the message to their other peers, until the entire network receives the message. In this example, C broadcasts the message to D and E. Then D broadcasts the message to F and G.
 
 <img src ="/img/whitepaper/network/nodes3.svg" width="50%" role="presentation" />
 <img src ="/img/whitepaper/network/nodes4.svg" width="50%" role="presentation" />
@@ -101,7 +101,7 @@ To reduce network congestion, we implemented the following Gossip Protocol impro
 
 In an effort to avoid an infinite broadcast of the same message, each node stores a set of all the gossiped messages it has seen. When a node receives a gossip-type message already in the set (meaning it was seen before), it ignores the message. The set that keeps track of these gossip-type messages is bound to a specific size and old ones are evicted in a first-in first-out order.
 
-##### Neighbour cast
+##### Neighbor cast
 
 To avoid spamming the peers with duplicated messages, we implemented two other solutions:
 
