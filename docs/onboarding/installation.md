@@ -41,7 +41,7 @@ Iron Fish is now ready to use. Follow the [next step](new_node.md) of the tutori
 
 ## Windows
 
-Windows support is still in development (See [this Github issue](https://github.com/iron-fish/ironfish/issues/11)). In the meantime, you can install Iron Fish [using Docker](#using-docker).
+Windows installer packages are still in development. In the meantime, you can install Iron Fish directly [from the source](#from-source) or [use Docker](#using-docker).
 
 ## Linux
 
