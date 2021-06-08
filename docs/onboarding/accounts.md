@@ -24,11 +24,17 @@ To import an account from a file:
 ironfish accounts:import filename
 ```
 
-To import an account manually:
+To import an account via stdin:
+```sh
+echo {<account json>} | ironfish accounts:import
+```
+Enter the JSON of the account and press enter
+
+To import an account interactively:
 ```sh
 ironfish accounts:import
 ```
-Enter the JSON of the account and press enter
+Enter the details requested by the prompts
 
 ### Export an Account
 To export an account to a file:
