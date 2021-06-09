@@ -98,6 +98,13 @@ function Careers() {
               description="International award winning designer who hates the snow and cold weather, albeit lives in Canada, complains about it relentlessly yet reluctant to move."
             />
             <Employee
+              id="7"
+              firstName="Rohan"
+              title="Engineer"
+              linkedin="https://www.linkedin.com/in/rohanjadvani/"
+              description="Former Citadel & Snap. He enjoys biking around New York or reading about type theory while waiting for his cinnamon rolls to finish baking."
+            />
+            <Employee
               id="6"
               firstName="You?"
               title="Fish"
