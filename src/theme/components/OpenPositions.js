@@ -61,12 +61,6 @@ function OpenPositions() {
             location="SF / Remote"
             link="/jd-backend"
           />
-          <Position
-            title="Mobile Engineer"
-            time="Full-Time"
-            location="SF / Remote"
-            link="/jd-mobile"
-          />
         </div>
       </div>
     </section>
