@@ -19,7 +19,7 @@
     "jsonp": "^0.2.1",
     "react": "^16.8.4",
     "react-dom": "^16.8.4",
-    "react-intersection-observer": "^8.31.0",
+    "react-intersection-observer": "^8.32.0",
     "rehype-katex": "^4.0.0",
     "remark-math": "^3.0.1"
   },
