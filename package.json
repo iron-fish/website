@@ -20,7 +20,7 @@
     "react": "^16.8.4",
     "react-dom": "^16.8.4",
     "react-intersection-observer": "^8.32.0",
-    "rehype-katex": "^4.0.0",
+    "rehype-katex": "^5.0.0",
     "remark-math": "^3.0.1"
   },
   "browserslist": {
