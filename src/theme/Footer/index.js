@@ -94,13 +94,12 @@ function Footer() {
               },
             ]}
           />
-          <button
-            href="mailto:contact@ironfish.network"
+          <a href="mailto:contact@ironfish.network"><button
             variant="outlined"
             className={`${classes.button} button button--outline`}
           >
             Drop us a line!
-          </button>
+          </button></a>
         </div>
         <div className={classes.contact}>
           <p>
