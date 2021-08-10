@@ -21,7 +21,7 @@
     "react-dom": "^16.14.0",
     "react-intersection-observer": "^8.32.0",
     "rehype-katex": "5.0.0",
-    "remark-math": "4.0.0"
+    "remark-math": "5.0.0"
   },
   "browserslist": {
     "production": [
