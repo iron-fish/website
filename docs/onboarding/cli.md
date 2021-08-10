@@ -118,7 +118,7 @@ Displays the list of peers with live update.
 ironfish peers:list -f
 ```
 
-### Account / Wallet
+### Accounts / Wallet
 #### accounts:create
 Creating a new account with interactive mode
 ```sh
@@ -164,10 +164,10 @@ ironfish accounts:pay -a 2 -t 997c5...c52ed
 ```
 
 ### Faucet
-#### faucet:giveme
+#### faucet
 Connects to the Iron Fish faucet to get test funds
 ```sh
-ironfish faucet:giveme
+ironfish faucet
 ```
 
 ### Chain

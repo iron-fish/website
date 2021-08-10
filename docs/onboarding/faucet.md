@@ -15,7 +15,7 @@ You can receive free $IRON to start testing Iron Fish. You can keep these coins,
 
 To get these coins, you can run the following command:
 ```sh
-ironfish faucet:giveme
+ironfish faucet
 ```
 
 <Terminal command={Faucet} />

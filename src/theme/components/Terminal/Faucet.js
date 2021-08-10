@@ -1,7 +1,7 @@
 import React from "react";
 
 export default [
-  <span data-ty="input">ironfish faucet:giveme</span>,
+  <span data-ty="input">ironfish faucet</span>,
   <span data-ty className="notVisibleOnMobile">
     {`
 ::::::::::          :::::::::::::::::
