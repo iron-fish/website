@@ -1,9 +1,9 @@
 /* stylelint-disable docusaurus/copyright-header */
 .footer {
   padding: 0;
+  padding-top: 30px;
 }
 .root {
-  border-top: 1px solid #dfe1e4;
   padding-top: 55px;
   color: "#1D0070";
   font-family: var(--ifm-font-header-button);
