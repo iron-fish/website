@@ -62,7 +62,7 @@ const questions = [
     imageRight: "/img/faq/algue.svg",
     title: "Why use Proof-of-Work (PoW)?",
     description: {
-      __html: `We’ve done thorough and extensive research on the merits and drawbacks of PoW, Proof-of-State (PoS), and Delegated Proof of Stake systems. Ultimately, PoW systems are overall more secure, have much better understood attack vectors, and have a better path towards being fairly decentralized. PoS systems can sometimes lead to better UI/UX and faster block times, but the pros do not outweigh the cons when looking at their algorithms holistically.`,
+      __html: `We’ve done thorough and extensive research on the merits and drawbacks of PoW, Proof-of-Stake (PoS), and Delegated Proof of Stake systems. Ultimately, PoW systems are overall more secure, have much better understood attack vectors, and have a better path towards being fairly decentralized. PoS systems can sometimes lead to better UI/UX and faster block times, but the pros do not outweigh the cons when looking at their algorithms holistically.`,
     },
   },
   {
