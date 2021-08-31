@@ -1,81 +1,39 @@
-/**
- * Copyright (c) Facebook, Inc. and its affiliates.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- */
-import React, { useCallback, useState, useEffect } from "react";
-import clsx from "clsx";
-import Link from "@docusaurus/Link";
+import React from "react";
 import { useLocation } from "@docusaurus/router";
-import useBaseUrl from "@docusaurus/useBaseUrl";
-import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
-import SearchBar from "@theme/SearchBar";
-import Toggle from "@theme/Toggle";
-import useThemeContext from "@theme/hooks/useThemeContext";
-import useHideableNavbar from "@theme/hooks/useHideableNavbar";
-import useLockBodyScroll from "@theme/hooks/useLockBodyScroll";
-import useWindowSize, { windowSizes } from "@theme/hooks/useWindowSize";
-import useLogo from "@theme/hooks/useLogo";
-import styles from "./styles.module.css";
-import NavbarItem from "@theme/NavbarItem"; // retrocompatible with v1
-import TestnetBanner from "./TestnetBanner";
 
-const DefaultNavItemPosition = "right"; // If split links by left/right
-// if position is unspecified, fallback to right (as v1)
+import Logo from "./components/Logo";
+import Menu from "./icons/Menu";
+import { useNav, NavState } from "./hooks/useNav";
 
-function splitNavItemsByPosition(items) {
-  const leftItems = items.filter(
-    (item) => (item.position ?? DefaultNavItemPosition) === "left"
-  );
-  const rightItems = items.filter(
-    (item) => (item.position ?? DefaultNavItemPosition) === "right"
-  );
-  return {
-    leftItems,
-    rightItems,
-  };
-}
+import NavbarLinks from "./Links";
+import NavbarFlyout from "./Flyout";
 
-function Navbar() {
+import overrides from "./overrides.module.css";
+
+function Navbar({ fill = "white", className = "bg-black text-white" }) {
   const {
-    siteConfig: {
-      themeConfig: {
-        navbar: {
-          title = "",
-          items = [],
-          hideOnScroll = false,
-          style = undefined,
-        } = {},
-        colorMode: { disableSwitch: disableColorModeSwitch = false } = {},
-      },
-    },
-    isClient,
-  } = useDocusaurusContext();
-  const [sidebarShown, setSidebarShown] = useState(false);
-  const [isSearchBarExpanded, setIsSearchBarExpanded] = useState(false);
-  const { isDarkTheme, setLightTheme, setDarkTheme } = useThemeContext();
-  const { navbarRef, isNavbarVisible } = useHideableNavbar(hideOnScroll);
-  const { logoLink, logoLinkProps, logoImageUrl, logoAlt } = useLogo();
-  useLockBodyScroll(sidebarShown);
-  const showSidebar = useCallback(() => {
-    setSidebarShown(true);
-  }, [setSidebarShown]);
-  const hideSidebar = useCallback(() => {
-    setSidebarShown(false);
-  }, [setSidebarShown]);
-  const onToggleChange = useCallback(
-    (e) => (e.target.checked ? setDarkTheme() : setLightTheme()),
-    [setLightTheme, setDarkTheme]
-  );
-  const windowSize = useWindowSize();
-  useEffect(() => {
-    if (windowSize === windowSizes.desktop) {
-      setSidebarShown(false);
-    }
-  }, [windowSize]);
-  const { leftItems, rightItems } = splitNavItemsByPosition(items);
-  const location = useLocation();
+    isCompanyVisible,
+    isTestnetVisible,
+    $flyoutVisible,
+    $setFlyoutVisible,
+    $subnavState,
+    toggleNavCompany,
+    enterNavCompany,
+    toggleNavTestnet,
+    enterNavTestnet,
+    hideNav,
+  } = useNav();
+  const companyVisible = isCompanyVisible();
+
+  const testnetVisible = isTestnetVisible();
+  const navBarLinksProps = {
+    companyVisible,
+    companyHovered: enterNavCompany,
+    companyClicked: toggleNavCompany,
+    testnetVisible,
+    testnetHovered: enterNavTestnet,
+    testnetClicked: toggleNavTestnet,
+  };
 
   const isBlueHeader = [
     "/",
@@ -84,160 +42,45 @@ function Navbar() {
     "/jd-mobile",
     "/blog",
     "/blog/",
-  ].includes(location.pathname);
-  const logoImageUrlWhite = logoImageUrl.replace(".svg", "-white.svg");
-  const logoImageUrlPerPage = isBlueHeader ? logoImageUrlWhite : logoImageUrl;
+  ].includes(useLocation().pathname);
+  className = isBlueHeader ? "bg-ifblue text-white" : "bg-white text-black";
 
   return (
-    <div>
-      <TestnetBanner />
-      <nav
-        ref={navbarRef}
-        className={clsx("navbar", {
-          "navbar--home": isBlueHeader,
-          "navbar--dark": style === "dark",
-          "navbar--primary": style === "primary",
-          "navbar-sidebar--show": sidebarShown,
-          [styles.navbarHideable]: hideOnScroll,
-          [styles.navbarHidden]: !isNavbarVisible,
-        })}
-      >
-        <div className="navbar__inner">
-          <div className="navbar__items">
-            <Link className="navbar__brand" to={logoLink} {...logoLinkProps}>
-              {logoImageUrlPerPage != null && (
-                <img
-                  key={isClient}
-                  className="navbar__logo"
-                  src={logoImageUrlPerPage}
-                  alt={logoAlt}
-                  width="190"
-                  height="32"
-                />
-              )}
-              {title != null && (
-                <strong
-                  className={clsx("navbar__title", {
-                    [styles.hideLogoText]: isSearchBarExpanded,
-                  })}
-                >
-                  {title}
-                </strong>
-              )}
-            </Link>
-            {leftItems.map((item, i) => (
-              <NavbarItem {...item} key={i} />
-            ))}
-            {items != null && items.length !== 0 && (
-              <div
-                aria-label="Navigation bar toggle"
-                className="navbar__toggle"
-                role="button"
-                tabIndex={0}
-                onClick={showSidebar}
-                onKeyDown={showSidebar}
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="30"
-                  height="30"
-                  viewBox="0 0 30 30"
-                  role="img"
-                  focusable="false"
-                >
-                  <title>Menu</title>
-                  <path
-                    stroke="currentColor"
-                    strokeLinecap="round"
-                    strokeMiterlimit="10"
-                    strokeWidth="2"
-                    d="M4 7h22M4 15h22M4 23h22"
-                  />
-                </svg>
-              </div>
-            )}
-          </div>
-          <div className="navbar__items navbar__items--right">
-            {rightItems.map((item, i) => (
-              <NavbarItem {...item} key={i} />
-            ))}
-            {!disableColorModeSwitch && (
-              <Toggle
-                className={styles.displayOnlyInLargeViewport}
-                aria-label="Dark mode toggle"
-                checked={isDarkTheme}
-                onChange={onToggleChange}
-              />
-            )}
-            <SearchBar
-              handleSearchBarToggle={setIsSearchBarExpanded}
-              isSearchBarExpanded={isSearchBarExpanded}
-            />
-          </div>
+    <nav
+      className={`font-extended relative group hover:bg-white hover:shadow-navbar hover:text-black ${
+        $subnavState !== NavState.NONE ? "bg-white text-black" : className
+      }`}
+      onMouseLeave={() => {
+        if (!$flyoutVisible) {
+          hideNav();
+        }
+      }}
+    >
+      <NavbarFlyout
+        flyoutVisible={$flyoutVisible}
+        closeFlyout={() => $setFlyoutVisible(false)}
+        {...navBarLinksProps}
+      />
+      <div className="flex items-stretch justify-between px-3 lg:px-10 2lg:px-16 max-w-menu m-auto">
+        <div className="py-7">
+          <a href="/" className={overrides.logoLink}>
+            <Logo fill={fill} width={190} height={32}></Logo>
+          </a>
         </div>
-        <div
-          role="presentation"
-          className="navbar-sidebar__backdrop"
-          onClick={hideSidebar}
-        />
-        <div className="navbar-sidebar">
-          <img
-            className="close-menu"
-            onClick={hideSidebar}
-            src="/img/close-menu.svg"
-            alt="Close menu"
-            width="25"
-            height="25"
+        <div className="hidden md:flex items-center lg:text-xl">
+          <NavbarLinks
+            className="px-1.5 lg:px-3 h-full flex items-center whitespace-nowrap transition-font transition-fast transition-padding"
+            {...navBarLinksProps}
           />
-
-          <div className="navbar-sidebar__brand">
-            <Link
-              className="navbar__brand"
-              onClick={hideSidebar}
-              to={logoLink}
-              {...logoLinkProps}
-            >
-              {logoImageUrlWhite != null && (
-                <img
-                  key={isClient}
-                  className="navbar__logo"
-                  src={logoImageUrlWhite}
-                  alt={logoAlt}
-                  width="190"
-                  height="32"
-                />
-              )}
-              {title != null && (
-                <strong className="navbar__title">{title}</strong>
-              )}
-            </Link>
-            {!disableColorModeSwitch && sidebarShown && (
-              <Toggle
-                aria-label="Dark mode toggle in sidebar"
-                checked={isDarkTheme}
-                onChange={onToggleChange}
-              />
-            )}
-          </div>
-
-          <div className="navbar-sidebar__items">
-            <div className="menu">
-              <ul className="menu__list">
-                {items.map((item, i) => (
-                  <NavbarItem mobile {...item} onClick={hideSidebar} key={i} />
-                ))}
-              </ul>
-              <Link
-                className="button button--outline button--secondary"
-                to={useBaseUrl("/docs/whitepaper/1_introduction")}
-              >
-                Get Started
-              </Link>
-            </div>
-          </div>
         </div>
-      </nav>
-    </div>
+        <button
+          className={`md:hidden ${overrides.button} ${overrides.menuButton}`}
+          onClick={() => $setFlyoutVisible(true)}
+        >
+          <Menu />
+        </button>
+      </div>
+    </nav>
   );
 }
 

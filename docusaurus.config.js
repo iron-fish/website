@@ -72,6 +72,8 @@ module.exports = {
     },
   },
 
+  plugins: ['./src/plugins/tailwind'],
+
   presets: [
     [
       "@docusaurus/preset-classic",
