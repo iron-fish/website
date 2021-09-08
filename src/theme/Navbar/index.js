@@ -19,6 +19,7 @@ import useWindowSize, { windowSizes } from "@theme/hooks/useWindowSize";
 import useLogo from "@theme/hooks/useLogo";
 import styles from "./styles.module.css";
 import NavbarItem from "@theme/NavbarItem"; // retrocompatible with v1
+import TestnetBanner from "./TestnetBanner";
 
 const DefaultNavItemPosition = "right"; // If split links by left/right
 // if position is unspecified, fallback to right (as v1)
@@ -88,152 +89,155 @@ function Navbar() {
   const logoImageUrlPerPage = isBlueHeader ? logoImageUrlWhite : logoImageUrl;
 
   return (
-    <nav
-      ref={navbarRef}
-      className={clsx("navbar", {
-        "navbar--home": isBlueHeader,
-        "navbar--dark": style === "dark",
-        "navbar--primary": style === "primary",
-        "navbar-sidebar--show": sidebarShown,
-        [styles.navbarHideable]: hideOnScroll,
-        [styles.navbarHidden]: !isNavbarVisible,
-      })}
-    >
-      <div className="navbar__inner">
-        <div className="navbar__items">
-          <Link className="navbar__brand" to={logoLink} {...logoLinkProps}>
-            {logoImageUrlPerPage != null && (
-              <img
-                key={isClient}
-                className="navbar__logo"
-                src={logoImageUrlPerPage}
-                alt={logoAlt}
-                width="190"
-                height="32"
-              />
-            )}
-            {title != null && (
-              <strong
-                className={clsx("navbar__title", {
-                  [styles.hideLogoText]: isSearchBarExpanded,
-                })}
-              >
-                {title}
-              </strong>
-            )}
-          </Link>
-          {leftItems.map((item, i) => (
-            <NavbarItem {...item} key={i} />
-          ))}
-          {items != null && items.length !== 0 && (
-            <div
-              aria-label="Navigation bar toggle"
-              className="navbar__toggle"
-              role="button"
-              tabIndex={0}
-              onClick={showSidebar}
-              onKeyDown={showSidebar}
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="30"
-                height="30"
-                viewBox="0 0 30 30"
-                role="img"
-                focusable="false"
-              >
-                <title>Menu</title>
-                <path
-                  stroke="currentColor"
-                  strokeLinecap="round"
-                  strokeMiterlimit="10"
-                  strokeWidth="2"
-                  d="M4 7h22M4 15h22M4 23h22"
+    <div>
+      <TestnetBanner />
+      <nav
+        ref={navbarRef}
+        className={clsx("navbar", {
+          "navbar--home": isBlueHeader,
+          "navbar--dark": style === "dark",
+          "navbar--primary": style === "primary",
+          "navbar-sidebar--show": sidebarShown,
+          [styles.navbarHideable]: hideOnScroll,
+          [styles.navbarHidden]: !isNavbarVisible,
+        })}
+      >
+        <div className="navbar__inner">
+          <div className="navbar__items">
+            <Link className="navbar__brand" to={logoLink} {...logoLinkProps}>
+              {logoImageUrlPerPage != null && (
+                <img
+                  key={isClient}
+                  className="navbar__logo"
+                  src={logoImageUrlPerPage}
+                  alt={logoAlt}
+                  width="190"
+                  height="32"
                 />
-              </svg>
-            </div>
-          )}
-        </div>
-        <div className="navbar__items navbar__items--right">
-          {rightItems.map((item, i) => (
-            <NavbarItem {...item} key={i} />
-          ))}
-          {!disableColorModeSwitch && (
-            <Toggle
-              className={styles.displayOnlyInLargeViewport}
-              aria-label="Dark mode toggle"
-              checked={isDarkTheme}
-              onChange={onToggleChange}
-            />
-          )}
-          <SearchBar
-            handleSearchBarToggle={setIsSearchBarExpanded}
-            isSearchBarExpanded={isSearchBarExpanded}
-          />
-        </div>
-      </div>
-      <div
-        role="presentation"
-        className="navbar-sidebar__backdrop"
-        onClick={hideSidebar}
-      />
-      <div className="navbar-sidebar">
-        <img
-          className="close-menu"
-          onClick={hideSidebar}
-          src="/img/close-menu.svg"
-          alt="Close menu"
-          width="25"
-          height="25"
-        />
-
-        <div className="navbar-sidebar__brand">
-          <Link
-            className="navbar__brand"
-            onClick={hideSidebar}
-            to={logoLink}
-            {...logoLinkProps}
-          >
-            {logoImageUrlWhite != null && (
-              <img
-                key={isClient}
-                className="navbar__logo"
-                src={logoImageUrlWhite}
-                alt={logoAlt}
-                width="190"
-                height="32"
+              )}
+              {title != null && (
+                <strong
+                  className={clsx("navbar__title", {
+                    [styles.hideLogoText]: isSearchBarExpanded,
+                  })}
+                >
+                  {title}
+                </strong>
+              )}
+            </Link>
+            {leftItems.map((item, i) => (
+              <NavbarItem {...item} key={i} />
+            ))}
+            {items != null && items.length !== 0 && (
+              <div
+                aria-label="Navigation bar toggle"
+                className="navbar__toggle"
+                role="button"
+                tabIndex={0}
+                onClick={showSidebar}
+                onKeyDown={showSidebar}
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="30"
+                  height="30"
+                  viewBox="0 0 30 30"
+                  role="img"
+                  focusable="false"
+                >
+                  <title>Menu</title>
+                  <path
+                    stroke="currentColor"
+                    strokeLinecap="round"
+                    strokeMiterlimit="10"
+                    strokeWidth="2"
+                    d="M4 7h22M4 15h22M4 23h22"
+                  />
+                </svg>
+              </div>
+            )}
+          </div>
+          <div className="navbar__items navbar__items--right">
+            {rightItems.map((item, i) => (
+              <NavbarItem {...item} key={i} />
+            ))}
+            {!disableColorModeSwitch && (
+              <Toggle
+                className={styles.displayOnlyInLargeViewport}
+                aria-label="Dark mode toggle"
+                checked={isDarkTheme}
+                onChange={onToggleChange}
               />
             )}
-            {title != null && (
-              <strong className="navbar__title">{title}</strong>
-            )}
-          </Link>
-          {!disableColorModeSwitch && sidebarShown && (
-            <Toggle
-              aria-label="Dark mode toggle in sidebar"
-              checked={isDarkTheme}
-              onChange={onToggleChange}
+            <SearchBar
+              handleSearchBarToggle={setIsSearchBarExpanded}
+              isSearchBarExpanded={isSearchBarExpanded}
             />
-          )}
-        </div>
-
-        <div className="navbar-sidebar__items">
-          <div className="menu">
-            <ul className="menu__list">
-              {items.map((item, i) => (
-                <NavbarItem mobile {...item} onClick={hideSidebar} key={i} />
-              ))}
-            </ul>
-            <Link
-              className="button button--outline button--secondary"
-              to={useBaseUrl("/docs/whitepaper/1_introduction")}
-            >
-              Get Started
-            </Link>
           </div>
         </div>
-      </div>
-    </nav>
+        <div
+          role="presentation"
+          className="navbar-sidebar__backdrop"
+          onClick={hideSidebar}
+        />
+        <div className="navbar-sidebar">
+          <img
+            className="close-menu"
+            onClick={hideSidebar}
+            src="/img/close-menu.svg"
+            alt="Close menu"
+            width="25"
+            height="25"
+          />
+
+          <div className="navbar-sidebar__brand">
+            <Link
+              className="navbar__brand"
+              onClick={hideSidebar}
+              to={logoLink}
+              {...logoLinkProps}
+            >
+              {logoImageUrlWhite != null && (
+                <img
+                  key={isClient}
+                  className="navbar__logo"
+                  src={logoImageUrlWhite}
+                  alt={logoAlt}
+                  width="190"
+                  height="32"
+                />
+              )}
+              {title != null && (
+                <strong className="navbar__title">{title}</strong>
+              )}
+            </Link>
+            {!disableColorModeSwitch && sidebarShown && (
+              <Toggle
+                aria-label="Dark mode toggle in sidebar"
+                checked={isDarkTheme}
+                onChange={onToggleChange}
+              />
+            )}
+          </div>
+
+          <div className="navbar-sidebar__items">
+            <div className="menu">
+              <ul className="menu__list">
+                {items.map((item, i) => (
+                  <NavbarItem mobile {...item} onClick={hideSidebar} key={i} />
+                ))}
+              </ul>
+              <Link
+                className="button button--outline button--secondary"
+                to={useBaseUrl("/docs/whitepaper/1_introduction")}
+              >
+                Get Started
+              </Link>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </div>
   );
 }
 
