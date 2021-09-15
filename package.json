@@ -8,7 +8,10 @@
     "build": "docusaurus build",
     "swizzle": "docusaurus swizzle",
     "deploy": "docusaurus deploy",
-    "serve": "docusaurus serve"
+    "serve": "docusaurus serve",
+    "cy:local": "cypress run --config-file cypress/fixtures/cypress-local.json",
+    "cy:prod": "cypress run --config-file cypress/fixtures/cypress-prod.json",
+    "cy": "cypress run --config-file cypress/fixtures/cypress-prod.json"
   },
   "dependencies": {
     "@docusaurus/core": "2.0.0-alpha.64",
