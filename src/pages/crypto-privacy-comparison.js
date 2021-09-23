@@ -318,7 +318,7 @@ function Privacy() {
             ).
           </p>
           <p>
-            Despite Moner’s improvements and transition to using Confidential
+            Despite Monero’s improvements and transition to using Confidential
             Transactions and Ring Signatures, the protocol is still
             fundamentally susceptible to deanonymization attacks due to the
             nature of how Monero works. A Bitcoin transaction directly reveals
