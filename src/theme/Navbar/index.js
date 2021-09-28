@@ -71,21 +71,17 @@ function Navbar({ fill = "white", className = "bg-black text-white" }) {
           "items-stretch",
           "justify-between",
           "m-auto",
+          "max-w-[1700px]",
           // md - 768px
           "text-sm",
           "px-5",
-          "md:max-w-[768px]",
           // lg - 1024px
           "lg:text-[18px]",
-          "lg:max-w-[1024px]",
           // 2lg - 1152px
           "2lg:px-10",
           "2lg:text-xl",
-          "2lg:max-w-[1152px]",
           // 1440
           "1.5lg:px-16",
-          // 1700
-          "3xl:max-w-[1700px]",
         ])}
       >
         <div className="py-7">
