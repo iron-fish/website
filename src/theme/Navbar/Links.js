@@ -1,4 +1,5 @@
 import React from 'react'
+import clsx from 'clsx'
 
 import SubnavButton from './SubnavButton'
 import LoginButton from './LoginButton'
@@ -18,9 +19,17 @@ export function NavbarLinks({
   testnetVisible = false,
   condensed,
 }) {
-  const buttonStyles = { className: `${className} ${overrides.button} ${condensed ? overrides.condensedSubNavButton : overrides.regularSubNavButton}`, selectedClassName }
+  const itemPadding = [`px-2`, `lg:px-3.5`, `3xl:px-5`]
+  const cc = clsx([
+    className,
+    ...itemPadding,
+    overrides.button,
+    { [overrides.condensedSubNavButton]: condensed },
+    { [overrides.regularSubNavButton]: !condensed },
+  ])
+  const buttonStyles = { className: cc, selectedClassName }
 
-  const linkClass = `${className} ${overrides.link}`
+  const linkClass = `${cc} ${overrides.link}`
 
   return (
     <>

@@ -1,6 +1,7 @@
 import React from 'react'
 
 import Disclosable from './icons/Disclosable'
+import clsx from 'clsx'
 
 export const SubnavButton = ({
   label,
@@ -16,15 +17,24 @@ export const SubnavButton = ({
     <>
       <button {...eventedProps} className={className}>
         <span
-          className={`flex items-center justify-between h-full relative ${
-            isVisible ? 'text-ifgray' : ''
-          }`}
+          className={clsx([
+            `flex`,
+            `items-center`,
+            `justify-between`,
+            `h-full`,
+            `relative`,
+            { 'text-ifgray': isVisible },
+          ])}
         >
           {label}
           <span
-            className={`flex ml-2 transition-transform duration-500 ${
-              isVisible ? 'transform-gpu -rotate-180' : ''
-            }`}
+            className={clsx([
+              `flex`,
+              `ml-2`,
+              `transition-transform`,
+              `duration-500`,
+              { 'transform-gpu -rotate-180': isVisible },
+            ])}
           >
             <Disclosable className="w-6 md:w-4" />
           </span>
