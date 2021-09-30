@@ -11,7 +11,10 @@ function Company({ condensed = false }) {
     : 'absolute bg-white left-0 right-0 shadow-navbar z-10 top-5.5'
   return (
     <div className="flex">
-      <div className={className}>
+      <div
+        className={className}
+        style={{ clipPath: !condensed ? 'inset(0 0 -100% 0)' : undefined }}
+      >
         <div
           className={`flex flex-col ${
             condensed

@@ -12,7 +12,10 @@ function Testnet({ condensed = false }) {
     : 'absolute bg-white left-0 right-0 shadow-navbar z-20 top-5.5'
   return (
     <div className="flex">
-      <div className={className}>
+      <div
+        className={className}
+        style={{ clipPath: !condensed ? 'inset(0 0 -100% 0)' : undefined }}
+      >
         <div
           className={`flex justify-center ${
             condensed ? 'flex-col' : `border-0 border-b border-t border-solid border-iflightgray flex-row`
