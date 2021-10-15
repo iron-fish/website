@@ -48,7 +48,7 @@ const offset = previousBlockDifficulty / 2048;
 const difficulty = max(previousBlockDifficulty + offset * sign, MIN_DIFFICULTY);
 ```
 
-Currently, `MIN_DIFFICULTY`, is `131072`, but this is subject to change.
+Currently, `MIN_DIFFICULTY` is `131072`, but this is subject to change.
 
 If the time difference between the upcoming block’s timestamp and the previous block’s timestamp is between 10 and 20 seconds, then the difficulty is not changed and difficulty for the new upcoming block is simply the last block’s difficulty. If, however, the time difference between those blocks is below 10 seconds, then the difficulty is increased by a factor of `difficultyStep * timeDifference`; otherwise it is decreased by the same amount.
 
@@ -73,7 +73,7 @@ Where <em>s</em> is the initial supply of the genesis block of 42 million coins,
 
 The Iron Fish “year” in block count is 2,100,000 blocks to one calendar year (assuming roughly 15 second block times). This means that by the end of the first Iron Fish “year,” 10.5 million new coins will be created through block rewards, 9.988 million new coins will be created in the subsequent year, 9.501 million new coins after that, and so on.
 
-Given that the genesis block is 42 million coins, and the total supply increase for the first year is zx10.5 million coins, then the block reward per block for that year is simply the total year’s increase of coins divided by yearly block count: `10,500,000 / 2,100,000 == 5`. This means that the block reward for the first Iron Fish “year,” given these parameters, would be 5 coins (not including transaction fees).
+Given that the genesis block is 42 million coins, and the total supply increase for the first year is 10.5 million coins, then the block reward per block for that year is simply the total year’s increase of coins divided by yearly block count: `10,500,000 / 2,100,000 == 5`. This means that the block reward for the first Iron Fish “year,” given these parameters, would be 5 coins (not including transaction fees).
 
 To claim the block reward for successfully mining a new block, the miner constructs a special miner fee transaction in the block header. The value of the miner fee transaction is publicly visible so that others can verify that it is exactly the block reward plus all the transaction fees from the transactions included in that block. The recipient’s address for that miner fee transaction remains hidden. Learn more about the miner reward in the Transaction Creation section.
 
