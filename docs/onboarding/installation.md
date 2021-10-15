@@ -49,7 +49,7 @@ Linux installer packages will be published soon. In the meantime, you can instal
 
 ## Using Docker
 
-Run the Docker image from the Github registry, mounting the node's data directory into your home directory and using the host network. (Replace `<home-directory>` with `%USERPROFILE%` on Windows or `$HOME` on others)
+Run the Docker image from the GitHub registry, mounting the node's data directory into your home directory and using the host network. (Replace `<home-directory>` with `%USERPROFILE%` on Windows or `$HOME` on others)
 
 ```sh
 docker run --rm --tty --interactive --network host --volume <home-directory>/.ironfish:/root/.ironfish ghcr.io/iron-fish/ironfish:latest
@@ -75,4 +75,4 @@ docker pull ghcr.io/iron-fish/ironfish:latest
 
 ## From source
 
-First, head over to Github to clone our [official repository](https://github.com/iron-fish/ironfish). Once that's done, follow the initial setup steps in the [README](https://github.com/iron-fish/ironfish#initial-setup) to install prerequisites, then head to the [CLI README](https://github.com/iron-fish/ironfish/tree/master/ironfish-cli#use-scenarios) to run the CLI.
+First, head over to GitHub to clone our [official repository](https://github.com/iron-fish/ironfish). Once that's done, follow the initial setup steps in the [README](https://github.com/iron-fish/ironfish#initial-setup) to install prerequisites, then head to the [CLI README](https://github.com/iron-fish/ironfish/tree/master/ironfish-cli#use-scenarios) to run the CLI.
