@@ -22,7 +22,7 @@ At Iron Fish, we are building something we’re truly proud of: a cryptocurrency
 
 Popular cryptocurrencies like Bitcoin, Ethereum, and others are the least private way of transacting — their protocols fundamentally work on complete transparency to verify transactions. Though other privacy coins exist, they all either lack the privacy guarantees they’ve promised or are so hard to use they barely have any real usage (and oftentimes both).
 
-There is huge untapped potential here — but only if users feel truly protected by their cryptocurrency, and are able to access it. Just like the introduction of SSL/TLS in the 90s opened up the floodgates to ecommerce (the predecessors of HTTPS), we believe that an accessible privacy coin will lead to a new class of industries of borderless products and companies.
+There is huge untapped potential here — but only if users feel truly protected by their cryptocurrency, and are able to access it. Just like the introduction of SSL/TLS in the 90s opened up the floodgates to e-commerce (the predecessors of HTTPS), we believe that an accessible privacy coin will lead to a new class of industries of borderless products and companies.
 
 In this paper, we cover how Iron Fish works, and why we’ve built it this way. While we endeavor to explain things as much as possible and go over all relevant terminology, some parts will require a basic understanding of elliptic curve cryptography.
 
