@@ -8,7 +8,7 @@ description: Introduction | Iron Fish Whitepaper
 <img src ="/img/whitepaper/introduction.png" width="100%" role="presentation" />
 
 ## Abstract
-Iron Fish is a decentralized, proof-of-work (PoW) based, censorship-resistant, and publicly accessible blockchain project. It is designed to support strong privacy guarantees on every transaction. Similarly to how the invention of the SSL/TLS layer in the 90s paved the way to e-commerce and benefited countless industries, we believe that privacy is a fundamental requirement to protect the user and expand the use of cryptocurrency.
+Iron Fish is a decentralized, proof-of-work (PoW) based, censorship-resistant, and publicly accessible blockchain project. It is designed to support strong privacy guarantees on every transaction. Similarly to how the invention of the SSL/TLS layer in the '90s paved the way to e-commerce and benefited countless industries, we believe that privacy is a fundamental requirement to protect the user and expand the use of cryptocurrency.
 
 We have designed Iron Fish to be a new cryptocurrency from the ground up to enable easy-to-use, fully-private payments by closely following the [Sapling protocol](https://github.com/zcash/zips/blob/master/protocol/sapling.pdf). Every account is equipped with a view key to grant its holder read-only permission for the details of that account.
 
@@ -22,7 +22,7 @@ At Iron Fish, we are building something we’re truly proud of: a cryptocurrency
 
 Popular cryptocurrencies like Bitcoin, Ethereum, and others are the least private way of transacting — their protocols fundamentally work on complete transparency to verify transactions. Though other privacy coins exist, they all either lack the privacy guarantees they’ve promised or are so hard to use they barely have any real usage (and oftentimes both).
 
-There is huge untapped potential here — but only if users feel truly protected by their cryptocurrency, and are able to access it. Just like the introduction of SSL/TLS in the 90s opened up the floodgates to e-commerce (the predecessors of HTTPS), we believe that an accessible privacy coin will lead to a new class of industries of borderless products and companies.
+There is huge untapped potential here — but only if users feel truly protected by their cryptocurrency, and are able to access it. Just like the introduction of SSL/TLS in the '90s opened up the floodgates to e-commerce (the predecessors of HTTPS), we believe that an accessible privacy coin will lead to a new class of industries of borderless products and companies.
 
 In this paper, we cover how Iron Fish works, and why we’ve built it this way. While we endeavor to explain things as much as possible and go over all relevant terminology, some parts will require a basic understanding of elliptic curve cryptography.
 
