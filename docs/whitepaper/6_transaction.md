@@ -441,7 +441,7 @@ Remember that initially the sender’s wallet was able to encrypt the note plain
 
 Since the sender’s wallet doesn’t have access to either $$esk$$ or $$pk_d$$ after the transaction has been sent, that information is stored in the second encrypted field on the Outgoing description: the $$C^{out}$$ field. This field is created by the sender of the transaction at the time it is made and stored on the Output description.
 
-The $$C^{out}$$ field is an encryption of ($$esk$$, $$pk_d$$) concatenated together, also using the symmetric ChaCha20Poly1305 encryption algorithm. The symmetric key used for $$C^{out}$$ is calculated as,
+The $$C^{out}$$ field is an encryption of ($$esk$$, $$pk_d$$) concatenated together, also using the symmetric ChaCha20Poly1305 encryption algorithm. The symmetric key used for $$C^{out}$$ is calculated as
 
 $$symmetric\_encryption\_key = blake2b_hash(ovk, cv, cm, epk)$$
 
