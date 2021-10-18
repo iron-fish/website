@@ -266,7 +266,7 @@ A **Merkle Tree Note** consists of these fields taken from the Output descriptio
 
 ## Transaction Balancing
 
-So far, we went over how zero-knowledge proofs are used to prove ownership of an existing note in order to spend it or create valid new notes, but we’re still missing verifying one of the most important rules in cryptocurrencies: no coins can be created or destroyed in a transaction. Validators still need to verify that the transaction _balances_, meaning that the sum of all the funds being spent, minus the funds being created, equals the transaction fee (or zero if there is no transaction fee).
+So far, we went over how zero-knowledge proofs are used to prove ownership of an existing note in order to spend it or create valid new notes, but we’re still missing verifying one of the most important rules in cryptocurrencies: no coins can be created or destroyed in a transaction. Validators still need to verify that the transaction _balances_, meaning that the sum of all the funds being spent minus the funds being created equals the transaction fee (or zero if there is no transaction fee).
 
 $$input \enspace values - output \enspace values = transaction \enspace fee$$
 
@@ -326,7 +326,7 @@ equivalent to:
 
 $$G_v * (v1 + v2 - v3 - v4) + G_{rcv} * (rcv1 + rcv2 - rcv3 - rcv4) -  G_v * (transaction\_fee)$$
 
-Since a valid transaction would have $$G_v (v1 + v2 - v3 - v4) = G_v (transaction\_fee)$$ the validator computes the binding validating key as:
+Since a valid transaction would have $$G_v (v1 + v2 - v3 - v4) = G_v (transaction\_fee)$$, the validator computes the binding validating key as:
 
 $$G_v * (v1 + v2 - v3 - v4) + G_{rcv} * (rcv1 + rcv2 - rcv3 - rcv4) -  G_v * (transaction\_fee) = bvk$$
 
@@ -334,7 +334,7 @@ If indeed all the values of the input descriptions minus all the values of the o
 
 $$bvk = G_{rcv} ( rcv1 + rcv2 - rcv3 - rcv4)$$
 
-To validate that the transaction balances the validator checks that computed $$bvk$$ is indeed the public key corresponding to the transaction signature that signed the transaction hash. This means that the sender of the transaction must have used the same $$bvk$$ with a corresponding private key $$bsk$$ to sign the transaction.
+To validate that the transaction balances, the validator checks that computed $$bvk$$ is indeed the public key corresponding to the transaction signature that signed the transaction hash. This means that the sender of the transaction must have used the same $$bvk$$ with a corresponding private key $$bsk$$ to sign the transaction.
 
 $$Final \enspace step: \enspace verify \enspace signature \enspace (bvk, \enspace transaction \enspace hash)$$
 
@@ -342,7 +342,7 @@ That is all that is necessary to check that the transaction balances since the $
 
 ## Transaction Verification
 
-The last section went over how to balance a transaction — to make sure that no coins were created or destroyed as part of that transaction. Balancing is just one step in the verification process.
+The prior section went over how to balance a transaction — to make sure that no coins were created or destroyed as part of that transaction. Balancing is just one step in the verification process.
 
 In whole, a validator must perform a series of checks to validate a transaction:
 
@@ -396,7 +396,7 @@ The Output description stores this note in its encrypted form as $$C^{enc}$$.
 
 #### Note Encryption by the Sender
 
-The sender has to know the recipient’s public key, which is a combination of the transmission key and the diversifier ($$d$$, $$pk_d$$). With this information the sender’s wallet can create a **shared_secret** with which to encrypt the note such that the recipient’s incoming view key can decrypt it. Let’s go over how the sender’s wallet creates this shared secret.
+The sender has to know the recipient’s public key, which is a combination of the transmission key and the diversifier ($$d$$, $$pk_d$$). With this information, the sender’s wallet can create a **shared_secret** with which to encrypt the note such that the recipient’s incoming view key can decrypt it. Let’s go over how the sender’s wallet creates this shared secret.
 
 1. The sender’s wallet generates a random number and uses it to create an ephemeral secret key (**esk**) by converting this number to a scalar on the Jubjub curve.
 2. It then creates an _ephemeral public key_ (**epk**) by using scalar multiplication between the diversifier of the recipient represented as a field point and esk. This ephemeral public key is a publicly known component of the Output description and is seen by everyone.
@@ -441,11 +441,11 @@ Remember that initially the sender’s wallet was able to encrypt the note plain
 
 Since the sender’s wallet doesn’t have access to either $$esk$$ or $$pk_d$$ after the transaction has been sent, that information is stored in the second encrypted field on the Outgoing description: the $$C^{out}$$ field. This field is created by the sender of the transaction at the time it is made and stored on the Output description.
 
-The $$C^{out}$$ field is an encryption of ($$esk$$, $$pk_d$$) concatenated together, also using the symmetric ChaCha20Poly1305 encryption algorithm. The symmetric key used for $$C^{out}$$ is calculated as:
+The $$C^{out}$$ field is an encryption of ($$esk$$, $$pk_d$$) concatenated together, also using the symmetric ChaCha20Poly1305 encryption algorithm. The symmetric key used for $$C^{out}$$ is calculated as
 
 $$symmetric\_encryption\_key = blake2b_hash(ovk, cv, cm, epk)$$
 
-Where **ovk** is the wallet’s outgoing view key, and the rest of the fields are taken from the Output description.
+where **ovk** is the wallet’s outgoing view key, and the rest of the fields are taken from the Output description.
 
 Output Description:
 

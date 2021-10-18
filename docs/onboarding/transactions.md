@@ -29,7 +29,7 @@ E.g.
 ironfish accounts:pay -f MyOtherAccount
 ```
 
-#### Non Interactive mode
+#### Noninteractive mode
 
 Run `ironfish accounts:pay --help` to see the different options available.
 

@@ -13,7 +13,7 @@ const features = [
     className: "sectionPrivacy",
     title: "A new chain with the strongest privacy",
     description:
-      "Iron Fish is a Layer 1 blockchain that provides the strongest privacy guarantees on every single transaction. Leveraging zero-knowledge proofs (zk-SNARKs), and the highest industry standards for encryption, Iron Fish gives you complete control over who sees transaction details via account view keys or transaction decryption keys. Your data. Your information. Your coins.",
+      "Iron Fish is a Layer 1 blockchain that provides the strongest privacy guarantees on every single transaction. Leveraging zero-knowledge proofs (zk-SNARKs) and the highest industry standards for encryption, Iron Fish gives you complete control over who sees transaction details via account view keys or transaction decryption keys. Your data. Your information. Your coins.",
     buttonLink: "docs/whitepaper/1_introduction",
     button: "Read Our Whitepaper",
   },
@@ -29,7 +29,7 @@ const features = [
     className: "sectionBorderless",
     title: "Borderless, decentralized, built for everyone",
     description:
-      "We care about decentralization. Iron Fish is a proof-of-work (PoW) chain that is censorship-resistant and available to everyone—regardless of location, identity or citizenship. Anyone can create a wallet, run their own node, and mine $IRON. With Iron Fish you own the bank.",
+      "We care about decentralization. Iron Fish is a proof-of-work (PoW) chain that is censorship-resistant and available to everyone—regardless of location, identity or citizenship. Anyone can create a wallet, run their own node, and mine $IRON. With Iron Fish, you own the bank.",
     buttonLink: "docs/whitepaper/1_introduction",
     button: "Read Our Whitepaper",
   },

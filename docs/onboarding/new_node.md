@@ -30,7 +30,7 @@ ironfish start --datadir=~./myCustomFolder
 By default, your node will connect to the official Iron Fish bootstrap nodes.
 If you are developing and want to use a different bootstrap node, you can make the node connect to a different address with the `--bootstrap` flag.
 
-**Do not use a not officialy endorsed Iron Fish bootstrap node for production, you might end up on a malicious network.**
+**Do not use a production bootstrap node that isn't offically endorsed by Iron Fish, you might end up on a malicious network.**
 
 E.g.
 ```sh

@@ -12,7 +12,7 @@ When building any decentralized [peer-to-peer](https://en.wikipedia.org/wiki/Pee
 
 While some other networking layers require the user to set up port-forwarding for their router to address the NAT problem, we designed our implementation with a focus on accessibility, using a combination of WebRTC and WebSockets for our transport layer. They use a plethora of techniques to help nodes establish direct communication. In other words, the Iron Fish node implementation works right out of the box, either in a CLI environment or even directly within the browser. This makes it easy for anyone to use Iron Fish, regardless of technical ability.
 
-When a node is first launched, it needs to know of at least one other node it can connect to, called a bootstrap node, that’ll introduce it to more peers in the network. That initial connection to a bootstrap node happens over a WebSocket, and all subsequent peer connections use WebRTC. This section will describe exactly how nodes connect to one another forming a network to support the Iron Fish protocol, starting with how a new node starts.
+When a node is first launched, it needs to know of at least one other node it can connect to (known as a bootstrap node) that’ll introduce it to more peers in the network. That initial connection to a bootstrap node happens over a WebSocket, and all subsequent peer connections use WebRTC. This section will describe exactly how nodes connect to one another forming a network to support the Iron Fish protocol, starting with how a new node starts.
 
 ### Startup Sequence
 
@@ -34,7 +34,7 @@ With that in mind, let’s look at how nodes communicate with one another by pas
 
 ### Messaging
 
-A message is an agreed upon format for a piece of information to be shared between peers. There are several types of messages and ways for them to interact with the nodes, depending on the situation.
+A message is an agreed-upon format for a piece of information to be shared between peers. There are several types of messages and ways for them to interact with the nodes, depending on the situation.
 
 #### Message Types
 
