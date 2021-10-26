@@ -194,7 +194,7 @@ function Employee({ name, title, description, linkedin, id, r, t, l }) {
             {`${name}\n${title}`}
           </a>
         ) : (
-          `${name}\n${title}`
+          <span className={clsx(styles.firstName)}>{`${name}\n${title}`}</span>
         )}
       </p>
       <p className={clsx(styles.tagline)}>{description}</p>
