@@ -185,9 +185,17 @@ function Employee({ name, title, description, linkedin, id, r, t, l }) {
     <div>
       <Cube color={r} light={t} mid={l} />
       <p>
-        <a className={clsx(styles.firstName)} href={linkedin} target="_blank">
-          {`${name}\n${title}`}
-        </a>
+        {linkedin ? (
+          <a
+            className={clsx(styles.firstName)}
+            href={`https://linkedin.com/in/${linkedin}`}
+            target="_blank"
+          >
+            {`${name}\n${title}`}
+          </a>
+        ) : (
+          `${name}\n${title}`
+        )}
       </p>
       <p className={clsx(styles.tagline)}>{description}</p>
     </div>
