@@ -9,11 +9,9 @@ import mix from "mix-color"
 
 const randomColor = () => {
   let x = Math.round(Math.random() * Math.pow(2, 24)).toString(16)
-  console.log("pre", x)
   while (x.length < 6) {
     x = "0" + x
   }
-  console.log("post", x)
   return "#" + x
 }
 
