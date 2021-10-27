@@ -24,6 +24,7 @@
 }
 .sectionCareers img {
   max-width: var(--ifm-intro-img-max-width);
+  width: 100%;
 }
 .sectionCareersEmployees {
   margin-top: var(--ifm-large-vertical-padding);

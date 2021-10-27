@@ -1,26 +1,140 @@
-import React from "react";
-import Layout from "@theme/Layout";
-import Link from "@docusaurus/Link";
+import React from "react"
+import Layout from "@theme/Layout"
+import Link from "@docusaurus/Link"
 
-import clsx from "clsx";
-import styles from "./careers.module.css";
-import OpenPositions from "../theme/components/OpenPositions";
+import clsx from "clsx"
+import styles from "./careers.module.css"
+import OpenPositions from "../theme/components/OpenPositions"
+import Block from "../theme/components/Block"
 
-function Employee({ firstName, title, description, linkedin, id }) {
+const employees = [
+  {
+    name: "Elena",
+    title: "CEO",
+    linkedin: "elenanadolinski",
+    description:
+      "Elena is the Founder and CEO of Iron Fish. Previously worked at Microsoft and Airbnb. She really didn't want her insurance to know when she eats pizza.",
+    r: "#F6A143",
+    l: "#FFCD85",
+    t: "#F2D8B4",
+  },
+  {
+    name: "Derek",
+    title: "Engineer",
+    linkedin: "derek-guenther",
+    description:
+      "Former Microsoft & Uber, he enjoys experimenting with new technologies when he’s not catching up on fiction or eating a bowl of Reese’s Puffs.",
+    r: "#003fbf",
+    l: "#0055ff",
+    t: "#C0D5ff",
+  },
+  {
+    name: "Jason",
+    title: "Engineer",
+    linkedin: "jason-spafford-14892511",
+    description:
+      "Former Uber. He is capable of writing complex weighted graph algorithms while dancing to electro music. A crypto noodle straightener if you will.",
+    r: "#cfbe00",
+    l: "#ffec1f",
+    t: "#fff79e",
+  },
+  {
+    name: "Skylar",
+    title: "Designer",
+    linkedin: "skylar-richard-1b8999a4",
+    description:
+      "International award winning designer who hates the snow and cold weather, albeit lives in Canada, complains about it relentlessly yet reluctant to move.",
+    r: "#EB59B6",
+    t: "#FDF5FB",
+    l: "#F3ADDB",
+  },
+  {
+    name: "Rohan",
+    title: "Engineer",
+    linkedin: "rohanjadvani",
+    description:
+      "Former Citadel & Snap. He enjoys biking around New York or reading about type theory while waiting for his cinnamon rolls to finish baking.",
+    r: "#54952F",
+    l: "#A1D77F",
+    t: "#E9FDDC",
+  },
+  {
+    name: "Jenah",
+    title: "HR / Recruiting",
+    linkedin: "jenahbielza",
+    description:
+      "Loves the letter A. Can plan your trip to Hawaii while finding the best health benefit plans and judging your resume.",
+    r: "#B57E5B",
+    l: "#EAB898",
+    t: "#FFE2CF",
+  },
+  {
+    name: "Brekk",
+    title: "Engineer",
+    linkedin: "brekk-bockrath-75094b85",
+    description:
+      "World explorer. Spy progeny? Has complained about JavaScript standards across multiple continents. Wants to talk about Functional Programming.",
+    r: "#cc0000",
+    l: "#FF7777",
+    t: "#FFD3D3",
+  },
+
+  {
+    name: "Alex",
+    title: "Engineer",
+    linkedin: "adcrn",
+    description:
+      "Resident hipster. Wrote a music player in Rust to listen to his massive (legal) music collection. Also wrote his own open-source BitTorrent tracker. No connection.",
+    r: "#1D0070",
+    l: "#3600CF",
+    t: "#AE92FF",
+  },
+
+  {
+    name: "Yurii",
+    title: "Engineer",
+    linkedin: "",
+    description:
+      "Originally from Belarus and still shocked you can return anything back to the store in the US. Says a lot with a few words.",
+    r: "#8C938D",
+    l: "#CDD6CE",
+    t: "#FAFAFA",
+  },
+  {
+    name: "You?",
+    title: "Fish",
+    linkedin: "mailto:joinus@ironfish.network",
+    description: (
+      <>
+        We are growing quickly, and Iron Fish is rapidly evolving. If you are
+        interested in working with Cryptocurrency and having an impact,{" "}
+        <a href="mailto:joinus@ironfish.network">contact us</a>.
+      </>
+    ),
+    r: "custom",
+  },
+]
+
+function Employee({ name, title, description, linkedin, id, r, t, l }) {
   return (
     <div>
-      <img src={`/img/careers/block-${id}.svg`} role="presentation" />
+      <Block color={r} light={t} mid={l} />
       <p>
-        <a className={clsx(styles.firstName)} href={linkedin} target="_blank">
-          {`${firstName}\n${title}`}
-        </a>
+        {linkedin ? (
+          <a
+            className={clsx(styles.firstName)}
+            href={`https://linkedin.com/in/${linkedin}`}
+            target="_blank"
+          >
+            {`${name}\n${title}`}
+          </a>
+        ) : (
+          <span className={clsx(styles.firstName)}>{`${name}\n${title}`}</span>
+        )}
       </p>
-      <p
-        className={clsx(styles.tagline)}
-        dangerouslySetInnerHTML={{ __html: description }}
-      />
+      <p className={clsx(styles.tagline)}>{description}</p>
     </div>
-  );
+  )
 }
 
 function Careers() {
@@ -69,49 +183,9 @@ function Careers() {
         >
           <p className="main--subtitle">Who you'll work with</p>
           <div className={clsx(styles.employees)}>
-            <Employee
-              id="1"
-              firstName="Elena"
-              title="CEO"
-              linkedin="https://www.linkedin.com/in/elenanadolinski/"
-              description=" Elena is the Founder and CEO of Iron Fish. Previously worked at Microsoft and Airbnb. She really didn't want her insurance to know when she eats pizza."
-            />
-            <Employee
-              id="3"
-              firstName="Derek"
-              title="Engineer"
-              linkedin="https://www.linkedin.com/in/derek-guenther/"
-              description="Former Microsoft & Uber, he enjoys experimenting with new technologies when he’s not catching up on fiction or eating a bowl of Reese’s Puffs."
-            />
-            <Employee
-              id="5"
-              firstName="Jason"
-              title="Engineer"
-              linkedin="https://www.linkedin.com/in/jason-spafford-14892511/"
-              description="Former Uber. He is capable of writing complex weighted graph algorithms while dancing to electro music. A crypto noodle straightener if you will."
-            />
-            <Employee
-              id="2"
-              firstName="Skylar"
-              title="Designer"
-              linkedin="https://www.linkedin.com/in/skylar-richard-1b8999a4/"
-              description="International award winning designer who hates the snow and cold weather, albeit lives in Canada, complains about it relentlessly yet reluctant to move."
-            />
-            <Employee
-              id="7"
-              firstName="Rohan"
-              title="Engineer"
-              linkedin="https://www.linkedin.com/in/rohanjadvani/"
-              description="Former Citadel & Snap. He enjoys biking around New York or reading about type theory while waiting for his cinnamon rolls to finish baking."
-            />
-            <Employee
-              id="6"
-              firstName="You?"
-              title="Fish"
-              linkedin="mailto:joinus@ironfish.network"
-              description="We are growing quickly, and Iron Fish is rapidly evolving. If you are interested in working with Cryptocurrency and having an impact, <a href='mailto:joinus@ironfish.network'>contact us</a>."
-            />
-            <div></div>
+            {employees.map(e => (
+              <Employee {...e} key={e.name} />
+            ))}
           </div>
         </section>
         <section className={clsx(styles.blueSection)}>
@@ -223,7 +297,7 @@ function Careers() {
         <OpenPositions />
       </Layout>
     </>
-  );
+  )
 }
 
-export default Careers;
+export default Careers
