@@ -30,8 +30,8 @@ function Position({ title, time, location, link }) {
 function OpenPositions() {
   return (
     <section className={clsx(styles.section)} id="open-positions">
-      <div className={clsx(styles.container)}>
-        <div className={clsx(styles.about)}>
+      <div className={clsx(styles.about)}>
+        <div className={clsx(styles.aboutWrap)}>
           <p className={clsx(styles.title)}>Open Positions</p>
           <p className={clsx(styles.description)}>
             Interested? We'd love to hear from you. We're currently hiring for
@@ -41,6 +41,8 @@ function OpenPositions() {
             .
           </p>
         </div>
+      </div>
+      <div className={clsx(styles.container)}>
         <div className={clsx(styles.positions)}>
           <Position
             title="Cryptographer"

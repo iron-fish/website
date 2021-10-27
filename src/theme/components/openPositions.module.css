@@ -5,8 +5,6 @@
 .section {
   position: relative;
   border-top: 1px solid #e1e1e1;
-  padding-top: var(--ifm-large-vertical-padding);
-  padding-bottom: 56px;
   background: #ffcd85;
   display: flex;
   flex-direction: column;
@@ -25,14 +23,22 @@
   font-family: var(--ifm-font-header-button);
 }
 .description {
-  max-width: 818px;
-  width: 57%;
+  display: block;
+  max-width: 638px;
 }
 .about {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-between;
-  margin-bottom: 82px;
+  background-color: white;
+  margin: 0;
+  width: 100%;
+  padding: 2rem 35px;
+}
+.aboutWrap {
+  width: 100%;
+  /* max-width: 1164px; */
+  margin: 0 auto;
 }
 .position p {
   margin: 0;
@@ -82,37 +88,22 @@
 .position .button {
   height: 18px;
 }
-@media screen and (max-width: 1440px) {
-  .about {
-    max-width: 1114px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-}
 @media screen and (max-width: 1140px) {
-  .about {
-    flex-direction: column;
-    max-width: 800px;
-    padding-left: var(--ifm-large-container-horizontal-padding);
-    padding-right: var(--ifm-large-container-horizontal-padding);
-    margin-left: 0;
-  }
-  .description {
-    width: 100%;
-  }
   .positions {
     width: 100%;
+    padding-top: 50px;
     padding-left: var(--ifm-large-container-horizontal-padding);
     padding-right: var(--ifm-large-container-horizontal-padding);
-    padding-bottom: 100px;
+    padding-bottom: 35px;
+  }
+  .about {
+    padding-left: var(--ifm-large-container-horizontal-padding);
+    padding-right: var(--ifm-large-container-horizontal-padding);
+    padding-top: 128px;
+    padding-bottom: 64px;
   }
 }
 @media screen and (max-width: 740px) {
-  .about {
-    padding-left: 35px;
-    padding-right: 35px;
-    margin-bottom: 41px;
-  }
   .positions {
     padding-left: 35px;
     padding-right: 35px;
@@ -122,42 +113,24 @@
     height: 132px;
     padding-top: 18px;
   }
-
   .title {
     width: 100%;
   }
-}
-@media screen and (min-width: 520px) {
-  .position:first-of-type {
-    margin-top: 30px;
-  }
-  .positions {
-    margin-bottom: -60px;
-  }
-  .background {
-    margin-bottom: -60px;
+  .about {
+    padding: 2rem 35px;
   }
 }
 
 @media screen and (max-width: 705px) {
-  .section {
-    padding-top: 40px;
-    padding-bottom: 1px;
+  .container {
+    padding-top: 24px;
+    padding-bottom: 24px;
   }
   .position img {
     display: none;
   }
 }
-@media screen and (min-width: 710px) {
-  .background {
-    margin-bottom: auto;
-  }
-}
-@media screen and (min-width: 800px) {
-  .background {
-    margin-bottom: -60px;
-  }
-}
+
 @media screen and (max-width: 400px) {
   :root {
     --ifm-background-height: 450px;
