@@ -37,8 +37,8 @@
 }
 .aboutWrap {
   width: 100%;
-  /* max-width: 1164px; */
   margin: 0 auto;
+  max-width: 1114px;
 }
 .position p {
   margin: 0;
@@ -87,6 +87,11 @@
 }
 .position .button {
   height: 18px;
+}
+@media screen and (min-width: 1141px) {
+  .positions {
+    padding-top: 50px;
+  }
 }
 @media screen and (max-width: 1140px) {
   .positions {
