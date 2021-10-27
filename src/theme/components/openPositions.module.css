@@ -7,19 +7,18 @@
   border-top: 1px solid #e1e1e1;
   padding-top: var(--ifm-large-vertical-padding);
   padding-bottom: 56px;
+  background: #ffcd85;
+  display: flex;
+  flex-direction: column;
 }
 .container {
   width: 100%;
   max-width: 1406px;
   margin: 0 auto;
+  display: flex;
+  flex-direction: column;
 }
-.background {
-  background: #ffcd85;
-  width: 100%;
-  position: absolute;
-  bottom: 0;
-  height: var(--ifm-background-height);
-}
+
 .title {
   font-size: 46px;
   line-height: 55px;
@@ -97,7 +96,6 @@
     padding-left: var(--ifm-large-container-horizontal-padding);
     padding-right: var(--ifm-large-container-horizontal-padding);
     margin-left: 0;
-    margin-bottom: 200px;
   }
   .description {
     width: 100%;
@@ -106,6 +104,7 @@
     width: 100%;
     padding-left: var(--ifm-large-container-horizontal-padding);
     padding-right: var(--ifm-large-container-horizontal-padding);
+    padding-bottom: 100px;
   }
 }
 @media screen and (max-width: 740px) {

@@ -1,16 +1,16 @@
-import React from "react";
-import Link from "@docusaurus/Link";
+import React from "react"
+import Link from "@docusaurus/Link"
 
-import clsx from "clsx";
-import styles from "./openPositions.module.css";
+import clsx from "clsx"
+import styles from "./openPositions.module.css"
 
-import { useHistory } from "@docusaurus/router";
+import { useHistory } from "@docusaurus/router"
 
 function Position({ title, time, location, link }) {
-  const history = useHistory();
+  const history = useHistory()
 
   function handleClick() {
-    history.push(link);
+    history.push(link)
   }
 
   return (
@@ -24,13 +24,12 @@ function Position({ title, time, location, link }) {
       <p className={clsx(styles.location)}>{location}</p>
       <img src="/img/careers/arrow.svg" alt="link" />
     </div>
-  );
+  )
 }
 
 function OpenPositions() {
   return (
     <section className={clsx(styles.section)} id="open-positions">
-      <div className={clsx(styles.background)} />
       <div className={clsx(styles.container)}>
         <div className={clsx(styles.about)}>
           <p className={clsx(styles.title)}>Open Positions</p>
@@ -64,7 +63,7 @@ function OpenPositions() {
         </div>
       </div>
     </section>
-  );
+  )
 }
 
-export default OpenPositions;
+export default OpenPositions

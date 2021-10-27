@@ -11,24 +11,30 @@ const randomColor = () => {
 
 export const Block = ({ color = "#888888", lines = "#000", light, mid }) => {
   const [$colors, $setColors] = React.useState([color, light, mid])
-  const change = () => {
-    if (color === "custom" && $colors[0] === "custom") {
+  const testCustom = () => color === "custom" && $colors[0] === "custom"
+  const change = React.useCallback(() => {
+    if (testCustom()) {
       const newColor = randomColor()
       const newLight = mix(newColor, "#ffffff", 0.75)
       const newMid = mix(newColor, "#ffffff", 0.5)
       $setColors([newColor, newLight, newMid])
     }
-  }
+  }, [$colors, $setColors])
   const [$interval, $setInterval] = React.useState(-1)
   React.useEffect(() => {
-    if (color === "custom" && $colors[0] === "custom") {
+    if (testCustom()) {
       change()
     }
     $setInterval(setInterval(change, 10e3))
   }, [$setInterval, $colors, $setColors])
 
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 108 121" width="100">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 108 121"
+      width="100"
+      onClick={() => change}
+    >
       <path
         d="M53.9199 60V120L106.42 90.5V35L104.92 31.5L53.9199 60Z"
         style={{ transition: "fill 0.3s ease-out" }}
