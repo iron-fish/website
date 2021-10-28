@@ -1,0 +1,129 @@
+.main {
+  display: block;
+}
+.cta {
+  margin: 24px;
+  font-family: "extended-regular";
+  font-size: 46px;
+  line-height: 56px;
+}
+.ctaButton {
+  display: block;
+  border: 0;
+  border-radius: 90px;
+  background-color: black;
+  color: white;
+  width: 286px;
+  height: 64px;
+  padding: 20px 30px;
+  font-family: "extended-regular";
+  font-size: 20px;
+  line-height: 24.2px;
+  margin: 0 24px;
+  font-weight: 400;
+}
+.mainIntro {
+  margin: 24px;
+  margin-bottom: 42px;
+}
+.phaseTitle {
+  font-family: "extended-regular";
+  font-size: 46px;
+  line-height: 56px;
+  margin-bottom: 64px;
+}
+
+.detail {
+  display: block;
+  padding: 12px 0 24px;
+}
+.detailIcon {
+  margin-bottom: 23px;
+}
+.detailTitle {
+  margin-top: 0;
+  margin-bottom: 20px;
+  font-family: "extended-regular";
+  font-size: 22px;
+  line-height: 26.4px;
+}
+.detailDescription {
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+}
+.phase {
+  padding: 128px 24px 0;
+}
+.launchdate {
+  font-family: "extended-regular";
+  text-transform: uppercase;
+  font-size: 14px;
+  line-height: 16.8px;
+  margin-bottom: 20px;
+  display: block;
+}
+.interlude {
+  width: 100%;
+  margin-top: 64px;
+}
+.phaseDescription {
+  width: 100%;
+  margin: 32px 24px;
+}
+/* @keyframes flip { */
+/*   from { */
+/*     position */
+/*     transform: */
+/*   } */
+/* } */
+.assets {
+  perspective: 600px;
+  width: 100%;
+  height: 6rem;
+}
+.asset {
+  border-radius: 16px;
+  background-color: black;
+  width: 70px;
+  height: 70px;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  position: relative;
+  transition: transform 1s ease-out;
+  transform-style: preserve-3d;
+  overflow: hidden;
+  display: inline-block;
+}
+.unicorn {
+  background-color: #ffe8f3;
+}
+.x {
+  background-color: #FFF1CE;
+}
+.diamond {
+  background-color: #DBE0F3;
+}
+.bitcoin {
+  background-color: #F7931A;
+}
+.hexfish {
+  background-color: #2C72FF;
+  /* transform: rotateY(180deg); */
+}
+.assetFace {
+  /* transform: rotateY(180deg); */
+  top: 0;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  padding: 8px;
+  backface-visibility: hidden;
+  transition: background 0.3s ease-out;
+}
+.flipped {
+  transform: rotateY(180deg);
+}
+.unflipped {
+  transform: rotateY(0deg);
+}
