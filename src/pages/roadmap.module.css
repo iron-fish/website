@@ -84,7 +84,6 @@
 }
 .asset {
   border-radius: 16px;
-  background-color: black;
   width: 70px;
   height: 70px;
   margin-right: 20px;
@@ -94,21 +93,22 @@
   transform-style: preserve-3d;
   overflow: hidden;
   display: inline-block;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
 }
 .unicorn {
   background-color: #ffe8f3;
 }
 .x {
-  background-color: #FFF1CE;
+  background-color: #fff1ce;
 }
 .diamond {
-  background-color: #DBE0F3;
+  background-color: #dbe0f3;
 }
 .bitcoin {
-  background-color: #F7931A;
+  background-color: #f7931a;
 }
 .hexfish {
-  background-color: #2C72FF;
+  background-color: #2c72ff;
   /* transform: rotateY(180deg); */
 }
 .assetFace {
@@ -120,6 +120,9 @@
   padding: 8px;
   backface-visibility: hidden;
   transition: background 0.3s ease-out;
+}
+.asset.flipped .assetFace img {
+  transform: rotateY(180deg);
 }
 .flipped {
   transform: rotateY(180deg);

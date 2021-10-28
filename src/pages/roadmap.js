@@ -39,7 +39,7 @@ const Asset = ({ asset: x }) => {
       className={clsx(styles.asset, { [styles.flipped]: $flipped })}
       onMouseEnter={() => {
         clearInterval($interval)
-        $setFlipped(false)
+        $setFlipped(!$flipped)
       }}
       onMouseOut={() => {}}
     >
