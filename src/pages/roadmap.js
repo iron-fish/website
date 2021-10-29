@@ -44,14 +44,14 @@ const Asset = ({ asset: x }) => {
       onMouseOut={() => {}}
     >
       <div
-        className={clsx(styles.assetFace, styles[x], {
+        className={clsx(styles.assetFace, styles.front, styles[x], {
           [styles.flipped]: !$flipped,
         })}
       >
         <img src={`img/roadmap/asset-${x}.png`} />
       </div>
       <div
-        className={clsx(styles.assetFace, styles.hexfish, {
+        className={clsx(styles.assetFace, styles.back, styles.hexfish, {
           [styles.flipped]: $flipped,
         })}
       >

@@ -126,16 +126,22 @@
   width: 100%;
   padding: 8px;
   backface-visibility: hidden;
-  transition: background 0.3s ease-out;
+  transition: background 0.3s ease-out, top 0.3s ease-out;
 }
-.asset.flipped .assetFace img {
-  transform: rotateY(180deg);
+.front {
+  top: 0;
 }
-.flipped {
-  transform: rotateY(180deg);
+.back {
+  top: -100%;
+}
+.flipped .assetFace.front {
+  top: 100%;
+}
+.flipped .assetFace.back {
+  top: 0;
 }
 .unflipped {
-  transform: rotateY(0deg);
+  /* transform: rotateY(0deg); */
 }
 .hidden {
   display: none;
