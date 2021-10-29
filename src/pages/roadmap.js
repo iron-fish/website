@@ -21,9 +21,9 @@ const patch = (given, source) =>
     (x, i) => given[Math.round(Math.random() * given.length) % given.length]
   )
 
-const Asset = ({ asset: x }) => {
-  const [$flipped, $setFlipped] = useState(Math.round(Math.random() * 1))
+const Asset = ({ asset: x, flipped }) => {
   const [$interval, $setInterval] = useState(-1)
+  const [$flipped, $setFlipped] = useState(flipped)
   useEffect(() => {
     if ($interval) clearInterval($interval)
     $setInterval(
@@ -34,6 +34,7 @@ const Asset = ({ asset: x }) => {
     )
     return () => clearInterval($interval)
   }, [$setInterval, $flipped, $setFlipped])
+
   return (
     <div
       className={clsx(styles.asset, { [styles.flipped]: $flipped })}
@@ -41,7 +42,6 @@ const Asset = ({ asset: x }) => {
         clearInterval($interval)
         $setFlipped(!$flipped)
       }}
-      onMouseOut={() => {}}
     >
       <div
         className={clsx(styles.assetFace, styles.front, styles[x], {
@@ -63,9 +63,10 @@ const Asset = ({ asset: x }) => {
 
 const AssetConnection = ({ size = 15 }) => (
   <div className={styles.assets}>
-    {patch(ASSETS, range(size)).map((x, i) => (
-      <Asset asset={x} key={x + i} />
-    ))}
+    {patch(ASSETS, range(size)).map((x, i) => {
+      const flipped = !!Math.round(Math.random() * 1)
+      return <Asset asset={x} key={x + i} flipped={flipped} />
+    })}
   </div>
 )
 
