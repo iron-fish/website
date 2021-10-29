@@ -55,7 +55,7 @@ const Asset = ({ asset: x }) => {
           [styles.flipped]: $flipped,
         })}
       >
-        <img src={`img/roadmap/asset-hexfish.png`} className={styles.flipped} />
+        <img src={`img/roadmap/asset-hexfish.png`} />
       </div>
     </div>
   )
@@ -169,6 +169,48 @@ const data = {
       features: [],
       children: <AssetConnection />,
     },
+    phase4: {
+      features: [
+        {
+          icon: "foursquare",
+          title: "Node Dashboard",
+          description: SOME_COPY_NEEDED,
+        },
+        {
+          icon: "wallet",
+          title: "Desktop Wallet",
+          description: SOME_COPY_NEEDED,
+        },
+      ],
+    },
+    interlude4: {
+      image: (
+        <img
+          src={`/img/roadmap/infinite-bridge.png`}
+          alt="Bridge"
+          className={styles.interlude}
+        />
+      ),
+    },
+    mainnet: {
+      subtitle: "Iron Fish Mainnet!",
+      children: (
+        <>
+          <p>
+            Our mainnet is an independent blockchain operating on its own
+            network with its own technology and protocol. Fake copy fake copy.
+          </p>
+          <img src={`/img/roadmap/fishweb.png`} alt="Mainnet" />
+          <p>
+            Want to be a part of building the universal privacy layer for all
+            crypto assets? Click here to get started with running an Iron Fish
+            node, check out our github for open source contributions, join our
+            Discord to ask questions or give feedback, or join the core Iron
+            Fish team!
+          </p>
+        </>
+      ),
+    },
   },
 }
 
@@ -197,7 +239,7 @@ function Roadmap() {
         {Object.entries(data.phases).map(
           ([
             phase,
-            { image, features, subtitle, date, description, children },
+            { image, features = [], subtitle, date, description, children },
           ]) =>
             image ? (
               <>{image}</>
@@ -208,8 +250,14 @@ function Roadmap() {
                     <time className={styles.launchdate}>Launched {date}</time>
                   ) : null}
                   <h2 className={styles.phaseTitle}>
-                    Iron Fish Testnet {capitalize(phase.replace(/(\d)/, " $1"))}
-                    {subtitle ? ": " + subtitle : ""}
+                    {phase !== "mainnet"
+                      ? `Iron Fish Testnet ${capitalize(
+                          phase.replace(/(\d)/, " $1")
+                        )}`
+                      : null}
+                    {subtitle
+                      ? (phase === "mainnet" ? "" : ": ") + subtitle
+                      : ""}
                   </h2>
                   {description ? (
                     <p className={styles.phaseDescription}>{description}</p>
