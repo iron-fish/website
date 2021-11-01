@@ -9,7 +9,7 @@ const SOME_COPY_NEEDED = (
   <span style={{ color: "lime" }}>some copy needed here.</span>
 )
 
-const ASSETS = ["uniswap", "x", "ethereum", "bitcoin"]
+const ASSETS = ["uniswap", "binance", "ethereum", "bitcoin"]
 
 const range = x =>
   Array.from(new Array(x)).reduce(
