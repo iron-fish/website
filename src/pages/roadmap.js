@@ -3,13 +3,13 @@ import Layout from "@theme/Layout"
 import clsx from "clsx"
 import styles from "./roadmap.module.css"
 
-const { useState, useEffect } = React
+const { useState, useEffect, useCallback } = React
 
 const SOME_COPY_NEEDED = (
   <span style={{ color: "lime" }}>some copy needed here.</span>
 )
 
-const ASSETS = ["unicorn", "x", "diamond", "bitcoin"]
+const ASSETS = ["uniswap", "x", "ethereum", "bitcoin"]
 
 const range = x =>
   Array.from(new Array(x)).reduce(
@@ -21,23 +21,23 @@ const patch = (given, source) =>
     (x, i) => given[Math.round(Math.random() * given.length) % given.length]
   )
 
-const Asset = ({ asset: x, flipped }) => {
+const Asset = ({ update, asset: x, flipped }) => {
   const [$interval, $setInterval] = useState(-1)
   const [$flipped, $setFlipped] = useState(flipped)
   useEffect(() => {
     if ($interval) clearInterval($interval)
     $setInterval(
-      setInterval(
-        () => $setFlipped(!$flipped),
-        Math.round(Math.random() * 30e3)
-      )
+      setInterval(() => {
+        $setFlipped(!$flipped)
+        // update(x, !$flipped)
+      }, Math.round(Math.random() * 30e3))
     )
     return () => clearInterval($interval)
   }, [$setInterval, $flipped, $setFlipped])
 
   return (
     <div
-      className={clsx(styles.asset, { [styles.flipped]: $flipped })}
+      className={clsx(styles.asset, { [styles.flipped]: $flipped }, styles[x])}
       onMouseEnter={() => {
         clearInterval($interval)
         $setFlipped(!$flipped)
@@ -61,14 +61,30 @@ const Asset = ({ asset: x, flipped }) => {
   )
 }
 
-const AssetConnection = ({ size = 15 }) => (
-  <div className={styles.assets}>
-    {patch(ASSETS, range(size)).map((x, i) => {
-      const flipped = !!Math.round(Math.random() * 1)
-      return <Asset asset={x} key={x + i} flipped={flipped} />
-    })}
-  </div>
-)
+const AssetConnection = ({ size = 15 }) => {
+  const [$data, $setData] = useState({})
+  const $update = useCallback(
+    (key, state) => {
+      if ($data[key] === state) return
+      $setData(Object.assign({}, $data, { [key]: state }))
+    },
+    [$data, $setData]
+  )
+  const $allFish = () =>
+    Object.entries($data).reduce((yes, [k, v]) => yes && v, true)
+  const cool = $allFish()
+  console.log({ cool, $data })
+  return (
+    <div className={clsx(styles.assets, { cool })}>
+      {patch(ASSETS, range(size)).map((x, i) => {
+        const flipped = !!Math.round(Math.random() * 1)
+        return (
+          <Asset asset={x} key={x + i} flipped={flipped} update={$update} />
+        )
+      })}
+    </div>
+  )
+}
 
 const data = {
   intro: (
