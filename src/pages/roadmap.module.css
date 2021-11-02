@@ -7,6 +7,9 @@
   font-size: 46px;
   line-height: 56px;
 }
+.breakAfterSm {
+  display: none;
+}
 .ctaButton {
   display: block;
   border: 0;
@@ -23,8 +26,9 @@
   font-weight: 400;
 }
 .mainIntro {
-  margin: 24px;
+  margin: 32px;
   margin-bottom: 42px;
+  max-width: 525px;
 }
 .phaseTitle {
   font-family: "extended-regular";
@@ -32,10 +36,15 @@
   line-height: 56px;
   margin-bottom: 64px;
 }
+.details {
+  display: flex;
+  flex-direction: column;
+}
 
 .detail {
   display: block;
   padding: 12px 0 24px;
+  width: 100%;
 }
 .detailIcon {
   margin-bottom: 23px;
@@ -53,7 +62,9 @@
   font-size: 16px;
 }
 .phase {
-  padding: 128px 24px 0;
+  padding: 64px 32px 0;
+  display: flex;
+  flex-direction: column;
 }
 .launchdate {
   font-family: "extended-regular";
@@ -65,21 +76,130 @@
 }
 .interlude {
   width: 100%;
-  margin-top: 64px;
+  margin-top: 128px;
+  position: relative;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  flex-wrap: no-wrap;
+  margin-bottom: 100px;
+  transition: margin 0.3s ease-out, width 0.3s ease-out;
+}
+
+.interlude img {
+  width: calc(100% - 64px);
+  max-width: 462px;
+  margin: 0 auto;
+  z-index: 10;
+  position: absolute;
+}
+.interludeHexfish {
+  display: absolute;
+  z-index: 0;
+  left: 0;
+  width: 100%;
+  background-color: #ffcd85;
+  height: 434px;
+  margin: 0 auto;
+  margin-bottom: -100px;
+  margin-top: 100px;
+  transition: margin 0.3s ease-out, width 0.3s ease-out;
+}
+.leaderboard,
+.wallet {
+  margin-top: 200px;
+  display: flex;
+}
+.wallet {
+  margin-bottom: 200px;
+}
+.leaderboard {
+  min-height: 409px;
+}
+.leaderboard img,
+.wallet img,
+.bridges img {
+  transition: margin 0.3s ease-out, width 0.3s ease-out;
+}
+.interlude.bridges {
+  min-height: 410px;
+  margin: 0;
+}
+.interlude.bridges img {
+  right: 0;
+  bottom: 0;
+  /* margin-bottom: -120px; */
+  position: absolute;
+}
+.wallet img {
+  top: -180px;
+  position: absolute;
+}
+.interlude.leaderboard img {
+  position: absolute;
+  top: 24px;
+  width: calc(100% - 64px);
+}
+.interludeBall,
+.interludeBall2,
+.interludeBall3 {
+  position: absolute;
+  left: 90vw;
+  top: -170%;
+  z-index: 2;
+  width: 855px;
+  height: 855px;
+  border-radius: 100rem;
+  background-color: #ffb549;
+  transition: left 10s ease-out, top 10s ease-out;
+}
+.interludeBall2 {
+  background-color: #0055ff;
+  top: -110%;
+  left: -40%;
+}
+.interludeBall3 {
+  background-color: #ffa4dd;
+  left: -100%;
+  top: -500%;
+}
+.interludeTestnetLeaderboard,
+.interludeWallet,
+.interludeBridges {
+  position: absolute;
+  z-index: 0;
+  margin: 0 auto;
+  background-color: #ffcd85;
+  width: 100%;
+  height: 348px;
+  margin-top: 28px;
+  transition: margin 0.3s ease-out, width 0.3s ease-out;
+  overflow: hidden;
+}
+.interludeWallet {
+  background-color: #2c72ff;
+}
+.interludeBridges {
+  background-color: #ffc2e8;
+  flex-direction: column;
+  justify-content: flex-end;
+  text-align: right;
+  align-items: flex-end;
+  overflow: hidden;
+  position: absolute;
+  bottom: 0;
 }
 .phaseDescription {
   width: 100%;
   margin: 32px 24px;
 }
-/* @keyframes flip { */
-/*   from { */
-/*     position */
-/*     transform: */
-/*   } */
-/* } */
 .assets {
   perspective: 600px;
   width: 100%;
+  max-width: 440px;
+  margin: 0 auto;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -94,8 +214,6 @@
   margin-right: 2.5%;
   margin-left: 2.5%;
   margin-bottom: 9%;
-  /* margin-right: 20px; */
-  /* margin-bottom: 20px; */
   position: relative;
   transition: transform 1s ease-out;
   transform-style: preserve-3d;
@@ -140,9 +258,89 @@
 .flipped .assetFace.back {
   top: 0;
 }
-.unflipped {
-  /* transform: rotateY(0deg); */
-}
 .hidden {
   display: none;
+}
+.fishweb {
+  width: calc(100% - 64px);
+  max-width: 500px;
+  margin: 0 auto;
+}
+@media screen and (min-width: 540px) {
+  .launchdate,
+  .phaseTitle,
+  .cta {
+    text-align: center;
+  }
+  .ctaButton {
+    margin: 0 auto;
+    margin-top: 42px;
+  }
+  .interlude.wallet img {
+    top: -184px;
+  }
+  .interlude.leaderboard img {
+    top: 20px;
+  }
+  .breakAfterSm {
+    display: block;
+  }
+}
+@media screen and (min-width: 630px) {
+  .cta {
+    text-align: center;
+    margin: 96px auto 32px;
+  }
+  .mainIntro {
+    text-align: center;
+    margin: 0 auto;
+  }
+
+  .interludeHexfish {
+    margin-bottom: -75px;
+    margin-top: 75px;
+  }
+  .details {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    margin: 0 auto;
+  }
+  .details.total2 {
+    justify-content: space-between;
+    max-width: 750px;
+  }
+  .detail {
+    width: calc(50% - 70px);
+    margin: 0 35px;
+  }
+  .details.total2 .detail {
+    margin: 0 16px;
+    width: calc(50% - 32px);
+  }
+  .interludeTestnetLeaderboard {
+    height: 512px;
+    width: 100%;
+  }
+  .leaderboard {
+    margin-top: 100px;
+    /* margin-bottom: 200px; */
+  }
+  .leaderboard img {
+    margin-top: -82px;
+  }
+  .interludeBall {
+    left: 50%;
+    top: -50%;
+  }
+
+  .bridges img {
+  }
+}
+
+@media screen and (min-width: 990px) {
+  .detail {
+    width: calc(33.333333% - 4rem);
+    margin: 0 2rem;
+  }
 }

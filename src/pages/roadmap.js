@@ -6,7 +6,10 @@ import styles from "./roadmap.module.css"
 const { useState, useEffect, useCallback } = React
 
 const SOME_COPY_NEEDED = (
-  <span style={{ color: "lime" }}>some copy needed here.</span>
+  <span style={{ color: "lime" }}>
+    some copy needed here. some copy needed here. some copy needed here. some
+    copy needed here. some copy needed here.
+  </span>
 )
 
 const ASSETS = ["uniswap", "binance", "ethereum", "bitcoin"]
@@ -86,6 +89,17 @@ const AssetConnection = ({ size = 15 }) => {
   )
 }
 
+const Interlude = ({ src, wrapper = "", alt, className, children }) => (
+  <div className={clsx(styles.interlude, wrapper)}>
+    <img src={src} alt={alt} />
+    {children ? (
+      <div className={className}>{children}</div>
+    ) : (
+      <div className={className} />
+    )}
+  </div>
+)
+
 const data = {
   intro: (
     <>
@@ -102,10 +116,10 @@ const data = {
   phases: {
     interlude0: {
       image: (
-        <img
-          src={`/img/roadmap/infinite-hexfish.png`}
+        <Interlude
+          src="/img/roadmap/infinite-hexfish.png"
           alt="Infinite hexfish"
-          className={styles.interlude}
+          className={styles.interludeHexfish}
         />
       ),
     },
@@ -150,11 +164,14 @@ const data = {
     },
     interlude2: {
       image: (
-        <img
+        <Interlude
+          wrapper={styles.leaderboard}
           src={`/img/roadmap/leaderboard.png`}
           alt="Testnet Leaderboard"
-          className={styles.interlude}
-        />
+          className={styles.interludeTestnetLeaderboard}
+        >
+          <div className={styles.interludeBall} />
+        </Interlude>
       ),
     },
     phase2: {
@@ -173,11 +190,14 @@ const data = {
     },
     interlude3: {
       image: (
-        <img
+        <Interlude
+          wrapper={styles.wallet}
           src={`/img/roadmap/wallet.png`}
-          alt="Wallet"
-          className={styles.interlude}
-        />
+          alt="Iron Fish Wallet"
+          className={styles.interludeWallet}
+        >
+          <div className={styles.interludeBall2} />
+        </Interlude>
       ),
     },
     phase3: {
@@ -202,11 +222,14 @@ const data = {
     },
     interlude4: {
       image: (
-        <img
+        <Interlude
+          wrapper={styles.bridges}
           src={`/img/roadmap/infinite-bridge.png`}
-          alt="Bridge"
-          className={styles.interlude}
-        />
+          alt="Bridges"
+          className={styles.interludeBridges}
+        >
+          <div className={styles.interludeBall3} />
+        </Interlude>
       ),
     },
     mainnet: {
@@ -217,7 +240,11 @@ const data = {
             Our mainnet is an independent blockchain operating on its own
             network with its own technology and protocol. Fake copy fake copy.
           </p>
-          <img src={`/img/roadmap/fishweb.png`} alt="Mainnet" />
+          <img
+            className={styles.fishweb}
+            src={`/img/roadmap/fishweb.png`}
+            alt="Mainnet"
+          />
           <p>
             Want to be a part of building the universal privacy layer for all
             crypto assets? Click here to get started with running an Iron Fish
@@ -267,11 +294,12 @@ function Roadmap() {
                     <time className={styles.launchdate}>Launched {date}</time>
                   ) : null}
                   <h2 className={styles.phaseTitle}>
-                    {phase !== "mainnet"
-                      ? `Iron Fish Testnet ${capitalize(
-                          phase.replace(/(\d)/, " $1")
-                        )}`
-                      : null}
+                    {phase !== "mainnet" ? (
+                      <>
+                        Iron Fish Testnet <br className={styles.breakAfterSm} />
+                        {capitalize(phase.replace(/(\d)/, " $1"))}
+                      </>
+                    ) : null}
                     {subtitle
                       ? (phase === "mainnet" ? "" : ": ") + subtitle
                       : ""}
@@ -279,11 +307,18 @@ function Roadmap() {
                   {description ? (
                     <p className={styles.phaseDescription}>{description}</p>
                   ) : null}
-                  {features?.length === 0
-                    ? null
-                    : features.map(feature => (
+                  {features?.length === 0 ? null : (
+                    <div
+                      className={clsx(
+                        styles.details,
+                        styles["total" + features.length.toString()]
+                      )}
+                    >
+                      {features.map(feature => (
                         <Feature {...feature} key={feature.title} />
                       ))}
+                    </div>
+                  )}
                   {children}
                 </>
               </section>
