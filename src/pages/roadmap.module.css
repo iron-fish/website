@@ -1,5 +1,31 @@
 .main {
-  display: block;
+  display: flex;
+  flex-direction: column;
+}
+.roadmap {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  margin-top: 40px;
+}
+.halfbox {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+.boxFiller {
+  position: absolute;
+  background-color: #ffcd85;
+  width: 100%;
+  height: 100%;
+  min-height: 400px;
+}
+.halfboxTwo img {
+  width: calc(100% - 64px);
+  max-width: 462px;
+  margin: 0 auto;
+  z-index: 10;
 }
 .cta {
   margin: 24px;
@@ -9,6 +35,11 @@
 }
 .breakAfterSm {
   display: none;
+}
+.mainnet,
+.phase.phase3 .phaseWrapper {
+  max-width: 600px;
+  margin: 0 auto;
 }
 .ctaButton {
   display: block;
@@ -22,7 +53,7 @@
   font-family: "extended-regular";
   font-size: 20px;
   line-height: 24.2px;
-  margin: 0 24px;
+  margin: 24px;
   font-weight: 400;
 }
 .mainIntro {
@@ -66,6 +97,7 @@
   display: flex;
   flex-direction: column;
 }
+
 .launchdate {
   font-family: "extended-regular";
   text-transform: uppercase;
@@ -76,7 +108,7 @@
 }
 .interlude {
   width: 100%;
-  margin-top: 128px;
+  margin: 128px auto 100px;
   position: relative;
   text-align: center;
   display: flex;
@@ -84,8 +116,6 @@
   justify-content: center;
   flex-direction: column;
   flex-wrap: no-wrap;
-  margin-bottom: 100px;
-  transition: margin 0.3s ease-out, width 0.3s ease-out;
 }
 
 .interlude img {
@@ -108,9 +138,14 @@
   transition: margin 0.3s ease-out, width 0.3s ease-out;
 }
 .leaderboard,
-.wallet {
+.wallet,
+.walletAlt {
   margin-top: 200px;
   display: flex;
+}
+.walletAlt {
+  display: none;
+  margin-bottom: 200px;
 }
 .wallet {
   margin-bottom: 200px;
@@ -120,6 +155,7 @@
 }
 .leaderboard img,
 .wallet img,
+.walletAlt img,
 .bridges img {
   transition: margin 0.3s ease-out, width 0.3s ease-out;
 }
@@ -133,6 +169,7 @@
   /* margin-bottom: -120px; */
   position: absolute;
 }
+.walletAlt img,
 .wallet img {
   top: -180px;
   position: absolute;
@@ -157,13 +194,13 @@
 }
 .interludeBall2 {
   background-color: #0055ff;
-  top: -110%;
-  left: -40%;
+  top: -160%;
+  left: -60%;
 }
 .interludeBall3 {
   background-color: #ffa4dd;
-  left: -100%;
-  top: -500%;
+  top: -110%;
+  left: -150%;
 }
 .interludeTestnetLeaderboard,
 .interludeWallet,
@@ -195,16 +232,20 @@
   width: 100%;
   margin: 32px 24px;
 }
-.assets {
+.assetsWrapper {
   perspective: 600px;
   width: 100%;
-  max-width: 440px;
   margin: 0 auto;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
+}
+.assets {
+  width: 100%;
+  margin: 0 auto;
+  max-width: 440px;
 }
 .asset {
   border-radius: 16px;
@@ -220,6 +261,9 @@
   overflow: hidden;
   display: inline-block;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+}
+.asset svg {
+  margin: 0 auto;
 }
 .uniswap {
   background-color: #ffe8f3;
@@ -245,6 +289,9 @@
   padding: 8px;
   backface-visibility: hidden;
   transition: background 0.3s ease-out, top 0.3s ease-out;
+  display: flex;
+  align-content: space-around;
+  justify-content: space-around;
 }
 .front {
   top: 0;
@@ -265,6 +312,7 @@
   width: calc(100% - 64px);
   max-width: 500px;
   margin: 0 auto;
+  display: block;
 }
 @media screen and (min-width: 540px) {
   .launchdate,
@@ -273,11 +321,7 @@
     text-align: center;
   }
   .ctaButton {
-    margin: 0 auto;
-    margin-top: 42px;
-  }
-  .interlude.wallet img {
-    top: -184px;
+    margin: 24px auto;
   }
   .interlude.leaderboard img {
     top: 20px;
@@ -285,11 +329,17 @@
   .breakAfterSm {
     display: block;
   }
+  .interludeBall2 {
+    left: -20%;
+  }
+  .interlude.wallet img {
+    margin-top: -3px;
+  }
 }
 @media screen and (min-width: 630px) {
   .cta {
     text-align: center;
-    margin: 96px auto 32px;
+    margin: 24px auto 24px;
   }
   .mainIntro {
     text-align: center;
@@ -322,6 +372,9 @@
     height: 512px;
     width: 100%;
   }
+  .interludeBall3 {
+    left: -70%;
+  }
   .leaderboard {
     margin-top: 100px;
     /* margin-bottom: 200px; */
@@ -342,5 +395,130 @@
   .detail {
     width: calc(33.333333% - 4rem);
     margin: 0 2rem;
+  }
+  .interludeBall3 {
+    left: -60%;
+  }
+}
+@media screen and (min-width: 1080px) {
+  .main {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .interlude.interlude0,
+  .interlude.leaderboard,
+  .phase.phase2,
+  .phase.phase1,
+  .phase.phase4,
+  .interlude.wallet,
+  .interlude.bridges,
+  .interlude.walletAlt {
+    width: 50%;
+  }
+  .phase.phase1,
+  .phase.phase2,
+  .interlude.walletAlt,
+  .interlude.leaderboard,
+  .interludeTestnetLeaderboard,
+  .interludeWallet {
+    height: 530px;
+    margin: 0;
+  }
+  .interlude.wallet img,
+  .interlude.leaderboard img {
+    position: relative;
+    margin-top: 20px;
+  }
+  .interlude.wallet {
+    display: none;
+  }
+  .phase.phase3 {
+    width: 100%;
+  }
+  .interlude.walletAlt {
+    display: flex;
+    padding: 0;
+    margin: 0;
+  }
+  .interludeBridges {
+    min-height: 450px;
+  }
+  .phase.phase4 {
+    padding: 0;
+    margin-top: 100px;
+  }
+  .interlude.walletAlt img {
+    position: relative;
+    top: 0;
+  }
+  .interludeHexfish {
+    height: 100%;
+    min-height: 800px;
+    width: 70%;
+    margin: 0;
+    right: 0;
+    top: 0;
+    padding: 0;
+    position: relative;
+    align-self: flex-end;
+  }
+  .interlude.interlude0 {
+    margin: 0;
+    padding: 0;
+    position: relative;
+    display: flex;
+  }
+  .interlude.interlude0 img {
+    left: 0;
+  }
+  .interludeBall2 {
+    top: -80%;
+    left: -40%;
+  }
+  .main,
+  .detail,
+  .mainIntro,
+  .cta {
+    text-align: left;
+  }
+  .cta {
+    margin-left: 32px;
+    margin-top: 64px;
+  }
+  .mainIntro,
+  .ctaButton {
+    margin: 32px;
+  }
+  .halfboxOne {
+    position: relative;
+  }
+  .halfboxOneWrapper {
+    right: 106px;
+    position: absolute;
+  }
+  .ctaButton {
+    margin-top: 0;
+  }
+  .roadmap {
+    flex-direction: row;
+    height: 600px;
+  }
+  .halfbox {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    min-height: 600px;
+    overflow: hidden;
+  }
+  .halfboxTwo {
+    position: relative;
+  }
+  .halfboxTwo img {
+    position: absolute;
+    left: 0;
+    top: 64px;
+  }
+  .boxFiller {
+    left: 32px;
   }
 }

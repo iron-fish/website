@@ -2,6 +2,10 @@ import React from "react"
 import Layout from "@theme/Layout"
 import clsx from "clsx"
 import styles from "./roadmap.module.css"
+import Bitcoin from "../theme/RoadmapPage/bitcoin.svg"
+import Uniswap from "../theme/RoadmapPage/uniswap.svg"
+import Binance from "../theme/RoadmapPage/binance.svg"
+import Ethereum from "../theme/RoadmapPage/ethereum.svg"
 
 const { useState, useEffect, useCallback } = React
 
@@ -12,7 +16,12 @@ const SOME_COPY_NEEDED = (
   </span>
 )
 
-const ASSETS = ["uniswap", "binance", "ethereum", "bitcoin"]
+const ASSETS = [
+  ["uniswap", <Uniswap key={"uniswap"} />],
+  ["binance", <Binance key={"binance"} />],
+  ["ethereum", <Ethereum key={"ethereum"} />],
+  ["bitcoin", <Bitcoin key={"bitcoin"} />],
+]
 
 const range = x =>
   Array.from(new Array(x)).reduce(
@@ -24,7 +33,7 @@ const patch = (given, source) =>
     (x, i) => given[Math.round(Math.random() * given.length) % given.length]
   )
 
-const Asset = ({ update, asset: x, flipped }) => {
+const Asset = ({ update, asset: x, name, flipped, index, data }) => {
   const [$interval, $setInterval] = useState(-1)
   const [$flipped, $setFlipped] = useState(flipped)
   useEffect(() => {
@@ -32,26 +41,30 @@ const Asset = ({ update, asset: x, flipped }) => {
     $setInterval(
       setInterval(() => {
         $setFlipped(!$flipped)
-        // update(x, !$flipped)
+        // update(name + index, !$flipped)
       }, Math.round(Math.random() * 30e3))
     )
     return () => clearInterval($interval)
-  }, [$setInterval, $flipped, $setFlipped])
+  }, [$setInterval, $flipped, $setFlipped, update, data[name + index]])
 
   return (
     <div
-      className={clsx(styles.asset, { [styles.flipped]: $flipped }, styles[x])}
+      className={clsx(
+        styles.asset,
+        { [styles.flipped]: $flipped },
+        styles[name]
+      )}
       onMouseEnter={() => {
         clearInterval($interval)
         $setFlipped(!$flipped)
       }}
     >
       <div
-        className={clsx(styles.assetFace, styles.front, styles[x], {
+        className={clsx(styles.assetFace, styles.front, styles[name], {
           [styles.flipped]: !$flipped,
         })}
       >
-        <img src={`img/roadmap/asset-${x}.png`} />
+        {x}
       </div>
       <div
         className={clsx(styles.assetFace, styles.back, styles.hexfish, {
@@ -66,25 +79,33 @@ const Asset = ({ update, asset: x, flipped }) => {
 
 const AssetConnection = ({ size = 15 }) => {
   const [$data, $setData] = useState({})
-  const $update = useCallback(
-    (key, state) => {
-      if ($data[key] === state) return
-      $setData(Object.assign({}, $data, { [key]: state }))
-    },
-    [$data, $setData]
-  )
+  const $update = (key, state) => {
+    if ($data[key] && $data[key] === state) return
+    const newData = Object.assign({}, $data, { [key]: state })
+    debugger
+    $setData(newData)
+  }
   const $allFish = () =>
     Object.entries($data).reduce((yes, [k, v]) => yes && v, true)
   const cool = $allFish()
-  console.log({ cool, $data })
   return (
     <div className={clsx(styles.assets, { cool })}>
-      {patch(ASSETS, range(size)).map((x, i) => {
-        const flipped = !!Math.round(Math.random() * 1)
-        return (
-          <Asset asset={x} key={x + i} flipped={flipped} update={$update} />
-        )
-      })}
+      <div className={styles.assetsWrapper}>
+        {patch(ASSETS, range(size)).map(([x, raw], i) => {
+          const flipped = !!Math.round(Math.random() * 1)
+          return (
+            <Asset
+              asset={raw}
+              key={x + i}
+              flipped={flipped}
+              update={$update}
+              name={x}
+              index={i}
+              data={$data}
+            />
+          )
+        })}
+      </div>
     </div>
   )
 }
@@ -102,27 +123,30 @@ const Interlude = ({ src, wrapper = "", alt, className, children }) => (
 
 const data = {
   intro: (
-    <>
-      The ultimate goal for Iron Fish is to be a universal privacy layer to
-      support not only many different types of native assets on Iron Fish, but
-      also assets on other chains through bridges. A true SSL layer for
-      blockchains.
-      <br />
-      <br />
-      Why build a new chain? Why can’t this live on Ethereum, Solana, Celo, or
-      any other blockchain?
-    </>
+    <div className={styles.roadmap}>
+      <div className={clsx(styles.halfbox, styles.halfboxOne)}>
+        <div className={styles.halfboxOneWrapper}>
+          <h1 className={styles.cta}>The big picture</h1>
+          <p className={styles.mainIntro}>
+            The ultimate goal for Iron Fish is to be a universal privacy layer
+            to support not only many different types of native assets on Iron
+            Fish, but also assets on other chains through bridges. A true SSL
+            layer for blockchains.
+            <br />
+            <br />
+            Why build a new chain? Why can’t this live on Ethereum, Solana,
+            Celo, or any other blockchain? <a href="#">Learn more here</a>
+          </p>
+          <button className={styles.ctaButton}>Explore the Roadmap</button>
+        </div>
+      </div>
+      <div className={clsx(styles.halfbox, styles.halfboxTwo)}>
+        <img src="/img/roadmap/infinite-hexfish.png" alt="Infinite hexfish" />
+        <div className={styles.boxFiller} />
+      </div>
+    </div>
   ),
   phases: {
-    interlude0: {
-      image: (
-        <Interlude
-          src="/img/roadmap/infinite-hexfish.png"
-          alt="Infinite hexfish"
-          className={styles.interludeHexfish}
-        />
-      ),
-    },
     phase0: {
       date: "April 6, 2021",
       features: [
@@ -171,6 +195,18 @@ const data = {
           className={styles.interludeTestnetLeaderboard}
         >
           <div className={styles.interludeBall} />
+        </Interlude>
+      ),
+    },
+    interlude3alt: {
+      image: (
+        <Interlude
+          wrapper={styles.walletAlt}
+          src={`/img/roadmap/wallet.png`}
+          alt="Iron Fish Wallet"
+          className={styles.interludeWallet}
+        >
+          <div className={styles.interludeBall2} />
         </Interlude>
       ),
     },
@@ -235,7 +271,7 @@ const data = {
     mainnet: {
       subtitle: "Iron Fish Mainnet!",
       children: (
-        <>
+        <div className={styles.mainnet}>
           <p>
             Our mainnet is an independent blockchain operating on its own
             network with its own technology and protocol. Fake copy fake copy.
@@ -252,7 +288,7 @@ const data = {
             Discord to ask questions or give feedback, or join the core Iron
             Fish team!
           </p>
-        </>
+        </div>
       ),
     },
   },
@@ -274,11 +310,7 @@ function Roadmap() {
   return (
     <Layout title="Roadmap" description={data.intro}>
       <main className={clsx(styles.main)}>
-        <h1 className={styles.cta}>Check out our Roadmap</h1>
-        <p className={styles.mainIntro}>
-          {data.intro} <a href="#">Learn more here</a>
-        </p>
-        <button className={styles.ctaButton}>Explore the Roadmap</button>
+        {data.intro}
 
         {Object.entries(data.phases).map(
           ([
@@ -288,8 +320,11 @@ function Roadmap() {
             image ? (
               <>{image}</>
             ) : (
-              <section className={clsx(styles.phase)} key={phase}>
-                <>
+              <section
+                className={clsx(styles.phase, styles[phase])}
+                key={phase}
+              >
+                <div className={styles.phaseWrapper}>
                   {date ? (
                     <time className={styles.launchdate}>Launched {date}</time>
                   ) : null}
@@ -320,7 +355,7 @@ function Roadmap() {
                     </div>
                   )}
                   {children}
-                </>
+                </div>
               </section>
             )
         )}
