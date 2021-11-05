@@ -36,7 +36,7 @@ const patch = (given, source) =>
 const Asset = ({ update, asset: x, name, flipped, index, data }) => {
   const [$interval, $setInterval] = useState(-1)
   const [$flipped, $setFlipped] = useState(flipped)
-  useEffect(() => {
+  /*useEffect(() => {
     if ($interval) clearInterval($interval)
     $setInterval(
       setInterval(() => {
@@ -46,7 +46,7 @@ const Asset = ({ update, asset: x, name, flipped, index, data }) => {
     )
     return () => clearInterval($interval)
   }, [$setInterval, $flipped, $setFlipped, update, data[name + index]])
-
+*/
   return (
     <div
       className={clsx(
@@ -120,6 +120,8 @@ const Interlude = ({ src, wrapper = "", alt, className, children }) => (
     )}
   </div>
 )
+const PARAGRAPH_ONE = `The ultimate goal for Iron Fish is to be a universal privacy layer to support not only many different types of native assets on Iron Fish, but also assets on other chains through bridges. A true SSL layer for blockchains.`
+const PARAGRAPH_TWO = `Why build a new chain? Why can’t this live on Ethereum, Solana, Celo, or any other blockchain?`
 
 const data = {
   intro: (
@@ -128,14 +130,9 @@ const data = {
         <div className={styles.halfboxOneWrapper}>
           <h1 className={styles.cta}>The big picture</h1>
           <p className={styles.mainIntro}>
-            The ultimate goal for Iron Fish is to be a universal privacy layer
-            to support not only many different types of native assets on Iron
-            Fish, but also assets on other chains through bridges. A true SSL
-            layer for blockchains.
+            {PARAGRAPH_ONE} <br />
             <br />
-            <br />
-            Why build a new chain? Why can’t this live on Ethereum, Solana,
-            Celo, or any other blockchain? <a href="#">Learn more here</a>
+            {PARAGRAPH_TWO} <a href="#">Learn more here</a>
           </p>
           <button className={styles.ctaButton}>Explore the Roadmap</button>
         </div>
@@ -245,13 +242,13 @@ const data = {
     phase4: {
       features: [
         {
-          icon: "foursquare",
-          title: "Node Dashboard",
+          icon: "chain",
+          title: "Cross-Chain Bridge Support",
           description: SOME_COPY_NEEDED,
         },
         {
-          icon: "wallet",
-          title: "Desktop Wallet",
+          icon: "life-preserver",
+          title: "Level 2 Support",
           description: SOME_COPY_NEEDED,
         },
       ],
@@ -308,7 +305,7 @@ const capitalize = x => x[0].toUpperCase() + x.slice(1)
 
 function Roadmap() {
   return (
-    <Layout title="Roadmap" description={data.intro}>
+    <Layout title="Roadmap" description={PARAGRAPH_ONE + "\n" + PARAGRAPH_TWO}>
       <main className={clsx(styles.main)}>
         {data.intro}
 

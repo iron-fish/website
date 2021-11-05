@@ -14,12 +14,16 @@
   flex-direction: column;
   position: relative;
 }
+.halfboxTwo {
+  margin-bottom: 67px;
+}
 .boxFiller {
   position: absolute;
   background-color: #ffcd85;
   width: 100%;
   height: 100%;
   min-height: 400px;
+  margin-top: 67px;
 }
 .halfboxTwo img {
   width: calc(100% - 64px);
@@ -54,6 +58,7 @@
   font-size: 20px;
   line-height: 24.2px;
   margin: 24px;
+  margin-bottom: 64px;
   font-weight: 400;
 }
 .mainIntro {
@@ -227,6 +232,8 @@
   overflow: hidden;
   position: absolute;
   bottom: 0;
+  height: 50%;
+  max-height: 275px;
 }
 .phaseDescription {
   width: 100%;
@@ -321,7 +328,7 @@
     text-align: center;
   }
   .ctaButton {
-    margin: 24px auto;
+    margin: 24px auto 64px;
   }
   .interlude.leaderboard img {
     top: 20px;
@@ -356,7 +363,8 @@
     justify-content: flex-start;
     margin: 0 auto;
   }
-  .details.total2 {
+
+  .details {
     justify-content: space-between;
     max-width: 750px;
   }
@@ -375,10 +383,12 @@
     width: calc(50% - 32px);
   }
   .details.total2 .detail:nth-of-type(odd) {
-    margin-right: 16px;
+    margin-right: 32px;
+    margin-left: 0;
   }
   .details.total2 .detail:nth-of-type(even) {
-    margin-left: 16px;
+    margin-left: 32px;
+    margin-right: 0;
   }
   .interludeTestnetLeaderboard {
     height: 512px;
@@ -404,21 +414,34 @@
 }
 
 @media screen and (min-width: 990px) {
-  .detail {
-    width: calc(33.333333% - 4rem);
-    margin: 0 2rem;
+  .details.total3 .detail {
+    width: calc(33.333333% - 64px);
+    margin: 0 32px;
   }
+  .details.total3 .detail:nth-of-type(1) {
+    margin-left: 0;
+  }
+  .details.total3 .detail:nth-of-type(3) {
+    margin-right: 0;
+  }
+
+  /*
   .detail:nth-of-type(odd) {
     margin-right: 2rem;
   }
   .detail:nth-of-type(even) {
     margin-left: 2rem;
   }
+  */
   .interludeBall3 {
     left: -60%;
   }
 }
+
 @media screen and (min-width: 1080px) {
+  .details {
+    max-width: 100%;
+  }
   .main {
     flex-direction: row;
     flex-wrap: wrap;
@@ -435,17 +458,28 @@
   }
   .phase.phase1,
   .phase.phase2,
+  .phase.phase4,
   .interlude.walletAlt,
   .interlude.leaderboard,
+  .interlude.bridges,
   .interludeTestnetLeaderboard,
   .interludeWallet {
-    height: 530px;
+    height: 720px;
     margin: 0;
   }
-  .interlude.wallet img,
+  .interlude.walletAlt {
+    text-align: right;
+    position: relative;
+  }
+  .interlude.walletAlt img {
+    position: absolute;
+    top: calc(50% - 170px);
+    right: 64px;
+  }
   .interlude.leaderboard img {
     position: relative;
-    margin-top: 20px;
+    margin-top: 64px;
+    margin-left: 64px;
   }
   .interlude.wallet {
     display: none;
@@ -463,27 +497,78 @@
   }
   .phase.phase0 {
     width: 100%;
-    max-width: 1220px;
     margin: 0 auto;
     margin-bottom: 96px;
   }
-  .phase.phase4 {
+  .phase4 {
     padding: 0;
     margin-top: 100px;
   }
-  .phase.phase0 .phaseTitle,
-  .phase.phase0 .launchdate {
-    text-align: left;
-    margin-left: 32px;
-  }
-  .phase.phase1 .phaseTitle,
-  .phase.phase1 .launchdate {
+  .phase0 .phaseTitle,
+  .phase0 .launchdate {
     text-align: left;
   }
-  .interlude.walletAlt img {
+  .phase0 .details .detail {
+    margin-bottom: 0;
+  }
+  .phase0 .details .detail:nth-of-type(1) {
+    margin-left: 0;
+  }
+  .phase0 .details .detail:nth-of-type(3) {
+    margin-right: 0;
+  }
+  .phase1,
+  .phase4 {
     position: relative;
-    top: 0;
   }
+  .phase1 .phaseTitle,
+  .phase4 .phaseTitle {
+    text-align: left;
+    position: absolute;
+    left: 32px;
+  }
+  .phase4 .phaseTitle {
+    top: 64px;
+  }
+  .phase1 .details,
+  .phase4 .details {
+    position: absolute;
+    left: 32px;
+    top: 198px;
+    flex-direction: column;
+    max-width: 317px;
+  }
+  .phase2 .details {
+    max-width: 317px;
+    margin: 0;
+  }
+  .phase1 .details .detail,
+  .phase1 .details .detail:nth-of-type(even),
+  .phase1 .details .detail:nth-of-type(odd),
+  .phase2 .details .detail,
+  .phase2 .details .detail:nth-of-type(even),
+  .phase2 .details .detail:nth-of-type(odd),
+  .phase4 .details .detail,
+  .phase4 .details .detail:nth-of-type(even),
+  .phase4 .details .detail:nth-of-type(odd) {
+    width: 100%;
+    margin: 0;
+  }
+  .phase2 {
+    padding-top: 50px;
+    padding-left: 64px;
+  }
+  .phase2 .phaseTitle {
+    text-align: left;
+    margin-bottom: 48px;
+  }
+  .phase2 .details .detail,
+  .phase2 .details .detail:nth-of-type(even),
+  .phase2 .details .detail:nth-of-type(odd) {
+    padding: 0;
+    margin-bottom: 48px;
+  }
+
   .interludeHexfish {
     height: 100%;
     min-height: 800px;
@@ -500,6 +585,10 @@
     padding: 0;
     position: relative;
     display: flex;
+  }
+  .interludeBridges {
+    height: 100%;
+    max-height: 100%;
   }
   .interlude.interlude0 img {
     left: 0;
@@ -527,6 +616,7 @@
     right: 106px;
     width: 440px;
     position: absolute;
+    padding-left: 32px;
   }
   .roadmap {
     flex-direction: row;
@@ -541,6 +631,7 @@
   }
   .halfboxTwo {
     position: relative;
+    margin-bottom: 0;
   }
   .halfboxTwo img {
     position: absolute;
@@ -549,5 +640,26 @@
   }
   .boxFiller {
     left: 32px;
+    margin-top: 0;
+  }
+}
+@media screen and (min-width: 1144px) {
+  .halfboxOneWrapper {
+    padding-left: 0;
+  }
+  .phase0 {
+    max-width: 1220px;
+    padding: 64px;
+    padding-bottom: 0;
+  }
+  .phase1 .phaseTitle,
+  .phase4 .phaseTitle {
+    left: auto;
+    right: 150px;
+  }
+  .phase1 .details,
+  .phase4 .details {
+    left: auto;
+    right: 225px;
   }
 }
