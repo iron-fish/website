@@ -45,6 +45,9 @@
   display: flex;
   flex-direction: column;
 }
+.phase.phase1 {
+  padding-top: 128px;
+}
 .roadmap {
   width: 100%;
   display: flex;
@@ -65,7 +68,7 @@
   background-color: #ffcd85;
   width: 100%;
   height: 100%;
-  min-height: 400px;
+  min-height: 330px;
   margin-top: 67px;
 }
 .halfboxTwo img {
@@ -185,7 +188,10 @@
   margin-top: 100px;
   transition: margin 0.3s ease-out, width 0.3s ease-out;
 }
-.leaderboard,
+.leaderboard {
+  margin-top: 64px;
+  display: flex;
+}
 .wallet,
 .walletAlt {
   margin-top: 200px;
@@ -363,6 +369,11 @@
   max-width: 500px;
   margin: 0 auto;
   display: block;
+}
+@media screen and (min-width: 450px) {
+  .boxFiller {
+    min-height: 400px;
+  }
 }
 @media screen and (min-width: 540px) {
   .launchdate,
