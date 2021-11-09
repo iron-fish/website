@@ -280,11 +280,11 @@ function Careers() {
               <div>
                 <p>Paid Time Off</p>
                 <p>
-                  We want you to take the time off you need to relax and
-                  recharge. In addition to federal holidays, we offer accrued
-                  time off of up to 15 days per calendar year, we close the
-                  office for winter break, and sick time is accrued at up to 8
-                  days per calendar year.
+                  We want you to take the time you need to relax and recharge.
+                  In addition to 12 federal holidays and an office closure for
+                  winter break, we offer a generous time-off policy. For
+                  salaried employees, we have a flexible vacation and sick days,
+                  where you can take as much time as you think is appropriate.
                 </p>
               </div>
               <div>
