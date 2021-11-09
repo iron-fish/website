@@ -31,7 +31,10 @@
 .relativeBreakpoint::before {
   color: rgba(255, 0, 0, 0.1);
 }
+.ruler {
+}
 .toolkit {
+  font-family: monospace;
   position: fixed;
   top: 0;
   left: 0;
@@ -40,6 +43,12 @@
   padding: 0.25rem 0.5rem;
   height: 2rem;
   min-width: 3rem;
+  z-index: 1111;
+  opacity: 0.6;
+  cursor: crosshair;
+}
+.toolkit:hover {
+  opacity: 1;
 }
 .main {
   display: flex;
@@ -286,7 +295,7 @@
 }
 .phaseDescription {
   width: 100%;
-  margin: 32px 24px;
+  margin: 32px auto;
 }
 .assetsWrapper {
   perspective: 600px;
@@ -509,6 +518,9 @@
   .interlude.bridges,
   .interlude.walletAlt {
     width: 50%;
+  }
+  .phase.phase1 {
+    padding-top: 64px;
   }
   .phase.phase1,
   .phase.phase2,

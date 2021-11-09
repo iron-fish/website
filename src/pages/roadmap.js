@@ -27,6 +27,7 @@ const Breakpoint = ({ left }) => (
 )
 
 const points = [
+  `450px`,
   `540px`,
   `630px`,
   `990px`,
@@ -60,7 +61,7 @@ export function useQuery(key) {
 
 const ResponsiveToolkit = () => {
   const [$width, $setWidth] = useState(-1)
-  const [$point, $setPoint] = useState(-1)
+  const [$point, $setPoint] = useState(0)
   const $toolkit = useQuery("debug")
   useEffect(() => {
     const activePoints = () =>
@@ -82,7 +83,7 @@ const ResponsiveToolkit = () => {
     $toolkit && (
       <>
         <div className={styles.toolkit}>
-          {$width}px <span>→</span> {$point}px
+          {$point}px <span className={styles.ruler}>📐</span> {$width}px
         </div>
         {points.map(x => (
           <Breakpoint key={x} left={x} />
