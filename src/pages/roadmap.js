@@ -16,6 +16,82 @@ const SOME_COPY_NEEDED = (
   </span>
 )
 
+const Breakpoint = ({ left }) => (
+  <div
+    className={clsx(styles.breakpoint, {
+      [styles.relativeBreakpoint]: left.indexOf("%") > -1,
+    })}
+    style={{ left }}
+    data-left={left}
+  />
+)
+
+const points = [
+  `540px`,
+  `630px`,
+  `990px`,
+  `1080px`,
+  `1144px`,
+  "25%",
+  "50%",
+  "75%",
+]
+
+// With a URL like: coolwebsite.com?nice=dope
+// const $nice = useQuery('nice') === 'dope'
+export function useQuery(key) {
+  // our state
+  const [$query, $setQuery] = useState(null)
+
+  useEffect(() => {
+    // only for ze browser
+    if (typeof window === "undefined") return
+
+    const parsed = new URLSearchParams((window.location.search || "").slice(1))
+
+    const value = parsed.get(key)
+
+    if (typeof value === "string") {
+      $setQuery(value)
+    }
+  }, [$query, $setQuery, key])
+  return $query
+}
+
+const ResponsiveToolkit = () => {
+  const [$width, $setWidth] = useState(-1)
+  const [$point, $setPoint] = useState(-1)
+  const $toolkit = useQuery("debug")
+  useEffect(() => {
+    const activePoints = () =>
+      points
+        .filter(z => z.includes("px"))
+        .map(z => parseInt(z.slice(0, -2)))
+        .reduce((x, y) => (y <= $width ? y : x), 0)
+    const update = () => {
+      $setWidth(window.innerWidth)
+      $setPoint(activePoints())
+    }
+    if ($toolkit) {
+      update()
+      window.addEventListener("resize", update)
+    }
+    return () => window.removeEventListener("resize", update)
+  }, [$width, $setWidth, $point, $setPoint, $toolkit])
+  return (
+    $toolkit && (
+      <>
+        <div className={styles.toolkit}>
+          {$width}px <span>→</span> {$point}px
+        </div>
+        {points.map(x => (
+          <Breakpoint key={x} left={x} />
+        ))}
+      </>
+    )
+  )
+}
+
 const ASSETS = [
   ["uniswap", <Uniswap key={"uniswap"} />],
   ["binance", <Binance key={"binance"} />],
@@ -306,6 +382,8 @@ const capitalize = x => x[0].toUpperCase() + x.slice(1)
 function Roadmap() {
   return (
     <Layout title="Roadmap" description={PARAGRAPH_ONE + "\n" + PARAGRAPH_TWO}>
+      <ResponsiveToolkit />
+
       <main className={clsx(styles.main)}>
         {data.intro}
 

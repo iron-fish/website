@@ -1,3 +1,46 @@
+.breakpoint {
+  position: fixed;
+  left: 0;
+  top: 0;
+  border-left: 1px dashed lime;
+  height: 100%;
+  z-index: 999;
+  min-height: 100vh;
+  cursor: crosshair;
+  opacity: 0.5;
+}
+.relativeBreakpoint {
+  border-left: 1px dashed red;
+}
+.breakpoint::before {
+  color: rgba(0, 255, 0, 0.1);
+  text-shadow: -1px 0 0 rgba(255, 255, 255, 0);
+  font-size: 0.75rem;
+  display: block;
+  margin-top: 2rem;
+  content: attr(data-left);
+  transform: rotate(-90deg);
+}
+.breakpoint:hover {
+  opacity: 1;
+}
+.breakpoint:hover::before {
+  color: black;
+  text-shadow: -1px 0 0 rgba(255, 255, 255, 0.6);
+}
+.relativeBreakpoint::before {
+  color: rgba(255, 0, 0, 0.1);
+}
+.toolkit {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: black;
+  color: white;
+  padding: 0.25rem 0.5rem;
+  height: 2rem;
+  min-width: 3rem;
+}
 .main {
   display: flex;
   flex-direction: column;
@@ -554,6 +597,7 @@
     width: 100%;
     margin: 0;
   }
+  .phase1,
   .phase2 {
     padding-top: 50px;
     padding-left: 64px;
