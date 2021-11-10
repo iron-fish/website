@@ -100,6 +100,12 @@
   max-width: 600px;
   margin: 0 auto;
 }
+.mainnet p {
+  margin: 0;
+}
+.mainnet img {
+  margin: 32px auto;
+}
 .ctaButton {
   display: block;
   border: 0;
@@ -314,12 +320,11 @@
 }
 .asset {
   border-radius: 16px;
-  width: calc(20% - 70px);
-  min-width: 70px;
-  min-height: 70px;
-  margin-right: 2.5%;
-  margin-left: 2.5%;
-  margin-bottom: 9%;
+  width: 70px;
+  height: 70px;
+  margin-right: 1%;
+  margin-left: 1%;
+  margin-bottom: 2%;
   position: relative;
   transition: transform 1s ease-out;
   transform-style: preserve-3d;
@@ -380,6 +385,11 @@
   display: block;
 }
 @media screen and (min-width: 450px) {
+  .asset {
+    margin-right: 2.5%;
+    margin-left: 2.5%;
+    margin-bottom: 9%;
+  }
   .boxFiller {
     min-height: 400px;
   }

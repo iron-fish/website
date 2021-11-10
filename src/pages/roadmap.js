@@ -334,7 +334,7 @@ const data = {
       image: (
         <Interlude
           wrapper={styles.bridges}
-          src={`/img/roadmap/infinite-bridge.png`}
+          src={`/img/roadmap/infinite-bridge.svg`}
           alt="Bridges"
           className={styles.interludeBridges}
         >
