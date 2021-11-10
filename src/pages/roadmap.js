@@ -352,7 +352,7 @@ const data = {
           </p>
           <img
             className={styles.fishweb}
-            src={`/img/roadmap/fishweb.png`}
+            src={`/img/roadmap/celebration.gif`}
             alt="Mainnet"
           />
           <p>

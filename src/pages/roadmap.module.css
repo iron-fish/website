@@ -179,7 +179,7 @@
 }
 .interlude {
   width: 100%;
-  margin: 128px auto 100px;
+  margin: 128px auto 48px;
   position: relative;
   text-align: center;
   display: flex;
@@ -737,7 +737,8 @@
   .phase1 .phaseTitle,
   .phase4 .phaseTitle {
     left: auto;
-    right: 150px;
+    right: 120px;
+    margin-top: 0;
   }
   .phase1 .details,
   .phase4 .details {
