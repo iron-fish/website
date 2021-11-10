@@ -745,3 +745,17 @@
     right: 225px;
   }
 }
+@media screen and (min-width: 1200px) {
+  .phase.phase3 .phaseWrapper,
+  .assets {
+    max-width: 880px;
+  }
+  .assets {
+    margin-bottom: 128px;
+  }
+  .asset {
+    margin-right: 16px;
+    margin-left: 16px;
+    margin-bottom: 16px;
+  }
+}
