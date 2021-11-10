@@ -60,8 +60,10 @@ export function useQuery(key) {
 }
 
 const ResponsiveToolkit = () => {
+  const [$active, $setActive] = useState(true)
   const [$width, $setWidth] = useState(-1)
   const [$point, $setPoint] = useState(0)
+  const toggle = () => $setActive(!$active)
   const $toolkit = useQuery("debug")
   useEffect(() => {
     const activePoints = () =>
@@ -82,12 +84,10 @@ const ResponsiveToolkit = () => {
   return (
     $toolkit && (
       <>
-        <div className={styles.toolkit}>
+        <div className={styles.toolkit} onClick={toggle}>
           {$point}px <span className={styles.ruler}>📐</span> {$width}px
         </div>
-        {points.map(x => (
-          <Breakpoint key={x} left={x} />
-        ))}
+        {$active && points.map(x => <Breakpoint key={x} left={x} />)}
       </>
     )
   )
@@ -345,7 +345,7 @@ const data = {
     mainnet: {
       subtitle: "Iron Fish Mainnet!",
       children: (
-        <div className={styles.mainnet}>
+        <div className={styles.mainblock}>
           <p>
             Our mainnet is an independent blockchain operating on its own
             network with its own technology and protocol. Fake copy fake copy.

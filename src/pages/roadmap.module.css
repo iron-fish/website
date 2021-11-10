@@ -325,11 +325,11 @@
 }
 .asset {
   border-radius: 16px;
-  width: 70px;
-  height: 70px;
+  width: 62px;
+  height: 62px;
   margin-right: 1%;
   margin-left: 1%;
-  margin-bottom: 2%;
+  margin-bottom: 25px;
   position: relative;
   transition: transform 1s ease-out;
   transform-style: preserve-3d;
@@ -440,9 +440,6 @@
     flex-wrap: wrap;
     justify-content: flex-start;
     margin: 0 auto;
-  }
-
-  .details {
     justify-content: space-between;
     max-width: 750px;
   }
@@ -486,21 +483,40 @@
     left: 50%;
     top: -50%;
   }
-
-  .bridges img {
+  .phase1 {
+    padding-top: 0;
+    margin-bottom: 200px;
+  }
+  .phase2 {
+    padding-top: 128px;
+    padding-bottom: 98px;
+  }
+  .phase0,
+  .phase3,
+  .phase4 {
+    padding-top: 128px;
+  }
+  .phase4 {
+    margin-bottom: 72px;
+  }
+  .phaseTitle {
+    margin-top: 0;
   }
 }
 
 @media screen and (min-width: 990px) {
   .details.total3 .detail {
-    width: calc(33.333333% - 64px);
-    margin: 0 32px;
+    width: calc(33.333333% - 55px);
+    margin: 0 54px;
   }
   .details.total3 .detail:nth-of-type(1) {
-    margin-left: 0;
+    margin: 0;
   }
   .details.total3 .detail:nth-of-type(3) {
-    margin-right: 0;
+    margin: 0;
+  }
+  .details.total2 .detail {
+    padding-bottom: 0;
   }
 
   /*
@@ -513,6 +529,38 @@
   */
   .interludeBall3 {
     left: -60%;
+  }
+  .assets {
+    max-width: 456px;
+  }
+  .asset {
+    width: 90px;
+    height: 90px;
+    margin-left: 2%;
+    margin-right: 2%;
+    margin-bottom: 32px;
+  }
+  .asset:nth-of-type(n + 13) {
+    margin-bottom: 0;
+  }
+  .phase1 {
+    margin-bottom: 118px;
+  }
+  .phase3 .phaseDescription {
+    margin-bottom: 64px;
+  }
+  .phase2 {
+    padding-bottom: 92px;
+  }
+  .interlude.bridges img {
+    max-width: 622px;
+  }
+  .interludeBridges {
+    height: calc(100% - 48px);
+    max-height: 412px;
+  }
+  .mainnet {
+    padding-top: 128px;
   }
 }
 
