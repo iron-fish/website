@@ -104,7 +104,10 @@
   margin: 0;
 }
 .mainnet img {
-  margin: 32px auto;
+  margin: 32px 0;
+  width: 100%;
+  min-width: 100%;
+  height: auto;
 }
 .ctaButton {
   display: block;
@@ -131,7 +134,9 @@
   font-family: "extended-regular";
   font-size: 46px;
   line-height: 56px;
-  margin-bottom: 64px;
+  /* margin-bottom: 64px; */
+  margin: 24px;
+  margin-left: 0;
 }
 .details {
   display: flex;
