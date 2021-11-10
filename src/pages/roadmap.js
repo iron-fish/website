@@ -16,15 +16,21 @@ const SOME_COPY_NEEDED = (
   </span>
 )
 
-const Breakpoint = ({ left }) => (
-  <div
-    className={clsx(styles.breakpoint, {
-      [styles.relativeBreakpoint]: left.indexOf("%") > -1,
-    })}
-    style={{ left }}
-    data-left={left}
-  />
-)
+const Breakpoint = ({ at, horizontal = true }) => {
+  const value = horizontal ? at : at.slice(1)
+  const isVertical = at.startsWith("v")
+  return (
+    <div
+      className={clsx({
+        [styles.breakpoint]: !isVertical,
+        [styles.relativeBreakpoint]: at.indexOf("%") > -1,
+        [styles.vbreakpoint]: isVertical,
+      })}
+      style={{ [horizontal ? "left" : "top"]: value }}
+      data-value={value}
+    />
+  )
+}
 
 const points = [
   `450px`,
@@ -33,9 +39,27 @@ const points = [
   `990px`,
   `1080px`,
   `1144px`,
+  "10%",
   "25%",
   "50%",
   "75%",
+  "90%",
+  "v64px",
+  "v128px",
+  "v192px",
+  "v256px",
+  "v320px",
+  "v384px",
+  "v448px",
+  "v512px",
+  "v576px",
+  "v640px",
+  "v704px",
+  "v768px",
+  "v832px",
+  "v896px",
+  "v960px",
+  "v1024px",
 ]
 
 // With a URL like: coolwebsite.com?nice=dope
@@ -87,7 +111,14 @@ const ResponsiveToolkit = () => {
         <div className={styles.toolkit} onClick={toggle}>
           {$point}px <span className={styles.ruler}>📐</span> {$width}px
         </div>
-        {$active && points.map(x => <Breakpoint key={x} left={x} />)}
+        {$active &&
+          points
+            .filter(z => !z.startsWith("v"))
+            .map(x => <Breakpoint key={x} at={x} />)}
+        {$active &&
+          points
+            .filter(z => z.startsWith("v"))
+            .map(x => <Breakpoint key={x} at={x} horizontal={false} />)}
       </>
     )
   )

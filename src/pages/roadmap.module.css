@@ -1,32 +1,54 @@
-.breakpoint {
+.breakpoint,
+.vbreakpoint {
   position: fixed;
   left: 0;
   top: 0;
-  border-left: 1px dashed lime;
   height: 100%;
   z-index: 999;
-  min-height: 100vh;
   cursor: crosshair;
   opacity: 0.5;
 }
-.relativeBreakpoint {
-  border-left: 1px dashed red;
+.breakpoint {
+  border-left: 1px dashed lime;
+  min-height: 100vh;
 }
-.breakpoint::before {
+.vbreakpoint {
+  border-top: 1px dashed lime;
+  height: 1px;
+  width: 100%;
+  min-width: 100vw;
+}
+
+.relativeBreakpoint {
+  border-left: 1px dashed cyan;
+}
+.breakpoint::before,
+.vbreakpoint::before {
   color: rgba(0, 255, 0, 0.1);
   text-shadow: -1px 0 0 rgba(255, 255, 255, 0);
   font-size: 0.75rem;
   display: block;
   margin-top: 2rem;
-  content: attr(data-left);
+  content: attr(data-value);
   transform: rotate(-90deg);
+  position: absolute;
 }
-.breakpoint:hover {
+.vbreakpoint::before {
+  left: 0.5rem;
+  transform: rotate(0);
+  margin-top: 0;
+  color: #888;
+}
+.breakpoint:hover,
+.vbreakpoint:hover {
   opacity: 1;
 }
 .breakpoint:hover::before {
   color: black;
   text-shadow: -1px 0 0 rgba(255, 255, 255, 0.6);
+}
+.vbreakpoint:hover::before {
+  color: black;
 }
 .relativeBreakpoint::before {
   color: rgba(255, 0, 0, 0.1);
@@ -505,8 +527,24 @@
 }
 
 @media screen and (min-width: 990px) {
+  .details.total3 {
+    max-width: 862px;
+  }
+  .details.total2 {
+    max-width: 568px;
+  }
+  .details.total2 .detail {
+    max-width: 250px;
+    margin: 0 64px;
+  }
+  .details.total2 .detail:nth-of-type(1) {
+    margin-left: 0;
+  }
+  .details.total2 .detail:nth-of-type(2) {
+    margin-right: 0;
+  }
   .details.total3 .detail {
-    width: calc(33.333333% - 55px);
+    width: calc(33.333333% - 36px);
     margin: 0 54px;
   }
   .details.total3 .detail:nth-of-type(1) {
@@ -518,15 +556,6 @@
   .details.total2 .detail {
     padding-bottom: 0;
   }
-
-  /*
-  .detail:nth-of-type(odd) {
-    margin-right: 2rem;
-  }
-  .detail:nth-of-type(even) {
-    margin-left: 2rem;
-  }
-  */
   .interludeBall3 {
     left: -60%;
   }
