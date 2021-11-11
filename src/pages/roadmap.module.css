@@ -3,20 +3,20 @@
   position: fixed;
   left: 0;
   top: 0;
-  height: 100%;
   z-index: 999;
   cursor: crosshair;
   opacity: 0.5;
 }
 .breakpoint {
   border-left: 1px dashed lime;
+  height: 100%;
   min-height: 100vh;
 }
 .vbreakpoint {
   border-top: 1px dashed lime;
   height: 1px;
+  max-width: 100%;
   width: 100%;
-  min-width: 100vw;
 }
 
 .relativeBreakpoint {
@@ -349,8 +349,8 @@
   border-radius: 16px;
   width: 62px;
   height: 62px;
-  margin-right: 1%;
-  margin-left: 1%;
+  margin-right: 2%;
+  margin-left: 2%;
   margin-bottom: 25px;
   position: relative;
   transition: transform 1s ease-out;
@@ -413,8 +413,8 @@
 }
 @media screen and (min-width: 450px) {
   .asset {
-    margin-right: 2.5%;
-    margin-left: 2.5%;
+    margin-right: 3%;
+    margin-left: 3%;
     margin-bottom: 9%;
   }
   .boxFiller {
@@ -594,7 +594,8 @@
 }
 
 @media screen and (min-width: 1080px) {
-  .details {
+  .details,
+  .details.total3 {
     max-width: 100%;
   }
   .main {
@@ -657,6 +658,14 @@
     width: 100%;
     margin: 0 auto;
     margin-bottom: 96px;
+    position: relative;
+    height: 558px;
+  }
+  .phase.phase0 .phaseWrapper {
+    width: 985px;
+    position: absolute;
+    left: calc(50% - 515px);
+    height: 448px;
   }
   .phase4 {
     padding: 0;
@@ -683,7 +692,7 @@
   .phase4 .phaseTitle {
     text-align: left;
     position: absolute;
-    left: 32px;
+    right: 96px;
   }
   .phase4 .phaseTitle {
     top: 64px;
@@ -691,7 +700,7 @@
   .phase1 .details,
   .phase4 .details {
     position: absolute;
-    left: 32px;
+    right: 266px;
     top: 198px;
     flex-direction: column;
     max-width: 317px;
@@ -801,39 +810,36 @@
     left: 32px;
     margin-top: 0;
   }
-}
-@media screen and (min-width: 1144px) {
-  .halfboxOneWrapper {
-    padding-left: 0;
-  }
-  .phase0 {
-    max-width: 1220px;
-    padding: 64px;
-    padding-bottom: 0;
-  }
-  .phase1 .phaseTitle,
-  .phase4 .phaseTitle {
-    left: auto;
-    right: 120px;
-    margin-top: 0;
-  }
-  .phase1 .details,
-  .phase4 .details {
-    left: auto;
-    right: 225px;
-  }
-}
-@media screen and (min-width: 1200px) {
-  .phase.phase3 .phaseWrapper,
-  .assets {
-    max-width: 880px;
-  }
   .assets {
     margin-bottom: 128px;
   }
-  .asset {
-    margin-right: 16px;
-    margin-left: 16px;
+  .interludeBall {
+    left: 35%;
+  }
+  .interludeBall2 {
+    left: -85%;
+  }
+  .interludeBall3 {
+    top: -60%;
+    left: 40%;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .phase0 {
+    max-width: 986px;
+  }
+  .phase.phase3 .phaseWrapper {
+    max-width: 880px;
+  }
+  .assets {
+    max-width: 944px;
+    margin-bottom: 128px;
+  }
+  .asset,
+  .asset:nth-of-type(n + 13) {
+    margin-right: 10px;
+    margin-left: 10px;
     margin-bottom: 16px;
   }
 }
