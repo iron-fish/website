@@ -430,7 +430,10 @@ function Roadmap() {
             { image, features = [], subtitle, date, description, children },
           ]) =>
             image ? (
-              <div className={styles.imagebox} key={phase}>
+              <div
+                key={phase}
+                className={clsx(styles.imagelude, styles[phase])}
+              >
                 {image}
               </div>
             ) : (

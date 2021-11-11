@@ -53,6 +53,15 @@
 .relativeBreakpoint::before {
   color: rgba(255, 0, 0, 0.1);
 }
+
+.imagebox {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
 .ruler {
 }
 .toolkit {
@@ -602,14 +611,10 @@
     flex-direction: row;
     flex-wrap: wrap;
   }
-  .interlude.interlude0,
-  .interlude.leaderboard,
   .phase.phase2,
   .phase.phase1,
   .phase.phase4,
-  .interlude.wallet,
-  .interlude.bridges,
-  .interlude.walletAlt {
+  .imagelude {
     width: 50%;
   }
   .phase.phase1 {
