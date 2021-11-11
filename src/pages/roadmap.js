@@ -209,7 +209,7 @@ const AssetConnection = ({ size = 15 }) => {
           return (
             <Asset
               asset={raw}
-              key={x + i}
+              key={x + "-" + i}
               flipped={flipped}
               update={$update}
               name={x}
@@ -430,7 +430,9 @@ function Roadmap() {
             { image, features = [], subtitle, date, description, children },
           ]) =>
             image ? (
-              <>{image}</>
+              <div className={styles.imagebox} key={phase}>
+                {image}
+              </div>
             ) : (
               <section
                 className={clsx(styles.phase, styles[phase])}
