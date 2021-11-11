@@ -283,7 +283,7 @@ function Careers() {
                   We want you to take the time you need to relax and recharge.
                   In addition to 12 federal holidays and an office closure for
                   winter break, we offer a generous time-off policy. For
-                  salaried employees, we have a flexible vacation and sick days,
+                  salaried employees, we have flexible vacation and sick days,
                   where you can take as much time as you think is appropriate.
                 </p>
               </div>
