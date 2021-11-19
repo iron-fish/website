@@ -35,26 +35,46 @@ A block with an invalid transaction will be rejected by other nodes — so befor
 
 #### Difficulty
 
-The purpose of the difficulty is simple. It is adjusted, if needed, at every block to make it harder or easier for miners to produce blocks such that new blocks are added to the blockchain every 10 to 20 seconds (with an average of 15 seconds). If the network (e.g. all the nodes in the network) has not produced a block in over 20 seconds, the difficulty for the upcoming block is decreased (in comparison to the previous block’s difficulty) every second until a block is produced (or minimum difficulty is met). Conversely, if a miner wishes to produce a block in under 10 seconds, the difficulty for a block with that timestamp would be greater than that of the previous block.
+The target time for an Iron Fish block is currently set to 60 seconds. This is subject to change.
 
-The Iron Fish difficulty calculation is largely influenced by Ethereum’s difficulty calculation as described in [EIP-2](https://eips.ethereum.org/EIPS/eip-2), with a few differences. The pseudocode for calculating difficulty is as follows:
+The purpose of the difficulty is simple. It is adjusted, if needed, at every block to make it harder or easier for miners to produce blocks such that new blocks are added to the blockchain every 55 to 65 seconds (with an average of 60 seconds). If the network (e.g. all the nodes in the network) has not produced a block in over 65 seconds, the difficulty for the upcoming block is decreased (in comparison to the previous block’s difficulty). Conversely, if a miner wishes to produce a block in under 55 seconds, the difficulty for a block with that timestamp would be greater than that of the previous block.
+
+The Iron Fish difficulty calculation is largely influenced by Ethereum’s difficulty calculation as described in [EIP-2](https://eips.ethereum.org/EIPS/eip-2), with a few differences.
+
+To determine difficulty for an upcoming block, we first calculate the time “bucket” that the block belongs to. A time bucket is defined as how far away (in intervals of 10 seconds) the block’s timestamp is away from the desired range of 55 to 65 seconds after the previous block. An upcoming block that is 45-55 seconds after the previous block would have a time bucket value of -1, a block that is 35-45 seconds after the previous block would have a time bucket value of -2, and so on:
+
+| Time (in seconds) after previous block | bucket |
+| -------------------------------------- | :----: |
+| 0-5                                    |   -6   |
+| 5-15                                   |   -5   |
+| 15-25                                  |   -4   |
+| 25-35                                  |   -3   |
+| 35-45                                  |   -2   |
+| 45-55                                  |   -1   |
+| 55-65                                  |   0    |
+| 65-75                                  |   1    |
+| 75-85                                  |   2    |
+| 85-95                                  |   3    |
+| ... and so on (max value capped at 99) |        |
+
+We use the time bucket to then adjust difficulty for the upcoming block relative to the difficulty of the last block. The pseudocode for calculating difficulty is as follows:
 
 ```js
-const diffTime = time.getTime() - previousBlockTime.getTime();
-const diffInSeconds = diffTime / 1000;
-const sign = max(1 - floor(diffInSeconds / 10), -99);
-const offset = previousBlockDifficulty / 2048;
+const diffInSeconds =
+  (time.getTime() - previousBlockTimestamp.getTime()) / 1000;
 
-const difficulty = max(previousBlockDifficulty + offset * sign, MIN_DIFFICULTY);
+const difficulty =
+  previousBlockDifficulty -
+  (previousBlockDifficulty / BigInt(2048)) * BigInt(bucket);
+
+return BigIntUtils.max(difficulty, Target.minDifficulty());
 ```
 
-Currently, `MIN_DIFFICULTY` is `131072`, but this is subject to change.
-
-If the time difference between the upcoming block’s timestamp and the previous block’s timestamp is between 10 and 20 seconds, then the difficulty is not changed and difficulty for the new upcoming block is simply the last block’s difficulty. If, however, the time difference between those blocks is below 10 seconds, then the difficulty is increased by a factor of `difficultyStep * timeDifference`; otherwise it is decreased by the same amount.
+Currently, `Target.minDifficulty()` is `131072`, but this is subject to change.
 
 #### Target
 
-We’ve discussed adjusting difficulty to ensure 10-20 seconds between blocks — we do this by adjusting a target, which is a number that the block hash needs to fall under (e.g. be numerically less than the target).
+We’ve discussed adjusting difficulty to ensure 55-65 seconds between blocks — we do this by adjusting a target, which is a number that the block hash needs to fall under (e.g. be numerically less than the target).
 
 The target is calculated from the [difficulty](https://docs.google.com/document/d/14KRwTuWNnLM6sKbItjB8agFaATDj02rktFBArpB92vI/edit#heading=h.v86augr5aqao) given this formula:
 `target = 2**256 / difficulty `
@@ -71,9 +91,22 @@ $$g (x) = \frac s 4 \cdotp e^{k \cdotp floor(x)}$$
 
 Where <em>s</em> is the initial supply of the genesis block of 42 million coins, <em>k</em> is the decay factor of -.05, and <em>x</em> is the year after mainnet launch (starting from 0).
 
-The Iron Fish “year” in block count is 2,100,000 blocks to one calendar year (assuming roughly 15 second block times). This means that by the end of the first Iron Fish “year,” 10.5 million new coins will be created through block rewards, 9.988 million new coins will be created in the subsequent year, 9.501 million new coins after that, and so on.
+The Iron Fish “year” in block count is 525,600 blocks to one calendar year (assuming 60 second block times). We use the above formula to calculate the block reward using the Iron Fish "year", rounded to the nearest .125 of a coin:
 
-Given that the genesis block is 42 million coins, and the total supply increase for the first year is 10.5 million coins, then the block reward per block for that year is simply the total year’s increase of coins divided by yearly block count: `10,500,000 / 2,100,000 == 5`. This means that the block reward for the first Iron Fish “year,” given these parameters, would be 5 coins (not including transaction fees).
+$$blockReward = mRound(\frac{\frac s 4 \cdotp e^{k \cdotp floor(x)}} {525,600}, 0.125)$$
+
+Therefore the block reward and total supply for the first few years after launch would be:
+
+| Years after launch | Block reward (60s block times) | Total supply  |
+| ------------------ | :----------------------------: | :-----------: |
+| 0                  |               0                | 42,000,000.00 |
+| 0-1                |               20               | 52,512,000.00 |
+| 1-2                |               19               | 62,498,400.00 |
+| 2-3                |             18.125             | 72,024,900.00 |
+
+The emissions curve using the above mentioned block reward formula, with a cap of 256,970,400 coins for total supply, would look like this:
+
+<img src ="/img/whitepaper/mining/emissions_curve.svg" width="100%" role="presentation" style={{paddingRight:'25px'}} />
 
 To claim the block reward for successfully mining a new block, the miner constructs a special miner fee transaction in the block header. The value of the miner fee transaction is publicly visible so that others can verify that it is exactly the block reward plus all the transaction fees from the transactions included in that block. The recipient’s address for that miner fee transaction remains hidden. Learn more about the miner reward in the Transaction Creation section.
 

@@ -54,7 +54,7 @@ The structure of an Iron Fish transaction is constructed with these parts:
 - **Transaction Fee**: The fee (in plaintext) that’ll go to any miner that successfully includes this transaction in a block.
 - **Spends**: The list of [Spend Descriptions](6_transaction.md#spend-description).
 - **Outputs**: The list of [Output Descriptions](6_transaction.md#output-description).
-- **Binding** Signature: A binding signature that both signs the transaction and is used to [verify](6_transaction.md#transaction-verification) that it [balances](6_transaction.md#transaction-balancing) — meaning that it did not destroy or create money out of thin air, and that indeed all the funds in the spend descriptions minus the funds in the output descriptions equal to transaction fee. The message that is signed here is the transaction hash, which is a blake2b hash of the serialized transaction fee, spend descriptions and output descriptions.
+- **Binding Signature**: A binding signature that both signs the transaction and is used to [verify](6_transaction.md#transaction-verification) that it [balances](6_transaction.md#transaction-balancing) — meaning that it did not destroy or create money out of thin air, and that indeed all the funds in the spend descriptions minus the funds in the output descriptions equal to transaction fee. The message that is signed here is the transaction hash, which is a blake2b hash of the serialized transaction fee, spend descriptions and output descriptions.
 
 Remember that the miner’s reward for mining a block is also a type of a transaction. We’ll go over the miners reward transaction and cover all these transaction concepts in greater detail further along in this section.
 
@@ -103,9 +103,9 @@ $$rsk == ask * α$$
 
 Where `rsk` is the private key of the randomized public key, `ask` is the private key of the authorization key, and `α` is the randomness
 
-$$rk == (ask + α) * G_{spendingkeygenerator}$$
+$$rk == (ask + α) * G_{spendingKey}$$
 
-(which is the same as $$rk = α *  G_{spendingkeygenerator} + ak$$ since $$ak = ask * G_{spendingkeygenerator}$$)
+(which is the same as $$rk = α *  G_{spendingKey} + ak$$ since $$ak = ask * G_{spendingKey}$$)
 
 The **sig** is the signature that signs the transaction hash of the transaction the Spend description is in using the randomized key (**rk**).
 
@@ -115,37 +115,37 @@ And finally, we have the proof, which is a Groth16 zk-SNARK proof verifying in z
 
 The **private** parameters that are used to generate the proof (and are not revealed afterwards) are:
 
-| Element         |                          Description                          |
-| :-------------- | :-----------------------------------------------------------: |
-| $$merkle path$$ |      the Merkle path to the commitment note being spent       |
-| $$position$$    |       the position of the commitment note (e.g. index)        |
-| $$gd$$          |    the diversifier of the public address owning this note     |
-| $$pkd$$         |               the transmission key of the owner               |
-| $$v$$           |                       value of the note                       |
-| $$rcv$$         |   randomness used in the Pedersen Hash for value commitment   |
-| $$cm$$          |            note commitment of the note being spent            |
-| $$rcm$$         | the randomness used in the Pedersen Hash for note commitment  |
-| $$α$$           | alpha used to hide the authorization key that signs the spend |
-| $$ak$$          |      the owner’s authorization key (that was randomized)      |
-| $$nsk$$         |      the proof authorization key used for the nullifier       |
+| Element        |                          Description                          |
+| :------------- | :-----------------------------------------------------------: |
+| $$merklePath$$ |      the Merkle path to the commitment note being spent       |
+| $$position$$   |       the position of the commitment note (e.g. index)        |
+| $$g_d$$        |    the diversifier of the public address owning this note     |
+| $$pk_d$$       |               the transmission key of the owner               |
+| $$v$$          |                       value of the note                       |
+| $$rcv$$        |   randomness used in the Pedersen Hash for value commitment   |
+| $$cm$$         |            note commitment of the note being spent            |
+| $$rcm$$        | the randomness used in the Pedersen Hash for note commitment  |
+| $$α$$          | alpha used to hide the authorization key that signs the spend |
+| $$ak$$         |      the owner’s authorization key (that was randomized)      |
+| $$nsk$$        |      the proof authorization key used for the nullifier       |
 
 The **merkle path** is the Merkle path from the given root (the **rt**, root anchor) to the note being spent (specifically its note commitment), using Pedersen hashes. The proof verifies that the path is valid and correct, and that the given **position** is the correct position for the note’s commitment in the Merkle tree at the lowest level, (you can think of the position like an entry in an index).
 
 The $$g_d$$ is the diversifier (converted into an affine point on the Jubjub curve) of the sender, and $$pk_d$$ being the transmission key of the sender. The proof checks that $$g_d$$ is not of small order and that $$pk_d$$ was properly computed.
 
-Remember that $$pk_d = g_d * ivk$$ (the incoming view key). Even though the incoming view key isn’t passed in here directly, we have everything we need to recompute it since _ivk_ is derived from hashing (using the blake2s hash function) the authorization key (_ak_) and nullifier deriving key (_nk_) along with some params. We don’t have the nullifier deriving key (_nk_) directly here either, but we can derive it using the passed in proof authorization key (_nsk_) since $$nk = G_{proof\_generation\_key} * nsk$$.
+Remember that $$pk_d = g_d * ivk$$ (the incoming view key). Even though the incoming view key isn’t passed in here directly, we have everything we need to recompute it since _ivk_ is derived from hashing (using the blake2s hash function) the authorization key (_ak_) and nullifier deriving key (_nk_) along with some params. We don’t have the nullifier deriving key (_nk_) directly here either, but we can derive it using the passed in proof authorization key (_nsk_) since $$nk = G_{proofGenerationKey} * nsk$$.
 
 Also remember that the value commitment is computed as $$cv = v * G_v + rcv * G_{rcv}$$ and so we pass in the value (**v**) and the randomness for the value (**rcv**) into the proof to validate the construction of the value commitment.
 The note commitment (**cm**) is a Pedersen commitment (resulting in a full point) of the note’s contents (value(v), $$g_d$$, $$pk_d$$) and the randomness used for the note commitment (**rcm**)
-$$cm = pedersen\_hash(v, g_d, pk_d) + rcm * G_{notecommitmentrandomness}$$
+$$cm = pedersenHash(v, g_d, pk_d) + rcm * G_{noteCommitmentRandomness}$$
 
-The alpha (α) along with the authorization key (ak) is used to construct the randomized public key that is used to sign the spend description. Here in the proof we verify that that the randomized key was created correctly by verifying that:
+The alpha $$α$$ along with the authorization key $$ak$$ is used to construct the randomized public key that is used to sign the spend description. Here in the proof we verify that that the randomized key was created correctly by verifying that:
 
-$$rk = α *  G_{spendingkeygenerator} + ak$$
+$$rk = α *  G_{spendingKey} + ak$$
 
-Finally, we check that the nullifier is computed correctly. The proof first checks that $$nk = nsk * G_{proof\_generation\_key}$$ and then checks that the nullifier was indeed computed as:
+Finally, we check that the nullifier is computed correctly. The proof first checks that $$nk = nsk * G_{proofGenerationKey}$$ and then checks that the nullifier was indeed computed as:
 
-$$nf = blake2s(nk \enspace | \enspace cm + note \_ position * G_{nullifierposition})$$
+$$nf = blake2s(nk \enspace | \enspace cm + note \_ position * G_{nullifierPosition})$$
 
 In summary, the proof checks:
 
@@ -209,7 +209,7 @@ Where **rcv** is the randomness for the value commitment and is a private parame
 
 The **cm** is the note commitment (as a Pedersen commitment) for the new note being created that is added to the Merkle tree of notes by the miner who mines the transaction containing this Output description. It is computed as:
 
-$$cm = pedersen\_hash(v, g_d, pk_d) + rcm * G_{note\_commitment\_randomness}$$
+$$cm = pedersenHash(v, g_d, pk_d) + rcm * G_{noteCommitmentRandomness}$$
 
 Where **rcm** is is the note commitment randomness used in this Pedersen commitment computation, and verified in the zero-knowledge proof.
 
@@ -249,7 +249,7 @@ The proof validates that:
 1. $$g_d$$ for the recipient is not of small order and that the ephemeral public key was computed as:
    $$epk = g_d * esk$$
 2. That the value commitment (**cm**) is properly computed as a Pedersen commitment of:
-   $$cm = pedersen\_hash(v, g_d, pk_d) + rcm * G_{note\_commitment\_randomness}$$
+   $$cm = pedersenHash(v, g_d, pk_d) + rcm * G_{noteCommitmentRandomness}$$
 
 ### Adding a Merkle Tree Note from the Outgoing description
 
@@ -396,7 +396,7 @@ The Output description stores this note in its encrypted form as $$C^{enc}$$.
 
 #### Note Encryption by the Sender
 
-The sender has to know the recipient’s public key, which is a combination of the transmission key and the diversifier ($$d$$, $$pk_d$$). With this information, the sender’s wallet can create a **shared_secret** with which to encrypt the note such that the recipient’s incoming view key can decrypt it. Let’s go over how the sender’s wallet creates this shared secret.
+The sender has to know the recipient’s public key, which is a combination of the transmission key and the diversifier ($$d$$, $$pk_d$$). With this information, the sender’s wallet can create a **sharedSecret** with which to encrypt the note such that the recipient’s incoming view key can decrypt it. Let’s go over how the sender’s wallet creates this shared secret.
 
 1. The sender’s wallet generates a random number and uses it to create an ephemeral secret key (**esk**) by converting this number to a scalar on the Jubjub curve.
 2. It then creates an _ephemeral public key_ (**epk**) by using scalar multiplication between the diversifier of the recipient represented as a field point and esk. This ephemeral public key is a publicly known component of the Output description and is seen by everyone.
@@ -404,11 +404,11 @@ The sender has to know the recipient’s public key, which is a combination of t
    1. $$epk = esk * g_d$$
    2. Note: $$g_d$$ is the diversifier, $$d$$, represented as a field a point on the Jubjub curve so we can do scalar multiplication (elliptic curve multiplication) using it.
 
-3. It then derives a **shared_secret** using Diffie Hellman Key Exchange between esk and pkd (diversified public address of the recipient):
+3. It then derives a **sharedSecret** using Diffie Hellman Key Exchange between esk and pkd (diversified public address of the recipient):
 
-   1. $$shared\_secret =  esk * pk_d$$
+   1. $$sharedSecret =  esk * pk_d$$
 
-4. The note is then encrypted using the **shared_secret** and a form of symmetric encryption (specifically ChaCha20Poly1305 symmetric encryption algorithm).
+4. The note is then encrypted using the **sharedSecret** and a form of symmetric encryption (specifically ChaCha20Poly1305 symmetric encryption algorithm).
 
 #### Note Decryption by the Recipient
 
@@ -416,34 +416,34 @@ The recipient’s wallet can then decrypt the encrypted note in the Outgoing des
 Remember that the recipient’s transmission key ($$pk_d$$) is derived from the diversifier (converted to a point on the Jubjub curve as $$g_d$$) and the incoming view key: $$pk_d = g_d * ivk$$
 
 The recipient’s wallet can then calculate the shared secret using the epk (ephemeral public key) provided on the Outgoing description:
-$$shared\_secret = epk * ivk$$
+$$sharedSecret = epk * ivk$$
 
-This is the same shared_secret that the sender’s wallet used.
+This is the same sharedSecret that the sender’s wallet used.
 Note that:
 
 $$epk = esk * g_d\\pk_d = g_d * ivk$$
 
 The recipient’s wallet calculates:
 
-$$shared\_secret = epk * ivk = esk * g_d * ivk$$
+$$sharedSecret = epk * ivk = esk * g_d * ivk$$
 
 The sender’s wallet calculates:
 
-$$shared\_secret = esk * pkd = esk * g_d * ivk$$
+$$sharedSecret = esk * pkd = esk * g_d * ivk$$
 
-Now the recipient’s wallet can use the same symmetric encryption algorithm (ChaCha20Poly1305) to use the **shared_secret** and decrypt the $$C^{enc}$$ field on the Output description.
+Now the recipient’s wallet can use the same symmetric encryption algorithm (ChaCha20Poly1305) to use the **sharedSecret** and decrypt the $$C^{enc}$$ field on the Output description.
 
 #### Note Decryption by the Sender Using the Sender’s Outgoing View Key
 
 If at some later time after the transaction has been sent, the sender’s wallet needs to recreate the transaction history and decrypt the notes it sent in the past, it can do that with the help of the outgoing view key.
 
-Remember that initially the sender’s wallet was able to encrypt the note plaintext (using the symmetric encryption algorithm ChaCha20Poly1305) into $$C^{enc}$$ by calculating a shared secret as $$shared\_secret =  esk * pk_d$$.
+Remember that initially the sender’s wallet was able to encrypt the note plaintext (using the symmetric encryption algorithm ChaCha20Poly1305) into $$C^{enc}$$ by calculating a shared secret as $$sharedSecret =  esk * pk_d$$.
 
 Since the sender’s wallet doesn’t have access to either $$esk$$ or $$pk_d$$ after the transaction has been sent, that information is stored in the second encrypted field on the Outgoing description: the $$C^{out}$$ field. This field is created by the sender of the transaction at the time it is made and stored on the Output description.
 
 The $$C^{out}$$ field is an encryption of ($$esk$$, $$pk_d$$) concatenated together, also using the symmetric ChaCha20Poly1305 encryption algorithm. The symmetric key used for $$C^{out}$$ is calculated as
 
-$$symmetric\_encryption\_key = blake2b_hash(ovk, cv, cm, epk)$$
+$$symmetricEncryptionKey = blake2bHash(ovk, cv, cm, epk)$$
 
 where **ovk** is the wallet’s outgoing view key, and the rest of the fields are taken from the Output description.
 
@@ -458,4 +458,4 @@ Output Description:
 | $$C^{out}$$ | encrypted blob that allows the holder of the viewing key to decrypt a decryption key for $$C^{enc}$$ |
 | $$proof$$   |                                       the zero-knowledge proof                                       |
 
-At any given time, the holder of the outgoing view key (e.g. a wallet) can recreate the symmetric_encryption_key to decrypt the $$C^{out}$$ field to retrieve ($$esk$$, $$pk_d$$). Then, using ($$esk$$, $$pk_d$$) the wallet can recreate the $$shared\_secret =  esk * pk_d$$ and decrypt the $$C^{enc}$$ field to finally retrieve the plaintext.
+At any given time, the holder of the outgoing view key (e.g. a wallet) can recreate the $$symmetricEncryptionKey$$ to decrypt the $$C^{out}$$ field to retrieve ($$esk$$, $$pk_d$$). Then, using ($$esk$$, $$pk_d$$) the wallet can recreate the $$sharedSecret =  esk * pk_d$$ and decrypt the $$C^{enc}$$ field to finally retrieve the plaintext.

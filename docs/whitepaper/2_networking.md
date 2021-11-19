@@ -21,7 +21,7 @@ As a new node starts up, the following happens:
 1. The new node randomly selects one bootstrap node from a provided list, and opens a WebSocket connection to it. If a user has a specific node they want to connect to during this step, they can use the config file or the command line to specify their own preferred bootstrap node(s). The bootstrap node sends its identity to the new node.
 2. The bootstrap node broadcasts a peer list to the new node.
 3. Using that list, the new node decides which peers to connect to.
-4. The 3rd step is repeated with every new peer the node connects with, until the maximum amount of connections (up to 256) is made.
+4. The 3rd step is repeated with every new peer the node connects with, until the maximum amount of connections (up to 50) is made.
 5. In order to maximize the strength of our network and to prevent network fragmentation, the node will prioritize connecting to peers that relatively few of the known peers are currently connected to.
 
 As an end user, all this happens without you having to do anything, or even be aware of it. When you start a node, from your end, all you’ll see is your node connecting to a bootstrap node, and then quickly to many others.
