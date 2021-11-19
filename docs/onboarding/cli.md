@@ -104,6 +104,12 @@ Starts a miner and subscribe to new blocks for the node. The node has to be sync
 ironfish miners:start
 ```
 
+#### miners:mined
+List mined block hashes
+```sh
+ironfish miners:mined [START] [STOP]
+```
+
 ### Networking
 #### peers:list
 Displays the list of peers connected to the node.
@@ -116,6 +122,12 @@ Displays the list of peers with live update.
 
 ```sh
 ironfish peers:list -f
+```
+
+#### peers:show
+Displays info about a peer
+```sh
+ironfish peers:show [IDENTITY]
 ```
 
 ### Accounts / Wallet
@@ -171,8 +183,39 @@ ironfish faucet
 ```
 
 ### Chain
+#### chain:block
+Show the block header of a requested hash
+```sh
+ironfish chain:block
+```
+
+#### chain:export
+Export a part of the chain database to JSON
+```sh
+ironfish chain:export [START] [STOP]
+```
+
+#### chain:forks
+Try to detect forks that are being mined
+```sh
+ironfish chain:forks
+```
+
+#### chain:repair
+Rebuild the main chain to fix corruption
+```sh
+ironfish chain:repair
+```
+
 #### chain:show
 Shows the heaviest head and tail of the node's chain. Includes the last ten blocks in the chain.
 ```sh
 ironfish chain:show
+```
+
+### Workers
+#### workers:status
+Shows the status of the worker pool
+```sh
+ironfish workers:status
 ```
