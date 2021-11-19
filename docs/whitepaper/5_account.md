@@ -96,7 +96,7 @@ The public address is a 43-byte number (11 bytes for diversifier + 32 bytes for 
 <br />
 <br />
 
-_The diversifier is converted into a point on the Jubjub curve, represented as $$g_{d'}$$, and is used to derive the transmission key. Concatenated together, the diversifier and the transmission key make up the public address.\_
+The diversifier is converted into a point on the Jubjub curve, represented as $$g_{d}$$, and is used to derive the transmission key. Concatenated together, the diversifier and the transmission key make up the public address.
 
 And that’s it! Those are all the parts of the account. The complexity of this construction comes from separating out the spending power from the viewing keys. This way, the account is constructed such that the keys responsible for spending notes are not the same ones used to decrypt information in the transactions.
 
