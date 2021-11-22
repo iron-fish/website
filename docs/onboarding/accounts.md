@@ -71,15 +71,20 @@ To display the balance of the account
 ironfish accounts:balance
 ```
 
-### Send a transaction
-To send a transaction from the current account
-```sh
-ironfish accounts:pay
-```
-
 ### Account deletion
 To delete an account
 ```sh
 ironfish accounts:remove MyAccount
 ```
 
+### Send a transaction
+To send a transaction from the current account
+```sh
+ironfish accounts:pay
+```
+
+### Rescan transactions
+To reset your wallet and attempt to rebuild it from scratch
+```sh
+ironfish accounts:rescan
+```
