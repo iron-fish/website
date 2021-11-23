@@ -13,7 +13,7 @@ import Ironfish from '../../src/theme/components/Terminal/Ironfish'
 
 ### Homebrew
 
-> **Note:** Our Homebrew tap does not yet support **M1/arm64**. However, you can install Iron Fish directly [from the source](#from-source) [with these workarounds](https://github.com/iron-fish/ironfish/issues/9#issuecomment-814928578) or [use Docker](#using-docker) with x86_64 support.
+> **Note:** Our Homebrew tap does not yet support **M1/arm64**. However, you can install Iron Fish directly [from the source](#from-source) or [use Docker](#using-docker) with x86_64 support.
 
 Start by adding our Homebrew tap and installing Iron Fish.
 
