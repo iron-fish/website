@@ -9,13 +9,6 @@ import Ethereum from "../theme/RoadmapPage/ethereum.svg";
 
 const { useState, useEffect, useCallback } = React;
 
-const SOME_COPY_NEEDED = (
-  <span style={{ color: "lime" }}>
-    some copy needed here. some copy needed here. some copy needed here. some
-    copy needed here. some copy needed here.
-  </span>
-);
-
 const Breakpoint = ({ at, horizontal = true }) => {
   const value = horizontal ? at : at.slice(1);
   const isVertical = at.startsWith("v");
@@ -239,13 +232,15 @@ const data = {
     <div className={styles.roadmap}>
       <div className={clsx(styles.halfbox, styles.halfboxOne)}>
         <div className={styles.halfboxOneWrapper}>
-          <h1 className={styles.cta}>Universal Privacy Layer for Crypto</h1>
+          <h1 className={styles.cta}>
+            Roadmap to Universal Privacy Layer for Crypto
+          </h1>
           <p className={styles.mainIntro}>
-            We’re building Iron Fish to be the universal privacy layer for
-            crypto—a true SSL layer for blockchains. <br />
-            <br />
-            Why build a new chain? Why can’t this live on existing blockchain?{" "}
-            <a href="/faq">Learn more here</a>
+            At Iron Fish we have one goal: enable private cryptocurrency
+            transactions. We’re building Iron Fish to be the universal privacy
+            layer for crypto, enabling users transfer assets from other
+            blockchains to Iron Fish for fully private transactions on any
+            asset—a true SSL layer for blockchains.
           </p>
         </div>
       </div>
@@ -262,36 +257,35 @@ const data = {
         {
           icon: "core-node",
           title: "Core Node Features",
-          description:
-            "Proof of work chain consensus, stable syncing, 15 second block times, node and account APIs, and a default miner.",
+          itemList: [
+            "Proof of Work consensus",
+            "Stable syncing",
+            "Rich CLI for node and wallet support",
+            "Built in miner for faster onboarding",
+          ],
         },
         {
           icon: "cash",
-          title: "Network Layer",
+          title: "Private Transactions",
           description:
-            "We are building a network layer using WebRTC and Websockets for perfect, frictionless network participation.",
+            "The Iron Fish node uses zero-knowledge proofs to provide the strongest privacy guarantees available on every transaction.",
         },
         {
           icon: "arrow-back-and-forth",
-          title: "Private Transactions",
+          title: "Frictionless Network Layer",
           description:
-            "We are offering fully private transactions using modified Sapling design. Privacy is at the heart of what we believe in.",
+            "The Iron Fish network layer uses WebRTC with Websockets for a user-friendly and frictionless network participation.",
         },
       ],
     },
     phase1: {
       features: [
         {
-          icon: "pan-and-zoom",
-          title: "Stabilize",
-          description:
-            "Stabilize core node features (we want to hear from you! Join our Discord channel to provide feedback)",
-        },
-        {
           icon: "bank",
           title: "Incentivized Testnet",
-          description:
-            "Incentivized testnet dashboard and leaderboard offers users a gamified experience.",
+          description: `The incentivized testnet will track member participation in leaderboard points and help us stabilize the node. Points will lead to future mainnet Iron Fish coins for eligible participants.`,
+          ctaLink: "https://testnet.ironfish.network/about",
+          ctaText: "Curious? Learn more",
         },
       ],
     },
@@ -323,13 +317,12 @@ const data = {
       features: [
         {
           icon: "foursquare",
-          title: "Node Dashboard",
-          description: SOME_COPY_NEEDED,
-        },
-        {
-          icon: "wallet",
-          title: "Desktop Wallet",
-          description: SOME_COPY_NEEDED,
+          title: "Node Dashboard & Desktop Wallet",
+          description:
+            "A core belief at Iron Fish is that privacy and ease-of-use are not in opposition. We'll be working hard on releasing an intuitive and beautiful Node Dashboard and Desktop Wallet. ",
+          ctaText:
+            "Want to a sneak preview? Join our design channel on Discord",
+          ctaLink: "https://discord.gg/6kQdGZdm7S",
         },
       ],
     },
@@ -346,8 +339,9 @@ const data = {
       ),
     },
     phase3: {
-      subtitle: "Multi Asset Support",
-      description: SOME_COPY_NEEDED,
+      subtitle: "Multi-Asset & Bridge Support",
+      description:
+        "At Iron Fish we have one goal: enable private cryptocurrency transactions. We’ll work on enabling multi-asset support and bridges between Iron Fish and other chains, letting users transfer assets from other blockchains to Iron Fish for fully private transactions on any asset. We’re building Iron Fish to be the universal privacy layer for crypto—a true SSL layer for blockchains.",
       features: [],
       children: <AssetConnection />,
     },
@@ -355,13 +349,9 @@ const data = {
       features: [
         {
           icon: "chain",
-          title: "Cross-Chain Bridge Support",
-          description: SOME_COPY_NEEDED,
-        },
-        {
-          icon: "life-preserver",
-          title: "Level 2 Support",
-          description: SOME_COPY_NEEDED,
+          title: "Layer-2 Support",
+          description:
+            "We understand that scalability is paramount for adoption. We'll be working with major Layer 2 providers to enable fast and frictionless transactions on Iron Fish.",
         },
       ],
     },
@@ -378,12 +368,13 @@ const data = {
       ),
     },
     mainnet: {
-      subtitle: "Iron Fish Mainnet!",
+      subtitle: "Final Phase—Iron Fish Mainnet!",
       children: (
         <div className={styles.mainblock}>
           <p>
-            Our mainnet is an independent blockchain operating on its own
-            network with its own technology and protocol. Fake copy fake copy.
+            Iron Fish is a new Layer-1 Proof of Work blockchain that uses
+            zero-knowledge proofs to provide the strongest privacy guarantees
+            available on every transaction, even for assets on other chains.
           </p>
           <img
             className={styles.fishweb}
@@ -392,10 +383,18 @@ const data = {
           />
           <p>
             Want to be a part of building the universal privacy layer for all
-            crypto assets? Click here to get started with running an Iron Fish
-            node, check out our github for open source contributions, join our
-            Discord to ask questions or give feedback, or join the core Iron
-            Fish team!
+            crypto assets? Click{" "}
+            <a href="https://ironfish.network/docs/onboarding/iron-fish-tutorial">
+              {" "}
+              here
+            </a>{" "}
+            to get started with running an Iron Fish node, check out our{" "}
+            <a href="https://github.com/iron-fish/ironfish"> github</a> for open
+            source contributions, join our{" "}
+            <a href="https://discord.gg/EkQkEcm8DH">Discord</a> to ask questions
+            or give feedback, or check out our{" "}
+            <a href="https://angel.co/company/iron-fish">Careers</a> to join the
+            core Iron Fish team!
           </p>
         </div>
       ),
@@ -403,13 +402,29 @@ const data = {
   },
 };
 
-const Feature = ({ icon, title, description }) => (
+const Feature = ({
+  icon,
+  title,
+  description,
+  itemList = [],
+  ctaLink,
+  ctaText,
+}) => (
   <div className={styles.detail}>
     <div className={styles.detailIcon}>
       <img src={`/img/roadmap/${icon}.svg`} alt={icon} />
     </div>
     <h3 className={styles.detailTitle}>{title}</h3>
     <p className={styles.detailDescription}>{description}</p>
+    <ul>
+      {itemList.map((element) => (
+        <li className={styles.detailDescription}>{element}</li>
+      ))}
+    </ul>
+
+    <a className={styles.detailDescription} href={ctaLink}>
+      {ctaText}
+    </a>
   </div>
 );
 

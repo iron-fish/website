@@ -497,6 +497,18 @@
     margin-left: 32px;
     margin-right: 0;
   }
+  .details.total1 .detail {
+    margin: 0 16px;
+    width: calc(50% - 32px);
+  }
+  .details.total1 .detail:nth-of-type(odd) {
+    margin-right: 32px;
+    margin-left: 0;
+  }
+  .details.total1 .detail:nth-of-type(even) {
+    margin-left: 32px;
+    margin-right: 0;
+  }
   .interludeTestnetLeaderboard {
     height: 512px;
     width: 100%;
@@ -553,6 +565,19 @@
   .details.total2 .detail:nth-of-type(2) {
     margin-right: 0;
   }
+  .details.total1 {
+    max-width: 568px;
+  }
+  .details.total1 .detail {
+    max-width: 250px;
+    margin: 0 64px;
+  }
+  .details.total1 .detail:nth-of-type(1) {
+    margin-left: 0;
+  }
+  .details.total1 .detail:nth-of-type(2) {
+    margin-right: 0;
+  }
   .details.total3 .detail {
     width: calc(33.333333% - 36px);
     margin: 0 54px;
@@ -564,6 +589,9 @@
     margin: 0;
   }
   .details.total2 .detail {
+    padding-bottom: 0;
+  }
+  .details.total1 .detail {
     padding-bottom: 0;
   }
   .interludeBall3 {
