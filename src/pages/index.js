@@ -21,7 +21,7 @@ const features = [
     className: "sectionPrivacyLayer",
     title: "Universal privacy layer for all assets",
     description:
-      "We’re building Iron Fish to provide the strongest level of privacy for many more assets, even on other chains, with native multi-assets support and bridges to other chains.",
+      "We’re building Iron Fish to be the universal privacy layer for crypto, enabling users to bridge assets between Iron Fish and other chains for fully private transactions—a true SSL layer for blockchains.",
     buttonLink: "/roadmap",
     button: "See Our Roadmap",
   },
