@@ -18,6 +18,14 @@ const features = [
     button: "Read Our Whitepaper",
   },
   {
+    className: "sectionPrivacyLayer",
+    title: "Universal privacy layer for all assets",
+    description:
+      "We’re building Iron Fish to be the universal privacy layer for crypto, enabling users to bridge assets between Iron Fish and other chains for fully private transactions—a true SSL layer for blockchains.",
+    buttonLink: "/roadmap",
+    button: "See Our Roadmap",
+  },
+  {
     className: "sectionCryptocurrency",
     title: "We care about usability",
     description:
@@ -88,9 +96,9 @@ function Home() {
         <div className={clsx(styles.sectionContainer)}>
           <header>
             <h1 className={clsx(styles.h1Title)}>
-              The Private
+              The Universal
               <br />
-              Cryptocurrency
+              Privacy Layer
             </h1>
             <Link
               className="button button--outline button--secondary"

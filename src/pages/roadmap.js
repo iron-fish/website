@@ -238,9 +238,9 @@ const data = {
           <p className={styles.mainIntro}>
             At Iron Fish we have one goal: enable private cryptocurrency
             transactions. We’re building Iron Fish to be the universal privacy
-            layer for crypto, enabling users transfer assets from other
-            blockchains to Iron Fish for fully private transactions on any
-            asset—a true SSL layer for blockchains.
+            layer for crypto, enabling users to bridge assets between Iron Fish
+            and other chains for fully private transactions—a true SSL layer for
+            blockchains.
           </p>
         </div>
       </div>

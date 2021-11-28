@@ -72,8 +72,17 @@
 .sectionPrivacyImg {
   background-image: url(/img/index/fish.svg);
 }
-.sectionCryptocurrency {
+.sectionPrivacyLayer {
   background-color: #ffcd85;
+}
+.sectionPrivacyLayerImg {
+  width: 648px;
+  height: 682px;
+  background-size: 648px auto;
+  background-image: url(/img/index/privacy_layer.gif);
+}
+.sectionCryptocurrency {
+  background-color: #fff;
 }
 .sectionCryptocurrencyImg {
   width: 585px;
@@ -91,7 +100,7 @@
 }
 .sectionBorderless {
   max-height: 894px;
-  background: #fff url(/img/index/globe.svg) no-repeat;
+  background: #ffc2eb url(/img/index/globe.svg) no-repeat;
   background-position: calc(100vw - 47vw) center;
 }
 .sectionRegulatory {
