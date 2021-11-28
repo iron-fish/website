@@ -192,7 +192,8 @@
 .detailDescription {
   margin: 0;
   padding: 0;
-  font-size: 16px;
+  font-size: 18px;
+  line-height: 28.98px;
 }
 .phase {
   padding: 64px 32px 0;

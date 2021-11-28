@@ -1,24 +1,24 @@
-import React from "react"
-import Layout from "@theme/Layout"
-import clsx from "clsx"
-import styles from "./roadmap.module.css"
-import Bitcoin from "../theme/RoadmapPage/bitcoin.svg"
-import Uniswap from "../theme/RoadmapPage/uniswap.svg"
-import Binance from "../theme/RoadmapPage/binance.svg"
-import Ethereum from "../theme/RoadmapPage/ethereum.svg"
+import React from "react";
+import Layout from "@theme/Layout";
+import clsx from "clsx";
+import styles from "./roadmap.module.css";
+import Bitcoin from "../theme/RoadmapPage/bitcoin.svg";
+import Uniswap from "../theme/RoadmapPage/uniswap.svg";
+import Binance from "../theme/RoadmapPage/binance.svg";
+import Ethereum from "../theme/RoadmapPage/ethereum.svg";
 
-const { useState, useEffect, useCallback } = React
+const { useState, useEffect, useCallback } = React;
 
 const SOME_COPY_NEEDED = (
   <span style={{ color: "lime" }}>
     some copy needed here. some copy needed here. some copy needed here. some
     copy needed here. some copy needed here.
   </span>
-)
+);
 
 const Breakpoint = ({ at, horizontal = true }) => {
-  const value = horizontal ? at : at.slice(1)
-  const isVertical = at.startsWith("v")
+  const value = horizontal ? at : at.slice(1);
+  const isVertical = at.startsWith("v");
   return (
     <div
       className={clsx({
@@ -29,8 +29,8 @@ const Breakpoint = ({ at, horizontal = true }) => {
       style={{ [horizontal ? "left" : "top"]: value }}
       data-value={value}
     />
-  )
-}
+  );
+};
 
 const points = [
   `450px`,
@@ -60,56 +60,56 @@ const points = [
   // "v896px",
   // "v960px",
   // "v1024px",
-]
+];
 
 // With a URL like: coolwebsite.com?nice=dope
 // const $nice = useQuery('nice') === 'dope'
 export function useQuery(key) {
   // our state
-  const [$query, $setQuery] = useState(null)
+  const [$query, $setQuery] = useState(null);
 
   useEffect(() => {
     // only for ze browser
-    if (typeof window === "undefined") return
+    if (typeof window === "undefined") return;
 
-    const parsed = new URLSearchParams((window.location.search || "").slice(1))
+    const parsed = new URLSearchParams((window.location.search || "").slice(1));
 
-    const value = parsed.get(key)
+    const value = parsed.get(key);
 
     if (typeof value === "string") {
-      $setQuery(value)
+      $setQuery(value);
     }
-  }, [$query, $setQuery, key])
-  return $query
+  }, [$query, $setQuery, key]);
+  return $query;
 }
 
 const ResponsiveToolkit = () => {
-  const [$active, $setActive] = useState(true)
-  const [$width, $setWidth] = useState(-1)
-  const [$point, $setPoint] = useState(0)
-  const toggle = () => $setActive(!$active)
-  const $toolkit = useQuery("debug")
-  const $customPoint = useQuery("point")
+  const [$active, $setActive] = useState(true);
+  const [$width, $setWidth] = useState(-1);
+  const [$point, $setPoint] = useState(0);
+  const toggle = () => $setActive(!$active);
+  const $toolkit = useQuery("debug");
+  const $customPoint = useQuery("point");
   useEffect(() => {
     const activePoints = () =>
       points
-        .filter(z => z.includes("px"))
-        .map(z => parseInt(z.slice(0, -2)))
-        .reduce((x, y) => (y <= $width ? y : x), 0)
+        .filter((z) => z.includes("px"))
+        .map((z) => parseInt(z.slice(0, -2)))
+        .reduce((x, y) => (y <= $width ? y : x), 0);
     const update = () => {
-      $setWidth(window.innerWidth)
-      const points = activePoints()
-      console.log({ points, $customPoint })
-      $setPoint(points)
-    }
+      $setWidth(window.innerWidth);
+      const points = activePoints();
+      console.log({ points, $customPoint });
+      $setPoint(points);
+    };
     if ($toolkit) {
-      update()
-      window.addEventListener("resize", update)
+      update();
+      window.addEventListener("resize", update);
     }
-    return () => window.removeEventListener("resize", update)
-  }, [$width, $setWidth, $point, $setPoint, $toolkit, $customPoint])
+    return () => window.removeEventListener("resize", update);
+  }, [$width, $setWidth, $point, $setPoint, $toolkit, $customPoint]);
 
-  const pointsPlus = $customPoint ? points.concat($customPoint) : points
+  const pointsPlus = $customPoint ? points.concat($customPoint) : points;
   return (
     $toolkit && (
       <>
@@ -118,37 +118,37 @@ const ResponsiveToolkit = () => {
         </div>
         {$active &&
           pointsPlus
-            .filter(z => !z.startsWith("v"))
-            .map(x => <Breakpoint key={x} at={x} />)}
+            .filter((z) => !z.startsWith("v"))
+            .map((x) => <Breakpoint key={x} at={x} />)}
         {$active &&
           pointsPlus
-            .filter(z => z.startsWith("v"))
-            .map(x => <Breakpoint key={x} at={x} horizontal={false} />)}
+            .filter((z) => z.startsWith("v"))
+            .map((x) => <Breakpoint key={x} at={x} horizontal={false} />)}
       </>
     )
-  )
-}
+  );
+};
 
 const ASSETS = [
   ["uniswap", <Uniswap key={"uniswap"} />],
   ["binance", <Binance key={"binance"} />],
   ["ethereum", <Ethereum key={"ethereum"} />],
   ["bitcoin", <Bitcoin key={"bitcoin"} />],
-]
+];
 
-const range = x =>
+const range = (x) =>
   Array.from(new Array(x)).reduce(
     (a, b = 1) => a.concat(a[a.length - 1] + b),
     [0]
-  )
+  );
 const patch = (given, source) =>
   source.map(
     (x, i) => given[Math.round(Math.random() * given.length) % given.length]
-  )
+  );
 
 const Asset = ({ update, asset: x, name, flipped, index, data }) => {
-  const [$interval, $setInterval] = useState(-1)
-  const [$flipped, $setFlipped] = useState(flipped)
+  const [$interval, $setInterval] = useState(-1);
+  const [$flipped, $setFlipped] = useState(flipped);
   /*useEffect(() => {
     if ($interval) clearInterval($interval)
     $setInterval(
@@ -168,8 +168,8 @@ const Asset = ({ update, asset: x, name, flipped, index, data }) => {
         styles[name]
       )}
       onMouseEnter={() => {
-        clearInterval($interval)
-        $setFlipped(!$flipped)
+        clearInterval($interval);
+        $setFlipped(!$flipped);
       }}
     >
       <div
@@ -187,25 +187,25 @@ const Asset = ({ update, asset: x, name, flipped, index, data }) => {
         <img src={`img/roadmap/asset-hexfish.png`} />
       </div>
     </div>
-  )
-}
+  );
+};
 
 const AssetConnection = ({ size = 15 }) => {
-  const [$data, $setData] = useState({})
+  const [$data, $setData] = useState({});
   const $update = (key, state) => {
-    if ($data[key] && $data[key] === state) return
-    const newData = Object.assign({}, $data, { [key]: state })
-    debugger
-    $setData(newData)
-  }
+    if ($data[key] && $data[key] === state) return;
+    const newData = Object.assign({}, $data, { [key]: state });
+    debugger;
+    $setData(newData);
+  };
   const $allFish = () =>
-    Object.entries($data).reduce((yes, [k, v]) => yes && v, true)
-  const cool = $allFish()
+    Object.entries($data).reduce((yes, [k, v]) => yes && v, true);
+  const cool = $allFish();
   return (
     <div className={clsx(styles.assets, { cool })}>
       <div className={styles.assetsWrapper}>
         {patch(ASSETS, range(size)).map(([x, raw], i) => {
-          const flipped = !!Math.round(Math.random() * 1)
+          const flipped = !!Math.round(Math.random() * 1);
           return (
             <Asset
               asset={raw}
@@ -216,12 +216,12 @@ const AssetConnection = ({ size = 15 }) => {
               index={i}
               data={$data}
             />
-          )
+          );
         })}
       </div>
     </div>
-  )
-}
+  );
+};
 
 const Interlude = ({ src, wrapper = "", alt, className, children }) => (
   <div className={clsx(styles.interlude, wrapper)}>
@@ -232,22 +232,21 @@ const Interlude = ({ src, wrapper = "", alt, className, children }) => (
       <div className={className} />
     )}
   </div>
-)
-const PARAGRAPH_ONE = `The ultimate goal for Iron Fish is to be a universal privacy layer to support not only many different types of native assets on Iron Fish, but also assets on other chains through bridges. A true SSL layer for blockchains.`
-const PARAGRAPH_TWO = `Why build a new chain? Why can’t this live on Ethereum, Solana, Celo, or any other blockchain?`
+);
 
 const data = {
   intro: (
     <div className={styles.roadmap}>
       <div className={clsx(styles.halfbox, styles.halfboxOne)}>
         <div className={styles.halfboxOneWrapper}>
-          <h1 className={styles.cta}>The big picture</h1>
+          <h1 className={styles.cta}>Universal Privacy Layer for Crypto</h1>
           <p className={styles.mainIntro}>
-            {PARAGRAPH_ONE} <br />
+            We’re building Iron Fish to be the universal privacy layer for
+            crypto—a true SSL layer for blockchains. <br />
             <br />
-            {PARAGRAPH_TWO} <a href="#">Learn more here</a>
+            Why build a new chain? Why can’t this live on existing blockchain?{" "}
+            <a href="/faq">Learn more here</a>
           </p>
-          <button className={styles.ctaButton}>Explore the Roadmap</button>
         </div>
       </div>
       <div className={clsx(styles.halfbox, styles.halfboxTwo)}>
@@ -402,7 +401,7 @@ const data = {
       ),
     },
   },
-}
+};
 
 const Feature = ({ icon, title, description }) => (
   <div className={styles.detail}>
@@ -412,13 +411,13 @@ const Feature = ({ icon, title, description }) => (
     <h3 className={styles.detailTitle}>{title}</h3>
     <p className={styles.detailDescription}>{description}</p>
   </div>
-)
+);
 
-const capitalize = x => x[0].toUpperCase() + x.slice(1)
+const capitalize = (x) => x[0].toUpperCase() + x.slice(1);
 
 function Roadmap() {
   return (
-    <Layout title="Roadmap" description={PARAGRAPH_ONE + "\n" + PARAGRAPH_TWO}>
+    <Layout title="Roadmap">
       <ResponsiveToolkit />
 
       <main className={clsx(styles.main)}>
@@ -466,7 +465,7 @@ function Roadmap() {
                         styles["total" + features.length.toString()]
                       )}
                     >
-                      {features.map(feature => (
+                      {features.map((feature) => (
                         <Feature {...feature} key={feature.title} />
                       ))}
                     </div>
@@ -478,7 +477,7 @@ function Roadmap() {
         )}
       </main>
     </Layout>
-  )
+  );
 }
 
-export default Roadmap
+export default Roadmap;
