@@ -4,7 +4,7 @@ import clsx from "clsx";
 import styles from "./roadmap.module.css";
 import Bitcoin from "../theme/RoadmapPage/bitcoin.svg";
 import Uniswap from "../theme/RoadmapPage/uniswap.svg";
-import Binance from "../theme/RoadmapPage/binance.svg";
+import Dai from "../theme/RoadmapPage/DAI.svg";
 import Ethereum from "../theme/RoadmapPage/ethereum.svg";
 
 const { useState, useEffect, useCallback } = React;
@@ -124,7 +124,7 @@ const ResponsiveToolkit = () => {
 
 const ASSETS = [
   ["uniswap", <Uniswap key={"uniswap"} />],
-  ["binance", <Binance key={"binance"} />],
+  ["dai", <Dai key={"dai"} />],
   ["ethereum", <Ethereum key={"ethereum"} />],
   ["bitcoin", <Bitcoin key={"bitcoin"} />],
 ];
