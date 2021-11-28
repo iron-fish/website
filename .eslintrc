@@ -1,0 +1,25 @@
+{
+  "parser": "@typescript-eslint/parser",
+  "plugins": ["@typescript-eslint"],
+  "extends": [
+    "next",
+    "next/core-web-vitals",
+    "plugin:prettier/recommended",
+    "plugin:@typescript-eslint/recommended",
+  ],
+  "rules": {
+    "no-shadow": "off",
+    "@typescript-eslint/no-shadow": ["error"],
+    "no-console": 2,
+    "@typescript-eslint/explicit-module-boundary-types": "off",
+    "no-unused-vars": "off",
+    "@typescript-eslint/no-unused-vars": [
+      2,
+      {
+        "varsIgnorePattern": "^_",
+        "argsIgnorePattern": "^_"
+      }
+    ],
+    "no-restricted-imports": ["error", { "patterns": ["\\.\\./.*"] }]
+  }
+}
