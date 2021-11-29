@@ -2,10 +2,18 @@ import React from "react";
 import Layout from "@theme/Layout";
 import clsx from "clsx";
 import styles from "./roadmap.module.css";
+
 import Bitcoin from "../theme/RoadmapPage/bitcoin.svg";
 import Uniswap from "../theme/RoadmapPage/uniswap.svg";
 import Dai from "../theme/RoadmapPage/DAI.svg";
 import Ethereum from "../theme/RoadmapPage/ethereum.svg";
+import Aave from "../theme/RoadmapPage/aave.svg";
+import Solana from "../theme/RoadmapPage/solana.svg";
+import Compound from "../theme/RoadmapPage/compound.svg";
+import Filecoin from "../theme/RoadmapPage/filecoin.svg";
+import Fei from "../theme/RoadmapPage/fei.svg";
+import Polygon from "../theme/RoadmapPage/polygon.svg";
+import Avalanche from "../theme/RoadmapPage/avalanche.svg";
 
 const { useState, useEffect, useCallback } = React;
 
@@ -127,6 +135,13 @@ const ASSETS = [
   ["dai", <Dai key={"dai"} />],
   ["ethereum", <Ethereum key={"ethereum"} />],
   ["bitcoin", <Bitcoin key={"bitcoin"} />],
+  ["aave", <Aave key={"aave"} />],
+  ["solana", <Solana key={"solana"} />],
+  ["compound", <Compound key={"compound"} />],
+  ["filecoin", <Filecoin key={"filecoin"} />],
+  ["fei", <Fei key={"fei"} />],
+  ["polygon", <Polygon key={"polygon"} />],
+  ["avalanche", <Avalanche key={"avalanche"} />],
 ];
 
 const range = (x) =>
