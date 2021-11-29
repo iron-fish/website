@@ -345,28 +345,6 @@ const data = {
       features: [],
       children: <AssetConnection />,
     },
-    phase4: {
-      features: [
-        {
-          icon: "chain",
-          title: "Layer-2 Support",
-          description:
-            "We understand that scalability is paramount for adoption. We'll be working with major Layer 2 providers to enable fast and frictionless transactions on Iron Fish.",
-        },
-      ],
-    },
-    interlude4: {
-      image: (
-        <Interlude
-          wrapper={styles.bridges}
-          src={`/img/roadmap/infinite-bridge.svg`}
-          alt="Bridges"
-          className={styles.interludeBridges}
-        >
-          <div className={styles.interludeBall3} />
-        </Interlude>
-      ),
-    },
     mainnet: {
       subtitle: "Final Phase—Iron Fish Mainnet!",
       children: (
