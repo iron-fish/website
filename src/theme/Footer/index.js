@@ -70,6 +70,10 @@ function Footer() {
                 link: "/blog/",
                 name: "Blog",
               },
+              {
+                link: "/docs/privacy/",
+                name: "Privacy Policy",
+              },
             ]}
           />
           <LinksBlock
@@ -94,12 +98,14 @@ function Footer() {
               },
             ]}
           />
-          <a href="mailto:contact@ironfish.network"><button
-            variant="outlined"
-            className={`${classes.button} button button--outline`}
-          >
-            Drop us a line!
-          </button></a>
+          <a href="mailto:contact@ironfish.network">
+            <button
+              variant="outlined"
+              className={`${classes.button} button button--outline`}
+            >
+              Drop us a line!
+            </button>
+          </a>
         </div>
         <div className={classes.contact}>
           <p>
