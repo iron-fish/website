@@ -51,13 +51,13 @@ const TestnetBanner = () => {
     <div
       style={{
         background: "#e1ddff",
-        height: 64,
+        height: "auto",
         fontSize: 18,
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
         textAlign: "center",
-        padding: "0 0.7rem",
+        padding: "0.7rem",
       }}
     >
       <span>
