@@ -17,7 +17,6 @@ import Filecoin from "../theme/RoadmapPage/icon-filecoin"
 import Fei from "../theme/RoadmapPage/icon-fei"
 import Polygon from "../theme/RoadmapPage/icon-polygon"
 import Avalanche from "../theme/RoadmapPage/icon-avalanche"
-import ResponsiveToolkit from "../theme/ResponsiveToolkit"
 
 const ASSETS = [
   ["uniswap", Uniswap],
@@ -304,8 +303,6 @@ const capitalize = x => x[0].toUpperCase() + x.slice(1)
 function Roadmap() {
   return (
     <Layout title="Roadmap">
-      <ResponsiveToolkit />
-
       <main className={clsx(styles.main)}>
         {data.intro}
 
