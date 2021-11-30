@@ -109,10 +109,7 @@ function BlogPostItem(props) {
       >
         {renderPostHeader()}
         {image && (
-          <div
-            className={clsx(styles.image)}
-            style={{ backgroundImage: `url(${imageUrl})` }}
-          />
+          <img className={clsx(styles.image)} src={imageUrl} />
         )}
 
         {isBlogPostPage && (
