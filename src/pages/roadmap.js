@@ -4,6 +4,7 @@ import Layout from "@theme/Layout"
 import clsx from "clsx"
 import styles from "./roadmap.module.css"
 import pkg from "../../package.json"
+import { shuffle } from "shuffle-seed"
 
 import Bitcoin from "../theme/RoadmapPage/icon-bitcoin"
 import Uniswap from "../theme/RoadmapPage/icon-uniswap"
