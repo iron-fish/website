@@ -7,7 +7,7 @@ import {
 
 // Increase by one minute so the clock stays at 1 minute left until
 // 1 sec after, rather than ticking to 0 at 59 secs before
-const LAUNCH_DATE = new Date("2021-12-01T16:01:00.000Z");
+const LAUNCH_DATE = new Date("2021-12-01T20:01:00.000Z");
 
 const updateTimeRemaining = () => {
   const now = new Date();
