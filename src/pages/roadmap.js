@@ -3,6 +3,7 @@ import { useState } from "react"
 import Layout from "@theme/Layout"
 import clsx from "clsx"
 import styles from "./roadmap.module.css"
+import pkg from "../../package.json"
 
 import Bitcoin from "../theme/RoadmapPage/icon-bitcoin"
 import Uniswap from "../theme/RoadmapPage/icon-uniswap"
@@ -40,10 +41,10 @@ const range = x => {
 }
 console.log(range(40))
 
-const patch = (given, source) =>
-  source.map(
-    (x, i) => given[Math.round(Math.random() * given.length) % given.length]
-  )
+const patch = (given, source) => {
+  const copy = shuffle(given, pkg.version)
+  return source.map(x => copy[x % copy.length])
+}
 
 const Asset = ({ update, asset: X, name, flipped, index, data }) => {
   // const [$interval, $setInterval] = useState(-1)
@@ -90,10 +91,9 @@ const Asset = ({ update, asset: X, name, flipped, index, data }) => {
   )
 }
 
-const patchedAssets = patch(ASSETS, range(size))
-console.log({ patchedAssets })
-
 const AssetConnection = ({ size = 16 }) => {
+  const patchedAssets = patch(ASSETS, range(size))
+  console.log({ patchedAssets })
   const [$data, $setData] = useState({})
   const $update = (key, state) => {
     if ($data[key] && $data[key] === state) return
