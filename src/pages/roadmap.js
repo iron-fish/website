@@ -1,25 +1,25 @@
-import React from "react";
-import Layout from "@theme/Layout";
-import clsx from "clsx";
-import styles from "./roadmap.module.css";
+import React from "react"
+import Layout from "@theme/Layout"
+import clsx from "clsx"
+import styles from "./roadmap.module.css"
 
-import Bitcoin from "../theme/RoadmapPage/bitcoin.svg";
-import Uniswap from "../theme/RoadmapPage/uniswap.svg";
-import Dai from "../theme/RoadmapPage/DAI.svg";
-import Ethereum from "../theme/RoadmapPage/ethereum.svg";
-import Aave from "../theme/RoadmapPage/aave.svg";
-import Solana from "../theme/RoadmapPage/solana.svg";
-import Compound from "../theme/RoadmapPage/compound.svg";
-import Filecoin from "../theme/RoadmapPage/filecoin.svg";
-import Fei from "../theme/RoadmapPage/fei.svg";
-import Polygon from "../theme/RoadmapPage/polygon.svg";
-import Avalanche from "../theme/RoadmapPage/avalanche.svg";
+import Bitcoin from "../theme/RoadmapPage/bitcoin.svg"
+import Uniswap from "../theme/RoadmapPage/uniswap.svg"
+import Dai from "../theme/RoadmapPage/DAI.svg"
+import Ethereum from "../theme/RoadmapPage/ethereum.svg"
+import Aave from "../theme/RoadmapPage/aave.svg"
+import Solana from "../theme/RoadmapPage/solana.svg"
+import Compound from "../theme/RoadmapPage/compound.svg"
+import Filecoin from "../theme/RoadmapPage/filecoin.svg"
+import Fei from "../theme/RoadmapPage/fei.svg"
+import Polygon from "../theme/RoadmapPage/polygon.svg"
+import Avalanche from "../theme/RoadmapPage/avalanche.svg"
 
-const { useState, useEffect, useCallback } = React;
+const { useState, useEffect, useCallback } = React
 
 const Breakpoint = ({ at, horizontal = true }) => {
-  const value = horizontal ? at : at.slice(1);
-  const isVertical = at.startsWith("v");
+  const value = horizontal ? at : at.slice(1)
+  const isVertical = at.startsWith("v")
   return (
     <div
       className={clsx({
@@ -30,8 +30,8 @@ const Breakpoint = ({ at, horizontal = true }) => {
       style={{ [horizontal ? "left" : "top"]: value }}
       data-value={value}
     />
-  );
-};
+  )
+}
 
 const points = [
   `450px`,
@@ -61,56 +61,56 @@ const points = [
   // "v896px",
   // "v960px",
   // "v1024px",
-];
+]
 
 // With a URL like: coolwebsite.com?nice=dope
 // const $nice = useQuery('nice') === 'dope'
 export function useQuery(key) {
   // our state
-  const [$query, $setQuery] = useState(null);
+  const [$query, $setQuery] = useState(null)
 
   useEffect(() => {
     // only for ze browser
-    if (typeof window === "undefined") return;
+    if (typeof window === "undefined") return
 
-    const parsed = new URLSearchParams((window.location.search || "").slice(1));
+    const parsed = new URLSearchParams((window.location.search || "").slice(1))
 
-    const value = parsed.get(key);
+    const value = parsed.get(key)
 
     if (typeof value === "string") {
-      $setQuery(value);
+      $setQuery(value)
     }
-  }, [$query, $setQuery, key]);
-  return $query;
+  }, [$query, $setQuery, key])
+  return $query
 }
 
 const ResponsiveToolkit = () => {
-  const [$active, $setActive] = useState(true);
-  const [$width, $setWidth] = useState(-1);
-  const [$point, $setPoint] = useState(0);
-  const toggle = () => $setActive(!$active);
-  const $toolkit = useQuery("debug");
-  const $customPoint = useQuery("point");
+  const [$active, $setActive] = useState(true)
+  const [$width, $setWidth] = useState(-1)
+  const [$point, $setPoint] = useState(0)
+  const toggle = () => $setActive(!$active)
+  const $toolkit = useQuery("debug")
+  const $customPoint = useQuery("point")
   useEffect(() => {
     const activePoints = () =>
       points
-        .filter((z) => z.includes("px"))
-        .map((z) => parseInt(z.slice(0, -2)))
-        .reduce((x, y) => (y <= $width ? y : x), 0);
+        .filter(z => z.includes("px"))
+        .map(z => parseInt(z.slice(0, -2)))
+        .reduce((x, y) => (y <= $width ? y : x), 0)
     const update = () => {
-      $setWidth(window.innerWidth);
-      const points = activePoints();
-      console.log({ points, $customPoint });
-      $setPoint(points);
-    };
-    if ($toolkit) {
-      update();
-      window.addEventListener("resize", update);
+      $setWidth(window.innerWidth)
+      const points = activePoints()
+      console.log({ points, $customPoint })
+      $setPoint(points)
     }
-    return () => window.removeEventListener("resize", update);
-  }, [$width, $setWidth, $point, $setPoint, $toolkit, $customPoint]);
+    if ($toolkit) {
+      update()
+      window.addEventListener("resize", update)
+    }
+    return () => window.removeEventListener("resize", update)
+  }, [$width, $setWidth, $point, $setPoint, $toolkit, $customPoint])
 
-  const pointsPlus = $customPoint ? points.concat($customPoint) : points;
+  const pointsPlus = $customPoint ? points.concat($customPoint) : points
   return (
     $toolkit && (
       <>
@@ -119,16 +119,16 @@ const ResponsiveToolkit = () => {
         </div>
         {$active &&
           pointsPlus
-            .filter((z) => !z.startsWith("v"))
-            .map((x) => <Breakpoint key={x} at={x} />)}
+            .filter(z => !z.startsWith("v"))
+            .map(x => <Breakpoint key={x} at={x} />)}
         {$active &&
           pointsPlus
-            .filter((z) => z.startsWith("v"))
-            .map((x) => <Breakpoint key={x} at={x} horizontal={false} />)}
+            .filter(z => z.startsWith("v"))
+            .map(x => <Breakpoint key={x} at={x} horizontal={false} />)}
       </>
     )
-  );
-};
+  )
+}
 
 const ASSETS = [
   ["uniswap", <Uniswap key={"uniswap"} />],
@@ -142,21 +142,21 @@ const ASSETS = [
   ["fei", <Fei key={"fei"} />],
   ["polygon", <Polygon key={"polygon"} />],
   ["avalanche", <Avalanche key={"avalanche"} />],
-];
+]
 
-const range = (x) =>
+const range = x =>
   Array.from(new Array(x)).reduce(
     (a, b = 1) => a.concat(a[a.length - 1] + b),
     [0]
-  );
+  )
 const patch = (given, source) =>
   source.map(
     (x, i) => given[Math.round(Math.random() * given.length) % given.length]
-  );
+  )
 
 const Asset = ({ update, asset: x, name, flipped, index, data }) => {
-  const [$interval, $setInterval] = useState(-1);
-  const [$flipped, $setFlipped] = useState(flipped);
+  const [$interval, $setInterval] = useState(-1)
+  const [$flipped, $setFlipped] = useState(flipped)
   /*useEffect(() => {
     if ($interval) clearInterval($interval)
     $setInterval(
@@ -170,14 +170,15 @@ const Asset = ({ update, asset: x, name, flipped, index, data }) => {
 */
   return (
     <div
+      id={name + "-" + index}
       className={clsx(
         styles.asset,
         { [styles.flipped]: $flipped },
         styles[name]
       )}
       onMouseEnter={() => {
-        clearInterval($interval);
-        $setFlipped(!$flipped);
+        clearInterval($interval)
+        $setFlipped(!$flipped)
       }}
     >
       <div
@@ -195,25 +196,25 @@ const Asset = ({ update, asset: x, name, flipped, index, data }) => {
         <img src={`img/roadmap/asset-hexfish.png`} />
       </div>
     </div>
-  );
-};
+  )
+}
 
 const AssetConnection = ({ size = 15 }) => {
-  const [$data, $setData] = useState({});
+  const [$data, $setData] = useState({})
   const $update = (key, state) => {
-    if ($data[key] && $data[key] === state) return;
-    const newData = Object.assign({}, $data, { [key]: state });
-    debugger;
-    $setData(newData);
-  };
+    if ($data[key] && $data[key] === state) return
+    const newData = Object.assign({}, $data, { [key]: state })
+    debugger
+    $setData(newData)
+  }
   const $allFish = () =>
-    Object.entries($data).reduce((yes, [k, v]) => yes && v, true);
-  const cool = $allFish();
+    Object.entries($data).reduce((yes, [k, v]) => yes && v, true)
+  const cool = $allFish()
   return (
     <div className={clsx(styles.assets, { cool })}>
       <div className={styles.assetsWrapper}>
         {patch(ASSETS, range(size)).map(([x, raw], i) => {
-          const flipped = !!Math.round(Math.random() * 1);
+          const flipped = !!Math.round(Math.random() * 1)
           return (
             <Asset
               asset={raw}
@@ -224,12 +225,12 @@ const AssetConnection = ({ size = 15 }) => {
               index={i}
               data={$data}
             />
-          );
+          )
         })}
       </div>
     </div>
-  );
-};
+  )
+}
 
 const Interlude = ({ src, wrapper = "", alt, className, children }) => (
   <div className={clsx(styles.interlude, wrapper)}>
@@ -240,7 +241,7 @@ const Interlude = ({ src, wrapper = "", alt, className, children }) => (
       <div className={className} />
     )}
   </div>
-);
+)
 
 const data = {
   intro: (
@@ -393,7 +394,7 @@ const data = {
       ),
     },
   },
-};
+}
 
 const Feature = ({
   icon,
@@ -410,7 +411,7 @@ const Feature = ({
     <h3 className={styles.detailTitle}>{title}</h3>
     <p className={styles.detailDescription}>{description}</p>
     <ul>
-      {itemList.map((element) => (
+      {itemList.map(element => (
         <li className={styles.detailDescription}>{element}</li>
       ))}
     </ul>
@@ -419,9 +420,9 @@ const Feature = ({
       {ctaText}
     </a>
   </div>
-);
+)
 
-const capitalize = (x) => x[0].toUpperCase() + x.slice(1);
+const capitalize = x => x[0].toUpperCase() + x.slice(1)
 
 function Roadmap() {
   return (
@@ -473,7 +474,7 @@ function Roadmap() {
                         styles["total" + features.length.toString()]
                       )}
                     >
-                      {features.map((feature) => (
+                      {features.map(feature => (
                         <Feature {...feature} key={feature.title} />
                       ))}
                     </div>
@@ -485,7 +486,7 @@ function Roadmap() {
         )}
       </main>
     </Layout>
-  );
+  )
 }
 
-export default Roadmap;
+export default Roadmap
