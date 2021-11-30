@@ -40,7 +40,6 @@ const range = x => {
   }
   return arr
 }
-console.log(range(40))
 
 const patch = (given, source) => {
   const copy = shuffle(given, pkg.version)
@@ -48,19 +47,7 @@ const patch = (given, source) => {
 }
 
 const Asset = ({ update, asset: X, name, flipped, index, data }) => {
-  // const [$interval, $setInterval] = useState(-1)
   const [$flipped, $setFlipped] = useState(flipped)
-  /*useEffect(() => {
-    if ($interval) clearInterval($interval)
-    $setInterval(
-      setInterval(() => {
-        $setFlipped(!$flipped)
-        // update(name + index, !$flipped)
-      }, Math.round(Math.random() * 30e3))
-    )
-    return () => clearInterval($interval)
-  }, [$setInterval, $flipped, $setFlipped, update, data[name + index]])
-*/
   return (
     <div
       id={name + "-" + index}
@@ -70,7 +57,6 @@ const Asset = ({ update, asset: X, name, flipped, index, data }) => {
         styles[name]
       )}
       onMouseEnter={() => {
-        // clearInterval($interval)
         $setFlipped(!$flipped)
       }}
     >
@@ -94,7 +80,6 @@ const Asset = ({ update, asset: X, name, flipped, index, data }) => {
 
 const AssetConnection = ({ size = 16 }) => {
   const patchedAssets = patch(ASSETS, range(size))
-  console.log({ patchedAssets })
   const [$data, $setData] = useState({})
   const $update = (key, state) => {
     if ($data[key] && $data[key] === state) return
