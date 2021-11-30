@@ -6,8 +6,7 @@ import clsx from "clsx";
 import styles from "./testnetAd.module.css";
 
 function TestnetAd() {
-  // TODO: Replace this
-  const url = useBaseUrl('docs/onboarding/iron-fish-faucet')
+  const url = `https://testnet.ironfish.network/about`
 
   return (
     <div className={clsx(styles.testnetAdContainer)}>
