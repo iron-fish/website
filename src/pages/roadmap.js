@@ -131,17 +131,17 @@ const ResponsiveToolkit = () => {
 }
 
 const ASSETS = [
-  ["uniswap", <Uniswap key={"uniswap"} />],
-  ["dai", <Dai key={"dai"} />],
-  ["ethereum", <Ethereum key={"ethereum"} />],
-  ["bitcoin", <Bitcoin key={"bitcoin"} />],
-  ["aave", <Aave key={"aave"} />],
-  ["solana", <Solana key={"solana"} />],
-  ["compound", <Compound key={"compound"} />],
-  ["filecoin", <Filecoin key={"filecoin"} />],
-  ["fei", <Fei key={"fei"} />],
-  ["polygon", <Polygon key={"polygon"} />],
-  ["avalanche", <Avalanche key={"avalanche"} />],
+  ["uniswap", Uniswap],
+  ["dai", Dai],
+  ["ethereum", Ethereum],
+  ["bitcoin", Bitcoin],
+  ["aave", Aave],
+  ["solana", Solana],
+  ["compound", Compound],
+  ["filecoin", Filecoin],
+  ["fei", Fei],
+  ["polygon", Polygon],
+  ["avalanche", Avalanche],
 ]
 
 const range = x =>
@@ -154,7 +154,7 @@ const patch = (given, source) =>
     (x, i) => given[Math.round(Math.random() * given.length) % given.length]
   )
 
-const Asset = ({ update, asset: x, name, flipped, index, data }) => {
+const Asset = ({ update, asset: X, name, flipped, index, data }) => {
   const [$interval, $setInterval] = useState(-1)
   const [$flipped, $setFlipped] = useState(flipped)
   /*useEffect(() => {
@@ -186,7 +186,7 @@ const Asset = ({ update, asset: x, name, flipped, index, data }) => {
           [styles.flipped]: !$flipped,
         })}
       >
-        {x}
+        <X />
       </div>
       <div
         className={clsx(styles.assetFace, styles.back, styles.hexfish, {
