@@ -5,7 +5,7 @@ import styles from "./roadmap.module.css"
 
 import Bitcoin from "../theme/RoadmapPage/icon-bitcoin"
 import Uniswap from "../theme/RoadmapPage/icon-uniswap"
-import Dai from "../theme/RoadmapPage/icon-dAI"
+import Dai from "../theme/RoadmapPage/icon-dai"
 import Ethereum from "../theme/RoadmapPage/icon-ethereum"
 import Aave from "../theme/RoadmapPage/icon-aave"
 import Solana from "../theme/RoadmapPage/icon-solana"
