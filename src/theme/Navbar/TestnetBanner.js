@@ -63,6 +63,12 @@ const TestnetBanner = () => {
       <span>
         The Iron Fish Incentivized Testnet starts in {time.daysText},{" "}
         {time.hoursText}, and {time.minutesText}.&nbsp;
+        <a
+          style={{ color: "#5141C9", textDecoration: "none" }}
+          href="https://discord.gg/EkQkEcm8DH"
+        >
+          Join Discord for updates
+        </a>
       </span>
     </div>
   );
