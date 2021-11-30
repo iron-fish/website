@@ -3,17 +3,17 @@ import Layout from "@theme/Layout"
 import clsx from "clsx"
 import styles from "./roadmap.module.css"
 
-import Bitcoin from "../theme/RoadmapPage/bitcoin.svg"
-import Uniswap from "../theme/RoadmapPage/uniswap.svg"
-import Dai from "../theme/RoadmapPage/DAI.svg"
-import Ethereum from "../theme/RoadmapPage/ethereum.svg"
-import Aave from "../theme/RoadmapPage/aave.svg"
-import Solana from "../theme/RoadmapPage/solana.svg"
-import Compound from "../theme/RoadmapPage/compound.svg"
-import Filecoin from "../theme/RoadmapPage/filecoin.svg"
-import Fei from "../theme/RoadmapPage/fei.svg"
-import Polygon from "../theme/RoadmapPage/polygon.svg"
-import Avalanche from "../theme/RoadmapPage/avalanche.svg"
+import Bitcoin from "../theme/RoadmapPage/icon-bitcoin"
+import Uniswap from "../theme/RoadmapPage/icon-uniswap"
+import Dai from "../theme/RoadmapPage/icon-dAI"
+import Ethereum from "../theme/RoadmapPage/icon-ethereum"
+import Aave from "../theme/RoadmapPage/icon-aave"
+import Solana from "../theme/RoadmapPage/icon-solana"
+import Compound from "../theme/RoadmapPage/icon-compound"
+import Filecoin from "../theme/RoadmapPage/icon-filecoin"
+import Fei from "../theme/RoadmapPage/icon-fei"
+import Polygon from "../theme/RoadmapPage/icon-polygon"
+import Avalanche from "../theme/RoadmapPage/icon-avalanche"
 
 const { useState, useEffect, useCallback } = React
 
@@ -155,7 +155,7 @@ const patch = (given, source) =>
   )
 
 const Asset = ({ update, asset: X, name, flipped, index, data }) => {
-  const [$interval, $setInterval] = useState(-1)
+  // const [$interval, $setInterval] = useState(-1)
   const [$flipped, $setFlipped] = useState(flipped)
   /*useEffect(() => {
     if ($interval) clearInterval($interval)
@@ -177,7 +177,7 @@ const Asset = ({ update, asset: X, name, flipped, index, data }) => {
         styles[name]
       )}
       onMouseEnter={() => {
-        clearInterval($interval)
+        // clearInterval($interval)
         $setFlipped(!$flipped)
       }}
     >
@@ -186,7 +186,7 @@ const Asset = ({ update, asset: X, name, flipped, index, data }) => {
           [styles.flipped]: !$flipped,
         })}
       >
-        <X />
+        <X key={name + "-" + index + "-asset"} />
       </div>
       <div
         className={clsx(styles.assetFace, styles.back, styles.hexfish, {
@@ -207,11 +207,8 @@ const AssetConnection = ({ size = 15 }) => {
     debugger
     $setData(newData)
   }
-  const $allFish = () =>
-    Object.entries($data).reduce((yes, [k, v]) => yes && v, true)
-  const cool = $allFish()
   return (
-    <div className={clsx(styles.assets, { cool })}>
+    <div className={clsx(styles.assets)}>
       <div className={styles.assetsWrapper}>
         {patch(ASSETS, range(size)).map(([x, raw], i) => {
           const flipped = !!Math.round(Math.random() * 1)
