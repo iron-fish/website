@@ -102,9 +102,9 @@ function Home() {
             </h1>
             <Link
               className="button button--outline button--secondary"
-              to={useBaseUrl("/docs/onboarding/iron-fish-tutorial")}
+              to="https://testnet.ironfish.network/about"
             >
-              Get Started
+              Join the Incentivized Testnet
             </Link>
           </header>
         </div>
