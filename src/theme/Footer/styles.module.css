@@ -45,7 +45,7 @@
   padding-left: var(--ifm-large-container-horizontal-padding);
   padding-right: var(--ifm-large-container-horizontal-padding);
   justify-content: space-between;
-  border-top: 1px solid #888;
+  border-top: 1px solid #e1e1e1;
   margin-top: 1px;
 }
 .contact p {
