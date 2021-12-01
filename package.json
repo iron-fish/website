@@ -23,7 +23,7 @@
     "react-dom": "^16.14.0",
     "react-intersection-observer": "^8.32.0",
     "rehype-katex": "^4.0.0",
-    "remark-math": "^3.0.1",
+    "remark-math": "^5.1.1",
     "shuffle-seed": "^1.1.6",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat"
   },
