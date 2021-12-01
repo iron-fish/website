@@ -63,7 +63,7 @@ function Testnet({ condensed = false }) {
                 }
               >
                 <TestnetGridElement
-                  href="/about"
+                  href="https://testnet.ironfish.network/about"
                   header="About the Testnet"
                   body="How to earn points"
                   className={elementClassName}
@@ -71,7 +71,7 @@ function Testnet({ condensed = false }) {
                   cubeClassName="text-iforange"
                 />
                 <TestnetGridElement
-                  href="/leaderboard"
+                  href="https://testnet.ironfish.network/leaderboard"
                   header="Testnet Leaderboard"
                   body="Earn your way to the top"
                   className={elementClassName}
@@ -79,7 +79,7 @@ function Testnet({ condensed = false }) {
                   cubeClassName="text-ifcubepink"
                 />
                 <TestnetGridElement
-                  href="/faq"
+                  href="https://testnet.ironfish.network/faq"
                   header="Testnet FAQ"
                   body="Frequently asked questions"
                   className={elementClassName}
