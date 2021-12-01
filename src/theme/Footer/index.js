@@ -14,11 +14,19 @@ const LinksBlock = ({ title, links, classes }) => {
     <div className={classes.linksBlock}>
       <p>{title}</p>
       <ul>
-        {links.map((link) => (
-          <li key={link.link}>
-            <Link to={link.link}>{link.name}</Link>
-          </li>
-        ))}
+        {links.map((link) =>
+          link.isDownload ? (
+            <li key={link.link}>
+              <Link to={link.link} target="_blank" download>
+                {link.name}
+              </Link>
+            </li>
+          ) : (
+            <li key={link.link}>
+              <Link to={link.link}>{link.name}</Link>
+            </li>
+          )
+        )}
       </ul>
     </div>
   );
@@ -95,6 +103,11 @@ function Footer() {
               {
                 link: "/faq/",
                 name: "FAQ",
+              },
+              {
+                link: "/img/iron_fish.zip",
+                name: "Brand Assets",
+                isDownload: true,
               },
             ]}
           />
