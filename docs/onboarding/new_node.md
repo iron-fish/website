@@ -19,11 +19,11 @@ ironfish start
 <Terminal command={Start} />
 
 ## Using a different directory
-By default, the database and configuration files for the Iron Fish node are created in the `~./ironfish` directory (more details in the [configuration section](configuration.md)). You can use a different directory for the database and configuration files by using the `--datadir` flag.
+By default, the database and configuration files for the Iron Fish node are created in the `~/.ironfish` directory (more details in the [configuration section](configuration.md)). You can use a different directory for the database and configuration files by using the `--datadir` flag.
 
 E.g.
 ```sh
-ironfish start --datadir=~./myCustomFolder
+ironfish start --datadir=~/myCustomFolder
 ```
 
 ## Using a different bootstrap node
