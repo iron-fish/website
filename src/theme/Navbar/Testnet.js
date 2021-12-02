@@ -1,15 +1,15 @@
-import React from "react";
+import React from "react"
 
-import TestnetGridElement from "./TestnetGridElement";
-import SectionHeader from "./SectionHeader";
-import overrides from "./overrides.module.css";
+import TestnetGridElement from "./TestnetGridElement"
+import SectionHeader from "./SectionHeader"
+import overrides from "./overrides.module.css"
 
 function Testnet({ condensed = false }) {
-  const elementClassName = `py-4 ${condensed ? "px-2" : "px-6"}`;
-  const textClassName = `ml-4`;
+  const elementClassName = `py-4 ${condensed ? "px-2" : "px-6"}`
+  const textClassName = `ml-4`
   const className = condensed
-    ? "bg-white z-10 w-full"
-    : "absolute bg-white left-0 right-0 shadow-navbar z-20 top-5.5";
+    ? "bg-white z-40 w-full"
+    : "absolute bg-white left-0 right-0 shadow-navbar z-40 top-5.5"
   return (
     <div className="flex">
       <div
@@ -92,7 +92,7 @@ function Testnet({ condensed = false }) {
         </div>
       </div>
     </div>
-  );
+  )
 }
 
-export default Testnet;
+export default Testnet
