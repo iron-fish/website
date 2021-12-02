@@ -22,7 +22,7 @@ export function NavbarFlyout({
   }
   return (
     <div
-      className={`absolute z-20 h-screen w-screen bg-white text-black font-extended transition-all overflow-y-auto ${
+      className={`absolute z-40 h-screen w-screen bg-white text-black font-extended transition-all overflow-y-auto ${
         !flyoutVisible ? 'pb-6' : 'pb-32'
       } md:hidden`}
       style={{ transform: flyoutVisible ? 'translate3d(0, 0, 0)' : 'translate3d(-100%, 0, 0)' }}

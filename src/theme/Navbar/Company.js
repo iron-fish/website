@@ -7,8 +7,8 @@ function Company({ condensed = false }) {
   const elementClassName = `p-2 lg:p-4 lg:mr-4 ${condensed ? '' : 'mr-2'}`
   const textClassName = `lg:ml-4 ${condensed ? 'ml-4' : 'ml-2'}`
   const className = condensed
-    ? 'bg-white z-10 w-full'
-    : 'absolute bg-white left-0 right-0 shadow-navbar z-10 top-5.5'
+    ? 'bg-white z-40 w-full'
+    : 'absolute bg-white left-0 right-0 shadow-navbar z-40 top-5.5'
   return (
     <div className="flex">
       <div
