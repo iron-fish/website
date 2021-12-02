@@ -7,7 +7,7 @@ hide_table_of_contents: false
 ---
 
 ## Data structure
-By default, the database and configuration files for the Iron Fish node are created in the `~./ironfish` directory.
+By default, the database and configuration files for the Iron Fish node are created in the `~/.ironfish` directory.
 
 The file structure is composed of the following:
 ```
