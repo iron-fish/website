@@ -35,7 +35,7 @@ Run `ironfish accounts:pay --help` to see the different options available.
 
 E.g. To send 2 coins from the account `Savings`
 ```sh
-ironfish accounts:pay -a 1 -o 0.00000001 -t 997c...7fc52ed -f Savings
+ironfish accounts:pay -a 2 -o 0.00000001 -t 997c...7fc52ed -f Savings
 ```
 
 ## Receive a transaction
