@@ -12,7 +12,7 @@ export const RawButton = ({
     <button
       className={`
         ${overrides.rawButton}
-        flex 
+        flex
         justify-center
         items-center
         font-extended
