@@ -9,8 +9,12 @@ import { useHistory } from "@docusaurus/router";
 function Position({ title, time, location, link }) {
   const history = useHistory();
 
+  function handleClick() {
+    window.open(link, "_blank");
+  }
+
   return (
-    <div className={clsx(styles.position)}>
+    <div className={clsx(styles.position)} onClick={handleClick}>
       <p className={clsx(styles.title)}>
         <Link className={clsx(styles.button)} to={link}>
           {title}
