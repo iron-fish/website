@@ -263,7 +263,7 @@ function Privacy() {
           <p>
             The bigger flaw however, is that these protocols suffer from being
             built on top of a fundamentally transparent system where deposits
-            and withdraws must be made public. From a practical standpoint, the
+            and withdrawals must be made public. From a practical standpoint, the
             overall design for all privacy preserving solutions on top of
             Ethereum, even those that use zero-knowledge proofs, closely
             resemble the privacy guarantees of previously mentioned Mixers.
@@ -334,7 +334,7 @@ function Privacy() {
             <a href="https://youtu.be/9s3EbSKDA3o" target="_blank">
               criticized decoys
             </a>{" "}
-            for privacy guarantees and numerous research and papers have since
+            for privacy guarantees, and several research papers have since
             come out further exploring Monero vulnerabilities (such as this{" "}
             <a
               href="https://twitter.com/MihailoBjelic/status/1126878887886106629"
@@ -361,7 +361,7 @@ function Privacy() {
           <h3>Mobilecoin</h3>
 
           <p>
-            Mobilecoin a privacy coin that took Mobero’s privacy technique and
+            Mobilecoin is a privacy coin that uses Monero’s privacy technique, but
             relies on SGX technology to provide mobile support. Unfortunately,{" "}
             <a
               href="https://www.wired.com/story/plundervolt-intel-chips-sgx-hack/"
@@ -431,10 +431,10 @@ function Privacy() {
           <h2 id="zcash">Sapling with Zero Knowledge Proofs (Zcash)</h2>
 
           <p>
-            The Sapling protocol utilizing Zero-Knowledge Proofs (specifically
-            zk-SNARKs) has the highest privacy guarantees when compared to all
+            The Sapling protocol utilizes zero-knowledge proofs (specifically
+            zk-SNARKs) to provide the highest privacy guarantees compared to all
             other privacy techniques. This protocol allows transactions to have
-            all sensitive data encrypted and completely unlikable.
+            all sensitive data encrypted and completely unlinkable.
           </p>
           <p>
             Zcash is a privacy coin project and predecessor to the Zerocash
