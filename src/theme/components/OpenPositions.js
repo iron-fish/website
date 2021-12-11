@@ -1,16 +1,16 @@
-import React from "react"
-import Link from "@docusaurus/Link"
+import React from "react";
+import Link from "@docusaurus/Link";
 
-import clsx from "clsx"
-import styles from "./openPositions.module.css"
+import clsx from "clsx";
+import styles from "./openPositions.module.css";
 
-import { useHistory } from "@docusaurus/router"
+import { useHistory } from "@docusaurus/router";
 
 function Position({ title, time, location, link }) {
-  const history = useHistory()
+  const history = useHistory();
 
   function handleClick() {
-    history.push(link)
+    window.open(link, "_blank");
   }
 
   return (
@@ -24,7 +24,7 @@ function Position({ title, time, location, link }) {
       <p className={clsx(styles.location)}>{location}</p>
       <img src="/img/careers/arrow.svg" alt="link" />
     </div>
-  )
+  );
 }
 
 function OpenPositions() {
@@ -48,24 +48,49 @@ function OpenPositions() {
             title="Cryptographer"
             time="Full-Time"
             location="SF / Remote"
-            link="/jd-cryptographer"
+            link="https://jobs.lever.co/ironfish/8c384a79-5ffe-4b27-9387-46e1410db067"
           />
           <Position
-            title="Full-Stack Engineer"
+            title="Engineering Manager"
             time="Full-Time"
             location="SF / Remote"
-            link="/jd-full-stack"
+            link="https://jobs.lever.co/ironfish/35a389f1-0883-455b-8c19-b9e20a936e2b"
           />
           <Position
-            title="Backend Engineer"
+            title="Front End Engineer"
             time="Full-Time"
             location="SF / Remote"
-            link="/jd-backend"
+            link="https://jobs.lever.co/ironfish/8c7ef6a8-a8b4-40da-a5b1-7e54853f6dd9"
+          />
+          <Position
+            title="Full Stack Engineer"
+            time="Full-Time"
+            location="SF / Remote"
+            link="https://jobs.lever.co/ironfish/76dd75e4-f8d9-44a7-9693-4462696a8ceb"
+          />
+          <Position
+            title="Software Engineer"
+            time="Full-Time"
+            location="SF / Remote"
+            link="https://jobs.lever.co/ironfish/e0b384ba-64c6-4e31-8542-8ba0d9b01797"
+          />
+
+          <Position
+            title="Executive Assistant"
+            time="Full-Time"
+            location="SF / Remote"
+            link="https://jobs.lever.co/ironfish/77d38d59-97f9-4ba2-95ff-ee8f8f1d3cc9"
+          />
+          <Position
+            title="Community Manager"
+            time="Full-Time"
+            location="SF / Remote"
+            link="https://jobs.lever.co/ironfish/21c1357b-b41e-4474-bbe8-1690b6c3ed17"
           />
         </div>
       </div>
     </section>
-  )
+  );
 }
 
-export default OpenPositions
+export default OpenPositions;
