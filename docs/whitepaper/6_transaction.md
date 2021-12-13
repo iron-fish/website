@@ -16,7 +16,7 @@ There is a lot to cover in this section, so here’s a quick guide to the pieces
 2. the Spend description component (the one that dictates how an account can spend a note)
 3. the Output description component (the one one that creates _new_ notes)
 4. how a transaction _balances_ to ensure that appropriate amounts were spent and paid out
-5. how a a validator (such as a miner) can verify any transaction
+5. how a validator (such as a miner) can verify any transaction
 6. a special type of transaction called the Miner Fee transaction, which is used to reward a miner for successfully mining a block
 7. how notes are encrypted and decrypted such that only the appropriate parties are privy to viewing transaction details
 
