@@ -1,33 +1,41 @@
 import React from "react";
 import Link from "@docusaurus/Link";
 
+import axios from "axios";
 import clsx from "clsx";
+
 import styles from "./openPositions.module.css";
 
-import { useHistory } from "@docusaurus/router";
+const LEVER_ORGANIZATION = 'ironfish';
 
 function Position({ title, time, location, link }) {
-  const history = useHistory();
-
-  function handleClick() {
-    window.open(link, "_blank");
-  }
-
   return (
-    <div className={clsx(styles.position)} onClick={handleClick}>
-      <p className={clsx(styles.title)}>
-        <Link className={clsx(styles.button)} to={link}>
-          {title}
-        </Link>
-      </p>
-      <p className={clsx(styles.time)}>{time}</p>
-      <p className={clsx(styles.location)}>{location}</p>
-      <img src="/img/careers/arrow.svg" alt="link" />
-    </div>
+    <Link className={clsx(styles.positionLink)} to={link}>
+      <div className={clsx(styles.position)}>
+        <p className={clsx(styles.title)}>{title}</p>
+        <p className={clsx(styles.time)}>{time}</p>
+        <p className={clsx(styles.location)}>{location}</p>
+        <img src="/img/careers/arrow.svg" alt="link" />
+      </div>
+    </Link>
   );
 }
 
 function OpenPositions() {
+  const [jobData, setJobData] = React.useState({ type: 'loading' })
+
+  React.useEffect(() => {
+    const fetchJobs = async () => {
+      try {
+        const result = await axios.get(`https://api.lever.co/v0/postings/${LEVER_ORGANIZATION}?mode=json`)
+        setJobData({ type: 'success', data: result.data.sort((a, b) => a.text - b.text) })
+      } catch (error) {
+        setJobData({ type: 'error', error: error })
+      }
+    }
+    fetchJobs()
+  }, [])
+
   return (
     <section className={clsx(styles.section)} id="open-positions">
       <div className={clsx(styles.about)}>
@@ -43,51 +51,22 @@ function OpenPositions() {
         </div>
       </div>
       <div className={clsx(styles.container)}>
-        <div className={clsx(styles.positions)}>
-          <Position
-            title="Cryptographer"
-            time="Full-Time"
-            location="SF / Remote"
-            link="https://jobs.lever.co/ironfish/8c384a79-5ffe-4b27-9387-46e1410db067"
-          />
-          <Position
-            title="Engineering Manager"
-            time="Full-Time"
-            location="SF / Remote"
-            link="https://jobs.lever.co/ironfish/35a389f1-0883-455b-8c19-b9e20a936e2b"
-          />
-          <Position
-            title="Front End Engineer"
-            time="Full-Time"
-            location="SF / Remote"
-            link="https://jobs.lever.co/ironfish/8c7ef6a8-a8b4-40da-a5b1-7e54853f6dd9"
-          />
-          <Position
-            title="Full Stack Engineer"
-            time="Full-Time"
-            location="SF / Remote"
-            link="https://jobs.lever.co/ironfish/76dd75e4-f8d9-44a7-9693-4462696a8ceb"
-          />
-          <Position
-            title="Software Engineer"
-            time="Full-Time"
-            location="SF / Remote"
-            link="https://jobs.lever.co/ironfish/e0b384ba-64c6-4e31-8542-8ba0d9b01797"
-          />
+        {jobData.type === 'loading' && <div className={clsx(styles.loading)}>Loading...</div>}
 
-          <Position
-            title="Executive Assistant"
-            time="Full-Time"
-            location="SF / Remote"
-            link="https://jobs.lever.co/ironfish/77d38d59-97f9-4ba2-95ff-ee8f8f1d3cc9"
-          />
-          <Position
-            title="Community Manager"
-            time="Full-Time"
-            location="SF / Remote"
-            link="https://jobs.lever.co/ironfish/21c1357b-b41e-4474-bbe8-1690b6c3ed17"
-          />
-        </div>
+        {jobData.type === 'success' &&
+          <div className={clsx(styles.positions)}>
+            {jobData.data.map((job) => <Position
+              title={job.text}
+              time={job.categories.commitment || ''}
+              location={job.categories.location || ''}
+              link={job.hostedUrl}
+            />)}
+          </div>
+        }
+
+        {jobData.type === 'error' && <div className={clsx(styles.loading)}>
+          Visit our <Link to={`https://jobs.lever.co/${LEVER_ORGANIZATION}`}>Lever page</Link> to view our job listings.
+        </div>}
       </div>
     </section>
   );

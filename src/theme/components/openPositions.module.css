@@ -19,7 +19,6 @@
 
 .title {
   font-size: 46px;
-  line-height: 55px;
   font-family: var(--ifm-font-header-button);
 }
 .description {
@@ -39,6 +38,17 @@
   width: 100%;
   margin: 0 auto;
   max-width: 1114px;
+}
+.loading {
+  font-size: var(--ifm-position-title-font-size);
+  margin: 18px 0px;
+  text-align: center;
+}
+.positionLink {
+  text-decoration: none;
+}
+.positionLink:hover {
+  text-decoration: none;
 }
 .position p {
   margin: 0;
@@ -83,10 +93,6 @@
   font-family: var(--ifm-font-header-button);
   font-size: 18px;
   color: var(--ifm-color-thirty);
-  height: 25px;
-}
-.position .button {
-  height: 18px;
 }
 @media screen and (min-width: 1141px) {
   .positions {
@@ -116,10 +122,6 @@
   .position {
     flex-wrap: wrap;
     height: 132px;
-    padding-top: 18px;
-  }
-  .title {
-    width: 100%;
   }
   .about {
     padding: 2rem 35px;
@@ -130,6 +132,9 @@
   .container {
     padding-top: 24px;
     padding-bottom: 24px;
+  }
+  .position .title {
+    width: 100%;
   }
   .position img {
     display: none;
