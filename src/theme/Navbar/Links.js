@@ -1,16 +1,16 @@
-import React from "react";
-import clsx from "clsx";
+import React from 'react'
+import clsx from 'clsx'
 
-import SubnavButton from "./SubnavButton";
-import LoginButton from "./LoginButton";
-import Company from "./Company";
-import Testnet from "./Testnet";
+import SubnavButton from './SubnavButton'
+import LoginButton from './LoginButton'
+import Company from './Company'
+import Testnet from './Testnet'
 
-import overrides from "./overrides.module.css";
+import overrides from './overrides.module.css'
 
 export function NavbarLinks({
-  className = "",
-  selectedClassName = "absolute left-0 right-0 bottom-0 border-b-2 border-black",
+  className = '',
+  selectedClassName = 'absolute left-0 right-0 bottom-0 border-b-2 border-black',
   companyClicked,
   companyHovered,
   companyVisible = false,
@@ -19,29 +19,23 @@ export function NavbarLinks({
   testnetVisible = false,
   condensed,
 }) {
-  const itemPadding = [`px-2`, `lg:px-3.5`, `3xl:px-5`];
+  const itemPadding = [`px-2`, `lg:px-3.5`, `3xl:px-5`]
   const cc = clsx([
     className,
     ...itemPadding,
     overrides.button,
     { [overrides.condensedSubNavButton]: condensed },
     { [overrides.regularSubNavButton]: !condensed },
-  ]);
-  const buttonStyles = { className: cc, selectedClassName };
+  ])
+  const buttonStyles = { className: cc, selectedClassName }
 
-  const linkClass = `${cc} ${overrides.link}`;
+  const linkClass = `${cc} ${overrides.link}`
 
   return (
     <>
-      <a className={linkClass} href="/docs/onboarding/iron-fish-tutorial">
-        Get Started
-      </a>
-      <a className={linkClass} href="/docs/whitepaper/1_introduction">
-        Whitepaper
-      </a>
-      <a className={linkClass} href="/roadmap">
-        Roadmap
-      </a>
+      <a className={linkClass} href="/docs/onboarding/iron-fish-tutorial">Get Started</a>
+      <a className={linkClass} href="/docs/whitepaper/1_introduction">Whitepaper</a>
+      <a className={linkClass} href="/roadmap">Roadmap</a>
       <SubnavButton
         label="Company"
         {...buttonStyles}
@@ -64,6 +58,6 @@ export function NavbarLinks({
       </SubnavButton>
       <LoginButton />
     </>
-  );
+  )
 }
-export default NavbarLinks;
+export default NavbarLinks
