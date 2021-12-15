@@ -65,6 +65,12 @@ docker run --rm --tty --interactive --network host --volume <home-directory>/.ir
 
 **Note:** You can also use the RPC layer over TCP by starting your node with `--rpc.tcp`, which connects over the default port 8020.
 
+To run a miner replace `<threads>` with a number of threads to use for workers.
+
+```sh
+docker run --rm --tty --interactive --network host --volume <home-directory>/.ironfish:/root/.ironfish ghcr.io/iron-fish/ironfish:latest miners:start --threads=<threads>
+```
+
 ### Updating
 
 To update your image, use `docker pull` before running the image.
