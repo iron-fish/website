@@ -12,7 +12,7 @@ So far, we’ve gone over the structure of the Iron Fish blockchain; this sectio
 - <em>Miners</em> are those nodes that propose a new block to be added to the blockchain to other nodes.
 - A new block is said to be <em>mined</em> when a miner finds a hash of the block header that is below some threshold that we call the target.
 
-The Iron Fish blockchain algorithm dynamically adjusts the mining difficulty to achieve 15 second average block times, by either increasing or decreasing mining difficulty if previous blocks are observed to be coming in too fast or too slow.
+The Iron Fish blockchain algorithm dynamically adjusts the mining difficulty to achieve 60 second average block times, by either increasing or decreasing mining difficulty if previous blocks are observed to be coming in too fast or too slow.
 
 To be a miner, a node must have both of the global data structures synced (the Merkle Tree of Notes and the Merkle Tree of Nullifiers), and know at least the two most recent blocks.
 
