@@ -8,7 +8,7 @@ hide_table_of_contents: false
 
 Miners are essential to the health of the Iron Fish network. Without them, blocks won't be generated and transactions won't be transmitted. Iron Fish is still at the testnet stage.
 
-In the future, we plan to offer incentives for users to mine blocks on the testnet. Join our [Discord](https://discord.gg/EkQkEcm8DH) to stay up-to-date with our upcoming announcements!
+We are currently running an incentivised testnet where actively mining automatically earns you points for blocks that are mined and accepted to the main chain. To participate, visit our [testnet](https://testnet.ironfish.network/) website to learn more.
 
 ## Requirements
 Install Iron Fish by following the instructions [here](onboarding/installation.md).
