@@ -36,7 +36,7 @@ export const SubnavButton = ({
               { 'transform-gpu -rotate-180': isVisible },
             ])}
           >
-            <Disclosable className="w-6 md:w-4" />
+            <Disclosable className="w-6 md:w-4 h-10" />
           </span>
         </span>
       </button>
