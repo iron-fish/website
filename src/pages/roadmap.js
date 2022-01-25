@@ -259,7 +259,7 @@ const data = {
               here
             </a>{" "}
             to get started with running an Iron Fish node, check out our{" "}
-            <a href="https://github.com/iron-fish/ironfish"> github</a> for open
+            <a href="https://github.com/iron-fish/ironfish">GitHub</a> for open
             source contributions, join our{" "}
             <a href="https://discord.gg/EkQkEcm8DH">Discord</a> to ask questions
             or give feedback, or check out our{" "}
