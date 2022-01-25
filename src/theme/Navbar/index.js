@@ -84,7 +84,7 @@ function Navbar({ fill = "white", className = "bg-black text-white" }) {
           "1.5lg:px-16",
         ])}
       >
-        <div className="py-7">
+        <div className="py-7 flex items-center">
           <a href="/" className={overrides.logoLink}>
             <Logo fill={fill} width={190} height={32}></Logo>
           </a>
