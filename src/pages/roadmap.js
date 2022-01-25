@@ -253,16 +253,15 @@ const data = {
           />
           <p>
             Want to be a part of building the universal privacy layer for all
-            crypto assets? Click{" "}
+            crypto assets? Click&nbsp;
             <a href="https://ironfish.network/docs/onboarding/iron-fish-tutorial">
-              {" "}
               here
-            </a>{" "}
-            to get started with running an Iron Fish node, check out our{" "}
+            </a>
+            &nbsp;to get started with running an Iron Fish node, check out our&nbsp;
             <a href="https://github.com/iron-fish/ironfish">GitHub</a> for open
-            source contributions, join our{" "}
+            source contributions, join our&nbsp;
             <a href="https://discord.gg/EkQkEcm8DH">Discord</a> to ask questions
-            or give feedback, or check out our{" "}
+            or give feedback, or check out our&nbsp;
             <a href="https://angel.co/company/iron-fish">Careers</a> to join the
             core Iron Fish team!
           </p>
