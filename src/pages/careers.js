@@ -91,16 +91,6 @@ const employees = [
   },
 
   {
-    name: "Yurii",
-    title: "Engineer",
-    linkedin: "",
-    description:
-      "Originally from Belarus and still shocked you can return anything back to the store in the US. Says a lot with a few words.",
-    r: "#8C938D",
-    l: "#CDD6CE",
-    t: "#FAFAFA",
-  },
-  {
     name: "You?",
     title: "Fish",
     linkedin: "mailto:joinus@ironfish.network",
