@@ -30,7 +30,7 @@
   font-size: 22px;
 }
 
-@media screen and (min-width: 997px) and (max-width: 1320px) {
+@media screen and (min-width: 901px) and (max-width: 1320px) {
   .quickLinkContainer {
     width: 100%;
     margin-bottom: 20px !important;
