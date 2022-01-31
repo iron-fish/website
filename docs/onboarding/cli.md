@@ -100,8 +100,16 @@ config:get enableMiningDirector
 #### miners:start
 Starts a miner and subscribe to new blocks for the node. The node has to be synced with the network for the miner to start mining.
 
+**Note:** A valid graffiti is required in order to get credit for mining blocks in the incentivized testnet. Sign up for the incentivized testnet [here](https://testnet.ironfish.network/signup).
+
 ```sh
 ironfish miners:start
+```
+
+You can enable multiple threads by using the `-t` option with a value for the number of threads you wish to use. A value of -1 will use all available threads on the CPU. Try changing the number of threads to determine the best performance on your system.
+
+```sh
+ironfish miners:start -t -1
 ```
 
 #### miners:mined
