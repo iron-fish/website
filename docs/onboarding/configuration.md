@@ -52,6 +52,7 @@ You can change the working directory by passing the flag `--datadir` when runnin
 | logPrefix            | String to be prefixed to all logs. If any of the following strings are included, will replace them with the corresponding value: `%time%`, `%level%`, `%tag%` |
 | maxPeers             | The maximum number of peers to which the node can be connected at a time |
 | minPeers             | The minimum number of peers to which the node should be connected at any time |
+| minerBatchSize       | The number of hashes processed by miner per worker request |
 | miningForce          | Force mining |
 | nodeName             | Name of the node to be broadcasted to peers (optional) |
 | nodeWorkers          | The number of threads to use for workers. A value of -1 will use the maximum possible amount of threads.
