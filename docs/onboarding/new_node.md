@@ -38,7 +38,7 @@ ironfish start --bootstrap=localhost:9031
 ```
 
 ## Using a different port
-By default, Iron Fish runs on port 9033. If you wishes to use a different port, you can use the `--port` flag.
+By default, Iron Fish runs on port 9033. If you wish to use a different port, you can use the `--port` flag.
 
 E.g.
 ```sh
