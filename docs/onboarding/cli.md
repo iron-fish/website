@@ -183,12 +183,6 @@ ironfish faucet
 ```
 
 ### Chain
-#### chain:block
-Show the block header of a requested hash
-```sh
-ironfish chain:block
-```
-
 #### chain:export
 Export a part of the chain database to JSON
 ```sh
