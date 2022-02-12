@@ -207,6 +207,13 @@ Shows the heaviest head and tail of the node's chain. Includes the last ten bloc
 ironfish chain:show
 ```
 
+### Blocks
+#### blocks:show
+Show the block header of a requested hash
+```sh
+ironfish blocks:show [HASH]
+```
+
 ### Workers
 #### workers:status
 Shows the status of the worker pool
