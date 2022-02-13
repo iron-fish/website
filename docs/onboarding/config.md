@@ -28,13 +28,13 @@ ironfish config:show
 ### Get a config value
 Prints out one config value
 ```sh
-ironfish config:get CONFIG_KEY
+ironfish config:get NAME
 ```
 <Terminal command={Get} />
 
 ### Set a config value
 Sets a value in the config
 ```sh
-ironfish config:set CONFIG_KEY VALUE
+ironfish config:set NAME VALUE
 ```
 <Terminal command={Set} />
