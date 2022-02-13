@@ -18,7 +18,7 @@ module.exports = {
     'onboarding/iron-fish-faucet',
     'onboarding/send-receive-iron-fish-transactions',
     'onboarding/iron-fish-explorer',
-    'onboarding/miner-iron-fish',
+    'onboarding/mine-iron-fish',
     'onboarding/iron-fish-node-health',
     'onboarding/iron-fish-configuration',
     'onboarding/iron-fish-accounts-commands',

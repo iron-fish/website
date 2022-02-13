@@ -36,7 +36,7 @@ function QuickLinks() {
         icon="spin"
       />
       <QuickLink
-        link="/docs/onboarding/miner-iron-fish"
+        link="/docs/onboarding/mine-iron-fish"
         title="Mine $IRON"
         seeMore="Get to work"
         icon="block"

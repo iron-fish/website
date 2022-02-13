@@ -1,5 +1,5 @@
 ---
-id: miner-iron-fish
+id: mine-iron-fish
 title: Mine Iron Fish
 sidebar_label: Mine Iron Fish
 description: Iron Fish mining | Iron Fish Onboarding
@@ -13,7 +13,7 @@ We are currently running an incentivized testnet where actively mining automatic
 ## Requirements
 Install Iron Fish by following the instructions [here](onboarding/installation.md).
 
-To receive credit for mining blocks, sign up for the incentivized testnet [here](https://testnet.ironfish.network/signup) to ensure your graffiti is unique when you set it.
+**IMPORTANT:** To receive credit for mining blocks, sign up for the incentivized testnet [here](https://testnet.ironfish.network/signup) to ensure your graffiti is unique when you set it.
 
 ## Quick start
 Start your node by running the following command:

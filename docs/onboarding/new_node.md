@@ -47,4 +47,8 @@ ironfish start --port=9045
 
 ## Next steps
 
-The node will now sync your local chain with the network. It might take a while for the full sync to be complete. But you can still use the node in the meantime.
+The node will now sync your local chain with the network.
+
+It might take a while for the full sync to be complete. You can check the progress with `ironfish status`. Refer to the command output [here](onboarding/health_node.md).
+
+Although you cannot mine blocks while a node is not synced to the head of the chain, other commands can be used during this time.
