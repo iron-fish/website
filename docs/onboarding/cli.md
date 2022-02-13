@@ -191,12 +191,6 @@ ironfish faucet
 ```
 
 ### Chain
-#### chain:block
-Show the block header of a requested hash
-```sh
-ironfish chain:block
-```
-
 #### chain:export
 Export a part of the chain database to JSON
 ```sh
@@ -219,6 +213,13 @@ ironfish chain:repair
 Shows the heaviest head and tail of the node's chain. Includes the last ten blocks in the chain.
 ```sh
 ironfish chain:show
+```
+
+### Blocks
+#### blocks:show
+Show the block header of a requested hash
+```sh
+ironfish blocks:show [HASH]
 ```
 
 ### Workers

@@ -209,6 +209,9 @@
   margin-bottom: 20px;
   display: block;
 }
+.imagelude {
+  display: flex;
+}
 .interlude {
   width: 100%;
   margin: 128px auto 48px;
