@@ -23,5 +23,6 @@ module.exports = {
     'onboarding/iron-fish-configuration',
     'onboarding/iron-fish-accounts-commands',
     'onboarding/iron-fish-cli',
+    'onboarding/iron-fish-chain-commands',
   ]
 };
