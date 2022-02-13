@@ -13,18 +13,31 @@ We are currently running an incentivized testnet where actively mining automatic
 ## Requirements
 Install Iron Fish by following the instructions [here](onboarding/installation.md).
 
-**IMPORTANT:** To receive credit for mining blocks, sign up for the incentivized testnet [here](https://testnet.ironfish.network/signup) to ensure your graffiti is unique when you set it.
+A valid graffiti is required to receive credit for mining blocks in the incentivized testnet.
 
-## Quick start
+## Start Mining
 Start your node by running the following command:
 ```sh
 ironfish start
 ```
 
-Open a new terminal window and run:
+Sign up for the incentivized testnet [here](https://testnet.ironfish.network/signup).
+
+Open a new terminal window.
+
+If this is your first time mining set your graffiti and node name by running:
+
+```sh
+ironfish testnet
+```
+
+Followed by:
+
 ```sh
 ironfish miners:start
 ```
+
+Mining will not start until your node is synced to the head of the chain, which may take some time.
 
 ## Changing the default account
 If you want to use a different account to store the miners fee, you can create a new account by running the following command:

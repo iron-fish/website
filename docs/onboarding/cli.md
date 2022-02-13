@@ -20,6 +20,29 @@ E.g. for a command:
 ironfish ironfish accounts:pay help
 ```
 
+### Testnet
+#### testnet
+Retrieves your user ID from the testnet servers to configure node name and graffiti.
+Requires an account with the incentivized testnet [here](https://testnet.ironfish.network/signup).
+
+```sh
+ironfish testnet
+
+Enter the user id or url to a testnet user like https://testnet.ironfish.network/users/1080
+User ID or URL: https://testnet.ironfish.network/users/1080
+
+Asking Iron Fish who user 1080 is...
+
+Hello JASON💪💎🚀!
+
+You are about to change your NODE NAME from testnet to JASON💪💎🚀
+You are about to change your GRAFFITI from testnet to JASON💪💎🚀
+Are you SURE? (y)es / (n)o: y
+
+✅ Updated NODE NAME from testnet to JASON💪💎🚀
+✅ Updated GRAFFITI from testnet to JASON💪💎🚀
+```
+
 ### Node
 #### start
 Starts the full node
@@ -100,7 +123,7 @@ config:get enableMiningDirector
 #### miners:start
 Starts a miner and subscribe to new blocks for the node. The node has to be synced with the network for the miner to start mining.
 
-**Note:** A valid graffiti is required in order to get credit for mining blocks in the incentivized testnet. Sign up for the incentivized testnet [here](https://testnet.ironfish.network/signup).
+**Note:** A valid graffiti is required in order to get credit for mining blocks in the incentivized testnet. Sign up for the incentivized testnet [here](https://testnet.ironfish.network/signup). Then run the [testnet](cli.md#testnet-1) command to set up your node's graffiti.
 
 ```sh
 ironfish miners:start

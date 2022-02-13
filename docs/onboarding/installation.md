@@ -67,6 +67,8 @@ docker run --rm --tty --interactive --network host --volume <home-directory>/.ir
 
 To run a miner replace `<threads>` with a number of threads to use for workers.
 
+**Note:** A valid graffiti is required to receive credit for mining blocks in the incentivized testnet.
+
 ```sh
 docker run --rm --tty --interactive --network host --volume <home-directory>/.ironfish:/root/.ironfish ghcr.io/iron-fish/ironfish:latest miners:start --threads=<threads>
 ```
