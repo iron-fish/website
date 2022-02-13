@@ -43,7 +43,7 @@ function Testnet({ condensed = false }) {
                   machine.
                 </p>
                 <a
-                  href="https://ironfish.network/docs/onboarding/iron-fish-tutorial"
+                  href="/docs/onboarding/iron-fish-tutorial"
                   className={`flex font-favorit text-sm ${overrides.link}`}
                 >
                   <span>Read the walkthrough</span>

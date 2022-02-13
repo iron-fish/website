@@ -13,6 +13,7 @@ module.exports = {
   onboarding: [
     'onboarding/iron-fish-tutorial',
     'onboarding/installation-iron-fish',
+    'onboarding/iron-fish-quick-start',
     'onboarding/start-an-iron-fish-node',
     'onboarding/new-account-iron-fish',
     'onboarding/iron-fish-faucet',
