@@ -21,7 +21,7 @@ ironfish faucet
 <Terminal command={Faucet} />
 <br />
 
-Once the request is executed, our Faucet will send a transaction to your account. Depending on the volume of requests, it might take several minutes before the coins reaches your account. You can check your balance with the following command:
+Once the request is executed, our Faucet will send a small transaction (10 $ORE) to your account. Depending on the volume of requests, it might take several minutes before the coins reaches your account. You can check your balance with the following command:
 ```sh
 ironfish accounts:balance
 ```
