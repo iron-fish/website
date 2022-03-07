@@ -825,7 +825,6 @@
   }
   .roadmap {
     flex-direction: row;
-    height: 600px;
   }
   .halfbox {
     width: 50%;
