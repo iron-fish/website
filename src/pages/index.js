@@ -118,18 +118,20 @@ function Home() {
             <p className={clsx(styles.newsletterTitle)}>
               Stay up to date with Iron Fish
             </p>
-            <Mailchimp
-              buttonClassName="button button--outline button--secondary"
-              action="https://network.us20.list-manage.com/subscribe/post?u=faf0318a641ddbad058a4ad2f&amp;id=25c9feb0f4"
-              fields={[
-                {
-                  name: "EMAIL",
-                  placeholder: "Enter your email...",
-                  type: "email",
-                  required: true,
-                },
-              ]}
-            />
+            <div id="email-signup">
+              <Mailchimp
+                buttonClassName="button button--outline button--secondary"
+                action="https://network.us20.list-manage.com/subscribe/post?u=faf0318a641ddbad058a4ad2f&amp;id=25c9feb0f4"
+                fields={[
+                  {
+                    name: "EMAIL",
+                    placeholder: "Enter your email...",
+                    type: "email",
+                    required: true,
+                  },
+                ]}
+              />
+            </div>
           </div>
         </section>
       </main>
