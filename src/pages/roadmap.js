@@ -1,22 +1,22 @@
-import React from "react"
-import { useState } from "react"
-import Layout from "@theme/Layout"
-import clsx from "clsx"
-import styles from "./roadmap.module.css"
-import pkg from "../../package.json"
-import { shuffle } from "shuffle-seed"
+import React from "react";
+import { useState } from "react";
+import Layout from "@theme/Layout";
+import clsx from "clsx";
+import styles from "./roadmap.module.css";
+import pkg from "../../package.json";
+import { shuffle } from "shuffle-seed";
 
-import Bitcoin from "../theme/RoadmapPage/icon-bitcoin"
-import Uniswap from "../theme/RoadmapPage/icon-uniswap"
-import Dai from "../theme/RoadmapPage/icon-dai"
-import Ethereum from "../theme/RoadmapPage/icon-ethereum"
-import Aave from "../theme/RoadmapPage/icon-aave"
-import Solana from "../theme/RoadmapPage/icon-solana"
-import Compound from "../theme/RoadmapPage/icon-compound"
-import Filecoin from "../theme/RoadmapPage/icon-filecoin"
-import Fei from "../theme/RoadmapPage/icon-fei"
-import Polygon from "../theme/RoadmapPage/icon-polygon"
-import Avalanche from "../theme/RoadmapPage/icon-avalanche"
+import Bitcoin from "../theme/RoadmapPage/icon-bitcoin";
+import Uniswap from "../theme/RoadmapPage/icon-uniswap";
+import Dai from "../theme/RoadmapPage/icon-dai";
+import Ethereum from "../theme/RoadmapPage/icon-ethereum";
+import Aave from "../theme/RoadmapPage/icon-aave";
+import Solana from "../theme/RoadmapPage/icon-solana";
+import Compound from "../theme/RoadmapPage/icon-compound";
+import Filecoin from "../theme/RoadmapPage/icon-filecoin";
+import Fei from "../theme/RoadmapPage/icon-fei";
+import Polygon from "../theme/RoadmapPage/icon-polygon";
+import Avalanche from "../theme/RoadmapPage/icon-avalanche";
 
 const ASSETS = [
   ["uniswap", Uniswap],
@@ -30,23 +30,23 @@ const ASSETS = [
   ["fei", Fei],
   ["polygon", Polygon],
   ["avalanche", Avalanche],
-]
+];
 
-const range = x => {
-  const arr = []
+const range = (x) => {
+  const arr = [];
   while (x > 0) {
-    arr.push(--x)
+    arr.push(--x);
   }
-  return arr
-}
+  return arr;
+};
 
 const patch = (given, source) => {
-  const copy = shuffle(given, pkg.version)
-  return source.map(x => copy[x % copy.length])
-}
+  const copy = shuffle(given, pkg.version);
+  return source.map((x) => copy[x % copy.length]);
+};
 
 const Asset = ({ update, asset: X, name, flipped, index, data }) => {
-  const [$flipped, $setFlipped] = useState(flipped)
+  const [$flipped, $setFlipped] = useState(flipped);
   return (
     <div
       id={name + "-" + index}
@@ -56,7 +56,7 @@ const Asset = ({ update, asset: X, name, flipped, index, data }) => {
         styles[name]
       )}
       onMouseEnter={() => {
-        $setFlipped(!$flipped)
+        $setFlipped(!$flipped);
       }}
     >
       <div
@@ -74,23 +74,23 @@ const Asset = ({ update, asset: X, name, flipped, index, data }) => {
         <img src={`img/roadmap/asset-hexfish.png`} />
       </div>
     </div>
-  )
-}
+  );
+};
 
 const AssetConnection = ({ size = 16 }) => {
-  const patchedAssets = patch(ASSETS, range(size))
-  const [$data, $setData] = useState({})
+  const patchedAssets = patch(ASSETS, range(size));
+  const [$data, $setData] = useState({});
   const $update = (key, state) => {
-    if ($data[key] && $data[key] === state) return
-    const newData = Object.assign({}, $data, { [key]: state })
-    debugger
-    $setData(newData)
-  }
+    if ($data[key] && $data[key] === state) return;
+    const newData = Object.assign({}, $data, { [key]: state });
+    debugger;
+    $setData(newData);
+  };
   return (
     <div className={clsx(styles.assets)}>
       <div className={styles.assetsWrapper}>
         {patchedAssets.map(([x, raw], i) => {
-          const flipped = !!Math.round(Math.random() * 1)
+          const flipped = !!Math.round(Math.random() * 1);
           return (
             <Asset
               asset={raw}
@@ -101,12 +101,12 @@ const AssetConnection = ({ size = 16 }) => {
               index={i}
               data={$data}
             />
-          )
+          );
         })}
       </div>
     </div>
-  )
-}
+  );
+};
 
 const Interlude = ({ src, wrapper = "", alt, className, children }) => (
   <div className={clsx(styles.interlude, wrapper)}>
@@ -117,7 +117,7 @@ const Interlude = ({ src, wrapper = "", alt, className, children }) => (
       <div className={className} />
     )}
   </div>
-)
+);
 
 const data = {
   intro: (
@@ -128,11 +128,18 @@ const data = {
             Roadmap to Universal Privacy Layer for Crypto
           </h1>
           <p className={styles.mainIntro}>
-            At Iron Fish we have one goal: enable private cryptocurrency
-            transactions. We’re building Iron Fish to be the universal privacy
-            layer for crypto, enabling users to bridge assets between Iron Fish
-            and other chains for fully private transactions—a true SSL layer for
-            blockchains.
+            We’re building Iron Fish to be the universal privacy layer for
+            crypto—a true SSL layer for blockchains. We believe the first step
+            towards that goal is to build a solid foundation of shipping an
+            easy-to-use, privacy-first layer 1 blockchain.
+          </p>
+          <p className={styles.mainIntro}>
+            The{" "}
+            <a href="https://docs.google.com/spreadsheets/d/1KoJBd3WYmjBcwX-EGfshDQ4tDHxtNo0O8KFlfZ8d0jg/edit#gid=1283773986">
+              roadmap
+            </a>{" "}
+            is a living document and it *will* change as scope gets more
+            defined.
           </p>
         </div>
       </div>
@@ -257,7 +264,8 @@ const data = {
             <a href="https://ironfish.network/docs/onboarding/iron-fish-tutorial">
               here
             </a>
-            &nbsp;to get started with running an Iron Fish node, check out our&nbsp;
+            &nbsp;to get started with running an Iron Fish node, check out
+            our&nbsp;
             <a href="https://github.com/iron-fish/ironfish">GitHub</a> for open
             source contributions, join our&nbsp;
             <a href="https://discord.gg/EkQkEcm8DH">Discord</a> to ask questions
@@ -269,7 +277,7 @@ const data = {
       ),
     },
   },
-}
+};
 
 const Feature = ({
   icon,
@@ -286,7 +294,7 @@ const Feature = ({
     <h3 className={styles.detailTitle}>{title}</h3>
     <p className={styles.detailDescription}>{description}</p>
     <ul>
-      {itemList.map(element => (
+      {itemList.map((element) => (
         <li className={styles.detailDescription}>{element}</li>
       ))}
     </ul>
@@ -295,71 +303,16 @@ const Feature = ({
       {ctaText}
     </a>
   </div>
-)
+);
 
-const capitalize = x => x[0].toUpperCase() + x.slice(1)
+const capitalize = (x) => x[0].toUpperCase() + x.slice(1);
 
 function Roadmap() {
   return (
     <Layout title="Roadmap">
-      <main className={clsx(styles.main)}>
-        {data.intro}
-
-        {Object.entries(data.phases).map(
-          ([
-            phase,
-            { image, features = [], subtitle, date, description, children },
-          ]) =>
-            image ? (
-              <div
-                key={phase}
-                className={clsx(styles.imagelude, styles[phase])}
-              >
-                {image}
-              </div>
-            ) : (
-              <section
-                className={clsx(styles.phase, styles[phase])}
-                key={phase}
-              >
-                <div className={styles.phaseWrapper}>
-                  {date ? (
-                    <time className={styles.launchdate}>Launched {date}</time>
-                  ) : null}
-                  <h2 className={styles.phaseTitle}>
-                    {phase !== "mainnet" ? (
-                      <>
-                        Iron Fish Testnet <br className={styles.breakAfterSm} />
-                        {capitalize(phase.replace(/(\d)/, " $1"))}
-                      </>
-                    ) : null}
-                    {subtitle
-                      ? (phase === "mainnet" ? "" : ": ") + subtitle
-                      : ""}
-                  </h2>
-                  {description ? (
-                    <p className={styles.phaseDescription}>{description}</p>
-                  ) : null}
-                  {features?.length === 0 ? null : (
-                    <div
-                      className={clsx(
-                        styles.details,
-                        styles["total" + features.length.toString()]
-                      )}
-                    >
-                      {features.map(feature => (
-                        <Feature {...feature} key={feature.title} />
-                      ))}
-                    </div>
-                  )}
-                  {children}
-                </div>
-              </section>
-            )
-        )}
-      </main>
+      <main className={clsx(styles.main)}>{data.intro}</main>
     </Layout>
-  )
+  );
 }
 
-export default Roadmap
+export default Roadmap;
