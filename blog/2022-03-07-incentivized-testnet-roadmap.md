@@ -5,7 +5,7 @@ author_url: https://twitter.com/leanthebean
 author_image_url: /img/blog/elena.png
 author_description: Elena is the Founder and CEO of Iron Fish — previously worked at Airbnb, Tilt, and Microsoft. Fell down the cryptocurrency rabbit hole in 2017. Really didn't want her insurance to know she eats pizza.
 hide_table_of_contents: true
-title: Incentivized Testnet Phase 1 → Phase 2 & Roadmap
+title: Incentivized Testnet & Roadmap Updates
 description: Update on Incentivized Testnet Phase 1, roadmap to mainnet, and subsequent future Incentivized Testnet Phase 2
 image: /img/blog/roadmap.png
 tags: [iron fish, ironfish, ironfishcrypto, roadmap, incentivized testnet]
@@ -19,17 +19,19 @@ We’re building Iron Fish to be the universal privacy layer for crypto—a true
 
 With that, we want to share with all of you our engineering roadmap for the upcoming months of all we’re working on before mainnet launch. It is a living document and it **_will change_** as scope gets more defined.
 
-The current roadmap can be found 👉 [here](https://docs.google.com/spreadsheets/d/1KoJBd3WYmjBcwX-EGfshDQ4tDHxtNo0O8KFlfZ8d0jg/edit#gid=1283773986)
+The current roadmap can be found 👉 [here](https://ironfish.network/roadmap)
 
 To be a part of this decentralized future, visit our <a href="https://jobs.lever.co/ironfish">careers page</a>.
 
-## Incentivized Testnet Phase 1 → Phase 2
+## Incentivized Testnet Phase 1
 
 The first Iron Fish incentivized testnet was launched on December 1st. Since then, people from 156 countries have signed up, more than 18k people joined our Discord, and close to 9k participants have contributed in some way to Iron Fish. We closed close to 300 GitHub issues in that timeframe as well as numerous features and open source contributions. The Iron Fish full node implementation improved immensely, and we learned a ton from our community.
 
-**We are officially ending the first Iron Fish Incentivized Testnet at block 150,000 (approximately on Friday March 11th)**. All participants will be emailed in the next few weeks regarding next steps. Sign up here if you haven’t already to stay in the loop
+**We are officially ending the first Iron Fish incentivized testnet at block 150,000 (approximately on Friday March 11th)**. All participants will be emailed in the next few weeks regarding next steps. Sign up here if you haven’t already to stay in the loop
 
-**The subsequent Incentivized Testnet Phase 2 will be announced in a few weeks with different rules**. This second testnet will run up until mainnet launch, with the goal of stress-testing and preparing Iron Fish for mainnet. Stay tuned for more updates!
+## Incentivized Testnet Phase 2
+
+**The subsequent incentivized testnet Phase 2 will be announced in a few weeks with different rules**. This second testnet will run up until mainnet launch, with the goal of stress-testing and preparing Iron Fish for mainnet. Stay tuned for more updates!
 
 Thank you all for participating. You all have made the Iron Fish network and community truly special 🙏.
 
