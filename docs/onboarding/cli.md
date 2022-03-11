@@ -109,6 +109,7 @@ List mined block hashes
 ```sh
 ironfish miners:mined [START] [STOP]
 ```
+Optional arguments: [START] and [STOP] are either positive numbers that indicate the starting and stopping blocks or are negative to count backwards from the head of the chain.
 
 ### Networking
 #### peers:list
@@ -188,6 +189,7 @@ Export a part of the chain database to JSON
 ```sh
 ironfish chain:export [START] [STOP]
 ```
+Optional arguments: [START] and [STOP] are either positive numbers that indicate the starting and stopping blocks or are negative to count backwards from the head of the chain.
 
 #### chain:forks
 Try to detect forks that are being mined
@@ -204,8 +206,9 @@ ironfish chain:repair
 #### chain:show
 Shows the heaviest head and tail of the node's chain. Includes the last ten blocks in the chain.
 ```sh
-ironfish chain:show
+ironfish chain:show [START] [STOP]
 ```
+Optional arguments: [START] and [STOP] are either positive numbers that indicate the starting and stopping blocks or are negative to count backwards from the head of the chain.
 
 ### Blocks
 #### blocks:show
