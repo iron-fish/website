@@ -27,7 +27,7 @@ To be a part of this decentralized future, visit our <a href="https://jobs.lever
 
 The first Iron Fish incentivized testnet was launched on December 1st. Since then, people from 156 countries have signed up, more than 18k people joined our Discord, and close to 9k participants have contributed in some way to Iron Fish. We closed close to 300 GitHub issues in that timeframe as well as numerous features and open source contributions. The Iron Fish full node implementation improved immensely, and we learned a ton from our community.
 
-**We are officially ending the first Iron Fish incentivized testnet at block 150,000 (approximately on Friday March 11th)**. All participants will be emailed in the next few weeks regarding next steps. Sign up here if you haven’t already to stay in the loop
+**We are officially ending the first Iron Fish incentivized testnet at block 150,000 (approximately on Friday March 11th)**. All participants will be emailed in the next few weeks regarding next steps. [Sign up here](https://ironfish.network/#email-signup) if you haven’t already to stay in the loop
 
 ## Incentivized Testnet Phase 2
 
