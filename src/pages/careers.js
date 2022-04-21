@@ -91,6 +91,17 @@ const employees = [
   },
 
   {
+    name: "Mat",
+    title: "Engineer",
+    linkedin: "mathew-geist-a8772851",
+    description:
+      "Likes interesting tech. Likes privacy. Loves when they are combined. Will probably talk to you about Rust unprompted.",
+    r: "#5698f9",
+    l: "#d4e5fd",
+    t: "#aacbfc",
+  },
+
+  {
     name: "You?",
     title: "Fish",
     linkedin: "mailto:joinus@ironfish.network",
