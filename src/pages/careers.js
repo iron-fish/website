@@ -89,6 +89,16 @@ const employees = [
     l: "#3600CF",
     t: "#AE92FF",
   },
+  {
+    name: "Daniel",
+    title: "Engineer",
+    linkedin: "danield9tqh",
+    description:
+      "Enjoys a good team contact sport (maybe egnineering qualifies??). Also enjoys watching math videos (3b1b) and talking about Functional Programming",
+    r: "#00E2FF",
+    l: "#7ff0ff",
+    t: "#bff7ff",
+  },
 
   {
     name: "You?",
