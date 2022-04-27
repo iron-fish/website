@@ -112,6 +112,17 @@ const employees = [
   },
 
   {
+    name: "Lawrence",
+    title: "Engineer",
+    linkedin: "lwisne",
+    description:
+      "Cat herder. Aspiring Florida Man. Enjoys playing chess, running long distances, and hitting launch deadlines.",
+    r: "#39703C",
+    l: "#6C9E6C",
+    t: "#A2C697",
+  },
+
+  {
     name: "You?",
     title: "Fish",
     linkedin: "mailto:joinus@ironfish.network",
