@@ -113,7 +113,7 @@ const employees = [
 
   {
     name: "Lawrence",
-    title: "Engineer",
+    title: "Eng Manager",
     linkedin: "lwisne",
     description:
       "Cat herder. Aspiring Florida Man. Enjoys playing chess, running long distances, and hitting launch deadlines.",
