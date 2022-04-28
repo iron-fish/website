@@ -1,9 +1,8 @@
-const remarkMath = require("remark-math");
-const rehypeKatex = require("rehype-katex");
+const remarkMath = require("remark-math")
+const rehypeKatex = require("rehype-katex")
 
 module.exports = {
-  title:
-    "Iron Fish - $IRON - Private, anonymous, and easy to use cryptocurrency",
+  title: "Iron Fish - Private, anonymous, and easy to use cryptocurrency",
   tagline:
     "Enable the free flow of assets through accessible and private cryptocurrency.",
   url: "https://ironfish.network",
@@ -72,7 +71,7 @@ module.exports = {
     },
   },
 
-  plugins: ['./src/plugins/tailwind'],
+  plugins: ["./src/plugins/tailwind"],
 
   presets: [
     [
@@ -105,4 +104,4 @@ module.exports = {
       },
     ],
   ],
-};
+}
