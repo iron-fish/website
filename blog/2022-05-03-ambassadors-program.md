@@ -47,12 +47,12 @@ We are aware everyone has different strengths. The below points are just an idea
 
 ## How do I apply?
 
-* We will post the application in the #announcements channel on Discord.
+* We will post the application in the [#announcements][discord] channel on Discord.
 * Application questions:
   * Share a public link to a ONE PAGE max document that contains links to your previous contributions to the Iron Fish community, such as: original blog posts, Twitter threads, and questions raised or answered in the Discord.
   * Why do you want to be an Iron Fish Ambassador? [3-5 sentences max]
   * What do you want to do for the ecosystem? [3-5 sentences max] 
-* Add your graffiti (case sensitive), email address, and Discord name (don’t forget your number #). Only one submission per person. **note, multiple entries will be banned from any future admissions to the program. 
+* Make sure to add your graffiti (case sensitive), email address, and Discord name and number. Only one submission per person. **Note**: multiple entries will be banned from any future admissions to the program. 
 
 
 ## How will Ambassadors be selected?
@@ -78,11 +78,10 @@ We will evaluate applications based on:
 * _I don’t have many previous contributions to Iron Fish, should I apply_?
   * If you are new to Iron Fish, you can start creating content and posting on channels now to show your involvement for our next round of Ambassadors. 
 * _Do you have other questions_? 
-  * Head over to the #Ambassadors channel. And as always, be wary of scammers. No Iron Fish members will DM you on Discord. We will email winning recipients only from domains ending in ironfish.network 
+  * Head over to the [#Ambassadors][discord] channel. And as always, be wary of scammers. No Iron Fish members will DM you on Discord. We will email winning recipients only from domains ending in ironfish.network 
 
 Good luck and just keep swimming!
 
 🐠🐠🐠🐠🐠🐠🐠🐠🐠🐠🐠🐠🐠🐠🐠🐠🐠🐠🐠🐠🐠🐠🐠🐠🐠🐠🐠🐠🐠🐠🐠
 
 [discord]: https://discord.gg/EkQkEcm8DH
-[#captains]: https://discord.com/channels/771503434028941353/965635014123479110
