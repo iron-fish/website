@@ -46,7 +46,7 @@ We are aware everyone has different strengths. The below points are just an idea
 
 ## How do I apply?
 
-* We will post the application in the [#announcements][discord] channel on Discord.
+* We will post the application in the [#announcements][discord-announcements] channel on Discord.
 * Application questions:
   * Share a public link to a ONE PAGE max document that contains links to your previous contributions to the Iron Fish community, such as: original blog posts, Twitter threads, and questions raised or answered in the Discord.
   * Why do you want to be an Iron Fish Ambassador? [3-5 sentences max]
@@ -84,3 +84,4 @@ Good luck and just keep swimming!
 🐠🐠🐠🐠🐠🐠🐠🐠🐠🐠🐠🐠🐠🐠🐠🐠🐠🐠🐠🐠🐠🐠🐠🐠🐠🐠🐠🐠🐠🐠🐠
 
 [discord]: https://discord.gg/EkQkEcm8DH
+[discord-announcements]: https://discord.com/channels/771503434028941353/816795744680935445 
