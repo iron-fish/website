@@ -47,11 +47,12 @@ We are aware everyone has different strengths. The below points are just an idea
 ## How do I apply?
 
 * We will post the application in the [#announcements][discord-announcements] channel on Discord.
-* Application questions:
+* Application process:
   * Share a public link to a ONE PAGE max document that contains links to your previous contributions to the Iron Fish community, such as: original blog posts, Twitter threads, and questions raised or answered in the Discord.
   * Why do you want to be an Iron Fish Ambassador? [3-5 sentences max]
   * What do you want to do for the ecosystem? [3-5 sentences max] 
-* Make sure to add your graffiti (case sensitive), email address, and Discord name and number. Only one submission per person. **Note**: multiple entries will be banned from any future admissions to the program. 
+* Make sure to add your graffiti (case sensitive), email address, and Discord name and number. Only one submission per person.
+  * **Note**: multiple entries will be banned from any future admissions to the program. 
 
 
 ## How will Ambassadors be selected?
