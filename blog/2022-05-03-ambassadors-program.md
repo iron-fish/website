@@ -36,7 +36,7 @@ We are aware everyone has different strengths. The below points are just an idea
   * Onboarding new members 
   * Answering questions 
 * _International_: 
-  * Representing your country’s community and relaying information.
+  * Representing your country’s community and relaying information
   * Translating content
 * _Operational_: 
   * Helping out the Iron Fish team with the Ambassador program
@@ -64,7 +64,7 @@ We will evaluate applications based on:
 
 ## How will Ambassadors be rewarded?
 
-* Captains and Voyagers will be given roles & colors in Discord
+* Captains and Voyagers will be given roles & colors in Discord.
 * All active members will receive NFTs in accordance with their role. This will be proof you’re an early ambassador. In the future, you’ll be eligible for special rewards with this NFT.
 
 ### FAQs
