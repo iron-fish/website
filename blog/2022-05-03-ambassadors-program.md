@@ -5,7 +5,7 @@ author_url: https://twitter.com/leanthebean
 author_image_url: /img/blog/elena.png
 author_description: Elena is the Founder and CEO of Iron Fish — previously worked at Microsoft and Airbnb. Fell down the cryptocurrency rabbit hole in 2017. Really didn't want her insurance to know she eats pizza.
 hide_table_of_contents: true
-title: Iron Fish Ambassador's Program
+title: Iron Fish Ambassador Program
 description: Ambassadors will help run and grow our community, so we'd like to incentivize them to do it right.
 image: /img/blog/ambassadors-program.png
 tags: [ironfish, ambassador, community]
