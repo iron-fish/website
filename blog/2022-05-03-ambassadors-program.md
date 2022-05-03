@@ -16,10 +16,9 @@ Ambassadors will help run and grow our incredible community. Together with our t
 
 ## How is it run?
 
-There are two tiers of Ambassadors: Captains and Voyagers. The team has already selected a few incredibly impactful community members as inaugural Captains. Together, we are now looking to add up to twenty Voyagers to join the inaugural Iron Fish Ambassador program in Round One. We are intentionally keeping this group small to start in order to manage it well before we add future rounds at later dates.
+There are two tiers of Ambassadors: Captains and Voyagers. The team has already selected a few incredibly impactful community members as inaugural Captains. Together, we are now looking to add up to twenty Voyagers to join the inaugural Iron Fish Ambassador program in Round One. We are keeping this inaugural group small so we manage it well before adding future rounds. 
 
-Applications will close after 500 entries and be selected by Friday, May 20th. We understand that this is a small group and there will be a lot of competition, but we chose this amount to ensure we can go through each entry diligently.
-
+Round One will close after 500 entries, and Ambassadors will be selected by Friday, May 20th. 
 
 ## How will Ambassadors help the community?
 
