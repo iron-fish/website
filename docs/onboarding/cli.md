@@ -54,7 +54,7 @@ ironfish status -f
 ```
 
 #### reset
-Deletes your chain and wallet state, but preserves your accounts. It will import your accounts afterwards into a fresh node state.
+Deletes your chain and wallet state. This will permanently delete your accounts, so back them up first if necessary.
 ```sh
 ironfish reset
 ```
