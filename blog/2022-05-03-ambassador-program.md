@@ -78,11 +78,12 @@ We will evaluate applications based on:
 * _I don’t have many previous contributions to Iron Fish, should I apply_?
   * If you are new to Iron Fish, you can start creating content and posting on channels now to show your involvement for our next round of Ambassadors. 
 * _Do you have other questions_? 
-  * Head over to the [#Ambassadors][discord] channel. And as always, be wary of scammers. No Iron Fish members will DM you on Discord. We will email winning recipients only from domains ending in ironfish.network 
+  * Head over to the [#Ambassadors][discord-ambassadors] channel. And as always, be wary of scammers. No Iron Fish members will DM you on Discord. We will email winning recipients only from domains ending in ironfish.network
 
 Good luck and just keep swimming!
 
 🐠🐠🐠🐠🐠🐠🐠🐠🐠🐠🐠🐠🐠🐠🐠🐠🐠🐠🐠🐠🐠🐠🐠🐠🐠🐠🐠🐠🐠🐠🐠
 
 [discord]: https://discord.gg/EkQkEcm8DH
+[discord-ambassadors]: https://discord.com/channels/771503434028941353/971453833270136932
 [discord-announcements]: https://discord.com/channels/771503434028941353/816795744680935445 
