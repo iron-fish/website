@@ -164,10 +164,12 @@
 .investorLink:hover .investorImage {
   filter: invert(0.5) sepia(1) saturate(5) brightness(1) hue-rotate(-60deg);
 }
+/*
 .investorImage {
   max-width: 150px;
   max-height: 64px;
 }
+*/
 
 .investor {
   text-decoration: none;
@@ -315,10 +317,10 @@
   .sectionExperts .sectionImg {
     max-height: 276px;
   }
-  .investorImage {
+  /*.investorImage {
     max-width: 200px;
     max-height: 70px;
-  }
+  }*/
   .investors {
     width: 100%;
     margin: 0;
@@ -388,25 +390,19 @@
     width: 100%;
     margin-top: 16px;
   }
-  .investors {
-    width: calc(100% + 4rem);
-    margin-left: -2rem;
-    outline: 1px dashed yellow;
-  }
-  .investorImage {
-    max-width: 150px;
-    max-height: 64px;
-  }
+
   .twitterName {
     font-size: 18px;
   }
 }
 @media screen and (max-width: 450px) {
   .investors {
-    width: calc(100% + 4rem);
-    margin-left: -2rem;
-
+    width: 100%;
     outline: 1px dashed orange;
+  }
+  .investorLink .investorImage,
+  .investorLink.investorLinkTwitter .investorImage.investorLink {
+    width: 100%;
   }
   .sectionImg {
     width: 100%;

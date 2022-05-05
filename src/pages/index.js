@@ -96,10 +96,14 @@ function Feature({
                     <a
                       href={`https://${site}`}
                       key={site}
-                      className={styles.investorLink}
+                      className={clsx(styles.investorLink, {
+                        [styles.investorLinkTwitter]: twitterName,
+                      })}
                     >
                       <img
-                        className={styles.investorImage}
+                        className={clsx(styles.investorImage, {
+                          [styles.investorTwitter]: twitterName,
+                        })}
                         src={img}
                         role="presentation"
                       />
