@@ -41,6 +41,7 @@
 .sectionDescription {
   margin-bottom: 40px;
 }
+
 .sectionContent {
   max-width: 439px;
   white-space: break-spaces;
@@ -92,12 +93,78 @@
 }
 .sectionExperts {
   background-color: #fff;
+  padding-bottom: 0;
 }
 .sectionExpertsImg {
-  width: 646px;
-  height: 492px;
-  background-image: url(/img/index/experts-2.svg);
+  background-image: url(/img/index/globe2.svg);
+  background-position: center;
 }
+
+.sectionExperts .sectionContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.sectionExperts .sectionImg {
+  margin: 0 auto;
+  max-height: 435px;
+  width: 100%;
+}
+
+.sectionExperts .sectionContent {
+  display: flex;
+  flex-direction: column;
+  max-width: 800px;
+  width: 100%;
+  margin: 0 auto;
+}
+.sectionExperts .sectionContent .sectionTitle,
+.sectionExperts .sectionContent .sectionDescription {
+  width: 100%;
+  max-width: 800px;
+}
+.investors {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: space-between;
+  width: 100%;
+  height: 8.25rem;
+  margin: 0 auto 4rem;
+  justify-content: space-between;
+}
+.investorLink {
+  width: 100px;
+  height: 40px;
+  min-width: 100px;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: black;
+  font-family: extended-regular;
+}
+.investorLink:hover {
+  text-decoration: none;
+}
+.investorImage {
+  max-width: 100px;
+  max-height: 32px;
+}
+
+.investor {
+  text-decoration: none;
+}
+
+.investor img {
+  width: 100%;
+  height: auto;
+}
+
 .sectionBorderless {
   max-height: 894px;
   background: #ffc2eb url(/img/index/globe.svg) no-repeat;
@@ -160,11 +227,7 @@
     height: 504px;
     background-size: 530px 504px;
   }
-  .sectionExpertsImg {
-    width: 527px;
-    height: 402px;
-    background-size: 527px 402px;
-  }
+
   .sectionCryptocurrencyImg {
     width: 528px;
     background-size: 528px auto;
@@ -189,6 +252,9 @@
     height: auto;
     min-height: auto;
   }
+  .section.sectionExperts {
+    padding-bottom: 0;
+  }
   .sectionContent {
     max-width: 524px;
     text-align: center;
@@ -210,10 +276,6 @@
     width: 392px;
     height: 477px;
   }
-  .sectionExpertsImg {
-    width: 525px;
-    height: 380px;
-  }
   .sectionBorderless {
     background-position: center 630px;
     background-size: 500px;
@@ -233,8 +295,22 @@
     width: 290px;
     margin-top: 30px;
   }
+  .investors {
+    outline: 1px solid yellow;
+  }
+  .investorLink {
+    width: calc(33.3333% - 2rem);
+  }
+  .sectionExperts .sectionImg {
+    max-height: 276px;
+  }
 }
 @media screen and (max-width: 700px) {
+  .sectionExperts .sectionImg {
+    width: calc(100% + 4rem);
+    margin-left: -2rem;
+    max-height: 210px;
+  }
   .sectionHomePage {
     background: #1d0070 url(/img/index/splash-small-top.svg) no-repeat top
       center;
@@ -256,9 +332,7 @@
     height: 310px;
     background-position: center;
   }
-  .sectionExpertsImg {
-    height: 240px;
-  }
+
   .sectionBorderless {
     background: none;
   }
@@ -291,8 +365,22 @@
     width: 100%;
     margin-top: 16px;
   }
+  .investors {
+    outline: 1px solid orange;
+    width: calc(100% + 8rem);
+    margin-left: -4rem;
+  }
 }
 @media screen and (max-width: 450px) {
+  .investors {
+    outline: 1px solid red;
+    width: calc(100% + 4rem);
+    margin-left: -2rem;
+  }
+  .sectionImg {
+    width: 100%;
+    margin: 0;
+  }
   .sectionNewsletter {
     padding-top: 90px;
     padding-bottom: 100px;

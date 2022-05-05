@@ -1,15 +1,16 @@
-import React from "react";
-import clsx from "clsx";
-import Layout from "@theme/Layout";
-import Link from "@docusaurus/Link";
-import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
-import useBaseUrl from "@docusaurus/useBaseUrl";
+import React from "react"
+import clsx from "clsx"
+import Layout from "@theme/Layout"
+import Link from "@docusaurus/Link"
+import useDocusaurusContext from "@docusaurus/useDocusaurusContext"
+import useBaseUrl from "@docusaurus/useBaseUrl"
 
-import styles from "./index.module.css";
-import Mailchimp from "../theme/components/MailChimp";
+import styles from "./index.module.css"
+import Mailchimp from "../theme/components/MailChimp"
 
 const features = [
   {
+    id: "privacy",
     className: "sectionPrivacy",
     title: "A new chain with the strongest privacy",
     description:
@@ -18,6 +19,7 @@ const features = [
     button: "Read Our Whitepaper",
   },
   {
+    id: "privacy-layer",
     className: "sectionPrivacyLayer",
     title: "Universal privacy layer for all assets",
     description:
@@ -26,6 +28,7 @@ const features = [
     button: "See Our Roadmap",
   },
   {
+    id: "cryptocurrency",
     className: "sectionCryptocurrency",
     title: "We care about usability",
     description:
@@ -34,6 +37,7 @@ const features = [
     button: "Download Iron Fish",
   },
   {
+    id: "borderless",
     className: "sectionBorderless",
     title: "Borderless, decentralized, built for everyone",
     description:
@@ -42,6 +46,7 @@ const features = [
     button: "Read Our Whitepaper",
   },
   {
+    id: "regulatory",
     className: "sectionRegulatory",
     title: "Regulatory compliance",
     description:
@@ -50,23 +55,60 @@ const features = [
     button: "Read Our Whitepaper",
   },
   {
+    id: "investors",
     className: "sectionExperts",
-    title: "Built by experts and backed by leading investors",
+    title: "World-class builders and backers",
+    investors: [
+      ["/img/index/investor-a16z.svg", "a16z.com"],
+      ["/img/index/investor-electric-capital.svg", "electriccapital.com"],
+      ["/img/index/investor-sequoia.svg", "sequoiacap.com"],
+      ["/img/index/twitter.svg", "twitter.com/eladgil"],
+      ["/img/index/twitter.svg", "twitter.com/balajis"],
+      ["/img/index/twitter.svg", "twitter.com/naval"],
+    ],
     description:
-      "We are honored to be working with incredible investors and angels. Our team members are tech veterans, with experience spanning Airbnb, Microsoft, Uber, and more.",
-    buttonLink: "about",
-    button: "About Us",
+      "We are honored to be working with incredible investors and angels. Our team members are tech veterans, with resumes spanning Airbnb, Facebook, Uber, and more.",
   },
-];
+]
 
-function Feature({ className, button, buttonLink, title, description }) {
+function Feature({
+  id,
+  className,
+  button,
+  buttonLink,
+  title,
+  description,
+  investors = [],
+}) {
   return (
-    <section className={clsx(styles.section, { [styles[className]]: true })}>
+    <section id={id} className={clsx(styles.section, styles[className])}>
       <div className={clsx(styles.sectionContainer)}>
         <div className={clsx(styles.sectionContent)}>
           <div>
             <h2 className={clsx(styles.sectionTitle)}>{title}</h2>
             <p className={clsx(styles.sectionDescription)}>{description}</p>
+            {investors.length > 0 && (
+              <div className={styles.investors}>
+                {investors.map(([img, site]) => {
+                  const twitterName =
+                    site.indexOf("twitter") > -1 ? site.split(".com/")[1] : null
+                  return (
+                    <a
+                      href={`https://${site}`}
+                      key={site}
+                      className={styles.investorLink}
+                    >
+                      <img
+                        className={styles.investorImage}
+                        src={img}
+                        role="presentation"
+                      />
+                      {twitterName}
+                    </a>
+                  )
+                })}
+              </div>
+            )}
             {button && (
               <Link
                 className={clsx(styles.button, "button button--outline")}
@@ -84,12 +126,12 @@ function Feature({ className, button, buttonLink, title, description }) {
         />
       </div>
     </section>
-  );
+  )
 }
 
 function Home() {
-  const context = useDocusaurusContext();
-  const { siteConfig = {} } = context;
+  const context = useDocusaurusContext()
+  const { siteConfig = {} } = context
   return (
     <Layout title={""} description={siteConfig.tagline}>
       <section className={clsx(styles.section, styles.sectionHomePage)}>
@@ -112,7 +154,7 @@ function Home() {
       <main>
         {features &&
           features.length > 0 &&
-          features.map((props) => <Feature key={props.className} {...props} />)}
+          features.map(props => <Feature key={props.className} {...props} />)}
         <section className={clsx(styles.section, styles.sectionNewsletter)}>
           <div className={clsx(styles.sectionContainer)}>
             <p className={clsx(styles.newsletterTitle)}>
@@ -136,7 +178,7 @@ function Home() {
         </section>
       </main>
     </Layout>
-  );
+  )
 }
 
-export default Home;
+export default Home
