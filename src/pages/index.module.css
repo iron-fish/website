@@ -98,6 +98,7 @@
 .sectionExpertsImg {
   background-image: url(/img/index/new-half.gif);
   background-position: center;
+  background-size: contain;
 }
 
 .sectionExperts .sectionContainer {
