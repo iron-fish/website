@@ -135,9 +135,11 @@
   height: 8.25rem;
   margin: 0 auto 4rem;
   justify-content: space-between;
+  width: 1100px;
+  margin-left: -150px;
 }
 .investorLink {
-  width: 100px;
+  width: 16.666667%;
   height: 40px;
   min-width: 100px;
   height: auto;
@@ -149,6 +151,7 @@
   color: black;
   font-family: extended-regular;
 }
+
 .investorLink:hover {
   text-decoration: none;
   color: var(--ifm-link-hover-color);
@@ -158,8 +161,8 @@
   filter: invert(0.5) sepia(1) saturate(5) brightness(1) hue-rotate(-60deg);
 }
 .investorImage {
-  max-width: 100px;
-  max-height: 32px;
+  max-width: 150px;
+  max-height: 64px;
 }
 
 .investor {
@@ -312,7 +315,13 @@
     max-width: 200px;
     max-height: 70px;
   }
+  .investors {
+    width: 100%;
+    margin: 0;
+    margin-bottom: 4rem;
+  }
 }
+
 @media screen and (max-width: 700px) {
   .sectionExperts .sectionImg {
     width: calc(100% + 4rem);
