@@ -127,6 +127,7 @@
   max-width: 800px;
 }
 .investors {
+  outline: 1px dashed blue;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -322,6 +323,8 @@
     width: 100%;
     margin: 0;
     margin-bottom: 4rem;
+
+    outline: 1px dashed lime;
   }
 }
 
@@ -388,6 +391,7 @@
   .investors {
     width: calc(100% + 4rem);
     margin-left: -2rem;
+    outline: 1px dashed yellow;
   }
   .investorImage {
     max-width: 150px;
@@ -401,6 +405,8 @@
   .investors {
     width: calc(100% + 4rem);
     margin-left: -2rem;
+
+    outline: 1px dashed orange;
   }
   .sectionImg {
     width: 100%;
@@ -415,6 +421,9 @@
   }
 }
 @media screen and (max-width: 400px) {
+  .investors {
+    outline: 1px dashed red;
+  }
   .sectionBorderless .sectionContent {
     padding-bottom: 0px;
   }
