@@ -386,8 +386,8 @@
     margin-top: 16px;
   }
   .investors {
-    width: calc(100% + 8rem);
-    margin-left: -4rem;
+    width: calc(100% + 4rem);
+    margin-left: -2rem;
   }
   .investorImage {
     max-width: 150px;
