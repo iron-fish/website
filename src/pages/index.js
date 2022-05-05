@@ -103,8 +103,12 @@ function Feature({
                         src={img}
                         role="presentation"
                       />
-                      {twitterName && " "}
-                      {twitterName}
+                      {twitterName && <span style={{ width: "8px" }} />}
+                      {twitterName && (
+                        <span className={styles.twitterName}>
+                          {twitterName}
+                        </span>
+                      )}
                     </a>
                   )
                 })}
