@@ -304,6 +304,10 @@
   .sectionExperts .sectionImg {
     max-height: 276px;
   }
+  .investorImage {
+    max-width: 200px;
+    max-height: 70px;
+  }
 }
 @media screen and (max-width: 700px) {
   .sectionExperts .sectionImg {
@@ -369,6 +373,10 @@
     outline: 1px solid orange;
     width: calc(100% + 8rem);
     margin-left: -4rem;
+  }
+  .investorImage {
+    max-width: 150px;
+    max-height: 64px;
   }
 }
 @media screen and (max-width: 450px) {

@@ -103,6 +103,7 @@ function Feature({
                         src={img}
                         role="presentation"
                       />
+                      {twitterName && " "}
                       {twitterName}
                     </a>
                   )
