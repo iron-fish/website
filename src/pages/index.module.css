@@ -96,7 +96,7 @@
   padding-bottom: 0;
 }
 .sectionExpertsImg {
-  background-image: url(/img/index/globe2.svg);
+  background-image: url(/img/index/new-half.gif);
   background-position: center;
 }
 
@@ -150,6 +150,11 @@
 }
 .investorLink:hover {
   text-decoration: none;
+  color: var(--ifm-link-hover-color);
+}
+
+.investorLink:hover .investorImage {
+  filter: invert(0.5) sepia(1) saturate(5) brightness(1) hue-rotate(-60deg);
 }
 .investorImage {
   max-width: 100px;
