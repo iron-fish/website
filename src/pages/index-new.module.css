@@ -1,5 +1,6 @@
 /* stylelint-disable docusaurus/copyright-header */
-/* TODO: this file is an absolute mess. Styling should be done with a mobile-first mindset. Rather than continuing to add to this monstrosity, see `index2.module.css` if you'd like to make additions */
+/* this page is an absolute mess */
+/* everything should be re-done in min-width / responsive first form */
 :root {
   --ifm-newsletter-flex-direction: row;
   --ifm-newsletter-flex-height: 364px;
@@ -42,6 +43,7 @@
 .sectionDescription {
   margin-bottom: 40px;
 }
+
 .sectionContent {
   max-width: 439px;
   white-space: break-spaces;
@@ -71,7 +73,7 @@
   background-color: #fff;
 }
 .sectionPrivacyImg {
-  background-image: url(/img/index/fish.gif);
+  background-image: url(/img/index/fish.svg);
 }
 .sectionPrivacyLayer {
   background-color: #ffcd85;
@@ -80,7 +82,7 @@
   width: 648px;
   height: 682px;
   background-size: 648px auto;
-  background-image: url(/img/index/universe.gif);
+  background-image: url(/img/index/privacy_layer.gif);
 }
 .sectionCryptocurrency {
   background-color: #fff;
@@ -90,6 +92,129 @@
   height: 710px;
   background-size: 585px auto;
   background-image: url(/img/index/node.gif);
+}
+.sectionExperts {
+  background-color: #fff;
+  padding-bottom: 0;
+}
+.sectionExpertsImg {
+  background-image: url(/img/index/new-half.gif);
+  background-position: center;
+  background-size: contain;
+}
+
+.sectionExperts .sectionContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.sectionExperts .sectionImg {
+  margin: 0 auto;
+  max-height: 435px;
+  width: 100%;
+}
+
+.sectionExperts .sectionContent {
+  display: flex;
+  flex-direction: column;
+  max-width: 800px;
+  width: 100%;
+  margin: 0 auto;
+}
+.sectionExperts .sectionContent .sectionTitle,
+.sectionExperts .sectionContent .sectionDescription {
+  width: 100%;
+  max-width: 800px;
+}
+.investors {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: space-between;
+  width: 100%;
+  height: 8.25rem;
+  margin: 0 auto 4rem;
+  justify-content: space-between;
+  margin-left: -100px;
+}
+.twitterName {
+  font-size: 24px;
+}
+.investorLink {
+  width: 16.666667%;
+  height: 40px;
+  min-width: 100px;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: black;
+  font-family: extended-regular;
+}
+
+.investorLink:hover {
+  text-decoration: none;
+  color: var(--ifm-link-hover-color);
+}
+
+.investorLink:hover .investorImage {
+  filter: invert(0.5) sepia(1) saturate(5) brightness(1) hue-rotate(-60deg);
+}
+.investorTwitter {
+  max-width: 30px;
+  max-height: 30px;
+}
+.investorImage {
+  max-width: 150px;
+  max-height: 64px;
+}
+
+.investor {
+  text-decoration: none;
+}
+
+.investor img {
+  width: 100%;
+  height: auto;
+}
+.companies {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 8rem;
+}
+.companyLink {
+  margin: 1rem;
+  display: flex;
+  width: 100%;
+  max-height: 40px;
+  max-width: 14rem;
+}
+.companyImage {
+  width: 100%;
+  height: auto;
+}
+@media screen and (min-width: 700px) {
+  .companyLink {
+    width: calc(33.333333% - 1rem);
+    margin: 0.5rem;
+  }
+  .companies {
+    flex-direction: row;
+  }
+  .investors {
+    width: 100%;
+  }
+  .investorLink .investorImage,
+  .investorLink.investorLinkTwitter .investorImage.investorLink {
+    width: 100%;
+  }
 }
 
 .sectionBorderless {
@@ -103,7 +228,7 @@
 .sectionRegulatoryImg {
   width: 647px;
   height: 616px;
-  background-image: url(/img/index/encrypted.gif);
+  background-image: url(/img/index/regulatory.svg);
 }
 .sectionNewsletter {
   background-color: var(--ifm-contrast-background-color);
@@ -179,6 +304,9 @@
     height: auto;
     min-height: auto;
   }
+  .section.sectionExperts {
+    padding-bottom: 0;
+  }
   .sectionContent {
     max-width: 524px;
     text-align: center;
@@ -200,7 +328,6 @@
     width: 392px;
     height: 477px;
   }
-
   .sectionBorderless {
     background-position: center 630px;
     background-size: 500px;
@@ -220,8 +347,29 @@
     width: 290px;
     margin-top: 30px;
   }
+
+  .investorLink {
+    width: calc(33.3333% - 2rem);
+  }
+  .sectionExperts .sectionImg {
+    max-height: 276px;
+  }
+  .investors {
+    width: 100%;
+    margin: 0;
+    margin-bottom: 4rem;
+  }
+  .twitterName {
+    font-size: 18px;
+  }
 }
+
 @media screen and (max-width: 700px) {
+  .sectionExperts .sectionImg {
+    width: calc(100% + 4rem);
+    margin-left: -2rem;
+    max-height: 210px;
+  }
   .sectionHomePage {
     background: #1d0070 url(/img/index/splash-small-top.svg) no-repeat top
       center;
@@ -276,8 +424,16 @@
     width: 100%;
     margin-top: 16px;
   }
+
+  .twitterName {
+    font-size: 18px;
+  }
 }
 @media screen and (max-width: 450px) {
+  .sectionImg {
+    width: 100%;
+    margin: 0;
+  }
   .sectionNewsletter {
     padding-top: 90px;
     padding-bottom: 100px;

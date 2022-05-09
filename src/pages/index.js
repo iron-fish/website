@@ -6,42 +6,66 @@ import useDocusaurusContext from "@docusaurus/useDocusaurusContext"
 import useBaseUrl from "@docusaurus/useBaseUrl"
 
 import styles from "./index.module.css"
+import sane from "./index2.module.css"
 import Mailchimp from "../theme/components/MailChimp"
 
 const features = [
   {
     id: "privacy",
     className: "sectionPrivacy",
-    title: "A new chain with the strongest privacy",
-    description:
-      "Iron Fish is a Layer 1 blockchain that provides the strongest privacy guarantees on every single transaction. Leveraging zero-knowledge proofs (zk-SNARKs) and the highest industry standards for encryption, Iron Fish gives you complete control over who sees transaction details via account view keys or transaction decryption keys. Your data. Your information. Your coins.",
+    title: "Empowering users to choose privacy",
+    description: (
+      <>
+        We’re putting back the power of choice into the hands of users. Whether
+        you want to keep your information public or private, that should be your
+        choice &mdash; on any chain.
+      </>
+    ),
     buttonLink: "docs/whitepaper/1_introduction",
     button: "Read Our Whitepaper",
   },
   {
     id: "privacy-layer",
     className: "sectionPrivacyLayer",
-    title: "Universal privacy layer for all assets",
-    description:
-      "We’re building Iron Fish to be the universal privacy layer for crypto, enabling users to bridge assets between Iron Fish and other chains for fully private transactions—a true SSL layer for blockchains.",
+    title: "A platform for the future of the internet",
+    description: (
+      <>
+        We’re building Iron Fish to become the universal privacy layer for web3.
+        Using zero-knowledge proofs (zk-SNARKs) and the highest industry
+        standards for encryption, we enable users to have fully private
+        transactions &mdash; a true SSL layer for all blockchains.
+      </>
+    ),
     buttonLink: "/roadmap",
     button: "See Our Roadmap",
   },
   {
     id: "privacy",
     className: "sectionCryptocurrency",
-    title: "Convenience for everyone",
-    description:
-      "Privacy should be a right. Iron Fish’s simplicity gives everyone that right. Confidentiality shouldn’t be reserved for the powerful or technically gifted. Anyone can create a wallet and run their own node.",
+    title: "Borderless, decentralized and built for everyone",
+    description: (
+      <>
+        Privacy should be a right. Iron Fish’s simplicity gives everyone that
+        right. Confidentiality shouldn’t be reserved for the powerful or
+        technically gifted. Anyone can create a wallet and run their own node
+        &mdash; try it here:
+      </>
+    ),
     buttonLink: "docs/onboarding/installation-iron-fish",
     button: "Download Iron Fish",
   },
   {
     id: "regulatory",
     className: "sectionRegulatory",
-    title: "Regulatory compliance, built in",
+    title: (
+      <>
+        Regulatory compliance,
+        <br className={sane.implicitBreak} />
+        built in
+      </>
+    ),
     description:
-      "Privacy doesn't mean that Iron Fish can't be compliant. Every Iron Fish account comes with a set of view keys allowing an exchange or financial organization to see a full audit of the accounts they manage and comply with all their AML obligations.",
+      "Privacy and compliance don’t have to be at odds. Every Iron Fish account comes with a set of view keys allowing an exchange or financial organization to provide a full audit of the accounts they manage and comply with all their AML obligations.",
     buttonLink: "docs/whitepaper/1_introduction",
     button: "Read Our Whitepaper",
   },
@@ -56,13 +80,15 @@ const features = [
     ],
     investors: [
       ["/img/index/twitter.svg", "twitter.com/eladgil"],
-      ["/img/index/twitter.svg", "twitter.com/balajis"],
       ["/img/index/twitter.svg", "twitter.com/ljxie"],
+      ["/img/index/twitter.svg", "twitter.com/balajis"],
     ],
     description:
       "We are honored to be working with incredible investors and angels. Our team members are tech veterans, with resumes spanning Airbnb, Facebook, Uber, and more.",
   },
 ]
+
+const lookup = x => (x !== "sectionExperts" ? styles : sane)
 
 function Feature({
   id,
@@ -74,15 +100,18 @@ function Feature({
   companies = [],
   investors = [],
 }) {
+  // to brook the differences between the old styling (insane, max-width)
+  // and the new (not insane, min-width, responsive first)
+  const style = lookup(className)
   return (
-    <section id={id} className={clsx(styles.section, styles[className])}>
+    <section id={id} className={clsx(styles.section, style[className])}>
       <div className={clsx(styles.sectionContainer)}>
         <div className={clsx(styles.sectionContent)}>
           <div>
             <h2 className={clsx(styles.sectionTitle)}>{title}</h2>
             <p className={clsx(styles.sectionDescription)}>{description}</p>
             {companies.length > 0 && (
-              <div className={styles.companies}>
+              <div className={sane.companies}>
                 {companies.map(([img, site]) => {
                   const twitterName =
                     site.indexOf("twitter") > -1 ? site.split(".com/")[1] : null
@@ -90,24 +119,20 @@ function Feature({
                     <a
                       href={`https://${site}`}
                       key={site}
-                      className={clsx(styles.companyLink, {
-                        [styles.companyLinkTwitter]: twitterName,
+                      className={clsx(sane.companyLink, {
+                        [sane.companyLinkTwitter]: twitterName,
                       })}
                     >
                       <img
                         className={clsx(
-                          twitterName
-                            ? styles.companyTwitter
-                            : styles.companyImage
+                          twitterName ? sane.companyTwitter : sane.companyImage
                         )}
                         src={img}
                         role="presentation"
                       />
                       {twitterName && <span style={{ width: "8px" }} />}
                       {twitterName && (
-                        <span className={styles.twitterName}>
-                          {twitterName}
-                        </span>
+                        <span className={sane.twitterName}>{twitterName}</span>
                       )}
                     </a>
                   )
@@ -115,7 +140,7 @@ function Feature({
               </div>
             )}
             {investors.length > 0 && (
-              <div className={styles.investors}>
+              <div className={sane.investors}>
                 {investors.map(([img, site]) => {
                   const twitterName =
                     site.indexOf("twitter") > -1 ? site.split(".com/")[1] : null
@@ -123,24 +148,21 @@ function Feature({
                     <a
                       href={`https://${site}`}
                       key={site}
-                      className={clsx(styles.investorLink, {
-                        [styles.investorLinkTwitter]: twitterName,
+                      className={clsx(sane.investorLink, {
+                        [sane.investorLinkTwitter]: twitterName,
                       })}
                     >
                       <img
                         className={clsx(
                           twitterName
-                            ? styles.investorTwitter
-                            : styles.investorImage
+                            ? sane.investorTwitter
+                            : sane.investorImage
                         )}
                         src={img}
                         role="presentation"
                       />
-                      {twitterName && <span style={{ width: "8px" }} />}
                       {twitterName && (
-                        <span className={styles.twitterName}>
-                          {twitterName}
-                        </span>
+                        <span className={sane.twitterName}>{twitterName}</span>
                       )}
                     </a>
                   )
@@ -159,7 +181,7 @@ function Feature({
         </div>
         <div
           className={clsx(styles.sectionImg, {
-            [styles[`${className}Img`]]: true,
+            [style[`${className}Img`]]: true,
           })}
         />
       </div>
@@ -176,9 +198,9 @@ function Home() {
         <div className={clsx(styles.sectionContainer)}>
           <header>
             <h1 className={clsx(styles.h1Title)}>
-              The Universal
+              The Privacy Platform
               <br />
-              Privacy Layer
+              for web3
             </h1>
             <Link
               className="button button--outline button--secondary"
