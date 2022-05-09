@@ -29,10 +29,10 @@ const features = [
     title: "A platform for the future of the internet",
     description: (
       <>
-        We’re building Iron Fish to become the universal privacy layer for web3.
-        Using zero-knowledge proofs (zk-SNARKs) and the highest industry
-        standards for encryption, we enable users to have fully private
-        transactions &mdash; a true SSL layer for all blockchains.
+        We’re building a new Layer 1 blockchain to become the universal privacy
+        layer for all of web3. Using zero-knowledge proofs (zk-SNARKs) and the
+        highest industry standards for encryption, we enable users to have fully
+        private transactions &mdash; a true SSL layer for all blockchains.
       </>
     ),
     buttonLink: "/roadmap",
@@ -41,7 +41,7 @@ const features = [
   {
     id: "privacy",
     className: "sectionCryptocurrency",
-    title: "Borderless, decentralized and built for everyone",
+    title: "Borderless, decentralized, and built for everyone",
     description: (
       <>
         Privacy should be a right. Iron Fish’s simplicity gives everyone that
@@ -83,7 +83,7 @@ const features = [
       ["/img/index/twitter.svg", "twitter.com/balajis"],
     ],
     description:
-      "We are honored to be working with incredible investors and angels. Our team members are tech veterans, with resumes spanning Airbnb, Facebook, Uber, and more.",
+      "Our team members have decades of experience building some of the world’s most beloved products at Airbnb, Facebook, Google, Uber, and more. Our angels include founders across the crypto space (L1s, bridges, custody). And our investors have a track record of partnering early with the world’s most transformational technologies.",
   },
 ]
 
