@@ -72,6 +72,7 @@
 }
 .sectionPrivacyImg {
   background-image: url(/img/index/fish.gif);
+  background-size: contain;
 }
 .sectionPrivacyLayer {
   background-color: #ffcd85;
@@ -84,7 +85,6 @@
   background-color: #fff;
 }
 .sectionCryptocurrencyImg {
-  width: 585px;
   background-size: contain;
   background-image: url(/img/index/node.gif);
 }
@@ -98,8 +98,8 @@
   background: #fff4e0;
 }
 .sectionRegulatoryImg {
-  width: 647px;
   background-image: url(/img/index/encrypted.gif);
+  background-size: contain;
 }
 .sectionNewsletter {
   background-color: var(--ifm-contrast-background-color);
@@ -141,16 +141,13 @@
     --ifm-newsletter-title-vertical-margin: 40px;
   }
   .sectionPrivacyImg {
-    width: 527px;
     background-size: contain;
   }
   .sectionRegulatoryImg {
-    width: 530px;
     background-size: contain;
   }
 
   .sectionCryptocurrencyImg {
-    width: 528px;
     background-size: contain;
   }
 }
@@ -187,7 +184,6 @@
     height: 700px;
   }
   .sectionPrivacyImg {
-    width: 521px;
     height: 480px;
   }
   .sectionCryptocurrencyImg {
