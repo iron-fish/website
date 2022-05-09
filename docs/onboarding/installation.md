@@ -10,7 +10,7 @@ import Terminal from '../../src/theme/components/Terminal/Terminal'
 import Ironfish from '../../src/theme/components/Terminal/Ironfish'
 
 ## Recommended Installation
-We recommend installing Iron Fish through NPM.
+We recommend installing Iron Fish through [NPM](https://nodejs.org/en/download/).
 
 ```sh
 npm install -g ironfish
@@ -31,6 +31,7 @@ ironfish
 Iron Fish is now ready to use. Follow the [next step](new_node.md) of the tutorial or jump directly to the [the CLI commands list](cli.md).
 
 ## Alternative Installation Methods
+
 You can also get started with Iron Fish by using Docker or running from source. If you are using an Intel-based macOS system, we support Homebrew as an alternative installation method.
 ### Using Docker
 
@@ -64,7 +65,7 @@ First, head over to GitHub to clone our [official repository](https://github.com
 
 ### Homebrew (macOS)
 
-> **Note:** Our Homebrew tap does not yet support **M1/arm64**. However, you can install Iron Fish directly [from the source](#from-source) or [use Docker](#using-docker) with x86_64 support.
+> **Note:** Our Homebrew tap does not yet support **M1/arm64**. However, you can install Iron Fish directly [from the source](#from-source) or [use Docker](#using-docker) with `x86_64` support.
 
 Start by adding our Homebrew tap and installing Iron Fish.
 
