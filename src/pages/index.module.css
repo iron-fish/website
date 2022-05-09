@@ -1,6 +1,6 @@
 /* stylelint-disable docusaurus/copyright-header */
-// this page is an absolute mess
-// everything should be re-done in min-width / responsive first form
+/* this page is an absolute mess */
+/* everything should be re-done in min-width / responsive first form */
 :root {
   --ifm-newsletter-flex-direction: row;
   --ifm-newsletter-flex-height: 364px;
