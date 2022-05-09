@@ -104,6 +104,25 @@ Starts a miner and subscribe to new blocks for the node. The node has to be sync
 ironfish miners:start
 ```
 
+Join a mining pool.
+
+```sh
+ironfish miners:start -p <ip-address-of-pool> -a <your-public-address>
+```
+
+#### miners:pool:start
+Starts a mining pool with the name set in the `poolName` configuration option.
+
+```sh
+ironfish miners:pool:start
+```
+
+Start a pool with disabled payouts.
+
+```sh
+ironfish miners:pool:start --no-payouts
+```
+
 #### miners:mined
 List mined block hashes
 ```sh
