@@ -41,7 +41,7 @@ const features = [
   {
     id: "privacy",
     className: "sectionCryptocurrency",
-    title: "Borderless, decentralized and built for everyone",
+    title: "Borderless, decentralized, and built for everyone",
     description: (
       <>
         Privacy should be a right. Iron Fish’s simplicity gives everyone that
