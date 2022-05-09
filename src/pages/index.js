@@ -89,6 +89,29 @@ const features = [
 
 const lookup = x => (x !== "sectionExperts" ? styles : styles)
 
+const Investor = ({ data: [img, site], prefix = "company" }) => {
+  const twitterName =
+    site.indexOf("twitter") > -1 ? site.split(".com/")[1] : null
+  return (
+    <a
+      href={`https://${site}`}
+      className={clsx(styles[`${prefix}Link`], {
+        [styles[`${prefix}LinkTwitter`]]: twitterName,
+      })}
+    >
+      <img
+        className={clsx(
+          twitterName ? styles[`${prefix}Twitter`] : styles[`${prefix}Image`]
+        )}
+        src={img}
+        role="presentation"
+      />
+      {twitterName && <span style={{ width: "8px" }} />}
+      {twitterName && <span className={styles.twitterName}>{twitterName}</span>}
+    </a>
+  )
+}
+
 function Feature({
   id,
   className,
@@ -99,13 +122,10 @@ function Feature({
   companies = [],
   investors = [],
 }) {
-  // to brook the differences between the old styling (instyles, max-width)
-  // and the new (not instyles, min-width, responsive first)
-  const style = lookup(className)
   return (
     <section
       id={id}
-      className={clsx(styles.section, style[className], className)}
+      className={clsx(styles.section, styles[className], className)}
     >
       <div className={clsx(styles.sectionContainer)}>
         <div className={clsx(styles.sectionContent)}>
@@ -114,67 +134,16 @@ function Feature({
             <p className={clsx(styles.sectionDescription)}>{description}</p>
             {companies.length > 0 && (
               <div className={styles.companies}>
-                {companies.map(([img, site]) => {
-                  const twitterName =
-                    site.indexOf("twitter") > -1 ? site.split(".com/")[1] : null
-                  return (
-                    <a
-                      href={`https://${site}`}
-                      key={site}
-                      className={clsx(styles.companyLink, {
-                        [styles.companyLinkTwitter]: twitterName,
-                      })}
-                    >
-                      <img
-                        className={clsx(
-                          twitterName
-                            ? styles.companyTwitter
-                            : styles.companyImage
-                        )}
-                        src={img}
-                        role="presentation"
-                      />
-                      {twitterName && <span style={{ width: "8px" }} />}
-                      {twitterName && (
-                        <span className={styles.twitterName}>
-                          {twitterName}
-                        </span>
-                      )}
-                    </a>
-                  )
-                })}
+                {companies.map(([img, site]) => (
+                  <Investor key={site} data={[img, site]} prefix="company" />
+                ))}
               </div>
             )}
             {investors.length > 0 && (
               <div className={styles.investors}>
-                {investors.map(([img, site]) => {
-                  const twitterName =
-                    site.indexOf("twitter") > -1 ? site.split(".com/")[1] : null
-                  return (
-                    <a
-                      href={`https://${site}`}
-                      key={site}
-                      className={clsx(styles.investorLink, {
-                        [styles.investorLinkTwitter]: twitterName,
-                      })}
-                    >
-                      <img
-                        className={clsx(
-                          twitterName
-                            ? styles.investorTwitter
-                            : styles.investorImage
-                        )}
-                        src={img}
-                        role="presentation"
-                      />
-                      {twitterName && (
-                        <span className={styles.twitterName}>
-                          {twitterName}
-                        </span>
-                      )}
-                    </a>
-                  )
-                })}
+                {investors.map(([img, site]) => (
+                  <Investor key={site} data={[img, site]} prefix="investor" />
+                ))}
               </div>
             )}
             {button && (
@@ -189,7 +158,7 @@ function Feature({
         </div>
         <div
           className={clsx(styles.sectionImg, {
-            [style[`${className}Img`]]: true,
+            [styles[`${className}Img`]]: true,
           })}
         />
       </div>
