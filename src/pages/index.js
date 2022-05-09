@@ -1,72 +1,151 @@
-import React from "react";
-import clsx from "clsx";
-import Layout from "@theme/Layout";
-import Link from "@docusaurus/Link";
-import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
-import useBaseUrl from "@docusaurus/useBaseUrl";
+import React from "react"
+import clsx from "clsx"
+import Layout from "@theme/Layout"
+import Link from "@docusaurus/Link"
+import useDocusaurusContext from "@docusaurus/useDocusaurusContext"
+import useBaseUrl from "@docusaurus/useBaseUrl"
 
-import styles from "./index.module.css";
-import Mailchimp from "../theme/components/MailChimp";
+import styles from "./index.module.css"
+import Mailchimp from "../theme/components/MailChimp"
 
 const features = [
   {
+    id: "privacy",
     className: "sectionPrivacy",
-    title: "A new chain with the strongest privacy",
-    description:
-      "Iron Fish is a Layer 1 blockchain that provides the strongest privacy guarantees on every single transaction. Leveraging zero-knowledge proofs (zk-SNARKs) and the highest industry standards for encryption, Iron Fish gives you complete control over who sees transaction details via account view keys or transaction decryption keys. Your data. Your information. Your coins.",
+    title: "Empowering users to choose privacy",
+    description: (
+      <>
+        We’re putting back the power of choice into the hands of users. Whether
+        you want to keep your information public or private, that should be your
+        choice &mdash; on any chain.
+      </>
+    ),
     buttonLink: "docs/whitepaper/1_introduction",
     button: "Read Our Whitepaper",
   },
   {
+    id: "privacy-layer",
     className: "sectionPrivacyLayer",
-    title: "Universal privacy layer for all assets",
-    description:
-      "We’re building Iron Fish to be the universal privacy layer for crypto, enabling users to bridge assets between Iron Fish and other chains for fully private transactions—a true SSL layer for blockchains.",
+    title: "A platform for the future of the internet",
+    description: (
+      <>
+        We’re building Iron Fish to become the universal privacy layer for web3.
+        Using zero-knowledge proofs (zk-SNARKs) and the highest industry
+        standards for encryption, we enable users to have fully private
+        transactions &mdash; a true SSL layer for all blockchains.
+      </>
+    ),
     buttonLink: "/roadmap",
     button: "See Our Roadmap",
   },
   {
+    id: "privacy",
     className: "sectionCryptocurrency",
-    title: "We care about usability",
-    description:
-      "Cryptocurrencies have struggled with usability. Iron Fish is built to be intuitive for both developers and users alike. We are building a complete set of tools for you to have the best end-to-end experience running and transacting $IRON on every platform, while always guaranteeing your privacy.",
+    title: "Borderless, decentralized and built for everyone",
+    description: (
+      <>
+        Privacy should be a right. Iron Fish’s simplicity gives everyone that
+        right. Confidentiality shouldn’t be reserved for the powerful or
+        technically gifted. Anyone can create a wallet and run their own node
+        &mdash; try it here:
+      </>
+    ),
     buttonLink: "docs/onboarding/installation-iron-fish",
     button: "Download Iron Fish",
   },
   {
-    className: "sectionBorderless",
-    title: "Borderless, decentralized, built for everyone",
-    description:
-      "We care about decentralization. Iron Fish is a proof-of-work (PoW) chain that is censorship-resistant and available to everyone—regardless of location, identity or citizenship. Anyone can create a wallet, run their own node, and mine $IRON. With Iron Fish, you own the bank.",
-    buttonLink: "docs/whitepaper/1_introduction",
-    button: "Read Our Whitepaper",
-  },
-  {
+    id: "regulatory",
     className: "sectionRegulatory",
-    title: "Regulatory compliance",
+    title: (
+      <>
+        Regulatory compliance,
+        <br className={styles.implicitBreak} />
+        built in
+      </>
+    ),
     description:
-      "Privacy doesn't mean that Iron Fish can't be compliant. Every Iron Fish account comes with a set of view keys allowing an exchange or financial organization to see a full audit of the accounts they manage and comply with all their AML obligations.",
+      "Privacy and compliance don’t have to be at odds. Every Iron Fish account comes with a set of view keys allowing an exchange or financial organization to provide a full audit of the accounts they manage and comply with all their AML obligations.",
     buttonLink: "docs/whitepaper/1_introduction",
     button: "Read Our Whitepaper",
   },
   {
+    id: "investors",
     className: "sectionExperts",
-    title: "Built by experts and backed by leading investors",
+    title: "World-class builders and backers",
+    companies: [
+      ["/img/index/investor-a16z.svg", "a16z.com"],
+      ["/img/index/investor-electric-capital.svg", "electriccapital.com"],
+      ["/img/index/investor-sequoia.svg", "sequoiacap.com"],
+    ],
+    investors: [
+      ["/img/index/twitter.svg", "twitter.com/eladgil"],
+      ["/img/index/twitter.svg", "twitter.com/ljxie"],
+      ["/img/index/twitter.svg", "twitter.com/balajis"],
+    ],
     description:
-      "We are honored to be working with incredible investors and angels. Our team members are tech veterans, with experience spanning Airbnb, Microsoft, Uber, and more.",
-    buttonLink: "about",
-    button: "About Us",
+      "We are honored to be working with incredible investors and angels. Our team members are tech veterans, with resumes spanning Airbnb, Facebook, Uber, and more.",
   },
-];
+]
 
-function Feature({ className, button, buttonLink, title, description }) {
+const lookup = x => (x !== "sectionExperts" ? styles : styles)
+
+const Investor = ({ data: [img, site], prefix = "company" }) => {
+  const twitterName =
+    site.indexOf("twitter") > -1 ? site.split(".com/")[1] : null
   return (
-    <section className={clsx(styles.section, { [styles[className]]: true })}>
+    <a
+      href={`https://${site}`}
+      className={clsx(styles[`${prefix}Link`], {
+        [styles[`${prefix}LinkTwitter`]]: twitterName,
+      })}
+    >
+      <img
+        className={clsx(
+          twitterName ? styles[`${prefix}Twitter`] : styles[`${prefix}Image`]
+        )}
+        src={img}
+        role="presentation"
+      />
+      {twitterName && <span style={{ width: "8px" }} />}
+      {twitterName && <span className={styles.twitterName}>{twitterName}</span>}
+    </a>
+  )
+}
+
+function Feature({
+  id,
+  className,
+  button,
+  buttonLink,
+  title,
+  description,
+  companies = [],
+  investors = [],
+}) {
+  return (
+    <section
+      id={id}
+      className={clsx(styles.section, styles[className], className)}
+    >
       <div className={clsx(styles.sectionContainer)}>
         <div className={clsx(styles.sectionContent)}>
           <div>
             <h2 className={clsx(styles.sectionTitle)}>{title}</h2>
             <p className={clsx(styles.sectionDescription)}>{description}</p>
+            {companies.length > 0 && (
+              <div className={styles.companies}>
+                {companies.map(([img, site]) => (
+                  <Investor key={site} data={[img, site]} prefix="company" />
+                ))}
+              </div>
+            )}
+            {investors.length > 0 && (
+              <div className={styles.investors}>
+                {investors.map(([img, site]) => (
+                  <Investor key={site} data={[img, site]} prefix="investor" />
+                ))}
+              </div>
+            )}
             {button && (
               <Link
                 className={clsx(styles.button, "button button--outline")}
@@ -84,22 +163,23 @@ function Feature({ className, button, buttonLink, title, description }) {
         />
       </div>
     </section>
-  );
+  )
 }
 
 function Home() {
-  const context = useDocusaurusContext();
-  const { siteConfig = {} } = context;
+  const context = useDocusaurusContext()
+  const { siteConfig = {} } = context
   return (
     <Layout title={""} description={siteConfig.tagline}>
       <section className={clsx(styles.section, styles.sectionHomePage)}>
         <div className={clsx(styles.sectionContainer)}>
           <header>
             <h1 className={clsx(styles.h1Title)}>
-              The Universal
+              The Privacy Platform
               <br />
-              Privacy Layer
+              for web3
             </h1>
+            <h2 className={clsx(styles.h2Title)}>Coming to a chain near you</h2>
             <Link
               className="button button--outline button--secondary"
               to="https://testnet.ironfish.network/about"
@@ -112,7 +192,7 @@ function Home() {
       <main>
         {features &&
           features.length > 0 &&
-          features.map((props) => <Feature key={props.className} {...props} />)}
+          features.map(props => <Feature key={props.className} {...props} />)}
         <section className={clsx(styles.section, styles.sectionNewsletter)}>
           <div className={clsx(styles.sectionContainer)}>
             <p className={clsx(styles.newsletterTitle)}>
@@ -136,7 +216,7 @@ function Home() {
         </section>
       </main>
     </Layout>
-  );
+  )
 }
 
-export default Home;
+export default Home

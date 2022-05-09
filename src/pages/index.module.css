@@ -1,4 +1,7 @@
 /* stylelint-disable docusaurus/copyright-header */
+
+/* TODO: this file is an absolute mess. Styling should be done with a mobile-first mindset. I started to write a tool for this conversion this but it's not working yet, so jump down to the NEW SECTION for sane min-width based styles. Initially they were in a separate file but that was causing rendering issues on prod vs. local.*/
+
 :root {
   --ifm-newsletter-flex-direction: row;
   --ifm-newsletter-flex-height: 364px;
@@ -50,7 +53,8 @@
   flex-direction: column;
 }
 .sectionImg {
-  width: 591px;
+  width: 100%;
+  margin-left: 1rem;
   height: 544px;
   display: block;
   background-repeat: no-repeat;
@@ -70,34 +74,24 @@
   background-color: #fff;
 }
 .sectionPrivacyImg {
-  background-image: url(/img/index/fish.svg);
+  background-image: url(/img/index/fish.gif);
+  background-size: contain;
 }
 .sectionPrivacyLayer {
   background-color: #ffcd85;
 }
 .sectionPrivacyLayerImg {
-  width: 648px;
-  height: 682px;
-  background-size: 648px auto;
-  background-image: url(/img/index/privacy_layer.gif);
+  background-size: contain;
+  background-image: url(/img/index/universe.gif);
 }
 .sectionCryptocurrency {
   background-color: #fff;
 }
 .sectionCryptocurrencyImg {
-  width: 585px;
-  height: 710px;
-  background-size: 585px auto;
-  background-image: url(/img/index/explorer.svg);
+  background-size: contain;
+  background-image: url(/img/index/node.gif);
 }
-.sectionExperts {
-  background-color: #fff;
-}
-.sectionExpertsImg {
-  width: 646px;
-  height: 492px;
-  background-image: url(/img/index/experts-2.svg);
-}
+
 .sectionBorderless {
   max-height: 894px;
   background: #ffc2eb url(/img/index/globe.svg) no-repeat;
@@ -107,9 +101,8 @@
   background: #fff4e0;
 }
 .sectionRegulatoryImg {
-  width: 647px;
-  height: 616px;
-  background-image: url(/img/index/regulatory.svg);
+  background-image: url(/img/index/encrypted.gif);
+  background-size: contain;
 }
 .sectionNewsletter {
   background-color: var(--ifm-contrast-background-color);
@@ -144,6 +137,14 @@
   text-align: center;
   color: var(--ifm-color-primary-contrast);
 }
+.h2Title {
+  font-size: 24px;
+  line-height: var(--ifm-main-title-line-height);
+  margin-bottom: 20px;
+  text-align: center;
+  color: var(--ifm-color-primary-contrast);
+  font-style: italic;
+}
 @media screen and (max-width: 1200px) {
   :root {
     --ifm-newsletter-flex-direction: column;
@@ -151,23 +152,14 @@
     --ifm-newsletter-title-vertical-margin: 40px;
   }
   .sectionPrivacyImg {
-    width: 527px;
-    height: 485px;
-    background-size: 527px 485px;
+    background-size: contain;
   }
   .sectionRegulatoryImg {
-    width: 530px;
-    height: 504px;
-    background-size: 530px 504px;
+    background-size: contain;
   }
-  .sectionExpertsImg {
-    width: 527px;
-    height: 402px;
-    background-size: 527px 402px;
-  }
+
   .sectionCryptocurrencyImg {
-    width: 528px;
-    background-size: 528px auto;
+    background-size: contain;
   }
 }
 @media screen and (max-width: 1045px) {
@@ -203,17 +195,12 @@
     height: 700px;
   }
   .sectionPrivacyImg {
-    width: 521px;
     height: 480px;
   }
   .sectionCryptocurrencyImg {
     width: 392px;
-    height: 477px;
   }
-  .sectionExpertsImg {
-    width: 525px;
-    height: 380px;
-  }
+
   .sectionBorderless {
     background-position: center 630px;
     background-size: 500px;
@@ -253,12 +240,9 @@
   }
   .sectionImg {
     width: 100%;
-    height: 310px;
     background-position: center;
   }
-  .sectionExpertsImg {
-    height: 240px;
-  }
+
   .sectionBorderless {
     background: none;
   }
@@ -309,5 +293,144 @@
     background-size: 300px 290px;
     height: 290px;
     margin-top: 65px;
+  }
+}
+
+/* NEW SECTION WHICH IS MIN-WIDTH BASED */
+
+.implicitBreak {
+  display: inline-block;
+  margin-right: 0.25rem;
+}
+.sectionExperts {
+  background-color: #fff;
+}
+.section.sectionExperts {
+  padding-bottom: 0;
+}
+.sectionExpertsImg {
+  background-image: url(/img/index/new-half.gif);
+  background-position: center;
+  background-size: contain;
+}
+.sectionExperts .sectionContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.sectionExperts .sectionImg {
+  margin: 0 auto;
+  max-height: 177px;
+  width: 100%;
+}
+
+.sectionExperts .sectionContent {
+  display: flex;
+  flex-direction: column;
+  max-width: 800px;
+  width: 100%;
+  margin: 0 auto;
+}
+.sectionExperts .sectionContent .sectionTitle,
+.sectionExperts .sectionContent .sectionDescription {
+  width: 100%;
+  max-width: 800px;
+}
+.investors {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  width: 100%;
+  height: 8.25rem;
+  margin: 0 auto 4rem;
+  justify-content: space-between;
+}
+.twitterName {
+  font-size: 24px;
+}
+.investorLink {
+  width: calc(33.3333% - 1.5rem);
+  height: 40px;
+  min-width: 100px;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: black;
+  font-family: extended-regular;
+}
+
+.investorLink:hover {
+  text-decoration: none;
+  color: var(--ifm-link-hover-color);
+}
+
+.investorLink:hover .investorImage {
+  filter: invert(0.5) sepia(1) saturate(5) brightness(1) hue-rotate(-60deg);
+}
+.investorTwitter {
+  max-width: 24px;
+  max-height: 24px;
+  margin-right: 0.25rem;
+}
+.investorImage {
+  max-width: 150px;
+  max-height: 64px;
+}
+
+.investor {
+  text-decoration: none;
+}
+
+.investor img {
+  width: 100%;
+  height: auto;
+}
+.companies {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 8rem;
+}
+.companyLink {
+  margin: 1rem;
+  display: flex;
+  width: 100%;
+  max-height: 40px;
+  max-width: 14rem;
+}
+.companyImage {
+  width: 100%;
+  height: auto;
+}
+@media screen and (min-width: 700px) {
+  .investorLink {
+    width: calc(33.3333% - 2rem);
+  }
+  .sectionExperts .sectionImg {
+    max-height: 276px;
+  }
+  .investors {
+    width: 100%;
+    margin: 0;
+    margin-bottom: 4rem;
+  }
+  .twitterName {
+    font-size: 18px;
+  }
+  .companies {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .companyLink {
+    width: calc(33.3333333% - 1rem);
+    margin: 0.5rem;
   }
 }
