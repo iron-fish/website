@@ -83,7 +83,7 @@ const features = [
       ["/img/index/twitter.svg", "twitter.com/balajis"],
     ],
     description:
-      "We are honored to be working with incredible investors and angels. Our team members are tech veterans, with resumes spanning Airbnb, Facebook, Uber, and more.",
+      "Our team members have decades of experience building some of the world’s most beloved products at Airbnb, Facebook, Google, Uber, and more. Our angels include founders across the crypto space (L1s, bridges, custody). And our investors have a track record of partnering early with the world’s most transformational technologies.",
   },
 ]
 
