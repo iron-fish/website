@@ -29,10 +29,10 @@ const features = [
     title: "A platform for the future of the internet",
     description: (
       <>
-        We’re building Iron Fish to become the universal privacy layer for web3.
-        Using zero-knowledge proofs (zk-SNARKs) and the highest industry
-        standards for encryption, we enable users to have fully private
-        transactions &mdash; a true SSL layer for all blockchains.
+        We’re building a new Layer 1 blockchain to become the universal privacy
+        layer for all of web3. Using zero-knowledge proofs (zk-SNARKs) and the
+        highest industry standards for encryption, we enable users to have fully
+        private transactions &mdash; a true SSL layer for all blockchains.
       </>
     ),
     buttonLink: "/roadmap",
