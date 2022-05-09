@@ -8,7 +8,7 @@ hide_table_of_contents: false
 
 Miners are essential to the health of the Iron Fish network. Without them, blocks won't be generated and transactions won't be transmitted. Iron Fish is still at the testnet stage.
 
-We are currently running an incentivized testnet where actively mining automatically earns you points for blocks that are mined and accepted to the main chain. To participate, visit our [testnet](https://testnet.ironfish.network/) website to learn more.
+We are currently running an incentivized testnet where you can earn points by mining blocks and contributing to the network. To participate, visit our [testnet](https://testnet.ironfish.network/) website to learn more.
 
 ## Requirements
 Install Iron Fish by following the instructions [here](onboarding/installation.md).
@@ -44,7 +44,19 @@ ironfish config:set blockGraffiti "<your graffiti here>"
 ```
 
 ## Join a mining pool
-$IRON is not available on a mining pool at the moment. [Join our Discord](https://discord.gg/EkQkEcm8DH) if you're interested in creating a pool for Iron Fish.
+You can join a mining pool in order to increase your chances of mining a block. Block rewards are typically split among miners based on their respective contributions. We also run a basic mining pool that anyone can join. To get started, retrive the public key of the account you want to use:
+
+```sh
+ironfish accounts:publickey <ACCOUNT_NAME>
+```
+
+And use that public key to join the mining pool:
+
+```sh
+ironfish miners:start --pool pool.ironfish.network --address <PUBLIC KEY>
+```
+
+[Join our Discord](https://discord.gg/ironfish) if you're interested in creating a different pool for Iron Fish.
 
 ## Troubleshooting
 

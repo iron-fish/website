@@ -58,6 +58,7 @@ You can change the working directory by passing the flag `--datadir` when runnin
 | nodeWorkers          | The number of threads to use for workers. A value of -1 will use the maximum possible amount of threads.
 | p2pSimulateLatency   | Randomly delay outbound messages up to this value |
 | peerPort             | Port on which to host the WebSocket listen server |
+| poolName             | Name to use for mining pool (optional) |
 | rpcTcpHost           | Address to connect to when establishing an RPC connection |
 | rpcTcpPort           | Port to connect to when establishing an RPC connection |
 | targetPeers          | The ideal number of peers we'd like to be connected to. The node will attempt to establish new connections when below this number. |
