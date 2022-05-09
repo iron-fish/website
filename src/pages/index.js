@@ -206,7 +206,9 @@ function Home() {
         <div className={clsx(styles.sectionContainer)}>
           <header>
             <h1 className={clsx(styles.h1Title)}>
-              The Privacy Platform for web3
+              The Privacy Platform
+              <br />
+              for web3
             </h1>
             <h2 className={clsx(styles.h2Title)}>Coming to a chain near you</h2>
             <Link
