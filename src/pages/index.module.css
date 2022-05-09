@@ -1,4 +1,6 @@
 /* stylelint-disable docusaurus/copyright-header */
+// this page is an absolute mess
+// everything should be re-done in min-width / responsive first form
 :root {
   --ifm-newsletter-flex-direction: row;
   --ifm-newsletter-flex-height: 364px;
@@ -89,7 +91,7 @@
   width: 585px;
   height: 710px;
   background-size: 585px auto;
-  background-image: url(/img/index/explorer.svg);
+  background-image: url(/img/index/node.gif);
 }
 .sectionExperts {
   background-color: #fff;
@@ -135,7 +137,6 @@
   height: 8.25rem;
   margin: 0 auto 4rem;
   justify-content: space-between;
-  width: 1000px;
   margin-left: -100px;
 }
 .twitterName {
@@ -167,12 +168,10 @@
   max-width: 30px;
   max-height: 30px;
 }
-/*
 .investorImage {
   max-width: 150px;
   max-height: 64px;
 }
-*/
 
 .investor {
   text-decoration: none;
@@ -181,6 +180,41 @@
 .investor img {
   width: 100%;
   height: auto;
+}
+.companies {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 8rem;
+}
+.companyLink {
+  margin: 1rem;
+  display: flex;
+  width: 100%;
+  max-height: 40px;
+  max-width: 14rem;
+}
+.companyImage {
+  width: 100%;
+  height: auto;
+}
+@media screen and (min-width: 700px) {
+  .companyLink {
+    width: calc(33.333333% - 1rem);
+    margin: 0.5rem;
+  }
+  .companies {
+    flex-direction: row;
+  }
+  .investors {
+    width: 100%;
+  }
+  .investorLink .investorImage,
+  .investorLink.investorLinkTwitter .investorImage.investorLink {
+    width: 100%;
+  }
 }
 
 .sectionBorderless {
@@ -320,14 +354,13 @@
   .sectionExperts .sectionImg {
     max-height: 276px;
   }
-  /*.investorImage {
-    max-width: 200px;
-    max-height: 70px;
-  }*/
   .investors {
     width: 100%;
     margin: 0;
     margin-bottom: 4rem;
+  }
+  .twitterName {
+    font-size: 18px;
   }
 }
 
@@ -397,13 +430,6 @@
   }
 }
 @media screen and (max-width: 450px) {
-  .investors {
-    width: 100%;
-  }
-  .investorLink .investorImage,
-  .investorLink.investorLinkTwitter .investorImage.investorLink {
-    width: 100%;
-  }
   .sectionImg {
     width: 100%;
     margin: 0;

@@ -28,27 +28,18 @@ const features = [
     button: "See Our Roadmap",
   },
   {
-    id: "cryptocurrency",
+    id: "privacy",
     className: "sectionCryptocurrency",
-    title: "We care about usability",
+    title: "Convenience for everyone",
     description:
-      "Cryptocurrencies have struggled with usability. Iron Fish is built to be intuitive for both developers and users alike. We are building a complete set of tools for you to have the best end-to-end experience running and transacting $IRON on every platform, while always guaranteeing your privacy.",
+      "Privacy should be a right. Iron Fish’s simplicity gives everyone that right. Confidentiality shouldn’t be reserved for the powerful or technically gifted. Anyone can create a wallet and run their own node.",
     buttonLink: "docs/onboarding/installation-iron-fish",
     button: "Download Iron Fish",
   },
   {
-    id: "borderless",
-    className: "sectionBorderless",
-    title: "Borderless, decentralized, built for everyone",
-    description:
-      "We care about decentralization. Iron Fish is a proof-of-work (PoW) chain that is censorship-resistant and available to everyone—regardless of location, identity or citizenship. Anyone can create a wallet, run their own node, and mine $IRON. With Iron Fish, you own the bank.",
-    buttonLink: "docs/whitepaper/1_introduction",
-    button: "Read Our Whitepaper",
-  },
-  {
     id: "regulatory",
     className: "sectionRegulatory",
-    title: "Regulatory compliance",
+    title: "Regulatory compliance, built in",
     description:
       "Privacy doesn't mean that Iron Fish can't be compliant. Every Iron Fish account comes with a set of view keys allowing an exchange or financial organization to see a full audit of the accounts they manage and comply with all their AML obligations.",
     buttonLink: "docs/whitepaper/1_introduction",
@@ -58,13 +49,15 @@ const features = [
     id: "investors",
     className: "sectionExperts",
     title: "World-class builders and backers",
-    investors: [
+    companies: [
       ["/img/index/investor-a16z.svg", "a16z.com"],
       ["/img/index/investor-electric-capital.svg", "electriccapital.com"],
       ["/img/index/investor-sequoia.svg", "sequoiacap.com"],
+    ],
+    investors: [
       ["/img/index/twitter.svg", "twitter.com/eladgil"],
       ["/img/index/twitter.svg", "twitter.com/balajis"],
-      ["/img/index/twitter.svg", "twitter.com/naval"],
+      ["/img/index/twitter.svg", "twitter.com/ljxie"],
     ],
     description:
       "We are honored to be working with incredible investors and angels. Our team members are tech veterans, with resumes spanning Airbnb, Facebook, Uber, and more.",
@@ -78,6 +71,7 @@ function Feature({
   buttonLink,
   title,
   description,
+  companies = [],
   investors = [],
 }) {
   return (
@@ -87,6 +81,39 @@ function Feature({
           <div>
             <h2 className={clsx(styles.sectionTitle)}>{title}</h2>
             <p className={clsx(styles.sectionDescription)}>{description}</p>
+            {companies.length > 0 && (
+              <div className={styles.companies}>
+                {companies.map(([img, site]) => {
+                  const twitterName =
+                    site.indexOf("twitter") > -1 ? site.split(".com/")[1] : null
+                  return (
+                    <a
+                      href={`https://${site}`}
+                      key={site}
+                      className={clsx(styles.companyLink, {
+                        [styles.companyLinkTwitter]: twitterName,
+                      })}
+                    >
+                      <img
+                        className={clsx(
+                          twitterName
+                            ? styles.companyTwitter
+                            : styles.companyImage
+                        )}
+                        src={img}
+                        role="presentation"
+                      />
+                      {twitterName && <span style={{ width: "8px" }} />}
+                      {twitterName && (
+                        <span className={styles.twitterName}>
+                          {twitterName}
+                        </span>
+                      )}
+                    </a>
+                  )
+                })}
+              </div>
+            )}
             {investors.length > 0 && (
               <div className={styles.investors}>
                 {investors.map(([img, site]) => {
@@ -101,9 +128,11 @@ function Feature({
                       })}
                     >
                       <img
-                        className={clsx(styles.investorImage, {
-                          [styles.investorTwitter]: twitterName,
-                        })}
+                        className={clsx(
+                          twitterName
+                            ? styles.investorTwitter
+                            : styles.investorImage
+                        )}
                         src={img}
                         role="presentation"
                       />
