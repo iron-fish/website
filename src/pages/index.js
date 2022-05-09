@@ -6,7 +6,6 @@ import useDocusaurusContext from "@docusaurus/useDocusaurusContext"
 import useBaseUrl from "@docusaurus/useBaseUrl"
 
 import styles from "./index.module.css"
-import sane from "./index2.module.css"
 import Mailchimp from "../theme/components/MailChimp"
 
 const features = [
@@ -60,7 +59,7 @@ const features = [
     title: (
       <>
         Regulatory compliance,
-        <br className={sane.implicitBreak} />
+        <br className={styles.implicitBreak} />
         built in
       </>
     ),
@@ -88,7 +87,7 @@ const features = [
   },
 ]
 
-const lookup = x => (x !== "sectionExperts" ? styles : sane)
+const lookup = x => (x !== "sectionExperts" ? styles : styles)
 
 function Feature({
   id,
@@ -100,18 +99,21 @@ function Feature({
   companies = [],
   investors = [],
 }) {
-  // to brook the differences between the old styling (insane, max-width)
-  // and the new (not insane, min-width, responsive first)
+  // to brook the differences between the old styling (instyles, max-width)
+  // and the new (not instyles, min-width, responsive first)
   const style = lookup(className)
   return (
-    <section id={id} className={clsx(styles.section, style[className])}>
+    <section
+      id={id}
+      className={clsx(styles.section, style[className], className)}
+    >
       <div className={clsx(styles.sectionContainer)}>
         <div className={clsx(styles.sectionContent)}>
           <div>
             <h2 className={clsx(styles.sectionTitle)}>{title}</h2>
             <p className={clsx(styles.sectionDescription)}>{description}</p>
             {companies.length > 0 && (
-              <div className={sane.companies}>
+              <div className={styles.companies}>
                 {companies.map(([img, site]) => {
                   const twitterName =
                     site.indexOf("twitter") > -1 ? site.split(".com/")[1] : null
@@ -119,20 +121,24 @@ function Feature({
                     <a
                       href={`https://${site}`}
                       key={site}
-                      className={clsx(sane.companyLink, {
-                        [sane.companyLinkTwitter]: twitterName,
+                      className={clsx(styles.companyLink, {
+                        [styles.companyLinkTwitter]: twitterName,
                       })}
                     >
                       <img
                         className={clsx(
-                          twitterName ? sane.companyTwitter : sane.companyImage
+                          twitterName
+                            ? styles.companyTwitter
+                            : styles.companyImage
                         )}
                         src={img}
                         role="presentation"
                       />
                       {twitterName && <span style={{ width: "8px" }} />}
                       {twitterName && (
-                        <span className={sane.twitterName}>{twitterName}</span>
+                        <span className={styles.twitterName}>
+                          {twitterName}
+                        </span>
                       )}
                     </a>
                   )
@@ -140,7 +146,7 @@ function Feature({
               </div>
             )}
             {investors.length > 0 && (
-              <div className={sane.investors}>
+              <div className={styles.investors}>
                 {investors.map(([img, site]) => {
                   const twitterName =
                     site.indexOf("twitter") > -1 ? site.split(".com/")[1] : null
@@ -148,21 +154,23 @@ function Feature({
                     <a
                       href={`https://${site}`}
                       key={site}
-                      className={clsx(sane.investorLink, {
-                        [sane.investorLinkTwitter]: twitterName,
+                      className={clsx(styles.investorLink, {
+                        [styles.investorLinkTwitter]: twitterName,
                       })}
                     >
                       <img
                         className={clsx(
                           twitterName
-                            ? sane.investorTwitter
-                            : sane.investorImage
+                            ? styles.investorTwitter
+                            : styles.investorImage
                         )}
                         src={img}
                         role="presentation"
                       />
                       {twitterName && (
-                        <span className={sane.twitterName}>{twitterName}</span>
+                        <span className={styles.twitterName}>
+                          {twitterName}
+                        </span>
                       )}
                     </a>
                   )
