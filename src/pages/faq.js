@@ -44,13 +44,6 @@ const questions = [
     },
   },
   {
-    id: "accessible",
-    title: "Are you truly accessible?",
-    description: {
-      __html: `Yes—you can use Iron Fish on any OS, from Windows, Linux, macOS to even Chrome OS. We believe digital banking should be available to everyone, regardless of equipment or technical expertise. All you need is a browser and an internet connection.`,
-    },
-  },
-  {
     id: "why",
     title: "Why does accessibility matter?",
     description: {
@@ -70,6 +63,13 @@ const questions = [
     title: "Are you hiring?",
     description: {
       __html: `Yes! We’re working with some of the most exciting tools in cryptography and decentralized systems to create a frictionless, internet-native global currency system. Interested? Check out our <a href="/careers">Careers page</a>.`,
+    },
+  },
+  {
+    id: "more",
+    title: "Have more questions?",
+    description: {
+      __html: `We have an extensive community-sourced FAQ on <a href="https://coda.io/d/Iron-Fish-Community_dvILN4uyPEb/FAQs_suOCT#_luKqk">our wiki</a>.`,
     },
   },
 ];
