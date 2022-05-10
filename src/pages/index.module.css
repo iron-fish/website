@@ -423,8 +423,9 @@
     max-height: 276px;
   }
   .investors {
+    max-width: 400px;
     width: 100%;
-    margin: 0;
+    margin: 0 auto;
     margin-bottom: 4rem;
   }
   .twitterName {
@@ -433,6 +434,7 @@
   .companies {
     flex-direction: row;
     flex-wrap: wrap;
+    justify-content: space-between;
   }
   .companyLink {
     width: calc(33.3333333% - 1rem);
