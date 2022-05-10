@@ -79,7 +79,7 @@
   background-position: center right;
 }
 .sectionPrivacyLayer {
-  background-color: #ffcd85;
+  background-color: #FFCD85;
 }
 .sectionPrivacyLayerImg {
   background-size: contain;
@@ -101,7 +101,7 @@
   background-position: calc(100vw - 47vw) center;
 }
 .sectionRegulatory {
-  background: #fff4e0;
+  background-color: #FFC2E8;
 }
 .sectionRegulatoryImg {
   background-image: url(/img/index/encrypted.gif);
