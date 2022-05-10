@@ -44,10 +44,10 @@ ironfish config:set blockGraffiti "<your graffiti here>"
 ```
 
 ## Join a mining pool
-You can join a mining pool in order to increase your chances of mining a block. Block rewards are typically split among miners based on their respective contributions. We also run a basic mining pool that anyone can join. To get started, retrive the public key of the account you want to use:
+You can join a mining pool in order to increase your chances of mining a block. Block rewards are typically split among miners based on their respective contributions. We also run a basic mining pool that anyone can join. To get started, retrieve the public key of the account you want to use:
 
 ```sh
-ironfish accounts:publickey <ACCOUNT_NAME>
+ironfish accounts:publickey
 ```
 
 And use that public key to join the mining pool:
