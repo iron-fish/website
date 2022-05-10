@@ -181,7 +181,7 @@ function Home() {
             </h1>
             <h2 className={clsx(styles.h2Title)}>Coming to a chain near you</h2>
             <Link
-              className="button button--outline button--secondary"
+              className="button button--outline button--secondary button--main"
               to="https://testnet.ironfish.network/about"
             >
               Join the Incentivized Testnet
