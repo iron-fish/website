@@ -76,6 +76,7 @@
 .sectionPrivacyImg {
   background-image: url(/img/index/fish.gif);
   background-size: contain;
+  background-position: center right;
 }
 .sectionPrivacyLayer {
   background-color: #ffcd85;
@@ -83,6 +84,7 @@
 .sectionPrivacyLayerImg {
   background-size: contain;
   background-image: url(/img/index/universe.gif);
+  background-position: center right;
 }
 .sectionCryptocurrency {
   background-color: #fff;
@@ -90,6 +92,7 @@
 .sectionCryptocurrencyImg {
   background-size: contain;
   background-image: url(/img/index/node.gif);
+  background-position: center right;
 }
 
 .sectionBorderless {
@@ -103,6 +106,7 @@
 .sectionRegulatoryImg {
   background-image: url(/img/index/encrypted.gif);
   background-size: contain;
+  background-position: center right;
 }
 .sectionNewsletter {
   background-color: var(--ifm-contrast-background-color);
@@ -133,7 +137,6 @@
 .h1Title {
   font-size: var(--ifm-main-title-font-size);
   line-height: var(--ifm-main-title-line-height);
-  margin-bottom: 20px;
   text-align: center;
   color: var(--ifm-color-primary-contrast);
 }
@@ -143,7 +146,6 @@
   margin-bottom: 20px;
   text-align: center;
   color: var(--ifm-color-primary-contrast);
-  font-style: italic;
 }
 @media screen and (max-width: 1200px) {
   :root {
@@ -198,7 +200,7 @@
     height: 480px;
   }
   .sectionCryptocurrencyImg {
-    width: 392px;
+    width: 100%;
   }
 
   .sectionBorderless {
@@ -241,6 +243,7 @@
   .sectionImg {
     width: 100%;
     background-position: center;
+    max-height: 300px;
   }
 
   .sectionBorderless {
@@ -337,6 +340,7 @@
 .sectionExperts .sectionContent .sectionDescription {
   width: 100%;
   max-width: 800px;
+  text-align: center;
 }
 .investors {
   display: flex;
@@ -392,12 +396,13 @@
   height: auto;
 }
 .companies {
+  margin-top: 32px;
   display: flex;
   width: 100%;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 8rem;
+  height: 10rem;
 }
 .companyLink {
   margin: 1rem;
@@ -418,16 +423,19 @@
     max-height: 276px;
   }
   .investors {
+    max-width: 400px;
     width: 100%;
-    margin: 0;
+    margin: 0 auto;
     margin-bottom: 4rem;
   }
   .twitterName {
     font-size: 18px;
   }
   .companies {
+    margin-top: 0;
     flex-direction: row;
     flex-wrap: wrap;
+    justify-content: space-between;
   }
   .companyLink {
     width: calc(33.3333333% - 1rem);
