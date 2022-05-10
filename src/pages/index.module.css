@@ -137,7 +137,6 @@
 .h1Title {
   font-size: var(--ifm-main-title-font-size);
   line-height: var(--ifm-main-title-line-height);
-  margin-bottom: 20px;
   text-align: center;
   color: var(--ifm-color-primary-contrast);
 }

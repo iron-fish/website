@@ -534,7 +534,7 @@ div.item {
     --ifm-font-size-subtitle: 42px;
   }
   .button {
-    width: 100%;
+    width: calc(100% - 4rem);
   }
   .navbar__inner {
     padding-left: 0px;
