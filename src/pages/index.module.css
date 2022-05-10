@@ -76,6 +76,7 @@
 .sectionPrivacyImg {
   background-image: url(/img/index/fish.gif);
   background-size: contain;
+  background-position: center right;
 }
 .sectionPrivacyLayer {
   background-color: #ffcd85;
@@ -83,6 +84,7 @@
 .sectionPrivacyLayerImg {
   background-size: contain;
   background-image: url(/img/index/universe.gif);
+  background-position: center right;
 }
 .sectionCryptocurrency {
   background-color: #fff;
@@ -90,6 +92,7 @@
 .sectionCryptocurrencyImg {
   background-size: contain;
   background-image: url(/img/index/node.gif);
+  background-position: center right;
 }
 
 .sectionBorderless {
@@ -103,6 +106,7 @@
 .sectionRegulatoryImg {
   background-image: url(/img/index/encrypted.gif);
   background-size: contain;
+  background-position: center right;
 }
 .sectionNewsletter {
   background-color: var(--ifm-contrast-background-color);
@@ -241,6 +245,7 @@
   .sectionImg {
     width: 100%;
     background-position: center;
+    max-height: 300px;
   }
 
   .sectionBorderless {
