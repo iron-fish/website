@@ -4,45 +4,50 @@
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  */
-import React from "react"
-import Head from "@docusaurus/Head"
-import useDocusaurusContext from "@docusaurus/useDocusaurusContext"
-import useBaseUrl from "@docusaurus/useBaseUrl"
-import { useRouteMatch } from "@docusaurus/router"
-import ThemeProvider from "@theme/ThemeProvider"
-import UserPreferencesProvider from "@theme/UserPreferencesProvider"
-import AnnouncementBar from "@theme/AnnouncementBar"
-import Navbar from "@theme/Navbar"
-import Footer from "@theme/Footer"
-import "./styles.css"
+import React from "react";
+import Head from "@docusaurus/Head";
+import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
+import useBaseUrl from "@docusaurus/useBaseUrl";
+import { useRouteMatch } from "@docusaurus/router";
+import ThemeProvider from "@theme/ThemeProvider";
+import UserPreferencesProvider from "@theme/UserPreferencesProvider";
+import AnnouncementBar from "@theme/AnnouncementBar";
+import Navbar from "@theme/Navbar";
+import Footer from "@theme/Footer";
+import "./styles.css";
 
 function Providers({ children }) {
   return (
     <ThemeProvider>
       <UserPreferencesProvider>{children}</UserPreferencesProvider>
     </ThemeProvider>
-  )
+  );
 }
 
 function Layout(props) {
-  const context = useDocusaurusContext()
-  console.log({ context })
-  const { siteConfig } = context
+  const { siteConfig } = useDocusaurusContext();
   const {
     favicon,
     title: siteTitle,
     themeConfig: { image: defaultImage, metadatas },
     url: siteUrl,
-  } = siteConfig
-  const { children, title, noFooter, description, image, keywords, permalink } =
-    props
-  const metaTitle = title ? `${title} | ${siteTitle}` : siteTitle
-  const metaImage = image || defaultImage
+  } = siteConfig;
+  const {
+    children,
+    title,
+    noFooter,
+    description,
+    image,
+    keywords,
+    permalink,
+  } = props;
+  const metaTitle = title ? `${title} | ${siteTitle}` : siteTitle;
+  const metaImage = image || defaultImage;
   const metaImageUrl = useBaseUrl(metaImage, {
     absolute: true,
-  })
-  const location = useRouteMatch()
-  const faviconUrl = useBaseUrl(favicon)
+  });
+  const location = useRouteMatch();
+  const faviconUrl = useBaseUrl(favicon);
   return (
     <Providers>
       <Head>
@@ -104,7 +109,7 @@ function Layout(props) {
       <div className="main-wrapper">{children}</div>
       {!noFooter && <Footer />}
     </Providers>
-  )
+  );
 }
 
-export default Layout
+export default Layout;
