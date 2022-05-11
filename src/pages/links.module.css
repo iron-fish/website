@@ -16,6 +16,7 @@ body {
   margin-bottom: 1.5rem;
   text-align: center;
   text-decoration: none;
+  max-width: 25rem;
 }
 .header,
 .footer {
@@ -30,5 +31,7 @@ body {
   filter: sepia(1) saturate(0) brightness(1) hue-rotate(0deg);
 }
 .sub {
+  max-width: 25rem;
   width: 100%;
+  margin: 0 auto;
 }
