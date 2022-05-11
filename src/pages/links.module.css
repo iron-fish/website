@@ -23,6 +23,9 @@ body {
   flex-direction: column;
   padding: 2rem;
 }
+.header {
+  padding-bottom: 3rem;
+}
 .logo {
   filter: sepia(1) saturate(0) brightness(1) hue-rotate(0deg);
 }
