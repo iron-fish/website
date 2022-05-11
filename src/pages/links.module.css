@@ -3,7 +3,7 @@ body {
   font-size: 16px;
 }
 .page {
-  padding: 2rem;
+  padding: 1rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -13,10 +13,19 @@ body {
   display: block;
   padding: 1rem;
   width: calc(100% - 2rem);
-  border-radius: 10rem;
-  background-color: rgba(0, 0, 0, 0.5);
-  margin: 0.5rem;
+  margin-bottom: 1.5rem;
   text-align: center;
   text-decoration: none;
-  color: white;
+}
+.header,
+.footer {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+}
+.logo {
+  filter: sepia(1) saturate(0) brightness(1) hue-rotate(0deg);
+}
+.sub {
+  width: 100%;
 }
