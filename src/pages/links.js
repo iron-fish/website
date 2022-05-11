@@ -6,27 +6,27 @@ import styles from "./links.module.css"
 const links = [
   [
     "Website",
-    "https://ironfish.network"
+    "https://bit.ly/3P7jUH4"
   ],
   [
     "Docs",
-    "https://ironfish.network/docs/onboarding/iron-fish-tutorial"
+    "https://bit.ly/3FQlSYp"
   ],
   [
     "Github",
-    "https://github.com/iron-fish"
+    "https://bit.ly/3FJcu8Q"
   ],
   [
     "Twitter",
-    "https://twitter.com/ironfishcrypto"
+    "https://bit.ly/3w6l91X"
   ],
   [
     "Discord",
-    "https://discord.gg/ironfish"
+    "https://bit.ly/3PebCNS"
   ],
   [
     "Telegram",
-    "https://t.me/ironfishcryptochat"
+    "https://bit.ly/3wosBnO"
   ]
 ]
 
