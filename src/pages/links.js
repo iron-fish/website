@@ -47,7 +47,7 @@ const Links = () => (
       </Link>
     ))}
     <footer className={styles.footer}>
-      <img src="/img/careers/submarine.gif" className={styles.sub} />
+      <img src="/img/links/empower.gif" className={styles.sub} />
     </footer>
   </div>
 )
