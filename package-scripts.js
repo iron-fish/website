@@ -2,7 +2,7 @@ module.exports = {
   scripts: {
     updateLinks: {
       description: "Update '/src/pages/links.js' based on 'linktree'",
-      script: "node update-links.js",
+      script: "node update-links.mjs",
     },
     docusaurus: "docusaurus",
     start: "docusaurus start",

@@ -1,25 +1,25 @@
-const fs = require("fs/promises")
-const F = require("fluture")
-const path = require("path")
-const {
+import fs from "fs/promises"
+import { Future } from "fluture"
+import path from "path"
+import {
   curry,
   filter,
   fork,
-  identity: I,
+  identity as I,
   j2,
   lines,
   map,
   pipe,
   readFile,
   split,
-  always: K,
+  always as K,
   chain,
-} = require("snang/script")
+} from "snang/script.mjs"
 
 // writeFile :: String -> String -> Future Error String
 const writeFile = curry(
   (file, raw) =>
-    new F.Future((bad, good) => {
+    new Future((bad, good) => {
       fs.writeFile(file, raw, "utf8").catch(bad).then(good)
       return () => {}
     })
@@ -31,7 +31,7 @@ const OUTPUT = "./src/pages/links.js"
 const writeRaw = pipe(writeFile(OUTPUT), map(K(`Updated ${OUTPUT}!`)))
 const trim = x => x.trim()
 
-module.exports = pipe(
+export default pipe(
   readFile,
   map(
     pipe(
