@@ -4,11 +4,11 @@
   "private": true,
   "scripts": {
     "docusaurus": "docusaurus",
-    "start": "docusaurus start",
-    "build": "docusaurus build",
-    "swizzle": "docusaurus swizzle",
-    "deploy": "docusaurus deploy",
-    "serve": "docusaurus serve"
+    "start": "nps start",
+    "build": "nps build",
+    "swizzle": "nps swizzle",
+    "deploy": "nps deploy",
+    "serve": "nps serve"
   },
   "dependencies": {
     "@docusaurus/core": "2.0.0-alpha.64",
@@ -45,6 +45,7 @@
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-prettier": "^4.0.0",
     "fluture": "^14.0.0",
+    "nps": "^5.10.0",
     "postcss-import": "12.0.1",
     "snang": "^0.2.7"
   }
