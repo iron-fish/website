@@ -44,6 +44,12 @@
   margin: 18px 0px;
   text-align: center;
 }
+.positionContainer {
+  display: block;
+  overflow: hidden;
+  max-width: 1114px;
+  margin: 0 auto;
+}
 .positionLink {
   text-decoration: none;
 }
@@ -68,10 +74,10 @@
   justify-content: space-between;
   padding: var(--ifm-small-vertical-padding);
   margin-bottom: 40px;
-  margin-left: auto;
   box-sizing: border-box;
   box-shadow: 0px 7px 15px rgba(0, 0, 0, 0.08);
   border-radius: 3px;
+  margin-left: auto;
   margin-right: auto;
 }
 .position:hover {
