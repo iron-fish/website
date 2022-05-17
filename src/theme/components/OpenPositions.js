@@ -1,36 +1,43 @@
-import React from "react";
-import Link from "@docusaurus/Link";
+import React from "react"
+import Link from "@docusaurus/Link"
 
-import axios from "axios";
-import clsx from "clsx";
+import axios from "axios"
+import clsx from "clsx"
 
-import styles from "./openPositions.module.css";
+import styles from "./openPositions.module.css"
 
-const LEVER_ORGANIZATION = 'ironfish';
+const LEVER_ORGANIZATION = "ironfish"
 
 function Position({ title, time, location, link }) {
   return (
-    <Link className={clsx(styles.positionLink)} to={link}>
-      <div className={clsx(styles.position)}>
-        <p className={clsx(styles.title)}>{title}</p>
-        <p className={clsx(styles.time)}>{time}</p>
-        <p className={clsx(styles.location)}>{location}</p>
-        <img src="/img/careers/arrow.svg" alt="link" />
-      </div>
-    </Link>
-  );
+    <div className={styles.positionContainer}>
+      <Link className={clsx(styles.positionLink)} to={link}>
+        <div className={clsx(styles.position)}>
+          <p className={clsx(styles.title)}>{title}</p>
+          <p className={clsx(styles.time)}>{time}</p>
+          <p className={clsx(styles.location)}>{location}</p>
+          <img src="/img/careers/arrow.svg" alt="link" />
+        </div>
+      </Link>
+    </div>
+  )
 }
 
 function OpenPositions() {
-  const [jobData, setJobData] = React.useState({ type: 'loading' })
+  const [jobData, setJobData] = React.useState({ type: "loading" })
 
   React.useEffect(() => {
     const fetchJobs = async () => {
       try {
-        const result = await axios.get(`https://api.lever.co/v0/postings/${LEVER_ORGANIZATION}?mode=json`)
-        setJobData({ type: 'success', data: result.data.sort((a, b) => a.text - b.text) })
+        const result = await axios.get(
+          `https://api.lever.co/v0/postings/${LEVER_ORGANIZATION}?mode=json`
+        )
+        setJobData({
+          type: "success",
+          data: result.data.sort((a, b) => a.text - b.text),
+        })
       } catch (error) {
-        setJobData({ type: 'error', error: error })
+        setJobData({ type: "error", error: error })
       }
     }
     fetchJobs()
@@ -51,25 +58,35 @@ function OpenPositions() {
         </div>
       </div>
       <div className={clsx(styles.container)}>
-        {jobData.type === 'loading' && <div className={clsx(styles.loading)}>Loading...</div>}
+        {jobData.type === "loading" && (
+          <div className={clsx(styles.loading)}>Loading...</div>
+        )}
 
-        {jobData.type === 'success' &&
+        {jobData.type === "success" && (
           <div className={clsx(styles.positions)}>
-            {jobData.data.map((job) => <Position
-              title={job.text}
-              time={job.categories.commitment || ''}
-              location={job.categories.location || ''}
-              link={job.hostedUrl}
-            />)}
+            {jobData.data.map(job => (
+              <Position
+                title={job.text}
+                time={job.categories.commitment || ""}
+                location={job.categories.location || ""}
+                link={job.hostedUrl}
+              />
+            ))}
           </div>
-        }
+        )}
 
-        {jobData.type === 'error' && <div className={clsx(styles.loading)}>
-          Visit our <Link to={`https://jobs.lever.co/${LEVER_ORGANIZATION}`}>Lever page</Link> to view our job listings.
-        </div>}
+        {jobData.type === "error" && (
+          <div className={clsx(styles.loading)}>
+            Visit our{" "}
+            <Link to={`https://jobs.lever.co/${LEVER_ORGANIZATION}`}>
+              Lever page
+            </Link>{" "}
+            to view our job listings.
+          </div>
+        )}
       </div>
     </section>
-  );
+  )
 }
 
-export default OpenPositions;
+export default OpenPositions
