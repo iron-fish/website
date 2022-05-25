@@ -157,15 +157,15 @@ In summary, the proof checks:
 
 - Check that the Merkle path is valid from the given merkle root to the leaf (that this note exists in a given tree)
 
-  3.**Value Commitment**
+3. **Value Commitment**
 
 - Check that the value commitment (**cv**) was indeed constructed as $$cv == v * G_v + rcv * G_{rcv}$$
 
-  4.**Nullifier**
+4. **Nullifier**
 
 - Check that the nullifier is derived from nk (the owner’s nullifier deriving key), the **cm** (note commitment) and **position**
 
-  5.**Random Authorization Key**
+5. **Random Authorization Key**
 
 - Check that the random authorization key (**rk**) that is used to sign the transaction is correctly derived from the spend authorization key (**ak**) and alpha (**α**) for randomness.
 
