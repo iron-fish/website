@@ -13,16 +13,12 @@ const links = [
     "https://bit.ly/3FQlSYp"
   ],
   [
-    "Github",
-    "https://bit.ly/3FJcu8Q"
-  ],
-  [
-    "Twitter",
-    "https://bit.ly/3w6l91X"
-  ],
-  [
     "Discord",
     "https://bit.ly/3PebCNS"
+  ],
+  [
+    "Github",
+    "https://bit.ly/3FJcu8Q"
   ],
   [
     "Telegram",
