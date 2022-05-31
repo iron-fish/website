@@ -68,7 +68,7 @@ ironfish miners:start --pool pool.ironfish.network --address <PUBLIC KEY>
 Make sure that your node is currently running. If you are using a different `datadir` argument to start your node, make sure to use it as well when starting the miner. For example:
 
 ```sh
-ironfish miners:start --datadir=~./ironfish2/
+ironfish miners:start --datadir=~/.ironfish2/
 ```
 
 #### The trees aren't the same size as the chain
