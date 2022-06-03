@@ -6,23 +6,23 @@ import styles from "./links.module.css"
 const links = [
   [
     "Website",
-    "https://bit.ly/3P7jUH4"
+    "https://bit.ly/3MhS8Fl"
   ],
   [
     "Docs",
-    "https://bit.ly/3FQlSYp"
+    "https://bit.ly/3NOplJy"
   ],
   [
     "Discord",
-    "https://bit.ly/3PebCNS"
+    "https://bit.ly/3NxfjwV"
   ],
   [
     "Github",
-    "https://bit.ly/3FJcu8Q"
+    "https://bit.ly/3MhWNH4"
   ],
   [
     "Telegram",
-    "https://bit.ly/3wosBnO"
+    "https://bit.ly/3zgpOjO"
   ]
 ]
 
