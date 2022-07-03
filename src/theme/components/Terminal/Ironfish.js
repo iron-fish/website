@@ -14,18 +14,25 @@ USAGE
 
 TOPICS
   accounts  Create and delete accounts
+  blocks    Show the block header of a requested hash
   chain     Manage the blockchain
   config    Show and edit the node configuration
-  faucet    Get coins to start using Iron Fish
   miners    Manage an Iron Fish miner
   peers     Manage the peers connected to this node
+  rpc       Show the status of the RPC layer
+  workers   Show the status of the worker pool
 
 COMMANDS
-  help    display help for ironfish
-  logs    Tail server logs
-  start   Start the node
-  status  Show the status of the node
-  stop    Stop the node from running
+  deposit     Deposit $IRON for testnet points
+  depositAll  Deposit $IRON for testnet points
+  faucet      Receive coins from the Iron Fish official Faucet
+  help        display help for ironfish
+  logs        Tail server logs
+  reset       Reset the node to its initial state
+  start       Start the node
+  status      Show the status of the node
+  stop        Stop the node from running
+  testnet     Set up your node to mine for the testnet
         `}
   </span>,
 ];
