@@ -18,6 +18,8 @@ import Import from '../../src/theme/components/Terminal/Accounts/Import'
 import Remove from '../../src/theme/components/Terminal/Accounts/Remove'
 import Pay from '../../src/theme/components/Terminal/Pay'
 import Rescan from '../../src/theme/components/Terminal/Accounts/Rescan'
+import Transactions from '../../src/theme/components/Terminal/Accounts/Transactions'
+import Notes from '../../src/theme/components/Terminal/Accounts/Notes'
 
 
 
@@ -90,7 +92,7 @@ ironfish accounts:list
 ### Account key
 To see a specific account public key
 ```sh
-ironfish accounts:publickey
+ironfish accounts:address
 ```
 <Terminal command={PubKey} />
 
@@ -100,6 +102,13 @@ To display the balance of the account
 ironfish accounts:balance
 ```
 <Terminal command={CheckBalance} />
+
+### Account notes
+To display the notes of the account
+```sh
+ironfish accounts:notes
+```
+<Terminal command={Notes} />
 
 ### Account deletion
 To delete an account
@@ -114,6 +123,13 @@ To send a transaction from the current account
 ironfish accounts:pay
 ```
 <Terminal command={Pay} />
+
+### View transactions
+To view transactions from the current account
+```sh
+ironfish accounts:transactions
+```
+<Terminal command={Transactions} />
 
 ### Rescan transactions
 To reset your wallet and attempt to rebuild it from scratch
