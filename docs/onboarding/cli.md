@@ -17,7 +17,7 @@ ironfish accounts help
 
 E.g. for a command:
 ```sh
-ironfish ironfish accounts:pay help
+ironfish ironfish accounts:pay --help
 ```
 
 ### Node
@@ -161,15 +161,15 @@ Creating a new account in command line
 ironfish accounts:create MyNewAccount
 ```
 
-#### accounts:publickey
+#### accounts:address
 Gets the current account's public key
 ```sh
-ironfish accounts:publickey
+ironfish accounts:address
 ```
 
 Gets a specific account's public key
 ```sh
-ironfish accounts:publickey -a MyNewAccount
+ironfish accounts:address MyNewAccount
 ```
 
 #### accounts:balance
@@ -181,6 +181,28 @@ ironfish accounts:balance
 Gets a specific account's public key
 ```sh
 ironfish accounts:balance -a MyNewAccount
+```
+
+#### accounts:notes
+Gets the current account's notes
+```sh
+ironfish accounts:notes
+```
+
+Gets a specific account's notes
+```sh
+ironfish accounts:notes -a MyNewAccount
+```
+
+#### accounts:transactions
+Gets the current account's transactions
+```sh
+ironfish accounts:transactions
+```
+
+Gets a specific account's transactions
+```sh
+ironfish accounts:transactions -a MyNewAccount
 ```
 
 #### accounts:pay
