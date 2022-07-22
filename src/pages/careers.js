@@ -68,17 +68,7 @@ const employees = [
     l: "#EAB898",
     t: "#FFE2CF",
   },
-  {
-    name: "Brekk",
-    title: "Engineer",
-    linkedin: "brekk-bockrath-75094b85",
-    description:
-      "World explorer. Spy progeny? Has complained about JavaScript standards across multiple continents. Wants to talk about Functional Programming.",
-    r: "#cc0000",
-    l: "#FF7777",
-    t: "#FFD3D3",
-  },
-
+  
   {
     name: "Alex",
     title: "Engineer",
