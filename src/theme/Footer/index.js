@@ -125,7 +125,7 @@ function Footer() {
             Copyright {new Date().getFullYear()} Iron Fish. All rights reserved.
           </p>
           <div className={classes.links}>
-            <a href="https://t.me/ironfishcryptochat">
+            <a href="https://t.me/ironfishcryptochat" target="_blank">
               <img
                 src="/img/footer/telegram.svg"
                 width="14"
@@ -135,7 +135,7 @@ function Footer() {
                 rel="noreferrer"
               />
             </a>
-            <a href="https://github.com/iron-fish">
+            <a href="https://github.com/iron-fish" target="_blank">
               <img
                 src="/img/footer/github.svg"
                 width="16"
@@ -145,7 +145,7 @@ function Footer() {
                 rel="noreferrer"
               />
             </a>
-            <a href="http://reddit.com/r/ironfish">
+            <a href="http://reddit.com/r/ironfish" target="_blank">
               <img
                 src="/img/footer/reddit.svg"
                 width="17"
@@ -155,7 +155,7 @@ function Footer() {
                 rel="noreferrer"
               />
             </a>
-            <a href="https://twitter.com/ironfishcrypto">
+            <a href="https://twitter.com/ironfishcrypto" target="_blank">
               <img
                 src="/img/footer/twitter.svg"
                 width="17"
@@ -165,7 +165,7 @@ function Footer() {
                 rel="noreferrer"
               />
             </a>
-            <a href="https://discord.gg/EkQkEcm8DH">
+            <a href="https://discord.gg/EkQkEcm8DH" target="_blank">
               <img
                 src="/img/footer/discord.svg"
                 width="15"
