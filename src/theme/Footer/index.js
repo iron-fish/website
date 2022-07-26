@@ -131,6 +131,8 @@ function Footer() {
                 width="14"
                 height="16"
                 alt="Telegram"
+                target="_blank"
+                rel="noreferrer"
               />
             </a>
             <a href="https://github.com/iron-fish">
@@ -139,6 +141,8 @@ function Footer() {
                 width="16"
                 height="16"
                 alt="Github"
+                target="_blank"
+                rel="noreferrer"
               />
             </a>
             <a href="http://reddit.com/r/ironfish">
@@ -147,6 +151,8 @@ function Footer() {
                 width="17"
                 height="16"
                 alt="Reddit"
+                target="_blank"
+                rel="noreferrer"
               />
             </a>
             <a href="https://twitter.com/ironfishcrypto">
@@ -155,6 +161,8 @@ function Footer() {
                 width="17"
                 height="16"
                 alt="Twitter"
+                target="_blank"
+                rel="noreferrer"
               />
             </a>
             <a href="https://discord.gg/EkQkEcm8DH">
@@ -163,6 +171,8 @@ function Footer() {
                 width="15"
                 height="16"
                 alt="Discord"
+                target="_blank"
+                rel="noreferrer"
               />
             </a>
           </div>
