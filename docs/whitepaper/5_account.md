@@ -30,7 +30,7 @@ This key pair is used for spending notes associated with an account, and is deri
 
 The **Spend Authorization Key (ask)** is the private key component of this key pair and is derived by hashing the secret key and a modifier using the [Blake2b](https://blake2.net/) hashing algorithm (with personalization params) and then converting it into a scalar for the Jubjub curve.
 
-The **Authorization Key (ak)** is derived as the public key for the spend authorization key by multiplying the spend authorizing key with a fixed generator base point for it on the [Jubjub curve](https://docs.google.com/document/d/14KRwTuWNnLM6sKbItjB8agFaATDj02rktFBArpB92vI/edit#heading=h.z72856p4jl5q).
+The **Authorization Key (ak)** is derived as the public key for the spend authorization key by multiplying the spend authorizing key with a fixed generator base point for it on the [Jubjub curve](9_appendix.md#bls12-381-and-the-jubjub-curve).
 
 The equation for this pair looks like:
 
