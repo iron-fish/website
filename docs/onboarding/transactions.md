@@ -41,12 +41,12 @@ ironfish accounts:pay -a 2 -o 0.00000001 -t 997c...7fc52ed -f Savings
 ## Receive a transaction
 To receive a transaction, you just need to communicate the public key of your account to the sender. If you don't know your public key, run the following command:
 ```sh
-ironfish accounts:publickey
+ironfish accounts:address
 ```
 
 E.g. To get the public key of a different account on your node
 ```sh
-ironfish accounts:publickey -a Savings
+ironfish accounts:address Savings
 ```
 
 ## Balance
