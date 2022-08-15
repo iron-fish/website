@@ -251,6 +251,12 @@ ironfish chain:show [START] [STOP]
 ```
 Optional arguments: [START] and [STOP] are either positive numbers that indicate the starting and stopping blocks or are negative to count backwards from the head of the chain.
 
+#### chain:download
+Downloads and imports a snapshot of the chain database
+```sh
+ironfish chain:download
+```
+
 ### Blocks
 #### blocks:show
 Show the block header of a requested hash
