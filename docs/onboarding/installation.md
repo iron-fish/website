@@ -29,17 +29,17 @@ ironfish
 
 <br />
 
-When new versions are announced, you can update through NPM:
+When new versions are announced, you can update them through NPM:
 
 ```sh
 npm update -g ironfish
 ```
 
-Iron Fish is now ready to use. Follow the [next step](new_node.md) of the tutorial or jump directly to the [the CLI commands list](cli.md).
+Iron Fish is now ready to use. Follow the [next step](new_node.md) of the tutorial or jump directly to the [CLI commands list](cli.md).
 
 ## Alternative Installation Methods
 
-You can also get started with Iron Fish by using Docker or running from source. If you are using an Intel-based macOS system, we support Homebrew as an alternative installation method.
+You can also get started with Iron Fish by using Docker or running from the source. If you are using an Intel-based macOS system, we support Homebrew as an alternative installation method.
 
 ### Using Docker
 
