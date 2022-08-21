@@ -160,7 +160,7 @@ const data = {
             "Proof of Work consensus",
             "Stable syncing",
             "Rich CLI for node and wallet support",
-            "Built in miner for faster onboarding",
+            "Built-in miner for faster onboarding",
           ],
         },
         {

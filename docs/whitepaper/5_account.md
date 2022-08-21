@@ -26,7 +26,7 @@ The secret key is simply a 32-byte random number. This is the seed necessary to 
 
 ## Spending Key Pair (Spending Authorization Key and Authorization Key)
 
-This key pair is used for spending notes associated with an account, and is derived directly from the secret key.
+This key pair is used for spending notes associated with an account and is derived directly from the secret key.
 
 The **Spend Authorization Key (ask)** is the private key component of this key pair and is derived by hashing the secret key and a modifier using the [Blake2b](https://blake2.net/) hashing algorithm (with personalization params) and then converting it into a scalar for the Jubjub curve.
 
