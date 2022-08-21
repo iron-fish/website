@@ -25,7 +25,7 @@ There is a lot to cover in this section, so here’s a quick guide to the pieces
 A transaction is a list of Spend and Output descriptions:
 
 - A Spend description _spends_ notes that are used up in a transaction.
-- An Output description _creates new notes_ that result as a part of that transaction, including the change back to the sender if the note they’ve spent is greater than what is intended for the recipient.
+- An Output description _creates new notes_ that result as part of that transaction, including the change back to the sender if the note they’ve spent is greater than what is intended for the recipient.
 
 Notes that are spent in the Spend description cannot be spent again in the future due to the unique _nullifier_ that must be revealed
 when spending it as subsequent attempts will be rejected by validators (e.g. miners) if that nullifier has been revealed in the past.
