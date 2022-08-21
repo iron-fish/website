@@ -248,7 +248,7 @@ The proof validates that:
 
 1. $$g_d$$ for the recipient is not of small order and the ephemeral public key was computed as:
    $$epk = g_d * esk$$
-2. That the value commitment (**cm**) is properly computed as a Pedersen commitment of:
+2. The value commitment (**cm**) is properly computed as a Pedersen commitment of:
    $$cm = pedersenHash(v, g_d, pk_d) + rcm * G_{noteCommitmentRandomness}$$
 
 ### Adding a Merkle Tree Note from the Outgoing description
@@ -344,7 +344,7 @@ That is all that is necessary to check that the transaction balances since the $
 
 The prior section went over how to balance a transaction — to make sure that no coins were created or destroyed as part of that transaction. Balancing is just one step in the verification process.
 
-In total, a validator must perform a series of checks to validate a transaction:
+A validator must perform a series of checks to validate a transaction:
 
 1. Verify all the zero-knowledge proofs against the public parameters from the [Spend description](6_transaction.md#spend-description)
 2. Verify all the zero-knowledge proofs against the public parameters from the [Output description](6_transaction#output-description)

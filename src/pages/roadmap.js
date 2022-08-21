@@ -220,7 +220,7 @@ const data = {
           description:
             "A core belief at Iron Fish is that privacy and ease-of-use are not in opposition. We'll be working hard on releasing an intuitive and beautiful Node Dashboard and Desktop Wallet. ",
           ctaText:
-            "Want a sneak preview? Join our design channel on Discord",
+            "Want a preview? Join our design channel on Discord",
           ctaLink: "https://discord.gg/6kQdGZdm7S",
         },
       ],
