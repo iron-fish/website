@@ -98,7 +98,7 @@ config:get enableMiningDirector
 
 ### Miners
 #### miners:start
-Starts a miner and subscribe to new blocks for the node. The node has to be synced with the network for the miner to start mining.
+Starts a miner and subscribes to new blocks for the node. The node has to be synced with the network for the miner to start mining.
 
 ```sh
 ironfish miners:start
@@ -128,7 +128,7 @@ List mined block hashes
 ```sh
 ironfish miners:mined [START] [STOP]
 ```
-Optional arguments: [START] and [STOP] are either positive numbers that indicate the starting and stopping blocks or are negative to count backwards from the head of the chain.
+Optional arguments: [START] and [STOP] are either positive numbers that indicate the starting and stopping blocks or are negative to count backward from the head of the chain.
 
 ### Networking
 #### peers:list
@@ -230,7 +230,7 @@ Export a part of the chain database to JSON
 ```sh
 ironfish chain:export [START] [STOP]
 ```
-Optional arguments: [START] and [STOP] are either positive numbers that indicate the starting and stopping blocks or are negative to count backwards from the head of the chain.
+Optional arguments: [START] and [STOP] are either positive numbers that indicate the starting and stopping blocks or are negative to count backward from the head of the chain.
 
 #### chain:forks
 Try to detect forks that are being mined
