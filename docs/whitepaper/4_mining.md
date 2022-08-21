@@ -12,7 +12,7 @@ So far, we’ve gone over the structure of the Iron Fish blockchain; this sectio
 - <em>Miners</em> are those nodes that propose a new block to be added to the blockchain to other nodes.
 - A new block is said to be <em>mined</em> when a miner finds a hash of the block header that is below some threshold that we call the target.
 
-The Iron Fish blockchain algorithm dynamically adjusts the mining difficulty to achieve 60 second average block times, by either increasing or decreasing mining difficulty if previous blocks are observed to be coming in too fast or too slow.
+The Iron Fish blockchain algorithm dynamically adjusts the mining difficulty to achieve 60-second average block times, by either increasing or decreasing mining difficulty if previous blocks are observed to be coming in too fast or too slow.
 
 To be a miner, a node must have both of the global data structures synced (the Merkle Tree of Notes and the Merkle Tree of Nullifiers), and know at least the two most recent blocks.
 
@@ -41,7 +41,7 @@ The purpose of the difficulty is simple. It is adjusted, if needed, at every blo
 
 The Iron Fish difficulty calculation is largely influenced by Ethereum’s difficulty calculation as described in [EIP-2](https://eips.ethereum.org/EIPS/eip-2), with a few differences.
 
-To determine difficulty for an upcoming block, we first calculate the time “bucket” that the block belongs to. A time bucket is defined as how far away (in intervals of 10 seconds) the block’s timestamp is away from the desired range of 55 to 65 seconds after the previous block. An upcoming block that is 45-55 seconds after the previous block would have a time bucket value of -1, a block that is 35-45 seconds after the previous block would have a time bucket value of -2, and so on:
+To determine the difficulty of an upcoming block, we first calculate the time “bucket” that the block belongs to. A time bucket is defined as how far away (in intervals of 10 seconds) the block’s timestamp is away from the desired range of 55 to 65 seconds after the previous block. An upcoming block that is 45-55 seconds after the previous block would have a time bucket value of -1, a block that is 35-45 seconds after the previous block would have a time bucket value of -2, and so on:
 
 | Time (in seconds) after previous block | bucket |
 | -------------------------------------- | :----: |
@@ -57,7 +57,7 @@ To determine difficulty for an upcoming block, we first calculate the time “bu
 | 85-95                                  |   3    |
 | ... and so on (max value capped at 99) |        |
 
-We use the time bucket to then adjust difficulty for the upcoming block relative to the difficulty of the last block. The pseudocode for calculating difficulty is as follows:
+We use the time bucket to then adjust the difficulty for the upcoming block relative to the difficulty of the last block. The pseudocode for calculating difficulty is as follows:
 
 ```js
 const diffInSeconds =
@@ -74,7 +74,7 @@ Currently, `Target.minDifficulty()` is `131072`, but this is subject to change.
 
 #### Target
 
-We’ve discussed adjusting difficulty to ensure 55-65 seconds between blocks — we do this by adjusting a target, which is a number that the block hash needs to fall under (e.g. be numerically less than the target).
+We’ve discussed adjusting the difficulty to ensure 55-65 seconds between blocks — we do this by adjusting a target, which is a number that the block hash needs to fall under (e.g. be numerically less than the target).
 
 The target is calculated from the [difficulty](https://docs.google.com/document/d/14KRwTuWNnLM6sKbItjB8agFaATDj02rktFBArpB92vI/edit#heading=h.v86augr5aqao) given this formula:
 `target = 2**256 / difficulty `
@@ -91,7 +91,7 @@ $$g (x) = \frac s 4 \cdotp e^{k \cdotp floor(x)}$$
 
 Where <em>s</em> is the initial supply of the genesis block of 42 million coins, <em>k</em> is the decay factor of -.05, and <em>x</em> is the year after mainnet launch (starting from 0).
 
-The Iron Fish “year” in block count is 525,600 blocks to one calendar year (assuming 60 second block times). We use the above formula to calculate the block reward using the Iron Fish "year", rounded to the nearest .125 of a coin:
+The Iron Fish “year” in block count is 525,600 blocks to one calendar year (assuming 60-second block times). We use the above formula to calculate the block reward using the Iron Fish "year", rounded to the nearest .125 of a coin:
 
 $$blockReward = mRound(\frac{\frac s 4 \cdotp e^{k \cdotp floor(x)}} {525,600}, 0.125)$$
 
@@ -104,7 +104,7 @@ Therefore the block reward and total supply for the first few years after launch
 | 1-2                |               19               | 62,498,400.00 |
 | 2-3                |             18.125             | 72,024,900.00 |
 
-The emissions curve using the above mentioned block reward formula, with a cap of 256,970,400 coins for total supply, would look like this:
+The emissions curve using the above-mentioned block reward formula, with a cap of 256,970,400 coins for total supply, would look like this:
 
 <img src ="/img/whitepaper/mining/emissions_curve.svg" width="100%" role="presentation" style={{paddingRight:'25px'}} />
 
@@ -123,10 +123,10 @@ A Block Header consists of the following data:
 | **noteCommitment**      | All the new notes included in the block body are applied (in order) to the Merkle Tree of Notes. The resulting new Merkle root for that tree and its size (in terms of the global number of notes) are used to build the noteCommitment for the block header.                                                                                                      |
 | **nullifierCommitment** | The same process is followed, but with the nullifiers revealed, to build the **nullifierCommitment** for the block header.                                                                                                                                                                                                                                         |
 | **target**              | The **target** is determined by the [difficulty and target algorithm](4_mining.md#set-the-difficulty-and-target-for-a-block).                                                                                                                                                                                                                                      |
-| **timestamp**           | The **timestamp** is when that block is mined. The timestamp of the current block must be greater than the previous block’s timestamp, and can be up to 60 seconds into the future to mitigate for different clocks for whoever is verifying the block in real time.                                                                                               |
+| **timestamp**           | The **timestamp** is when that block is mined. The timestamp of the current block must be greater than the previous block’s timestamp, and can be up to 60-seconds into the future to mitigate for different clocks for whoever is verifying the block in real-time.                                                                                               |
 | **minersFee**           | The **minersFee** is a special transaction to award the block reward to any address of the miner’s choosing. The value of this block reward transaction is known and can be verified, but the recipient’s address is hidden. For more details, see how the block reward transaction is created (link to Miner Reward Transaction section in Transaction Creation). |
 | **randomness**          | The **randomness** is a 64-bit number such that when all the contents of the block header are hashed using the [Iron Fish hashing algorithm](4_mining.md#iron-fish-hashing-algorithm) the result is numerically less than the target.                                                                                                                              |
 
 ### Iron Fish Hashing Algorithm
 
-The specifics of the Hashing Algorithm will be announced closer to launch date.
+The specifics of the Hashing Algorithm will be announced closer to the launch date.

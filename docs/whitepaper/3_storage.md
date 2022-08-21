@@ -37,7 +37,7 @@ The Merkle Tree of Notes is fixed-size, with a depth of 32; and it is used to ho
 
 We use a Pedersen hash both on the notes, and for the intermediate nodes in the Merkle tree — using the [Jubjub elliptic curve](9_appendix.md#bls12-381-and-the-jubjub-curve). Pedersen hashes are SNARK-friendly, meaning they can be efficiently constructed within a zero-knowledge SNARK proving circuit.
 
-Remember that the main purpose for our Merkle Tree of Notes is to store notes that users can spend later while preserving that user’s privacy. In order to do this, the notes in our Merkle tree store an encrypted note, along with other helper fields. All the information necessary to spend the note is contained here, thus the note owner doesn’t need to download the specific block or transaction that resulted in this note.
+Remember that the main purpose of our Merkle Tree of Notes is to store notes that users can spend later while preserving that user’s privacy. In order to do this, the notes in our Merkle tree store an encrypted note, along with other helper fields. All the information necessary to spend the note is contained here, thus the note owner doesn’t need to download the specific block or transaction that resulted in this note.
 
 #### Merkle Note
 
@@ -53,7 +53,7 @@ A Merkle Note consists of:
 
 ### Merkle Tree of Nullifiers
 
-Just like the Merkle Tree of Notes is an accumulator for notes, the Merkle Tree of Nullifiers is an accumulator for nullifiers. It is simply used to keep track of all the nullifiers (which are 32 byte numbers) ever revealed when their accompanying notes are spent.
+Just like the Merkle Tree of Notes is an accumulator for notes, the Merkle Tree of Nullifiers is an accumulator for nullifiers. It is simply used to keep track of all the nullifiers (which are 32-byte numbers) ever revealed when their accompanying notes are spent.
 
 We’ve chosen this tree to be the same size as the Merkle Tree of Notes since it’ll grow in linear proportion. However, we chose a different hashing function than Pedersen because this tree is not referenced in any of the zero-knowledge proofs, and therefore can use a faster hashing function. We chose blake3.
 
@@ -75,7 +75,7 @@ A block header consists of the following (some of these terms, such as [Output D
 | **previousBlockHash**   |                                                                                          The hash of the previous block in the chain.                                                                                          |
 | **noteCommitment**      | Commitment to the Merkle Tree of Notes after all new notes from transactions in this block have been added to it. Stored as the hash and the size of the tree at the time the hash was calculated. |
 | **nullifierCommitment** |                           Commitment to the nullifier set after all the spends in this block have been added to it. Stored as the hash and the size of the set at the time the hash was calculated.                            |
-| **target**              |                                                       The hash of this block must be lower than this target value in order for the block to be accepted onto the chain.                                                        |
+| **target**              |                                                       The hash of this block must be lower than this target value for the block to be accepted onto the chain.                                                        |
 | **randomness**          |                                                                                         The nonce used to calculate this block’s hash                                                                                          |
 | **timestamp**           |         Unix timestamp according to the miner who mined the block. This value must be taken with a grain of salt, but miners will want to verify that it's an appropriate distance to the previous block's timestamp.          |
 | **minersFee**           |                                                            A single (simplified) transaction representing the miners fee consisting only of one Output Description.                                                            |
@@ -85,12 +85,12 @@ Note that although the block header is missing its block hash, it can be compute
 The steps necessary for another node (e.g. device or user) to validate a block are:
 
 1.  The previous Block that this Block is referencing exists (by using the **previousBlockHash** field).
-2.  The **target** is one that the verifying node agrees to is valid (more on this later on how the target and difficulty is calculated).
-3.  When all the contents of the block header are hashed, that hash is numerically <em>less</em> than the **target** — this is largely achieved by the miner from tweaking the **randomness** value.
-4.  The **timestamp** for this Block makes sense (that its timestamp is greater than that of the previous Block by 12 seconds, +/- 10 seconds as buffer).
+2.  The **target** is one that the verifying node agrees to is valid (more on this later on how the target and difficulty are calculated).
+3.  When all the contents of the block header are hashed, that hash is numerically <em>less</em> than the **target** — this is largely achieved by the miner by tweaking the **randomness** value.
+4.  The **timestamp** for this Block makes sense (that its timestamp is greater than that of the previous Block by 12 seconds, +/- 10 seconds as a buffer).
 5.  That all the transactions in the Block are valid (more on this in the Transactions section).
 6.  That the **minersFee** that the Miner rewards themselves for presenting this Block is valid, meaning that it is exactly the agreed upon block reward plus all the transaction fees in the Transactions (more on this in the Mining section).
-7.  And finally, that after all the transactions are added to the two global Merkle Trees of Notes and Nullifiers, the appropriate Merkle tree roots are updated and referenced in the BlockHeader correctly as **noteCommitment** for the Merkle root for the Notes tree, and **nullifierCommitment** for the Merkle root for the Nullifier tree.
+7.  And finally, after all the transactions are added to the two global Merkle Trees of Notes and Nullifiers, the appropriate Merkle tree roots are updated and referenced in the BlockHeader correctly as **noteCommitment** for the Merkle root for the Notes tree, and **nullifierCommitment** for the Merkle root for the Nullifier tree.
 
 ## How Iron Fish Stores Data
 

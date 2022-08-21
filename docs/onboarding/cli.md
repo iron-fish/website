@@ -249,7 +249,7 @@ Shows the heaviest head and tail of the node's chain. Includes the last ten bloc
 ```sh
 ironfish chain:show [START] [STOP]
 ```
-Optional arguments: [START] and [STOP] are either positive numbers that indicate the starting and stopping blocks or are negative to count backwards from the head of the chain.
+Optional arguments: [START] and [STOP] are either positive numbers that indicate the starting and stopping blocks or are negative to count backward from the head of the chain.
 
 ### Blocks
 #### blocks:show

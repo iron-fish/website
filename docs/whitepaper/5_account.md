@@ -8,9 +8,9 @@ description: Account Creation | Iron Fish Whitepaper
 
 Now that we have gone over the logistics of supporting a privacy-focused cryptocurrency, we’ll focus on the core details of how an Iron Fish wallet is created to support fully private transactions.
 
-Accounts and transactions in Iron Fish are heavily influenced by the [Sapling protocol](https://github.com/zcash/zips/blob/master/protocol/sapling.pdf), with some differences. In this section we’ll break down all the key components of an account — how they’re created, how they’re used, and what is relevant to be surfaced to the user.
+Accounts and transactions in Iron Fish are heavily influenced by the [Sapling protocol](https://github.com/zcash/zips/blob/master/protocol/sapling.pdf), with some differences. In this section, we’ll break down all the key components of an account — how they’re created, how they’re used, and what is relevant to be surfaced to the user.
 
-We’ll start with the key components that are used to view an account’s balance, send transactions, or view past transactions. All of the key components for an Iron Fish account are derived from a single secret key. Though the underlying account construction may seem complex, the high level overview is that, in addition to the secret key, each account has a set of keys for spending that account’s funds, viewing keys to be given to any third party for read-only access, and a public address to be used to receive funds from others.
+We’ll start with the key components that are used to view an account’s balance, send transactions, or view past transactions. All of the key components for an Iron Fish account are derived from a single secret key. Though the underlying account construction may seem complex, the high-level overview is that, in addition to the secret key, each account has a set of keys for spending that account’s funds, viewing keys to be given to any third party for read-only access, and a public address to be used to receive funds from others.
 
 <img src='/img/whitepaper/account/account1.svg' width="100%" style={{paddingTop:'40px', marginBottom:'40px'}} />
 
@@ -32,7 +32,7 @@ The **Spend Authorization Key (ask)** is the private key component of this key p
 
 The **Authorization Key (ak)** is derived as the public key for the spend authorization key by multiplying the spend authorizing key with a fixed generator base point for it on the [Jubjub curve](9_appendix.md#bls12-381-and-the-jubjub-curve).
 
-The equation for this pair looks like:
+The equation for this pair looks like this:
 
 $$ak = ask * G_{ak}$$
 

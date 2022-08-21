@@ -14,7 +14,7 @@ There is a lot to cover in this section, so here’s a quick guide to the pieces
 
 1. the components of a transaction
 2. the Spend description component (the one that dictates how an account can spend a note)
-3. the Output description component (the one one that creates _new_ notes)
+3. the Output description component (the one that creates _new_ notes)
 4. how a transaction _balances_ to ensure that appropriate amounts were spent and paid out
 5. how a validator (such as a miner) can verify any transaction
 6. a special type of transaction called the Miner Fee transaction, which is used to reward a miner for successfully mining a block
@@ -25,7 +25,7 @@ There is a lot to cover in this section, so here’s a quick guide to the pieces
 A transaction is a list of Spend and Output descriptions:
 
 - A Spend description _spends_ notes that are used up in a transaction.
-- An Output description _creates new notes_ that result as part of that transaction, including the change back to the sender if the note they’ve spent is greater than what is intended to the recipient.
+- An Output description _creates new notes_ that result as a part of that transaction, including the change back to the sender if the note they’ve spent is greater than what is intended for the recipient.
 
 Notes that are spent in the Spend description cannot be spent again in the future due to the unique _nullifier_ that must be revealed
 when spending it as subsequent attempts will be rejected by validators (e.g. miners) if that nullifier has been revealed in the past.
@@ -37,7 +37,7 @@ For example, if Alice has a note of value five coins, and wants to send Bob four
 
 <img src='/img/whitepaper/transaction/transaction1.svg' width="100%" style={{paddingTop:'10px'}} />
 
-To ensure privacy, a Spend description spends a note _without revealing which note was spent_ through the help of a zero knowledge proof (specifically [zk-SNARK Groth16](https://eprint.iacr.org/2016/260.pdf) Sapling proof). The Output description similarly creates an encrypted note with a zero-knowledge proof that the newly created note was created correctly. The circuit construction for these proofs is taken from Sapling [primitive](https://github.com/zcash/librustzcash/tree/master/zcash_primitives) gadgets which in turn were constructed using the [bellman](https://github.com/zkcrypto/bellman) circuit building tool.
+To ensure privacy, a Spend description spends a note _without revealing which note was spent_ through the help of a zero-knowledge proof (specifically [zk-SNARK Groth16](https://eprint.iacr.org/2016/260.pdf) Sapling proof). The Output description similarly creates an encrypted note with a zero-knowledge proof that the newly created note was created correctly. The circuit construction for these proofs is taken from Sapling [primitive](https://github.com/zcash/librustzcash/tree/master/zcash_primitives) gadgets which in turn were constructed using the [bellman](https://github.com/zkcrypto/bellman) circuit building tool.
 
 While explaining zk-SNARKs is outside the scope of this paper, for readers who want to learn more, zk-SNARK construction can be broken up into these 5 steps:
 
@@ -54,15 +54,15 @@ The structure of an Iron Fish transaction is constructed with these parts:
 - **Transaction Fee**: The fee (in plaintext) that’ll go to any miner that successfully includes this transaction in a block.
 - **Spends**: The list of [Spend Descriptions](6_transaction.md#spend-description).
 - **Outputs**: The list of [Output Descriptions](6_transaction.md#output-description).
-- **Binding Signature**: A binding signature that both signs the transaction and is used to [verify](6_transaction.md#transaction-verification) that it [balances](6_transaction.md#transaction-balancing) — meaning that it did not destroy or create money out of thin air, and that indeed all the funds in the spend descriptions minus the funds in the output descriptions equal to transaction fee. The message that is signed here is the transaction hash, which is a blake2b hash of the serialized transaction fee, spend descriptions and output descriptions.
+- **Binding Signature**: A binding signature that both signs the transaction and is used to [verify](6_transaction.md#transaction-verification) that it [balances](6_transaction.md#transaction-balancing) — meaning that it did not destroy or create money out of thin air, and that indeed all the funds in the spend descriptions minus the funds in the output descriptions equal to the transaction fee. The message that is signed here is the transaction hash, which is a blake2b hash of the serialized transaction fee, spend descriptions, and output descriptions.
 
-Remember that the miner’s reward for mining a block is also a type of a transaction. We’ll go over the miners reward transaction and cover all these transaction concepts in greater detail further along in this section.
+Remember that the miner’s reward for mining a block is also a type of transaction. We’ll go over the miners reward transaction and cover all these transaction concepts in greater detail further along in this section.
 
 ## Spend Description
 
 The Spend description is a part of the transaction that spends notes associated with an account. The goal of the Spend description is to spend notes _without revealing which notes were actually spent_ with the help of zero-knowledge proofs (specifically [Groth16 zk-SNARK](https://eprint.iacr.org/2016/260.pdf) type proofs).
 
-The high level overview of the Spend description is that it spends a note by using a zero knowledge proof to prove the following:
+The high-level overview of the Spend description is that it spends a note by using a zero-knowledge proof to prove the following:
 
 1. it is attempting to spend a note that the spender can decrypt
 2. this note exists in the Merkle Tree of Notes
@@ -89,15 +89,15 @@ $$cv = v * G_v + rcv * G_{rcv}$$
 
 Where **v** is the value of the note, $$G_v$$ is the generator point used for the value, **rcv** is the randomness to further obscure the value commitment hash, and $$G_{rcv}$$ is the generator point used for the randomness.
 
-The **rt** is the root anchor to specify which Merkle root was used to construct the zero knowledge proof. The proof will validate that there is a note that exists in the tree with that specified Merkle root. It is the miner’s job however to make sure that that Merkle root is one that is associated with a valid tree.
+The **rt** is the root anchor to specify which Merkle root was used to construct the zero-knowledge proof. The proof will validate that there is a note that exists in the tree with that specified Merkle root. It is the miner’s job however to make sure that Merkle root is one that is associated with a valid tree.
 
 The **nf** is the nullifier, and it is unique to the note. The nullifier’s construction is verified in the proof, but once again it is the miner’s job to check that this nullifier has not been revealed in the past. The nullifier is computed by utilizing the blake2s hash function, the note commitment (cm), the position of the note being spent in the Merkle tree, and the nullifier deriving key (nk):
 
 $$nf = blake2s(nk \enspace | \enspace cm + note \_ position * G_{nullifierposition})$$
 
-Where | denotes creating one byte array to hold both elements together.
+Where | denotes creating a one-byte array to hold both elements together.
 
-The **rk** is the randomized public key that is used to sign the spend description. It’s randomized so that nothing is revealed from a single authorization key being used multiple times to sign various spend descriptions. The proof contains information about the actual authorization key and proves it’s valid transformation into a randomized key.
+The **rk** is the randomized public key that is used to sign the spend description. It’s randomized so that nothing is revealed from a single authorization key being used multiple times to sign various spend descriptions. The proof contains information about the actual authorization key and proves its valid transformation into a randomized key.
 
 $$rsk == ask * α$$
 
@@ -113,7 +113,7 @@ And finally, we have the proof, which is a Groth16 zk-SNARK proof verifying in z
 
 ### How is the proof generated?
 
-The **private** parameters that are used to generate the proof (and are not revealed afterwards) are:
+The **private** parameters that are used to generate the proof (and are not revealed afterward) are:
 
 | Element        |                          Description                          |
 | :------------- | :-----------------------------------------------------------: |
@@ -129,17 +129,17 @@ The **private** parameters that are used to generate the proof (and are not reve
 | $$ak$$         |      the owner’s authorization key (that was randomized)      |
 | $$nsk$$        |      the proof authorization key used for the nullifier       |
 
-The **merkle path** is the Merkle path from the given root (the **rt**, root anchor) to the note being spent (specifically its note commitment), using Pedersen hashes. The proof verifies that the path is valid and correct, and that the given **position** is the correct position for the note’s commitment in the Merkle tree at the lowest level, (you can think of the position like an entry in an index).
+The **merkle path** is the Merkle path from the given root (the **rt**, root anchor) to the note being spent (specifically its note commitment), using Pedersen hashes. The proof verifies that the path is valid and correct, and that the given **position** is the correct position for the note’s commitment in the Merkle tree at the lowest level, (you can think of the position as an entry in an index).
 
-The $$g_d$$ is the diversifier (converted into an affine point on the Jubjub curve) of the sender, and $$pk_d$$ being the transmission key of the sender. The proof checks that $$g_d$$ is not of small order and that $$pk_d$$ was properly computed.
+The $$g_d$$ is the diversifier (converted into an affine point on the Jubjub curve) of the sender, and $$pk_d$$ is the transmission key of the sender. The proof checks that $$g_d$$ is not of small order and that $$pk_d$$ was properly computed.
 
-Remember that $$pk_d = g_d * ivk$$ (the incoming view key). Even though the incoming view key isn’t passed in here directly, we have everything we need to recompute it since _ivk_ is derived from hashing (using the blake2s hash function) the authorization key (_ak_) and nullifier deriving key (_nk_) along with some params. We don’t have the nullifier deriving key (_nk_) directly here either, but we can derive it using the passed in proof authorization key (_nsk_) since $$nk = G_{proofGenerationKey} * nsk$$.
+Remember that $$pk_d = g_d * ivk$$ (the incoming view key). Even though the incoming view key isn’t passed in here directly, we have everything we need to recompute it since _ivk_ is derived from hashing (using the blake2s hash function) the authorization key (_ak_), and nullifier deriving key (_nk_) along with some params. We don’t have the nullifier deriving key (_nk_) directly here either, but we can derive it using the passed-in proof authorization key (_nsk_) since $$nk = G_{proofGenerationKey} * nsk$$.
 
 Also remember that the value commitment is computed as $$cv = v * G_v + rcv * G_{rcv}$$ and so we pass in the value (**v**) and the randomness for the value (**rcv**) into the proof to validate the construction of the value commitment.
 The note commitment (**cm**) is a Pedersen commitment (resulting in a full point) of the note’s contents (value(v), $$g_d$$, $$pk_d$$) and the randomness used for the note commitment (**rcm**)
 $$cm = pedersenHash(v, g_d, pk_d) + rcm * G_{noteCommitmentRandomness}$$
 
-The alpha $$α$$ along with the authorization key $$ak$$ is used to construct the randomized public key that is used to sign the spend description. Here in the proof we verify that that the randomized key was created correctly by verifying that:
+The alpha $$α$$ along with the authorization key $$ak$$ is used to construct the randomized public key that is used to sign the spend description. Here in the proof, we verify that the randomized key was created correctly by verifying that:
 
 $$rk = α *  G_{spendingKey} + ak$$
 
@@ -155,7 +155,7 @@ In summary, the proof checks:
 
 2. **Merkle Path Validity**
 
-- Check that the Merkle path is valid from the given merkle root to the leaf (that this note exists in a given tree)
+- Check that the Merkle path is valid from the given Merkle root to the leaf (that this note exists in a given tree)
 
 3. **Value Commitment**
 
@@ -163,7 +163,7 @@ In summary, the proof checks:
 
 4. **Nullifier**
 
-- Check that the nullifier is derived from nk (the owner’s nullifier deriving key), the **cm** (note commitment) and **position**
+- Check that the nullifier is derived from nk (the owner’s nullifier deriving key), the **cm** (note commitment), and **position**
 
 5. **Random Authorization Key**
 
@@ -171,7 +171,7 @@ In summary, the proof checks:
 
 ### How is the proof verified?
 
-In order to verify the proof, we simply need to pass in public parameters that validate all of the above mentioned statements.
+In order to verify the proof, we simply need to pass in public parameters that validate all of the above-mentioned statements.
 
 The **public** variables necessary for the Spend description proof verification are most of the other fields of the Spend description:
 
@@ -246,7 +246,7 @@ And the **public** parameters that are used to verify the proof are
 
 The proof validates that:
 
-1. $$g_d$$ for the recipient is not of small order and that the ephemeral public key was computed as:
+1. $$g_d$$ for the recipient is not of small order and the ephemeral public key was computed as:
    $$epk = g_d * esk$$
 2. That the value commitment (**cm**) is properly computed as a Pedersen commitment of:
    $$cm = pedersenHash(v, g_d, pk_d) + rcm * G_{noteCommitmentRandomness}$$
@@ -330,7 +330,7 @@ Since a valid transaction would have $$G_v (v1 + v2 - v3 - v4) = G_v (transactio
 
 $$G_v * (v1 + v2 - v3 - v4) + G_{rcv} * (rcv1 + rcv2 - rcv3 - rcv4) -  G_v * (transaction\_fee) = bvk$$
 
-If indeed all the values of the input descriptions minus all the values of the output descriptions equal transaction fee, then $$bvk$$ must equal the left over randomness:
+If indeed all the values of the input descriptions minus all the values of the output descriptions equal the transaction fee, then $$bvk$$ must equal the leftover randomness:
 
 $$bvk = G_{rcv} ( rcv1 + rcv2 - rcv3 - rcv4)$$
 
@@ -370,7 +370,7 @@ Let’s say that a Miner awards itself five coins for mining a block, then that 
 
 Note that this transaction will balance with the negative transaction fee. The miner is able to preserve their privacy by making a transaction with all the privacy guarantees of a regular transaction.
 
-For validation, all other validators can easily check that the Miner reward transaction has the appropriate alloted_amount by checking that the values of the spend description minus the values of the output descriptions equals to the negative allotted amount. Validators can also verify that the allotted amount is exactly the block reward plus transaction fees associated with transactions in that block.
+For validation, all other validators can easily check that the Miner reward transaction has the appropriate alloted_amount by checking that the values of the spend description minus the values of the output descriptions equals the negative allotted amount. Validators can also verify that the allotted amount is exactly the block reward plus transaction fees associated with transactions in that block.
 
 ## Note Encryption and Decryption
 
@@ -402,7 +402,7 @@ The sender has to know the recipient’s public key, which is a combination of t
 2. It then creates an _ephemeral public key_ (**epk**) by using scalar multiplication between the diversifier of the recipient represented as a field point and esk. This ephemeral public key is a publicly known component of the Output description and is seen by everyone.
 
    1. $$epk = esk * g_d$$
-   2. Note: $$g_d$$ is the diversifier, $$d$$, represented as a field a point on the Jubjub curve so we can do scalar multiplication (elliptic curve multiplication) using it.
+   2. Note: $$g_d$$ is the diversifier, $$d$$, represented as a field point on the Jubjub curve so we can do scalar multiplication (elliptic curve multiplication) using it.
 
 3. It then derives a **sharedSecret** using Diffie Hellman Key Exchange between esk and pkd (diversified public address of the recipient):
 

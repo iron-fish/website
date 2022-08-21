@@ -60,7 +60,7 @@ The Gossip Protocol is primarily used to broadcast new blocks and transactions t
 
 Back to the protocol. Once started, each node will then independently verify the incoming transactions before further broadcasting them out to other peers, and validate the incoming blocks before applying their encompassing transactions to the node’s local copy of the ledger (a.k.a. the blockchain). There is one main objective for the gossip protocol: when a message is broadcasted, every peer should receive the message as quickly as possible.
 
-The following section details how Iron Fish’s gossip based broadcast is currently implemented.
+The following section details how Iron Fish’s gossip-based broadcast is currently implemented.
 
 #### Basic Implementation
 
@@ -99,7 +99,7 @@ To reduce network congestion, we implemented the following Gossip Protocol impro
 
 ##### Local history
 
-In an effort to avoid an infinite broadcast of the same message, each node stores a set of all the gossiped messages it has seen. When a node receives a gossip-type message already in the set (meaning it was seen before), it ignores the message. The set that keeps track of these gossip-type messages is bound to a specific size and old ones are evicted in a first-in first-out order.
+In an effort to avoid an infinite broadcast of the same message, each node stores a set of all the gossiped messages it has seen. When a node receives a gossip-type message already in the set (meaning it was seen before), it ignores the message. The set that keeps track of these gossip-type messages is bound to a specific size and old ones are evicted in a first-in-first-out order.
 
 ##### Neighbor cast
 
@@ -112,7 +112,7 @@ In the example below, Node A is connected to B, C, D, E, and stores a list of pe
 
 When Node A gossips a message, the propagation happens in two steps:
 
-1. Node A broadcasts to Nodes B, C, D and E.
+1. Node A broadcasts to Nodes B, C, D, and E.
 2. Node B forwards the message to G. It does not forward it to C and E because it knows that Node A is connected to them and already sent it. Node C forwards the message to H. Node D forwards to I and Node E to F.
 
 <img src ="/img/whitepaper/network/nodes5.svg" width="100%" role="presentation" />
