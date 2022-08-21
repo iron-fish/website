@@ -220,7 +220,7 @@ const data = {
           description:
             "A core belief at Iron Fish is that privacy and ease-of-use are not in opposition. We'll be working hard on releasing an intuitive and beautiful Node Dashboard and Desktop Wallet. ",
           ctaText:
-            "Want to a sneak preview? Join our design channel on Discord",
+            "Want a sneak preview? Join our design channel on Discord",
           ctaLink: "https://discord.gg/6kQdGZdm7S",
         },
       ],
@@ -240,7 +240,7 @@ const data = {
     phase3: {
       subtitle: "Multi-Asset & Bridge Support",
       description:
-        "At Iron Fish we have one goal: enable private cryptocurrency transactions. We’ll work on enabling multi-asset support and bridges between Iron Fish and other chains, letting users transfer assets from other blockchains to Iron Fish for fully private transactions on any asset. We’re building Iron Fish to be the universal privacy layer for crypto—a true SSL layer for blockchains.",
+        "At Iron Fish, we have one goal: enable private cryptocurrency transactions. We’ll work on enabling multi-asset support and bridges between Iron Fish and other chains, letting users transfer assets from other blockchains to Iron Fish for fully private transactions on any asset. We’re building Iron Fish to be the universal privacy layer for crypto—a true SSL layer for blockchains.",
       features: [],
       children: <AssetConnection />,
     },

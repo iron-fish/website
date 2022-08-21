@@ -129,7 +129,7 @@ The **private** parameters that are used to generate the proof (and are not reve
 | $$ak$$         |      the owner’s authorization key (that was randomized)      |
 | $$nsk$$        |      the proof authorization key used for the nullifier       |
 
-The **merkle path** is the Merkle path from the given root (the **rt**, root anchor) to the note being spent (specifically its note commitment), using Pedersen hashes. The proof verifies that the path is valid and correct, and that the given **position** is the correct position for the note’s commitment in the Merkle tree at the lowest level, (you can think of the position as an entry in an index).
+The **merkle path** is the Merkle path from the given root (the **rt**, root anchor) to the note being spent (specifically its note commitment), using Pedersen hashes. The proof verifies that the path is valid and correct and that the given **position** is the correct position for the note’s commitment in the Merkle tree at the lowest level, (you can think of the position as an entry in an index).
 
 The $$g_d$$ is the diversifier (converted into an affine point on the Jubjub curve) of the sender, and $$pk_d$$ is the transmission key of the sender. The proof checks that $$g_d$$ is not of small order and that $$pk_d$$ was properly computed.
 
@@ -171,7 +171,7 @@ In summary, the proof checks:
 
 ### How is the proof verified?
 
-In order to verify the proof, we simply need to pass in public parameters that validate all of the above-mentioned statements.
+To verify the proof, we simply need to pass in public parameters that validate all of the above-mentioned statements.
 
 The **public** variables necessary for the Spend description proof verification are most of the other fields of the Spend description:
 
@@ -219,7 +219,7 @@ The $$C^{enc}$$ is the actual encrypted note that results as part of this Output
 
 The $$C^{out}$$ is an encrypted blob of data to facilitate the holder of the sender’s outgoing key to decrypt the encrypted note.
 
-And finally we have the proof (Groth16 zk-SNARK proof) for the Outgoing description that validates all these public parameters against the private ones that were used to create them. For more on the keys and notes discussed above, see the [Note Encryption and Decryption section](6_transaction.md#note-encryption-and-decryption).
+And finally, we have the proof (Groth16 zk-SNARK proof) for the Outgoing description that validates all these public parameters against the private ones that were used to create them. For more on the keys and notes discussed above, see the [Note Encryption and Decryption section](6_transaction.md#note-encryption-and-decryption).
 
 ### How is the proof generated and verified?
 
@@ -266,7 +266,7 @@ A **Merkle Tree Note** consists of these fields taken from the Output descriptio
 
 ## Transaction Balancing
 
-So far, we went over how zero-knowledge proofs are used to prove ownership of an existing note in order to spend it or create valid new notes, but we’re still missing verifying one of the most important rules in cryptocurrencies: no coins can be created or destroyed in a transaction. Validators still need to verify that the transaction _balances_, meaning that the sum of all the funds being spent minus the funds being created equals the transaction fee (or zero if there is no transaction fee).
+So far, we went over how zero-knowledge proofs are used to prove ownership of an existing note, in order to spend it or create valid new notes, but we’re still missing verifying one of the most important rules in cryptocurrencies: no coins can be created or destroyed in a transaction. Validators still need to verify that the transaction _balances_, meaning that the sum of all the funds being spent minus the funds being created equals the transaction fee (or zero if there is no transaction fee).
 
 $$input \enspace values - output \enspace values = transaction \enspace fee$$
 
@@ -283,7 +283,7 @@ $$cv = v * G_v + rcv * G_{rcv}$$
 
 The transaction is cryptographically signed by a **binding validating key (bvk)** resulting in the binding signature in the transaction. The binding validating key is constructed by adding all the _randomness_ (e.g. the **rcv** values) from the input value commitments, and subtracting all the randomness from the output value commitments. It becomes more clear why this signature is necessary to balance a transaction if we first try to balance it without it.
 
-As an example, say we have a transaction with two inputs, and two outputs:
+As an example, say we have a transaction with two inputs and two outputs:
 
 | Inputs |                                     |
 | ------ | :---------------------------------: |
@@ -334,7 +334,7 @@ If indeed all the values of the input descriptions minus all the values of the o
 
 $$bvk = G_{rcv} ( rcv1 + rcv2 - rcv3 - rcv4)$$
 
-To validate that the transaction balances, the validator checks that computed $$bvk$$ is indeed the public key corresponding to the transaction signature that signed the transaction hash. This means that the sender of the transaction must have used the same $$bvk$$ with a corresponding private key $$bsk$$ to sign the transaction.
+To validate the transaction balances, the validator checks that computed $$bvk$$ is indeed the public key corresponding to the transaction signature that signed the transaction hash. This means that the sender of the transaction must have used the same $$bvk$$ with a corresponding private key $$bsk$$ to sign the transaction.
 
 $$Final \enspace step: \enspace verify \enspace signature \enspace (bvk, \enspace transaction \enspace hash)$$
 
@@ -344,7 +344,7 @@ That is all that is necessary to check that the transaction balances since the $
 
 The prior section went over how to balance a transaction — to make sure that no coins were created or destroyed as part of that transaction. Balancing is just one step in the verification process.
 
-In whole, a validator must perform a series of checks to validate a transaction:
+In total, a validator must perform a series of checks to validate a transaction:
 
 1. Verify all the zero-knowledge proofs against the public parameters from the [Spend description](6_transaction.md#spend-description)
 2. Verify all the zero-knowledge proofs against the public parameters from the [Output description](6_transaction#output-description)
@@ -415,7 +415,7 @@ The sender has to know the recipient’s public key, which is a combination of t
 The recipient’s wallet can then decrypt the encrypted note in the Outgoing description using the recipient’s incoming view key.
 Remember that the recipient’s transmission key ($$pk_d$$) is derived from the diversifier (converted to a point on the Jubjub curve as $$g_d$$) and the incoming view key: $$pk_d = g_d * ivk$$
 
-The recipient’s wallet can then calculate the shared secret using the epk (ephemeral public key) provided on the Outgoing description:
+The recipient’s wallet can then calculate the shared secret using the epk (ephemeral public key) provided in the Outgoing description:
 $$sharedSecret = epk * ivk$$
 
 This is the same sharedSecret that the sender’s wallet used.
@@ -435,9 +435,9 @@ Now the recipient’s wallet can use the same symmetric encryption algorithm (Ch
 
 #### Note Decryption by the Sender Using the Sender’s Outgoing View Key
 
-If at some later time after the transaction has been sent, the sender’s wallet needs to recreate the transaction history and decrypt the notes it sent in the past, it can do that with the help of the outgoing view key.
+If later after the transaction has been sent, the sender’s wallet needs to recreate the transaction history and decrypt the notes it sent in the past, it can do that with the help of the outgoing view key.
 
-Remember that initially the sender’s wallet was able to encrypt the note plaintext (using the symmetric encryption algorithm ChaCha20Poly1305) into $$C^{enc}$$ by calculating a shared secret as $$sharedSecret =  esk * pk_d$$.
+Remember that initially, the sender’s wallet was able to encrypt the note plaintext (using the symmetric encryption algorithm ChaCha20Poly1305) into $$C^{enc}$$ by calculating a shared secret as $$sharedSecret =  esk * pk_d$$.
 
 Since the sender’s wallet doesn’t have access to either $$esk$$ or $$pk_d$$ after the transaction has been sent, that information is stored in the second encrypted field on the Outgoing description: the $$C^{out}$$ field. This field is created by the sender of the transaction at the time it is made and stored on the Output description.
 

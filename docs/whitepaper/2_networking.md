@@ -78,7 +78,7 @@ Let’s imagine that our current network is composed of a new Node A, connected 
 
 Nodes are only aware of their direct neighbors, and their neighbor’s neighbors. Node A will have no knowledge of Nodes beyond D and E.
 
-Node A can now decide to connect to some of the peers, and will store a copy of each node peers list.
+Node A can now decide to connect to some of the peers and will store a copy of each node peers list.
 
 ##### Step 2
 

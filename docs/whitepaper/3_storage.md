@@ -37,7 +37,7 @@ The Merkle Tree of Notes is fixed-size, with a depth of 32; and it is used to ho
 
 We use a Pedersen hash both on the notes, and for the intermediate nodes in the Merkle tree — using the [Jubjub elliptic curve](9_appendix.md#bls12-381-and-the-jubjub-curve). Pedersen hashes are SNARK-friendly, meaning they can be efficiently constructed within a zero-knowledge SNARK proving circuit.
 
-Remember that the main purpose of our Merkle Tree of Notes is to store notes that users can spend later while preserving that user’s privacy. In order to do this, the notes in our Merkle tree store an encrypted note, along with other helper fields. All the information necessary to spend the note is contained here, thus the note owner doesn’t need to download the specific block or transaction that resulted in this note.
+Remember that the main purpose of our Merkle Tree of Notes is to store notes that users can spend later while preserving that user’s privacy. To do this, the notes in our Merkle tree store an encrypted note, along with other helper fields. All the information necessary to spend the note is contained here, thus the note owner doesn’t need to download the specific block or transaction that resulted in this note.
 
 #### Merkle Note
 
@@ -85,7 +85,7 @@ Note that although the block header is missing its block hash, it can be compute
 The steps necessary for another node (e.g. device or user) to validate a block are:
 
 1.  The previous Block that this Block is referencing exists (by using the **previousBlockHash** field).
-2.  The **target** is one that the verifying node agrees to is valid (more on this later on how the target and difficulty are calculated).
+2.  The **target** is one that the verifying node agrees is valid (more on this later on how the target and difficulty are calculated).
 3.  When all the contents of the block header are hashed, that hash is numerically <em>less</em> than the **target** — this is largely achieved by the miner by tweaking the **randomness** value.
 4.  The **timestamp** for this Block makes sense (that its timestamp is greater than that of the previous Block by 12 seconds, +/- 10 seconds as a buffer).
 5.  That all the transactions in the Block are valid (more on this in the Transactions section).
@@ -98,7 +98,7 @@ So far, we’ve been talking about what is necessary for an Iron Fish node to st
 
 Since we knew that running a full implementation of Iron Fish in the browser was going to be more challenging than running it in the NodeJS terminal environment, we focused on that first. The most robust database choice for applications wanting a database in the browser is [IndexedDB](https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API). Unfortunately, there wasn’t an accompanying IndexedDB implementation for NodeJS, so we chose [LevelDB](https://github.com/google/leveldb) for our NodeJS implementation.
 
-To prevent having to juggle two separate storage implementations for the two different databases, our implementation of Iron Fish has a generic layer of abstraction for data stores and database access based on [LevelUp](https://github.com/Level/levelup). This abstraction layer takes care of the specific implementations of the underlying database, and exposes a generic layer that can be used both in the browser and NodeJS environment, offering a simple datastore-agnostic API.
+To prevent having to juggle two separate storage implementations for the two different databases, our implementation of Iron Fish has a generic layer of abstraction for data stores and database access based on [LevelUp](https://github.com/Level/levelup). This abstraction layer takes care of the specific implementations of the underlying database and exposes a generic layer that can be used both in the browser and NodeJS environment, offering a simple datastore-agnostic API.
 
 <img src ="/img/whitepaper/storage/storage1.svg" width="50%" role="presentation" />
 

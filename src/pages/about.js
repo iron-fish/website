@@ -139,7 +139,7 @@ function AboutUs() {
               born out of the 2020 pandemic, during a time when digital payments
               are dominant and our privacy has never before been this violated.
               We are working on providing a currency that makes privacy
-              approachable and easy to use, while providing the strongest
+              approachable and easy to use while providing the strongest
               privacy guarantees available. Not only is privacy a right, but it
               also leads to innovation, creativity, and safety. We chose the
               name ‘Iron Fish’ because during WW2 the US Navajo Code Talkers
@@ -194,7 +194,7 @@ function AboutUs() {
             <p className="main--subtitle">Who we are today</p>
             <p>
               We are growing quickly, and Iron Fish is rapidly evolving. Our
-              team members and investors are experts in their fields, and each
+              team members and investors are experts in their fields and each
               person brings a diverse set of skills and experiences.
             </p>
             <Link

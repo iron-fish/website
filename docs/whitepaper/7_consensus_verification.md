@@ -8,7 +8,7 @@ description: Verification and Consensus | Iron Fish Whitepaper
 
 The prior sections explained how a network gets created and how nodes construct new blocks, but not *why* the nodes construct blocks that certain way. Consensus is the Iron Fish verification layer that sets rules by which nodes accept incoming blocks. These rules *implicitly* force nodes to construct a block following these rules since otherwise that block won’t be accepted by other nodes in the network.
 
-An Iron Fish block is accepted if its header and body are valid. At a high level, verifying the header confirms that the block has enough work behind it by checking that its hash is numerically lower than the target, and that the node has performed the correct *state transition* by correctly applying all the transactions in that block to the two global data structures and supplying the two resulting Merkle roots. Similarly, verifying the block body confirms that all the transactions in that block are valid.
+An Iron Fish block is accepted if its header and body are valid. At a high level, verifying the header confirms that the block has enough work behind it by checking that its hash is numerically lower than the target and that the node has performed the correct *state transition* by correctly applying all the transactions in that block to the two global data structures and supplying the two resulting Merkle roots. Similarly, verifying the block body confirms that all the transactions in that block are valid.
 
 ## Validating the Block Header
 To validate the block header, each Iron Fish node receiving it checks that all of its fields are set correctly.
