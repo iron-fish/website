@@ -129,7 +129,7 @@ The **private** parameters that are used to generate the proof (and are not reve
 | $$ak$$         |      the owner’s authorization key (that was randomized)      |
 | $$nsk$$        |      the proof authorization key used for the nullifier       |
 
-The **merkle path** is the Merkle path from the given root (the **rt**, root anchor) to the note being spent (specifically its note commitment), using Pedersen hashes. The proof verifies that the path is valid and correct and that the given **position** is the correct position for the note’s commitment in the Merkle tree at the lowest level, (you can think of the position as an entry in an index).
+The **merkle path** is the Merkle path from the given root (the **rt**, root anchor) to the note being spent (specifically its note commitment), using Pedersen hashes. The proof verifies that the path is valid and correct and that the given **position** is the correct position for the note’s commitment in the Merkle tree at the lowest level, (you can think of the position like an entry in an index).
 
 The $$g_d$$ is the diversifier (converted into an affine point on the Jubjub curve) of the sender, and $$pk_d$$ is the transmission key of the sender. The proof checks that $$g_d$$ is not of small order and that $$pk_d$$ was properly computed.
 
