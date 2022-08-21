@@ -10,7 +10,7 @@ const questions = [
     imageLeft: "/img/faq/fish.svg",
     description: {
       __html:
-        "Existing privacy coins — such as Monero, Zcash, and Grin — all have drawbacks on privacy, accessibility, or both. Iron Fish does not compromise on privacy, while still being easy to access.",
+        "Existing privacy coins — such as Monero, Zcash, and Grin — all have drawbacks in privacy, accessibility, or both. Iron Fish does not compromise on privacy, while still being easy to access.",
     },
   },
   {
@@ -30,7 +30,7 @@ const questions = [
     description: {
       __html: `Right now, digital payments are fundamentally lacking in privacy — they are surveilled, analyzed, collected, and sold. With every online purchase, your metadata for that transaction is stored (from what IP you used, to your physical location, to your purchase history, and more).
       <br/><br/>
-    Privacy leads to innovation, social evolution. Much like https paved the way for entire industries through online ecommerce, we believe private transactions over a blockchain will enable frictionless global payments and new industries of borderless products and companies. Historically, this type of financial privacy has only been available to the rich, via offshore accounts. With Iron Fish, anyone can have an even better alternative to a Swiss bank account on their phone.`,
+    Privacy leads to innovation and social evolution. Much like HTTPS paved the way for entire industries through online e-commerce, we believe private transactions over a blockchain will enable frictionless global payments and new industries of borderless products and companies. Historically, this type of financial privacy has only been available to the rich, via offshore accounts. With Iron Fish, anyone can have an even better alternative to a Swiss bank account on their phone.`,
     },
   },
   {
@@ -38,7 +38,7 @@ const questions = [
     title: "How are you achieving privacy?",
     imageLeft: "/img/faq/ghost.svg",
     description: {
-      __html: `We are working with cutting edge cryptography using zero-knowledge. Zero-knowledge proofs (ZKPs) are a breakthrough tool in cryptography that prove honest computation. By using ZKPs we can build private transactions that fully hide the sender, the recipient and the amount, while providing a proof that the transaction is valid. Every transaction on Iron Fish is private—no one sees the details of an account unless the owner grants read-only permissions via view keys.
+      __html: `We are working with cutting-edge cryptography using zero-knowledge. Zero-knowledge proofs (ZKPs) are a breakthrough tool in cryptography that prove honest computation. By using ZKPs we can build private transactions that fully hide the sender, the recipient, and the amount, while providing proof that the transaction is valid. Every transaction on Iron Fish is private—no one sees the details of an account unless the owner grants read-only permissions via view keys.
       <br/><br/>
     This level of privacy is unprecedented when compared to other cryptocurrencies or traditional banking plans.`,
     },

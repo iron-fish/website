@@ -130,7 +130,7 @@ const data = {
           <p className={styles.mainIntro}>
             We’re building Iron Fish to be the universal privacy layer for
             crypto—a true SSL layer for blockchains. We believe the first step
-            towards that goal is to build a solid foundation of shipping an
+            towards that goal is to build a solid foundation for shipping an
             easy-to-use, privacy-first layer 1 blockchain.
           </p>
           <p className={styles.mainIntro}>

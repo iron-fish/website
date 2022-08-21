@@ -43,7 +43,7 @@ const employees = [
     title: "Designer",
     linkedin: "skylar-richard-1b8999a4",
     description:
-      "International award winning designer who hates the snow and cold weather, albeit lives in Canada, complains about it relentlessly yet reluctant to move.",
+      "An international award-winning designer who hates the snow and cold weather, albeit lives in Canada, complains about it relentlessly yet is reluctant to move.",
     r: "#EB59B6",
     t: "#FDF5FB",
     l: "#F3ADDB",
@@ -172,7 +172,7 @@ function Careers() {
               </p>
               <p>
                 We are craftspeople who are excited to work on uncharted
-                territory in decentralized computing and cutting edge
+                territory in decentralized computing and cutting-edge
                 cryptography. While currently headquartered in San Francisco, we
                 are a remote-first company. We welcome talented people from all
                 backgrounds, throughout the United States and Canada.
@@ -219,7 +219,7 @@ function Careers() {
               <div>
                 <p>Flexibility</p>
                 <p>
-                  We are remote first! Work where you are most comfortable, in
+                  We are remote-first! Work where you are most comfortable, in
                   any timezone.
                 </p>
               </div>
@@ -271,7 +271,7 @@ function Careers() {
               <div>
                 <p>Family leave</p>
                 <p>
-                  We offer parental and family leave. We know the importance of
+                  We offer parental and family leaves. We know the importance of
                   loved ones!
                 </p>
               </div>

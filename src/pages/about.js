@@ -68,7 +68,7 @@ function AboutUs() {
           </h1>
 
           <p className="tagline">
-            The need for a private cryptocurrency is now. At Iron Fish we know
+            The need for a private cryptocurrency is now. At Iron Fish, we know
             the direction the world has been heading in. It’s been an ongoing
             tale:
           </p>
@@ -85,7 +85,7 @@ function AboutUs() {
               and adoption of SSL, what is now HTTPS, opened up the floodgates
               to e-commerce. Today, online shopping accounts for 20% of all
               retail sales, with HTTPS being the standard for almost all
-              websites. At the time however, governments put heavy restrictions
+              websites. At the time, however, governments put heavy restrictions
               on even this type of encryption, scrutinizing it for being used
               for nefarious purposes.
             </>
@@ -115,7 +115,7 @@ function AboutUs() {
           title="Digital only payments"
           description={
             <>
-              Day to day payments accelerated their progression to being
+              Day-to-day payments accelerated their progression to being
               digital-only. Following the pandemic, cash was replaced by
               contactless or online payments. Never before in human history has
               an individual been this traced in what we do, what we buy, or
@@ -123,7 +123,7 @@ function AboutUs() {
               your payments data. While major cryptocurrencies like Bitcoin or
               Ethereum offer alternative solutions to payments, they are
               fundamentally not private, allowing anyone in the world to view
-              all transaction details. Though privacy preserving tools and other
+              all transaction details. Though privacy-preserving tools and other
               privacy coins exist, they all have flaws that prevent them to be
               safe or usable.
             </>
@@ -178,8 +178,8 @@ function AboutUs() {
                 <>
                   Most cryptocurrencies are made by engineers, for engineers,
                   which results in a high barrier to entry for most users. We are working on
-                  developing an improved user experience and offering a full end
-                  to end product: from your mobile phone wallet to your own bank
+                  developing an improved user experience and offering a full end-
+                  to-end product: from your mobile phone wallet to your bank
                   account in a tab of your browser. If we want to have a truly
                   decentralized banking system, we need to make it easy for
                   anyone to use and accessible.
