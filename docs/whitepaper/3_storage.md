@@ -37,7 +37,7 @@ The Merkle Tree of Notes is fixed-size, with a depth of 32; and it is used to ho
 
 We use a Pedersen hash both on the notes, and for the intermediate nodes in the Merkle tree — using the [Jubjub elliptic curve](9_appendix.md#bls12-381-and-the-jubjub-curve). Pedersen hashes are SNARK-friendly, meaning they can be efficiently constructed within a zero-knowledge SNARK proving circuit.
 
-Remember that the main purpose for our Merkle Tree of Notes is to store notes that users can spend later while preserving that user’s privacy. In order to do this, the notes in our Merkle tree store an encrypted note, along with other helper fields. All the information necessary to spend the note is contained here, thus the note owner doesn’t need to download the specific block or transaction that resulted in this note.
+Remember that the main purpose for our Merkle Tree of Notes is to store notes that users can spend later while preserving that user’s privacy. In order to do this, the notes in our Merkle tree store an encrypted note, along with other helper fields. All the information necessary to spend the note is contained here, thus the note owner doesn't need to download the specific block or transaction that resulted in this note.
 
 #### Merkle Note
 
@@ -48,7 +48,7 @@ A Merkle Note consists of:
 | **value_commitment**     | A Pedersen Commitment of the note’s value.                                                                                                                                                                                                                                              |
 | **note_commitment**      | A Windowed Pedersen Commitment that is used to hash all the contents of the Merkle note.                                                                                                                                                                                                |
 | **public_key**           | A public key that gets created when the note it’s associated with is created. This is used such that the recipient can decrypt the Note and spend it in the future, using a [Diffie-Hellman key exchange](https://en.wikipedia.org/wiki/Diffie%E2%80%93Hellman_key_exchange) technique. |
-| **encrypted_note**       | The encrypted note that the recipient can decrypt using the abovementioned public_key.                                                                                                                                                                                                  |
+| **encrypted_note**       | The encrypted note that the recipient can decrypt using the public_key mentioned above.                                                                                                                                                                                                 |
 | **note_encryption_keys** | An encrypted field to hold all the necessary info for the sender to decrypt the Note later (so the sender can reconstruct a transaction history).                                                                                                                                       |
 
 ### Merkle Tree of Nullifiers
@@ -57,7 +57,7 @@ Just like the Merkle Tree of Notes is an accumulator for notes, the Merkle Tree 
 
 We’ve chosen this tree to be the same size as the Merkle Tree of Notes since it’ll grow in linear proportion. However, we chose a different hashing function than Pedersen because this tree is not referenced in any of the zero-knowledge proofs, and therefore can use a faster hashing function. We chose blake3.
 
-We wouldn’t have any of these notes and nullifiers if they weren’t part of transactions (we cover transactions in more detail [here](6_transaction.md#transaction-components) that get accepted to be part of the overall blockchain. Next, we’ll go over exactly how all these components make up blocks, which in turn make up the Iron Fish blockchain.
+We wouldn’t have any of these notes and nullifiers if they weren't part of transactions (we cover transactions in more detail [here](6_transaction.md#transaction-components)) that get accepted to be part of the overall blockchain. Next, we’ll go over exactly how all these components make up blocks, which in turn make up the Iron Fish blockchain.
 
 ## Block and Block Header
 
@@ -78,25 +78,25 @@ A block header consists of the following (some of these terms, such as [Output D
 | **target**              |                                                       The hash of this block must be lower than this target value in order for the block to be accepted onto the chain.                                                        |
 | **randomness**          |                                                                                         The nonce used to calculate this block’s hash                                                                                          |
 | **timestamp**           |         Unix timestamp according to the miner who mined the block. This value must be taken with a grain of salt, but miners will want to verify that it's an appropriate distance to the previous block's timestamp.          |
-| **minersFee**           |                                                            A single (simplified) transaction representing the miners fee consisting only of one Output Description.                                                            |
+| **minersFee**           |                                                            A single (simplified) transaction representing the miners fee consisting of only one Output Description.                                                            |
 
 Note that although the block header is missing its block hash, it can be computed using the Iron Fish Hashing Algorithm given all the elements of the block header.
 
 The steps necessary for another node (e.g. device or user) to validate a block are:
 
 1.  The previous Block that this Block is referencing exists (by using the **previousBlockHash** field).
-2.  The **target** is one that the verifying node agrees to is valid (more on this later on how the target and difficulty is calculated).
+2.  The **target** is the one that the verifying node agrees to (more on this later on how the target and difficulty is calculated).
 3.  When all the contents of the block header are hashed, that hash is numerically <em>less</em> than the **target** — this is largely achieved by the miner from tweaking the **randomness** value.
 4.  The **timestamp** for this Block makes sense (that its timestamp is greater than that of the previous Block by 12 seconds, +/- 10 seconds as buffer).
-5.  That all the transactions in the Block are valid (more on this in the Transactions section).
-6.  That the **minersFee** that the Miner rewards themselves for presenting this Block is valid, meaning that it is exactly the agreed upon block reward plus all the transaction fees in the Transactions (more on this in the Mining section).
-7.  And finally, that after all the transactions are added to the two global Merkle Trees of Notes and Nullifiers, the appropriate Merkle tree roots are updated and referenced in the BlockHeader correctly as **noteCommitment** for the Merkle root for the Notes tree, and **nullifierCommitment** for the Merkle root for the Nullifier tree.
+5.  All the transactions in the Block are valid (more on this in the Transactions section).
+6.  The **minersFee**, the Miner rewards for presenting this Block, is valid, meaning that it is exactly agreed upon the block reward plus all the transaction fees in the Transactions (more on this in the Mining section).
+7.  And finally, after all the transactions are added to the two global Merkle Trees of Notes and Nullifiers, the appropriate Merkle tree roots are updated and referenced in the BlockHeader correctly as **noteCommitment** for the Merkle root of the Notes tree, and **nullifierCommitment** for the Merkle root of the Nullifier tree.
 
 ## How Iron Fish Stores Data
 
 So far, we’ve been talking about what is necessary for an Iron Fish node to store, but not the how. In this section, we’ll go over exactly how Iron Fish stores these notes, nullifiers, blocks, transactions, and block headers such that the storage layer works both as a Command Line Interface (CLI) tool running as a program on your computer, and also entirely in the browser.
 
-Since we knew that running a full implementation of Iron Fish in the browser was going to be more challenging than running it in the NodeJS terminal environment, we focused on that first. The most robust database choice for applications wanting a database in the browser is [IndexedDB](https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API). Unfortunately, there wasn’t an accompanying IndexedDB implementation for NodeJS, so we chose [LevelDB](https://github.com/google/leveldb) for our NodeJS implementation.
+Since we knew that running a full implementation of Iron Fish in the browser was going to be more challenging than running it in the NodeJS terminal environment, we focused on that first. The most robust database choice for applications wanting a database in the browser is [IndexedDB](https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API). Unfortunately, there wasn't an accompanying IndexedDB implementation for NodeJS, so we chose [LevelDB](https://github.com/google/leveldb) for our NodeJS implementation.
 
 To prevent having to juggle two separate storage implementations for the two different databases, our implementation of Iron Fish has a generic layer of abstraction for data stores and database access based on [LevelUp](https://github.com/Level/levelup). This abstraction layer takes care of the specific implementations of the underlying database, and exposes a generic layer that can be used both in the browser and NodeJS environment, offering a simple datastore-agnostic API.
 
@@ -104,4 +104,4 @@ To prevent having to juggle two separate storage implementations for the two dif
 
 ### The Storage Layer API
 
-In simple terms, the storage layer is an API over its underlying data stores — it can create stores from schemas and operate on them with all the normal key-value store operations like GET, PUT, DEL, and HAS. For a full overview of the specific implementation of our storage layer, please reference the storage layer README in our Github repository.
+In simple terms, the storage layer is an API over its underlying data stores — it can create stores from schemas and operate on them with all the normal key-value store operations like GET, PUT, DEL, and HAS. For a full overview of the specific implementation of our storage layer, please reference the storage layer README in our GitHub repository.

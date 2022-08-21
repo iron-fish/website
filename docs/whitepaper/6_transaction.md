@@ -139,7 +139,7 @@ Also remember that the value commitment is computed as $$cv = v * G_v + rcv * G_
 The note commitment (**cm**) is a Pedersen commitment (resulting in a full point) of the note’s contents (value(v), $$g_d$$, $$pk_d$$) and the randomness used for the note commitment (**rcm**)
 $$cm = pedersenHash(v, g_d, pk_d) + rcm * G_{noteCommitmentRandomness}$$
 
-The alpha $$α$$ along with the authorization key $$ak$$ is used to construct the randomized public key that is used to sign the spend description. Here in the proof we verify that that the randomized key was created correctly by verifying that:
+The alpha $$α$$ along with the authorization key $$ak$$ is used to construct the randomized public key that is used to sign the spend description. Here in the proof we verify that the randomized key was created correctly by verifying that:
 
 $$rk = α *  G_{spendingKey} + ak$$
 
@@ -211,7 +211,7 @@ The **cm** is the note commitment (as a Pedersen commitment) for the new note be
 
 $$cm = pedersenHash(v, g_d, pk_d) + rcm * G_{noteCommitmentRandomness}$$
 
-Where **rcm** is is the note commitment randomness used in this Pedersen commitment computation, and verified in the zero-knowledge proof.
+Where **rcm** is the note commitment randomness used in this Pedersen commitment computation, and verified in the zero-knowledge proof.
 
 The **epk** is the ephemeral public key that is used to facilitate the recipient of the note decrypting it.
 
@@ -330,7 +330,7 @@ Since a valid transaction would have $$G_v (v1 + v2 - v3 - v4) = G_v (transactio
 
 $$G_v * (v1 + v2 - v3 - v4) + G_{rcv} * (rcv1 + rcv2 - rcv3 - rcv4) -  G_v * (transaction\_fee) = bvk$$
 
-If indeed all the values of the input descriptions minus all the values of the output descriptions equal transaction fee, then $$bvk$$ must equal the left over randomness:
+If indeed all the values of the input descriptions minus all the values of the output descriptions equal transaction fee, then $$bvk$$ must equal the leftover randomness:
 
 $$bvk = G_{rcv} ( rcv1 + rcv2 - rcv3 - rcv4)$$
 
