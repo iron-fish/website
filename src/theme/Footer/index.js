@@ -47,7 +47,7 @@ function Footer() {
       <div className={classes.root}>
         <div className={classes.container}>
           <div className={classes.about}>
-            <Link to="https://www.ironfish.network">
+            <Link to="https://www.ironfish.network" target="_self">
               <img
                 src="/img/logo.svg"
                 alt="Iron Fish index"
