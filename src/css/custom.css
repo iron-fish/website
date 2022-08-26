@@ -189,6 +189,8 @@ input[type="email"] {
 }
 .msg-alert {
   position: absolute;
+  width: 410px;
+  text-align: center;
 }
 .pagination-nav {
   padding-top: 10px;
@@ -508,6 +510,9 @@ div.item {
     right: var(--ifm-navbar--toggle-right);
     color: var(--ifm-navbar-link-color);
   }
+  .msg-alert {
+    width: 290px;
+  }
 }
 @media screen and (max-width: 999px) {
   :root {
@@ -549,6 +554,7 @@ div.item {
     position: absolute;
     left: 0px;
     width: 100%;
+    text-align: center;
   }
 }
 @media screen and (max-width: 400px) {
