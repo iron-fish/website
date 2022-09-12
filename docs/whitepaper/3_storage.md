@@ -89,7 +89,7 @@ The steps necessary for another node (e.g. device or user) to validate a block a
 3.  When all the contents of the block header are hashed, that hash is numerically <em>less</em> than the **target** — this is largely achieved by the miner from tweaking the **randomness** value.
 4.  The **timestamp** for this Block makes sense (that its timestamp is greater than that of the previous Block by 12 seconds, +/- 10 seconds as buffer).
 5.  All the transactions in the Block are valid (more on this in the Transactions section).
-6.  The **minersFee**, the Miner rewards for presenting this Block, is valid, meaning that it is exactly agreed upon the block reward plus all the transaction fees in the Transactions (more on this in the Mining section).
+6.  The **minersFee**, the Miner rewards for presenting this Block, is valid, meaning that it is exactly the agreed upon block reward plus all the transaction fees in the Transactions (more on this in the Mining section).
 7.  And finally, after all the transactions are added to the two global Merkle Trees of Notes and Nullifiers, the appropriate Merkle tree roots are updated and referenced in the BlockHeader correctly as **noteCommitment** for the Merkle root of the Notes tree, and **nullifierCommitment** for the Merkle root of the Nullifier tree.
 
 ## How Iron Fish Stores Data
