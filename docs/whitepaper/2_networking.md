@@ -128,4 +128,4 @@ When Node F gossips a message, in this example, the propagation happens in four 
 
 ##### Looking Forward
 
-We are exploring how to improve the block propagation at the application level before the main net launch. Instead of sending the entire block, a node will first send a header of the block. The peer node can then verify that it didn’t already receive it before requesting the data of the full block. We are also considering other implementations like [IBLTs](https://gist.github.com/gavinandresen/e20c3b5a1d4b97f79ac2) or [Minisketch](https://github.com/sipa/minisketch) to understand the pros and cons of each solution.
+We are exploring how to improve the block propagation at the application level before the main net launch. Instead of sending the entire block, a node will first send a header of the block. The peer node can then verify that it didn't already receive it before requesting the data of the full block. We are also considering other implementations like [IBLTs](https://gist.github.com/gavinandresen/e20c3b5a1d4b97f79ac2) or [Minisketch](https://github.com/sipa/minisketch) to understand the pros and cons of each solution.

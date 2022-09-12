@@ -12,13 +12,13 @@ So far, we’ve gone over the structure of the Iron Fish blockchain; this sectio
 - <em>Miners</em> are those nodes that propose a new block to be added to the blockchain to other nodes.
 - A new block is said to be <em>mined</em> when a miner finds a hash of the block header that is below some threshold that we call the target.
 
-The Iron Fish blockchain algorithm dynamically adjusts the mining difficulty to achieve 60 second average block times, by either increasing or decreasing mining difficulty if previous blocks are observed to be coming in too fast or too slow.
+The Iron Fish blockchain algorithm dynamically adjusts the mining difficulty to achieve 60-second average block times, by either increasing or decreasing mining difficulty if previous blocks are observed to be coming in too fast or too slow.
 
 To be a miner, a node must have both of the global data structures synced (the Merkle Tree of Notes and the Merkle Tree of Nullifiers), and know at least the two most recent blocks.
 
 ## Block Creation
 
-As we’ve mentioned, a block consists of a block header and a block body. The block body is simply a list of 0 or more transactions; a block containing no transactions is called an empty block. The block creation process is the same regardless of whether or not a block has transactions:
+As we’ve mentioned, a block consists of a block header and a block body. The block body is simply a list of one or more transactions; a block containing no user-transactions is called an empty block. The block creation process is the same regardless of whether a block has user-transactions:
 
 1. Determine the block body
 2. Set the difficulty and target
@@ -91,11 +91,11 @@ $$g (x) = \frac s 4 \cdotp e^{k \cdotp floor(x)}$$
 
 Where <em>s</em> is the initial supply of the genesis block of 42 million coins, <em>k</em> is the decay factor of -.05, and <em>x</em> is the year after mainnet launch (starting from 0).
 
-The Iron Fish “year” in block count is 525,600 blocks to one calendar year (assuming 60 second block times). We use the above formula to calculate the block reward using the Iron Fish "year", rounded to the nearest .125 of a coin:
+The Iron Fish “year” in block count is 525,600 blocks to one calendar year (assuming 60-second block times). We use the above formula to calculate the block reward using the Iron Fish "year", rounded to the nearest .125 of a coin:
 
 $$blockReward = mRound(\frac{\frac s 4 \cdotp e^{k \cdotp floor(x)}} {525,600}, 0.125)$$
 
-Therefore the block reward and total supply for the first few years after launch would be:
+Therefore, the block reward and total supply for the first few years after launch would be:
 
 | Years after launch | Block reward (60s block times) | Total supply  |
 | ------------------ | :----------------------------: | :-----------: |
@@ -104,7 +104,7 @@ Therefore the block reward and total supply for the first few years after launch
 | 1-2                |               19               | 62,498,400.00 |
 | 2-3                |             18.125             | 72,024,900.00 |
 
-The emissions curve using the above mentioned block reward formula, with a cap of 256,970,400 coins for total supply, would look like this:
+The emissions curve using the block reward formula mentioned above, with a cap of 256,970,400 coins for total supply, would look like this:
 
 <img src ="/img/whitepaper/mining/emissions_curve.svg" width="100%" role="presentation" style={{paddingRight:'25px'}} />
 
