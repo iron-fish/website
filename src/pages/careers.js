@@ -68,17 +68,6 @@ const employees = [
     l: "#EAB898",
     t: "#FFE2CF",
   },
-  
-  {
-    name: "Alex",
-    title: "Engineer",
-    linkedin: "adcrn",
-    description:
-      "Resident hipster. Wrote a music player in Rust to listen to his massive (legal) music collection. Also wrote his own open-source BitTorrent tracker. No connection.",
-    r: "#1D0070",
-    l: "#3600CF",
-    t: "#AE92FF",
-  },
   {
     name: "Daniel",
     title: "Engineer",
