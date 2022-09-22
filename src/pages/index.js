@@ -23,21 +23,22 @@ const features = [
     buttonLink: "docs/whitepaper/1_introduction",
     button: "Read Our Whitepaper",
   },
-  {
-    id: "privacy-layer",
-    className: "sectionPrivacyLayer",
-    title: "A platform for the future of the internet",
-    description: (
-      <>
-        We’re building a new Layer 1 blockchain to become the universal privacy
-        layer for all of web3. Using zero-knowledge proofs (zk-SNARKs) and the
-        highest industry standards for encryption, we enable users to have fully
-        private transactions &mdash; a true SSL layer for all blockchains.
-      </>
-    ),
-    buttonLink: "/roadmap",
-    button: "See Our Roadmap",
-  },
+  // LW - 9/22 pulling this down while we figure out the Phase 3 plan
+  // {
+  //   id: "privacy-layer",
+  //   className: "sectionPrivacyLayer",
+  //   title: "A platform for the future of the internet",
+  //   description: (
+  //     <>
+  //       We’re building a new Layer 1 blockchain to become the universal privacy
+  //       layer for all of web3. Using zero-knowledge proofs (zk-SNARKs) and the
+  //       highest industry standards for encryption, we enable users to have fully
+  //       private transactions &mdash; a true SSL layer for all blockchains.
+  //     </>
+  //   ),
+  //   buttonLink: "/roadmap",
+  //   button: "See Our Roadmap",
+  // },
   {
     id: "privacy",
     className: "sectionCryptocurrency",
