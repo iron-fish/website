@@ -113,16 +113,6 @@ const employees = [
   },
 
   {
-    name: "Aditya",
-    title: "Community Manager",
-    description:
-      "Polyglot who loves movies, traveling, yoga, and Indian food. Has worked with some blockchain projects as a CM, and loves to engage with everyone as a Virtual Extrovert on Discord.",
-    r: "#ec5e2c",
-    l: "#f18661",
-    t: "#f6af96",
-  },
-
-  {
     name: "You?",
     title: "Fish",
     linkedin: "mailto:joinus@ironfish.network",
