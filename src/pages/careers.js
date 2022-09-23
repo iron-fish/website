@@ -102,6 +102,17 @@ const employees = [
   },
 
   {
+    name: "Hugh",
+    title: "Engineer",
+    linkedin: "hughy",
+    description:
+      "Previously built software for biotech. Enjoys word games and baking with his sourdough starter, the Yeastie Boys.",
+    r: "#483054",
+    l: "#76647f",
+    t: "#a498aa",
+  },
+
+  {
     name: "You?",
     title: "Fish",
     linkedin: "mailto:joinus@ironfish.network",
