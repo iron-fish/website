@@ -37,7 +37,7 @@ const features = [
     ),
     // TODO: LW 9/26 - disabling this button
     // buttonLink: "/roadmap",
-    // button: "Roadmap Coming Soon!",
+    // button: "See Our Roadmap",
     disabledButton: "Roadmap Coming Soon!",
   },
   {
