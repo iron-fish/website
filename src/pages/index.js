@@ -23,22 +23,23 @@ const features = [
     buttonLink: "docs/whitepaper/1_introduction",
     button: "Read Our Whitepaper",
   },
-  // LW - 9/22 pulling this down while we figure out the Phase 3 plan
-  // {
-  //   id: "privacy-layer",
-  //   className: "sectionPrivacyLayer",
-  //   title: "A platform for the future of the internet",
-  //   description: (
-  //     <>
-  //       We’re building a new Layer 1 blockchain to become the universal privacy
-  //       layer for all of web3. Using zero-knowledge proofs (zk-SNARKs) and the
-  //       highest industry standards for encryption, we enable users to have fully
-  //       private transactions &mdash; a true SSL layer for all blockchains.
-  //     </>
-  //   ),
-  //   buttonLink: "/roadmap",
-  //   button: "See Our Roadmap",
-  // },
+  {
+    id: "privacy-layer",
+    className: "sectionPrivacyLayer",
+    title: "We're making privacy universal",
+    description: (
+      <>
+        We’re building a new Layer 1 blockchain to become the universal privacy
+        layer for all of web3. Using zero-knowledge proofs (zk-SNARKs) and the
+        highest industry standards for encryption, we enable users to have fully
+        private transactions &mdash; a true SSL layer for all blockchains.
+      </>
+    ),
+    // TODO: LW 9/26 - disabling this button
+    // buttonLink: "/roadmap",
+    // button: "See Our Roadmap",
+    disabledButton: "Roadmap Coming Soon!",
+  },
   {
     id: "privacy",
     className: "sectionCryptocurrency",
@@ -118,6 +119,7 @@ function Feature({
   className,
   button,
   buttonLink,
+  disabledButton,
   title,
   description,
   companies = [],
@@ -154,6 +156,10 @@ function Feature({
               >
                 {button}
               </Link>
+            )}
+            {/* TODO: LW 9/26 - disabling this button */}
+            {disabledButton && (
+              <div className="button button--outline button--disabled">{disabledButton}</div>
             )}
           </div>
         </div>
