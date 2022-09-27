@@ -89,7 +89,7 @@ $$cv = v * G_v + rcv * G_{rcv}$$
 
 Where **v** is the value of the note, $$G_v$$ is the generator point used for the value, **rcv** is the randomness to further obscure the value commitment hash, and $$G_{rcv}$$ is the generator point used for the randomness.
 
-The **rt** is the root anchor to specify which Merkle root was used to construct the zero knowledge proof. The proof will validate that there is a note that exists in the tree with that specified Merkle root. It is the miner’s job however to make sure that that Merkle root is one that is associated with a valid tree.
+The **rt** is the root anchor to specify which Merkle root was used to construct the zero knowledge proof. The proof will validate that there is a note that exists in the tree with that specified Merkle root. However, it is the miner’s job to make sure that the Merkle root is one that is associated with a valid tree.
 
 The **nf** is the nullifier, and it is unique to the note. The nullifier’s construction is verified in the proof, but once again it is the miner’s job to check that this nullifier has not been revealed in the past. The nullifier is computed by utilizing the blake2s hash function, the note commitment (cm), the position of the note being spent in the Merkle tree, and the nullifier deriving key (nk):
 

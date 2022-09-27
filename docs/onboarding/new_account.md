@@ -27,5 +27,5 @@ ironfish accounts:use MyNewAccount
 
 ## Next steps
 
-You can read about the different accounts commands on [this section](accounts.md).
+You can read about the different accounts commands in [this section](accounts.md).
 Now that you have created an account, you can use it to get coins or start mining.

@@ -112,7 +112,7 @@ In the example below, Node A is connected to B, C, D, E, and stores a list of pe
 
 When Node A gossips a message, the propagation happens in two steps:
 
-1. Node A broadcasts to Nodes B, C, D and E.
+1. Node A broadcasts to Nodes B, C, D, and E.
 2. Node B forwards the message to G. It does not forward it to C and E because it knows that Node A is connected to them and already sent it. Node C forwards the message to H. Node D forwards to I and Node E to F.
 
 <img src ="/img/whitepaper/network/nodes5.svg" width="100%" role="presentation" />
