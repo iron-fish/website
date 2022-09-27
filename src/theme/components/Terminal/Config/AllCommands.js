@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 
 export default [
     <span data-ty="input">ironfish config</span>,
     <span data-ty>
     {`
-Show and edit the node configuration
+Print out the entire config
 
 USAGE
   $ ironfish config:COMMAND

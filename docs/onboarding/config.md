@@ -14,14 +14,14 @@ import Set from '../../src/theme/components/Terminal/Config/Set'
 
 To check all available commands
 ```sh
-ironfish config
+ironfish config --help
 ```
 <Terminal command={AllCommands} />
 
 ### Show Entire Config
 Prints out the entire config
 ```sh
-ironfish config:show
+ironfish config
 ```
 <Terminal command={Show} />
 
@@ -38,3 +38,9 @@ Sets a value in the config
 ironfish config:set NAME VALUE
 ```
 <Terminal command={Set} />
+
+### Show Entire Config
+Edit the config in your configured editor
+```sh
+ironfish config:edit
+```

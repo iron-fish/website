@@ -4,7 +4,7 @@ export default [
     <span data-ty="input">ironfish config:get blockGraffiti</span>,
     <span data-ty>
     {`
-"KingSuper"
+"derek"
         `}
   </span>,
 ];
