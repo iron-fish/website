@@ -24,7 +24,7 @@ const features = [
     button: "Read Our Whitepaper",
   },
   {
-    id: "privacy-layer",
+    id: "privacy-roadmap",
     className: "sectionPrivacyLayer",
     title: "We're making privacy universal",
     description: (
