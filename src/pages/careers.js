@@ -126,10 +126,10 @@ const employees = [
     name: "Yajun",
     title: "Engineer",
     description:
-      "Former Airbnb, Fast & Amazon. Libra who loves coding and fashion. Enjoy good 🧋🍷:coffee: and always craving for Korean BBQ and Jamôn Ibérico(brought back a whole ham leg from Spain and learned slicing). Want to bring more women into Web3.",
+      "Former Airbnb, Fast & Amazon. Libra who loves coding💻 and fashion👗🕶 Enjoy good 🧋🍷🥂🍹 Always craving for Korean BBQ and Jamôn Ibérico(brought back a whole ham leg from Spain and learned slicing). Want to bring more women into Web3.",
     r: "#39ff14",
     l: "#f43cb6",
-    t: "#9c17b5",
+    t: "#ff44cc",
   },
 
   {
