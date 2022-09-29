@@ -98,7 +98,7 @@ config:get enableMiningDirector
 
 ### Miners
 #### miners:start
-Starts a miner and subscribe to new blocks for the node. The node has to be synced with the network for the miner to start mining.
+Starts a miner and subscribes to new blocks for the node. The node has to be synced with the network for the miner to start mining.
 
 ```sh
 ironfish miners:start

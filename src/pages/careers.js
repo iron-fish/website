@@ -182,7 +182,7 @@ function Careers() {
               </p>
               <p>
                 We are craftspeople who are excited to work on uncharted
-                territory in decentralized computing and cutting edge
+                territory in decentralized computing and cutting-edge
                 cryptography. While currently headquartered in San Francisco, we
                 are a remote-first company. We welcome talented people from all
                 backgrounds, throughout the United States and Canada.

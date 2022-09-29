@@ -13,7 +13,7 @@ An Iron Fish block is accepted if its header and body are valid. At a high level
 ## Validating the Block Header
 To validate the block header, each Iron Fish node receiving it checks that all of its fields are set correctly.
 
-As a reminder, the Iron Fish block header consists of following data fields:
+As a reminder, the Iron Fish block header consists of the following data fields:
 - **sequence**
 - **previousBlockHash**
 - **noteCommitment**
@@ -38,4 +38,4 @@ The **minersFee** must follow the format of a [Miner Reward transaction](6_trans
 Lastly, the **randomness** is valid if the hash of all the block header contents (including the randomness) results in a hash that is numerically less than the target specified for that block.
 
 ## Validating the Block Body
-Validating the block body consists of verifying all the transactions in the block. This can be done in parallel as each transaction should be valid independent of one another. See [Transaction Verification](6_transaction.md#transaction-verification) on how a transaction is verified.
+Validating the block body consists of verifying all the transactions in the block. This can be done in parallel as each transaction should be valid and independent of one another. See [Transaction Verification](6_transaction.md#transaction-verification) on how a transaction is verified.
