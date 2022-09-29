@@ -123,6 +123,16 @@ const employees = [
   },
 
   {
+    name: "Sanjey",
+    title: "Ops",
+    description:
+      "Xoogler turned startup vet. Web3 hobbyist turned enthusiast. Orlando Magic fan turned prisoner.",
+    r: "#000000",
+    l: "#0077C0",
+    t: "#ffffff",
+  },
+
+  {
     name: "Yajun",
     title: "Engineer",
     description:
