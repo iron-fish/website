@@ -115,7 +115,7 @@ function AboutUs() {
           title="Digital only payments"
           description={
             <>
-              Day to day payments accelerated their progression to being
+              Day-to-day payments accelerated their progression to being
               digital-only. Following the pandemic, cash was replaced by
               contactless or online payments. Never before in human history has
               an individual been this traced in what we do, what we buy, or
