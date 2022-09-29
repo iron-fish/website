@@ -60,7 +60,7 @@ The Gossip Protocol is primarily used to broadcast new blocks and transactions t
 
 Back to the protocol. Once started, each node will then independently verify the incoming transactions before further broadcasting them out to other peers, and validate the incoming blocks before applying their encompassing transactions to the node’s local copy of the ledger (a.k.a. the blockchain). There is one main objective for the gossip protocol: when a message is broadcasted, every peer should receive the message as quickly as possible.
 
-The following section details how Iron Fish’s gossip based broadcast is currently implemented.
+The following section details how Iron Fish’s gossip-based broadcast is currently implemented.
 
 #### Basic Implementation
 

@@ -14,7 +14,7 @@ There is a lot to cover in this section, so here’s a quick guide to the pieces
 
 1. the components of a transaction
 2. the Spend description component (the one that dictates how an account can spend a note)
-3. the Output description component (the one one that creates _new_ notes)
+3. the Output description component (the one that creates _new_ notes)
 4. how a transaction _balances_ to ensure that appropriate amounts were spent and paid out
 5. how a validator (such as a miner) can verify any transaction
 6. a special type of transaction called the Miner Fee transaction, which is used to reward a miner for successfully mining a block
@@ -25,7 +25,7 @@ There is a lot to cover in this section, so here’s a quick guide to the pieces
 A transaction is a list of Spend and Output descriptions:
 
 - A Spend description _spends_ notes that are used up in a transaction.
-- An Output description _creates new notes_ that result as part of that transaction, including the change back to the sender if the note they’ve spent is greater than what is intended to the recipient.
+- An Output description _creates new notes_ that result as part of that transaction, including the change back to the sender if the note they’ve spent is greater than what is intended for the recipient.
 
 Notes that are spent in the Spend description cannot be spent again in the future due to the unique _nullifier_ that must be revealed
 when spending it as subsequent attempts will be rejected by validators (e.g. miners) if that nullifier has been revealed in the past.
@@ -37,7 +37,7 @@ For example, if Alice has a note of value five coins, and wants to send Bob four
 
 <img src='/img/whitepaper/transaction/transaction1.svg' width="100%" style={{paddingTop:'10px'}} />
 
-To ensure privacy, a Spend description spends a note _without revealing which note was spent_ through the help of a zero knowledge proof (specifically [zk-SNARK Groth16](https://eprint.iacr.org/2016/260.pdf) Sapling proof). The Output description similarly creates an encrypted note with a zero-knowledge proof that the newly created note was created correctly. The circuit construction for these proofs is taken from Sapling [primitive](https://github.com/zcash/librustzcash/tree/master/zcash_primitives) gadgets which in turn were constructed using the [bellman](https://github.com/zkcrypto/bellman) circuit building tool.
+To ensure privacy, a Spend description spends a note _without revealing which note was spent_ through the help of a zero-knowledge proof (specifically [zk-SNARK Groth16](https://eprint.iacr.org/2016/260.pdf) Sapling proof). The Output description similarly creates an encrypted note with a zero-knowledge proof that the newly created note was created correctly. The circuit construction for these proofs is taken from Sapling [primitive](https://github.com/zcash/librustzcash/tree/master/zcash_primitives) gadgets which in turn were constructed using the [bellman](https://github.com/zkcrypto/bellman) circuit building tool.
 
 While explaining zk-SNARKs is outside the scope of this paper, for readers who want to learn more, zk-SNARK construction can be broken up into these 5 steps:
 
@@ -62,7 +62,7 @@ Remember that the miner’s reward for mining a block is also a type of a transa
 
 The Spend description is a part of the transaction that spends notes associated with an account. The goal of the Spend description is to spend notes _without revealing which notes were actually spent_ with the help of zero-knowledge proofs (specifically [Groth16 zk-SNARK](https://eprint.iacr.org/2016/260.pdf) type proofs).
 
-The high level overview of the Spend description is that it spends a note by using a zero knowledge proof to prove the following:
+The high level overview of the Spend description is that it spends a note by using a zero-knowledge proof to prove the following:
 
 1. it is attempting to spend a note that the spender can decrypt
 2. this note exists in the Merkle Tree of Notes
@@ -89,13 +89,13 @@ $$cv = v * G_v + rcv * G_{rcv}$$
 
 Where **v** is the value of the note, $$G_v$$ is the generator point used for the value, **rcv** is the randomness to further obscure the value commitment hash, and $$G_{rcv}$$ is the generator point used for the randomness.
 
-The **rt** is the root anchor to specify which Merkle root was used to construct the zero knowledge proof. The proof will validate that there is a note that exists in the tree with that specified Merkle root. However, it is the miner’s job to make sure that the Merkle root is one that is associated with a valid tree.
+The **rt** is the root anchor to specify which Merkle root was used to construct the zero-knowledge proof. The proof will validate that there is a note that exists in the tree with that specified Merkle root. However, it is the miner’s job to make sure that the Merkle root is one that is associated with a valid tree.
 
 The **nf** is the nullifier, and it is unique to the note. The nullifier’s construction is verified in the proof, but once again it is the miner’s job to check that this nullifier has not been revealed in the past. The nullifier is computed by utilizing the blake2s hash function, the note commitment (cm), the position of the note being spent in the Merkle tree, and the nullifier deriving key (nk):
 
 $$nf = blake2s(nk \enspace | \enspace cm + note \_ position * G_{nullifierposition})$$
 
-Where | denotes creating one byte array to hold both elements together.
+Where | denotes creating a one-byte array to hold both elements together.
 
 The **rk** is the randomized public key that is used to sign the spend description. It’s randomized so that nothing is revealed from a single authorization key being used multiple times to sign various spend descriptions. The proof contains information about the actual authorization key and proves it’s valid transformation into a randomized key.
 
@@ -402,7 +402,7 @@ The sender has to know the recipient’s public key, which is a combination of t
 2. It then creates an _ephemeral public key_ (**epk**) by using scalar multiplication between the diversifier of the recipient represented as a field point and esk. This ephemeral public key is a publicly known component of the Output description and is seen by everyone.
 
    1. $$epk = esk * g_d$$
-   2. Note: $$g_d$$ is the diversifier, $$d$$, represented as a field a point on the Jubjub curve so we can do scalar multiplication (elliptic curve multiplication) using it.
+   2. Note: $$g_d$$ is the diversifier, $$d$$, represented as a field point on the Jubjub curve so we can do scalar multiplication (elliptic curve multiplication) using it.
 
 3. It then derives a **sharedSecret** using Diffie Hellman Key Exchange between esk and pkd (diversified public address of the recipient):
 
@@ -415,7 +415,7 @@ The sender has to know the recipient’s public key, which is a combination of t
 The recipient’s wallet can then decrypt the encrypted note in the Outgoing description using the recipient’s incoming view key.
 Remember that the recipient’s transmission key ($$pk_d$$) is derived from the diversifier (converted to a point on the Jubjub curve as $$g_d$$) and the incoming view key: $$pk_d = g_d * ivk$$
 
-The recipient’s wallet can then calculate the shared secret using the epk (ephemeral public key) provided on the Outgoing description:
+The recipient’s wallet can then calculate the shared secret using the epk (ephemeral public key) provided in the Outgoing description:
 $$sharedSecret = epk * ivk$$
 
 This is the same sharedSecret that the sender’s wallet used.

@@ -33,7 +33,7 @@ All blockchains, regardless of their feature sets, have six main ingredients: th
 - [Networking](2_networking.md)
   This section goes over the basic networking stack, startup sequence, message types, and gossip protocol implementation.
 - [Storage](3_storage.md)
-  The Storage section familiarizes the reader with the main data structures and models for Iron Fish, as well our first implementation of how the storage layer is accessible in both the CLI and browser full node implementation.
+  The Storage section familiarizes the reader with the main data structures and models for Iron Fish, as well as our first implementation of how the storage layer is accessible in both the CLI and browser full node implementation.
 - [Mining](4_mining.md)
   The Mining section describes how new blocks are constructed containing the necessary randomness for proof of work (PoW), as well as the miners reward calculation.
 - [Account Creation](5_account.md)
