@@ -127,7 +127,7 @@ const employees = [
     title: "Ops",
     description:
       "Xoogler turned startup vet. Web3 hobbyist turned enthusiast. Orlando Magic fan turned prisoner.",
-    r: "#333333",
+    r: "#ffffff",
     l: "#0077C0",
     t: "#ffffff",
   },
