@@ -53,7 +53,7 @@ A Merkle Note consists of:
 
 ### Merkle Tree of Nullifiers
 
-Just like the Merkle Tree of Notes is an accumulator for notes, the Merkle Tree of Nullifiers is an accumulator for nullifiers. It is simply used to keep track of all the nullifiers (which are 32 byte numbers) ever revealed when their accompanying notes are spent.
+Just like the Merkle Tree of Notes is an accumulator for notes, the Merkle Tree of Nullifiers is an accumulator for nullifiers. It is simply used to keep track of all the nullifiers (which are 32-byte numbers) ever revealed when their accompanying notes are spent.
 
 We’ve chosen this tree to be the same size as the Merkle Tree of Notes since it’ll grow in linear proportion. However, we chose a different hashing function than Pedersen because this tree is not referenced in any of the zero-knowledge proofs, and therefore can use a faster hashing function. We chose blake3.
 
@@ -85,7 +85,7 @@ Note that although the block header is missing its block hash, it can be compute
 The steps necessary for another node (e.g. device or user) to validate a block are:
 
 1.  The previous Block that this Block is referencing exists (by using the **previousBlockHash** field).
-2.  The **target** is the one that the verifying node agrees to (more on this later on how the target and difficulty is calculated).
+2.  The **target** is the one that the verifying node agrees to (more on this later on how the target and difficulty are calculated).
 3.  When all the contents of the block header are hashed, that hash is numerically <em>less</em> than the **target** — this is largely achieved by the miner from tweaking the **randomness** value.
 4.  The **timestamp** for this Block makes sense (that its timestamp is greater than that of the previous Block by 12 seconds, +/- 10 seconds as buffer).
 5.  All the transactions in the Block are valid (more on this in the Transactions section).
