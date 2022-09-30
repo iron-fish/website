@@ -197,8 +197,8 @@ input[type="email"] {
   bottom: 25px;
 }
 .msg-alert {
-  padding-right: 35%;
-  text-align: center;
+  padding-left: 80px;
+  position: absolute;
 }
 .pagination-nav {
   padding-top: 10px;
@@ -518,6 +518,10 @@ div.item {
     right: var(--ifm-navbar--toggle-right);
     color: var(--ifm-navbar-link-color);
   }
+  .msg-alert {
+    padding-left: 25px;
+    position: absolute;
+  }
 }
 @media screen and (max-width: 999px) {
   :root {
@@ -556,7 +560,9 @@ div.item {
     padding: 12px 30px 12px 30px;
   }
   .msg-alert {
-    padding-right: 0%;
+    position: absolute;
+    left: 0px;
+    width: 100%;
   }
 }
 @media screen and (max-width: 400px) {
