@@ -123,6 +123,26 @@ const employees = [
   },
 
   {
+    name: "Sanjey",
+    title: "Ops",
+    description:
+      "Xoogler turned startup vet. Web3 hobbyist turned enthusiast. Orlando Magic fan turned prisoner.",
+    r: "#ffffff",
+    l: "#0077C0",
+    t: "#ffffff",
+  },
+
+  {
+    name: "Yajun",
+    title: "Engineer",
+    description:
+      "Former Airbnb, Fast & Amazon. Libra who loves coding💻 and fashion👗🕶 Enjoy good 🧋🍷🥂🍹 Always craving for Korean BBQ and Jamôn Ibérico(brought back a whole ham leg from Spain and learned slicing). Want to bring more women into Web3.",
+    r: "#39ff14",
+    l: "#ff44cc",
+    t: "#9c17b5",
+  },
+
+  {
     name: "You?",
     title: "Fish",
     linkedin: "mailto:joinus@ironfish.network",
