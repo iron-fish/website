@@ -148,8 +148,8 @@ const employees = [
     description:
       "Former Department of Justice and TradFi.  Loves all things University of Michigan.  Manages 4th tier professional soccer team in Thailand via DAO.",
     r: "#5cc8f4",
-    l: "#fce036",
-    t: "#fde868",
+    l: "#fef09b",
+    t: "#fce036",
   },
 
   {
