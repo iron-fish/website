@@ -141,7 +141,7 @@ const data = {
             </span>
             {' '}and{' '}
             <span>
-              <a id="definition-link" href="https://airtable.com/abccTNHeo0I12OR1U">
+              <a id="definition-link" href="https://www.airtable.com/shrcTNHeo0I12OR1U">
                 project definitions
               </a>
             </span>
