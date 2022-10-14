@@ -137,11 +137,11 @@ const data = {
             The
             {' '}
             <span>
-              <a href="https://airtable.com/shrNxbu0YxXL0G1qt">roadmap</a>
+              <a id="roadmap-link" href="https://airtable.com/shrNxbu0YxXL0G1qt">roadmap</a>
             </span>
             {' '}and{' '}
             <span>
-              <a href="https://airtable.com/shrcTNHeo0I12OR1U">
+              <a id="definition-link" href="https://airtable.com/shrcTNHeo0I12OR1U">
                 project definitions
               </a>
             </span>
