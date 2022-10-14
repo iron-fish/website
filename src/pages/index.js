@@ -35,10 +35,8 @@ const features = [
         private transactions &mdash; a true SSL layer for all blockchains.
       </>
     ),
-    // TODO: LW 9/26 - disabling this button
-    // buttonLink: "/roadmap",
-    // button: "See Our Roadmap",
-    disabledButton: "Roadmap Coming Soon!",
+    buttonLink: "/roadmap",
+    button: "See Our Roadmap",
   },
   {
     id: "privacy",
