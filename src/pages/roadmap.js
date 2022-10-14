@@ -134,13 +134,19 @@ const data = {
             easy-to-use, privacy-first layer 1 blockchain.
           </p>
           <p className={styles.mainIntro}>
-            The{" "}
-            <a href="https://airtable.com/shrNxbu0YxXL0G1qt">
-              roadmap
-            </a>{" "}
-            and <a href="https://airtable.com/shrcTNHeo0I12OR1U">
-              project definitions
-            </a>{" "} are living documents, and they *will* change as scope gets more
+            The
+            {' '}
+            <span>
+              <a href="https://airtable.com/shrNxbu0YxXL0G1qt">roadmap</a>
+            </span>
+            {' '}and{' '}
+            <span>
+              <a href="https://airtable.com/shrcTNHeo0I12OR1U">
+                project definitions
+              </a>
+            </span>
+            {' '}
+            are living documents, and they *will* change as scope gets more
             defined.
           </p>
         </div>
