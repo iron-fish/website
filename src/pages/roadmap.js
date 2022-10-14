@@ -137,13 +137,19 @@ const data = {
             The
             {' '}
             <span>
-              <a id="roadmap-link" href="https://airtable.com/shrNxbu0YxXL0G1qt">roadmap</a>
-            </span>
-            {' '}and{' '}
-            <span>
               <a id="definition-link" href="https://www.airtable.com/shrcTNHeo0I12OR1U">
                 project definitions
               </a>
+            </span>
+            {' '}
+            are living documents, and they *will* change as scope gets more
+            defined.
+          </p>
+          <p className={styles.mainIntro}>
+            The
+            {' '}
+            <span>
+              <a id="roadmap-link" href="https://airtable.com/shrNxbu0YxXL0G1qt">roadmap</a>
             </span>
             {' '}
             are living documents, and they *will* change as scope gets more
