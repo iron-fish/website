@@ -138,10 +138,15 @@ const data = {
             <a href="https://airtable.com/shrNxbu0YxXL0G1qt">
               roadmap
             </a>{" "}
-            and <a href="https://airtable.com/shrcTNHeo0I12OR1U">
-              project definitions
-            </a>{" "} are living documents, and they *will* change as scope gets more
+            is a living document and it *will* change as scope gets more
             defined.
+          </p>
+          <p className={styles.mainIntro}>
+            The{" "}
+            <a href="https://airtable.com/shrcTNHeo0I12OR1U">
+              project definitions
+            </a>{" "}
+            outline more detail on the work on the roadmap.
           </p>
         </div>
       </div>
