@@ -197,6 +197,7 @@ input[type="email"] {
   bottom: 25px;
 }
 .msg-alert {
+  margin-top: 20px;
   padding-left: 80px;
   position: absolute;
 }
