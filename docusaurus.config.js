@@ -1,5 +1,5 @@
-const remarkMath = require("remark-math")
-const rehypeKatex = require("rehype-katex")
+const remarkMath = require("remark-math");
+const rehypeKatex = require("rehype-katex");
 
 module.exports = {
   title: "Iron Fish - Private, anonymous, and easy to use cryptocurrency",
@@ -12,6 +12,7 @@ module.exports = {
   organizationName: "iron-fish",
   projectName: "landing_page",
   themeConfig: {
+    metadatas: [{ name: "twitter:card", content: "summary" }],
     gtag: {
       trackingID: "G-GJD73W9V3M",
       anonymizeIP: true,
@@ -104,4 +105,4 @@ module.exports = {
       },
     ],
   ],
-}
+};

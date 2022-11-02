@@ -35,8 +35,7 @@ export function NavbarLinks({
     <>
       <a className={linkClass} href="/docs/onboarding/iron-fish-tutorial">Get Started</a>
       <a className={linkClass} href="/docs/whitepaper/1_introduction">Whitepaper</a>
-      {/* LW - 9/22 pulling this down while we figure out the Phase 3 plan */}
-      {/* <a className={linkClass} href="/roadmap">Roadmap</a> */}
+      <a className={linkClass} href="/roadmap">Roadmap</a>
       <SubnavButton
         label="Company"
         {...buttonStyles}

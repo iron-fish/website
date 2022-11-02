@@ -135,11 +135,18 @@ const data = {
           </p>
           <p className={styles.mainIntro}>
             The{" "}
-            <a href="https://docs.google.com/spreadsheets/d/1KoJBd3WYmjBcwX-EGfshDQ4tDHxtNo0O8KFlfZ8d0jg/edit#gid=1283773986">
+            <a href="https://airtable.com/shrNxbu0YxXL0G1qt">
               roadmap
             </a>{" "}
             is a living document and it *will* change as scope gets more
             defined.
+          </p>
+          <p className={styles.mainIntro}>
+            The{" "}
+            <a href="https://airtable.com/shrcTNHeo0I12OR1U">
+              project definitions
+            </a>{" "}
+            outline more detail on the work on the roadmap.
           </p>
         </div>
       </div>
