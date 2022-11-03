@@ -155,7 +155,6 @@ function Feature({
                 {button}
               </Link>
             )}
-            {/* TODO: LW 9/26 - disabling this button */}
             {disabledButton && (
               <div className="button button--outline button--disabled">{disabledButton}</div>
             )}
