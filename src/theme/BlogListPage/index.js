@@ -36,7 +36,7 @@ function BlogListPage(props) {
     title: FeaturedPostTitle,
   } = FeaturedPostFormatter;
   const FeaturedPostImageUrl = useBaseUrl(FeaturedPostImage);
-  console.log(items);
+
   return (
     <Layout title={title} description={blogDescription}>
       <header className={clsx("blue--header")}>
