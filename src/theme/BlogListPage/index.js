@@ -66,8 +66,8 @@ function BlogListPage(props) {
         <main>
           {items.map(({ content }) => {
             const { frontMatter, metadata } = content;
-            const { image, title } = frontMatter;
-            const imageUrl = useBaseUrl(image);
+            const { image, title, thumbnail } = frontMatter;
+            const imageUrl = useBaseUrl(thumbnail || image);
             return (
               <div
                 className={clsx(styles.post)}
