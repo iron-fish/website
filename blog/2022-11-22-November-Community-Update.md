@@ -2,8 +2,8 @@
 author: Neil Doshi
 author_title: Content Marketing Manager at Iron Fish
 author_url:https://twitter.com/n_doshi_
-author_image_url: 
-author_description: 
+author_image_url: /img/blog/Neil.png
+author_description: Neil is Content Marketing Manager at Iron Fish
 hide_table_of_contents: true
 title: Iron Fish November Community Updates
 description: End of Ambassadors Program and Marketing team growth.
