@@ -89,7 +89,7 @@ We caught up with them to learn more about the company and how they think about 
 *The crypto industry has a very fast cycle. Hpool remains incredibly optimistic about technological developments in crypto, especially for Iron Fish, and we believe that the industry will flourish.*
 
 Learn more about Hpool
-[Website](http://bit.ly/3Yba7UQ) || [Twitter](https://twitter.com/HPOOL_Official) || [Discord](https://discord.gg/FHEsvEczQJ) || [Telegram](https://t.me/Hpool_Global) || [Telegram (Chinese)](https://t.me/Hpool_Chinese) || [Telegram (Russian)](https://t.me/Hpool_Russian)
+[Website](http://bit.ly/3Yba7UQ) | [Twitter](https://twitter.com/HPOOL_Official) | [Discord](https://discord.gg/FHEsvEczQJ) | [Telegram](https://t.me/Hpool_Global) | [Telegram (Chinese)](https://t.me/Hpool_Chinese) | [Telegram (Russian)](https://t.me/Hpool_Russian)
 
  
 • 🎤 [Discord](https://discord.gg/ironfish)   
