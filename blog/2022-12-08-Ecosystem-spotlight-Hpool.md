@@ -7,7 +7,7 @@ author_description: Neil is Content Marketing Manager at Iron Fish
 hide_table_of_contents: true
 title: Iron Fish Community Spotlight: Hpool
 description: Interview with Iron Fish community member Hpool.
-image: /img/blog/Hpool.png
+image: /img/blog/hpool.png
 tags: [ironfish, Hpool, community, interview]
 ---
 
