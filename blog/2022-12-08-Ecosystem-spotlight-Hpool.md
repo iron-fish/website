@@ -30,7 +30,7 @@ We caught up with them to learn more about the company and how they think about 
 *With time and the growth of Web3, we’ve expanded our involvement broadly to address decentralized network infrastructure.*
 
 ### What makes you different from other mining pools?
-*Since we started in 2017, Hpool has amassed considerable experience in node operation and maintenance. 
+*Since we started in 2017, Hpool has amassed considerable experience in node operation and maintenance.* 
 
 *We have extensive expertise in blockchain infrastructure development and pride ourselves on our consistent reliability: we offer 24/7 support, and our systems have resisted hundreds of DDoS attacks over the past months. We provide 100% uptime on systems built with the latest technologies.* 
 
