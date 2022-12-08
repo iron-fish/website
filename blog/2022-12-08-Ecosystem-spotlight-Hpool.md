@@ -16,7 +16,7 @@ tags: [ironfish, Hpool, community, interview]
 We caught up with them to learn more about the company and how they think about crypto.
 
 ### What does Hpool do?
-*Hpool was founded in 2017. We’re a Singapore-based company operating in multiple global locations. We are a node service provider for various public chains and an aggregation service provider for computing and storage power. One of our major focus areas is offering infrastructure for secure, stable, and efficient Web 3.0 digital currency mining.  
+*Hpool was founded in 2017. We’re a Singapore-based company operating in multiple global locations. We are a node service provider for various public chains and an aggregation service provider for computing and storage power. One of our major focus areas is offering infrastructure for secure, stable, and efficient Web 3.0 digital currency mining.*  
 
 Hpool offers bug submission, super node building, and community outreach services for the public chains we support.  
 
