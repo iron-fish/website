@@ -13,7 +13,7 @@ tags: [ironfish, phase2, testnet, community, marketing]
 
 We recently ran an informal, anonymous survey (via Discord) asking the Iron Fish community one question: “Why is privacy important to you?” Over 80 of you responded with thought-provoking and important reflections. 
 
-Our community is spread across the world, and speaks many languages. But we all agree that crypto should be a safe, private space where we can transact responsibly. 
+Our community is spread across the world and speaks many languages. But we all agree that crypto should be a safe, private space where we can transact responsibly. 
 
 Let’s take a look at some of the survey responses, organized broadly by theme. 
 
