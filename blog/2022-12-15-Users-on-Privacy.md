@@ -5,7 +5,7 @@ author_url: https://twitter.com/n_doshi_
 author_image_url: "/img/blog/Neil.png"
 author_description: Neil is Content Marketing Manager at Iron Fish
 hide_table_of_contents: true
-title: Why Privacy is Important to the Iron Fish Community
+title: The Importance of Privacy to the Iron Fish Community
 description: Users explain why crypto needs privacy.
 image: /img/blog/UserPrivacy.png
 tags: [ironfish, phase2, testnet, community, marketing]
