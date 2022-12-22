@@ -8,7 +8,7 @@ hide_table_of_contents: true
 title: Iron Fish 2022 Year in Review
 description: A short recap of some of the major events from 2022.
 image: /img/blog/year-in-review22/YearinReview22.png
-tags: [ironfish, phase2, testnet, community, marketing]
+tags: [ironfish, phase2, testnet, community, phase3]
 ---
 
 Iron Fish sends its best wishes for 2023 to the Iron Fish community! We are humbled by your support and grateful to have you with us. 
@@ -55,8 +55,8 @@ The [Discord](https://discord.com/channels/771503434028941353/859487131093434438
 
 ### Testnet Phase 2
 
-- Through July and August, the number of concurrent nodes on the network peaked at ~11,000, and daily transactions passed 300,000. 
-- The total number of processed transactions passed 15,000,000.
+- Through July and August, the number of concurrent nodes on the network peaked at **~11,000**, and daily transactions passed **300,000**. 
+- The total number of processed transactions passed **15,000,000**.
 
 ### Media Highlights
 
@@ -65,6 +65,7 @@ The [Discord](https://discord.com/channels/771503434028941353/859487131093434438
 - Elena joined other crypto and privacy experts to [discuss the fallout of Tornado Cash](https://www.youtube.com/watch?v=s4RMbrMvC60&t=15s) sanctions.
 
 ![Volgograd Mural](/img/blog/year-in-review22/muralVolgograd.jpg "Volgograd Mural")
+
 A mural created in Volgograd, Russia - CEO Elena's hometown. Thank you, [SpaceGem](https://twitter.com/SpaceGemBlog/status/1573406920563621888)! 
 
 ## Wrapping up Phase 2  and a Most Promising Honor
