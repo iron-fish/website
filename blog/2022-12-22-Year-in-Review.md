@@ -80,7 +80,7 @@ A mural created in Volgograd, Russia - CEO Elena's hometown. Thank you, [SpaceGe
 
 ### Media Highlights
 
-- General Counsel Craig Timms [moderated a session]() at ACAMS, the world’s largest anti-financial crime conference. 
+- General Counsel Craig Timms [moderated a session](https://ironfish.network/blog/2022/10/25/acams) at ACAMS, the world’s largest anti-financial crime conference. 
 - Sequoia Capital featured [Iron Fish CEO Elena Nadolinksi](https://www.sequoiacap.com/article/elena-nadolinski-spotlight/).
 - ***The Information*** named Iron Fish one of [2022’s most promising startups](https://www.theinformation.com/ti50).
 
