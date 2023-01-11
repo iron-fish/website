@@ -4,35 +4,40 @@ export default [
   <span data-ty="input">ironfish</span>,
   <span data-ty>
     {`
-Command line Iron Fish node
+CLI for running and interacting with an Iron Fish node
 
 VERSION
-  ironfish-cli/0.0.0 darwin-x64 node-v12.18.4
+  ironfish/0.1.57 darwin-arm64 node-v18.12.1
 
 USAGE
   $ ironfish [COMMAND]
 
 TOPICS
-  accounts  Create and delete accounts
-  blocks    Show the block header of a requested hash
-  chain     Manage the blockchain
-  config    Show and edit the node configuration
-  miners    Manage an Iron Fish miner
-  peers     Manage the peers connected to this node
-  rpc       Show the status of the RPC layer
-  workers   Show the status of the worker pool
+  blocks      Show the block header of a requested hash or sequence
+  chain       Manage the blockchain
+  config      Show and edit the node configuration
+  migrations  List all the migration statuses
+  miners      Manage an Iron Fish miner
+  peers       Manage the peers connected to this node
+  rpc         Show the status of the RPC layer
+  wallet      List all the accounts on the node
+  workers     Show the status of the worker pool
 
 COMMANDS
-  deposit     Deposit $IRON for testnet points
-  depositAll  Deposit $IRON for testnet points
+  config      Print out the entire config
   faucet      Receive coins from the Iron Fish official Faucet
-  help        display help for ironfish
+  fees        Get fee distribution for most recent blocks
+  help        Display help for ironfish.
   logs        Tail server logs
+  migrations  List all the migration statuses
+  peers       List all connected peers
+  repl        An interactive terminal to the node
   reset       Reset the node to its initial state
   start       Start the node
   status      Show the status of the node
   stop        Stop the node from running
   testnet     Set up your node to mine for the testnet
+  wallet      List all the accounts on the node
         `}
   </span>,
 ];
