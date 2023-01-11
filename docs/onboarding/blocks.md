@@ -13,7 +13,7 @@ import GetBlockHashInfo from '../../src/theme/components/Terminal/Blocks/GetBloc
 
 To check all available commands
 ```sh
-ironfish blocks
+ironfish blocks --help
 ```
 <Terminal command={AllCommands} />
 

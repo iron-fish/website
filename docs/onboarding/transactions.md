@@ -7,7 +7,7 @@ hide_table_of_contents: false
 ---
 
 import Terminal from '../../src/theme/components/Terminal/Terminal'
-import Send from '../../src/theme/components/Terminal/Send'
+import Send from '../../src/theme/components/Terminal/Wallet/Send'
 
 **Your node doesn't have to be running at the same time as the sender to send or receive a transaction.**
 

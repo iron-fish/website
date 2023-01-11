@@ -6,26 +6,26 @@ description: Accounts | Iron Fish Onboarding
 hide_table_of_contents: false
 ---
 import Terminal from '../../src/theme/components/Terminal/Terminal'
-import AllCommands from '../../src/theme/components/Terminal/Accounts/AllCommands'
-import AccountCreate from '../../src/theme/components/Terminal/Account'
-import SelectDefault from '../../src/theme/components/Terminal/Accounts/SelectDefault'
-import CheckBalance from '../../src/theme/components/Terminal/Accounts/CheckBalance'
-import List from '../../src/theme/components/Terminal/Accounts/List'
-import CheckDefault from '../../src/theme/components/Terminal/Accounts/CheckDefault'
-import Export from '../../src/theme/components/Terminal/Accounts/Export'
-import PubKey from '../../src/theme/components/Terminal/Accounts/PubKey'
-import Import from '../../src/theme/components/Terminal/Accounts/Import'
-import Remove from '../../src/theme/components/Terminal/Accounts/Remove'
-import Send from '../../src/theme/components/Terminal/Send'
-import Rescan from '../../src/theme/components/Terminal/Accounts/Rescan'
-import Transactions from '../../src/theme/components/Terminal/Accounts/Transactions'
-import Notes from '../../src/theme/components/Terminal/Accounts/Notes'
+import AllCommands from '../../src/theme/components/Terminal/Wallet/AllCommands'
+import AccountCreate from '../../src/theme/components/Terminal/Wallet/Create'
+import SelectDefault from '../../src/theme/components/Terminal/Wallet/SelectDefault'
+import CheckBalance from '../../src/theme/components/Terminal/Wallet/CheckBalance'
+import List from '../../src/theme/components/Terminal/Wallet/List'
+import CheckDefault from '../../src/theme/components/Terminal/Wallet/CheckDefault'
+import Export from '../../src/theme/components/Terminal/Wallet/Export'
+import PubKey from '../../src/theme/components/Terminal/Wallet/PubKey'
+import Import from '../../src/theme/components/Terminal/Wallet/Import'
+import Remove from '../../src/theme/components/Terminal/Wallet/Remove'
+import Send from '../../src/theme/components/Terminal/Wallet/Send'
+import Rescan from '../../src/theme/components/Terminal/Wallet/Rescan'
+import Transactions from '../../src/theme/components/Terminal/Wallet/Transactions'
+import Notes from '../../src/theme/components/Terminal/Wallet/Notes'
 
 
 
 To check all available commands
 ```sh
-ironfish accounts
+ironfish wallet --help
 ```
 <Terminal command={AllCommands} />
 

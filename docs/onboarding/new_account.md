@@ -7,7 +7,7 @@ hide_table_of_contents: true
 ---
 
 import Terminal from '../../src/theme/components/Terminal/Terminal'
-import Account from '../../src/theme/components/Terminal/Account'
+import Create from '../../src/theme/components/Terminal/Wallet/create'
 
 ### Create a new account
 
@@ -17,7 +17,7 @@ By default, an account is created when you start up your node for the first time
 ironfish wallet:create
 ```
 
-<Terminal command={Account} />
+<Terminal command={Create} />
 
 ### Set the account as default
 When you have multiple accounts, you can indicate to the CLI which one to use:
