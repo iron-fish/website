@@ -12,12 +12,11 @@ By default, the database and configuration files for the Iron Fish node are crea
 The file structure is composed of the following:
 ```
 [Iron Fish Node]
-├── accounts
-...└── default
 ├── config.json
 ├── internal.json
 └── databases
-...└── default
+...└── chain
+...└── wallet
 ```
 
 Configuration files can be edited by the commands described [here](cli.md#config).
