@@ -150,7 +150,7 @@ Displays info about a peer
 ironfish peers:show [IDENTITY]
 ```
 
-### Accounts / Wallet
+### Wallet / Accounts
 #### wallet:create
 Creating a new account with interactive mode
 ```sh
