@@ -65,7 +65,7 @@ ironfish chain:show
 
 To see how is your node connected to the network you can run the following command
 ```sh
-ironfish peers:list -f
+ironfish peers -f
 ```
 
 A peer can have the following status:
@@ -82,5 +82,5 @@ A peer can have the following status:
 
 You can get more information about connections status and errors by running the following command:
 ```sh
-ironfish peers:list -fe
+ironfish peers -fe
 ```

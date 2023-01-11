@@ -131,17 +131,17 @@ ironfish miners:mined [START] [STOP]
 Optional arguments: [START] and [STOP] are either positive numbers that indicate the starting and stopping blocks or are negative to count backwards from the head of the chain.
 
 ### Networking
-#### peers:list
+#### peers
 Displays the list of peers connected to the node.
 
 ```sh
-ironfish peers:list
+ironfish peers
 ```
 
 Displays the list of peers with live update.
 
 ```sh
-ironfish peers:list -f
+ironfish peers -f
 ```
 
 #### peers:show

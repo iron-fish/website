@@ -85,7 +85,7 @@ ironfish wallet:which
 ### Accounts list
 To see the list of accounts on your node
 ```sh
-ironfish wallet:list
+ironfish wallet
 ```
 <Terminal command={List} />
 
