@@ -7,7 +7,7 @@ hide_table_of_contents: true
 ---
 
 import Terminal from '../../src/theme/components/Terminal/Terminal'
-import Create from '../../src/theme/components/Terminal/Wallet/create'
+import Create from '../../src/theme/components/Terminal/Wallet/Create'
 
 ### Create a new account
 
