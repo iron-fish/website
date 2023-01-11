@@ -27,5 +27,5 @@ ironfish wallet:use MyNewAccount
 
 ## Next steps
 
-You can read about the different accounts commands in [this section](accounts.md).
+You can read about the different accounts commands in [this section](wallet.md).
 Now that you have created an account, you can use it to get coins or start mining.
