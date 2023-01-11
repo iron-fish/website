@@ -60,10 +60,10 @@ Faucet request successfully added to the queue for key: 12a3e7fa7c09eedfdb1a4c4c
 Congratulations! The Iron Fish Faucet just sent funds to your account!
 
 Check your balance by running:
-- ironfish accounts:balance
+- ironfish wallet:balance
 
 Learn how to send a transaction by running:
-- ironfish accounts:pay --help
+- ironfish wallet:send --help
 `}
   </span>,
 ];

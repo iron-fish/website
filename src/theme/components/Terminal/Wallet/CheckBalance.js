@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
 
 export default [
-    <span data-ty="input">ironfish accounts:which</span>,
+    <span data-ty="input">ironfish wallet:balance</span>,
     <span data-ty>
     {`
-MyAccount
+Account: default
+Balance: $IRON 0.00000000
         `}
   </span>,
 ];

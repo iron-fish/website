@@ -27,12 +27,12 @@ ironfish miners:start
 ## Changing the default account
 If you want to use a different account to store the miners fee, you can create a new account by running the following command:
 ```sh
-ironfish accounts:create newAccount
+ironfish wallet:create newAccount
 ```
 
 And then set it up as default:
 ```sh
-ironfish accounts:use newAccount
+ironfish wallet:use newAccount
 ```
 
 ## Set block graffiti (optional)
@@ -47,7 +47,7 @@ ironfish config:set blockGraffiti "<your graffiti here>"
 You can join a mining pool in order to increase your chances of mining a block. Block rewards are typically split among miners based on their respective contributions. We also run a basic mining pool that anyone can join. To get started, retrieve the public key of the account you want to use:
 
 ```sh
-ironfish accounts:address
+ironfish wallet:address
 ```
 
 And use that public key to join the mining pool:

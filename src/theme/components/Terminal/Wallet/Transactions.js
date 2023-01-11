@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 
 export default [
-    <span data-ty="input">ironfish accounts:transactions</span>,
+    <span data-ty="input">ironfish wallet:transactions</span>,
     <span data-ty>
     {`
  default (8454944) - Account transactions

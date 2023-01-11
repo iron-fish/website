@@ -12,12 +12,12 @@ To get additional info about a specific command or a specific topic, type `ironf
 
 E.g. for a topic:
 ```sh
-ironfish accounts help
+ironfish wallet --help
 ```
 
 E.g. for a command:
 ```sh
-ironfish ironfish accounts:pay --help
+ironfish wallet:send --help
 ```
 
 ### Node
@@ -151,70 +151,70 @@ ironfish peers:show [IDENTITY]
 ```
 
 ### Accounts / Wallet
-#### accounts:create
+#### wallet:create
 Creating a new account with interactive mode
 ```sh
-ironfish accounts:create
+ironfish wallet:create
 ```
 
 Creating a new account in command line
 ```sh
-ironfish accounts:create MyNewAccount
+ironfish wallet:create MyNewAccount
 ```
 
-#### accounts:address
+#### wallet:address
 Gets the current account's public key
 ```sh
-ironfish accounts:address
+ironfish wallet:address
 ```
 
 Gets a specific account's public key
 ```sh
-ironfish accounts:address MyNewAccount
+ironfish wallet:address MyNewAccount
 ```
 
-#### accounts:balance
+#### wallet:balance
 Gets the current account's balance
 ```sh
-ironfish accounts:balance
+ironfish wallet:balance
 ```
 
 Gets a specific account's public key
 ```sh
-ironfish accounts:balance -a MyNewAccount
+ironfish wallet:balance -a MyNewAccount
 ```
 
-#### accounts:notes
+#### wallet:notes
 Gets the current account's notes
 ```sh
-ironfish accounts:notes
+ironfish wallet:notes
 ```
 
 Gets a specific account's notes
 ```sh
-ironfish accounts:notes -a MyNewAccount
+ironfish wallet:notes -a MyNewAccount
 ```
 
-#### accounts:transactions
+#### wallet:transactions
 Gets the current account's transactions
 ```sh
-ironfish accounts:transactions
+ironfish wallet:transactions
 ```
 
 Gets a specific account's transactions
 ```sh
-ironfish accounts:transactions -a MyNewAccount
+ironfish wallet:transactions -a MyNewAccount
 ```
 
-#### accounts:pay
-Creating a new transaction with interactive mode
+#### wallet:sends
+Sending a new transaction with interactive mode
 ```sh
-ironfish accounts:pay
+ironfish wallet:send
 ```
 
 Creating a new transaction in command line
 ```sh
-ironfish accounts:pay -a 2 -t 997c5...c52ed
+ironfish wallet:send -a 2 -t 997c5...c52ed
 ```
 
 ### Faucet

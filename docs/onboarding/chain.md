@@ -16,7 +16,7 @@ import Export from '../../src/theme/components/Terminal/Chain/Export'
 
 To check all available commands
 ```sh
-ironfish chain
+ironfish chain --help
 ```
 <Terminal command={AllCommands} />
 
