@@ -1,7 +1,7 @@
 import React from "react";
 
 export default [
-      <span data-ty="input">ironfish peers:list</span>,
+      <span data-ty="input">ironfish peers</span>,
       <span data-ty>
         {`
 IDENTITY                                     STATE             ADDRESS
