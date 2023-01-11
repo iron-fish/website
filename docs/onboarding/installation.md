@@ -17,7 +17,7 @@ We recommend installing Iron Fish through [NPM](https://nodejs.org/en/download/)
 npm install -g ironfish
 ```
 
-> **Note:** If you do not have NPM on your system, you may need to install [Node.js](https://nodejs.org/en/download/). We require at least version 16.0.0 - you may also want to check out [nvm](https://nvm.sh).
+> **Note:** If you do not have NPM on your system, you may need to install [Node.js](https://nodejs.org/en/download/). We require version 18 - you may also want to check out [nvm](https://nvm.sh).
 
 You're all set! Run the Iron Fish CLI:
 
