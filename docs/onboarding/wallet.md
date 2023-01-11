@@ -1,8 +1,8 @@
 ---
-id: iron-fish-accounts-commands
-title: Accounts commands
-sidebar_label: Accounts commands
-description: Accounts | Iron Fish Onboarding
+id: iron-fish-wallet-commands
+title: Wallet commands
+sidebar_label: Wallet commands
+description: Wallet | Iron Fish Onboarding
 hide_table_of_contents: false
 ---
 import Terminal from '../../src/theme/components/Terminal/Terminal'

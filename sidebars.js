@@ -20,7 +20,7 @@ module.exports = {
     'onboarding/miner-iron-fish',
     'onboarding/iron-fish-node-health',
     'onboarding/iron-fish-configuration',
-    'onboarding/iron-fish-accounts-commands',
+    'onboarding/iron-fish-wallet-commands',
     'onboarding/iron-fish-cli',
     'onboarding/iron-fish-blocks-commands',
   ]
