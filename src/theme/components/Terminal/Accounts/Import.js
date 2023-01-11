@@ -1,7 +1,7 @@
 import React from "react";
 
 export default [
-    <span data-ty="input">ironfish accounts:import</span>,
+    <span data-ty="input">ironfish wallet:import</span>,
     <span
         data-ty="input"
         data-ty-type-delay="400"
@@ -40,7 +40,7 @@ export default [
     <span data-ty>
         {`
 Account wallet imported.
-Run "ironfish accounts:use wallet" to set the account as default
+Run "ironfish wallet:use wallet" to set the account as default
 `}
 </span>
 ];

@@ -16,7 +16,7 @@ import Export from '../../src/theme/components/Terminal/Accounts/Export'
 import PubKey from '../../src/theme/components/Terminal/Accounts/PubKey'
 import Import from '../../src/theme/components/Terminal/Accounts/Import'
 import Remove from '../../src/theme/components/Terminal/Accounts/Remove'
-import Pay from '../../src/theme/components/Terminal/Pay'
+import Send from '../../src/theme/components/Terminal/Send'
 import Rescan from '../../src/theme/components/Terminal/Accounts/Rescan'
 import Transactions from '../../src/theme/components/Terminal/Accounts/Transactions'
 import Notes from '../../src/theme/components/Terminal/Accounts/Notes'
@@ -32,32 +32,32 @@ ironfish accounts
 ### Account creation
 To create a new account
 ```sh
-ironfish accounts:create
+ironfish wallet:create
 ```
 <Terminal command={AccountCreate} />
 
 ### Default account
 To change the default account used by the CLI
 ```sh
-ironfish accounts:use MyAccount
+ironfish wallet:use MyAccount
 ```
 <Terminal command={SelectDefault} />
 
 ### Import an Account
 To import an account from a file:
 ```sh
-ironfish accounts:import filename
+ironfish wallet:import filename
 ```
 
 To import an account via stdin:
 ```sh
-echo {<account json>} | ironfish accounts:import
+echo {<account json>} | ironfish wallet:import
 ```
 Enter the JSON of the account and press enter
 
 To import an account interactively:
 ```sh
-ironfish accounts:import
+ironfish wallet:import
 ```
 <Terminal command={Import} />
 
@@ -66,75 +66,75 @@ Enter the details requested by the prompts as shown above
 ### Export an Account
 To export an account to a file:
 ```sh
-ironfish accounts:export AccountName filename
+ironfish wallet:export AccountName filename
 ```
 
 To export an account to the terminal:
 ```sh
-ironfish accounts:export AccountName
+ironfish wallet:export AccountName
 ```
 <Terminal command={Export} />
 
 ### See current default account
 To display the current default account used by the CLI
 ```sh
-ironfish accounts:which
+ironfish wallet:which
 ```
 <Terminal command={CheckDefault} />
 
 ### Accounts list
 To see the list of accounts on your node
 ```sh
-ironfish accounts:list
+ironfish wallet:list
 ```
 <Terminal command={List} />
 
 ### Account key
 To see a specific account public key
 ```sh
-ironfish accounts:address
+ironfish wallet:address
 ```
 <Terminal command={PubKey} />
 
 ### Account balance
 To display the balance of the account
 ```sh
-ironfish accounts:balance
+ironfish wallet:balance
 ```
 <Terminal command={CheckBalance} />
 
 ### Account notes
 To display the notes of the account
 ```sh
-ironfish accounts:notes
+ironfish wallet:notes
 ```
 <Terminal command={Notes} />
 
 ### Account deletion
 To delete an account
 ```sh
-ironfish accounts:remove MyAccount
+ironfish wallet:remove MyAccount
 ```
 <Terminal command={Remove} />
 
 ### Send a transaction
 To send a transaction from the current account
 ```sh
-ironfish accounts:pay
+ironfish wallet:send
 ```
-<Terminal command={Pay} />
+<Terminal command={Send} />
 
 ### View transactions
 To view transactions from the current account
 ```sh
-ironfish accounts:transactions
+ironfish wallet:transactions
 ```
 <Terminal command={Transactions} />
 
 ### Rescan transactions
 To reset your wallet and attempt to rebuild it from scratch
 ```sh
-ironfish accounts:rescan
+ironfish wallet:rescan
 ```
 <Terminal command={Rescan} />
 

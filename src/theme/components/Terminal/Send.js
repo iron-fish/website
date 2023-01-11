@@ -1,7 +1,7 @@
 import React from "react";
 
 export default [
-      <span data-ty="input">ironfish accounts:pay</span>,
+      <span data-ty="input">ironfish wallet:send</span>,
       <span
         data-ty="input"
         data-ty-type-delay="400"
