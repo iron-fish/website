@@ -1,6 +1,9 @@
 {
   "name": "iron-fish",
   "version": "0.0.0",
+  "engines": {
+    "node": "16.x"
+  },
   "private": true,
   "scripts": {
     "docusaurus": "docusaurus",
