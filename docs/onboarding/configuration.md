@@ -21,7 +21,7 @@ The file structure is composed of the following:
 ```
 
 Configuration files can be edited by the commands described [here](cli.md#config).
-Accounts can be edited by the commands described [here](cli.md#account--wallet)
+Accounts can be edited by the commands described [here](cli.md#wallet--accounts)
 
 You can change the working directory by passing the flag `--datadir` when running a command. Doing so will require you to sync the node again with the network.
 
