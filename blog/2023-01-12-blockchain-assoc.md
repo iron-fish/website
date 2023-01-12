@@ -1,3 +1,4 @@
+---
 author: Meg Blanchette
 author_title: Director of Marketing
 author_url: https://twitter.com/mlblanchette
@@ -17,6 +18,7 @@ tags: [ironfish, privacy, Blockchain Association, community]
 Iron Fish believes privacy and compliance do not have to be at odds, and will leverage membership in the Blockchain Association to raise up the cryptocurrency community’s needs and concerns. The future of decentralized currency is full of opportunity for those left behind by traditional financial institutions. 
 
 >The Blockchain Association is a leading advocate for responsible actors in the crypto space.  We are honored to join them in their efforts to highlight the good actors in the space and bring about regulatory clarity to allow these good actors to flourish and keep innovation here in the United States.
+
 >*Craig Timm, General Counsel at Iron Fish*
 
 Iron Fish was founded in 2019 and will launch [Testnet Phase 3](https://testnet.ironfish.network/about) on January 18, 2023.
