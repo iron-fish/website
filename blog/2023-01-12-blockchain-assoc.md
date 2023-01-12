@@ -5,8 +5,8 @@ author_url: https://twitter.com/mlblanchette
 author_image_url: /img/blog/meg.png
 author_description: Meg is Director of Marketing at Iron Fish, previously at Manifold, Dataquest.io, and O'Reilly Media.
 hide_table_of_contents: true
-title: Iron Fish Joins the Blockchain Association, Investing in Crypto’s Future
-description: Iron Fish joins the Blockchain Association to amplify the cryptocurrency community’s needs and concerns
+title: Iron Fish Joins the Blockchain Association
+description: Iron Fish joins the Blockchain Association, investing in crypto's future
 image: /img/blog/blockchain-assoc/blockchain-assoc.png
 tags: [ironfish, privacy, Blockchain Association, community]
 ---
@@ -19,7 +19,7 @@ Iron Fish believes privacy and compliance do not have to be at odds, and will le
 
 >The Blockchain Association is a leading advocate for responsible actors in the crypto space.  We are honored to join them in their efforts to highlight the good actors in the space and bring about regulatory clarity to allow these good actors to flourish and keep innovation here in the United States.
 
->*Craig Timm, General Counsel at Iron Fish*
+>***Craig Timm, General Counsel at Iron Fish***
 
 Iron Fish was founded in 2019 and will launch [Testnet Phase 3](https://testnet.ironfish.network/about) on January 18, 2023.
 
