@@ -32,7 +32,7 @@ ironfish
 When new versions are announced, you can update through NPM:
 
 ```sh
-npm update -g ironfish
+npm install -g ironfish
 ```
 
 Iron Fish is now ready to use. Follow the [next step](new_node.md) of the tutorial or jump directly to the [CLI commands list](cli.md).
