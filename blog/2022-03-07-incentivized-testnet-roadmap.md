@@ -35,8 +35,8 @@ The first Iron Fish incentivized testnet was launched on December 1st. Since the
 
 Thank you all for participating. You all have made the Iron Fish network and community truly special 🙏.
 
-🎤 [Discord](https://discord.gg/EkQkEcm8DH)  
-🐦 [Twitter](https://twitter.com/ironfishcrypto)  
+🎤 [Discord](https://discord.ironfish.network)
+🐦 [Twitter](https://twitter.com/ironfishcrypto)
 📧 [Email Updates](https://ironfish.network/#email-signup)
 
 See you on the Iron Fish network!

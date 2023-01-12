@@ -15,7 +15,7 @@ tags: [history, name, native americans, ironfish]
 
 Today, Iron Fish enters its first public testnet phase—anyone (yes, you too!) can now [run and mine a full Iron Fish node](https://ironfish.network/docs/onboarding/iron-fish-tutorial). After roughly two years of building Iron Fish, I am so excited to share our vision with the world. Iron Fish is a privacy-first cryptocurrency that anyone can use, without compromising on privacy or usability.
 
-If you have feedback, questions, trouble running your node, or just want to drop in and say ‘hi’, please join us in [Discord](https://discord.gg/EkQkEcm8DH).
+If you have feedback, questions, trouble running your node, or just want to drop in and say ‘hi’, please join us in [Discord](https://discord.ironfish.network).
 
 Many angels and organizations have helped us get here, and we’re thankful for the funding we’ve raised to date ($5.3M) from Electric Capital (Avichal Garg), Elad Gil, Metastable (Naval Ravikant and Lucas Ryan), A Capital (Kartik Talwar), Slow Ventures (Jill Carlson), Dylan Field (Figma), John Lilly, Jack Abraham (Atomic), Juan Benet (Filecoin), Jack Chou, Balaji Srinivasan, Lemniscap (Roderik van der Graaf), James Prestwich, and Linda Xie. We are honored to work with such amazing people.
 
@@ -35,11 +35,11 @@ In 2021 it is apparent that people’s relationship with privacy is changing. Si
 
 As cash continues to disappear, crypto will only become a viable alternative to traditional banking if we truly embrace privacy.
 
-Interested in participating? Check out our [Discord](https://discord.gg/EkQkEcm8DH) on how to get started with Iron Fish today and for future announcements, as well as our [careers page](https://ironfish.network/careers/) for full-time positions. Incentivized testnet will be announced at a future date.
+Interested in participating? Check out our [Discord](https://discord.ironfish.network) on how to get started with Iron Fish today and for future announcements, as well as our [careers page](https://ironfish.network/careers/) for full-time positions. Incentivized testnet will be announced at a future date.
 
 See you on the Iron Fish network!
 
-📚 Tutorial: https://ironfish.network/docs/onboarding/iron-fish-tutorial  
-🎤 Discord: https://discord.gg/EkQkEcm8DH  
-🐦 Twitter: https://twitter.com/ironfishcrypto  
+📚 Tutorial: https://ironfish.network/docs/onboarding/iron-fish-tutorial
+🎤 Discord: https://discord.ironfish.network
+🐦 Twitter: https://twitter.com/ironfishcrypto
 📢 Telegram: https://t.me/ironfishcryptochat

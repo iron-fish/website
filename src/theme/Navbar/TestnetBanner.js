@@ -65,7 +65,7 @@ const TestnetBanner = () => {
         {time.hoursText}, and {time.minutesText}.&nbsp;
         <a
           style={{ color: "#5141C9", textDecoration: "none" }}
-          href="https://discord.gg/EkQkEcm8DH"
+          href="https://discord.ironfish.network"
         >
           Join Discord for updates
         </a>

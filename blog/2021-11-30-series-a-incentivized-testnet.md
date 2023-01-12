@@ -21,7 +21,7 @@ Since we launched the very first Iron Fish testnet we’ve had nearly 2k self-id
 
 On December 1st we’re launching the Iron Fish Incentivized Testnet to reward our awesome community members (and new ones!) for their continued support as we move towards our mainnet launch. The incentivized testnet will track member participation going forward in leaderboard points that can be earned through various categories. Points will lead to future mainnet Iron Fish coins for eligible participants. The testnet will allow us to give back to the community and create many more future Iron Fish coin holders around the world.
 
-Interested? <a href="https://discord.gg/EkQkEcm8DH">Join our Discord for updates.</a>
+Interested? <a href="https://discord.ironfish.network">Join our Discord for updates.</a>
 
 ## Universal Privacy Layer—Roadmap for Iron Fish
 
@@ -31,8 +31,8 @@ To see how we’ll get there, check out our <a href="https://ironfish.network/ro
 
 To be a part of this decentralized future, visit our <a href="https://jobs.lever.co/ironfish">careers page</a>.
 
-🎤 Discord: https://discord.gg/EkQkEcm8DH  
-🐦 Twitter: https://twitter.com/ironfishcrypto  
+🎤 Discord: https://discord.ironfish.network
+🐦 Twitter: https://twitter.com/ironfishcrypto
 📢 Telegram: https://t.me/ironfishcryptochat
 
 See you on the Iron Fish network!
