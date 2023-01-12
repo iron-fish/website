@@ -275,7 +275,7 @@ const data = {
             our&nbsp;
             <a href="https://github.com/iron-fish/ironfish">GitHub</a> for open
             source contributions, join our&nbsp;
-            <a href="https://discord.gg/EkQkEcm8DH">Discord</a> to ask questions
+            <a href="https://discord.ironfish.network">Discord</a> to ask questions
             or give feedback, or check out our&nbsp;
             <a href="https://angel.co/company/iron-fish">Careers</a> to join the
             core Iron Fish team!

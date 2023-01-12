@@ -165,7 +165,7 @@ function Footer() {
                 rel="noreferrer"
               />
             </a>
-            <a href="https://discord.gg/EkQkEcm8DH">
+            <a href="https://discord.ironfish.network">
               <img
                 src="/img/footer/discord.svg"
                 width="15"
