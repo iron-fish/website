@@ -15,7 +15,7 @@ Phase 3 of our incentivized testnet starts January 18th 🎉 This is our **final
 
 Let’s get into the details.
 
-**## Multi-asset = Choice**
+## Multi-asset = Choice
 
 ### What is multi-asset?
 
