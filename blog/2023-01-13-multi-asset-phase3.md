@@ -7,7 +7,7 @@ author_description: Elena is the Founder and CEO of Iron Fish — previously wor
 hide_table_of_contents: true
 title: Multi-asset Support for Phase 3
 description: Iron Fish announces that multi-asset functionality will be live on Testnet Phase 3 
-image: /img/blog/roadmap.png
+image: /img/blog/multi-asset/multiasset.png
 tags: [iron fish, ironfish, MASP, multi-asset, Phase3, testnet]
 ---
 
