@@ -28,13 +28,16 @@ We are building Iron Fish to be interactive with all chains, and implementing mu
 
 ### What does this mean for Phase 3? 
 
-Similar to previous phases, users will earn points for finding bugs, hosting a node, submitting pull requests, and transferring/sending transactions. **Additionally**, In Phase 3, users will earn points via multi-asset related actions:
+Similar to previous phases, users will earn points for finding bugs, hosting a node, and submitting pull requests. **Additionally**, In Phase 3, users will earn points via multi-asset related actions:
 
 - Minting assets
     - Minting is the process of creating new tokens on the Iron Fish network. Every token has an asset type, and all asset types except the native $IRON token have an owner, who can mint more of the token at any time. 
 
 - Burning assets
     - Burning is the opposite of minting — the destruction of tokens that have been created by the current holder of the token. 
+
+- Sending minted assets
+    - In past phases, users earned points by transferring native $IRON tokens. In this phase, you'll earn points by transferring newly created (via minting) assets.
 
 Stay tuned to our blog for more technical content around this functionality in the near future. 
 
