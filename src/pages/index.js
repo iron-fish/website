@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState, useEffect } from "react"
 import clsx from "clsx"
 import Layout from "@theme/Layout"
 import Link from "@docusaurus/Link"
@@ -89,6 +89,20 @@ const features = [
 
 const lookup = x => (x !== "sectionExperts" ? styles : styles)
 
+export function CustomBox({
+  children,
+}) {
+  return (
+    <div className={clsx(styles.customBoxContainer)} >
+      <div className={clsx(styles.customBoxBack)} />
+      <div className={clsx(styles.customBoxFront)} />
+      <div className={clsx(styles.customBoxContent)} >
+        {children}
+      </div>
+    </div>
+  )
+}
+
 const Investor = ({ data: [img, site], prefix = "company" }) => {
   const twitterName =
     site.indexOf("twitter") > -1 ? site.split(".com/")[1] : null
@@ -169,10 +183,26 @@ function Feature({
     </section>
   )
 }
+function useWidth() {
+  const [width, setWidth] = useState();
+
+  useEffect(() => {
+    setWidth(window.innerWidth)
+    function handleResize() {
+      setWidth(window.innerWidth);
+    }
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  });
+
+  return width;
+}
 
 function Home() {
   const context = useDocusaurusContext()
   const { siteConfig = {} } = context
+
+  const width = useWidth();
   return (
     <Layout title={""} description={siteConfig.tagline}>
       <section className={clsx(styles.section, styles.sectionHomePage)}>
@@ -194,6 +224,34 @@ function Home() {
         </div>
       </section>
       <main>
+        <section className={clsx(styles.section, styles.sectionTestnet, 'sectionTestnet')}>
+          <CustomBox>
+
+            <div className={clsx(styles.sectionContainer, styles.sectionCardContainer)}>
+              <div className={clsx(styles.sectionContent, styles.sectionCardContent)}>
+                <div>
+                  <div className={clsx(styles.sectionTitle, styles.sectionCardTitle)}>
+                    Incentivized Testnet Phase 3 has started!
+                  </div>
+                  <p className={clsx(styles.sectionDescription, styles.sectionCardDescription)}>
+                    Join the final phase and become part of our community. Now including multi-asset, our testnet is ready for you to mint and burn assets, find bugs, and more. Start earning points that we’ll translate into tokens upon mainnet launch.
+                  </p>
+                  <Link
+                    className={clsx(styles.button, "button button--outline")}
+                    to="https://testnet.ironfish.network/about"
+                  >
+                    {width < 550 ? "Join the testnet": "Join the Incentivized Testnet"}
+                  </Link>
+                </div>
+              </div>
+              <div />
+              <div
+                className={clsx(styles.sectionImg, styles.sectionTestnetImg)}
+              />
+            </div>
+          </ CustomBox>
+
+        </section>
         {features &&
           features.length > 0 &&
           features.map(props => <Feature key={props.className} {...props} />)}

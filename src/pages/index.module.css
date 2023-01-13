@@ -7,6 +7,32 @@
   --ifm-newsletter-flex-height: 364px;
   --ifm-newsletter-title-vertical-margin: 0;
 }
+.customBoxContainer {
+  position: relative;
+  padding-right: 2px;
+  padding-bottom: 2px;
+}
+.customBoxFront {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  border: black 2px solid;
+  margin-left: -2px;
+  margin-top: -2px;
+  background-color: #F3F3F4;
+}
+.customBoxBack {
+  position: absolute;
+  border: black 2px solid;
+  left: 5px;
+  top: 5px;
+  height: 100%;
+  width: 100%;
+  background-color: #FFC2E8;
+}
+.customBoxContent {
+  position: relative;
+}
 .section {
   display: flex;
   flex-direction: column;
@@ -35,16 +61,40 @@
   overflow: visible;
   justify-content: space-between;
 }
+.sectionCardContainer {
+  padding-right: unset;
+  max-width: 1364px;
+  width: 80vw;
+}
 .sectionTitle {
   font-size: 46px;
   line-height: 55px;
   margin-bottom: 30px;
   white-space: break-spaces;
 }
+.sectionCardTitle {
+  font-size: 28px;
+  line-height: 40px;
+  margin-bottom: 36px;
+}
 .sectionDescription {
   margin-bottom: 40px;
 }
+.sectionDescription {
+  margin-bottom: 40px;
+}
+.sectionCardDescription {
+  margin-bottom: 50px;
+}
 .sectionContent {
+  max-width: 439px;
+  white-space: break-spaces;
+  text-align: left;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.sectionCardContent {
   max-width: 439px;
   white-space: break-spaces;
   text-align: left;
@@ -108,6 +158,14 @@
   background-size: contain;
   background-position: center right;
 }
+.sectionTestnetImg {
+  background-image: url(/img/index/intertubes.svg);
+  background-size: cover;
+  background-position: bottom left;
+  margin-right: 2px;
+  width: 100%;
+  max-width: 752px;
+}
 .sectionNewsletter {
   background-color: var(--ifm-contrast-background-color);
   height: var(--ifm-newsletter-flex-height);
@@ -156,6 +214,9 @@
   .sectionPrivacyImg {
     background-size: contain;
   }
+  .sectionTestnetImg {
+    background-size: cover;
+  }
   .sectionRegulatoryImg {
     background-size: contain;
   }
@@ -187,6 +248,10 @@
     max-width: 524px;
     text-align: center;
   }
+  .sectionCardContainer {
+    margin-top: var(--ifm-small-vertical-padding);
+    padding-right: var(--ifm-large-container-horizontal-padding);
+  }
   .sectionImg {
     margin: 0 auto;
     margin-top: 65px;
@@ -199,8 +264,13 @@
   .sectionPrivacyImg {
     height: 480px;
   }
+  .sectionTestnetImg {
+    max-height: 300px;
+    margin-top: 20px;
+    background-position: bottom center;
+  }
   .sectionCryptocurrencyImg {
-    width: 100%;
+    /* width: 100%; */
   }
 
   .sectionBorderless {
@@ -237,13 +307,22 @@
     display: flex;
     justify-content: center;
   }
+  .sectionCardContainer {
+    margin-top: var(--ifm-small-vertical-padding);
+    padding-right: var(--ifm-large-container-horizontal-padding);
+  }
   .sectionContent {
     text-align: left;
   }
   .sectionImg {
     width: 100%;
     background-position: center;
-    max-height: 300px;
+    max-height: 200px;
+  }
+  .sectionTestnetImg {
+    margin-top: 20px;
+    max-height: 250px;
+    background-position: bottom center;
   }
 
   .sectionBorderless {
@@ -264,6 +343,11 @@
   .sectionTitle {
     font-size: 38px;
     line-height: 46px;
+  }
+  .sectionCardTitle {
+    font-size: 28px;
+    line-height: 40px;
+    margin-bottom: 36px;
   }
   .sectionNewsletter > div {
     text-align: center;
@@ -336,11 +420,17 @@
   width: 100%;
   margin: 0 auto;
 }
+
 .sectionExperts .sectionContent .sectionTitle,
 .sectionExperts .sectionContent .sectionDescription {
   width: 100%;
   max-width: 800px;
   text-align: center;
+}
+.sectionCardTitle {
+  font-size: 28px;
+  line-height: 40px;
+  margin-bottom: 36px;
 }
 .investors {
   display: flex;
