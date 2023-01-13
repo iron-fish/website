@@ -44,6 +44,9 @@ function BlogPostItem(props) {
   const authorImageURL =
     frontMatter.author_image_url || frontMatter.authorImageURL;
   const imageUrl = useBaseUrl(image);
+  const fullImageUrl = useBaseUrl(image, {
+    absolute: true,
+  });
   const renderPostHeader = () => {
     const TitleHeading = isBlogPostPage ? "h1" : "h2";
     const match = date.substring(0, 10).split("-");
@@ -95,8 +98,8 @@ function BlogPostItem(props) {
         {keywords && keywords.length && (
           <meta name="keywords" content={keywords.join(",")} />
         )}
-        {image && <meta property="og:image" content={imageUrl} />}
-        {image && <meta property="twitter:image" content={imageUrl} />}
+        {image && <meta property="og:image" content={fullImageUrl} />}
+        {image && <meta property="twitter:image" content={fullImageUrl} />}
         {image && (
           <meta name="twitter:image:alt" content={`Image for ${title}`} />
         )}
