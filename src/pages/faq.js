@@ -2,6 +2,7 @@ import React from "react";
 import Layout from "@theme/Layout";
 import clsx from "clsx";
 import styles from "./faq.module.css";
+import Anchor from "./anchor";
 
 const questions = [
   {
@@ -83,7 +84,7 @@ function Question({ title, id, description, imageLeft, imageRight }) {
       <div className={clsx(styles.container)}>
         <div className={clsx(styles.sectionContent)}>
           <div>
-            <h2>{title}</h2>
+            <h2><Anchor name={id}>{title}</Anchor></h2>
             <p
               className={clsx(styles.sectionDescription)}
               dangerouslySetInnerHTML={description}
