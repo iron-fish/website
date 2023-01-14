@@ -23,10 +23,11 @@ Here’s a short recap of some of the major events from 2022.
 
 - Our user base grew to include people from **156** countries!
 - **18,000** community members joined our Discord.
-- **~9,000** participants earned points on the leaderboard by contributing in some way to the network.
-- Over **3000** nodes registered online via opt-in telemetry.
+- **>9,000** participants earned points on the leaderboard by contributing in some way to the network.
+- **~3000** nodes registered online via opt-in telemetry.
 - **~300** GitHub bug reports closed.
 
+And those lists don’t even include the amazing artwork, videos, and memes we’ve received. The Iron Fish community has not disappointed.
 Check out just a few of [highlighted community contributions](https://twitter.com/ironfishcrypto/status/1516115934632714245)!
 
 ## Launching Phase 2 and Amazing Memes
@@ -44,9 +45,10 @@ The [Discord](https://discord.com/channels/771503434028941353/859487131093434438
 ### Testnet Phase 2 Launch
 
 - Phase 2 launched on May 10, 2022, with fantastic participation. On May 12, just two days after launch, the Iron Fish network processed **113,293 transactions**!
-- By June, **16,000+** users registered points on the [leaderboard](https://testnet.ironfish.network/leaderboard) via their participation on the testnet. 
-- The total number of transactions on the network passed **4,000,000**. 
-- In July, the number of nodes hosted by the Iron Fish community reached **7,000**.
+- **39,432,178** transactions (all shielded using zero-knowledge proofs, making Iron Fish the largest processor of ZKPs ever)
+- **31,207** participants with non-zero points (out of 83,465 registered with possible dupes) including several professional mining pools
+- **292,054** blocks
+- More than **11,000** concurrent nodes online at peak with more than **200,000** daily transactions on average
 
 ### Media Highlights
 - CEO Elena Nadolinski appeared on [EthGlobal.TV](https://twitter.com/ETHGlobal/status/1522337553818570754).
