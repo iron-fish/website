@@ -46,14 +46,16 @@ Stay tuned to our blog for more technical content around this functionality in t
 As we near January 18th, let’s review stats for past phases. 
 
 ### Phase 1
-- We had ~10k active participants
+- We had >9k active participants
 - Users from 156 countries signed up
-- 18,000 community members joined our Discord
+- ˜3k nodes online (via opt-in telemetry)
+- ˜300 GitHub issues closed
 
 ### Phase 2
-- We had over 16k active participants
-- Total number of transactions passed 15 million
-- The number of concurrent nodes peaked at ~11k
+- 39,432,178 transactions (all shielded using zero-knowledge proofs, making Iron Fish the **largest processor of ZKPs ever**)
+- 31,207 participants with non-zero points (out of 83,465 registered with possible duplicates) including several professional mining pools
+- 292,054 blocks
+- More than 11k concurrent nodes online at peak with more than 200k daily transactions on average
 
 And those lists don’t even include the amazing artwork, videos, and memes we’ve received. The Iron Fish community has not disappointed.
 
