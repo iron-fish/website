@@ -23,8 +23,8 @@ Here’s a short recap of some of the major events from 2022.
 
 - Our user base grew to include people from **156** countries!
 - **18,000** community members joined our Discord.
-- **~9,000** participants earned points on the leaderboard by contributing in some way to the network.
-- Over **3000** nodes registered online via opt-in telemetry.
+- **over 9,000** participants earned points on the leaderboard by contributing in some way to the network.
+- Over **~3000** nodes registered online via opt-in telemetry.
 - **~300** GitHub bug reports closed.
 
 Check out just a few of [highlighted community contributions](https://twitter.com/ironfishcrypto/status/1516115934632714245)!
@@ -72,10 +72,10 @@ A mural created in Volgograd, Russia - CEO Elena's hometown. Thank you, [SpaceGe
 
 ### Testnet Phase 2 and Ambassador Program
 
-- Phase 2 ended on November 15, 2022, with **25,000+** users on the leaderboard who contributed to the network.
-- Since the start of Phase 2, the Iron Fish network has processed more than **39,000,000 shielded transactions** and over **126,000,000 zero-knowledge proofs** – more than any other blockchain testnet or mainnet that we know of!
-- At its peak, the Iron Fish community hosted **11,000 concurrent nodes**, second only to Bitcoin’s 15,000 typical concurrent nodes.
-- The network regularly processed over **300,000 transactions/day**.
+- Phase 2 ended on November 15, 2022, with **31,207+** users on the leaderboard who contributed to the network.
+- Since the start of Phase 2, the Iron Fish network has processed **39,432,178** transactions (all shielded using zero-knowledge proofs, making Iron Fish *the largest processor of ZKPs ever*)
+- At its peak, the Iron Fish community hosted **~11,000 concurrent nodes**, second only to Bitcoin’s 15,000 typical concurrent nodes.
+- The network regularly processed over **200,000 transactions/day** on average.
 - We wound down our Ambassador Program and released [limited edition NFTs](https://ironfish.network/blog/2022/11/22/November-Community-Update) to participants.
 - [Phase 3 launch date](https://testnet.ironfish.network/about) finalized!
 
