@@ -129,4 +129,4 @@ A Block Header consists of the following data:
 
 ### Iron Fish Hashing Algorithm
 
-The specifics of the Hashing Algorithm will be announced closer to launch date.
+Iron Fish currently uses Blake3 hashing algorithm, but is subject to change any time, including at mainnet launch.
