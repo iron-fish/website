@@ -10,6 +10,7 @@ import AllCommands from '../../src/theme/components/Terminal/Wallet/AllCommands'
 import AccountCreate from '../../src/theme/components/Terminal/Wallet/Create'
 import SelectDefault from '../../src/theme/components/Terminal/Wallet/SelectDefault'
 import CheckBalance from '../../src/theme/components/Terminal/Wallet/CheckBalance'
+import CheckBalances from '../../src/theme/components/Terminal/Wallet/CheckBalances'
 import List from '../../src/theme/components/Terminal/Wallet/List'
 import CheckDefault from '../../src/theme/components/Terminal/Wallet/CheckDefault'
 import Export from '../../src/theme/components/Terminal/Wallet/Export'
@@ -102,6 +103,13 @@ To display the balance of the account
 ironfish wallet:balance
 ```
 <Terminal command={CheckBalance} />
+
+### Account balances
+To display the balance of all assests on the account
+```sh
+ironfish wallet:balances
+```
+<Terminal command={CheckBalances} />
 
 ### Account notes
 To display the notes of the account

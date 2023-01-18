@@ -179,6 +179,12 @@ Gets the current account's balance
 ironfish wallet:balance
 ```
 
+#### wallet:balances
+Gets the current account's balance for all assets
+```sh
+ironfish wallet:balances
+```
+
 Gets a specific account's public key
 ```sh
 ironfish wallet:balance -a MyNewAccount

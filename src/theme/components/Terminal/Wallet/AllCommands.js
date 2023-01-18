@@ -12,6 +12,7 @@ USAGE
 COMMANDS
   wallet:address       Display your account address
   wallet:balance       Display the account balance
+  wallet:balances      Display the account's balances for all assets
   wallet:burn          Burn tokens and decrease supply for a given asset
   wallet:create        Create a new account for sending and receiving coins
   wallet:export        Export an account
