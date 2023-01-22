@@ -39,8 +39,8 @@ The Blocks syncer can have the following status:
 | SYNCING         | The syncer is currently adding blocks to your local chain                                                 |
 | STOPPED         | The syncer is stopped - either because you are not connected to the network, or your node is not running  |
 
-#### Heaviest head
-Heaviest head indicates the head of your chain on your local node. It changes every 15 seconds.
+#### Blockchain
+Blockchain head indicates the head of your chain on your local node. It changes every 15 seconds.
 
 #### P2P Network
 P2P Network can have the following status:
