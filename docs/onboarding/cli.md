@@ -212,7 +212,7 @@ Gets a specific account's transactions
 ironfish wallet:transactions -a MyNewAccount
 ```
 
-#### wallet:sends
+#### wallet:send
 Sending a new transaction with interactive mode
 ```sh
 ironfish wallet:send
@@ -221,6 +221,28 @@ ironfish wallet:send
 Creating a new transaction in command line
 ```sh
 ironfish wallet:send -a 2 -t 997c5...c52ed
+```
+
+#### wallet:mint
+Mint a new asset with interactive mode
+```sh
+ironfish wallet:mint
+```
+
+Mint a new asset in command line
+```sh
+ironfish wallet:mint -i 618c0...b29b4 -a 1000
+```
+
+#### wallet:burn
+Burn an asset with interactive mode
+```sh
+ironfish wallet:burn
+```
+
+Burn an asset in command line
+```sh
+ironfish wallet:burn -i 618c0...b29b4 -a 1000
 ```
 
 ### Faucet
