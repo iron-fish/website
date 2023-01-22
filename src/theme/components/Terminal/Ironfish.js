@@ -27,7 +27,7 @@ COMMANDS
   config      Print out the entire config
   faucet      Receive coins from the Iron Fish official Faucet
   fees        Get fee distribution for most recent blocks
-  help        Display help for ironfish
+  help        Display help for ironfish.
   logs        Tail server logs
   migrations  List all the migration statuses
   peers       List all connected peers
