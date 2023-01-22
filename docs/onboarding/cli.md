@@ -82,7 +82,7 @@ Sets the config value for the key.
 
 E.g.
 ```sh
-config:set enableMiningDirector "true"
+config:set enableMetrics "true"
 ```
 
 Note: the list of configuration options is available [here](configuration.md#list-of-configuration-options)
@@ -93,7 +93,7 @@ Displays the configuration value for your node
 
 E.g.
 ```sh
-config:get enableMiningDirector
+config:get enableMetrics
 ```
 
 ### Miners
