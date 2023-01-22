@@ -21,6 +21,8 @@ import Send from '../../src/theme/components/Terminal/Wallet/Send'
 import Rescan from '../../src/theme/components/Terminal/Wallet/Rescan'
 import Transactions from '../../src/theme/components/Terminal/Wallet/Transactions'
 import Notes from '../../src/theme/components/Terminal/Wallet/Notes'
+import Mint from '../../src/theme/components/Terminal/Wallet/Mint'
+import Burn from '../../src/theme/components/Terminal/Wallet/Burn'
 
 
 
@@ -124,6 +126,20 @@ To delete an account
 ironfish wallet:remove MyAccount
 ```
 <Terminal command={Remove} />
+
+### Mint a new asset
+To mint a new asset
+```sh
+ironfish wallet:mint
+```
+<Terminal command={Mint} />
+
+### Burn a new asset
+To burn a new asset
+```sh
+ironfish wallet:burn
+```
+<Terminal command={Burn} />
 
 ### Send a transaction
 To send a transaction from the current account
