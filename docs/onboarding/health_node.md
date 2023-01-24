@@ -40,7 +40,7 @@ The Blocks syncer can have the following status:
 | STOPPED         | The syncer is stopped - either because you are not connected to the network, or your node is not running  |
 
 #### Blockchain
-Blockchain head indicates the head of your chain on your local node. It changes every 15 seconds.
+Blockchain head indicates the head of your chain on your local node. It changes every 60 seconds.
 
 #### P2P Network
 P2P Network can have the following status:

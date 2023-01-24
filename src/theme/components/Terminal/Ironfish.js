@@ -17,7 +17,7 @@ TOPICS
   chain       Manage the blockchain
   config      Print out the entire config
   migrations  List all the migration statuses
-  miners      Start a mining pool that connects to a node
+  miners      Manage an Iron Fish miner
   peers       List all connected peers
   rpc         Show the status of the RPC layer
   wallet      List all the accounts on the node
