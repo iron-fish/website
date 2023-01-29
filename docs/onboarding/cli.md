@@ -107,7 +107,7 @@ ironfish miners:start
 Join a mining pool.
 
 ```sh
-ironfish miners:start -p <ip-address-of-pool> -a <your-public-address>
+ironfish miners:start -p <ip-address-of-pool>
 ```
 
 #### miners:pool:start
