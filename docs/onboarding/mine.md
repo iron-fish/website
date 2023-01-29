@@ -6,9 +6,7 @@ description: Iron Fish mining | Iron Fish Onboarding
 hide_table_of_contents: false
 ---
 
-Miners are essential to the health of the Iron Fish network. Without them, blocks won't be generated and transactions won't be transmitted. Iron Fish is still at the testnet stage.
-
-We are currently running an incentivized testnet where you can earn points by mining blocks and contributing to the network. To participate, visit our [testnet](https://testnet.ironfish.network/) website to learn more.
+Miners are essential to the health of the Iron Fish network. Without them, blocks won't be generated and transactions won't be transmitted.
 
 ## Requirements
 Install Iron Fish by following the instructions [here](onboarding/installation.md).
