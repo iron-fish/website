@@ -4,12 +4,13 @@ export default [
     <span data-ty="input">ironfish wallet</span>,
     <span data-ty>
     {`
-Create and delete accounts
+List all the accounts on the node
 
 USAGE
   $ ironfish wallet:COMMAND
 
 COMMANDS
+  wallet:accounts      List all the accounts on the node
   wallet:address       Display your account address
   wallet:balance       Display the account balance
   wallet:balances      Display the account's balances for all assets
