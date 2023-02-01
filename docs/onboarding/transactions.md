@@ -8,6 +8,7 @@ hide_table_of_contents: false
 
 import Terminal from '../../src/theme/components/Terminal/Terminal'
 import Send from '../../src/theme/components/Terminal/Wallet/Send'
+import Transactions from '../../src/theme/components/Terminal/Wallet/Transactions'
 
 **Your node doesn't have to be running at the same time as the sender to send or receive a transaction.**
 
@@ -48,6 +49,13 @@ E.g. To get the public key of a different account on your node
 ```sh
 ironfish wallet:address Savings
 ```
+
+## View transactions
+To view transactions from the current account
+```sh
+ironfish wallet:transactions
+```
+<Terminal command={Transactions} />
 
 ## Balance
 
