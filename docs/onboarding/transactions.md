@@ -50,7 +50,7 @@ E.g. To get the public key of a different account on your node
 ironfish wallet:address Savings
 ```
 
-### View transactions
+## View transactions
 To view transactions from the current account
 ```sh
 ironfish wallet:transactions
