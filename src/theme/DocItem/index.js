@@ -100,7 +100,7 @@ function DocItem(props) {
               {(editUrl || lastUpdatedAt || lastUpdatedBy) && (
                 <div className="margin-vert--xl">
                     {editUrl && (
-                      <div className={`row ${styles.editLinkWrapper}`}>
+                      <div className={`markdown ${styles.editLinkWrapper}`}>
                         <a className={`rounded-full ${styles.editLink}`} href={editUrl} target="_blank" rel="noreferrer">Edit page</a>
                       </div>
                     )}
