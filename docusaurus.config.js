@@ -87,9 +87,7 @@ module.exports = {
         },
         blog: {
           showReadingTime: true,
-          // Please change this to your repo.
-            // editUrl:
-            //   "https://github.com/iron-fish/website/edit/master/",
+          // editUrl: "https://github.com/iron-fish/website/edit/master/",
         },
         theme: {
           customCss: require.resolve("./src/css/custom.css"),
