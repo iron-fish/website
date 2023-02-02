@@ -101,7 +101,7 @@ function DocItem(props) {
                 <div className="margin-vert--xl">
                     {editUrl && (
                       <div className={`row ${styles.editLinkWrapper}`}>
-                        <a className={styles.editLink} href={editUrl} target="_blank" rel="noreferrer">Edit page</a>
+                        <a className={`rounded-full ${styles.editLink}`} href={editUrl} target="_blank" rel="noreferrer">Edit page</a>
                       </div>
                     )}
                   <div className="row">
