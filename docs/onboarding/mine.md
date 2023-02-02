@@ -54,7 +54,7 @@ And use that public key to join the mining pool:
 ironfish miners:start --pool pool.ironfish.network --address <PUBLIC KEY>
 ```
 
-[Join our Discord](https://discord.gg/ironfish) if you're interested in creating a different pool for Iron Fish.
+[Join our Discord](https://discord.ironfish.network) if you're interested in creating a different pool for Iron Fish.
 
 ## Troubleshooting
 

@@ -53,7 +53,7 @@ As privacy discussions go increasingly mainstream, we believe that we have an op
 
 Want to get more involved in our mission? Connect with us 👇
 
-• 🎤 [Discord](https://discord.gg/ironfish)
+• 🎤 [Discord](https://discord.ironfish.network)
 • 🐦 [Twitter](https://twitter.com/ironfishcrypto)
 • 🚀 [Careers](https://ironfish.network/careers)
 • 📧 [Email Updates](https://ironfish.network/#email-signup)

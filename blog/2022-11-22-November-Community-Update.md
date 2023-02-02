@@ -46,7 +46,7 @@ Whether it’s the Holiday Season or the World Cup(!), we’re heading into that
 Make sure to [follow us on Twitter](https://twitter.com/ironfishcrypto) so that you don’t miss any announcements!
 
 
-• 🎤 [Discord](https://discord.gg/ironfish)
+• 🎤 [Discord](https://discord.ironfish.network)
 • 🐦 [Twitter](https://twitter.com/ironfishcrypto)
 • 🚀 [Careers](https://ironfish.network/careers)
 • 📧 [Email Updates](https://ironfish.network/#email-signup)
