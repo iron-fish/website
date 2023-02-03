@@ -60,11 +60,14 @@ ironfish reset
 ```
 
 ### Config
-#### config:show
+
+
+#### config
 Prints out the content of your config file
 ```sh
-ironfish config:show
+ironfish config
 ```
+
 #### config:edit
 Opens the config file with your default code editor
 
@@ -101,34 +104,34 @@ config:get enableMetrics
 Starts a miner and subscribes to new blocks for the node. The node has to be synced with the network for the miner to start mining.
 
 ```sh
-ironfish miners:start
+ironfish miners:start  
 ```
 
-Join a mining pool.
+Setting the number of CPU threads to utilize for mining (-t) and setting other than your default account address for block rewards (-a)
+
+```sh
+ironfish miners:start -t <number of threads to use> -a <your address to receive rewards>
+```
+
+Join a mining pool with the your default account public address. 
 
 ```sh
 ironfish miners:start -p <ip-address-of-pool>
 ```
 
-#### miners:pool:start
+
+#### miners:pools:start
 Starts a mining pool with the name set in the `poolName` configuration option.
 
 ```sh
-ironfish miners:pool:start
+ironfish miners:pools:start
 ```
 
 Start a pool with disabled payouts.
 
 ```sh
-ironfish miners:pool:start --no-payouts
+ironfish miners:pools:start --no-payouts
 ```
-
-#### miners:mined
-List mined block hashes
-```sh
-ironfish miners:mined [START] [STOP]
-```
-Optional arguments: [START] and [STOP] are either positive numbers that indicate the starting and stopping blocks or are negative to count backwards from the head of the chain.
 
 ### Networking
 #### peers
@@ -253,6 +256,14 @@ ironfish faucet
 ```
 
 ### Chain
+
+#### chain:asset
+Get the asset info by asset identifier
+
+```sh
+ironfish chain:asset <identifier of an existing asset>
+```
+
 #### chain:export
 Export a part of the chain database to JSON
 ```sh
