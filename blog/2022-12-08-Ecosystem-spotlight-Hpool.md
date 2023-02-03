@@ -92,7 +92,7 @@ Learn more about Hpool
 [Website](http://bit.ly/3Yba7UQ) | [Twitter](https://twitter.com/HPOOL_Official) | [Discord](https://discord.gg/FHEsvEczQJ) | [Telegram](https://t.me/Hpool_Global) | [Telegram (Chinese)](https://t.me/Hpool_Chinese) | [Telegram (Russian)](https://t.me/Hpool_Russian)
 
 
-• 🎤 [Discord](https://discord.gg/ironfish)
+• 🎤 [Discord](https://discord.ironfish.network)
 • 🐦 [Twitter](https://twitter.com/ironfishcrypto)
 • 🚀 [Careers](https://ironfish.network/careers)
 • 📧 [Email Updates](https://ironfish.network/#email-signup)

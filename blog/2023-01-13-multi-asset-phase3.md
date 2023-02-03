@@ -63,6 +63,6 @@ And those lists don’t even include the amazing artwork, videos, and memes we�
 
 Join the testnet — [sign up today](https://testnet.ironfish.network/about) to be ready when Phase 3 launches.
 
-🎤 [Discord](https://discord.gg/EkQkEcm8DH)
+🎤 [Discord](https://discord.ironfish.network)
 🐦 [Twitter](https://twitter.com/ironfishcrypto)
 📧 [Email Updates](https://ironfish.network/#email-signup)

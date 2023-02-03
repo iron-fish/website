@@ -21,7 +21,7 @@ Looking ahead, Phase 3 begins January 18, 2023. It will be the most important st
 
 Everyone deserves to be safer on-chain than they are online. TLS, HTTPS brought encryption to hundreds of millions of web2 users. However, so many consumer safeguards exist at the whims of a handful of tech companies. Our community is ensuring that stronger consumer protections will exist for the future billions of web3 users, forever enshrined into code. If that mission resonates with you, we’d love for you to get involved. It’s still early–both at Iron Fish and in web3.
 
-• 🎤 [Discord](https://discord.gg/ironfish)
+• 🎤 [Discord](https://discord.ironfish.network)
 • 🐦 [Twitter](https://twitter.com/ironfishcrypto)
 • 🚀 [Careers](https://ironfish.network/careers)
 • 📧 [Email Updates](https://ironfish.network/#email-signup)
