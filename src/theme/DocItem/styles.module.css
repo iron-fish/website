@@ -26,6 +26,39 @@
   padding-right: var(--ifm-doc-item-container-horizontal-padding) !important;
 }
 
+.editLinkWrapper:not(:first-child) {
+  margin-top: 1rem;
+}
+
+.editLink {
+  font-size: 0.9rem;
+  align-items: center;
+  background-color: white;
+  display: inline-flex;
+  font-family: inherit;
+  border: 1px solid black;
+  padding: 0.5em 0.75em 0.5em 0.8em;
+  text-decoration: none;
+  color: inherit;
+  transition: filter 0.1s ease-in-out;
+}
+
+.editLink:hover {
+  color: inherit;
+  text-decoration: none;
+  filter: invert(100%);
+}
+
+.editLink::before {
+  content: '';
+  display: block;
+  height: 1.5em;
+  width: 1.5em;
+  background-image: url("/img/github-logo.svg");
+  background-size: contain;
+  margin-right: 0.5em;
+}
+
 @media (min-width: 997px) and (max-width: 1320px) {
   .docItemWrapper {
     max-width: calc(

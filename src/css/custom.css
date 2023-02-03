@@ -353,6 +353,15 @@ ol ol {
   background: #1d0070;
   border: none;
 }
+
+/* Nested sidebar category */
+.menu__list .menu__list {
+  border: none;
+  margin-left: 0;
+  padding: 0 0 0 var(--ifm-menu-link-padding-horizontal);
+  width: 100%;
+}
+
 .menu__list-item {
   font-family: var(--ifm-font-header-button);
   font-size: 16px;

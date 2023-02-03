@@ -43,6 +43,7 @@ function DocPageContent({currentDocRoute, versionMetadata, children}) {
   const {permalinkToSidebar, docsSidebars, version, isLast} = versionMetadata;
   const sidebarName = permalinkToSidebar[currentDocRoute.path];
   const sidebar = docsSidebars[sidebarName];
+
   return (
     <>
       <DocSearchVersionHeader version={version} isLast={isLast} />
