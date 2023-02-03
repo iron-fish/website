@@ -64,8 +64,8 @@ That said, this same technology that has the potential to protect U.S. interests
 
 But whatever the solution ends up needing to be, it will be better if the public and private sectors work together in developing it. If America wants to be at the forefront of the responsible development of digital assets, it needs to be at the forefront in bringing greater privacy to blockchains in a responsible way. At Iron Fish, we are committed to collaborating with legislators, policy makers, regulators, law enforcement, builders, and other members of the public and private sectors on ways to bring greater privacy to blockchains while having the right controls in place to prevent rogue regimes, terrorists, and criminals from exploiting it.
 
-Craig Timm  
-Iron Fish  
+Craig Timm
+Iron Fish
 General Counsel
 
 ---

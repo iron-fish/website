@@ -11,9 +11,9 @@ image: /img/blog/year-in-review22/YearinReview22.png
 tags: [ironfish, phase2, testnet, community, phase3]
 ---
 
-Iron Fish sends its best wishes for 2023 to the Iron Fish community! We are humbled by your support and grateful to have you with us. 
+Iron Fish sends its best wishes for 2023 to the Iron Fish community! We are humbled by your support and grateful to have you with us.
 
-2022 was a fantastic year. Thanks to our community, we launched what is, to our knowledge, the largest Layer-1 testnet in all crypto. Testnet Phases 1 and 2 exceeded our expectations, helping us plan for Testnet Phase 3 and Mainnet launch next year. 
+2022 was a fantastic year. Thanks to our community, we launched what is, to our knowledge, the largest Layer-1 testnet in all crypto. Testnet Phases 1 and 2 exceeded our expectations, helping us plan for Testnet Phase 3 and Mainnet launch next year.
 
 Here’s a short recap of some of the major events from 2022.
 
@@ -33,7 +33,7 @@ Check out just a few of [highlighted community contributions](https://twitter.co
 
 ### Meme Contest
 
-Here are a few of the favorites we highlighted after the contest ended: 
+Here are a few of the favorites we highlighted after the contest ended:
 
 ![Hungry Iron Fish](/img/blog/year-in-review22/fish33.gif "Hungry Iron Fish")
 
@@ -44,8 +44,8 @@ The [Discord](https://discord.com/channels/771503434028941353/859487131093434438
 ### Testnet Phase 2 Launch
 
 - Phase 2 launched on May 10, 2022, with fantastic participation. On May 12, just two days after launch, the Iron Fish network processed **113,293 transactions**!
-- By June, **16,000+** users registered points on the [leaderboard](https://testnet.ironfish.network/leaderboard) via their participation on the testnet. 
-- The total number of transactions on the network passed **4,000,000**. 
+- By June, **16,000+** users registered points on the [leaderboard](https://testnet.ironfish.network/leaderboard) via their participation on the testnet.
+- The total number of transactions on the network passed **4,000,000**.
 - In July, the number of nodes hosted by the Iron Fish community reached **7,000**.
 
 ### Media Highlights
@@ -55,7 +55,7 @@ The [Discord](https://discord.com/channels/771503434028941353/859487131093434438
 
 ### Testnet Phase 2
 
-- Through July and August, the number of concurrent nodes on the network peaked at **~11,000**, and daily transactions passed **300,000**. 
+- Through July and August, the number of concurrent nodes on the network peaked at **~11,000**, and daily transactions passed **300,000**.
 - The total number of processed transactions passed **15,000,000**.
 
 ### Media Highlights
@@ -66,7 +66,7 @@ The [Discord](https://discord.com/channels/771503434028941353/859487131093434438
 
 ![Volgograd Mural](/img/blog/year-in-review22/muralVolgograd.jpg "Volgograd Mural")
 
-A mural created in Volgograd, Russia - CEO Elena's hometown. Thank you, [SpaceGem](https://twitter.com/SpaceGemBlog/status/1573406920563621888)! 
+A mural created in Volgograd, Russia - CEO Elena's hometown. Thank you, [SpaceGem](https://twitter.com/SpaceGemBlog/status/1573406920563621888)!
 
 ## Wrapping up Phase 2  and a Most Promising Honor
 
@@ -81,7 +81,7 @@ A mural created in Volgograd, Russia - CEO Elena's hometown. Thank you, [SpaceGe
 
 ### Media Highlights
 
-- General Counsel Craig Timms [moderated a session](https://ironfish.network/blog/2022/10/25/acams) at ACAMS, the world’s largest anti-financial crime conference. 
+- General Counsel Craig Timms [moderated a session](https://ironfish.network/blog/2022/10/25/acams) at ACAMS, the world’s largest anti-financial crime conference.
 - Sequoia Capital featured [Iron Fish CEO Elena Nadolinksi](https://www.sequoiacap.com/article/elena-nadolinski-spotlight/).
 - ***The Information*** named Iron Fish one of [2022’s most promising startups](https://www.theinformation.com/ti50).
 
