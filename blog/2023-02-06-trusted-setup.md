@@ -5,7 +5,7 @@ author_url: https://twitter.com/mlblanchette
 author_image_url: /img/blog/meg.png
 author_description: Meg is Director of Marketing at Iron Fish, previously at Manifold, Dataquest.io, and O'Reilly Media.
 hide_table_of_contents: true
-title: Trusted Setup Ceremony - Securing Iron Fish
+title: Trusted Setup - Securing Iron Fish
 description: Iron Fish announces the Trusted Setup Ceremony, in which all are invited to help secure the network.
 image: /img/blog/trustedsetup.png
 tags: [ironfish, privacy, zk-SNARK, trusted setup, security]
