@@ -7,7 +7,7 @@ author_description: Meg is Director of Marketing at Iron Fish, previously at Man
 hide_table_of_contents: true
 title: Trusted Setup Ceremony - Securing Iron Fish
 description: Iron Fish announces the Trusted Setup Ceremony, in which all are invited to help secure the network.
-image: /img/blog/ironfish.png
+image: /img/blog/trustedsetup.png
 tags: [ironfish, privacy, zk-SNARK, trusted setup, security]
 ---
 
