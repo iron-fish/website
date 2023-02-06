@@ -39,9 +39,4 @@ We'll release more details soon, but participation will entail running one comma
 
 To give everyone sufficient time to participate, the trusted setup ceremony will run from February 13th through March 3rd.
 
-Stay tuned for more details by following us on [Twitter](https://twitter.com/ironfishcrypto) and [joining our Discord server](https://discord.gg/uCWctApGYN).
-
-🎤 [Discord](https://discord.gg/ironfish) •
-🐦 [Twitter](https://twitter.com/ironfishcrypto) •
-🚀 [Careers](https://ironfish.network/careers) •
-📧 [Email Updates](https://ironfish.network/#email-signup)
+Stay tuned for more details by following us on [Twitter](https://twitter.com/ironfishcrypto), [joining our Discord server](https://discord.gg/uCWctApGYN), and [signing up for email updates](https://ironfish.network/#email-signup).
