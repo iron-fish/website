@@ -16,7 +16,7 @@ import CheckDefault from '../../src/theme/components/Terminal/Wallet/CheckDefaul
 import Export from '../../src/theme/components/Terminal/Wallet/Export'
 import PubKey from '../../src/theme/components/Terminal/Wallet/PubKey'
 import Import from '../../src/theme/components/Terminal/Wallet/Import'
-import Remove from '../../src/theme/components/Terminal/Wallet/Remove'
+import Delete from '../../src/theme/components/Terminal/Wallet/Delete'
 import Send from '../../src/theme/components/Terminal/Wallet/Send'
 import Rescan from '../../src/theme/components/Terminal/Wallet/Rescan'
 import Transactions from '../../src/theme/components/Terminal/Wallet/Transactions'
@@ -123,9 +123,9 @@ ironfish wallet:notes
 ### Account deletion
 To delete an account
 ```sh
-ironfish wallet:remove MyAccount
+ironfish wallet:delete MyAccount
 ```
-<Terminal command={Remove} />
+<Terminal command={Delete} />
 
 ### Mint a new asset
 To mint a new asset
