@@ -6,7 +6,7 @@ author_image_url: /img/blog/elena.png
 author_description: Elena is the Founder and CEO of Iron Fish — previously worked at Microsoft and Airbnb. Fell down the cryptocurrency rabbit hole in 2017. Really didn't want her insurance to know she eats pizza.
 hide_table_of_contents: true
 title: Phase 3 Timeline
-description: Our third and last testnet phase ends with success on March 7
+description: Our third and last testnet phase ends on March 7
 image: /img/blog/phase-3-timeline/phase3-ending.png
 tags: [ironfish, phase2, phase3, testnet, incentivized, community]
 ---
