@@ -7,7 +7,7 @@ author_description: Elena is the Founder and CEO of Iron Fish — previously wor
 hide_table_of_contents: true
 title: Phase 3 Timeline
 description: Our third and last testnet phase ends with success on March 7
-image: /img/blog/phase3-timeline.png
+image: /img/blog/phase-3-timeline/phase3-end.png
 tags: [ironfish, phase2, phase3, testnet, incentivized, community]
 ---
 
