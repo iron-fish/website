@@ -76,6 +76,10 @@ There’s much more energy in our Discord than in some other projects I’ve loo
 It’s been a privilege and great fun to participate and contribute to the community and share ideas with the team. I look forward to a successful mainnet release and explosive growth! I believe that we can improve the world together!
 
 
-🎤 [Discord](https://discord.ironfish.network)
-🐦 [Twitter](https://twitter.com/ironfishcrypto)
-📧 [Email Updates](https://ironfish.network/#email-signup)
+• 🎤 [Discord](https://discord.ironfish.network)
+
+• 🐦 [Twitter](https://twitter.com/ironfishcrypto)
+
+• 🚀 [Careers](https://ironfish.network/careers)
+
+• 📧 [Email Updates](https://ironfish.network/#email-signup)
