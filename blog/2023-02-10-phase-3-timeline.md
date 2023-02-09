@@ -7,7 +7,7 @@ author_description: Elena is the Founder and CEO of Iron Fish — previously wor
 hide_table_of_contents: true
 title: Phase 3 Timeline
 description: Our third and last testnet phase ends with success on March 7
-image: /img/blog/phase-3-timeline/phase3-end.png
+image: /img/blog/phase-3-timeline/phase3-ending.png
 tags: [ironfish, phase2, phase3, testnet, incentivized, community]
 ---
 
@@ -25,7 +25,11 @@ Here are just a few updates from the first few weeks of Phase 3:
 
 🤝 Our Discord server is closing in on **35k** users
 
+![Phase 3 Highlights ](/img/blog/phase-3-timeline/phase3-highlights.png)
+
 ***Thank you*** for joining the Iron Fish community, and helping us build the future of crypto! 🙏❤️
+
+
 
 Stay tuned to Iron Fish updates to learn more about mainnet dates and what you can expect:
 
