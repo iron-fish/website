@@ -7,9 +7,12 @@ export const RawButton = ({
   className = '',
   onClick,
   colorClassName = 'bg-black text-white hover:bg-transparent hover:text-black',
+  as: Component = 'button',
+  ...rest
 }) => {
   return (
-    <button
+    <Component
+      {...rest}
       className={`
         ${overrides.rawButton}
         flex
@@ -27,7 +30,7 @@ export const RawButton = ({
       onClick={onClick}
     >
       {children}
-    </button>
+    </Component>
   )
 }
 

@@ -61,9 +61,15 @@
 }
 
 .rawButton {
-  border-style: solid;
-  text-transform: none;
   -webkit-appearance: button;
+  border-style: solid;
+  color: inherit;
+  text-decoration: none;
+  text-transform: none;
+}
+
+.rawButton:hover {
+  text-decoration: none;
 }
 
 .gridElementH5 {
