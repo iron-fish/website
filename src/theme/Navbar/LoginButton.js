@@ -10,7 +10,9 @@ export const LoginButton = () => (
     target="_blank"
     rel="noreferrer"
   >
-    Login<span className="md:hidden"> to Testnet</span>
+    <span>
+      Login<span className="md:hidden"> to Testnet</span>
+    </span>
   </RawButton>
 );
 export default LoginButton;
