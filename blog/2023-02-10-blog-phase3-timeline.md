@@ -17,9 +17,9 @@ Phase 3 wraps up on **March 7th**, giving our team time to work on our Mainnet l
 
 Here are just a few updates from the first few weeks of Phase 3:
 
-💻 The Iron Fish network is reporting **over **25k** nodes (see more stats [here](https://stats.ironfish.network/?orgId=1))
+💻 The Iron Fish network is reporting **over 25k** nodes (see more stats [here](https://stats.ironfish.network/?orgId=1))
 
-🔨 Users have minted **over 100k** assets (check out our [community-created explorer](http://www.oreoscan.info/en/assets))
+🔨 Users have minted **over 150k** assets (check out our [community-created explorer](http://www.oreoscan.info/en/assets))
 
 🌏 People from **over 200** countries have signed up
 
