@@ -10,3 +10,33 @@ description: How to participate in the Iron Fish Trusted Setup
 image: /img/blog/trusted-setup/trusted-banner.png
 tags: [ironfish, community, zk-SNARK, trusted setup]
 ---
+
+We recently [announced](https://www.ironfish.network/blog/2023/02/06/trusted-setup) that our trusted setup was coming soon — it opens to the community at 12pm PT today! 🎊 It will run through March 3rd.
+
+ At 12pm we’re also hosting a live event on YouTube with guests [Jill Gunter](https://twitter.com/jillrgunter) (Espresso), [Lisa Cuesta Bunin](https://twitter.com/lisacuesta) (Aztec), and [Jerod Moore](https://twitter.com/gospaceport) (DigitalSpacePort). [Add it to your calendar here](https://www.youtube.com/watch?v=uZNuWFB_xbg). We hope to see you there!
+
+This is a key step toward mainnet, and your chance to help ensure that Iron Fish is secure and ready to empower users to make encrypted transactions. Participating only takes a few steps (see below).
+
+*Note: For more on trusted setups, see our [previous blog post](https://www.ironfish.network/blog/2023/02/06/trusted-setup)*.
+
+### How do I participate?
+
+Participation is simple! Follow the steps below, or watch our [tutorial video](https://drive.google.com/file/d/1FfDXrcBunMhBSxCqUKncmR3VCyWuQWg0/view).
+
+ - [Install Iron Fish](https://ironfish.network/docs/onboarding/installation-iron-fish)
+     - With Node (version 18) and npm, it should be as easy as `npm install
+   -g ironfish` in your Terminal (for more information, see our [docs](https://ironfish.network/docs/onboarding/installation-iron-fish)).
+     - To test that you have Iron Fish installed, run: `ironfish --version`   
+ The version should be `v0.1.65` or later.
+ 
+ - **Contribute to the trusted setup**
+     - To start your contribution, run: `ironfish ceremony`
+     - After you contribute your randomness, you’ll enter the queue and see `Waiting to contribute...` message. Leave the command running, and it will automatically begin your contribution.
+     - When your contribution is finished, it will be uploaded to the server.
+     - Once the server has verified your contribution, you’ll receive a message that includes your contribution's hash. After the trusted setup is complete in March, you can use your hash information to check the final Iron Fish parameters and verify that your contribution hash is included.
+    
+And that’s it! Once you start the process and enter the queue, you don’t need to be present, as the program will automatically end when the process is complete.
+
+Follow us on [Twitter](https://twitter.com/ironfishcrypto) and join our [Discord](https://discord.ironfish.network/) to keep up with the latest announcements and updates as we continue building!
+
+![How to participate in the trusted setup](/img/blog/trusted-setup/trusted-gif.gif)
