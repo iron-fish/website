@@ -27,7 +27,7 @@ Participation is simple! Follow the steps below, or watch our [tutorial video](h
      - With Node (version 18) and npm, it should be as easy as `npm install -g ironfish` in your Terminal; for more information, see our [docs](https://ironfish.network/docs/onboarding/installation-iron-fish).
      - To test that you have Iron Fish installed, run: `ironfish --version`. The version should be `v0.1.65` or later.
  
- <br>. 
+ 
  - **Contribute to the trusted setup**
      - To start your contribution, run: `ironfish ceremony`
      - After you contribute your randomness, you’ll enter the queue and see `Waiting to contribute...` message. Leave the command running, and it will automatically begin your contribution.
