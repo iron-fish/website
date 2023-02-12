@@ -23,12 +23,12 @@ This is a key step toward mainnet, and your chance to help ensure that Iron Fish
 
 Participation is simple! Follow the steps below, or watch our [tutorial video](https://drive.google.com/file/d/1FfDXrcBunMhBSxCqUKncmR3VCyWuQWg0/view).
 
- - [Install Iron Fish](https://ironfish.network/docs/onboarding/installation-iron-fish)
+ 1. [Install Iron Fish](https://ironfish.network/docs/onboarding/installation-iron-fish)
      - With Node (version 18) and npm, it should be as easy as `npm install -g ironfish` in your Terminal; for more information, see our [docs](https://ironfish.network/docs/onboarding/installation-iron-fish).
      - To test that you have Iron Fish installed, run: `ironfish --version`. The version should be `v0.1.65` or later.
  
  
- - **Contribute to the trusted setup**
+ 2. **Contribute to the trusted setup**
      - To start your contribution, run: `ironfish ceremony`
      - After you contribute your randomness, you’ll enter the queue and see `Waiting to contribute...` message. Leave the command running, and it will automatically begin your contribution.
      - When your contribution is finished, it will be uploaded to the server.
