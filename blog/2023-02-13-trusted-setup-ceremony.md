@@ -24,7 +24,7 @@ This is a key step toward mainnet, and your chance to help ensure that Iron Fish
 Participation is simple! Follow the steps below, or watch our [tutorial video](https://drive.google.com/file/d/1FfDXrcBunMhBSxCqUKncmR3VCyWuQWg0/view).
 
  - [Install Iron Fish](https://ironfish.network/docs/onboarding/installation-iron-fish)
-     - With Node (version 18) and npm, it should be as easy as `npm install -g ironfish` in your Terminal (for more information, see our [docs](https://ironfish.network/docs/onboarding/installation-iron-fish)).
+     - With Node (version 18) and npm, it should be as easy as `npm install -g ironfish` in your Terminal; for more information, see our [docs](https://ironfish.network/docs/onboarding/installation-iron-fish).
      - To test that you have Iron Fish installed, run: `ironfish --version`   
  The version should be `v0.1.65` or later.
  
