@@ -60,11 +60,6 @@ ironfish reset
 ```
 
 ### Config
-#### config:show
-Prints out the content of your config file
-```sh
-ironfish config:show
-```
 #### config:edit
 Opens the config file with your default code editor
 
