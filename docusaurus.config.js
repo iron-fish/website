@@ -21,6 +21,9 @@ module.exports = {
     colorMode: {
       disableSwitch: true,
     },
+    prism: {
+      additionalLanguages: ['rust'],
+    },
     navbar: {
       title: "Iron Fish",
       logo: {

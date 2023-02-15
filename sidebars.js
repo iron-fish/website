@@ -7,8 +7,6 @@ module.exports = {
     'whitepaper/5_account',
     'whitepaper/6_transaction',
     'whitepaper/7_consensus_verification',
-    'whitepaper/8_next',
-    'whitepaper/9_appendix',
   ],
   onboarding: [
     'onboarding/iron-fish-tutorial',

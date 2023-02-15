@@ -450,6 +450,7 @@ ol ol {
 .prism-code {
   max-width: 100%;
   overflow: auto;
+  white-space: pre-wrap;
 }
 .row .col.col--3 {
   width: var(--ifm-toc-width);
