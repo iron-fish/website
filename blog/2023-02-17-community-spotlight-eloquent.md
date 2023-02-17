@@ -7,7 +7,7 @@ author_description: Neil is Content Marketing Manager at Iron Fish
 hide_table_of_contents: true
 title: "Iron Fish Community Spotlight: Eloquent"
 description: Interview with Iron Fish community member Eloquent
-image: /img/blog/spotlight-productguy/productguy.png
+image: /img/blog/spotlight-eloquent/eloquent.png
 tags: [ironfish, community, eloquent, interview]
 ---
 
