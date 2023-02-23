@@ -78,7 +78,7 @@ Here are just a few of the community contributions we've highlighted:
 
 We are grateful and humbled by your support!
 
-![Pi-day](img/blog/mainnet-announce/pi-day.gif)  
+![Pi-day](/img/blog/mainnet-announce/pi-day.gif)  
 
 
 • 🎤 [Discord](https://discord.ironfish.network)
