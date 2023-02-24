@@ -17,7 +17,7 @@ Phase 3 has been, to put it mildly, an incredible success:
 -   Users have minted[over 300k assets](http://www.oreoscan.info/en/assets)
 -   The network has hosted almost 60k concurrent nodes (check out our stats [here](https://stats.ironfish.network/?orgId=1))
 
-![Phase3 nodes](img/blog/phase3-update/phase3-nodes.png)  
+![Phase3 nodes](/img/blog/phase3-update/phase3-nodes.png)  
 
 The community has been running nodes, minting, burning, sending, and ensuring we are able to make Iron Fish stronger 🙌 We’re proud to report that our multi-asset functionality has passed the stress test.
 
