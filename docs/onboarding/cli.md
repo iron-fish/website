@@ -107,16 +107,16 @@ Starts a miner and subscribes to new blocks for the node. The node has to be syn
 ironfish miners:start  
 ```
 
-Setting the number of CPU threads to utilize for mining (-t) and setting other than your default account address for block rewards (-a)
+Setting the number of CPU threads to utilize for mining <-t> and setting other than your default account address for block rewards <-a>.
 
 ```sh
 ironfish miners:start -t <number-of-threads-to-use> -a <your-address-to-receive-rewards>
 ```
 
-Join a mining pool with the your default account public address. 
+Join a mining pool with the your default account public address and all CPU threads utilized (use <-t> flag to set desired load). 
 
 ```sh
-ironfish miners:start -p <ip-address-of-pool>
+ironfish miners:start -p <ip:port>
 ```
 
 
