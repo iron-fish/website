@@ -13,9 +13,9 @@ tags: [ironfish, mainnet, phase3, update]
 
 Phase 3 has been, to put it mildly, an incredible success:
 
--   We have over 38k users in Discord
+-   We have **over 38k** users in Discord
 -   Users have minted [over 300k assets](http://www.oreoscan.info/en/assets)
--   The network has hosted almost 60k concurrent nodes (check out our stats [here](https://stats.ironfish.network/?orgId=1))
+-   The network has hosted **over 60k** concurrent nodes (check out our stats [here](https://stats.ironfish.network/?orgId=1))
 
 ![Phase3 nodes](/img/blog/phase3-update/phase3-nodes.png)  
 
@@ -27,7 +27,7 @@ For all these reasons, we’ve decided to end Phase 3 early. Instead of March 7t
 
 ## What’s Next?
 
-We put our community first, and firmly believe that this earlier end date will provide a better experience, especially as we hear reports of users struggling to fully participate in the face of outages.
+We put our community first, and firmly believe that this earlier end date will provide a better experience, especially as we hear reports of users struggling to fully participate in the face of outages. Once Phase 3 ends, our team will be able to focus fully on mainnet. 
 
 Please stay tuned for mainnet updates via [Twitter](https://twitter.com/ironfishcrypto) and [Discord](https://discord.ironfish.network). We look forward to continue chatting with you on Discord and answering your questions as we build 🙏
 
