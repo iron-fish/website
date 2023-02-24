@@ -110,7 +110,7 @@ ironfish miners:start
 Setting the number of CPU threads to utilize for mining (-t) and setting other than your default account address for block rewards (-a)
 
 ```sh
-ironfish miners:start -t <number of threads to use> -a <your address to receive rewards>
+ironfish miners:start -t <number-of-threads-to-use> -a <your-address-to-receive-rewards>
 ```
 
 Join a mining pool with the your default account public address. 
@@ -261,7 +261,7 @@ ironfish faucet
 Get the asset info by asset identifier
 
 ```sh
-ironfish chain:asset <identifier of an existing asset>
+ironfish chain:asset <identifier-of-an-existing asset>
 ```
 
 #### chain:export
