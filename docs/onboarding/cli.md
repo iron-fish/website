@@ -113,7 +113,7 @@ Setting the number of CPU threads to utilize for mining <-t> and setting other t
 ironfish miners:start -t <number-of-threads-to-use> -a <your-address-to-receive-rewards>
 ```
 
-Join a mining pool with the your default account public address and all CPU threads utilized (use <-t> flag to set a desired load). 
+Join a mining pool with your default account public address and all CPU threads utilized (use <-t> flag to set a desired load). 
 
 ```sh
 ironfish miners:start -p <ip:port>
