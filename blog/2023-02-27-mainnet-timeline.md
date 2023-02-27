@@ -5,9 +5,9 @@ author_url: https://twitter.com/leanthebean
 author_image_url: /img/blog/elena.png
 author_description: Elena is the Founder and CEO of Iron Fish — previously worked at Airbnb, Tilt, and Microsoft. Fell down the cryptocurrency rabbit hole in 2017. Really didn't want her insurance to know she eats pizza.
 hide_table_of_contents: true
-title: "Iron Fish Mainnet Timeline"
+title: "Iron Fish Mainnet Date Announcement"
 description: Mainnet set to launch on Pi Day
-image: /img/blog/mainnet-timeline/blog.png
+image: /img/blog/mainnet-timeline/pi-day.gif
 tags: [ironfish, mainnet, Pi, launch, update]
 ---
 The whole Iron Fish team is so excited to share these mainnet updates with our community. Your support has been motivating, and your feedback has helped make Iron Fish better 💪
