@@ -22,14 +22,14 @@ We are lucky to have such an engaged, worldwide community.
 
 The Iron Fish community has:
 
--   Representation from over 200 different countries speaking over 20 different languages
--   Over 300k messages in Discord (with 43k+! members)
--   Open source developers contributing to [core Iron Fish](https://github.com/iron-fish/ironfish)
--   Well over 50M transactions across 3 testnets with over 300k fully private custom assets
--   Thousands of full nodes (11k concurrent online full nodes for Phase 2, and over 60k 🫣 for Phase 3)
--   Over 8k contributions to our [Trusted Setup](https://ironfish.network/blog/2023/02/13/trusted-setup-ceremony) (and it’s still going until March 3rd!)
+-   Representation from **over 200** different countries speaking **over 20** different languages
+-   **Over 300k** messages in Discord (with **43k+!** members)
+-   **Open source developers** contributing to [core Iron Fish](https://github.com/iron-fish/ironfish)
+-   Well over **50M transactions** across 3 testnets with over **300k fully private custom assets**
+-   **Thousands** of full nodes (11k concurrent online full nodes for Phase 2, and over 60k 🫣 for Phase 3)
+-   Over **8k** contributions to our [Trusted Setup](https://ironfish.network/blog/2023/02/13/trusted-setup-ceremony) (and it’s still going until March 3rd!)
 
-![Countries by region](/img/blog/mainnet-timeline/countries.png)
+![Countries by region](/img/blog/mainnet-timeline/countries-hires.png)
 
 - 🙌 THANK YOU! 🙌
 
@@ -62,6 +62,9 @@ We hope you’ll be there to celebrate with us! If you plan to have your own Iro
 Stay tuned to [Twitter](https://twitter.com/ironfishcrypto) and [Discord](https://discord.ironfish.network/) for updates as Pi Day grows closer 🗓️ 👀
 
 • 🎤 [Discord](https://discord.ironfish.network)
+
 • 🐦 [Twitter](https://twitter.com/ironfishcrypto)
+
 • 🚀 [Careers](https://ironfish.network/careers)
+
 • 📧 [Email Updates](https://ironfish.network/#email-signup)
