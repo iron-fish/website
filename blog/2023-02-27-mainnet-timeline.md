@@ -34,8 +34,12 @@ The Iron Fish community has:
 - 🙌 THANK YOU! 🙌
 
 ### Timeline of past Testnets
-
-                  |                                                                                                                                                                                                                                                                                                                                                                                       |
+| Phase | Date | Stats |
+|---|---|---|
+| Testnet Phase 1 | December 1, 2021 - March 11, 2022 | - 9k participants (registered users with non-zero points on the leaderboard) - >3k nodes via opt-in telemetry  - >300 GitHub issues reported and closed - Hundreds of community contributions, including PRs |
+| Testnet Phase 2 | May 10, 2022 - November 22, 2022 | - 39,432,178 transactions (all shielded using zero-knowledge proofs, making Iron Fish the largest processor of ZKPs ever)  - 292,054 blocks - 31,207 participants with non-zero points (out of 83,465 registered with possible dupes), including several professional mining pools  - >11k concurrent nodes online at peak with more than 200k daily transactions on average |
+| Testnet Phase 3 | January 18, 2023 - February 25, 2023 | - Reporting over 60k nodes online (see stats) - Over 300k fully private custom assets created by the community! (see community-created explorer!) - Over 140k accounts with leaderboard points  - Over 40 open-source contributors to core ironfish |
+| Mainnet | March 14, 2023 |  |                                                                                                                                                                                                                                                                                                                                                                                   |
 ### What happens March 14th?
 
 Iron Fish is a PoW L1 chain. On mainnet all of the Iron Fish capabilities will be available to anyone and everyone across the globe:
