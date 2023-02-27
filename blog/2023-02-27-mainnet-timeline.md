@@ -52,6 +52,8 @@ Some quick stats about the community:
 -   You’ve sent over 300k messages in Discord
 -   46 users have made 150 commits
 
+![Countries by region](/img/blog/mainnet-timeline/countries.png)
+
 Recent community highlights:
 
 - [Community Spotlight on ProductGuy](https://www.ironfish.network/blog/2023/02/10/community-spotlight-productguy)
@@ -64,4 +66,4 @@ Recent community highlights:
 
 Stay tuned to [Twitter](https://twitter.com/ironfishcrypto) and [Discord](https://discord.ironfish.network/) for updates as Pi Day grows closer 🗓️ 👀
 
-![Pi-day](/img/blog/mainnet-announce/pi-day.gif)
+![Pi-day](/img/blog/mainnet-timeline/pi-day.gif)
