@@ -5,68 +5,62 @@ author_url: https://twitter.com/leanthebean
 author_image_url: /img/blog/elena.png
 author_description: Elena is the Founder and CEO of Iron Fish — previously worked at Airbnb, Tilt, and Microsoft. Fell down the cryptocurrency rabbit hole in 2017. Really didn't want her insurance to know she eats pizza.
 hide_table_of_contents: true
-title: "Iron Fish Mainnet Date Announcement"
+title: "Iron Fish Mainnet March 14th"
 description: Mainnet set to launch on Pi Day
 image: /img/blog/mainnet-timeline/pi-day.gif
 tags: [ironfish, mainnet, Pi, launch, update]
 ---
-The whole Iron Fish team is so excited to share these mainnet updates with our community. Your support has been motivating, and your feedback has helped make Iron Fish better 💪
 
-🙌 THANK YOU! 🙌
 
-And now, what you’ve been waiting for...mainnet will launch March 14th (3.14)! That’s right, [Pi Day](https://www.piday.org/).
+### Iron Fish Mainnet will Launch on March 14th, 2023—or 3.14, Pi Day 🍰
 
-Let’s talk about what that looks like.
+Iron Fish has consistently run one of the biggest testnets an L1 project has ever seen, and now we’re excited to announce that Iron Fish is ready for its mainnet release.
 
-### What will you be able to do on 3.14?
+### Iron Fish Community 💖
 
-All our current capabilities will be available on the live mainnet:
+We are lucky to have such an engaged, worldwide community.
 
--   mining
--   multi-asset functionality: minting, burning, sending
--   hosting a node
--   transacting
+The Iron Fish community has:
+
+-   Representation from over 200 different countries speaking over 20 different languages
+-   Over 300k messages in Discord (with 43k+! members)
+-   Open source developers contributing to [core Iron Fish](https://github.com/iron-fish/ironfish)
+-   Well over 50M transactions across 3 testnets with over 300k fully private custom assets
+-   Thousands of full nodes (11k concurrent online full nodes for Phase 2, and over 60k 🫣 for Phase 3)
+-   Over 8k contributions to our [Trusted Setup](https://ironfish.network/blog/2023/02/13/trusted-setup-ceremony) (and it’s still going until March 3rd!)
+
+![Countries by region](/img/blog/mainnet-timeline/countries.png)
+
+- 🙌 THANK YOU! 🙌
+
+### Timeline of past Testnets
+
+|   | Phase           | Date                                 | Stats                                                                                                                                                                                                                                                                                                                                                                                 |
+|---|-----------------|--------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| ✅ | Testnet Phase 1 | December 1, 2021 - March 11, 2022    | - 9k participants (registered users with non-zero points on the leaderboard) <br>- >3k nodes via opt-in telemetry <br>- >300 GitHub issues reported and closed<br>- Hundreds of community contributions, including PRs                                                                                                                                                                |
+| ✅ | Testnet Phase 2 | May 10, 2022 - November 22, 2022     | - 39,432,178 transactions (all shielded using zero-knowledge proofs, making Iron Fish the largest processor of ZKPs ever) <br>- 292,054 blocks<br>- 31,207 participants with non-zero points (out of 83,465 registered with possible dupes), including several professional mining pools <br>- >11k concurrent nodes online at peak with more than 200k daily transactions on average |
+| ✅ | Testnet Phase 3 | January 18, 2023 - February 25, 2023 | - Reporting over 60k nodes online (see stats)<br>- Over 300k fully private custom assets created by the community! (see community-created explorer!)<br>- Over 140k accounts with leaderboard points <br>- Over 40 open-source contributors to core ironfish                                                                                                                          |
+| 🚀 | Mainnet         | March 14, 2023                       |                                                                                                                                                                                                                                                                                                                                                                                       |
+### What happens March 14th?
+
+Iron Fish is a PoW L1 chain. On mainnet all of the Iron Fish capabilities will be available to anyone and everyone across the globe:
+
+-   Anyone can host a node
+-   Anyone can start mining
+-   Anyone can mint fully private custom assets
+-   Anyone can burn or transfer assets
 
 To join in, check out our [getting started guide](https://www.ironfish.network/docs/onboarding/iron-fish-tutorial).
 
 ### How is Iron Fish celebrating?
 
-We’ll be hosting a YouTube Live event (more on that soon). We’ll eat some pie, answer some questions from users, and maybe have some sparklers ✨
+We’ll be hosting a [YouTube Live event](https://youtube.com/live/G5nVp5r0EuE?feature=share) to answer any questions while launching Iron Fish mainnet. Come join us. Bring a slice of pie. ✨
 
 We hope you’ll be there to celebrate with us! If you plan to have your own Iron Fish party, let us know on Discord in our #outreach channel.
-
-### Update on Trusted Ceremony
-
-We opened our trusted setup to our community on February 13th, and it will run through March 3rd. So far we have over 6600 participants.
-
-We hosted a [YouTube live event](https://www.youtube.com/watch?v=uZNuWFB_xbg) with crypto community leaders, so users could hang out with us as they began participating 🎙️
-
-### Community Spotlights
-
-We are lucky to have such an engaged community, and are always excited when we get a chance to highlight their contributions. Our community is world wide.
-
-Some quick stats about the community:
-
--   You live in over 200 different countries
--   You speak over 20 different languages
--   You’ve sent over 300k messages in Discord
--   46 users have made 150 commits
-
-![Countries by region](/img/blog/mainnet-timeline/countries.png)
-
-Recent community highlights:
-
-- [Community Spotlight on ProductGuy](https://www.ironfish.network/blog/2023/02/10/community-spotlight-productguy)
-- [User-built explorer and faucet](http://www.oreoscan.info/en)
-- [User-created Phase 3 Walkthrough](https://www.youtube.com/watch?v=y8B57IC2S8I)
-- [Community Spotlight on Hpool](https://www.ironfish.network/blog/2022/12/08/Ecosystem-spotlight-Hpool)
-- [Commmunity Spotlight on Eloquent](https://ironfish.network/blog/2023/02/17/community-spotlight-eloquent)
 
 ## What’s next?
 
 Stay tuned to [Twitter](https://twitter.com/ironfishcrypto) and [Discord](https://discord.ironfish.network/) for updates as Pi Day grows closer 🗓️ 👀
-
-![Pi-day](/img/blog/mainnet-timeline/pi-day.gif)
 
 • 🎤 [Discord](https://discord.ironfish.network)
 • 🐦 [Twitter](https://twitter.com/ironfishcrypto)
