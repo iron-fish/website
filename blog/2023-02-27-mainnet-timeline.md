@@ -7,7 +7,7 @@ author_description: Elena is the Founder and CEO of Iron Fish — previously wor
 hide_table_of_contents: true
 title: "Mainnet Timeline"
 description: Mainnet set to launch on Pi Day
-image: /img/blog/mainnet-announce/blog.png
+image: /img/blog/mainnet-timeline/blog.png
 tags: [ironfish, mainnet, Pi, launch, update]
 ---
 The whole Iron Fish team is so excited to share these mainnet updates with our community. Your support has been motivating, and your feedback has helped make Iron Fish better 💪
