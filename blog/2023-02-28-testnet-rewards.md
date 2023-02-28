@@ -37,26 +37,3 @@ Every testnet reward recipient must complete a Know Your Customer (KYC) process.
 
 Please note that Iron Fish is a US company and must abide by US sanctions, consequently requiring us to KYC every testnet participant to ensure eligibility. Additionally, due to regulatory concern, we are unable to complete any airdrop to US citizens at this time.
 
-### Approval
-
-Incentivized testnet reward tokens are limited to one redemption per user. In addition to our KYC process, we will conduct a de-duplication and approval process internally to ensure the fairness and integrity of token allocation. The status of this process will be communicated on the Iron Fish Redemptions portal.
-
-### Airdrops
-
-This all leads to the distribution of 940,000 mainnet Iron Fish tokens. We are very excited to kick off Mainnet with an event to reward all our loyal testnet participants! See the table below for the rewards schedule (you can also check out our [Testnet About page](https://testnet.ironfish.network/about) for more on testnet guidelines).
-
-
-This all leads to the distribution of 940,000 mainnet Iron Fish tokens. We are very excited to kick off Mainnet with an event to reward all our loyal testnet participants! See the table below for the rewards schedule (you can also check out our [Testnet About page](https://testnet.ironfish.network/about) for more on testnet guidelines).
-
-* You only need to pass KYC once. If you participated in Phases 1 and 2, and you pass KYC by 19 March, you will receive an allocation for both phases in which you participated. You don't need to repeat the KYC process.
-
-** The date indicated is the date by when KYC must be passed. Apply early for KYC to leave sufficient time for an application to process.
-
-If you are eligible for an airdrop, you will also receive an email explaining the process, and another confirming your airdrop.
-
-That’s it! You can direct questions as follows:
-
--   Email update requests: [https://forms.gle/xExFPZnANkZHKAt56](https://forms.gle/xExFPZnANkZHKAt56)
--   General questions:  [redemptions@ironfish.network](redemptions@ironfish.network)
-
-Thank you for your loyalty and commitment as we’ve built towards mainnet! This is just the first step of our mainnet journey — there’s still plenty more to come over the next year so stay tuned. 🏃🐟
