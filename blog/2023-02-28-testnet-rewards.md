@@ -45,5 +45,10 @@ Incentivized testnet reward tokens are limited to one redemption per user. In ad
 
 This all leads to the distribution of 940,000 mainnet Iron Fish tokens. We are very excited to kick off Mainnet with an event to reward all our loyal testnet participants! See the table below for the rewards schedule (you can also check out our [Testnet About page](https://testnet.ironfish.network/about) for more on testnet guidelines).
 
-
+| Pool | Token Allocation | Passed KYC Deadline | Distribution Date |
+|---|---:|---:|---:|
+| Pull Requests | 105,000 | March 13, 2023 | March 16, 2023 |
+| Phase 1 | 420,000 | March 19, 2023 | March 23, 2023 |
+| Phase 2 | 210,000 | March 26, 2023 | March 30, 2023 |
+| Phase 3 | 210,000 | March 26, 2023 | April 6, 2023 |
 
