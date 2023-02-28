@@ -56,4 +56,20 @@ This all leads to the distribution of 940,000 mainnet Iron Fish tokens. We are v
 
  - *You only need to pass KYC once. If you participated in Phases 1 and 2, and you pass KYC by 19 March, you will receive an allocation for
    both phases in which you participated. You don't need to repeat the KYC process.*
- - The KYC date indicated is the date by when KYC must be passed. Apply early for KYC to leave sufficient time for an application to process.
+ - *The KYC date indicated is the date by when KYC must be passed. Apply early for KYC to leave sufficient time for an application to process.*
+
+That’s it! You can direct questions as follows:
+
+-   Email update requests: [https://forms.gle/xExFPZnANkZHKAt56](https://forms.gle/xExFPZnANkZHKAt56)
+-   General questions:  [redemptions@ironfish.network](mailto:redemptions@ironfish.network)
+
+Thank you for your loyalty and commitment as we’ve built towards mainnet! This is just the first step of our mainnet journey — there’s still plenty more to come over the next year so stay tuned. 🏃🐟
+
+
+• 🎤 [Discord](https://discord.ironfish.network)
+
+• 🐦 [Twitter](https://twitter.com/ironfishcrypto)
+
+• 🚀 [Careers](https://ironfish.network/careers)
+
+• 📧 [Email Updates](https://ironfish.network/#email-signup)
