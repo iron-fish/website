@@ -52,3 +52,8 @@ This all leads to the distribution of 940,000 mainnet Iron Fish tokens. We are v
 | Phase 2 | 210,000 | March 26, 2023 | March 30, 2023 |
 | Phase 3 | 210,000 | March 26, 2023 | April 6, 2023 |
 
+***Please note:***
+
+ - *You only need to pass KYC once. If you participated in Phases 1 and 2, and you pass KYC by 19 March, you will receive an allocation for
+   both phases in which you participated. You don't need to repeat the KYC process.*
+ - The KYC date indicated is the date by when KYC must be passed. Apply early for KYC to leave sufficient time for an application to process.
