@@ -27,7 +27,7 @@ Throughout the 3 testnet Phases:
 
 ## What's Next?
 
-This week, we will roll out a Redemptions Portal — testnet participants will use this portal to apply for the mainnet token aidrop. In preparation for this, please confirm you can log in on [https://ironfish.network](https://ironfish.network). Doing so will also confirm your email address, which we will use for communication throughout the process.
+This week, we will roll out a Redemptions Portal — testnet participants will use this portal to apply for the mainnet token airdrop. In preparation for this, please confirm you can log in on [https://ironfish.network](https://ironfish.network). Doing so will also confirm your email address, which we will use for communication throughout the process.
 
 When the Portal is released, we will announce it on our Discord and send emails out to users with verified emails and testnet points. Once you’re notified, head to the [Redemption Portal](https://testnet.ironfish.network/redemption) and complete the KYC process.
 
@@ -43,7 +43,7 @@ Incentivized testnet reward tokens are limited to one redemption per user. In ad
 
 ### Airdrops
 
-This all leads to the distribution of 940,000 mainnet Iron Fish tokens. We are very excited to kick off Mainnet with an event to reward all our loyal testnet participants! See the table below for the rewards schedule (you can also check out our [Testnet About page](https://testnet.ironfish.network/about) for more on testnet guidelines).
+This all leads to the distribution of *940,000* mainnet Iron Fish tokens. We are very excited to kick off Mainnet with an event to reward all our loyal testnet participants! See the table below for the rewards schedule (you can also check out our [Testnet About page](https://testnet.ironfish.network/about) for more on testnet guidelines).
 
 | Pool | Token Allocation | Passed KYC Deadline | Distribution Date |
 |---|---:|---:|---:|
