@@ -48,9 +48,9 @@ This all leads to the distribution of 940,000 mainnet Iron Fish tokens. We are v
 
 This all leads to the distribution of 940,000 mainnet Iron Fish tokens. We are very excited to kick off Mainnet with an event to reward all our loyal testnet participants! See the table below for the rewards schedule (you can also check out our [Testnet About page](https://testnet.ironfish.network/about) for more on testnet guidelines).
 
-\* You only need to pass KYC once. If you participated in Phases 1 and 2, and you pass KYC by 19 March, you will receive an allocation for both phases in which you participated. You don't need to repeat the KYC process.
+* You only need to pass KYC once. If you participated in Phases 1 and 2, and you pass KYC by 19 March, you will receive an allocation for both phases in which you participated. You don't need to repeat the KYC process.
 
-\** The date indicated is the date by when KYC must be passed. Apply early for KYC to leave sufficient time for an application to process.
+** The date indicated is the date by when KYC must be passed. Apply early for KYC to leave sufficient time for an application to process.
 
 If you are eligible for an airdrop, you will also receive an email explaining the process, and another confirming your airdrop.
 
