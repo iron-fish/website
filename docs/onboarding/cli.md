@@ -113,7 +113,7 @@ Join a mining pool with your default account public address.
 ironfish miners:start -p <ip-address-of-pool>
 ```
 
-Join a mining pool with setting the number of CPU threads to utilize for mining <-t> and setting other than your default account address for block rewards <-a>.
+Setting the number of CPU threads to utilize for mining <-t> and setting other than your default account address for block rewards <-a>.
 
 ```sh
 ironfish miners:start -t <number-of-threads-to-use> -a <your-address-to-receive-rewards>
