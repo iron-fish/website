@@ -16,6 +16,7 @@ module.exports = {
     'onboarding/start-an-iron-fish-node',
     'onboarding/new-account-iron-fish',
     'onboarding/send-receive-iron-fish-transactions',
+    'onboarding/offline-transaction-signing',
     'onboarding/iron-fish-explorer',
     'onboarding/miner-iron-fish',
     'onboarding/iron-fish-node-health',
