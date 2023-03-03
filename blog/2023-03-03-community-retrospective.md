@@ -28,7 +28,7 @@ Collaborating on creative work helps give cohesion to growing communities. Wheth
 
 But most of all, the work you've produced shows that you get it. With you, we're on a mission to truly encrypt crypto, to make digital transactions safer and easier to access.
 
-![](/img/blog/community-retrospective/Explainers.png
+![](/img/blog/community-retrospective/Explainers.png)
 **Credits, from L-R: 1) Shelest_artem#5297 2) Mary75#0325**
 
 And then there's of course the humor. At tense moments, when we're sprinting to meet a deadline or to address a bug, memes and tongue-in-cheek images have made us laugh. 
