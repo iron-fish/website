@@ -6,11 +6,6 @@ description: Offline Transaction Signing | Iron Fish Onboarding
 hide_table_of_contents: false
 ---
 
-import Terminal from '../../src/theme/components/Terminal/Terminal'
-import Send from '../../src/theme/components/Terminal/Wallet/Send'
-import Transaction from '../../src/theme/components/Terminal/Wallet/Transaction'
-import Transactions from '../../src/theme/components/Terminal/Wallet/Transactions'
-
 Iron Fish allows you to create an account on a computer disconnected from the Internet, but still send and receive transactions with that account. Sending transactions by using an account stored on a disconnected computer is known as "offline signing."
 
 When signing transactions offline, you'll need to run two Iron Fish nodes:
