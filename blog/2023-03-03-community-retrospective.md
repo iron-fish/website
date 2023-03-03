@@ -7,7 +7,7 @@ author_description: Neil is Content Marketing Manager at Iron Fish
 hide_table_of_contents: true
 title: "Iron Fish Community Retrospective"
 description: Celebrating a Creative Community
-image: /img/blog/spotlight-eloquent/eloquent.png
+image: /img/blog/community-retrospective/comm-retrospective.png
 tags: [ironfish, community, artwork, memes]
 ---
 
