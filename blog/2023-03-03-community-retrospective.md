@@ -58,3 +58,14 @@ Getting ready for mainnet feels like getting ready for an important life event, 
 
 ![](/img/blog/community-retrospective/DSP.gif)
 ###### **Credit:Digital Spaceport -WILL NOT DM U#3869**
+
+
+
+• 🎤 [Discord](https://discord.ironfish.network)
+
+• 🐦 [Twitter](https://twitter.com/ironfishcrypto)
+
+• 🚀 [Careers](https://ironfish.network/careers)
+
+• 📧 [Email Updates](https://ironfish.network/#email-signup)
+
