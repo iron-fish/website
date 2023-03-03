@@ -33,3 +33,5 @@ But most of all, the work you've produced shows that you get it. With you, we're
 
 And then there's of course the humor. At tense moments, when we're sprinting to meet a deadline or to address a bug, memes and tongue-in-cheek images have made us laugh. 
 
+![](/img/blog/Row1.png)
+
