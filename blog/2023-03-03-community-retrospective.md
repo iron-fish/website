@@ -56,8 +56,6 @@ The images here fall far short of capturing your productivity. You've also made 
 Right now is a great time to take stock of the people that have helped us get where we are, and the fun moments we've had along the way. Thank you, and we can't wait to see what you make as we continue to grow!
 
 
-![](/img/blog/community-retrospective/DSP.gif)
-###### **Credit: Digital Spaceport -WILL NOT DM U#3869**
 
 
 
