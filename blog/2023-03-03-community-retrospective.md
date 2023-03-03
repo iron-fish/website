@@ -17,7 +17,7 @@ Do you know that feeling you get when you pick up your mobile phone and scroll a
 
 | ![](/img/blog/community-retrospective/kupuyc-2-2-22-fishgif.png) | ![](/img/blog/community-retrospective/fish33.gif) |
 |---|---|
-**Kupuyc#8730**
+**Credit:Kupuyc#8730**
 
 In meme, art, and multimedia contests – and beyond – the Iron Fish community has long been a creative force. The countless videos, images, and artwork that you've made are for us a record of our journey to mainnet. If we could, we'd include all of them here. But that would make for a long article… and we've got to get ready for [March 14th!](https://twitter.com/ironfishcrypto/status/1630301248695017475)
 
@@ -34,4 +34,8 @@ But most of all, the work you've produced shows that you get it. With you, we're
 And then there's of course the humor. At tense moments, when we're sprinting to meet a deadline or to address a bug, memes and tongue-in-cheek images have made us laugh. 
 
 ![](/img/blog/community-retrospective/Row1.png)
-
+###### Credits, from L-R: 1)hrtz#5585 2)slafi#7815
+![](/img/blog/community-retrospective/Row2.png)
+###### Credits, from L-R: 1)Nazgul|RØ CRYPTØ#3906 2)[Sergei](https://twitter.com/ZUUAtqCvqoKX1vR/status/1621040521652350977?s=20&t=r5ShaPBxfJOKnKdCt-j_fw)
+![](/img/blog/community-retrospective/Row3.png)
+###### Credits, from L-R: 1)AbsCRP#1093 2)arworld#513
