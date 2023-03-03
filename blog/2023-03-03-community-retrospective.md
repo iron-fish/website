@@ -47,4 +47,10 @@ We couldn't imagine having a more talented community, and we've been thrilled to
 
 But of course, the images here fall far short of capturing your productivity. You've also made [t-shirts](https://twitter.com/sho_winner/status/1496402048530763781?s=20&t=NDPJjyQDrxFOxhwGT9SUvg), social media stickers, and countless videos and GIFS – there are too many to list – but here are just two by [Val](https://twitter.com/Val_Savchuk/status/1495757652139388929?t=d7GgFuj9mcMiCEP6dUDGiw&s=19) and [KriksG](https://twitter.com/KriksG/status/1495051057373798403?s=20&t=OT89B6vgevYfX4RihyLMoA).
 
+![](/img/blog/community-retrospective/Row6.png)
+###### Credits, from L-R: 1)[Telegram stickers by Encipher](https://twitter.com/encipher4836/status/1494822613750890497?s=20&t=WTTobXbY0NlT0FNjNk_bBg) 2)Iron Fish wallpapers by [TimGuruGuru#7127](https://twitter.com/timguruguru/status/1494791266827182087?s=20&t=3MR76Oaq9Z1MmE8GUjlpew)
+
 Getting ready for mainnet feels like getting ready for an important life event, and it's a moment when you take stock of the people that have helped you get where you are. The Ironfish community is 'our people,' we wouldn't be here without you. 
+
+![](/img/blog/community-retrospective/DSP.gif)
+###### **Credit:Digital Spaceport -WILL NOT DM U#3869**
