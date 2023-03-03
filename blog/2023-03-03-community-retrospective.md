@@ -17,19 +17,19 @@ Do you know that feeling you get when you pick up your mobile phone and scroll a
 
 | ![](/img/blog/community-retrospective/kupuyc-2-2-22-fishgif.png) | ![](/img/blog/community-retrospective/fish33.gif) |
 |---|---|
-**Credit:Kupuyc#8730**
+###### **Credit:Kupuyc#8730**
 
 In meme, art, and multimedia contests – and beyond – the Iron Fish community has long been a creative force. The countless videos, images, and artwork that you've made are for us a record of our journey to mainnet. If we could, we'd include all of them here. But that would make for a long article… and we've got to get ready for [March 14th!](https://twitter.com/ironfishcrypto/status/1630301248695017475)
 
  ![](/img/blog/community-retrospective/Panel.png)
-**Credits, from L-R: 1) Forsan.d#4345 2) Evgijasu#1135 3) [Aleksei tv0roq Emelianov#5830](https://twitter.com/tv0roqTV/status/1497208142182105094?s=20&t=O8JHixU4UBIiSYBzKK14RA) 4) [Аскал](https://twitter.com/askatariko/status/1523272823862874112?s=20&t=xs3_8XA0foT0h7ceqY0miw)**
+###### **Credits, from L-R: 1) Forsan.d#4345 2) Evgijasu#1135 3) [Aleksei tv0roq Emelianov#5830](https://twitter.com/tv0roqTV/status/1497208142182105094?s=20&t=O8JHixU4UBIiSYBzKK14RA) 4) [Аскал](https://twitter.com/askatariko/status/1523272823862874112?s=20&t=xs3_8XA0foT0h7ceqY0miw)**
 
 Collaborating on creative work helps give cohesion to growing communities. Whether it's a meme or artwork, the energy you've brought to the project has lit up our Discord and given a boost to the team. 
 
 But most of all, the work you've produced shows that you get it. With you, we're on a mission to truly encrypt crypto, to make digital transactions safer and easier to access.
 
 ![](/img/blog/community-retrospective/Explainers.png)
-**Credits, from L-R: 1) Shelest_artem#5297 2) Mary75#0325**
+###### **Credits, from L-R: 1) Shelest_artem#5297 2) Mary75#0325**
 
 And then there's of course the humor. At tense moments, when we're sprinting to meet a deadline or to address a bug, memes and tongue-in-cheek images have made us laugh. 
 
@@ -39,3 +39,12 @@ And then there's of course the humor. At tense moments, when we're sprinting to 
 ###### Credits, from L-R: 1)Nazgul|RØ CRYPTØ#3906 2)[Sergei](https://twitter.com/ZUUAtqCvqoKX1vR/status/1621040521652350977?s=20&t=r5ShaPBxfJOKnKdCt-j_fw)
 ![](/img/blog/community-retrospective/Row3.png)
 ###### Credits, from L-R: 1)AbsCRP#1093 2)arworld#513
+
+We couldn't imagine having a more talented community, and we've been thrilled to see the ways you've brought Iron Fish into the places you live as well.
+
+![](/img/blog/community-retrospective/Row4.png)
+###### Credits, from L-R: 1)[SpaceGem](https://twitter.com/SpaceGemBlog/status/1573406920563621888) 2)DD57#5953
+
+But of course, the images here fall far short of capturing your productivity. You've also made [t-shirts](https://twitter.com/sho_winner/status/1496402048530763781?s=20&t=NDPJjyQDrxFOxhwGT9SUvg), social media stickers, and countless videos and GIFS – there are too many to list – but here are just two by [Val](https://twitter.com/Val_Savchuk/status/1495757652139388929?t=d7GgFuj9mcMiCEP6dUDGiw&s=19) and [KriksG](https://twitter.com/KriksG/status/1495051057373798403?s=20&t=OT89B6vgevYfX4RihyLMoA).
+
+Getting ready for mainnet feels like getting ready for an important life event, and it's a moment when you take stock of the people that have helped you get where you are. The Ironfish community is 'our people,' we wouldn't be here without you. 
