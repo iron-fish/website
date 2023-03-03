@@ -19,6 +19,17 @@ Do you know that feeling you get when you pick up your mobile phone and scroll a
 |---|---|
 **Kupuyc#8730**
 
-In meme, art, and multimedia contests –  and beyond – the Iron Fish community has long been a creative force. The countless videos, images, and artwork that you've made are for us a record of our journey to mainnet. If we could, we'd include all of them here. But that would make for a long article… and we've got to get ready for March 14th! 
+In meme, art, and multimedia contests – and beyond – the Iron Fish community has long been a creative force. The countless videos, images, and artwork that you've made are for us a record of our journey to mainnet. If we could, we'd include all of them here. But that would make for a long article… and we've got to get ready for [March 14th!](https://twitter.com/ironfishcrypto/status/1630301248695017475)
 
+ ![](/img/blog/community-retrospective/panel.png
+**Credits, from L-R: 1) Forsan.d#4345 2) Evgijasu#1135 3) [Aleksei tv0roq Emelianov#5830](https://twitter.com/tv0roqTV/status/1497208142182105094?s=20&t=O8JHixU4UBIiSYBzKK14RA) 4) [Аскал](https://twitter.com/askatariko/status/1523272823862874112?s=20&t=xs3_8XA0foT0h7ceqY0miw)**
+
+Collaborating on creative work helps give cohesion to growing communities. Whether it's a meme or artwork, the energy you've brought to the project has lit up our Discord and given a boost to the team. 
+
+But most of all, the work you've produced shows that you get it. With you, we're on a mission to truly encrypt crypto, to make digital transactions safer and easier to access.
+
+![](/img/blog/community-retrospective/Explainers.png
+**Credits, from L-R: 1) Shelest_artem#5297 2) Mary75#0325**
+
+And then there's of course the humor. At tense moments, when we're sprinting to meet a deadline or to address a bug, memes and tongue-in-cheek images have made us laugh. 
 
