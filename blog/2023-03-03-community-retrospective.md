@@ -21,7 +21,7 @@ Do you know that feeling you get when you pick up your mobile phone and scroll a
 
 In meme, art, and multimedia contests – and beyond – the Iron Fish community has long been a creative force. The countless videos, images, and artwork that you've made are for us a record of our journey to mainnet. If we could, we'd include all of them here. But that would make for a long article… and we've got to get ready for [March 14th!](https://twitter.com/ironfishcrypto/status/1630301248695017475)
 
- ![](/img/blog/community-retrospective/panel.png
+ ![](/img/blog/community-retrospective/panel.png)
 **Credits, from L-R: 1) Forsan.d#4345 2) Evgijasu#1135 3) [Aleksei tv0roq Emelianov#5830](https://twitter.com/tv0roqTV/status/1497208142182105094?s=20&t=O8JHixU4UBIiSYBzKK14RA) 4) [Аскал](https://twitter.com/askatariko/status/1523272823862874112?s=20&t=xs3_8XA0foT0h7ceqY0miw)**
 
 Collaborating on creative work helps give cohesion to growing communities. Whether it's a meme or artwork, the energy you've brought to the project has lit up our Discord and given a boost to the team. 
