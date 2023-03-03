@@ -14,3 +14,9 @@ tags: [ironfish, community, artwork, memes]
 
 
 
+
+
+
+
+| ![](/img/blog/community-retrospective/Mary75.png) | ![](/img/blog/community-retrospective/shelest_artem-78-7-2022.png) |
+|---|---|
