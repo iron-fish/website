@@ -19,6 +19,7 @@ Do you know that feeling you get when you pick up your mobile phone and scroll a
 |---|---|
 ###### **Credit:Kupuyc#8730**
 
+## Creativity
 In meme, art, and multimedia contests – and beyond – the Iron Fish community has long been a creative force. The countless videos, images, and artwork that you've made are for us a record of our journey to mainnet. If we could, we'd include all of them here. But that would make for a long article… and we've got to get ready for [March 14th!](https://twitter.com/ironfishcrypto/status/1630301248695017475)
 
  ![](/img/blog/community-retrospective/Panel.png)
@@ -26,11 +27,13 @@ In meme, art, and multimedia contests – and beyond – the Iron Fish community
 
 Collaborating on creative work helps give cohesion to growing communities. Whether it's a meme or artwork, the energy you've brought to the project has lit up our Discord and given a boost to the team. 
 
-But most of all, the work you've produced shows that you get it. With you, we're on a mission to truly encrypt crypto, to make digital transactions safer and easier to access.
+## Learning
+But most of all, the work you've produced shows that you _get it_. With you, we're on a mission to truly encrypt crypto, to make digital transactions safer and easier to access.
 
 ![](/img/blog/community-retrospective/Explainers.png)
 ###### **Credits, from L-R: 1) Shelest_artem#5297 2) Mary75#0325**
 
+## Humor
 And then there's of course the humor. At tense moments, when we're sprinting to meet a deadline or to address a bug, memes and tongue-in-cheek images have made us laugh. 
 
 ![](/img/blog/community-retrospective/Row1.png)
@@ -40,6 +43,7 @@ And then there's of course the humor. At tense moments, when we're sprinting to 
 ![](/img/blog/community-retrospective/Row3.png)
 ###### Credits, from L-R: 1)AbsCRP#1093 2)arworld#513
 
+## Building
 We couldn't imagine having a more talented community, and we've been thrilled to see the ways you've brought Iron Fish into the places you live as well.
 
 ![](/img/blog/community-retrospective/Row4.png)
