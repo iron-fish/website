@@ -12,12 +12,16 @@ tags: [ironfish, community, artwork, memes]
 ---
 
 
-
-
-<div style="display:flex">
-     <div style="flex:1;padding-right:10px;">
-          <img src="/img/blog/community-retrospective/Mary75.png" width="400"/>
-     </div>
-     <div style="flex:1;padding-left:10px;">
-          <img src="/img/blog/community-retrospective/shelest_artem-78-7-2022.png" width="400"/>
+<div id="image-table">
+    <table>
+	    <tr>
+    	    <td style="padding:10px">
+        	    <img src="/img/blog/community-retrospective/Mary75.png" width="400"/>
+      	    </td>
+            <td style="padding:10px">
+            	<img src="/img/blog/community-retrospective/shelest_artem-78-7-2022.png" width="400"/>
+            </td>
+        </tr>
+    </table>
 </div>
+
