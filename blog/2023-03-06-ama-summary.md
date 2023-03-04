@@ -20,10 +20,10 @@ If you missed it, here are the questions by category and a summary of answers.
 -   [Where do you see Iron Fish in five years?](#where-do-you-see-iron-fish-in-five-years)
 -   [What are some of Iron Fish's biggest challenges, and how have you addressed them?](#what-are-some-of-iron-fishs-biggest-challenges-and-how-have-you-addressed-them)
 -   [I don't understand how you're a privacy company but acting centralized.](#i-dont-understand-how-youre-a-privacy-company-but-acting-centralized)
--   [How do you maintain such positivity in the team? It seems that you're always interested in working together with the community.](#how-do-you-maintain-such-positivity-in-the-team-it-seems-that-you're-always-interested-in-working-together-with-the-community)
+-   [How do you maintain such positivity in the team? It seems that you're always interested in working together with the community.](#how-do-you-maintain-such-positivity-in-the-team-it-seems-that-youre-always-interested-in-working-together-with-the-community)
     
 ## Tokenomics, Tokens, and Funding
--   [Will you be releasing information about Iron Fish tokenomics? What are the team and investor allocations and vesting periods? What is the total supply, and what will the initial circulating supply be?](#will-you-be-releasing-information-about-ironfish-tokenomics-what-are-the-team-and-investor-allocations-and-vesting-periods-what-is-the-total-supply-and-what-will-the-initial-circulating-supply-be)
+-   [Will you be releasing information about Iron Fish tokenomics? What are the team and investor allocations and vesting periods? What is the total supply, and what will the initial circulating supply be?](#will-you-be-releasing-information-about-iron-fish-tokenomics-what-are-the-team-and-investor-allocations-and-vesting-periods-what-is-the-total-supply-and-what-will-the-initial-circulating-supply-be)
 -   [When will Iron Fish be listed on exchanges? Will there be a public sale?](#when-will-iron-fish-be-listed-on-exchanges-will-there-be-a-public-sale)
 -   [Will there be a series B funding round in the near future?](#will-there-be-a-series-b-funding-round-in-the-near-future)
     
