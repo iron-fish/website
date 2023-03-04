@@ -16,8 +16,8 @@ On February 23, 2023, Iron Fish hosted a [YouTube live session](https://www.yout
 If you missed it, here are the questions by category and a summary of answers.
 
 ## Iron Fish Goals and Organization
--   [What are the key goals for Iron Fish after mainnet?](#what-are-the-key-goals-for-iron-fish-after-mainnet?)
--   [Where do you see Iron Fish in five years?](#where-do-you-see-iron-fish-in-five-years?)
+-   [What are the key goals for Iron Fish after mainnet?](#what-are-the-key-goals-for-iron-fish-after-mainnet)
+-   [Where do you see Iron Fish in five years?](#where-do-you-see-iron-fish-in-five-years)
 -   What are some of Iron Fish's biggest challenges, and how have you addressed them?
 -   I don't understand how you're a privacy company but acting centralized.
 -   How do you maintain such positivity in the team? It seems that you're always interested in working together with the community.
