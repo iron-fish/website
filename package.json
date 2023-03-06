@@ -2,7 +2,7 @@
   "name": "iron-fish",
   "version": "0.0.0",
   "engines": {
-    "node": "16.x"
+    "node": "18.x"
   },
   "private": true,
   "scripts": {
@@ -14,8 +14,8 @@
     "serve": "docusaurus serve"
   },
   "dependencies": {
-    "@docusaurus/core": "2.0.0-alpha.64",
-    "@docusaurus/preset-classic": "2.0.0-alpha.64",
+    "@docusaurus/core": "2.2.0-alpha.64",
+    "@docusaurus/preset-classic": "2.2.0-alpha.64",
     "@mdx-js/react": "^1.6.22",
     "axios": "^0.21.1",
     "clsx": "^1.1.1",
