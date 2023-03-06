@@ -12,12 +12,12 @@ module.exports = {
   ],
   onboarding: [
     'onboarding/iron-fish-tutorial',
-    'onboarding/installation-iron-fish',
     {
       type: 'category',
-      label: 'Installation',
+      label: 'Install',
       collapsed: false,
       items: [
+        'onboarding/installation-iron-fish',
         'onboarding/installation-iron-fish-docker',
         'onboarding/installation-iron-fish-source',
         'onboarding/installation-iron-fish-homebrew',

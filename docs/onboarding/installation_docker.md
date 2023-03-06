@@ -1,7 +1,7 @@
 ---
 id: installation-iron-fish-docker
 title: Iron Fish Installation
-sidebar_label: Installation
+sidebar_label: Install using Docker
 description: Iron Fish Installation | Iron Fish Onboarding
 hide_table_of_contents: false
 
@@ -9,10 +9,6 @@ hide_table_of_contents: false
 
 import Terminal from '../../src/theme/components/Terminal/Terminal'
 import Ironfish from '../../src/theme/components/Terminal/Ironfish'
-
-## Alternative Installation Methods
-
-You can also get started with Iron Fish by using Docker or running from source. If you are using an Intel-based macOS system, we support Homebrew as an alternative installation method.
 
 ### Using Docker
 
