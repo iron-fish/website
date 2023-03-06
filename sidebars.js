@@ -16,8 +16,8 @@ module.exports = {
       type: 'category',
       label: 'Install',
       collapsed: false,
+      link: {type: 'doc', id: 'onboarding/installation-iron-fish'},
       items: [
-        'onboarding/installation-iron-fish',
         'onboarding/installation-iron-fish-docker',
         'onboarding/installation-iron-fish-source',
         'onboarding/installation-iron-fish-homebrew',
