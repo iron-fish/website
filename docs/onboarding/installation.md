@@ -4,6 +4,7 @@ title: Iron Fish Installation
 sidebar_label: Installation
 description: Iron Fish Installation | Iron Fish Onboarding
 hide_table_of_contents: false
+
 ---
 
 import Terminal from '../../src/theme/components/Terminal/Terminal'

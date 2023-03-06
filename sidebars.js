@@ -13,6 +13,16 @@ module.exports = {
   onboarding: [
     'onboarding/iron-fish-tutorial',
     'onboarding/installation-iron-fish',
+    {
+      type: 'category',
+      label: 'Installation',
+      collapsed: false,
+      items: [
+        'onboarding/installation-iron-fish-docker',
+        'onboarding/installation-iron-fish-source',
+        'onboarding/installation-iron-fish-homebrew',
+      ],
+    },
     'onboarding/start-an-iron-fish-node',
     'onboarding/new-account-iron-fish',
     'onboarding/send-receive-iron-fish-transactions',
