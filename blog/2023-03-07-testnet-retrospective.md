@@ -37,7 +37,7 @@ Things moved incredibly quickly, and we're grateful for the support that we enjo
 
 [Link](https://twitter.com/leanthebean/status/1379524165523279874)
 
-## Testnet Phase 1
+## Incentivized Testnet Phase 1
 
 In November 2021, Iron Fish secured [Series A funding](https://ironfish.network/blog/2021/11/30/series-a-incentivized-testnet) that supported rapid growth and the launch of the Incentivized Testnet Phase (December 1, 2021–March 11, 2022).
 
@@ -82,7 +82,7 @@ We also know that late 2022 had its challenging moments. More than ever, we saw 
 
 [Link](https://twitter.com/ironfishcrypto/status/1592636602500931585)
 
-## Testnet Phase 3
+## Incentivized Testnet Phase 3
 
 In Phase 3 (January 18, 2023–March 7, 2023), we refined [multi-asset functionality](https://ironfish.network/blog/2023/01/13/multi-asset-phase3)  and grew our community to over  **43,0000** Discord members!
 In Phase 3:
