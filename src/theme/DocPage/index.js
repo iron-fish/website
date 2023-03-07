@@ -8,7 +8,7 @@
 // Nothing in this file has been modified
 // only CSS
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import {MDXProvider} from '@mdx-js/react';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import renderRoutes from '@docusaurus/renderRoutes';
@@ -43,6 +43,21 @@ function DocPageContent({currentDocRoute, versionMetadata, children}) {
   const {permalinkToSidebar, docsSidebars, version, isLast} = versionMetadata;
   const sidebarName = permalinkToSidebar[currentDocRoute.path];
   const sidebar = docsSidebars[sidebarName];
+
+  useEffect(() => {
+    const activeClass = 'active';
+    const menuLinks = [...document.querySelectorAll('.menu__link')];
+    menuLinks.forEach((link) => {
+      link.classList.remove(activeClass)
+    });
+    const activeItem = menuLinks.find((item) => {
+      return window.location.href.endsWith(item.href)
+    })
+
+    if (activeItem) {
+      activeItem.classList.add(activeClass);
+    }
+  })
 
   return (
     <>

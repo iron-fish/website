@@ -21,17 +21,17 @@ module.exports = {
         {
           type: 'link',
           label: 'Install using Docker',
-          href: '#using-docker'
+          href: '/docs/onboarding/installation-iron-fish#using-docker'
         },
         {
           type: 'link',
           label: 'Install from source',
-          href: '#from-source'
+          href: '/docs/onboarding/installation-iron-fish#from-source'
         },
         {
           type: 'link',
           label: 'Install with Homebrew',
-          href: '#homebrew-macos'
+          href: '/docs/onboarding/installation-iron-fish#homebrew-macos'
         },
       ],
     },

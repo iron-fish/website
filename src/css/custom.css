@@ -400,6 +400,10 @@ ol ol {
   font-size: 16px;
   text-decoration: none;
 }
+.menu__link.active {
+  color: #000;
+  text-decoration: underline;
+}
 .table-of-contents__link:hover,
 .menu__link:hover {
   text-decoration: underline;
