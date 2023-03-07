@@ -224,34 +224,6 @@ function Home() {
         </div>
       </section>
       <main>
-        <section className={clsx(styles.section, styles.sectionTestnet, 'sectionTestnet')}>
-          <CustomBox>
-
-            <div className={clsx(styles.sectionContainer, styles.sectionCardContainer)}>
-              <div className={clsx(styles.sectionContent, styles.sectionCardContent)}>
-                <div>
-                  <div className={clsx(styles.sectionTitle, styles.sectionCardTitle)}>
-                    Incentivized Testnet Phase 3 has started!
-                  </div>
-                  <p className={clsx(styles.sectionDescription, styles.sectionCardDescription)}>
-                    Join the final phase and become part of our community. Now including multi-asset, our testnet is ready for you to mint and burn assets, find bugs, and more. Start earning points that we’ll translate into tokens upon mainnet launch.
-                  </p>
-                  <Link
-                    className={clsx(styles.button, "button button--outline")}
-                    to="https://testnet.ironfish.network/about"
-                  >
-                    {width < 550 ? "Join the testnet": "Join the Incentivized Testnet"}
-                  </Link>
-                </div>
-              </div>
-              <div />
-              <div
-                className={clsx(styles.sectionImg, styles.sectionTestnetImg)}
-              />
-            </div>
-          </ CustomBox>
-
-        </section>
         {features &&
           features.length > 0 &&
           features.map(props => <Feature key={props.className} {...props} />)}
