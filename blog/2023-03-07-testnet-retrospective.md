@@ -15,7 +15,7 @@ The Iron Fish mainnet launches March 14th! With only a week to go, let’s take 
 
 In this post, we’ll go over our testnet numbers, but also share some tweets, shoutouts, and images that stand out. 
 
-# Incentivised Testnet Launch
+# Incentivized Testnet Launch
 
 The first phase of our testnet launched in early 2021.
 
