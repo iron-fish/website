@@ -400,7 +400,7 @@ ol ol {
   font-size: 16px;
   text-decoration: none;
 }
-.menu__link.active {
+.menu__link.active-item {
   color: #000;
   text-decoration: underline;
 }

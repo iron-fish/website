@@ -45,8 +45,11 @@ function DocPageContent({currentDocRoute, versionMetadata, children}) {
   const sidebar = docsSidebars[sidebarName];
 
   useEffect(() => {
-    const activeClass = 'active';
+    const activeClass = 'active-item';
     const menuLinks = [...document.querySelectorAll('.menu__link')];
+
+    console.log(menuLinks)
+
     menuLinks.forEach((link) => {
       link?.classList?.remove(activeClass)
     });
