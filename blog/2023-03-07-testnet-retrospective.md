@@ -15,18 +15,18 @@ tags: [ironfish, testnet, mainnet]
 
 The first phase of our testnet launched in early 2021.
 
-[](/img/blog/testnet-retrospective/first-testnet.png)
+![](/img/blog/testnet-retrospective/first-testnet.png)
 **[Link](https://twitter.com/ironfishcrypto/status/1379449463517847562)**
 
 At that point, Iron Fish already had an organically growing community.
 
-[](/img/blog/testnet-retrospective/node-firsttestnet.png)
+![](/img/blog/testnet-retrospective/node-firsttestnet.png)
 
 Things moved incredibly quickly, and we're grateful for the support that we enjoyed from both our community and fellow builders in the space. 
 
-[](/img/blog/testnet-retrospective/zcash1.png)
+![](/img/blog/testnet-retrospective/zcash1.png)
 
-[](/img/blog/testnet-retrospective/zcash2.png)
+![](/img/blog/testnet-retrospective/zcash2.png)
 
 ## Testnet Phase 1
 
@@ -44,12 +44,12 @@ Check out a few of our Phase 1 [highlighted community contributions](https://twi
 
 This testnet phase surpassed all expectations, and as the community grew, we grew as a project and worked to define a culture that aligns with our goal to bring encrypted blockchain transactions to all of web3.   
 
-[](/img/blog/testnet-retrospective/values.png)
+![](/img/blog/testnet-retrospective/values.png)
 [Link](https://twitter.com/ironfishcrypto/status/1486034402404671489)
 
 We celebrated milestones privately and publicly and, as always, drew energy and inspiration from our interactions with the community.
 
-[](/img/blog/testnet-retrospective/comm-kudos.png)
+![](/img/blog/testnet-retrospective/comm-kudos.png)
 
 
 
