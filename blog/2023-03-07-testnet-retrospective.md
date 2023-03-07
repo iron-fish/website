@@ -87,7 +87,7 @@ We also know that late 2022 had its challenging moments. More than ever, we saw 
 In Phase 3 (January 18, 2023–March 7, 2023), we refined [multi-asset functionality](https://ironfish.network/blog/2023/01/13/multi-asset-phase3)  and grew our community to over  43k Discord members!
 In Phase 3:
 
-Users 300k+ custom assets minted on the network
+Users minted 300k+ custom assets on the network
 -   We saw 60k+ concurrent nodes at peak    
 -   We [launched our Trusted Setup ceremony](https://www.youtube.com/watch?v=uZNuWFB_xbg), with 8656 contributions
     
