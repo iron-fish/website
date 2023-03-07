@@ -5,11 +5,15 @@ author_url: https://twitter.com/n_doshi_
 author_image_url: "/img/blog/Neil.png"
 author_description: Neil is Content Marketing Manager at Iron Fish
 hide_table_of_contents: true
-title: "Iron Fish Incentivized Testnet Retrospective"
+title: "Incentivized Testnet Retrospective"
 description: Highlights and Statistics
 image: /img/blog/testnet-retrospective/testnet-retrospective.png
 tags: [ironfish, testnet, mainnet]
 ---
+
+The Iron Fish mainnet launches March 14th! With only a week to go, let’s take a moment to celebrate how far we’ve come, and how much we’ve learned. 
+
+In this post, we’ll go over our testnet numbers, but also share some tweets, shoutouts, and images that stand out. 
 
 # Incentivised Testnet Launch
 
