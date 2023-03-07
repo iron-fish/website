@@ -43,11 +43,11 @@ In November 2021, Iron Fish secured [Series A funding](https://ironfish.network/
 
 Highlights include:
 
--   Our user base grew to include people from 156 countries!
--   18,000 community members joined our Discord.
--   Over 9,000 participants earned points on the leaderboard by contributing in some way to the network.
--   Over ~3000 nodes registered online via opt-in telemetry.
--   ~300 GitHub bug reports closed.
+-   Our user base grew to include people from **156** countries!
+-   **18,000** community members joined our Discord.
+-   **Over 9,000** participants earned points on the leaderboard by contributing in some way to the network.
+-   **Over 3000** nodes registered online via opt-in telemetry.
+-   **~300** GitHub bug reports closed.
     
 Check out a few of our Phase 1 [highlighted community contributions](https://twitter.com/ironfishcrypto/status/1516115934632714245).
 
@@ -65,10 +65,10 @@ We celebrated milestones privately and publicly and, as always, drew energy and 
 
 Phase 2 (May 10, 2022–November 15, 2022) was about stress testing the system. Thanks to you, we ran one of the largest testnets in all of crypto.
 
--   Phase 2 ended on November 15, 2022, with 31,207+ users on the leaderboard who contributed to the network.
--   Since the start of Phase 2, the Iron Fish network has processed 39,432,178 transactions (all shielded using zero-knowledge proofs, making Iron Fish the largest processor of ZKPs ever, to our knowledge)
--   At its peak, the Iron Fish community hosted ~11,000 concurrent nodes, second only to Bitcoin’s 15,000 typical concurrent nodes. 
--   The network regularly processed 300k transactions/day on average.
+-   Phase 2 ended on November 15, 2022, with **31,207+** users on the leaderboard who contributed to the network.
+-   Since the start of Phase 2, the Iron Fish network has processed **39,432,178** transactions (all shielded using zero-knowledge proofs, making Iron Fish the largest processor of ZKPs ever, to our knowledge)
+-   At its peak, the Iron Fish community hosted **~11,000** concurrent nodes, second only to Bitcoin’s 15,000 typical concurrent nodes. 
+-   The network regularly processed **300,000** transactions/day on average.
 
 ![](/img/blog/testnet-retrospective/EthGlobal.png)
 
@@ -84,12 +84,12 @@ We also know that late 2022 had its challenging moments. More than ever, we saw 
 
 ## Testnet Phase 3
 
-In Phase 3 (January 18, 2023–March 7, 2023), we refined [multi-asset functionality](https://ironfish.network/blog/2023/01/13/multi-asset-phase3)  and grew our community to over  43k Discord members!
+In Phase 3 (January 18, 2023–March 7, 2023), we refined [multi-asset functionality](https://ironfish.network/blog/2023/01/13/multi-asset-phase3)  and grew our community to over  **43,0000** Discord members!
 In Phase 3:
 
-Users minted 300k+ custom assets on the network
--   We saw 60k+ concurrent nodes at peak    
--   We [launched our Trusted Setup ceremony](https://www.youtube.com/watch?v=uZNuWFB_xbg), with 8656 contributions
+Users minted **300,000+** custom assets on the network
+-   We saw **60,000+** concurrent nodes at peak    
+-   We [launched our Trusted Setup ceremony](https://www.youtube.com/watch?v=uZNuWFB_xbg), with **8656** contributions
     
 Over the entire testnet, we totaled 50 million transactions 🎉
 
