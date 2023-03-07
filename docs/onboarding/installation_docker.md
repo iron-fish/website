@@ -1,6 +1,6 @@
 ---
 id: installation-iron-fish-docker
-title: Install Using Docket
+title: Iron Fish Installation
 sidebar_label: Install using Docker
 description: Iron Fish Installation | Iron Fish Onboarding
 hide_table_of_contents: false
@@ -9,6 +9,8 @@ hide_table_of_contents: false
 
 import Terminal from '../../src/theme/components/Terminal/Terminal'
 import Ironfish from '../../src/theme/components/Terminal/Ironfish'
+
+### Using Docker
 
 Run the Docker image from the GitHub registry, mounting the node's data directory into your home directory and using the host network. (Replace `<home-directory>` with `%USERPROFILE%` on Windows or `$HOME` on others)
 

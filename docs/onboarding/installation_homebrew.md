@@ -1,6 +1,6 @@
 ---
 id: installation-iron-fish-homebrew
-title: Install With Homebrew
+title: Iron Fish Installation
 sidebar_label: Install with Homebrew
 description: Iron Fish Installation | Iron Fish Onboarding
 hide_table_of_contents: false
@@ -9,6 +9,8 @@ hide_table_of_contents: false
 
 import Terminal from '../../src/theme/components/Terminal/Terminal'
 import Ironfish from '../../src/theme/components/Terminal/Ironfish'
+
+### Homebrew (macOS)
 
 > **Note:** Our Homebrew tap does not yet support **M1/arm64**. However, you can install Iron Fish directly [from the source](#from-source) or [use Docker](#using-docker) with `x86_64` support.
 
