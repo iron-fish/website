@@ -1,7 +1,7 @@
 ---
 id: installation-iron-fish
 title: Iron Fish Installation
-sidebar_label: Installation
+sidebar_label: Install
 description: Iron Fish Installation | Iron Fish Onboarding
 hide_table_of_contents: false
 ---

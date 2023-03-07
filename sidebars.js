@@ -14,7 +14,7 @@ module.exports = {
     'onboarding/iron-fish-tutorial',
     {
       type: 'category',
-      label: 'Install',
+      label: 'Installation',
       collapsed: false,
       items: [
         'onboarding/installation-iron-fish',
