@@ -20,17 +20,22 @@ In this post, we’ll go over our testnet numbers, but also share some tweets, s
 The first phase of our testnet launched in early 2021.
 
 ![](/img/blog/testnet-retrospective/first-testnet.png)
-**[Link](https://twitter.com/ironfishcrypto/status/1379449463517847562)**
+
+[Link](https://twitter.com/ironfishcrypto/status/1379449463517847562)
 
 At that point, Iron Fish already had an organically growing community.
 
 ![](/img/blog/testnet-retrospective/node-firsttestnet.png)
+
+[Link](https://twitter.com/ironfishcrypto/status/1379929192628822017)
 
 Things moved incredibly quickly, and we're grateful for the support that we enjoyed from both our community and fellow builders in the space. 
 
 ![](/img/blog/testnet-retrospective/zcash1.png)
 
 ![](/img/blog/testnet-retrospective/zcash2.png)
+
+[Link](https://twitter.com/leanthebean/status/1379524165523279874)
 
 ## Testnet Phase 1
 
@@ -49,6 +54,7 @@ Check out a few of our Phase 1 [highlighted community contributions](https://twi
 This testnet phase surpassed all expectations, and as the community grew, we grew as a project and worked to define a culture that aligns with our goal to bring encrypted blockchain transactions to all of web3.   
 
 ![](/img/blog/testnet-retrospective/values.png)
+
 [Link](https://twitter.com/ironfishcrypto/status/1486034402404671489)
 
 We celebrated milestones privately and publicly and, as always, drew energy and inspiration from our interactions with the community.
@@ -65,6 +71,7 @@ Phase 2 (May 10, 2022–November 15, 2022) was about stress testing the system. 
 -   The network regularly processed 300k transactions/day on average.
 
 ![](/img/blog/testnet-retrospective/EthGlobal.png)
+
 [Link](https://twitter.com/ETHGlobal/status/1566504869636329472)
 
 Phase 2 also saw Iron Fish draw some pretty heavy media attention. In addition to Elena's appearances on podcasts like [The Encrypted Economy](https://www.youtube.com/watch?v=x-3Cct7_SP0) and [Around the Coin](https://www.youtube.com/watch?v=Vguia3WAI6Y), Elena was featured in an important [spotlight article](https://www.sequoiacap.com/article/elena-nadolinski-spotlight/) by Sequoia Capital. The Information also named iron Fish one of [2022’s most promising startups](https://www.theinformation.com/ti50).
@@ -72,6 +79,7 @@ Phase 2 also saw Iron Fish draw some pretty heavy media attention. In addition t
 We also know that late 2022 had its challenging moments. More than ever, we saw how lucky we are to have our community.
 
 ![](/img/blog/testnet-retrospective/cryptomkt.png)
+
 [Link](https://twitter.com/ironfishcrypto/status/1592636602500931585)
 
 ## Testnet Phase 3
@@ -86,6 +94,7 @@ Users 300k+ custom assets minted on the network
 Over the entire testnet, we totaled 50 million transactions 🎉
 
 ![](/img/blog/testnet-retrospective/commandline.png)
+
 [Link](https://twitter.com/leanthebean/status/1625619115502362625)
 
 ## Mainnet
