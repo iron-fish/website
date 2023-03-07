@@ -46,7 +46,7 @@ function DocPageContent({currentDocRoute, versionMetadata, children}) {
 
   useEffect(() => {
     const activeClass = 'active-item';
-    const menuLinks = [...document.querySelectorAll('.menu__link')];
+    const menuLinks = Array.from(document.querySelectorAll('.menu__link'));
 
     console.log(menuLinks)
 
