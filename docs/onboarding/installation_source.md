@@ -1,6 +1,6 @@
 ---
 id: installation-iron-fish-source
-title: Iron Fish Installation
+title: Install From Source
 sidebar_label: Install from source
 description: Iron Fish Installation | Iron Fish Onboarding
 hide_table_of_contents: false

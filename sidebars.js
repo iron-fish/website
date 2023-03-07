@@ -15,11 +15,24 @@ module.exports = {
     {
       type: 'category',
       label: 'Install',
-      link: {type: 'doc', id: 'onboarding/installation-iron-fish'},
+      collapsed: false,
       items: [
-        'onboarding/installation-iron-fish-docker',
-        'onboarding/installation-iron-fish-source',
-        'onboarding/installation-iron-fish-homebrew',
+        'onboarding/installation-iron-fish',
+        {
+          type: 'link',
+          label: 'Install using Docker',
+          href: '#using-docker'
+        },
+        {
+          type: 'link',
+          label: 'Install from source',
+          href: '#from-source'
+        },
+        {
+          type: 'link',
+          label: 'Install with Homebrew',
+          href: '#homebrew-macos'
+        },
       ],
     },
     'onboarding/start-an-iron-fish-node',
