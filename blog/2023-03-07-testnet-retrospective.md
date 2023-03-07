@@ -6,7 +6,7 @@ author_image_url: "/img/blog/Neil.png"
 author_description: Neil is Content Marketing Manager at Iron Fish
 hide_table_of_contents: true
 title: "Incentivized Testnet Retrospective"
-description: Highlights and Statistics
+description: Highlights and Stats
 image: /img/blog/testnet-retrospective/testnet-retrospective.png
 tags: [ironfish, testnet, mainnet]
 ---
