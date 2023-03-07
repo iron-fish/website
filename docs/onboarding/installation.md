@@ -40,4 +40,4 @@ Iron Fish is now ready to use. Follow the [next step](new_node.md) of the tutori
 
 ## Alternative Installation Methods
 
-You can also get started with Iron Fish by using Docker or running from source. If you are using an Intel-based macOS system, we support Homebrew as an alternative installation method.s
+You can also get started with Iron Fish by using Docker or running from source. If you are using an Intel-based macOS system, we support Homebrew as an alternative installation method.
