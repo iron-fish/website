@@ -48,7 +48,7 @@ function DocPageContent({currentDocRoute, versionMetadata, children}) {
     const activeClass = 'active';
     const menuLinks = [...document.querySelectorAll('.menu__link')];
     menuLinks.forEach((link) => {
-      link.classList.remove(activeClass)
+      link?.classList?.remove(activeClass)
     });
     const activeItem = menuLinks.find((item) => {
       return window.location.href.endsWith(item.href)
