@@ -91,7 +91,7 @@ In Phase 3:
 -   We saw **60,000+** concurrent nodes at peak    
 -   We [launched our Trusted Setup ceremony](https://www.youtube.com/watch?v=uZNuWFB_xbg), with **8656** contributions
     
-Over the entire testnet, we totaled 50 million transactions 🎉
+Over the entire testnet, we totaled **50 million** transactions 🎉
 
 ![](/img/blog/testnet-retrospective/commandline.png)
 
