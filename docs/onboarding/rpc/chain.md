@@ -6,7 +6,7 @@ description: RPC Chain | Iron Fish Documentation
 hide_table_of_contents: false
 ---
 
-### `chain/estimateFeeRate`
+## chain/estimateFeeRate
 
 Estimates fee given an optional priority
 
@@ -26,13 +26,13 @@ Estimates fee given an optional priority
 }
 ```
 
-### `chain/estimateFeeRates`
+## chain/estimateFeeRates
 
 Estimates fee rates for all priorities
 
 #### Request
 
-`undefined`
+```undefined```
 
 #### Response
 
@@ -44,7 +44,7 @@ Estimates fee rates for all priorities
 }
 ```
 
-### `chain/exportChainStream`
+## chain/exportChainStream
 
 Exports the chain as a stream with an optional sequence range
 
@@ -78,7 +78,7 @@ Exports the chain as a stream with an optional sequence range
 }
 ```
 
-### `chain/followChainStream`
+## chain/followChainStream
 
 Follows the chain from a given sequence and streams blocks from chain connects and disconnects
 
@@ -130,7 +130,7 @@ Follows the chain from a given sequence and streams blocks from chain connects a
 }
 ```
 
-### `chain/getAsset`
+## chain/getAsset
 
 Gets an asset from the blockchain from an identifier
 
@@ -155,7 +155,7 @@ Gets an asset from the blockchain from an identifier
 }
 ```
 
-### `chain/getBlock`
+## chain/getBlock
 
 Gets a block from the chain from a hash or sequence
 
@@ -196,7 +196,7 @@ Gets a block from the chain from a hash or sequence
 }
 ```
 
-### `chain/getChainInfo`
+## chain/getChainInfo
 
 Gets information about the node's chain
 
@@ -226,7 +226,7 @@ undefined
 }
 ```
 
-### `chain/getConsensusParameters`
+## chain/getConsensusParameters
 
 Gets consensus parameters from the chain
 
@@ -248,7 +248,7 @@ undefined
 }
 ```
 
-### `chain/getDifficulty`
+## chain/getDifficulty
 
 Gets block difficulty from a given sequence or the head
 
@@ -270,7 +270,7 @@ Gets block difficulty from a given sequence or the head
 }
 ```
 
-### `chain/getNetworkHashPower`
+## chain/getNetworkHashPower
 
 Gets hash power from the chain from a sequence or block range
 
@@ -293,7 +293,7 @@ Gets hash power from the chain from a sequence or block range
 }
 ```
 
-### `chain/getTransaction`
+## chain/getTransaction
 
 Gets a transaction from a block hash and transaction hash
 
@@ -327,7 +327,7 @@ Gets a transaction from a block hash and transaction hash
 }
 ```
 
-### `chain/getTransactionStream`
+## chain/getTransactionStream
 
 Streams transactions from a head sequence given an incoming view key
 
@@ -377,7 +377,7 @@ Streams transactions from a head sequence given an incoming view key
 }
 ```
 
-### `chain/showChain`
+## chain/showChain
 
 Renders the chain from an optional sequence range
 

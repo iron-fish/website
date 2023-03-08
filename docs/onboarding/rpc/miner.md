@@ -6,7 +6,7 @@ description: RPC Miner | Iron Fish Documentation
 hide_table_of_contents: false
 ---
 
-### `miner/blockTemplateStream`
+## miner/blockTemplateStream
 
 Streams block templates from the chain for mining blocks
 
@@ -38,7 +38,7 @@ undefined
 }
 ```
 
-### `miner/submitBlock`
+## miner/submitBlock
 
 Submit block templates to the mining manager
 

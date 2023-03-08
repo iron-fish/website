@@ -6,7 +6,7 @@ description: RPC Worker | Iron Fish Documentation
 hide_table_of_contents: false
 ---
 
-### `worker/getStatus`
+## worker/getStatus
 
 Displays info on long-running jobs queued with the node's workers (similar to a threadpool).
 

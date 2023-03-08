@@ -6,7 +6,7 @@ description: RPC Event | Iron Fish Documentation
 hide_table_of_contents: false
 ---
 
-### `event/onGossip`
+## event/onGossip
 
 Streams block headers on gossip events
 

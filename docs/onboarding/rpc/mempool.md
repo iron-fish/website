@@ -6,7 +6,7 @@ description: RPC Mempool | Iron Fish Documentation
 hide_table_of_contents: false
 ---
 
-### `mempool/getStatus`
+## mempool/getStatus
 
 Gets (and optionally streams) the status of the mempool
 
@@ -34,7 +34,7 @@ Gets (and optionally streams) the status of the mempool
 }
 ```
 
-### `mempool/getTransactions`
+## mempool/getTransactions
 
 Streams transactions from the mempool
 

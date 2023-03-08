@@ -6,7 +6,7 @@ description: RPC Config | Iron Fish Documentation
 hide_table_of_contents: false
 ---
 
-### `config/getConfig`
+## config/getConfig
 
 Gets a subset of configuration values for a node
 
@@ -90,7 +90,7 @@ Partial<
 >
 ```
 
-### `config/setConfig`
+## config/setConfig
 
 Sets a configuration value for the node
 
@@ -109,7 +109,7 @@ Sets a configuration value for the node
 undefined
 ```
 
-### `config/unsetConfig`
+## config/unsetConfig
 
 Unsets a configuration value for the node
 
@@ -127,7 +127,7 @@ Unsets a configuration value for the node
 undefined
 ```
 
-### `config/uploadConfig`
+## config/uploadConfig
 
 Uploads a set of configuration values for the node
 

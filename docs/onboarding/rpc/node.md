@@ -6,7 +6,7 @@ description: RPC Node | Iron Fish Documentation
 hide_table_of_contents: false
 ---
 
-### `node/getLogStream`
+## node/getLogStream
 
 Gets a log stream from the node
 
@@ -28,7 +28,7 @@ undefined
 }
 ```
 
-### `node/getStatus`
+## node/getStatus
 
 Gets (and optionally streams) the node's status
 
@@ -133,7 +133,7 @@ Gets (and optionally streams) the node's status
 }
 ```
 
-### `node/stopNode`
+## node/stopNode
 
 Shuts the node down
 

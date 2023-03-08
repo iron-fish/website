@@ -6,7 +6,7 @@ description: RPC | Iron Fish Documentation
 hide_table_of_contents: false
 ---
 
-### `rpc/getStatus`
+## rpc/getStatus
 
 Gets status of the RPC server
 

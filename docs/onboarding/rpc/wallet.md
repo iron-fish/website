@@ -6,7 +6,7 @@ description: RPC Wallet | Iron Fish Documentation
 hide_table_of_contents: false
 ---
 
-### `wallet/addTransaction`
+## wallet/addTransaction
 
 Takes in a posted transaction, adds it to the wallet and mempool, and optionally broadcasts it to the network. Returns the names of the wallet accounts involved in the transaction.
 
@@ -27,7 +27,7 @@ Takes in a posted transaction, adds it to the wallet and mempool, and optionally
 }
 ```
 
-### `wallet/burnAsset`
+## wallet/burnAsset
 
 Creates a transaction burning a custom asset from a given account, posts the transaction, and submits it to the wallet, mempool, and network.
 
@@ -56,7 +56,7 @@ Creates a transaction burning a custom asset from a given account, posts the tra
 }
 ```
 
-### `wallet/create`
+## wallet/create
 
 Creates a new account in the wallet with the given name, optionally setting it as the default account.
 
@@ -79,7 +79,7 @@ Creates a new account in the wallet with the given name, optionally setting it a
 }
 ```
 
-### `wallet/createTransaction`
+## wallet/createTransaction
 
 Creates and returns a new transaction with the given parameters, but doesn't post it (as such, it's also not added to the wallet, mempool, or broadcast to the network). This allows for the transaction to be posted using spending keys stored on a different node.
 
@@ -120,7 +120,7 @@ Creates and returns a new transaction with the given parameters, but doesn't pos
 }
 ```
 
-### `wallet/exportAccount`
+## wallet/exportAccount
 
 Exports the keys to the default account, or the named account if specified. If `viewOnly` is true, the spending key will be null, but the spending key may also be null if exporting a view-only account.
 
@@ -149,7 +149,7 @@ Exports the keys to the default account, or the named account if specified. If `
 }
 ```
 
-### `wallet/getAccounts`
+## wallet/getAccounts
 
 Returns accounts in the wallet.
 
@@ -170,7 +170,7 @@ Returns accounts in the wallet.
 }
 ```
 
-### `wallet/getAssets`
+## wallet/getAssets
 
 Returns assets in the wallet.
 
@@ -191,7 +191,7 @@ Returns assets in the wallet.
 }
 ```
 
-### `wallet/getBalance`
+## wallet/getBalance
 
 Returns the wallet balance for a given asset, or $IRON if none is specified.
 
@@ -223,7 +223,7 @@ Returns the wallet balance for a given asset, or $IRON if none is specified.
 }
 ```
 
-### `wallet/getBalances`
+## wallet/getBalances
 
 Returns the wallet's $IRON balance, as well as balances of custom assets.
 
@@ -257,7 +257,7 @@ Returns the wallet's $IRON balance, as well as balances of custom assets.
 }
 ```
 
-### `wallet/getDefaultAccount`
+## wallet/getDefaultAccount
 
 Returns the wallet's default account.
 
@@ -277,7 +277,7 @@ Returns the wallet's default account.
 }
 ```
 
-### `wallet/getAccountNotesStream`
+## wallet/getAccountNotesStream
 
 Returns a stream of notes in an account.
 
@@ -303,7 +303,7 @@ Returns a stream of notes in an account.
 }
 ```
 
-### `wallet/getPublicKey`
+## wallet/getPublicKey
 
 Returns an account's public key.
 
@@ -324,7 +324,7 @@ Returns an account's public key.
 }
 ```
 
-### `wallet/getAccountsStatus`
+## wallet/getAccountsStatus
 
 Returns an account's public key.
 
@@ -350,7 +350,7 @@ Returns an account's public key.
 }
 ```
 
-### `wallet/getAccountTransaction`
+## wallet/getAccountTransaction
 
 Returns a transaction for an account.
 
@@ -387,7 +387,7 @@ Returns a transaction for an account.
 }
 ```
 
-### `wallet/getAccountTransactions`
+## wallet/getAccountTransactions
 
 Returns transactions for an account.
 
@@ -421,7 +421,7 @@ Returns transactions for an account.
 }
 ```
 
-### `wallet/importAccount`
+## wallet/importAccount
 
 Imports an account to the wallet.
 
@@ -443,7 +443,7 @@ Imports an account to the wallet.
 }
 ```
 
-### `wallet/mintAsset`
+## wallet/mintAsset
 
 Creates a transaction minting a custom asset from a given account, posts the transaction, and submits it to the wallet, mempool, and network.
 
@@ -474,7 +474,7 @@ Creates a transaction minting a custom asset from a given account, posts the tra
 }
 ```
 
-### `wallet/postTransaction`
+## wallet/postTransaction
 
 Posts a transaction, submitting it to the wallet, mempool, and network if possible.
 
@@ -496,7 +496,7 @@ Posts a transaction, submitting it to the wallet, mempool, and network if possib
 }
 ```
 
-### `wallet/removeAccount`
+## wallet/removeAccount
 
 Removes an account from the wallet.
 
@@ -518,7 +518,7 @@ Removes an account from the wallet.
 }
 ```
 
-### `wallet/rescanAccount`
+## wallet/rescanAccount
 
 Rescans an account in the wallet, updating the balance and available notes.
 
@@ -542,7 +542,7 @@ Rescans an account in the wallet, updating the balance and available notes.
 }
 ```
 
-### `wallet/sendTransaction`
+## wallet/sendTransaction
 
 Creates a transaction, posts the transaction, and submits it to the wallet, mempool, and network.
 
@@ -574,7 +574,7 @@ Creates a transaction, posts the transaction, and submits it to the wallet, memp
 }
 ```
 
-### `wallet/useAccount`
+## wallet/useAccount
 
 Sets an account as the wallet's default account.
 
