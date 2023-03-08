@@ -23,26 +23,26 @@ Iron Fish community members are always willing to step up and support each other
 
 ### What do you think will drive crypto adoption?
 
-* **Increased awareness and education**: As more people become aware of cryptocurrencies and how they work, they may be more likely to consider using them.*
+* ***Increased awareness and education**: As more people become aware of cryptocurrencies and how they work, they may be more likely to consider using them.*
 
-* **Advancements in blockchain technology**: As blockchain technology continues to evolve and become more sophisticated, it could make cryptocurrencies more secure and easier to use, which could drive adoption.*
+* ***Advancements in blockchain technology**: As blockchain technology continues to evolve and become more sophisticated, it could make cryptocurrencies more secure and easier to use, which could drive adoption.*
 
-* **Integration with traditional financial systems**: If cryptocurrencies become more integrated with traditional financial systems, it would make it easier for people to use them for everyday transactions.*
+* ***Integration with traditional financial systems**: If cryptocurrencies become more integrated with traditional financial systems, it would make it easier for people to use them for everyday transactions.*
 
-* **Globalization and the need for cross-border transactions**: As more people conduct business and engage in cross-border transactions, cryptocurrencies could become a more convenient and efficient way to transfer funds.*
+* ***Globalization and the need for cross-border transactions**: As more people conduct business and engage in cross-border transactions, cryptocurrencies could become a more convenient and efficient way to transfer funds.*
 
-* **Regulatory clarity**: If governments provide clear regulations around the use and ownership of cryptocurrencies, it would give people more confidence in crypto and encourage adoption.*
+* ***Regulatory clarity**: If governments provide clear regulations around the use and ownership of cryptocurrencies, it would give people more confidence in crypto and encourage adoption.*
 
-* **Privacy**: As people become more concerned about online privacy and the security of their personal information, cryptocurrencies that offer greater privacy and anonymity could become more popular.*
+* ***Privacy**: As people become more concerned about online privacy and the security of their personal information, cryptocurrencies that offer greater privacy and anonymity could become more popular.*
 
 ### Do you use dApps? If so, which ones?
 
 *Some of the dApps I use include:*
 
-*1. Uniswap/Hashflow: A decentralized exchange (DEX) for trading cryptocurrencies*
-*2. Aave: A decentralized lending and borrowing platform*
-*3. Opensea: A marketplace for buying, selling, and discovering rare digital items and collectibles, including NFTs*
-*4. Gitcoin: A platform that enables users to earn cryptocurrency for contributing to open-source software projects*
+*- Uniswap/Hashflow: A decentralized exchange (DEX) for trading cryptocurrencies.*  
+*- Aave: A decentralized lending and borrowing platform.* 
+*- Opensea: A marketplace for buying, selling, and discovering rare digital items and collectibles, including NFTs.*
+*- Gitcoin: A platform that enables users to earn cryptocurrency for contributing to open-source software projects.*
 
 ### When did you learn about Iron Fish, and what sparked your interest?
 
