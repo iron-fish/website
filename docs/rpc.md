@@ -749,7 +749,7 @@ undefined
 
 ### `node/getStatus`
 
-Gets node status
+Gets (and optionally streams) the node's status
 
 #### Request
 
