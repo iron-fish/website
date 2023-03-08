@@ -6,27 +6,27 @@ description: RPC Node | Iron Fish Documentation
 hide_table_of_contents: false
 ---
 
+import JsDisplay from '../../../src/theme/components/Terminal/JsDisplay'
+
 ## node/getLogStream
 
 Gets a log stream from the node
 
 #### Request
 
-```js
-undefined
-```
+<JsDisplay js={`undefined
+`} />
 
 #### Response
 
-```js
-{
+<JsDisplay js={`{
   level: string
   type: string
   tag: string
   args: string
   date: string
 }
-```
+`} />
 
 ## node/getStatus
 
@@ -34,16 +34,14 @@ Gets (and optionally streams) the node's status
 
 #### Request
 
-```js
-{
+<JsDisplay js={`{
   stream?: boolean
 } | undefined
-```
+`} />
 
 #### Response
 
-```js
-{
+<JsDisplay js={`{
   node: {
     status: 'started' | 'stopped' | 'error'
     version: string
@@ -131,7 +129,7 @@ Gets (and optionally streams) the node's status
     }
   }
 }
-```
+`} />
 
 ## node/stopNode
 
@@ -139,12 +137,10 @@ Shuts the node down
 
 #### Request
 
-```js
-undefined
-```
+<JsDisplay js={`undefined
+`} />
 
 #### Response
 
-```js
-undefined
-```
+<JsDisplay js={`undefined
+`} />

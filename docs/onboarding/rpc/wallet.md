@@ -6,26 +6,26 @@ description: RPC Wallet | Iron Fish Documentation
 hide_table_of_contents: false
 ---
 
+import JsDisplay from '../../../src/theme/components/Terminal/JsDisplay'
+
 ## wallet/addTransaction
 
 Takes in a posted transaction, adds it to the wallet and mempool, and optionally broadcasts it to the network. Returns the names of the wallet accounts involved in the transaction.
 
 #### Request
 
-```js
-{
+<JsDisplay js={`{
   transaction: string
   broadcast?: boolean
 }
-```
+`} />
 
 #### Response
 
-```js
-{
+<JsDisplay js={`{
   accounts: string[]
 }
-```
+`} />
 
 ## wallet/burnAsset
 
@@ -33,8 +33,7 @@ Creates a transaction burning a custom asset from a given account, posts the tra
 
 #### Request
 
-```js
-{
+<JsDisplay js={`{
   account: string
   assetId: string
   fee: string
@@ -43,18 +42,17 @@ Creates a transaction burning a custom asset from a given account, posts the tra
   expirationDelta?: number
   confirmations?: number
 }
-```
+`} />
 
 #### Response
 
-```js
-{
+<JsDisplay js={`{
   assetId: string
   hash: string
   name: string
   value: string
 }
-```
+`} />
 
 ## wallet/create
 
@@ -62,22 +60,20 @@ Creates a new account in the wallet with the given name, optionally setting it a
 
 #### Request
 
-```js
-{
+<JsDisplay js={`{
   name: string
   default?: boolean
 }
-```
+`} />
 
 #### Response
 
-```js
-{
+<JsDisplay js={`{
   name: string
   publicAddress: string
   isDefaultAccount: boolean
 }
-```
+`} />
 
 ## wallet/createTransaction
 
@@ -85,8 +81,7 @@ Creates and returns a new transaction with the given parameters, but doesn't pos
 
 #### Request
 
-```js
-{
+<JsDisplay js={`{
   account: string
   outputs: {
     publicAddress: string
@@ -110,15 +105,14 @@ Creates and returns a new transaction with the given parameters, but doesn't pos
   expirationDelta?: number
   confirmations?: number
 }
-```
+`} />
 
 #### Response
 
-```js
-{
+<JsDisplay js={`{
   transaction: string
 }
-```
+`} />
 
 ## wallet/exportAccount
 
@@ -126,17 +120,15 @@ Exports the keys to the default account, or the named account if specified. If `
 
 #### Request
 
-```js
-{
+<JsDisplay js={`{
   account?: string;
   viewOnly?: boolean
 }
-```
+`} />
 
 #### Response
 
-```js
-{
+<JsDisplay js={`{
   account: {
     name: string
     spendingKey: string | null
@@ -147,7 +139,7 @@ Exports the keys to the default account, or the named account if specified. If `
     version: number
   }
 }
-```
+`} />
 
 ## wallet/getAccounts
 
@@ -155,20 +147,18 @@ Returns accounts in the wallet.
 
 #### Request
 
-```js
-{
+<JsDisplay js={`{
   default?: boolean
   displayName?: boolean
 } | undefined
-```
+`} />
 
 #### Response
 
-```js
-{
+<JsDisplay js={`{
   accounts: string[]
 }
-```
+`} />
 
 ## wallet/getAssets
 
@@ -176,20 +166,18 @@ Returns assets in the wallet.
 
 #### Request
 
-```js
-{
+<JsDisplay js={`{
   default?: boolean
   displayName?: boolean
 } | undefined
-```
+`} />
 
 #### Response
 
-```js
-{
+<JsDisplay js={`{
   accounts: string[]
 }
-```
+`} />
 
 ## wallet/getBalance
 
@@ -197,18 +185,16 @@ Returns the wallet balance for a given asset, or $IRON if none is specified.
 
 #### Request
 
-```js
-{
+<JsDisplay js={`{
   account?: string
   assetId?: string
   confirmations?: number
 }
-```
+`} />
 
 #### Response
 
-```js
-{
+<JsDisplay js={`{
   account: string
   assetId: string
   confirmed: string
@@ -221,7 +207,7 @@ Returns the wallet balance for a given asset, or $IRON if none is specified.
   blockHash: string | null
   sequence: number | null
 }
-```
+`} />
 
 ## wallet/getBalances
 
@@ -229,17 +215,15 @@ Returns the wallet's $IRON balance, as well as balances of custom assets.
 
 #### Request
 
-```js
-{
+<JsDisplay js={`{
   account?: string
   confirmations?: number
 }
-```
+`} />
 
 #### Response
 
-```js
-{
+<JsDisplay js={`{
   account: string
   balances: {
     assetId: string
@@ -255,7 +239,7 @@ Returns the wallet's $IRON balance, as well as balances of custom assets.
     sequence: number | null
   }[]
 }
-```
+`} />
 
 ## wallet/getDefaultAccount
 
@@ -263,19 +247,17 @@ Returns the wallet's default account.
 
 #### Request
 
-```js
-{ } | undefined
-```
+<JsDisplay js={`{ } | undefined
+`} />
 
 #### Response
 
-```js
-{
+<JsDisplay js={`{
   account: {
     name: string
   } | null
 }
-```
+`} />
 
 ## wallet/getAccountNotesStream
 
@@ -283,16 +265,14 @@ Returns a stream of notes in an account.
 
 #### Request
 
-```js
-{
+<JsDisplay js={`{
   account?: string
 }
-```
+`} />
 
 #### Response
 
-```js
-{
+<JsDisplay js={`{
   value: string
   assetId: string
   assetName: string
@@ -301,7 +281,7 @@ Returns a stream of notes in an account.
   transactionHash: string
   spent: boolean | undefined
 }
-```
+`} />
 
 ## wallet/getPublicKey
 
@@ -309,20 +289,18 @@ Returns an account's public key.
 
 #### Request
 
-```js
-{
+<JsDisplay js={`{
   account?: string
 }
-```
+`} />
 
 #### Response
 
-```js
-{
+<JsDisplay js={`{
   account: string
   publicKey: string
 }
-```
+`} />
 
 ## wallet/getAccountsStatus
 
@@ -330,16 +308,14 @@ Returns an account's public key.
 
 #### Request
 
-```js
-{
+<JsDisplay js={`{
   account?: string
 }
-```
+`} />
 
 #### Response
 
-```js
-{
+<JsDisplay js={`{
   accounts: Array<{
     name: string
     id: string
@@ -348,7 +324,7 @@ Returns an account's public key.
     sequence: string | number
   }>
 }
-```
+`} />
 
 ## wallet/getAccountTransaction
 
@@ -356,18 +332,16 @@ Returns a transaction for an account.
 
 #### Request
 
-```js
-{
+<JsDisplay js={`{
   hash: string
   account?: string
   confirmations?: number
 }
-```
+`} />
 
 #### Response
 
-```js
-{
+<JsDisplay js={`{
   account: string
   transaction: {
     hash: string
@@ -385,7 +359,7 @@ Returns a transaction for an account.
     assetBalanceDeltas: Array<{ assetId: string; assetName: string; delta: string }>
   } | null
 }
-```
+`} />
 
 ## wallet/getAccountTransactions
 
@@ -393,20 +367,18 @@ Returns transactions for an account.
 
 #### Request
 
-```js
-{
+<JsDisplay js={`{
   account?: string
   hash?: string
   limit?: number
   offset?: number
   confirmations?: number
 }
-```
+`} />
 
 #### Response
 
-```js
-{
+<JsDisplay js={`{
   status: string
   type: string
   hash: string
@@ -419,7 +391,7 @@ Returns transactions for an account.
   timestamp: number
   assetBalanceDeltas: Array<{ assetId: string; assetName: string; delta: string }>
 }
-```
+`} />
 
 ## wallet/importAccount
 
@@ -427,21 +399,19 @@ Imports an account to the wallet.
 
 #### Request
 
-```js
-{
+<JsDisplay js={`{
   account: AccountImport
   rescan?: boolean
 }
-```
+`} />
 
 #### Response
 
-```js
-{
+<JsDisplay js={`{
   name: string
   isDefaultAccount: boolean
 }
-```
+`} />
 
 ## wallet/mintAsset
 
@@ -449,8 +419,7 @@ Creates a transaction minting a custom asset from a given account, posts the tra
 
 #### Request
 
-```js
-{
+<JsDisplay js={`{
   account: string
   fee: string
   value: string
@@ -461,18 +430,17 @@ Creates a transaction minting a custom asset from a given account, posts the tra
   metadata?: string
   name?: string
 }
-```
+`} />
 
 #### Response
 
-```js
-{
+<JsDisplay js={`{
   assetId: string
   hash: string
   name: string
   value: string
 }
-```
+`} />
 
 ## wallet/postTransaction
 
@@ -480,21 +448,19 @@ Posts a transaction, submitting it to the wallet, mempool, and network if possib
 
 #### Request
 
-```js
-{
+<JsDisplay js={`{
   account?: string
   transaction: string
   broadcast?: boolean
 }
-```
+`} />
 
 #### Response
 
-```js
-{
+<JsDisplay js={`{
   transaction: string
 }
-```
+`} />
 
 ## wallet/removeAccount
 
@@ -502,21 +468,19 @@ Removes an account from the wallet.
 
 #### Request
 
-```js
-{
+<JsDisplay js={`{
   account: string
   confirm?: boolean
   wait?: boolean
 }
-```
+`} />
 
 #### Response
 
-```js
-{
+<JsDisplay js={`{
   needsConfirm?: boolean
 }
-```
+`} />
 
 ## wallet/rescanAccount
 
@@ -524,23 +488,21 @@ Rescans an account in the wallet, updating the balance and available notes.
 
 #### Request
 
-```js
-{
+<JsDisplay js={`{
   follow?: boolean
   from?: number
   reset?: boolean
 }
-```
+`} />
 
 #### Response
 
-```js
-{
+<JsDisplay js={`{
   sequence: number
   startedAt: number
   endSequence: number
 }
-```
+`} />
 
 ## wallet/sendTransaction
 
@@ -548,8 +510,7 @@ Creates a transaction, posts the transaction, and submits it to the wallet, memp
 
 #### Request
 
-```js
-{
+<JsDisplay js={`{
   account: string
   outputs: {
     publicAddress: string
@@ -562,17 +523,16 @@ Creates a transaction, posts the transaction, and submits it to the wallet, memp
   expirationDelta?: number | null
   confirmations?: number | null
 }
-```
+`} />
 
 #### Response
 
-```js
-{
+<JsDisplay js={`{
   account: string
   hash: string
   transaction: string
 }
-```
+`} />
 
 ## wallet/useAccount
 
@@ -580,14 +540,12 @@ Sets an account as the wallet's default account.
 
 #### Request
 
-```js
-{
+<JsDisplay js={`{
   account: string
 }
-```
+`} />
 
 #### Response
 
-```js
-undefined
-```
+<JsDisplay js={`undefined
+`} />

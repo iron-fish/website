@@ -6,22 +6,22 @@ description: RPC | Iron Fish Documentation
 hide_table_of_contents: false
 ---
 
+import JsDisplay from '../../../src/theme/components/Terminal/JsDisplay'
+
 ## rpc/getStatus
 
 Gets status of the RPC server
 
 #### Request
 
-```js
-{
+<JsDisplay js={`{
   stream?: boolean
 } | undefined
-```
+`} />
 
 #### Response
 
-```js
-{
+<JsDisplay js={`{
   started: boolean
   adapters: {
     name: string
@@ -35,4 +35,4 @@ Gets status of the RPC server
     pending: string[]
   }[]
 }
-```
+`} />

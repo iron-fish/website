@@ -6,28 +6,28 @@ description: RPC Peer | Iron Fish Documentation
 hide_table_of_contents: false
 ---
 
+import JsDisplay from '../../../src/theme/components/Terminal/JsDisplay'
+
 ## peer/getBannedPeers
 
 Gets (and optionally streams) banned peers from the node's peer network
 
 #### Request
 
-```js
-{
+<JsDisplay js={`{
   stream?: boolean
 }
-```
+`} />
 
 #### Response
 
-```js
-{
+<JsDisplay js={`{
   peers: Array<{
     identity: string
     reason: string
   }>
 }
-```
+`} />
 
 ## peer/getPeer
 
@@ -35,17 +35,15 @@ Gets (and optionally streams) peer data from an identity
 
 #### Request
 
-```js
-{
+<JsDisplay js={`{
   identity: string
   stream?: boolean
 }
-```
+`} />
 
 #### Response
 
-```js
-{
+<JsDisplay js={`{
   peer: {
     state: string
     identity: string | null
@@ -82,7 +80,7 @@ Gets (and optionally streams) peer data from an identity
     } | null
   } | null
 }
-```
+`} />
 
 ## peer/getPeerMessages
 
@@ -90,17 +88,15 @@ Gets (and optionally streams) peer messages from an identity
 
 #### Request
 
-```js
-{
+<JsDisplay js={`{
   identity: string
   stream?: boolean
 }
-```
+`} />
 
 #### Response
 
-```js
-{
+<JsDisplay js={`{
   brokeringPeerDisplayName?: string
   direction: 'send' | 'receive'
   message: {
@@ -110,7 +106,7 @@ Gets (and optionally streams) peer messages from an identity
   timestamp: number
   type: 'WebSocket' | 'WebRtc'
 }
-```
+`} />
 
 ## peer/getPeers
 
@@ -118,16 +114,14 @@ Gets (and optionally streams) peers from the node's peer network
 
 #### Request
 
-```js
-{
+<JsDisplay js={`{
   stream?: boolean
 } | undefined
-```
+`} />
 
 #### Response
 
-```js
-{
+<JsDisplay js={`{
   peers: Array<{
     state: string
     identity: string | null
@@ -164,5 +158,5 @@ Gets (and optionally streams) peers from the node's peer network
     } | null
   }>
 }
-```
+`} />
 
