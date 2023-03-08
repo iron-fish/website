@@ -11,3 +11,4 @@ image: /img/blog/spotlight-pratik/pratik.png
 tags: [ironfish, community, pratik, interview]
 ---
 
+v
