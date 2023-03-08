@@ -23,26 +23,26 @@ Iron Fish community members are always willing to step up and support each other
 
 ### What do you think will drive crypto adoption?
 
-***Increased awareness and education**: As more people become aware of cryptocurrencies and how they work, they may be more likely to consider using them.*
+* **Increased awareness and education**: As more people become aware of cryptocurrencies and how they work, they may be more likely to consider using them.*
 
-***Advancements in blockchain technology**: As blockchain technology continues to evolve and become more sophisticated, it could make cryptocurrencies more secure and easier to use, which could drive adoption.*
+* **Advancements in blockchain technology**: As blockchain technology continues to evolve and become more sophisticated, it could make cryptocurrencies more secure and easier to use, which could drive adoption.*
 
-***Integration with traditional financial systems**: If cryptocurrencies become more integrated with traditional financial systems, it would make it easier for people to use them for everyday transactions.*
+* **Integration with traditional financial systems**: If cryptocurrencies become more integrated with traditional financial systems, it would make it easier for people to use them for everyday transactions.*
 
-***Globalization and the need for cross-border transactions**: As more people conduct business and engage in cross-border transactions, cryptocurrencies could become a more convenient and efficient way to transfer funds.*
+* **Globalization and the need for cross-border transactions**: As more people conduct business and engage in cross-border transactions, cryptocurrencies could become a more convenient and efficient way to transfer funds.*
 
-***Regulatory clarity**: If governments provide clear regulations around the use and ownership of cryptocurrencies, it would give people more confidence in crypto and encourage adoption.*
+* **Regulatory clarity**: If governments provide clear regulations around the use and ownership of cryptocurrencies, it would give people more confidence in crypto and encourage adoption.*
 
-***Privacy**: As people become more concerned about online privacy and the security of their personal information, cryptocurrencies that offer greater privacy and anonymity could become more popular.*
+* **Privacy**: As people become more concerned about online privacy and the security of their personal information, cryptocurrencies that offer greater privacy and anonymity could become more popular.*
 
 ### Do you use dApps? If so, which ones?
 
 *Some of the dApps I use include:*
 
-*1. Uniswap/Hashflow: A decentralized exchange (DEX) for trading cryptocurrencies
-2. Aave: A decentralized lending and borrowing platform
-3. Opensea: A marketplace for buying, selling, and discovering rare digital items and collectibles, including NFTs
-4. Gitcoin: A platform that enables users to earn cryptocurrency for contributing to open-source software projects*
+*1. Uniswap/Hashflow: A decentralized exchange (DEX) for trading cryptocurrencies*
+*2. Aave: A decentralized lending and borrowing platform*
+*3. Opensea: A marketplace for buying, selling, and discovering rare digital items and collectibles, including NFTs*
+*4. Gitcoin: A platform that enables users to earn cryptocurrency for contributing to open-source software projects*
 
 ### When did you learn about Iron Fish, and what sparked your interest?
 
@@ -54,7 +54,6 @@ Iron Fish community members are always willing to step up and support each other
 By providing privacy features such as pseudonymity and encryption, cryptocurrencies can help protect the privacy and security of users. These features can ensure that transaction information is only visible to the parties involved while maintaining the blockchain network's transparency and security.*
 
 ###  What has been your experience with the Iron Fish community?
-
 *I was blown away by the activity level in the Ironfish community during the testnet phase. Seeing members' enthusiasm to set up a node and contribute to the project's privacy goals was terrific. The community was incredibly live and active 24/7, with dedicated individuals providing support around the clock.*
 
 ###  What do you think draws others to Iron Fish?
@@ -85,7 +84,7 @@ By providing privacy features such as pseudonymity and encryption, cryptocurrenc
 
 *All the very best, team!!!!*
 
-*To keep up with Pratik, follow him on Twitter [@pratikmbm1122]*(https://twitter.com/pratikmbm1122).
+*To keep up with Pratik, follow him on Twitter*: [@pratikmbm1122]https://twitter.com/pratikmbm1122).
 
 • 🎤 [Discord](https://discord.ironfish.network)
 
