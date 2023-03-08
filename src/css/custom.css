@@ -460,7 +460,7 @@ ol ol {
 }
 .row .col.col--3 {
   width: var(--ifm-toc-width);
-  --ifm-col-width: 320px;
+  --ifm-col-width: 280px;
 }
 .table-of-contents {
   border-left: none;
