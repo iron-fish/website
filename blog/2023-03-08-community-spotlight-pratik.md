@@ -19,30 +19,34 @@ Iron Fish community members are always willing to step up and support each other
 
 ### How did you get into crypto?
 
-*In 2017, there was a lot of excitement around Bitcoin, and I jumped on the bandwagon and purchased some when the price peaked at $15,000. At the time, I was caught up in the hype and believed the price would continue to skyrocket, potentially reaching $100,000 or more. However, as we all know, the crypto market can be incredibly volatile, and after just a few months, the price of Bitcoin began to decline rapidly. Unfortunately, I was caught up in the downturn and experienced significant losses. It was a harsh but valuable lesson, and I now better understand the risks and rewards associated with investing in cryptocurrencies.*
+*In 2017, there was a lot of excitement around Bitcoin, and I jumped on the bandwagon and purchased some when the price peaked at $15,000. At the time, I was caught up in the hype and believed the price would continue to skyrocket, potentially reaching $100,000 or more.* 
+However, as we all know, the crypto market can be incredibly volatile, and after just a few months, the price of Bitcoin began to decline rapidly. Unfortunately, I was caught up in the downturn and experienced significant losses. It was a harsh but valuable lesson, and I now better understand the risks and rewards associated with investing in cryptocurrencies.*
 
 ### What do you think will drive crypto adoption?
 
-* ***Increased awareness and education**: As more people become aware of cryptocurrencies and how they work, they may be more likely to consider using them.*
 
-* ***Advancements in blockchain technology**: As blockchain technology continues to evolve and become more sophisticated, it could make cryptocurrencies more secure and easier to use, which could drive adoption.*
-
-* ***Integration with traditional financial systems**: If cryptocurrencies become more integrated with traditional financial systems, it would make it easier for people to use them for everyday transactions.*
-
-* ***Globalization and the need for cross-border transactions**: As more people conduct business and engage in cross-border transactions, cryptocurrencies could become a more convenient and efficient way to transfer funds.*
-
-* ***Regulatory clarity**: If governments provide clear regulations around the use and ownership of cryptocurrencies, it would give people more confidence in crypto and encourage adoption.*
-
-* ***Privacy**: As people become more concerned about online privacy and the security of their personal information, cryptocurrencies that offer greater privacy and anonymity could become more popular.*
+-   ***Increased awareness and education**: As more people become aware of cryptocurrencies and how they work, they may be more likely to consider using them.*
+    
+-   ***Advancements in blockchain technology**: As blockchain technology continues to evolve and become more sophisticated, it will make cryptocurrencies more secure and easier to use, which will drive adoption.*
+    
+-   ***Integration with traditional financial systems**: If cryptocurrencies become more integrated with traditional financial systems, it would make it easier for people to use them for everyday transactions.*
+    
+-   ***Globalization and the need for cross-border transactions**: As more people conduct business and engage in cross-border transactions, cryptocurrencies could become a more convenient and efficient way to transfer funds.*
+    
+-   ***Regulatory clarity**: If governments provide clear regulations around the use and ownership of cryptocurrencies, it would give people more confidence in crypto and encourage adoption.*
+    
+-   ***Privacy**: As people become more concerned about online privacy and the security of their personal information, cryptocurrencies that offer greater privacy and anonymity could become more popular.*
 
 ### Do you use dApps? If so, which ones?
 
 *Some of the dApps I use include:*
-
-*- Uniswap/Hashflow: A decentralized exchange (DEX) for trading cryptocurrencies.*  
-*- Aave: A decentralized lending and borrowing platform.* 
-*- Opensea: A marketplace for buying, selling, and discovering rare digital items and collectibles, including NFTs.*
-*- Gitcoin: A platform that enables users to earn cryptocurrency for contributing to open-source software projects.*
+-   *Uniswap/Hashflow: A decentralized exchange (DEX) for trading cryptocurrencies.*
+    
+-   *Aave: A decentralized lending and borrowing platform.*
+    
+-   *Opensea: A marketplace for buying, selling, and discovering rare digital items and collectibles, including NFTs.*
+    
+-   *Gitcoin: A platform that enables users to earn cryptocurrency for contributing to open-source software projects.*
 
 ### When did you learn about Iron Fish, and what sparked your interest?
 
@@ -84,7 +88,7 @@ By providing privacy features such as pseudonymity and encryption, cryptocurrenc
 
 *All the very best, team!!!!*
 
-*To keep up with Pratik, follow him on Twitter*: [@pratikmbm1122]https://twitter.com/pratikmbm1122).
+*To keep up with Pratik, follow him on Twitter*: [@pratikmbm1122](https://twitter.com/pratikmbm1122).
 
 • 🎤 [Discord](https://discord.ironfish.network)
 
