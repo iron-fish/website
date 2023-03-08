@@ -86,6 +86,16 @@ function Testnet({ condensed = false }) {
                   textClassName={textClassName}
                   cubeClassName="text-iflightblue"
                 />
+                <TestnetGridElement
+                  href="https://testnet.ironfish.network/dashboard"
+                  header="Testnet Dashboard"
+                  body="Claim your rewards"
+                  className={elementClassName}
+                  textClassName={textClassName}
+                  cubeClassName="text-iflightblue"
+                  target="_blank"
+                  rel="noreferrer"
+                />
               </div>
             </div>
           </div>

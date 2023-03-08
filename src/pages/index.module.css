@@ -124,7 +124,7 @@
   background-color: #fff;
 }
 .sectionPrivacyImg {
-  background-image: url(/img/index/fish.gif);
+  background-image: url(/img/index/universe.gif);
   background-size: contain;
   background-position: center right;
 }
@@ -133,7 +133,7 @@
 }
 .sectionPrivacyLayerImg {
   background-size: contain;
-  background-image: url(/img/index/universe.gif);
+  background-image: url(/img/index/cool-fish.gif);
   background-position: center right;
 }
 .sectionCryptocurrency {

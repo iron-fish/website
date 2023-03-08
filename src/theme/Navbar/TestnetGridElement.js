@@ -12,10 +12,12 @@ const TestnetGridElement = ({
   body,
   cubeClassName,
   textClassName,
+  ...rest
 }) => (
     <a
       className={`flex items-center ${className} rounded relative hover:bg-iflightgray ${overrides.link}`}
       href={href}
+      {...rest}
     >
       <Cube className={cubeClassName} />
       <div className={`flex flex-col ${textClassName}`}>

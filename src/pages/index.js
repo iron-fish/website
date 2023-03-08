@@ -12,46 +12,42 @@ const features = [
   {
     id: "privacy",
     className: "sectionPrivacy",
-    title: "Empowering users to choose privacy",
+    title: "Find your Use Case",
     description: (
       <>
-        We’re putting back the power of choice into the hands of users. Whether
-        you want to keep your information public or private, that should be your
-        choice &mdash; on any chain.
+        Iron Fish is built for everyone. We build with the understanding that decentralized currency
+        should be easy-to-use and convenient while offering developers a needed base for building
+        sophisticated applications on our encrypted network.
       </>
     ),
-    buttonLink: "docs/whitepaper/1_introduction",
-    button: "Read Our Whitepaper",
+    buttonLink: "/docs/onboarding/iron-fish-tutorial",
+    button: "Get Started",
   },
   {
     id: "privacy-roadmap",
     className: "sectionPrivacyLayer",
-    title: "We're making privacy universal",
+    title: "Encrypt your Crypto",
     description: (
       <>
-        We’re building a new Layer 1 blockchain to become the universal privacy
-        layer for all of web3. Using zero-knowledge proofs (zk-SNARKs) and the
-        highest industry standards for encryption, we enable users to have fully
-        private transactions &mdash; a true SSL layer for all blockchains.
+        Multi-asset support means that, with bridge provider support, any crypto asset can be imported
+        to the Iron Fish network for private transactions.
       </>
     ),
-    buttonLink: "/roadmap",
-    button: "See Our Roadmap",
+    buttonLink: "/docs/whitepaper/1_introduction",
+    button: "Read the Whitepaper",
   },
   {
     id: "privacy",
     className: "sectionCryptocurrency",
-    title: "Borderless, decentralized, and built for everyone",
+    title: "Connect with a Global Community",
     description: (
       <>
-        Privacy should be a right. Iron Fish’s simplicity gives everyone that
-        right. Confidentiality shouldn’t be reserved for the powerful or
-        technically gifted. Anyone can create a wallet and run their own node
-        &mdash; try it here:
+        Iron Fish is open-source and community-focused. Connect with us on Discord
+        and join a lively collective known for its openness and engagement.  
       </>
     ),
-    buttonLink: "docs/onboarding/installation-iron-fish",
-    button: "Download Iron Fish",
+    buttonLink: "https://discord.ironfish.network/",
+    button: "Join the Community",
   },
   {
     id: "regulatory",
@@ -67,6 +63,40 @@ const features = [
       "Privacy and compliance don’t have to be at odds. Every Iron Fish account comes with a set of view keys allowing an exchange or financial organization to provide a full audit of the accounts they manage and comply with all their AML obligations.",
     buttonLink: "docs/whitepaper/1_introduction",
     button: "Read Our Whitepaper",
+  },
+  {
+    Component() {
+      return (
+        <section className={clsx(styles.section, styles.sectionTestnet, 'sectionTestnet')}>
+          <CustomBox>
+
+            <div className={clsx(styles.sectionContainer, styles.sectionCardContainer)}>
+              <div className={clsx(styles.sectionContent, styles.sectionCardContent)}>
+                <div>
+                  <div className={clsx(styles.sectionTitle, styles.sectionCardTitle)}>
+                    Testnet Questions?
+                  </div>
+                  <p className={clsx(styles.sectionDescription, styles.sectionCardDescription)}>
+                    Have questions about converting your Iron Fish testnet points? Click here for answers. 
+                  </p>
+                  <Link
+                    className={clsx(styles.button, "button button--outline")}
+                    to="https://testnet.ironfish.network/faq"
+                  >
+                    Testnet FAQ
+                  </Link>
+                </div>
+              </div>
+              <div />
+              <div
+                className={clsx(styles.sectionImg, styles.sectionTestnetImg)}
+              />
+            </div>
+          </ CustomBox>
+
+        </section>
+      )
+    }
   },
   {
     id: "investors",
@@ -183,42 +213,25 @@ function Feature({
     </section>
   )
 }
-function useWidth() {
-  const [width, setWidth] = useState();
-
-  useEffect(() => {
-    setWidth(window.innerWidth)
-    function handleResize() {
-      setWidth(window.innerWidth);
-    }
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-  });
-
-  return width;
-}
 
 function Home() {
   const context = useDocusaurusContext()
   const { siteConfig = {} } = context
 
-  const width = useWidth();
   return (
     <Layout title={""} description={siteConfig.tagline}>
       <section className={clsx(styles.section, styles.sectionHomePage)}>
         <div className={clsx(styles.sectionContainer)}>
           <header>
             <h1 className={clsx(styles.h1Title)}>
-              The Privacy Platform
-              <br />
-              for web3
+              Safe, seamless crypto
             </h1>
-            <h2 className={clsx(styles.h2Title)}>Coming to a chain near you</h2>
+            <h2 className={clsx(styles.h2Title)}>Iron Fish encrypts <em>every</em> transaction</h2>
             <Link
               className="button button--outline button--secondary button--main"
-              to="https://testnet.ironfish.network/about"
+              to="/docs/onboarding/iron-fish-tutorial"
             >
-              Join the Incentivized Testnet
+              Get Started
             </Link>
           </header>
         </div>
@@ -226,7 +239,14 @@ function Home() {
       <main>
         {features &&
           features.length > 0 &&
-          features.map(props => <Feature key={props.className} {...props} />)}
+          features.map((props, i) => {
+            const Component = props.Component
+            if (Component) {
+              // return null;
+              return <Component key={i} />
+            }
+            return <Feature key={props.className} {...props} />;
+          })}
         <section className={clsx(styles.section, styles.sectionNewsletter)}>
           <div className={clsx(styles.sectionContainer)}>
             <p className={clsx(styles.newsletterTitle)}>
