@@ -425,6 +425,9 @@ ol ol {
   font-size: 14px;
   line-height: 17px;
 }
+.table-of-contents code {
+  font-size: 13px;
+}
 .table-of-contents__link--active {
   color: #000;
 }
@@ -457,7 +460,7 @@ ol ol {
 }
 .row .col.col--3 {
   width: var(--ifm-toc-width);
-  --ifm-col-width: 233px;
+  --ifm-col-width: 320px;
 }
 .table-of-contents {
   border-left: none;
