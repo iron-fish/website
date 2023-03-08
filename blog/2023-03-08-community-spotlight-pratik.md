@@ -7,7 +7,7 @@ author_description: Neil is Content Marketing Manager at Iron Fish
 hide_table_of_contents: true
 title: ""Community Spotlight: Pratik"
 description: Interview with Iron Fish community member Pratik
-image: /img/blog/testnet-retrospective/testnet-retrospective.png
+image: /img/blog/spotlight-pratik/pratik.png
 tags: [ironfish, community, pratik, interview]
 ---
 
