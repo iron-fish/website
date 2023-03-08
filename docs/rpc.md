@@ -10,7 +10,7 @@ hide_table_of_contents: false
 
 ### `chain/estimateFeeRate`
 
-Estimates fee given priority
+Estimates fee given an optional priority
 
 #### Request
 
@@ -28,9 +28,9 @@ Estimates fee given priority
 }
 ```
 
-### `chain/estimateFeeRate`
+### `chain/estimateFeeRates`
 
-Estimates fees for all priorities
+Estimates fee rates for all priorities
 
 #### Request
 
@@ -46,9 +46,9 @@ Estimates fees for all priorities
 }
 ```
 
-### `chain/exportChain`
+### `chain/exportChainStream`
 
-Exports the chain as a stream
+Exports the chain as a stream with an optional sequence range
 
 #### Request
 
@@ -80,7 +80,7 @@ Exports the chain as a stream
 }
 ```
 
-### `chain/followChain`
+### `chain/followChainStream`
 
 Follows the chain from a given sequence and streams blocks from chain connects and disconnects
 
@@ -200,7 +200,7 @@ Gets a block from the chain from a hash or sequence
 
 ### `chain/getChainInfo`
 
-Gets information about the chain
+Gets information about the node's chain
 
 #### Request
 
@@ -274,7 +274,7 @@ Gets block difficulty from a given sequence or the head
 
 ### `chain/getNetworkHashPower`
 
-Gets hash power from the chain
+Gets hash power from the chain from a sequence or block range
 
 #### Request
 
@@ -297,7 +297,7 @@ Gets hash power from the chain
 
 ### `chain/getTransaction`
 
-Gets a transaction from block and transaction hash
+Gets a transaction from a block hash and transaction hash
 
 #### Request
 
@@ -331,7 +331,7 @@ Gets a transaction from block and transaction hash
 
 ### `chain/getTransactionStream`
 
-Streams transactions from a given head sequence
+Streams transactions from a head sequence given an incoming view key
 
 #### Request
 
@@ -381,7 +381,7 @@ Streams transactions from a given head sequence
 
 ### `chain/showChain`
 
-Renders the chain from a given sequence range
+Renders the chain from an optional sequence range
 
 #### Request
 
