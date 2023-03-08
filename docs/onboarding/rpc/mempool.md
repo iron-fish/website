@@ -6,22 +6,22 @@ description: RPC Mempool | Iron Fish Documentation
 hide_table_of_contents: false
 ---
 
+import JsDisplay from '../../../src/theme/components/Terminal/JsDisplay'
+
 ## mempool/getStatus
 
 Gets (and optionally streams) the status of the mempool
 
 #### Request
 
-```js
-{
+<JsDisplay js={`{
   stream?: boolean
 } | undefined
-```
+`} />
 
 #### Response
 
-```js
-{
+<JsDisplay js={`{
   size: number
   sizeBytes: number
   maxSizeBytes: number
@@ -32,7 +32,7 @@ Gets (and optionally streams) the status of the mempool
     maxSize: number
   }
 }
-```
+`} />
 
 ## mempool/getTransactions
 
@@ -40,8 +40,7 @@ Streams transactions from the mempool
 
 #### Request
 
-```js
-{
+<JsDisplay js={`{
   limit?: number
   feeRate?: MinMax
   fee?: MinMax
@@ -49,14 +48,13 @@ Streams transactions from the mempool
   expiresIn?: MinMax
   position?: MinMax
 }
-```
+`} />
 
 #### Response
 
-```js
-{
+<JsDisplay js={`{
   serializedTransaction: string
   position: number
   expiresIn: number
 }
-```
+`} />

@@ -6,20 +6,20 @@ description: RPC Event | Iron Fish Documentation
 hide_table_of_contents: false
 ---
 
+import JsDisplay from '../../../src/theme/components/Terminal/JsDisplay'
+
 ## event/onGossip
 
 Streams block headers on gossip events
 
 #### Request
 
-```js
-undefined
-```
+<JsDisplay js={`undefined
+`} />
 
 #### Response
 
-```js
-{
+<JsDisplay js={`{
   blockHeader: {
     hash: string
     sequence: number
@@ -29,4 +29,4 @@ undefined
     graffiti: string
   }
 }
-```
+`} />

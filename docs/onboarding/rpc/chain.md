@@ -6,25 +6,25 @@ description: RPC Chain | Iron Fish Documentation
 hide_table_of_contents: false
 ---
 
+import JsDisplay from '../../../src/theme/components/Terminal/JsDisplay'
+
 ## chain/estimateFeeRate
 
 Estimates fee given an optional priority
 
 #### Request
 
-```js
-{
+<JsDisplay js={`{
   priority: 'slow' | 'medium' | 'large'
 } | undefined
-```
+`} />
 
 #### Response
 
-```js
-{
+<JsDisplay js={`{
   rate: string
 }
-```
+`} />
 
 ## chain/estimateFeeRates
 
@@ -32,17 +32,16 @@ Estimates fee rates for all priorities
 
 #### Request
 
-```undefined```
+<JsDisplay js={`undefined`} />
 
 #### Response
 
-```js
-{
+<JsDisplay js={`{
   slow: string
   average: string
   fast: string
 }
-```
+`} />
 
 ## chain/exportChainStream
 
@@ -50,17 +49,15 @@ Exports the chain as a stream with an optional sequence range
 
 #### Request
 
-```js
-{
+<JsDisplay js={`{
   start?: number | null
   stop?: number | null
 } | undefined
-```
+`} />
 
 #### Response
 
-```js
-{
+<JsDisplay js={`{
   start: number
   stop: number
   block?: {
@@ -76,7 +73,7 @@ Exports the chain as a stream with an optional sequence range
     latest: boolean
   }
 }
-```
+`} />
 
 ## chain/followChainStream
 
@@ -84,16 +81,14 @@ Follows the chain from a given sequence and streams blocks from chain connects a
 
 #### Request
 
-```js
-{
+<JsDisplay js={`{
   head?: string | null
 } | undefined
-```
+`} />
 
 #### Response
 
-```js
-{
+<JsDisplay js={`{
   type: 'connected' | 'disconnected' | 'fork'
   head: {
     sequence: number
@@ -128,7 +123,7 @@ Follows the chain from a given sequence and streams blocks from chain connects a
     }>
   }
 }
-```
+`} />
 
 ## chain/getAsset
 
@@ -136,16 +131,14 @@ Gets an asset from the blockchain from an identifier
 
 #### Request
 
-```js
-{
+<JsDisplay js={`{
   id: string
 }
-```
+`} />
 
 #### Response
 
-```js
-{
+<JsDisplay js={`{
   createdTransactionHash: string
   id: string
   metadata: string
@@ -153,7 +146,7 @@ Gets an asset from the blockchain from an identifier
   owner: string
   supply: string
 }
-```
+`} />
 
 ## chain/getBlock
 
@@ -161,19 +154,17 @@ Gets a block from the chain from a hash or sequence
 
 #### Request
 
-```js
-{
+<JsDisplay js={`{
   search?: string
   hash?: string
   sequence?: number
   confirmations?: number
 }
-```
+`} />
 
 #### Response
 
-```js
-{
+<JsDisplay js={`{
   block: {
     graffiti: string
     difficulty: string
@@ -194,7 +185,7 @@ Gets a block from the chain from a hash or sequence
     confirmed: boolean
   }
 }
-```
+`} />
 
 ## chain/getChainInfo
 
@@ -202,14 +193,12 @@ Gets information about the node's chain
 
 #### Request
 
-```js
-undefined
-```
+<JsDisplay js={`undefined
+`} />
 
 #### Response
 
-```js
-{
+<JsDisplay js={`{
   currentBlockIdentifier: {
     index: string
     hash: string
@@ -224,7 +213,7 @@ undefined
   }
   currentBlockTimestamp: number
 }
-```
+`} />
 
 ## chain/getConsensusParameters
 
@@ -232,21 +221,19 @@ Gets consensus parameters from the chain
 
 #### Request
 
-```js
-undefined
-```
+<JsDisplay js={`undefined
+`} />
 
 #### Response
 
-```js
-{
+<JsDisplay js={`{
   allowedBlockFuturesSeconds: number
   genesisSupplyInIron: number
   targetBlockTimeInSeconds: number
   targetBucketTimeInSeconds: number
   maxBlockSizeBytes: number
 }
-```
+`} />
 
 ## chain/getDifficulty
 
@@ -254,21 +241,19 @@ Gets block difficulty from a given sequence or the head
 
 #### Request
 
-```js
-{
+<JsDisplay js={`{
   sequence?: number | null
 } | undefined
-```
+`} />
 
 #### Response
 
-```js
-{
+<JsDisplay js={`{
   sequence: number
   hash: string
   difficulty: string
 }
-```
+`} />
 
 ## chain/getNetworkHashPower
 
@@ -276,22 +261,20 @@ Gets hash power from the chain from a sequence or block range
 
 #### Request
 
-```js
-{
+<JsDisplay js={`{
   blocks?: number | null
   sequence?: number | null
 }
-```
+`} />
 
 #### Response
 
-```js
-{
+<JsDisplay js={`{
   hashesPerSecond: number
   blocks: number
   sequence: number
 }
-```
+`} />
 
 ## chain/getTransaction
 
@@ -299,17 +282,15 @@ Gets a transaction from a block hash and transaction hash
 
 #### Request
 
-```js
-{ 
+<JsDisplay js={`{ 
   blockHash: string
   transactionHash: string 
 }
-```
+`} />
 
 #### Response
 
-```js
-{
+<JsDisplay js={`{
   fee: string
   expiration: number
   notesCount: number
@@ -325,7 +306,7 @@ Gets a transaction from a block hash and transaction hash
     value: string
   }[]
 }
-```
+`} />
 
 ## chain/getTransactionStream
 
@@ -333,17 +314,15 @@ Streams transactions from a head sequence given an incoming view key
 
 #### Request
 
-```js
-{ 
+<JsDisplay js={`{ 
   incomingViewKey: string
   head?: string | null 
 }
-```
+`} />
 
 #### Response
 
-```js
-{
+<JsDisplay js={`{
   type: 'connected' | 'disconnected' | 'fork'
   head: {
     sequence: number
@@ -375,7 +354,7 @@ Streams transactions from a head sequence given an incoming view key
     }[]
   }[]
 }
-```
+`} />
 
 ## chain/showChain
 
@@ -383,17 +362,15 @@ Renders the chain from an optional sequence range
 
 #### Request
 
-```js
-{
+<JsDisplay js={`{
   start?: number | null
   stop?: number | null
 } | undefined
-```
+`} />
 
 #### Response
 
-```js
-{
+<JsDisplay js={`{
   content: string[]
 }
-```
+`} />

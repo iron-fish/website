@@ -6,23 +6,23 @@ description: RPC Config | Iron Fish Documentation
 hide_table_of_contents: false
 ---
 
+import JsDisplay from '../../../src/theme/components/Terminal/JsDisplay'
+
 ## config/getConfig
 
 Gets a subset of configuration values for a node
 
 #### Request
 
-```js
-{ 
+<JsDisplay js={`{ 
   user?: boolean
   name?: string 
 } | undefined
-```
+`} />
 
 #### Response
 
-```js
-Partial<
+<JsDisplay js={`Partial<
   {
     blockGraffiti: string
     blocksPerMessage: number
@@ -88,7 +88,7 @@ Partial<
     transactionExpirationDelta: number
   }
 >
-```
+`} />
 
 ## config/setConfig
 
@@ -96,18 +96,16 @@ Sets a configuration value for the node
 
 #### Request
 
-```js
-{ 
+<JsDisplay js={`{ 
   name: string
   value: unknown 
 }
-```
+`} />
 
 #### Response
 
-```js
-undefined
-```
+<JsDisplay js={`undefined
+`} />
 
 ## config/unsetConfig
 
@@ -115,17 +113,15 @@ Unsets a configuration value for the node
 
 #### Request
 
-```js
-{ 
+<JsDisplay js={`{ 
   name: string
 }
-```
+`} />
 
 #### Response
 
-```js
-undefined
-```
+<JsDisplay js={`undefined
+`} />
 
 ## config/uploadConfig
 
@@ -133,15 +129,13 @@ Uploads a set of configuration values for the node
 
 #### Request
 
-```js
-{
+<JsDisplay js={`{
   config: Record<string, unknown>
 }
-```
+`} />
 
 #### Response
 
-```js
-undefined
-```
+<JsDisplay js={`undefined
+`} />
 

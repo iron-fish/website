@@ -6,20 +6,20 @@ description: RPC Miner | Iron Fish Documentation
 hide_table_of_contents: false
 ---
 
+import JsDisplay from '../../../src/theme/components/Terminal/JsDisplay'
+
 ## miner/blockTemplateStream
 
 Streams block templates from the chain for mining blocks
 
 #### Request
 
-```js
-undefined
-```
+<JsDisplay js={`undefined
+`} />
 
 #### Response
 
-```js
-{
+<JsDisplay js={`{
   header: {
     sequence: number
     previousBlockHash: string
@@ -36,7 +36,7 @@ undefined
     timestamp: number
   }
 }
-```
+`} />
 
 ## miner/submitBlock
 
@@ -44,8 +44,7 @@ Submit block templates to the mining manager
 
 #### Request
 
-```js
-{
+<JsDisplay js={`{
   header: {
     sequence: number
     previousBlockHash: string
@@ -62,12 +61,11 @@ Submit block templates to the mining manager
     timestamp: number
   }
 }
-```
+`} />
 
 #### Response
 
-```js
-{
+<JsDisplay js={`{
   added: boolean
   reason:
     | 'UNKNOWN_REQUEST'
@@ -77,5 +75,5 @@ Submit block templates to the mining manager
     | 'FORK'
     | 'SUCCESS'
 }
-```
+`} />
 
