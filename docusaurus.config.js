@@ -46,6 +46,12 @@ module.exports = {
           position: "right",
         },
         {
+          to: "docs/rpc/chain",
+          activeBasePath: "docs",
+          label: "Chain",
+          position: "right",
+        },
+        {
           to: "about/",
           activeBasePath: "docs",
           label: "About Us",
