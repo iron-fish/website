@@ -6,6 +6,8 @@ description: RPC Chain | Iron Fish Onboarding
 hide_table_of_contents: false
 ---
 
+## Chain
+
 ### `chain/estimateFeeRate`
 
 Estimates fee given priority
@@ -290,5 +292,110 @@ Gets hash power from the chain
   hashesPerSecond: number
   blocks: number
   sequence: number
+}
+```
+
+### `chain/getTransaction`
+
+Gets a transaction from block and transaction hash
+
+#### Request
+
+```js
+{ 
+  blockHash: string
+  transactionHash: string 
+}
+```
+
+#### Response
+
+```js
+{
+  fee: string
+  expiration: number
+  notesCount: number
+  spendsCount: number
+  signature: string
+  notesEncrypted: string[]
+  mints: {
+    assetId: string
+    value: string
+  }[]
+  burns: {
+    assetId: string
+    value: string
+  }[]
+}
+```
+
+### `chain/getTransactionStream`
+
+Streams transactions from a given head sequence
+
+#### Request
+
+```js
+{ 
+  incomingViewKey: string
+  head?: string | null 
+}
+```
+
+#### Response
+
+```js
+{
+  type: 'connected' | 'disconnected' | 'fork'
+  head: {
+    sequence: number
+  }
+  block: {
+    hash: string
+    previousBlockHash: string
+    sequence: number
+    timestamp: number
+  }
+  transactions: {
+    hash: string
+    isMinersFee: boolean
+    notes: {
+      assetId: string
+      assetName: string
+      value: string
+      memo: string
+    }[]
+    mints: {
+      assetId: string
+      assetName: string
+      value: string
+    }[]
+    burns: {
+      assetId: string
+      assetName: string
+      value: string
+    }[]
+  }[]
+}
+```
+
+### `chain/showChain`
+
+Renders the chain from a given sequence range
+
+#### Request
+
+```js
+{
+  start?: number | null
+  stop?: number | null
+} | undefined
+```
+
+#### Response
+
+```js
+{
+  content: string[]
 }
 ```
