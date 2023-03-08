@@ -404,7 +404,7 @@ Renders the chain from an optional sequence range
 
 ### `config/getConfig`
 
-Gets the configuration for a node
+Gets a subset of configuration values for a node
 
 #### Request
 
