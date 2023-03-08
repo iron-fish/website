@@ -27,8 +27,6 @@ Interested? <a href="https://discord.ironfish.network">Join our Discord for upda
 
 At Iron Fish <a href="https://ironfish.network/faq/">we have one goal</a>: enable private cryptocurrency transactions. We believe the future of money is digital, decentralized, and censorship-resistant—a future that cannot exist without privacy features to protect its users. Our brand new layer-1 blockchain uses zero-knowledge proofs to provide the strongest privacy guarantees available on every transaction. Soon, we’ll enable multi-assets and bridge Iron Fish to other chains, letting users transfer assets from other blockchains to Iron Fish for fully private transactions on _any asset_. We’re building Iron Fish to be the universal privacy layer for crypto—a true SSL layer for blockchains.
 
-To see how we’ll get there, check out our <a href="https://ironfish.network/roadmap">roadmap</a>.
-
 To be a part of this decentralized future, visit our <a href="https://jobs.lever.co/ironfish">careers page</a>.
 
 🎤 Discord: https://discord.ironfish.network

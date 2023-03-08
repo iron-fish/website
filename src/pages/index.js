@@ -24,21 +24,6 @@ const features = [
     button: "Read Our Whitepaper",
   },
   {
-    id: "privacy-roadmap",
-    className: "sectionPrivacyLayer",
-    title: "We're making privacy universal",
-    description: (
-      <>
-        We’re building a new Layer 1 blockchain to become the universal privacy
-        layer for all of web3. Using zero-knowledge proofs (zk-SNARKs) and the
-        highest industry standards for encryption, we enable users to have fully
-        private transactions &mdash; a true SSL layer for all blockchains.
-      </>
-    ),
-    buttonLink: "/roadmap",
-    button: "See Our Roadmap",
-  },
-  {
     id: "privacy",
     className: "sectionCryptocurrency",
     title: "Borderless, decentralized, and built for everyone",
