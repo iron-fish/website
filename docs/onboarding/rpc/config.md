@@ -1,12 +1,10 @@
 ---
 id: config
 title: RPC Config commands
-sidebar_label: RPC Config commands
+sidebar_label: Config
 description: RPC Config | Iron Fish Documentation
 hide_table_of_contents: false
 ---
-
-## Config
 
 ### `config/getConfig`
 

@@ -1,12 +1,10 @@
 ---
-id: mining
-title: RPC Mining commands
-sidebar_label: RPC Mining commands
-description: RPC Mining | Iron Fish Documentation
+id: miner
+title: RPC Miner commands
+sidebar_label: Miner
+description: RPC Miner | Iron Fish Documentation
 hide_table_of_contents: false
 ---
-
-## Mining
 
 ### `miner/blockTemplateStream`
 

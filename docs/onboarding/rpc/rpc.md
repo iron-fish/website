@@ -1,12 +1,10 @@
 ---
 id: rpc
 title: RPC commands
-sidebar_label: RPC commands
+sidebar_label: RPC
 description: RPC | Iron Fish Documentation
 hide_table_of_contents: false
 ---
-
-## RPC
 
 ### `rpc/getStatus`
 

@@ -1,12 +1,10 @@
 ---
-id: events
-title: RPC Events commands
-sidebar_label: RPC Events commands
-description: RPC Events | Iron Fish Documentation
+id: event
+title: RPC Event commands
+sidebar_label: Event
+description: RPC Event | Iron Fish Documentation
 hide_table_of_contents: false
 ---
-
-## Events
 
 ### `event/onGossip`
 

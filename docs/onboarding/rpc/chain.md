@@ -1,12 +1,10 @@
 ---
 id: chain 
 title: RPC Chain commands
-sidebar_label: RPC Chain commands
+sidebar_label: Chain
 description: RPC Chain | Iron Fish Documentation
 hide_table_of_contents: false
 ---
-
-## Chain
 
 ### `chain/estimateFeeRate`
 

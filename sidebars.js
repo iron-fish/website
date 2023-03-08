@@ -34,5 +34,23 @@ module.exports = {
     'onboarding/iron-fish-wallet-commands',
     'onboarding/iron-fish-cli',
     'onboarding/iron-fish-blocks-commands',
+    {
+      type: 'category',
+      label: 'RPC API reference',
+      collapsed: true,
+      items: [
+        'onboarding/rpc/chain',
+        'onboarding/rpc/config',
+        'onboarding/rpc/event',
+        'onboarding/rpc/faucet',
+        'onboarding/rpc/mempool',
+        'onboarding/rpc/miner',
+        'onboarding/rpc/node',
+        'onboarding/rpc/peer',
+        'onboarding/rpc/rpc',
+        'onboarding/rpc/wallet',
+        'onboarding/rpc/worker',
+      ],
+    },
   ]
 };

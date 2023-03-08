@@ -1,12 +1,10 @@
 ---
 id: mempool
 title: RPC Mempool commands
-sidebar_label: RPC Mempool commands
+sidebar_label: Mempool
 description: RPC Mempool | Iron Fish Documentation
 hide_table_of_contents: false
 ---
-
-## Mempool
 
 ### `mempool/getStatus`
 

@@ -1,12 +1,10 @@
 ---
 id: node
 title: RPC Node commands
-sidebar_label: RPC Node commands
+sidebar_label: Node
 description: RPC Node | Iron Fish Documentation
 hide_table_of_contents: false
 ---
-
-## Node
 
 ### `node/getLogStream`
 

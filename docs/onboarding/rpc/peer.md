@@ -1,12 +1,10 @@
 ---
-id: peers
-title: RPC Peers commands
-sidebar_label: RPC Peers commands
-description: RPC Peers | Iron Fish Documentation
+id: peer
+title: RPC Peer commands
+sidebar_label: Peer
+description: RPC Peer | Iron Fish Documentation
 hide_table_of_contents: false
 ---
-
-## Peers
 
 ### `peer/getBannedPeers`
 

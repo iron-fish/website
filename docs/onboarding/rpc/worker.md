@@ -1,12 +1,10 @@
 ---
 id: worker
 title: RPC Worker commands
-sidebar_label: RPC Worker commands
+sidebar_label: Worker
 description: RPC Worker | Iron Fish Documentation
 hide_table_of_contents: false
 ---
-
-## Worker
 
 ### `worker/getStatus`
 
