@@ -872,7 +872,7 @@ undefined
 
 ### `peer/getBannedPeers`
 
-Gets banned peers from the node's peer network
+Gets (and optionally streams) banned peers from the node's peer network
 
 #### Request
 
@@ -895,7 +895,7 @@ Gets banned peers from the node's peer network
 
 ### `peer/getPeer`
 
-Gets peer data from an identity
+Gets (and optionally streams) peer data from an identity
 
 #### Request
 
@@ -950,7 +950,7 @@ Gets peer data from an identity
 
 ### `peer/getPeerMessages`
 
-Gets peer messages from an identity
+Gets (and optionally streams) peer messages from an identity
 
 #### Request
 
@@ -978,7 +978,7 @@ Gets peer messages from an identity
 
 ### `peer/getPeers`
 
-Gets peer from the node's peer network
+Gets (and optionally streams) peers from the node's peer network
 
 #### Request
 
