@@ -87,7 +87,7 @@ However, as we all know, the crypto market can be incredibly volatile, and after
 
 *I look forward to the release of Iron Fish's mainnet and am excited to see how the project will promote privacy in the web3 space. Witnessing the next level of privacy in this emerging field is something I am eagerly anticipating, and I can't wait to see what the future holds for this innovative technology.*
 
-*All the very best, team!!!!*
+*All the very best, team!!!*
 
 *To keep up with Pratik, follow him on Twitter*: [@pratikmbm1122](https://twitter.com/pratikmbm1122).
 
