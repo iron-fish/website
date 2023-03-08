@@ -25,17 +25,17 @@ However, as we all know, the crypto market can be incredibly volatile, and after
 ### What do you think will drive crypto adoption?
 
 
--   ***Increased awareness and education**: As more people become aware of cryptocurrencies and how they work, they may be more likely to consider using them.*
+-   *Increased awareness and education: As more people become aware of cryptocurrencies and how they work, they may be more likely to consider using them.*
     
--   ***Advancements in blockchain technology**: As blockchain technology continues to evolve and become more sophisticated, it will make cryptocurrencies more secure and easier to use, which will drive adoption.*
+-   *Advancements in blockchain technology: As blockchain technology continues to evolve and become more sophisticated, it will make cryptocurrencies more secure and easier to use, which will drive adoption.*
     
--   ***Integration with traditional financial systems**: If cryptocurrencies become more integrated with traditional financial systems, it would make it easier for people to use them for everyday transactions.*
+-   *Integration with traditional financial systems: If cryptocurrencies become more integrated with traditional financial systems, it would make it easier for people to use them for everyday transactions.*
     
--   ***Globalization and the need for cross-border transactions**: As more people conduct business and engage in cross-border transactions, cryptocurrencies could become a more convenient and efficient way to transfer funds.*
+-   *Globalization and the need for cross-border transactions: As more people conduct business and engage in cross-border transactions, cryptocurrencies could become a more convenient and efficient way to transfer funds.*
     
--   ***Regulatory clarity**: If governments provide clear regulations around the use and ownership of cryptocurrencies, it would give people more confidence in crypto and encourage adoption.*
+-   *Regulatory clarity: If governments provide clear regulations around the use and ownership of cryptocurrencies, it would give people more confidence in crypto and encourage adoption.*
     
--   ***Privacy**: As people become more concerned about online privacy and the security of their personal information, cryptocurrencies that offer greater privacy and anonymity could become more popular.*
+-   *Privacy: As people become more concerned about online privacy and the security of their personal information, cryptocurrencies that offer greater privacy and anonymity could become more popular.*
 
 ### Do you use dApps? If so, which ones?
 
@@ -54,8 +54,9 @@ However, as we all know, the crypto market can be incredibly volatile, and after
 
 ### Why is crypto privacy important to you?
 
-*If User A makes a transaction with cryptocurrency at a retail store and the transaction is recorded on a public blockchain without any privacy protections, User B or any other party may be able to access User A's entire transaction history. This could reveal sensitive information about User A's financial situation, including how much they have spent, where they have spent it, and with whom they have transacted.
-By providing privacy features such as pseudonymity and encryption, cryptocurrencies can help protect the privacy and security of users. These features can ensure that transaction information is only visible to the parties involved while maintaining the blockchain network's transparency and security.*
+*If User A makes a transaction with cryptocurrency at a retail store and the transaction is recorded on a public blockchain without any privacy protections, User B or any other party may be able to access User A's entire transaction history. This could reveal sensitive information about User A's financial situation, including how much they have spent, where they have spent it, and with whom they have transacted.*
+
+*By providing privacy features such as pseudonymity and encryption, cryptocurrencies can help protect the privacy and security of users. These features can ensure that transaction information is only visible to the parties involved while maintaining the blockchain network's transparency and security.*
 
 ###  What has been your experience with the Iron Fish community?
 *I was blown away by the activity level in the Ironfish community during the testnet phase. Seeing members' enthusiasm to set up a node and contribute to the project's privacy goals was terrific. The community was incredibly live and active 24/7, with dedicated individuals providing support around the clock.*
