@@ -572,7 +572,7 @@ undefined
 
 ### `faucet/getFunds`
 
-Submits a request to get funds from the faucet
+Submits a request to get funds from the faucet for an account
 
 #### Request
 
@@ -595,7 +595,7 @@ Submits a request to get funds from the faucet
 
 ### `mempool/getStatus`
 
-Gets the status of the mempool
+Gets (and optionally streams) the status of the mempool
 
 #### Request
 
