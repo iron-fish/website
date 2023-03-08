@@ -1,0 +1,1099 @@
+---
+id: rpc
+title: RPC commands
+sidebar_label: RPC commands
+description: RPC | Iron Fish Documentation
+hide_table_of_contents: false
+---
+
+## Chain
+
+### `chain/estimateFeeRate`
+
+Estimates fee given priority
+
+#### Request
+
+```js
+{
+  priority: 'slow' | 'medium' | 'large'
+} | undefined
+```
+
+#### Response
+
+```js
+{
+  rate: string
+}
+```
+
+### `chain/estimateFeeRate`
+
+Estimates fees for all priorities
+
+#### Request
+
+`undefined`
+
+#### Response
+
+```js
+{
+  slow: string
+  average: string
+  fast: string
+}
+```
+
+### `chain/exportChain`
+
+Exports the chain as a stream
+
+#### Request
+
+```js
+{
+  start?: number | null
+  stop?: number | null
+} | undefined
+```
+
+#### Response
+
+```js
+{
+  start: number
+  stop: number
+  block?: {
+    hash: string
+    seq: number
+    prev: string
+    main: boolean
+    graffiti: string
+    timestamp: number
+    work: string
+    difficulty: string
+    head: boolean
+    latest: boolean
+  }
+}
+```
+
+### `chain/followChain`
+
+Follows the chain from a given sequence and streams blocks from chain connects and disconnects
+
+#### Request
+
+```js
+{
+  head?: string | null
+} | undefined
+```
+
+#### Response
+
+```js
+{
+  type: 'connected' | 'disconnected' | 'fork'
+  head: {
+    sequence: number
+  }
+  block: {
+    hash: string
+    sequence: number
+    previous: string
+    graffiti: string
+    difficulty: string
+    size: number
+    timestamp: number
+    work: string
+    main: boolean
+    transactions: Array<{
+      hash: string
+      size: number
+      fee: number
+      notes: Array<{ commitment: string }>
+      spends: Array<{ nullifier: string }>
+      mints: Array<{
+        id: string
+        metadata: string
+        name: string
+        owner: string
+        value: string
+      }>
+      burns: Array<{
+        id: string
+        value: string
+      }>
+    }>
+  }
+}
+```
+
+### `chain/getAsset`
+
+Gets an asset from the blockchain from an identifier
+
+#### Request
+
+```js
+{
+  id: string
+}
+```
+
+#### Response
+
+```js
+{
+  createdTransactionHash: string
+  id: string
+  metadata: string
+  name: string
+  owner: string
+  supply: string
+}
+```
+
+### `chain/getBlock`
+
+Gets a block from the chain from a hash or sequence
+
+#### Request
+
+```js
+{
+  search?: string
+  hash?: string
+  sequence?: number
+  confirmations?: number
+}
+```
+
+#### Response
+
+```js
+{
+  block: {
+    graffiti: string
+    difficulty: string
+    hash: string
+    previousBlockHash: string
+    sequence: number
+    timestamp: number
+    transactions: Array<{
+      fee: string
+      hash: string
+      signature: string
+      notes: number
+      spends: number
+    }>
+  }
+  metadata: {
+    main: boolean
+    confirmed: boolean
+  }
+}
+```
+
+### `chain/getChainInfo`
+
+Gets information about the chain
+
+#### Request
+
+```js
+undefined
+```
+
+#### Response
+
+```js
+{
+  currentBlockIdentifier: {
+    index: string
+    hash: string
+  }
+  genesisBlockIdentifier: {
+    index: string
+    hash: string
+  }
+  oldestBlockIdentifier: {
+    index: string
+    hash: string
+  }
+  currentBlockTimestamp: number
+}
+```
+
+### `chain/getConsensusParameters`
+
+Gets consensus parameters from the chain
+
+#### Request
+
+```js
+undefined
+```
+
+#### Response
+
+```js
+{
+  allowedBlockFuturesSeconds: number
+  genesisSupplyInIron: number
+  targetBlockTimeInSeconds: number
+  targetBucketTimeInSeconds: number
+  maxBlockSizeBytes: number
+}
+```
+
+### `chain/getDifficulty`
+
+Gets block difficulty from a given sequence or the head
+
+#### Request
+
+```js
+{
+  sequence?: number | null
+} | undefined
+```
+
+#### Response
+
+```js
+{
+  sequence: number
+  hash: string
+  difficulty: string
+}
+```
+
+### `chain/getNetworkHashPower`
+
+Gets hash power from the chain
+
+#### Request
+
+```js
+{
+  blocks?: number | null
+  sequence?: number | null
+}
+```
+
+#### Response
+
+```js
+{
+  hashesPerSecond: number
+  blocks: number
+  sequence: number
+}
+```
+
+### `chain/getTransaction`
+
+Gets a transaction from block and transaction hash
+
+#### Request
+
+```js
+{ 
+  blockHash: string
+  transactionHash: string 
+}
+```
+
+#### Response
+
+```js
+{
+  fee: string
+  expiration: number
+  notesCount: number
+  spendsCount: number
+  signature: string
+  notesEncrypted: string[]
+  mints: {
+    assetId: string
+    value: string
+  }[]
+  burns: {
+    assetId: string
+    value: string
+  }[]
+}
+```
+
+### `chain/getTransactionStream`
+
+Streams transactions from a given head sequence
+
+#### Request
+
+```js
+{ 
+  incomingViewKey: string
+  head?: string | null 
+}
+```
+
+#### Response
+
+```js
+{
+  type: 'connected' | 'disconnected' | 'fork'
+  head: {
+    sequence: number
+  }
+  block: {
+    hash: string
+    previousBlockHash: string
+    sequence: number
+    timestamp: number
+  }
+  transactions: {
+    hash: string
+    isMinersFee: boolean
+    notes: {
+      assetId: string
+      assetName: string
+      value: string
+      memo: string
+    }[]
+    mints: {
+      assetId: string
+      assetName: string
+      value: string
+    }[]
+    burns: {
+      assetId: string
+      assetName: string
+      value: string
+    }[]
+  }[]
+}
+```
+
+### `chain/showChain`
+
+Renders the chain from a given sequence range
+
+#### Request
+
+```js
+{
+  start?: number | null
+  stop?: number | null
+} | undefined
+```
+
+#### Response
+
+```js
+{
+  content: string[]
+}
+```
+
+## Config
+
+### `config/getConfig`
+
+Gets the configuration for a node
+
+#### Request
+
+```js
+{ 
+  user?: boolean
+  name?: string 
+} | undefined
+```
+
+#### Response
+
+```js
+Partial<
+  {
+    blockGraffiti: string
+    blocksPerMessage: number
+    bootstrapNodes: string[]
+    confirmations: number
+    customNetwork: string
+    databaseMigrate: boolean
+    editor: string
+    enableListenP2P: boolean
+    enableLogFile: boolean
+    enableMetrics: boolean
+    enableRpc: boolean
+    enableRpcIpc: boolean
+    enableRpcTcp: boolean
+    enableRpcTls: boolean
+    enableSyncing: boolean
+    enableTelemetry: boolean
+    explorerBlocksUrl: string
+    explorerTransactionsUrl: string
+    feeEstimatorMaxBlockHistory: number
+    feeEstimatorPercentileAverage: number
+    feeEstimatorPercentileFast: number
+    feeEstimatorPercentileSlow: number
+    generateNewIdentity: boolean
+    getFundsApi: string
+    ipcPath: string
+    jsonLogs: boolean
+    logLevel: string
+    logPeerMessages: boolean
+    logPrefix: string
+    maxPeers: number
+    maxSyncedAgeBlocks: number
+    memPoolMaxSizeBytes: number
+    memPoolRecentlyEvictedCacheSize: number
+    minPeers: number
+    minerBatchSize: number
+    miningForce: boolean
+    networkDefinitionPath: string
+    networkId: number
+    nodeName: string
+    nodeWorkers: number
+    nodeWorkersMax: number
+    p2pSimulateLatency: number
+    peerPort: number
+    poolAccountName: string
+    poolBanning: boolean
+    poolDifficulty: string
+    poolDiscordWebhook: ''
+    poolHost: string
+    poolLarkWebhook: ''
+    poolMaxConnectionsPerIp: number
+    poolName: string
+    poolPayoutPeriodDuration: number
+    poolPort: number
+    poolRecentShareCutoff: number
+    poolStatusNotificationInterval: number
+    rpcTcpHost: string
+    rpcTcpPort: number
+    targetPeers: number
+    telemetryApi: string
+    tlsCertPath: string
+    tlsKeyPath: string
+    transactionExpirationDelta: number
+  }
+>
+```
+
+### `config/setConfig`
+
+Sets a configuration value for the node
+
+#### Request
+
+```js
+{ 
+  name: string
+  value: unknown 
+}
+```
+
+#### Response
+
+```js
+undefined
+```
+
+### `config/unsetConfig`
+
+Unsets a configuration value for the node
+
+#### Request
+
+```js
+{ 
+  name: string
+}
+```
+
+#### Response
+
+```js
+undefined
+```
+
+### `config/uploadConfig`
+
+Uploads a set of configuration values for the node
+
+#### Request
+
+```js
+{
+  config: Record<string, unknown>
+}
+```
+
+#### Response
+
+```js
+undefined
+```
+
+## Events
+
+### `event/onGossip`
+
+Streams block headers on gossip events
+
+#### Request
+
+```js
+undefined
+```
+
+#### Response
+
+```js
+{
+  blockHeader: {
+    hash: string
+    sequence: number
+    previousBlockHash: string
+    timestamp: number
+    difficulty: string
+    graffiti: string
+  }
+}
+```
+
+## Faucet
+
+### `faucet/getFunds`
+
+Submits a request to get funds from the faucet
+
+#### Request
+
+```js
+{
+  account?: string
+  email?: string 
+}
+```
+
+#### Response
+
+```js
+{
+  id: string
+}
+```
+
+## Mempool
+
+### `mempool/getStatus`
+
+Gets the status of the mempool
+
+#### Request
+
+```js
+{
+  stream?: boolean
+} | undefined
+```
+
+#### Response
+
+```js
+{
+  size: number
+  sizeBytes: number
+  maxSizeBytes: number
+  evictions: number
+  headSequence: number
+  recentlyEvictedCache: {
+    size: number
+    maxSize: number
+  }
+}
+```
+
+### `mempool/getTransactions`
+
+Streams transactions from the mempool
+
+#### Request
+
+```js
+{
+  limit?: number
+  feeRate?: MinMax
+  fee?: MinMax
+  expiration?: MinMax
+  expiresIn?: MinMax
+  position?: MinMax
+}
+```
+
+#### Response
+
+```js
+{
+  serializedTransaction: string
+  position: number
+  expiresIn: number
+}
+```
+
+## Mining
+
+### `miner/blockTemplateStream`
+
+Streams block templates from the chain for mining blocks
+
+#### Request
+
+```js
+undefined
+```
+
+#### Response
+
+```js
+{
+  header: {
+    sequence: number
+    previousBlockHash: string
+    noteCommitment: string
+    transactionCommitment: string
+    target: string
+    randomness: string
+    timestamp: number
+    graffiti: string
+  }
+  transactions: string[]
+  previousBlockInfo?: {
+    target: string
+    timestamp: number
+  }
+}
+```
+
+### `miner/submitBlock`
+
+Submit block templates to the mining manager
+
+#### Request
+
+```js
+{
+  header: {
+    sequence: number
+    previousBlockHash: string
+    noteCommitment: string
+    transactionCommitment: string
+    target: string
+    randomness: string
+    timestamp: number
+    graffiti: string
+  }
+  transactions: string[]
+  previousBlockInfo?: {
+    target: string
+    timestamp: number
+  }
+}
+```
+
+#### Response
+
+```js
+{
+  added: boolean
+  reason:
+    | 'UNKNOWN_REQUEST'
+    | 'CHAIN_CHANGED'
+    | 'INVALID_BLOCK'
+    | 'ADD_FAILED'
+    | 'FORK'
+    | 'SUCCESS'
+}
+```
+
+## Node
+
+### `node/getLogStream`
+
+Gets a log stream from the node
+
+#### Request
+
+```js
+undefined
+```
+
+#### Response
+
+```js
+{
+  level: string
+  type: string
+  tag: string
+  args: string
+  date: string
+}
+```
+
+### `node/getStatus`
+
+Gets node status
+
+#### Request
+
+```js
+{
+  stream?: boolean
+} | undefined
+```
+
+#### Response
+
+```js
+{
+  node: {
+    status: 'started' | 'stopped' | 'error'
+    version: string
+    git: string
+    nodeName: string
+  }
+  cpu: {
+    cores: number
+    percentRollingAvg: number
+    percentCurrent: number
+  }
+  memory: {
+    heapMax: number
+    heapTotal: number
+    heapUsed: number
+    rss: number
+    memFree: number
+    memTotal: number
+  }
+  miningDirector: {
+    status: 'started'
+    miners: number
+    blocks: number
+    blockGraffiti: string
+    newBlockTemplateSpeed: number
+    newBlockTransactionsSpeed: number
+  }
+  memPool: {
+    size: number
+    sizeBytes: number
+    maxSizeBytes: number
+    evictions: number
+    recentlyEvictedCache: {
+      size: number
+      maxSize: number
+    }
+  }
+  blockchain: {
+    synced: boolean
+    head: {
+      hash: string
+      sequence: number
+    }
+    headTimestamp: number
+    newBlockSpeed: number
+  }
+  blockSyncer: {
+    status: 'stopped' | 'idle' | 'stopping' | 'syncing'
+    syncing?: {
+      blockSpeed: number
+      speed: number
+      downloadSpeed: number
+      progress: number
+    }
+  }
+  peerNetwork: {
+    peers: number
+    isReady: boolean
+    inboundTraffic: number
+    outboundTraffic: number
+  }
+  telemetry: {
+    status: 'started' | 'stopped'
+    pending: number
+    submitted: number
+  }
+  workers: {
+    started: boolean
+    workers: number
+    queued: number
+    capacity: number
+    executing: number
+    change: number
+    speed: number
+  }
+  accounts: {
+    scanning?: {
+      sequence: number
+      endSequence: number
+      startedAt: number
+    }
+    head: {
+      hash: string
+      sequence: number
+    }
+  }
+}
+```
+
+### `node/stopNode`
+
+Shuts the node down
+
+#### Request
+
+```js
+undefined
+```
+
+#### Response
+
+```js
+undefined
+```
+
+## Peers
+
+### `peer/getBannedPeers`
+
+Gets banned peers from the node's peer network
+
+#### Request
+
+```js
+{
+  stream?: boolean
+}
+```
+
+#### Response
+
+```js
+{
+  peers: Array<{
+    identity: string
+    reason: string
+  }>
+}
+```
+
+### `peer/getPeer`
+
+Gets peer data from an identity
+
+#### Request
+
+```js
+{
+  identity: string
+  stream?: boolean
+}
+```
+
+#### Response
+
+```js
+{
+  peer: {
+    state: string
+    identity: string | null
+    version: number | null
+    head: string | null
+    sequence: number | null
+    work: string | null
+    agent: string | null
+    name: string | null
+    address: string | null
+    port: number | null
+    error: string | null
+    connections: number
+    connectionWebSocket:
+      | { type: 'DISCONNECTED' }
+      | { type: 'CONNECTING' }
+      | { type: 'REQUEST_SIGNALING' }
+      | { type: 'SIGNALING' }
+      | { type: 'WAITING_FOR_IDENTITY' }
+      | { type: 'CONNECTED'; identity: string }
+    connectionWebSocketError: string
+    connectionWebRTC:
+      | { type: 'DISCONNECTED' }
+      | { type: 'CONNECTING' }
+      | { type: 'REQUEST_SIGNALING' }
+      | { type: 'SIGNALING' }
+      | { type: 'WAITING_FOR_IDENTITY' }
+      | { type: 'CONNECTED'; identity: string }
+    connectionWebRTCError: string
+    networkId: number | null
+    genesisBlockHash: string | null
+    features: {
+      syncing: null
+    } | null
+  } | null
+}
+```
+
+### `peer/getPeerMessages`
+
+Gets peer messages from an identity
+
+#### Request
+
+```js
+{
+  identity: string
+  stream?: boolean
+}
+```
+
+#### Response
+
+```js
+{
+  brokeringPeerDisplayName?: string
+  direction: 'send' | 'receive'
+  message: {
+    payload: string
+    type: string
+  }
+  timestamp: number
+  type: 'WebSocket' | 'WebRtc'
+}
+```
+
+### `peer/getPeers`
+
+Gets peer from the node's peer network
+
+#### Request
+
+```js
+{
+  stream?: boolean
+} | undefined
+```
+
+#### Response
+
+```js
+{
+  peers: Array<{
+    state: string
+    identity: string | null
+    version: number | null
+    head: string | null
+    sequence: number | null
+    work: string | null
+    agent: string | null
+    name: string | null
+    address: string | null
+    port: number | null
+    error: string | null
+    connections: number
+    connectionWebSocket:
+      | { type: 'DISCONNECTED' }
+      | { type: 'CONNECTING' }
+      | { type: 'REQUEST_SIGNALING' }
+      | { type: 'SIGNALING' }
+      | { type: 'WAITING_FOR_IDENTITY' }
+      | { type: 'CONNECTED'; identity: string }
+    connectionWebSocketError: string
+    connectionWebRTC:
+      | { type: 'DISCONNECTED' }
+      | { type: 'CONNECTING' }
+      | { type: 'REQUEST_SIGNALING' }
+      | { type: 'SIGNALING' }
+      | { type: 'WAITING_FOR_IDENTITY' }
+      | { type: 'CONNECTED'; identity: string }
+    connectionWebRTCError: string
+    networkId: number | null
+    genesisBlockHash: string | null
+    features: {
+      syncing: null
+    } | null
+  }>
+}
+```
+
+## RPC
+
+### `rpc/getStatus`
+
+Gets status of the RPC server
+
+#### Request
+
+```js
+{
+  stream?: boolean
+} | undefined
+```
+
+#### Response
+
+```js
+{
+  started: boolean
+  adapters: {
+    name: string
+    inbound: number
+    outbound: number
+    readableBytes: number
+    writableBytes: number
+    readBytes: number
+    writtenBytes: number
+    clients: number
+    pending: string[]
+  }[]
+}
+```
+
+## Worker
+
+### `worker/getStatus`
+
+Displays info on long-running jobs queued with the node's workers (similar to a threadpool).
+
+#### Request
+
+```js
+{
+  stream?: boolean
+} | undefined
+```
+
+#### Response
+
+```js
+{
+  started: boolean
+  workers: number
+  queued: number
+  capacity: number
+  executing: number
+  change: number
+  speed: number
+  jobs: Array<{
+    name: string
+    complete: number
+    execute: number
+    queue: number
+    error: number
+  }>
+}
+```
