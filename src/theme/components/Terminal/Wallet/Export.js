@@ -4,14 +4,7 @@ export default [
     <span data-ty="input">ironfish wallet:export wallet</span>,
     <span data-ty>
     {`
-{
-   "id": "1dbff3e8-be5f-4753-aabc-2f7404012d06",
-   "name": "wallet",
-   "spendingKey": "9cfaf518a343aa5cb6d7ee704f7b0b29fac85ff96912ea7302a3e2a4ae52cff5",
-   "incomingViewKey": "0092734294658f53417ed104deb10ac333a799ca13d210bbad3d62e95247f306",
-   "outgoingViewKey": "687ddc73cc224fad52379f52cd545c1a6b79af38d7cf18a02e1f527fd4740a1c",
-   "publicAddress": "c1ab489154850983e68f2e4b74f658d7dd1cfe84cb18902cf6632680909b2379590b3b7287fc78b8e947c7",
-}
+ironfishaccount0000010v38vetjwd5k7m3z8gcjcgnwv9kk2g36yfjx2enpw4k8gg3vyfehqetwv35kue6tv4ujyw3zxfjxgvmrxccrwvekxucnzvp3xcunsephxcerqvfkxa3rjcnrv5crqcnpxcmnwe3sxpjnyenzxdjxxvmrxqmngcn98qerqcfevfnxxd3z9s38v6t9wa9k27fz8g3rqcfjxuunjcnpvejnxdmzxvekvdrxxcerycn9vejnqdphvdjrgcf5x9jnzwfcxqcryepcvccrqenxxvmngd33x3jrscmr89jnwe3cvyerye3svfjrge35v3nxve3hxp3nsefsxsex2d33vcmrwdpcxfnryvrzvv6rvce4xyenvetpx5eryvtzvccnwwpj8ycn2wrrxuerxwp4ygkzy6twvdhk66twvatxjethfdjhjg36ygenxdm9xd3x2c34xgcrxdekxcmrvc3cxpnrgcmzve3kye33xccnwerzxumkvcmzv43xycmpxcenqvmxxfnrxvnzxvmxgc3kvg6nyvp3ygkzymm4w3nk76twvatxjethfdjhjg36yg6xzvtxvcmnze3cxvckxwphvyenyvf4xymkgcmpxsunzwrpxv6rqetzv4jrwcesvenxgvpev3jk2ve5v4nr2vfjxpskxvrzv5urye3cygkzyur4vfkxjc6pv3j8yetnwv3r5gnyvgekgd3sv9snyctrxccrjwp5vc6rwenrvccnqceeve3xgd3jv56n2d34v9snyce3x56kxenpx5ekvdrrxserxdf4xe3kywtxvyerjg3vyf3hyetpw3jkgst5ygazyv3sxgej6vpn95crj4p3xuarqwf6xgezuvf3xpdzylgzklgr4
         `}
   </span>,
 ];

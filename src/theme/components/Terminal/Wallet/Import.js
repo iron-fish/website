@@ -5,17 +5,17 @@ export default [
     <span
         data-ty="input"
         data-ty-type-delay="400"
-        data-ty-prompt="Enter the account name:"
+        data-ty-prompt="Paste the output of wallet:export, or your spending key:"
     >
-        wallet
-      </span>,
+      9cfaf518a343aa5cb6d7ee704f7b0b29fac85ff96912ea7302a3e2a4ae52cff5
+    </span>,
     <span
-        data-ty="input"
-        data-ty-type-delay="400"
-        data-ty-prompt="Enter the account spending key:"
+      data-ty="input"
+      data-ty-type-delay="400"
+      data-ty-prompt="Enter a new account name:"
     >
-        9cfaf518a343aa5cb6d7ee704f7b0b29fac85ff96912ea7302a3e2a4ae52cff5
-      </span>,
+      wallet
+    </span>,
     <span data-ty>
         {`
 Account wallet imported.
