@@ -70,7 +70,7 @@ const questions = [
     id: "more",
     title: "Have more questions?",
     description: {
-      __html: `We have an extensive community-sourced FAQ on <a href="https://coda.io/d/Iron-Fish-Community_dvILN4uyPEb/FAQs_suOCT#_luKqk">our wiki</a>.`,
+      __html: `We have an extensive community-sourced FAQ on <a href="https://github.com/iron-fish/ironfish/wiki">our wiki</a>.`,
     },
   },
 ];

@@ -69,20 +69,17 @@ function BlogListPage(props) {
             const { image, title, thumbnail } = frontMatter;
             const imageUrl = useBaseUrl(thumbnail || image);
             return (
-              <div
+              <Link
                 className={clsx(styles.post)}
                 style={{ backgroundImage: `url(${imageUrl})` }}
                 key={metadata.permalink}
+                to={metadata.permalink}
+                aria-label={`Read more about ${title}`}
               >
                 <p>
-                  <Link
-                    to={metadata.permalink}
-                    aria-label={`Read more about ${title}`}
-                  >
-                    {title}
-                  </Link>
+                  {title}
                 </p>
-              </div>
+              </Link>
             );
           })}
           <BlogListPaginator metadata={metadata} />

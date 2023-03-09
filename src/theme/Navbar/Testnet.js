@@ -2,14 +2,13 @@ import React from "react";
 
 import TestnetGridElement from "./TestnetGridElement";
 import SectionHeader from "./SectionHeader";
-import overrides from "./overrides.module.css";
 
 function Testnet({ condensed = false }) {
-  const elementClassName = `py-4 ${condensed ? "px-2" : "px-6"}`;
-  const textClassName = `ml-4`;
+  const elementClassName = `p-2 lg:p-4 lg:mr-4 ${condensed ? '' : 'mr-2'}`
+  const textClassName = `lg:ml-4 ${condensed ? 'ml-4' : 'ml-2'}`
   const className = condensed
-    ? "bg-white z-40 w-full"
-    : "absolute bg-white left-0 right-0 shadow-navbar z-40 top-5.5";
+    ? 'bg-white z-40 w-full'
+    : 'absolute bg-white left-0 right-0 shadow-navbar z-40 top-5.5'
   return (
     <div className="flex">
       <div
@@ -17,59 +16,18 @@ function Testnet({ condensed = false }) {
         style={{ clipPath: !condensed ? "inset(0 0 -100% 0)" : undefined }}
       >
         <div
-          className={`flex justify-center ${
+          className={`flex flex-col ${
             condensed
-              ? "flex-col"
-              : `border-0 border-b border-t border-solid border-iflightgray flex-row`
+              ? 'w-full items-start p-2'
+              : 'border-0  border-b border-t border-solid border-iflightgray items-center p-8'
           }`}
         >
-          <div
-            className={`flex ${
-              condensed
-                ? `justify-start p-4`
-                : `justify-end border-0 border-r border-solid border-iflightgray p-8 pb-10`
-            }`}
-          >
-            <div style={{ maxWidth: condensed ? undefined : "14rem" }}>
-              <SectionHeader>IRON FISH CLI</SectionHeader>
-              <div className="text-ifgray">
-                <h4
-                  className={`text-xl text-black mb-1 ${overrides.testnetH4}`}
-                >
-                  Installation Guide
-                </h4>
-                <p className="font-favorit text-sm mb-2">
-                  An in-depth walkthrough of how to set up Iron Fish on your
-                  machine.
-                </p>
-                <a
-                  href="https://ironfish.network/docs/onboarding/iron-fish-tutorial"
-                  className={`flex font-favorit text-sm ${overrides.link}`}
-                >
-                  <span>Read the walkthrough</span>
-                  <span className="ml-2">&#x203A;</span>
-                </a>
-              </div>
-            </div>
-          </div>
-          <div className={`flex ${condensed ? "p-4" : "p-8 pl-14"} pb-12`}>
-            <div className={condensed ? "w-full" : ""}>
-              <SectionHeader>INCENTIVIZED TESTNET</SectionHeader>
+          <div className={condensed ? 'w-full' : ''}>
+            <div className={`flex flex-col ${condensed ? 'w-full' : ''}`}>
+              {!condensed && <SectionHeader>INCENTIVIZED TESTNET</SectionHeader>}
               <div
-                className={
-                  condensed
-                    ? "flex flex-col w-full"
-                    : "grid grid-rows-2 grid-cols-2 gap-4 -ml-6"
-                }
+                className={`flex ${condensed ? 'flex-col w-full' : 'flex-row'}`}
               >
-                <TestnetGridElement
-                  href="https://testnet.ironfish.network/about"
-                  header="About the Testnet"
-                  body="How to earn points"
-                  className={elementClassName}
-                  textClassName={textClassName}
-                  cubeClassName="text-iforange"
-                />
                 <TestnetGridElement
                   href="https://testnet.ironfish.network/leaderboard"
                   header="Testnet Leaderboard"
