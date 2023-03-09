@@ -74,6 +74,8 @@
   background-repeat: no-repeat;
   background-position: center;
   height: var(--ifm-post-height);
+  color: var(--ifm-color-primary-contrast);
+  text-decoration: none;
 }
 .listPosts .post img {
   position: absolute;
