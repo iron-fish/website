@@ -49,14 +49,13 @@ ironfish wallet:use MyAccount
 ### Import an Account
 To import an account from a file:
 ```sh
-ironfish wallet:import filename
+ironfish wallet:import --path filename
 ```
 
 To import an account via stdin:
 ```sh
-echo {<account json>} | ironfish wallet:import
+ironfish wallet:import {<exported account or spending key>}
 ```
-Enter the JSON of the account and press enter
 
 To import an account interactively:
 ```sh
@@ -64,12 +63,12 @@ ironfish wallet:import
 ```
 <Terminal command={Import} />
 
-Enter the details requested by the prompts as shown above
+Enter the details requested by the prompts as shown above.
 
 ### Export an Account
 To export an account to a file:
 ```sh
-ironfish wallet:export AccountName filename
+ironfish wallet:export AccountName --path filename
 ```
 
 To export an account to the terminal:
@@ -77,6 +76,11 @@ To export an account to the terminal:
 ironfish wallet:export AccountName
 ```
 <Terminal command={Export} />
+
+To export a view-only account to the terminal:
+```sh
+ironfish wallet:export --viewonly AccountName
+```
 
 ### See current default account
 To display the current default account used by the CLI
