@@ -52,5 +52,6 @@ module.exports = {
         'onboarding/rpc/worker',
       ],
     },
+    'onboarding/glossary',
   ]
 };
