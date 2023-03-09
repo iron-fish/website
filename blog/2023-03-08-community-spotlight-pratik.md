@@ -19,8 +19,9 @@ Iron Fish community members are always willing to step up and support each other
 
 ### How did you get into crypto?
 
-*In 2017, there was a lot of excitement around Bitcoin, and I jumped on the bandwagon and purchased some when the price peaked at $15,000. At the time, I was caught up in the hype and believed the price would continue to skyrocket, potentially reaching $100,000 or more.* 
-However, as we all know, the crypto market can be incredibly volatile, and after just a few months, the price of Bitcoin began to decline rapidly. Unfortunately, I was caught up in the downturn and experienced significant losses. It was a harsh but valuable lesson, and I now better understand the risks and rewards associated with investing in cryptocurrencies.*
+*In 2017, there was a lot of excitement around Bitcoin, and I jumped on the bandwagon and purchased some when the price peaked at $15,000. At the time, I was caught up in the hype and believed the price would continue to skyrocket, potentially reaching $100,000 or more.*
+
+*However, as we all know, the crypto market can be incredibly volatile, and after just a few months, the price of Bitcoin began to decline rapidly. Unfortunately, I was caught up in the downturn and experienced significant losses. It was a harsh but valuable lesson, and I now better understand the risks and rewards associated with investing in cryptocurrencies.*
 
 ### What do you think will drive crypto adoption?
 
