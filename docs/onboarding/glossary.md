@@ -36,7 +36,7 @@ Measure of how difficult it is to produce an Iron Fish [Block](#block).
 
 ### Sequence
 
-The sequential index number of a block in the Iron Fish chain, or the number of blocks preceding a given [Block](#block).
+The sequential index number of a block in the Iron Fish chain, or the number of blocks up to and including the current block.
 
 ## Circuit
 
@@ -74,7 +74,7 @@ Derived from spending key using a seeded pseudorandom hash function. Used to con
 
 > Also known as `ak`
 
-Public key for the [Spend Authorization Key](#spend-authorization-key) by multiplying the [Spend Authorization Key](#spend-authorization-key) with a fixed generator base point for it on the Jubjub curve.
+Public key constructed by multiplying the [Spend Authorization Key](#spend-authorization-key) with a fixed generator base point for it on the Jubjub curve.
 
 ### Proof Authorization Key
 
@@ -93,6 +93,10 @@ Allows users to decrypt a [Note](#note) for a spender from outgoing transactions
 > Also known as `ivk`
 
 Allows users to decrypt a [Note](#note) for an owner from incoming transactions.
+
+### View Key
+
+A composite of the [Outgoing View Key](#outgoing-view-key) and [Incoming View Key](#incoming-view-key) allowing for note decryption from both outgoing and incoming transactions.
 
 ## Raw Transaction
 
@@ -133,7 +137,7 @@ A sequence value after which the [Transaction](#transaction) will fail consensus
 
 ### Fee
 
-A reward in $IRON which is paid out to miners for confirming [Transactions](#transaction) to a [Block].
+A reward in $IRON which is paid out to miners for confirming [Transactions](#transaction) to a [Block](#block).
 
 ## Miners
 
@@ -165,4 +169,4 @@ An Iron Fish wallet manages [Accounts](#account), listens to incoming transactio
 
 ### Account
 
-An Iron Fish account holds private [keys](#keys) which enables users to view transaction details and spend transfer assets to other addresses.
+An Iron Fish account holds private [keys](#keys) which enable users to view transaction details and transfer assets to other addresses.
