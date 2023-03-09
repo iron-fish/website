@@ -60,7 +60,7 @@ Iron Fish community members are always willing to step up and support each other
 *By providing privacy features such as pseudonymity and encryption, cryptocurrencies can help protect the privacy and security of users. These features can ensure that transaction information is only visible to the parties involved while maintaining the blockchain network's transparency and security.*
 
 ###  What has been your experience with the Iron Fish community?
-*I was blown away by the activity level in the Ironfish community during the testnet phase. Seeing members' enthusiasm to set up a node and contribute to the project's privacy goals was terrific. The community was incredibly live and active 24/7, with dedicated individuals providing support around the clock.*
+*I was blown away by the activity level in the Ironfish community during the testnet phase. Seeing members' enthusiasm to set up a node and contribute to the project's privacy goals was terrific! The community was incredibly live and active 24/7, with dedicated individuals providing support around the clock.*
 
 ###  What do you think draws others to Iron Fish?
 
