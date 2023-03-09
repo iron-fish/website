@@ -158,3 +158,11 @@ A method to prove that is statement is true to a verifier. Iron Fish proofs are 
 ### Proof Inputs
 
 The raw public and private parameters needed to create a [Proof](#proof).
+
+## Wallet
+
+An Iron Fish wallet manages [Accounts](#account), listens to incoming transactions from the chain, and broadcasts transactions to the chain.
+
+### Account
+
+An Iron Fish account holds private [keys](#keys) which enables users to view transaction details and spend transfer assets to other addresses.
