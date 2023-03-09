@@ -131,6 +131,11 @@ Gets (and optionally streams) the node's status
 }
 `} />
 
+import Terminal from '../../../src/theme/components/Terminal/Terminal'
+import GetStatus from '../../../src/theme/components/Terminal/rpc/GetStatus'
+
+<Terminal command={GetStatus} />
+
 ## node/stopNode
 
 Shuts the node down
