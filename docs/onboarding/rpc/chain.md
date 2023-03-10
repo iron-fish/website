@@ -187,6 +187,14 @@ Gets a block from the chain from a hash or sequence
 }
 `} />
 
+import Terminal from '../../../src/theme/components/Terminal/Terminal'
+import GetBlock from '../../../src/theme/components/Terminal/rpc/GetBlock'
+
+```
+curl -d "{\"sequence\": 1}" -X POST http://localhost:8080/chain/getBlock
+```
+<Terminal command={GetBlock} />
+
 ## chain/getChainInfo
 
 Gets information about the node's chain
