@@ -84,7 +84,7 @@ We also know that late 2022 had its challenging moments. More than ever, we saw 
 
 ## Incentivized Testnet Phase 3
 
-In Phase 3 (January 18, 2023–March 7, 2023), we refined [multi-asset functionality](https://ironfish.network/blog/2023/01/13/multi-asset-phase3)  and grew our community to over  **43,0000** Discord members!
+In Phase 3 (January 18, 2023–March 7, 2023), we refined [multi-asset functionality](https://ironfish.network/blog/2023/01/13/multi-asset-phase3)  and grew our community to over  **43,000** Discord members!
 In Phase 3:
 
 -   Users minted **300,000+** custom assets on the network
