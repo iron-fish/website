@@ -135,7 +135,7 @@ import Terminal from '../../../src/theme/components/Terminal/Terminal'
 import GetStatus from '../../../src/theme/components/Terminal/rpc/GetStatus'
 
 ```
-curl -X POST http://localhost:8080/node/getStatus
+curl -X POST http://localhost:8021/node/getStatus
 ```
 
 <Terminal command={GetStatus} />

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 
 export default [
-    <span data-ty="input">curl -X POST http://localhost:8080/node/getStatus</span>,
+    <span data-ty="input">curl -X POST http://localhost:8021/node/getStatus</span>,
     <span data-ty>
     {`
 {

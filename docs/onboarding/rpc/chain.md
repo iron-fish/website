@@ -191,7 +191,7 @@ import Terminal from '../../../src/theme/components/Terminal/Terminal'
 import GetBlock from '../../../src/theme/components/Terminal/rpc/GetBlock'
 
 ```
-curl -d "{\"sequence\": 1}" -X POST http://localhost:8080/chain/getBlock
+curl -d '{"sequence": 1}' -X POST http://localhost:8021/chain/getBlock
 ```
 <Terminal command={GetBlock} />
 
