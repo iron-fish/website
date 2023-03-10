@@ -385,7 +385,7 @@ Renders the chain from an optional sequence range
 
 ## chain/getNetowrkInfo
 
-Get informatin about the node's network
+Get information about the node's network
 
 #### Request
 
