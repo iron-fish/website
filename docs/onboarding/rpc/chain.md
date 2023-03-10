@@ -382,3 +382,19 @@ Renders the chain from an optional sequence range
   content: string[]
 }
 `} />
+
+## chain/getNetowrkInfo
+
+Get informatin about the node's network
+
+#### Request
+
+<JsDisplay js={`undefined
+`} />
+
+#### Response
+
+<JsDisplay js={`{
+  networkId: number
+}
+`} />
