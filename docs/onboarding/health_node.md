@@ -59,7 +59,7 @@ Run the following command to display your chain status. Heaviest head is the lat
 ironfish chain:show
 ```
 
-<Terminal command={Chain} options={`{typeDelay: 45}`} />
+<Terminal command={Chain} />
 
 ## Peers information
 

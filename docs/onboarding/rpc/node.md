@@ -138,7 +138,7 @@ import GetStatus from '../../../src/theme/components/Terminal/rpc/GetStatus'
 curl -X POST http://localhost:8080/node/getStatus
 ```
 
-<Terminal command={GetStatus} options={`{typeDelay: 45}`} />
+<Terminal command={GetStatus} />
 
 ## node/stopNode
 
