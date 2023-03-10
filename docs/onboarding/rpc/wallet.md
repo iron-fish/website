@@ -304,7 +304,7 @@ Returns an account's public key.
 
 ## wallet/getAccountsStatus
 
-Returns an account's public key.
+Returns the status of an account or of all accounts if no account is provided.
 
 #### Request
 
