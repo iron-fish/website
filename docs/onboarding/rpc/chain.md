@@ -15,7 +15,7 @@ Estimates fee given an optional priority
 #### Request
 
 <JsDisplay js={`{
-  priority: 'slow' | 'medium' | 'large'
+  priority: 'slow' | 'average' | 'fast'
 } | undefined
 `} />
 
