@@ -134,6 +134,10 @@ Gets (and optionally streams) the node's status
 import Terminal from '../../../src/theme/components/Terminal/Terminal'
 import GetStatus from '../../../src/theme/components/Terminal/rpc/GetStatus'
 
+```
+curl -X POST http://localhost:8080/node/getStatus
+```
+
 <Terminal command={GetStatus} options={`{typeDelay: 45}`} />
 
 ## node/stopNode
