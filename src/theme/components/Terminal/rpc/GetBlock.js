@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 
 export default [
-    <span data-ty="input">{`curl -d "{\\\"sequence\\\": 1}" -X POST http://localhost:8080/chain/getBlock`}</span>,
+    <span data-ty="input">{`curl -d '{"sequence": 1}' -X POST http://localhost:8080/chain/getBlock`}</span>,
     <span data-ty>
     {
 `{
