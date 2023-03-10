@@ -3,7 +3,7 @@ id: wallet
 title: RPC Wallet commands
 sidebar_label: Wallet
 description: RPC Wallet | Iron Fish Documentation
-hide_table_of_contents: false
+hide_table_of_contents: true
 ---
 
 import JsDisplay from '../../../src/theme/components/Terminal/JsDisplay'
