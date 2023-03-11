@@ -284,6 +284,22 @@ Gets hash power from the chain from a sequence or block range
 }
 `} />
 
+## chain/getNetworkInfo
+
+Get information about the node's network
+
+#### Request
+
+<JsDisplay js={`undefined
+`} />
+
+#### Response
+
+<JsDisplay js={`{
+  networkId: number
+}
+`} />
+
 ## chain/getTransaction
 
 Gets a transaction from a block hash and transaction hash
