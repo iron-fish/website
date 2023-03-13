@@ -11,7 +11,7 @@ image: /img/blog/mainnet-update/mainnetdate.png
 tags: [ironfish, mainnet, update]
 ---
 
-We have an important mainnet update — we are delaying the Iron Fish mainnet to April 20, 2023.
+We have an important mainnet update — we are **delaying the Iron Fish mainnet to April 20, 2023**.
 
 Our mission has always been to create the strongest privacy layer-1 possible, and have put our codebase through rigorous tests. In this process, we found a bug that needs to be fixed before we can launch mainnet.
 
@@ -23,8 +23,8 @@ As of March 13th, we have opened the [Redemption Portal](https://testnet.ironfis
 
 New dates and deadlines:
 
--   The new KYC deadline is April 14, 2023
--   The airdrop for all eligible recipients will be April 21, 2023
+-   The new KYC deadline is **April 14, 2023**
+-   The airdrop for all eligible recipients will be **April 21, 2023**
 
 We recommend completing the process well before the deadline to leave ample time to address any issues. If you run into any issues while doing KYC or have questions, please visit [Discord](https://discord.ironfish.network/). US residents, please read [our statement](https://testnet.ironfish.network/faq#us-token-distribution) on our website
 
