@@ -5,7 +5,7 @@ export default [
     <span data-ty>
     {`
 Account: default
-Balance: $IRON 0.00000000
+Available Balance: $IRON 0.00000000
         `}
   </span>,
 ];
