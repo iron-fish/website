@@ -42,4 +42,4 @@ Iron Fish is now ready to use. Follow the [next step](new_node.md) of the tutori
 
 ## Alternative Installation Methods
 
-You can also get started with Iron Fish by [using Docker](http://localhost:3000/docs/onboarding/installation-iron-fish-docker) or [running from source](http://localhost:3000/docs/onboarding/installation-iron-fish-source). If you are using an Intel-based macOS system, [we support Homebrew](http://localhost:3000/docs/onboarding/installation-iron-fish-homebrew) as an alternative installation method.
+You can also get started with Iron Fish by [using Docker](/docs/onboarding/installation-iron-fish-docker) or [running from source](/docs/onboarding/installation-iron-fish-source). If you are using an Intel-based macOS system, [we support Homebrew](/docs/onboarding/installation-iron-fish-homebrew) as an alternative installation method.
