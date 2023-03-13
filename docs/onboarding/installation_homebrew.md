@@ -10,7 +10,7 @@ hide_table_of_contents: false
 import Terminal from '../../src/theme/components/Terminal/Terminal'
 import Ironfish from '../../src/theme/components/Terminal/Ironfish'
 
-> **Note:** Our Homebrew tap does not yet support **M1/arm64**. However, you can install Iron Fish directly [from the source](#from-source) or [use Docker](#using-docker) with `x86_64` support.
+> **Note:** Our Homebrew tap does not yet support **Apple Silicon/arm64**. We recommend installing Iron Fish [using NPM](http://localhost:3000/docs/onboarding/installation-iron-fish). You can also install Iron Fish [from the source](#from-source) or [use Docker](#using-docker) with `x86_64` support.
 
 Start by adding our Homebrew tap and installing Iron Fish.
 
