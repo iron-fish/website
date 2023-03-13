@@ -16,13 +16,14 @@ import CheckDefault from '../../src/theme/components/Terminal/Wallet/CheckDefaul
 import Export from '../../src/theme/components/Terminal/Wallet/Export'
 import PubKey from '../../src/theme/components/Terminal/Wallet/PubKey'
 import Import from '../../src/theme/components/Terminal/Wallet/Import'
-import Remove from '../../src/theme/components/Terminal/Wallet/Remove'
+import Delete from '../../src/theme/components/Terminal/Wallet/Delete'
 import Send from '../../src/theme/components/Terminal/Wallet/Send'
 import Rescan from '../../src/theme/components/Terminal/Wallet/Rescan'
 import Transactions from '../../src/theme/components/Terminal/Wallet/Transactions'
 import Notes from '../../src/theme/components/Terminal/Wallet/Notes'
 import Mint from '../../src/theme/components/Terminal/Wallet/Mint'
 import Burn from '../../src/theme/components/Terminal/Wallet/Burn'
+import Assets from '../../src/theme/components/Terminal/Wallet/Assets'
 
 
 
@@ -97,28 +98,35 @@ ironfish wallet:accounts
 <Terminal command={List} />
 
 ### Account address
-To see a specific account public key
+To see the public key for an account
 ```sh
 ironfish wallet:address
 ```
 <Terminal command={PubKey} />
 
+### Account assets
+To see the custom assets for an account
+```sh
+ironfish wallet:assets
+```
+<Terminal command={Assets} />
+
 ### Account balance
-To display the balance of the account
+To display the balance of an account
 ```sh
 ironfish wallet:balance
 ```
 <Terminal command={CheckBalance} />
 
 ### Account balances
-To display the balance of all assests on the account
+To display the balance of all assets on an account
 ```sh
 ironfish wallet:balances
 ```
 <Terminal command={CheckBalances} />
 
 ### Account notes
-To display the notes of the account
+To display the notes of an account
 ```sh
 ironfish wallet:notes
 ```
@@ -127,9 +135,9 @@ ironfish wallet:notes
 ### Account deletion
 To delete an account
 ```sh
-ironfish wallet:remove MyAccount
+ironfish wallet:delete MyAccount
 ```
-<Terminal command={Remove} />
+<Terminal command={Delete} />
 
 ### Mint a new asset
 To mint a new asset
@@ -166,4 +174,4 @@ ironfish wallet:rescan
 ```
 <Terminal command={Rescan} />
 
-Wait for scanning to get completed
+Wait for scanning to complete

@@ -5,7 +5,7 @@ export default [
       <span
         data-ty="input"
         data-ty-type-delay="400"
-        data-ty-prompt="Enter the amount in $IRON (balance available: $IRON 200)"
+        data-ty-prompt="Enter the amount in $IRON (balance: $IRON 200)"
       >
         20
       </span>,
@@ -27,8 +27,6 @@ export default [
         {`
 You are about to send:
 $IRON 20 to ab518b8c908d7157eaebdf8159c5813894074d3136826daba4a485598de1b86a597af2821f8400bbfe70c1 from the account IronFishGenesisAccount
-
-* This action is NOT reversible *
 `}
       </span>,
       <span
