@@ -10,13 +10,28 @@ import JsDisplay from '../../../src/theme/components/Terminal/JsDisplay'
 
 ## chain/estimateFeeRate
 
-Estimates fee given an optional priority
+Estimates the fee rate given an optional priority. Fee rates are estimated from the distribution
+of transaction fees over the last 10 blocks.
+
+The fee rate for each transaction is computed by dividing the transaction fee in $ORE by the size of the transaction in kB.
+
+The slow, average, and fast rates each come from a percentile in the distribution:
+slow:    10th
+average: 20th
+fast:    30th
+
+#### Parameters
+priority [optional, default = 'average']
+- one of 'slow', 'average', 'fast'
+
+#### Returns
+Returns the fee rate for the provided priority
 
 #### Request
 
 <JsDisplay js={`{
-  priority: 'slow' | 'average' | 'fast'
-} | undefined
+  priority: 'slow'
+}
 `} />
 
 #### Response
@@ -29,6 +44,9 @@ Estimates fee given an optional priority
 ## chain/estimateFeeRates
 
 Estimates fee rates for all priorities
+
+#### Parameters
+No parameters
 
 #### Request
 
