@@ -19,7 +19,7 @@ We appreciate your support and patience while we resolve the issue. This delay a
 
 ### Incentivized Testnet Rewards
 
-As of March 13th, we have opened the [Redemption Portal](https://testnet.ironfish.network/dashboard/rewards) to all participants, regardless of phase.
+As of March 13th, we have opened the [Redemption Portal](https://testnet.ironfish.network/dashboard/rewards) to **all** participants, regardless of phase.
 
 New dates and deadlines:
 
