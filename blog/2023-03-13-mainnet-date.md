@@ -11,7 +11,7 @@ image: /img/blog/mainnet-update/mainnetdate.png
 tags: [ironfish, mainnet, update]
 ---
 
-We have an important mainnet update — we are **delaying the Iron Fish mainnet to April 20, 2023**.
+We have an important mainnet update — **we are delaying the Iron Fish mainnet to April 20, 2023**.
 
 Our mission has always been to create the strongest privacy layer-1 possible, and have put our codebase through rigorous tests. In this process, we found a bug that needs to be fixed before we can launch mainnet.
 
