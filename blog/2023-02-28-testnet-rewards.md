@@ -11,8 +11,7 @@ image: /img/blog/testnet-rewards/rewards.png
 tags: [ironfish, mainnet, testnet, rewards, tokens]
 ---
 
-
-### Note: This article is outdated. The deadline for all users to complete KYC is now April 14, 2023. For more, please see: https://ironfish.network/blog/2023/03/13/mainnet-date
+### Note: This article is outdated. The deadline for all users to complete KYC is now April 14, 2023. For more, please see our [March 13, 2023 mainnet update](https://ironfish.network/blog/2023/03/13/mainnet-date).
 
 The Iron Fish Incentivized Testnet is coming to an end. We've seen incredible participation and are so excited to take this next step with you.
 
