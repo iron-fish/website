@@ -167,15 +167,21 @@ Returns assets in the wallet.
 #### Request
 
 <JsDisplay js={`{
-  default?: boolean
-  displayName?: boolean
-} | undefined
+  account?: string
+  confirmations?: number
+}
 `} />
 
 #### Response
 
 <JsDisplay js={`{
-  accounts: string[]
+  createdTransactionHash: string
+  id: string
+  metadata: string
+  name: string
+  owner: string
+  status: string
+  supply: string | null
 }
 `} />
 
@@ -363,7 +369,7 @@ Returns a transaction for an account.
 
 ## wallet/getAccountTransactions
 
-Returns transactions for an account.
+Returns transactions for an account. The default account is used if no account is provided.
 
 #### Request
 
@@ -400,7 +406,16 @@ Imports an account to the wallet.
 #### Request
 
 <JsDisplay js={`{
-  account: AccountImport
+  account: {
+    version: number
+    name: string
+    spendingKey: string | undefined
+    viewKey: string
+    incomingViewKey: string
+    outgoingViewKey: string
+    publicAddress: string
+    createdAt: Date | undefined
+  }
   rescan?: boolean
 }
 `} />

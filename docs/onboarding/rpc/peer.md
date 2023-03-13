@@ -154,7 +154,7 @@ Gets (and optionally streams) peers from the node's peer network
     networkId: number | null
     genesisBlockHash: string | null
     features: {
-      syncing: null
+      syncing: boolean
     } | null
   }>
 }
