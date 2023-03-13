@@ -33,7 +33,6 @@ module.exports = {
     'onboarding/iron-fish-configuration',
     'onboarding/iron-fish-wallet-commands',
     'onboarding/iron-fish-cli',
-    'onboarding/iron-fish-blocks-commands',
     {
       type: 'category',
       label: 'RPC API reference',
