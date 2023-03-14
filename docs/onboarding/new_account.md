@@ -11,7 +11,7 @@ import Create from '../../src/theme/components/Terminal/Wallet/Create'
 
 ### Create a new account
 
-By default, an account is created when you start up your node for the first time. But you can create a new account at any time with the following command:
+By default, your node creates an account when you start up your node for the first time. You can create a new account at any time with the following command:
 
 ```sh
 ironfish wallet:create
@@ -20,12 +20,13 @@ ironfish wallet:create
 <Terminal command={Create} />
 
 ### Set the account as default
-When you have multiple accounts, you can indicate to the CLI which one to use:
+When you have multiple accounts you can set which account to use as the default account:
 ```sh
 ironfish wallet:use MyNewAccount
 ```
 
 ## Next steps
 
-You can read about the different accounts commands in [this section](wallet.md).
-Now that you have created an account, you can use it to get coins or start mining.
+You can read about the different wallet commands in [the wallet section](wallet.md).
+
+Now that you have created an account you can [receive transactions](transactions.md#receive-a-transaction) or [start mining $IRON](mine.md).
