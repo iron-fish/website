@@ -12,13 +12,15 @@ import Ironfish from '../../src/theme/components/Terminal/Ironfish'
 
 ## Recommended Installation
 
-We recommend installing Iron Fish through [NPM](https://nodejs.org/en/download/).
+1. Install [Node.js 18 (on Windows, choose 64-bit/x64)](https://nodejs.org/en/download/).
+
+> **Note:** On Mac and Linux, You can also install Node.js through [nvm](https://nvm.sh).
+
+2. Next, run the following:
 
 ```sh
 npm install -g ironfish
 ```
-
-> **Note:** If you do not have NPM on your system, you may need to install [Node.js](https://nodejs.org/en/download/). We require version 18 - you may also want to check out [nvm](https://nvm.sh).
 
 You're all set! Run the Iron Fish CLI:
 
@@ -30,7 +32,7 @@ ironfish
 
 <br />
 
-When new versions are announced, you can update through NPM:
+When new Iron Fish versions are released, you can update through NPM:
 
 ```sh
 npm install -g ironfish
@@ -40,4 +42,4 @@ Iron Fish is now ready to use. Follow the [next step](new_node.md) of the tutori
 
 ## Alternative Installation Methods
 
-You can also get started with Iron Fish by using Docker or running from source. If you are using an Intel-based macOS system, we support Homebrew as an alternative installation method.
+You can also get started with Iron Fish by [using Docker](/docs/onboarding/installation-iron-fish-docker) or [running from source](/docs/onboarding/installation-iron-fish-source). If you are using an Intel-based macOS system, [we support Homebrew](/docs/onboarding/installation-iron-fish-homebrew) as an alternative installation method.
