@@ -109,7 +109,7 @@ Sets a configuration value for the node
 
 ## config/unsetConfig
 
-Unsets a configuration value for the node
+Unsets a configuration value for the node and falls back to the default.
 
 #### Request
 
@@ -125,7 +125,8 @@ Unsets a configuration value for the node
 
 ## config/uploadConfig
 
-Uploads a set of configuration values for the node
+Uploads a set of configuration values for the node.
+This resets any previously set config to the default.
 
 #### Request
 
