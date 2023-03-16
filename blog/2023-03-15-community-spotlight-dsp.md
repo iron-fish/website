@@ -42,7 +42,6 @@ Public blockchains are amazing for their innovation, but publicly associating ev
 Did you just buy some beer with crypto? Do you want the world to know that you just bought beer with crypto? Iron Fish solves that.
 
 ### What has been your experience with the Iron Fish community?
-
 Iron Fish has an awesome Discord, and I am amazed at the talented people I have met there.
 
 ### What do you think draws others to Iron Fish?
