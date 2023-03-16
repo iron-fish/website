@@ -91,17 +91,6 @@ const employees = [
   },
 
   {
-    name: "Lawrence",
-    title: "Eng Manager",
-    linkedin: "lwisne",
-    description:
-      "Cat herder. Aspiring Florida Man. Enjoys playing chess, running long distances, and hitting launch deadlines.",
-    r: "#39703C",
-    l: "#6C9E6C",
-    t: "#A2C697",
-  },
-
-  {
     name: "Hugh",
     title: "Engineer",
     linkedin: "hughy",
@@ -123,10 +112,37 @@ const employees = [
   },
 
   {
-    name: "Sanjey",
-    title: "Ops",
-    description:
-      "Xoogler turned startup vet. Web3 hobbyist turned enthusiast. Orlando Magic fan turned prisoner.",
+    name: "Joe",
+    title: "Engineer",
+    linkedin: "josephwparks",
+    description: "",
+    r: "#39703C",
+    l: "#6C9E6C",
+    t: "#A2C697",
+  },
+
+  {
+    name: "Meg",
+    title: "Marketing",
+    description: "",
+    r: "#39ff14",
+    l: "#ff44cc",
+    t: "#9c17b5",
+  },
+
+  {
+    name: "Neil",
+    title: "Marketing",
+    description: "",
+    r: "#B57E5B",
+    l: "#EAB898",
+    t: "#FFE2CF",
+  },
+
+  {
+    name: "Kelly",
+    title: "Chief of Staff",
+    description: "",
     r: "#ffffff",
     l: "#0077C0",
     t: "#ffffff",
@@ -143,13 +159,32 @@ const employees = [
   },
 
   {
-    name: "Craig",
-    title: "General Counsel",
-    description:
-      "Former Department of Justice and TradFi.  Loves all things University of Michigan.  Manages 4th tier professional soccer team in Thailand via DAO.",
+    name: "Dan",
+    title: "Engineer",
+    linkedin: "dan-cortes-8954b345",
+    description: "",
+    r: "#54952F",
+    l: "#A1D77F",
+    t: "#E9FDDC",
+  },
+
+  {
+    name: "Evan",
+    title: "Engineer",
+    description: "",
     r: "#5cc8f4",
     l: "#fef09b",
     t: "#fce036",
+  },
+
+  {
+    name: "Austin",
+    title: "Engineer",
+    linkedin: "",
+    description: "",
+    r: "#F6A143",
+    l: "#FFCD85",
+    t: "#F2D8B4",
   },
 
   {
