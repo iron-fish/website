@@ -67,10 +67,10 @@ You can find Jerod on his website and YouTube channel:
 -   [YouTube](https://www.youtube.com/@digitalspaceport)
 
 
-• 🎤 Discord
+• 🎤 [Discord](https://discord.ironfish.network)
 
-• 🐦 Twitter
+• 🐦 [Twitter](https://twitter.com/ironfishcrypto)
 
-• 🚀 Careers
+• 🚀 [Careers](https://ironfish.network/careers)
 
-• 📧 Email Updates
+• 📧 [Email Updates](https://ironfish.network/#email-signup)
