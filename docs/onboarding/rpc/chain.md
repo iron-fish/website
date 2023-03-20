@@ -172,6 +172,8 @@ Gets a block from the chain from a hash or sequence
     previousBlockHash: string
     sequence: number
     timestamp: number
+    noteSize: number
+    noteCommitment: string
     transactions: Array<{
       fee: string
       hash: string
