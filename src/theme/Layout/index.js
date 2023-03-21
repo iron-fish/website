@@ -43,6 +43,7 @@ function Layout(props) {
   });
   const location = useRouteMatch();
   const faviconUrl = useBaseUrl(favicon);
+  console.log({ location });
   return (
     <Providers>
       <Head>
@@ -100,7 +101,7 @@ function Layout(props) {
       </Head>
 
       <AnnouncementBar />
-      <MainnetCountdownBanner />
+      {location.path === "/" && <MainnetCountdownBanner />}
       <Navbar />
       <div className="main-wrapper">{children}</div>
       {!noFooter && <Footer />}
