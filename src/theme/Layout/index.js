@@ -15,6 +15,7 @@ import AnnouncementBar from "@theme/AnnouncementBar";
 import Navbar from "@theme/Navbar";
 import Footer from "@theme/Footer";
 import "./styles.css";
+import { MainnetCountdown } from "../MainnetCountdown/MainnetCountdown";
 
 function Providers({ children }) {
   return (
@@ -108,6 +109,7 @@ function Layout(props) {
       <Navbar />
       <div className="main-wrapper">{children}</div>
       {!noFooter && <Footer />}
+      <MainnetCountdown />
     </Providers>
   );
 }
