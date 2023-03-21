@@ -31,7 +31,7 @@
 }
 
 .modal::before {
-  background-color: white;
+  background-color: #FFC2E8;
   border: 2px solid black;
   transform: translateY(10px) translateX(10px);
 }
@@ -55,6 +55,7 @@
   font-size: 28px;
   line-height: 110%;
   text-align: center;
+  margin-bottom: 32px;
 }
 
 .modal {
@@ -64,7 +65,7 @@
 .timeWrapper {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  margin-bottom: 30px;
+  margin-bottom: 32px;
   gap: 16px;
 }
 
@@ -103,23 +104,33 @@
 .emailWrapper {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 8px;
 }
 
 .input {
   background-color: white;
-  color: black;
   border: 0;
+  border-radius: 4px;
+  color: black;
+  font-family: 'favorit-regular', 'helvetica', 'arial', 'sans-serif';
   font-size: 16px;
   padding: 22px;
 }
 
 .button {
   background-color: #FFC2E8;
-  color: black;
   border: 0;
+  border-radius: 4px;
+  color: black;
+  cursor: pointer;
+  font-family: 'favorit-regular', 'helvetica', 'arial', 'sans-serif';
   font-size: 16px;
-  padding: 22px;
+  padding: 22px 32px;
+}
+
+.button:hover {
+  background-color: #DE83F0;
+  transition: background-color 0.15s;
 }
 
 .message {
@@ -159,8 +170,8 @@
   }
 
   .emailWrapper {
-    flex-direction: row;
     align-items: center;
+    flex-direction: row;
   }
 
   .title,

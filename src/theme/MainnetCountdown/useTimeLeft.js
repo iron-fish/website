@@ -7,6 +7,10 @@ function getTimeLeft() {
   const now = new Date();
   const diff = LAUNCH_DATE.getTime() - now.getTime();
 
+  if (diff < 0) {
+    return null;
+  }
+
   return {
     days: Math.floor(diff / (1000 * 60 * 60 * 24)),
     hours: Math.floor((diff / (1000 * 60 * 60)) % 24),

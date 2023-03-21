@@ -18,12 +18,18 @@ export function MainnetCountdownContent({ onDismiss }) {
   const timeLeft = useTimeLeft();
 
   useEffect(() => {
-    document.body.style.overflow = "hidden";
+    if (timeLeft) {
+      document.body.style.overflow = "hidden";
+    } else {
+      onDismiss();
+    }
 
     return () => {
       document.body.style.overflow = "initial";
     };
-  }, []);
+  }, [timeLeft, onDismiss]);
+
+  if (!timeLeft) return null;
 
   return (
     <div className={styles.shade}>
@@ -80,7 +86,7 @@ export function MainnetCountdownContent({ onDismiss }) {
                 onChange={handleEmailChange}
               />
               <button className={styles.button} onClick={subscribe}>
-                Subscribe
+                Get Notified
               </button>
             </div>
           )}
