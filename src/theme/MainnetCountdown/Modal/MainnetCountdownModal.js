@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useMailchimpSubscribe } from "./useMailchimpSubscribe";
-import { useTimeLeft } from "./useTimeLeft";
-import styles from "./MainnetCountdown.module.css";
+import { useTimeLeft } from "../useTimeLeft";
+import styles from "./MainnetCountdownModal.module.css";
 
 const SESSION_STORAGE_KEY = "hasSeenMainnetCountdown";
 
@@ -100,7 +100,7 @@ export function MainnetCountdownContent({ onDismiss }) {
   );
 }
 
-export function MainnetCountdown() {
+export function MainnetCountdownModal() {
   const [hasDismissed, setHasDismissed] = useState(false);
 
   if (typeof sessionStorage === "undefined") return null;

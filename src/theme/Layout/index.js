@@ -15,7 +15,8 @@ import AnnouncementBar from "@theme/AnnouncementBar";
 import Navbar from "@theme/Navbar";
 import Footer from "@theme/Footer";
 import "./styles.css";
-import { MainnetCountdown } from "../MainnetCountdown/MainnetCountdown";
+import { MainnetCountdownModal } from "../MainnetCountdown/Modal/MainnetCountdownModal";
+import { MainnetCountdownBanner } from "../MainnetCountdown/Banner/MainnetCountdownBanner";
 
 function Providers({ children }) {
   return (
@@ -33,15 +34,8 @@ function Layout(props) {
     themeConfig: { image: defaultImage, metadatas },
     url: siteUrl,
   } = siteConfig;
-  const {
-    children,
-    title,
-    noFooter,
-    description,
-    image,
-    keywords,
-    permalink,
-  } = props;
+  const { children, title, noFooter, description, image, keywords, permalink } =
+    props;
   const metaTitle = title ? `${title} | ${siteTitle}` : siteTitle;
   const metaImage = image || defaultImage;
   const metaImageUrl = useBaseUrl(metaImage, {
@@ -106,10 +100,11 @@ function Layout(props) {
       </Head>
 
       <AnnouncementBar />
+      <MainnetCountdownBanner />
       <Navbar />
       <div className="main-wrapper">{children}</div>
       {!noFooter && <Footer />}
-      <MainnetCountdown />
+      <MainnetCountdownModal />
     </Providers>
   );
 }
