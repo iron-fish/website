@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useMailchimpSubscribe } from "./useMailchimpSubscribe";
 import { useTimeLeft } from "./useTimeLeft";
 import styles from "./MainnetCountdown.module.css";
@@ -17,6 +17,14 @@ export function MainnetCountdownContent({ onDismiss }) {
   const { subscribe, status, handleEmailChange } = useMailchimpSubscribe();
   const timeLeft = useTimeLeft();
 
+  useEffect(() => {
+    document.body.style.overflow = "hidden";
+
+    return () => {
+      document.body.style.overflow = "initial";
+    };
+  }, []);
+
   return (
     <div className={styles.shade}>
       <div className={styles.modal}>
@@ -31,8 +39,8 @@ export function MainnetCountdownContent({ onDismiss }) {
           >
             <path
               stroke="#fff"
-              stroke-opacity=".8"
-              stroke-width="2.5"
+              strokeOpacity=".8"
+              strokeWidth="2.5"
               d="M1 24 24 1M24.0002 24l-23-23"
             />
           </svg>
