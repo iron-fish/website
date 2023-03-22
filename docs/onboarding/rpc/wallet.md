@@ -351,8 +351,8 @@ Returns a transaction for an account.
   account: string
   transaction: {
     hash: string
-    status: string
-    type: string
+    status: 'confirmed' | 'expired' | 'pending' | 'unconfirmed' | 'unknown'
+    type: 'send' | 'receive' | 'miner'
     fee: string
     blockHash?: string
     blockSequence?: number
@@ -385,8 +385,8 @@ Returns transactions for an account. The default account is used if no account i
 #### Response
 
 <JsDisplay js={`{
-  status: string
-  type: string
+  status: 'confirmed' | 'expired' | 'pending' | 'unconfirmed' | 'unknown'
+  type: 'send' | 'receive' | 'miner'
   hash: string
   fee: string
   notesCount: number
