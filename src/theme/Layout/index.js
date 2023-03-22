@@ -43,7 +43,7 @@ function Layout(props) {
   });
   const location = useRouteMatch();
   const faviconUrl = useBaseUrl(favicon);
-  console.log({ location });
+
   return (
     <Providers>
       <Head>

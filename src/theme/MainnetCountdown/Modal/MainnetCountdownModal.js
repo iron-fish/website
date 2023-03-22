@@ -2,8 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useMailchimpSubscribe } from "./useMailchimpSubscribe";
 import { useTimeLeft } from "../useTimeLeft";
 import styles from "./MainnetCountdownModal.module.css";
-
-const SESSION_STORAGE_KEY = "hasSeenMainnetCountdown";
+import { MODAL_DISMISS_EVENT, SESSION_STORAGE_KEY } from "../constants";
 
 const MESSAGES = {
   EMAIL_ERROR: "Please provide a valid email address.",
@@ -112,6 +111,10 @@ export function MainnetCountdownModal() {
       onDismiss={() => {
         setHasDismissed(true);
         sessionStorage.setItem(SESSION_STORAGE_KEY, "true");
+        const event = new CustomEvent(MODAL_DISMISS_EVENT, {
+          bubbles: true,
+        });
+        document.dispatchEvent(event);
       }}
     />
   );

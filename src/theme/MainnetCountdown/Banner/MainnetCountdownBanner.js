@@ -1,14 +1,38 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useTimeLeft } from "../useTimeLeft";
 import styles from "./MainnetCountdownBanner.module.css";
+import { SESSION_STORAGE_KEY, MODAL_DISMISS_EVENT } from "../constants";
+
+function useRenderOnCustomEvent() {
+  const [, setRender] = React.useState(false);
+
+  useEffect(() => {
+    function handleEvent() {
+      setRender((r) => !r);
+    }
+
+    window.addEventListener(MODAL_DISMISS_EVENT, handleEvent);
+
+    return () => {
+      window.removeEventListener(MODAL_DISMISS_EVENT, handleEvent);
+    };
+  }, []);
+}
 
 export function MainnetCountdownBanner() {
   const timeLeft = useTimeLeft();
+  useRenderOnCustomEvent();
 
   if (!timeLeft) return null;
 
+  if (typeof sessionStorage === "undefined") return null;
+
+  const hasSeen = sessionStorage.getItem(SESSION_STORAGE_KEY) === "true";
+
   return (
-    <div className={styles.wrapper}>
+    <div
+      className={`${styles.wrapper} ${!hasSeen ? styles.wrapperHidden : ""}`}
+    >
       <h2 className={styles.title}>Countdown to Mainnet!</h2>
 
       <div className={styles.timeWrapper}>

@@ -21,7 +21,6 @@ export function useMailchimpSubscribe() {
       )}`,
       { param: "c", timeout: 4000 },
       (err, data) => {
-        console.log({ err, data });
         if (!data || !data.msg) {
           setStatus("ERROR");
         } else if (data.msg.includes("already subscribed")) {
