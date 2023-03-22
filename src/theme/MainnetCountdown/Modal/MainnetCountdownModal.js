@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useMailchimpSubscribe } from "./useMailchimpSubscribe";
 import { useTimeLeft } from "../useTimeLeft";
 import styles from "./MainnetCountdownModal.module.css";
-import { MODAL_DISMISS_EVENT, SESSION_STORAGE_KEY } from "../constants";
+import { MODAL_DISMISS_EVENT, LOCAL_STORAGE_KEY } from "../constants";
 
 const MESSAGES = {
   EMAIL_ERROR: "Please provide a valid email address.",
@@ -102,15 +102,15 @@ export function MainnetCountdownContent({ onDismiss }) {
 export function MainnetCountdownModal() {
   const [hasDismissed, setHasDismissed] = useState(false);
 
-  if (typeof sessionStorage === "undefined") return null;
+  if (typeof localStorage === "undefined") return null;
 
-  const hasSeen = sessionStorage.getItem(SESSION_STORAGE_KEY) === "true";
+  const hasSeen = localStorage.getItem(LOCAL_STORAGE_KEY) === "true";
 
   return hasDismissed || hasSeen ? null : (
     <MainnetCountdownContent
       onDismiss={() => {
         setHasDismissed(true);
-        sessionStorage.setItem(SESSION_STORAGE_KEY, "true");
+        localStorage.setItem(LOCAL_STORAGE_KEY, "true");
         const event = new CustomEvent(MODAL_DISMISS_EVENT, {
           bubbles: true,
         });

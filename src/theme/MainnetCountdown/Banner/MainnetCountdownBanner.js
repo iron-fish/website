@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useTimeLeft } from "../useTimeLeft";
 import styles from "./MainnetCountdownBanner.module.css";
-import { SESSION_STORAGE_KEY, MODAL_DISMISS_EVENT } from "../constants";
+import { LOCAL_STORAGE_KEY, MODAL_DISMISS_EVENT } from "../constants";
 
 function useRenderOnCustomEvent() {
   const [, setRender] = React.useState(false);
@@ -25,9 +25,9 @@ export function MainnetCountdownBanner() {
 
   if (!timeLeft) return null;
 
-  if (typeof sessionStorage === "undefined") return null;
+  if (typeof localStorage === "undefined") return null;
 
-  const hasSeen = sessionStorage.getItem(SESSION_STORAGE_KEY) === "true";
+  const hasSeen = localStorage.getItem(LOCAL_STORAGE_KEY) === "true";
 
   return (
     <div
