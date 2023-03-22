@@ -10,10 +10,6 @@
   will-change: height;
 }
 
-.wrapperHidden {
-  height: 0px;
-}
-
 .title {
   color: white;
   margin: 0 48px 0 0;
@@ -81,13 +77,13 @@
 
 @media screen and (max-width: 800px) {
   .wrapper {
-    height: auto;
+    height: 110px;
     flex-direction: column;
-    padding: 8px 16px 12px;
+    padding: 0 16px 0;
   }
 
   .title {
-    margin: 0;
+    margin: -2px 0 0;
   }
 }
 
@@ -96,4 +92,8 @@
   .metric {
     font-size: 20px;
   }
+}
+
+.wrapperHidden {
+  height: 0px;
 }
