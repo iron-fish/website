@@ -1,12 +1,12 @@
-import React, { useState, useEffect } from "react";
-import clsx from "clsx";
-import Layout from "@theme/Layout";
-import Link from "@docusaurus/Link";
-import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
-import useBaseUrl from "@docusaurus/useBaseUrl";
+import React, { useState, useEffect } from "react"
+import clsx from "clsx"
+import Layout from "@theme/Layout"
+import Link from "@docusaurus/Link"
+import useDocusaurusContext from "@docusaurus/useDocusaurusContext"
+import useBaseUrl from "@docusaurus/useBaseUrl"
 
-import styles from "./index.module.css";
-import Mailchimp from "../theme/components/MailChimp";
+import styles from "./index.module.css"
+import Mailchimp from "../theme/components/MailChimp"
 
 const features = [
   {
@@ -70,23 +70,27 @@ const features = [
     description:
       "Our team members have decades of experience building some of the world’s most beloved products at Airbnb, Facebook, Google, Uber, and more. Our angels include founders across the crypto space (L1s, bridges, custody). And our investors have a track record of partnering early with the world’s most transformational technologies.",
   },
-];
+]
 
-const lookup = (x) => (x !== "sectionExperts" ? styles : styles);
+const lookup = x => (x !== "sectionExperts" ? styles : styles)
 
-export function CustomBox({ children }) {
+export function CustomBox({
+  children,
+}) {
   return (
-    <div className={clsx(styles.customBoxContainer)}>
+    <div className={clsx(styles.customBoxContainer)} >
       <div className={clsx(styles.customBoxBack)} />
       <div className={clsx(styles.customBoxFront)} />
-      <div className={clsx(styles.customBoxContent)}>{children}</div>
+      <div className={clsx(styles.customBoxContent)} >
+        {children}
+      </div>
     </div>
-  );
+  )
 }
 
 const Investor = ({ data: [img, site], prefix = "company" }) => {
   const twitterName =
-    site.indexOf("twitter") > -1 ? site.split(".com/")[1] : null;
+    site.indexOf("twitter") > -1 ? site.split(".com/")[1] : null
   return (
     <a
       href={`https://${site}`}
@@ -104,8 +108,8 @@ const Investor = ({ data: [img, site], prefix = "company" }) => {
       {twitterName && <span style={{ width: "8px" }} />}
       {twitterName && <span className={styles.twitterName}>{twitterName}</span>}
     </a>
-  );
-};
+  )
+}
 
 function Feature({
   id,
@@ -151,9 +155,7 @@ function Feature({
               </Link>
             )}
             {disabledButton && (
-              <div className="button button--outline button--disabled">
-                {disabledButton}
-              </div>
+              <div className="button button--outline button--disabled">{disabledButton}</div>
             )}
           </div>
         </div>
@@ -164,26 +166,26 @@ function Feature({
         />
       </div>
     </section>
-  );
+  )
 }
 function useWidth() {
   const [width, setWidth] = useState();
 
   useEffect(() => {
-    setWidth(window.innerWidth);
+    setWidth(window.innerWidth)
     function handleResize() {
       setWidth(window.innerWidth);
     }
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
   });
 
   return width;
 }
 
 function Home() {
-  const context = useDocusaurusContext();
-  const { siteConfig = {} } = context;
+  const context = useDocusaurusContext()
+  const { siteConfig = {} } = context
 
   const width = useWidth();
   return (
@@ -209,7 +211,7 @@ function Home() {
       <main>
         {features &&
           features.length > 0 &&
-          features.map((props) => <Feature key={props.className} {...props} />)}
+          features.map(props => <Feature key={props.className} {...props} />)}
         <section className={clsx(styles.section, styles.sectionNewsletter)}>
           <div className={clsx(styles.sectionContainer)}>
             <p className={clsx(styles.newsletterTitle)}>
@@ -233,7 +235,7 @@ function Home() {
         </section>
       </main>
     </Layout>
-  );
+  )
 }
 
-export default Home;
+export default Home
