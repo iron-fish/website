@@ -1,0 +1,99 @@
+.wrapper {
+  align-items: center;
+  background-color: black;
+  display: flex;
+  height: 80px;
+  justify-content: center;
+  overflow: hidden;
+  padding: 0 16px;
+  transition: height 0.5s;
+  will-change: height;
+}
+
+.title {
+  color: white;
+  margin: 0 48px 0 0;
+  font-size: 24px;
+  text-align: center;
+}
+
+.timeWrapper {
+  display: grid;
+  grid-template-columns: repeat(4, auto);
+  gap: 32px;
+  transform: translateY(1px);
+}
+
+.timeItem {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.metric {
+  font-size: 24px;
+  line-height: 100%;
+  margin-right: 12px;
+  width: 2ch;
+  text-align: center;
+}
+
+.timeItem:nth-child(1) .metric {
+  color: #FFC2E8;
+}
+
+.timeItem:nth-child(2) .metric {
+  color: #FFEC1F;
+}
+
+.timeItem:nth-child(3) .metric {
+  color: #C7F182;
+}
+
+.timeItem:nth-child(4) .metric {
+  color: #8AE1EF;
+}
+
+.label {
+  color: rgba(255, 255, 255, 0.8);
+  text-transform: uppercase;
+  font-size: 12px;
+}
+
+@media screen and (max-width: 1280px) {
+  .timeWrapper {
+    gap: 24px;
+  }
+
+  .timeItem {
+    flex-direction: column;
+  }
+
+  .metric {
+    margin: 0;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .wrapper {
+    height: 110px;
+    flex-direction: column;
+    padding: 0 16px 0;
+  }
+
+  .title {
+    margin: -2px 0 0;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .title,
+  .metric {
+    font-size: 20px;
+  }
+}
+
+.wrapperHidden {
+  height: 0px;
+}
