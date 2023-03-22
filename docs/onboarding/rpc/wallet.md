@@ -506,7 +506,6 @@ Rescans an account in the wallet, updating the balance and available notes.
 <JsDisplay js={`{
   follow?: boolean
   from?: number
-  reset?: boolean
 }
 `} />
 
