@@ -11,10 +11,6 @@ function Img({
   return <img className={styles.img} src={src} alt={alt} style={{ maxWidth: maxWidth }} />;
 }
 
-function Hero() {
-  return <div className={styles.hero} />
-}
-
 function Divider() {
   return <hr className={styles.divider} />
 }
@@ -26,7 +22,6 @@ function Tokenomics() {
       description="Distribution details of the Iron Fish token"
     >
       <main className={styles.main}>
-        <Hero />
         <p className={clsx("main--title")}>
           Tokenomics
         </p>

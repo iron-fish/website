@@ -3,15 +3,6 @@
   margin: 0 auto;
 }
 
-.hero {
-  background-image: url(/img/whitepaper/tokenomics/00-hero.avif);
-  background-size: cover;
-  max-width: 1280px;
-  width: 100%;
-  margin: 0 auto;
-  aspect-ratio: 3840 / 960;
-}
-
 .wrapper {
   max-width: 818px;
   width: 100%;
