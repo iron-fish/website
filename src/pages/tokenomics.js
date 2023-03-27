@@ -15,6 +15,10 @@ function Hero() {
   return <div className={styles.hero} />
 }
 
+function Divider() {
+  return <hr className={styles.divider} />
+}
+
 function Tokenomics() {
   return (
     <Layout
@@ -48,7 +52,7 @@ function Tokenomics() {
             making Iron Fish one of the largest processor of ZKPs.
           </p>
           <p>Mainnet launches April 20, 2023.</p>
-          <hr />
+          <Divider />
           <h2 id="token-supply--distribution-data">
             Token Supply &amp; Distribution Data
           </h2>
@@ -59,7 +63,7 @@ function Tokenomics() {
             that may not be within the scope of this post. We have rounded numbers where
             necessary for better overall understanding.
           </p>
-          <hr />
+          <Divider />
           <h2 id="context--definitions">Context &amp; Definitions</h2>
           <ul>
             <li>
@@ -78,7 +82,7 @@ function Tokenomics() {
               available for transfer (not locked up).
             </li>
           </ul>
-          <hr />
+          <Divider />
           <h2 id="emissions-curve">Emissions Curve</h2>
           <p>
             The mining reward (how many coins a miner is allocated for successfully
@@ -165,6 +169,7 @@ function Tokenomics() {
             src="/img/whitepaper/tokenomics/04-inflation.avif"
             alt=""
           />
+          <Divider />
           <h2 id="allocation--supply-overview">Allocation &amp; Supply Overview</h2>
           <p>
             The Iron Fish genesis block contains 42M tokens. We provide a deeper look at
@@ -219,7 +224,7 @@ function Tokenomics() {
             As time goes on, the vast majority of coins will be in the hands of miners
             and other community members, as shown in the graph below.
           </p>
-          <hr />
+          <Divider />
           <h2 id="genesis-block-category-explanations">
             Genesis Block Category Explanations
           </h2>
