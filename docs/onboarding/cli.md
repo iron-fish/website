@@ -215,6 +215,11 @@ Gets a specific account's transactions
 ironfish wallet:transactions -a MyNewAccount
 ```
 
+Gets transactions from a block sequence
+```sh
+ironfish wallet:transactions -s 24032
+```
+
 #### wallet:send
 Sending a new transaction with interactive mode
 ```sh
