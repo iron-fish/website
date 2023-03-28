@@ -31,7 +31,7 @@ function Tokenomics() {
             Iron Fish transaction is encrypted, hiding sensitive user information on who
             the sender, recipient, or the amount of transaction was with an accompanying
             zero-knowledge proof (ZKP). Every Iron Fish wallet has a private key, public
-            key, and a viewing_ _key. The creator of the wallet has the ability to share
+            key, and a viewing key. The creator of the wallet has the ability to share
             out this view key and reveal their transactional history.
           </p>
           <p>
