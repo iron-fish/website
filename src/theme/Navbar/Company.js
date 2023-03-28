@@ -62,6 +62,14 @@ function Company({ condensed = false }) {
                   textClassName={textClassName}
                   cubeClassName="text-iflightblue"
                 />
+                <TestnetGridElement
+                  href="/tokenomics"
+                  header="Tokenomics"
+                  body="Distribution details"
+                  className={elementClassName}
+                  textClassName={textClassName}
+                  cubeClassName="text-iflightgray"
+                />
               </div>
             </div>
           </div>
