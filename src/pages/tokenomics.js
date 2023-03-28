@@ -265,7 +265,7 @@ function Tokenomics() {
             a16z Crypto, Sequoia, and Elad Gil led our Series A. Their belief in us
             provided the resources to accelerate towards mainnet.
           </p>
-          <h3 id="advisors--6">Advisors — .6%</h3>
+          <h3 id="advisors--6">Advisors — 0.6%</h3>
           <p>
             We are thankful for our advisors' guidance and support as we've continued to
             grow.
