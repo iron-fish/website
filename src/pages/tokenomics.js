@@ -219,6 +219,10 @@ function Tokenomics() {
             As time goes on, the vast majority of coins will be in the hands of miners
             and other community members, as shown in the graph below.
           </p>
+          <Img
+            src="/img/whitepaper/tokenomics/11-distribution-terminal-supply.avif"
+            alt=""
+          />
           <Divider />
           <h2 id="genesis-block-category-explanations">
             Genesis Block Category Explanations
