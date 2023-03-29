@@ -7,10 +7,74 @@ author_description: Neil is Content Marketing Manager at Iron Fish
 hide_table_of_contents: true
 title: "Community Spotlight: Null"
 description: Interview with Iron Fish community member Null
-image: /img/blog/spotlight-dsp/spotlight-dsp.png
-tags: [ironfish, community, dsp, Digital Spaceport, interview]
+image: /img/blog/spotlights/null.png
+tags: [ironfish, community, Null, privacy, crypto, interview]
 ---
 
+From the early days of Iron Fish, Null has been a consistently engaged and supportive community member who has gone above and beyond helping users across both the English and Russian language [Discord](https://discord.com/invite/EkQkEcm8DH) channels. His contributions have helped make our community especially welcoming, and we were glad to catch up with him and learn about what brought him to Iron Fish.
+
+### Tell us a little bit about yourself.
+
+Greetings to everyone from cold Siberia! My name is Egor. I have been interested in computer technology and programming since my early school days. After university, I did some work related to search engines. I later discovered cryptocurrencies, and fate brought me here. You can find me on [Discord](https://discord.ironfish.network/), where I try to help others with their technical issues. In my free time, I like to listen to music, meet friends and watch soccer!
+
+### How did you get into crypto?
+
+I became interested in cryptocurrency in 2016 when a friend introduced me to Ethereum, its advantages, smart contracts, etc. My eyes lit up, and a year later, the same friend invited me to a hackathon where we tried to develop an application built on smart contracts. I used the ideas we worked on later as I completed my Bachelor’s degree. After that, I took a break, and at the beginning of 2021, I discovered Iron Fish.
+
+### What do you think will drive crypto adoption?
+
+Nowadays, people are concerned about financial security. It turns out that even banks cannot fully protect people’s assets. Cryptocurrency continues to prove it is one of the most reliable financial management tools. Society is beginning to accept that cryptocurrencies have many uses, and as more user-friendly blockchain technologies evolve, more people will adopt crypto. I believe that the present and the future belong to cryptocurrencies.
+
+### When did you learn about Iron Fish, and what sparked your interest?
+
+It happened two years ago; I read on a social network about the launch of the Iron Fish testnet. Honestly, the first thing I liked was the design – Skylar’s work is amazingly beautiful. I then learned more about how Iron Fish aims to be more accessible by taking a more careful approach to user experience than other privacy coins.
+
+As surveillance technologies and financial regulations invade our lives, privacy is more important than ever. With Iron Fish, we can preserve our privacy and maintain good standing thanks to the platform's compliance controls.
+
+### How do you explain Iron Fish to someone just beginning to learn about the project?
+
+People in my country believe the best way to save money is to keep it under your pillow. Trust me when I say that Iron Fish can be a better pillow for your savings. It’s reliable and safe!
+
+### What kinds of applications are you interested in using or seeing on the Iron Fish network?
+
+The most interesting tool for me will be integrations and bridges with other blockchains that let people transact different assets on the Iron Fish network. I would also be very happy with mobile apps. Nowadays, everyone uses phones, and it would be cool to see many people using an Iron Fish app.
+
+### What has been your experience with the Iron Fish community?
+
+Our community is one of the best. Just look at the channels in Discord; each person receives an answer after a couple of minutes. Users try to help each other. For two years, I have hardly seen anything negative – everyone tries to be helpful and supportive. I also met many amazing people – ProductGuy, Zvix, wd021, and fishguy, among others – who show what it means to be committed to a project.
+
+### What do you think draws others to Iron Fish?
+
+Three things attract people to the project:
+1) Privacy:
+
+Everyone wants to secure their funds and maintain privacy. The crypto market has few projects of this kind, and regulations make supporting them difficult. We have hope in Iron Fish.
+
+2) L1-blockchain:
+
+Most of the projects that have been released recently are not Layer-1. Iron Fish is not another project on the Cosmos ecosystem – it is original and has its own blockchain.
+
+3) PoW Mining:
+
+After the transition of Ethereum to 2.0, many people cannot find a project for their rigs. Iron Fish attracts miners looking to utilize their GPUs again.
+
+### What has your experience been like interacting with Iron Fish team members?
+
+Yes, our community is incredible, but the developers are even cooler. I have never seen the team so involved in communicating with users. With other projects, it can be challenging to reach the team, but this isn’t the case with Iron Fish.
+
+From my first day on the Iron Fish Discord, two years ago, I saw that Jason answered every message and stayed up late at night to tell us about the development process. All the developers who have joined the team are open to conversation and friendly. Thank you, dear team!
+
+
+### What makes Iron Fish different from other crypto projects you’ve dealt with?
+
+Iron Fish can offer you a place where you will find valuable tools to protect your financial security and privacy, the best design on the market (yes), a helpful community, and wonderful developers.
+
+### Is there anything else that you’d like to share?
+
+Thanks for the invitation to this Community Spotlight!  
+Let's do it together, help the team, help the community. We are building privacy together!
+
+*Keep up with Null on Discord, where his username is null#0763*
 
 
 
