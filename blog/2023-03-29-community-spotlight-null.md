@@ -5,13 +5,13 @@ author_url: https://twitter.com/n_doshi_
 author_image_url: "/img/blog/Neil.png"
 author_description: Neil is Content Marketing Manager at Iron Fish
 hide_table_of_contents: true
-title: "Community Spotlight: Null"
-description: Interview with Iron Fish community member Null
+title: "Community Spotlight: null"
+description: Interview with Iron Fish community member null
 image: /img/blog/spotlights/NULL.png
 tags: [ironfish, community, Null, privacy, crypto, interview]
 ---
 
-From the early days of Iron Fish, Null has been a consistently engaged and supportive community member who has gone above and beyond helping users across both the English and Russian language [Discord](https://discord.com/invite/EkQkEcm8DH) channels. His contributions have helped make our community especially welcoming, and we were glad to catch up with him and learn about what brought him to Iron Fish.
+From the early days of Iron Fish, null has been a consistently engaged and supportive community member who has gone above and beyond helping users across both the English and Russian language [Discord](https://discord.com/invite/EkQkEcm8DH) channels. His contributions have helped make our community especially welcoming, and we were glad to catch up with him and learn about what brought him to Iron Fish.
 
 ### Tell us a little bit about yourself.
 
@@ -46,6 +46,7 @@ Our community is one of the best. Just look at the channels in Discord; each per
 ### What do you think draws others to Iron Fish?
 
 Three things attract people to the project:
+
 1) Privacy:
 
 Everyone wants to secure their funds and maintain privacy. The crypto market has few projects of this kind, and regulations make supporting them difficult. We have hope in Iron Fish.
@@ -64,7 +65,6 @@ Yes, our community is incredible, but the developers are even cooler. I have nev
 
 From my first day on the Iron Fish Discord, two years ago, I saw that Jason answered every message and stayed up late at night to tell us about the development process. All the developers who have joined the team are open to conversation and friendly. Thank you, dear team!
 
-
 ### What makes Iron Fish different from other crypto projects you’ve dealt with?
 
 Iron Fish can offer you a place where you will find valuable tools to protect your financial security and privacy, the best design on the market (yes), a helpful community, and wonderful developers.
@@ -74,7 +74,7 @@ Iron Fish can offer you a place where you will find valuable tools to protect yo
 Thanks for the invitation to this Community Spotlight!  
 Let's do it together, help the team, help the community. We are building privacy together!
 
-*Keep up with Null on Discord, where his username is null#0763*
+*Keep up with null on Discord, where his username is null#0763*.
 
 
 
