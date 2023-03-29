@@ -7,7 +7,7 @@ author_description: Neil is Content Marketing Manager at Iron Fish
 hide_table_of_contents: true
 title: "Community Spotlight: Null"
 description: Interview with Iron Fish community member Null
-image: /img/blog/spotlights/null.png
+image: /img/blog/spotlights/NULL.png
 tags: [ironfish, community, Null, privacy, crypto, interview]
 ---
 
