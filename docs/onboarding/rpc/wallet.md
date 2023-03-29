@@ -376,6 +376,7 @@ Returns transactions for an account. The default account is used if no account i
 <JsDisplay js={`{
   account?: string
   hash?: string
+  sequence?: number
   limit?: number
   offset?: number
   confirmations?: number
