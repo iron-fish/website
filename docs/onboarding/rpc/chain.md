@@ -7,10 +7,18 @@ hide_table_of_contents: false
 ---
 
 import JsDisplay from '../../../src/theme/components/Terminal/JsDisplay'
+import GithubCodeLink from '../../../src/theme/components/Terminal/rpc/GithubCodeLink'
 
-## chain/estimateFeeRate
+## <GithubCodeLink link="chain/estimateFeeRate" /> chain/estimateFeeRate 
 
-Estimates fee given an optional priority
+Estimates the fee rate given an optional priority. If no fee rate is provided, the `average` priority will be used.
+
+Fee rates are estimated from the distribution of transaction fees over the last 10 blocks. The fee rate for each transaction is computed by dividing the transaction fee in $ORE by the size of the transaction in kB.
+
+The slow, average, and fast rates each come from a percentile in the distribution:
+- slow:    10th
+- average: 20th
+- fast:    30th
 
 #### Request
 
@@ -26,9 +34,12 @@ Estimates fee given an optional priority
 }
 `} />
 
-## chain/estimateFeeRates
 
-Estimates fee rates for all priorities
+## <GithubCodeLink link="chain/estimateFeeRates" /> chain/estimateFeeRates
+
+Estimates the fee rates for all priorities. 
+
+See [here](#chainestimatefeerate) to see how fee rates are estimated.
 
 #### Request
 
@@ -43,9 +54,12 @@ Estimates fee rates for all priorities
 }
 `} />
 
-## chain/exportChainStream
+## <GithubCodeLink link="chain/exportChain" /> chain/exportChainStream
 
-Exports the chain as a stream with an optional sequence range
+Exports the chain as a stream of blocks. 
+
+If the start and stop sequences are provided, only the blocks between the start and 
+stop will be returned.
 
 #### Request
 
@@ -75,7 +89,7 @@ Exports the chain as a stream with an optional sequence range
 }
 `} />
 
-## chain/followChainStream
+## <GithubCodeLink link="chain/followChain" /> chain/followChainStream
 
 Follows the chain from a given sequence and streams blocks from chain connects and disconnects
 
@@ -125,9 +139,8 @@ Follows the chain from a given sequence and streams blocks from chain connects a
 }
 `} />
 
-## chain/getAsset
-
-Gets an asset from the blockchain from an identifier
+## <GithubCodeLink link="chain/getAsset" /> chain/getAsset
+Gets an asset from the blockchain from a given identifier
 
 #### Request
 
@@ -148,9 +161,13 @@ Gets an asset from the blockchain from an identifier
 }
 `} />
 
-## chain/getBlock
 
-Gets a block from the chain from a hash or sequence
+## <GithubCodeLink link="chain/getBlock" /> chain/getBlock
+
+Gets a block from the chain from a given hash or sequence.
+
+One of hash or sequence must be provided.
+
 
 #### Request
 
@@ -189,18 +206,14 @@ Gets a block from the chain from a hash or sequence
 }
 `} />
 
-```
-curl -d '{"sequence": 1}' -X POST http://localhost:8021/chain/getBlock
-```
 
-## chain/getChainInfo
+## <GithubCodeLink link="chain/getChainInfo" /> chain/getChainInfo
 
 Gets information about the node's chain
 
 #### Request
 
-<JsDisplay js={`undefined
-`} />
+<JsDisplay js={`undefined`} />
 
 #### Response
 
@@ -221,14 +234,13 @@ Gets information about the node's chain
 }
 `} />
 
-## chain/getConsensusParameters
+## <GithubCodeLink link="chain/getConsensusParameters" /> chain/getConsensusParameters
 
 Gets consensus parameters from the chain
 
 #### Request
 
-<JsDisplay js={`undefined
-`} />
+<JsDisplay js={`undefined`} />
 
 #### Response
 
@@ -241,9 +253,11 @@ Gets consensus parameters from the chain
 }
 `} />
 
-## chain/getDifficulty
+## <GithubCodeLink link="chain/getDifficulty" /> chain/getDifficulty
 
-Gets block difficulty from a given sequence or the head
+Gets block difficulty from a sequence. 
+
+If no sequence is provided, the head will be used
 
 #### Request
 
@@ -261,9 +275,11 @@ Gets block difficulty from a given sequence or the head
 }
 `} />
 
-## chain/getNetworkHashPower
+## <GithubCodeLink link="chain/getNetworkHashPower" /> chain/getNetworkHashPower
 
-Gets hash power from the chain from a sequence or block range
+Gets hash power from the chain from a sequence or block range. 
+
+If no blocks are provided, the last 120 blocks will be used. If no sequence is provided, the head will be used.
 
 #### Request
 
@@ -275,6 +291,7 @@ Gets hash power from the chain from a sequence or block range
 
 #### Response
 
+
 <JsDisplay js={`{
   hashesPerSecond: number
   blocks: number
@@ -284,7 +301,7 @@ Gets hash power from the chain from a sequence or block range
 
 ## chain/getNetworkInfo
 
-Get information about the node's network
+Gets information about the node's network
 
 #### Request
 
@@ -298,7 +315,7 @@ Get information about the node's network
 }
 `} />
 
-## chain/getTransaction
+## <GithubCodeLink link="chain/getTransaction" /> chain/getTransaction
 
 Gets a transaction from a block hash and transaction hash
 
@@ -330,7 +347,7 @@ Gets a transaction from a block hash and transaction hash
 }
 `} />
 
-## chain/getTransactionStream
+## <GithubCodeLink link="chain/getTransactionStream" />chain/getTransactionStream
 
 Streams transactions from a head sequence given an incoming view key
 
@@ -338,7 +355,7 @@ Streams transactions from a head sequence given an incoming view key
 
 <JsDisplay js={`{ 
   incomingViewKey: string
-  head?: string | null 
+  head?: string | null
 }
 `} />
 
@@ -378,9 +395,11 @@ Streams transactions from a head sequence given an incoming view key
 }
 `} />
 
-## chain/showChain
+## <GithubCodeLink link="chain/showChain" /> chain/showChain
 
-Renders the chain from an optional sequence range
+Renders the entire chain.
+
+If stop and stop values are provided, only the blocks between the start and stop sequences will be shown.
 
 #### Request
 
