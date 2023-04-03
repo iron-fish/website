@@ -7,8 +7,9 @@ hide_table_of_contents: false
 ---
 
 import JsDisplay from '../../../src/theme/components/Terminal/JsDisplay'
+import GithubCodeLink from '../../../src/theme/components/Terminal/rpc/GithubCodeLink'
 
-## event/onGossip
+## <GithubCodeLink link="events/onGossip"/> event/onGossip
 
 Streams block headers on gossip events
 

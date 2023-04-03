@@ -7,8 +7,9 @@ hide_table_of_contents: false
 ---
 
 import JsDisplay from '../../../src/theme/components/Terminal/JsDisplay'
+import GithubCodeLink from '../../../src/theme/components/Terminal/rpc/GithubCodeLink'
 
-## peer/getBannedPeers
+## <GithubCodeLink link="peers/getBannedPeers" /> peer/getBannedPeers
 
 Gets (and optionally streams) banned peers from the node's peer network
 
@@ -22,14 +23,14 @@ Gets (and optionally streams) banned peers from the node's peer network
 #### Response
 
 <JsDisplay js={`{
-  peers: Array<{
+  peers: {
     identity: string
     reason: string
-  }>
+  }[]
 }
 `} />
 
-## peer/getPeer
+## <GithubCodeLink link="peers/getPeer" /> peer/getPeer
 
 Gets (and optionally streams) peer data from an identity
 
@@ -82,7 +83,7 @@ Gets (and optionally streams) peer data from an identity
 }
 `} />
 
-## peer/getPeerMessages
+## <GithubCodeLink link="peers/getPeerMessages" /> peer/getPeerMessages
 
 Gets (and optionally streams) peer messages from an identity
 
@@ -108,7 +109,7 @@ Gets (and optionally streams) peer messages from an identity
 }
 `} />
 
-## peer/getPeers
+## <GithubCodeLink link="peers/getPeers" /> peer/getPeers
 
 Gets (and optionally streams) peers from the node's peer network
 
@@ -122,7 +123,7 @@ Gets (and optionally streams) peers from the node's peer network
 #### Response
 
 <JsDisplay js={`{
-  peers: Array<{
+  peers: {
     state: string
     identity: string | null
     version: number | null
@@ -156,7 +157,7 @@ Gets (and optionally streams) peers from the node's peer network
     features: {
       syncing: boolean
     } | null
-  }>
+  }[]
 }
 `} />
 

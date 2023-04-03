@@ -7,10 +7,13 @@ hide_table_of_contents: false
 ---
 
 import JsDisplay from '../../../src/theme/components/Terminal/JsDisplay'
+import GithubCodeLink from '../../../src/theme/components/Terminal/rpc/GithubCodeLink'
 
-## config/getConfig
+## <GithubCodeLink link="config/getConfig"/>config/getConfig
 
-Gets a subset of configuration values for a node
+Gets a subset of configuration values for a node. 
+
+If the user flag is provided, a value will only be returned if the user set the configuration option.
 
 #### Request
 
@@ -90,7 +93,7 @@ Gets a subset of configuration values for a node
 >
 `} />
 
-## config/setConfig
+## <GithubCodeLink link="config/setConfig"/> config/setConfig
 
 Sets a configuration value for the node
 
@@ -107,7 +110,7 @@ Sets a configuration value for the node
 <JsDisplay js={`undefined
 `} />
 
-## config/unsetConfig
+## <GithubCodeLink link="config/unsetConfig"/> config/unsetConfig
 
 Unsets a configuration value for the node and falls back to the default.
 
@@ -123,10 +126,10 @@ Unsets a configuration value for the node and falls back to the default.
 <JsDisplay js={`undefined
 `} />
 
-## config/uploadConfig
+## <GithubCodeLink link="config/uploadConfig"/> config/uploadConfig
 
 Uploads a set of configuration values for the node.
-This resets any previously set config to the default.
+This resets any previously set config options to their default values.
 
 #### Request
 

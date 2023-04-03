@@ -117,24 +117,28 @@ Follows the chain from a given sequence and streams blocks from chain connects a
     timestamp: number
     work: string
     main: boolean
-    transactions: Array<{
+    transactions:{
       hash: string
       size: number
       fee: number
-      notes: Array<{ commitment: string }>
-      spends: Array<{ nullifier: string }>
-      mints: Array<{
+      notes: { 
+        commitment: string 
+      }[]
+      spends: { 
+        nullifier: string 
+      }[]
+      mints: {
         id: string
         metadata: string
         name: string
         owner: string
         value: string
-      }>
-      burns: Array<{
+      }[]
+      burns: {
         id: string
         value: string
-      }>
-    }>
+      }[]
+    }[]
   }
 }
 `} />
@@ -191,13 +195,13 @@ One of hash or sequence must be provided.
     timestamp: number
     noteSize: number
     noteCommitment: string
-    transactions: Array<{
+    transactions: {
       fee: string
       hash: string
       signature: string
       notes: number
       spends: number
-    }>
+    }[]
   }
   metadata: {
     main: boolean
@@ -385,7 +389,7 @@ Streams transactions from a head sequence given an incoming view key
       assetId: string
       assetName: string
       value: string
-    }[]
+  }[]
     burns: {
       assetId: string
       assetName: string
@@ -417,9 +421,11 @@ If stop and stop values are provided, only the blocks between the start and stop
 `} />
 
 
-## chain/getNoteWitness 
+## <GithubCodeLink link="chain/getNoteWitness" /> chain/getNoteWitness 
 
-Returns a witness (merkle path) to a specified note in the note merkle tree. This witness is necessary for creating a transaction that spends the note. This endpoint would primarily be used to construct transactions without using the Iron Fish wallet. The returned `treeSize` and `rootHash` values will always reference the note merkle tree state at the current HEAD of the chain. If the chain experiences a re-org and the referenced HEAD moves to a fork, this witness will no longer be usable in a transaction.
+Gets a witness (merkle path) to a specified note in the note merkle tree. This witness is necessary for creating a transaction that spends the note. 
+
+This endpoint would primarily be used to construct transactions without using the Iron Fish wallet. The returned `treeSize` and `rootHash` values will always reference the note merkle tree state at the current HEAD of the chain. If the chain experiences a re-org and the referenced HEAD moves to a fork, this witness will no longer be usable in a transaction.
 
 #### Request
 

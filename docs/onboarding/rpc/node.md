@@ -7,10 +7,11 @@ hide_table_of_contents: false
 ---
 
 import JsDisplay from '../../../src/theme/components/Terminal/JsDisplay'
+import GithubCodeLink from '../../../src/theme/components/Terminal/rpc/GithubCodeLink'
 
-## node/getLogStream
+## <GithubCodeLink link="node/getLogStream" /> node/getLogStream
 
-Gets a log stream from the node
+Streams logs from the node
 
 #### Request
 
@@ -28,7 +29,7 @@ Gets a log stream from the node
 }
 `} />
 
-## node/getStatus
+## <GithubCodeLink link="node/getStatus" /> node/getStatus
 
 Gets (and optionally streams) the node's status
 
@@ -131,7 +132,7 @@ Gets (and optionally streams) the node's status
 }
 `} />
 
-## node/stopNode
+## <GithubCodeLink link="node/stopNode" /> node/stopNode
 
 Shuts the node down
 

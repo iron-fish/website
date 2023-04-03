@@ -7,10 +7,11 @@ hide_table_of_contents: false
 ---
 
 import JsDisplay from '../../../src/theme/components/Terminal/JsDisplay'
+import GithubCodeLink from '../../../src/theme/components/Terminal/rpc/GithubCodeLink'
 
-## rpc/getStatus
+## <GithubCodeLink link="rpc/getStatus"/> rpc/getStatus
 
-Gets status of the RPC server
+Gets (and optionally streams) the status of the RPC server
 
 #### Request
 

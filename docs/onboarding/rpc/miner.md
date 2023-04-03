@@ -7,8 +7,9 @@ hide_table_of_contents: false
 ---
 
 import JsDisplay from '../../../src/theme/components/Terminal/JsDisplay'
+import GithubCodeLink from '../../../src/theme/components/Terminal/rpc/GithubCodeLink'
 
-## miner/blockTemplateStream
+## <GithubCodeLink link="mining/blockTemplateStream" /> miner/blockTemplateStream
 
 Streams block templates from the chain for mining blocks
 
@@ -38,9 +39,9 @@ Streams block templates from the chain for mining blocks
 }
 `} />
 
-## miner/submitBlock
+## <GithubCodeLink link="mining/submitBlock" /> miner/submitBlock
 
-Submit block templates to the mining manager
+Submit a block template to the mining manager.
 
 #### Request
 
