@@ -6,7 +6,7 @@ author_image_url: "/img/blog/Neil.png"
 author_description: Neil is Content Marketing Manager at Iron Fish
 hide_table_of_contents: true
 title: "GPU Mining Competition"
-description: Iron Fish announces an open-source GPU Miner contest
+description: Iron Fish announces an open-source GPU Miner competition
 image: /img/blog/GPU-miner-contest/GPU.png
 tags: [ironfish, GPU, miner, mining, contest, competition, open-source, Blake3]
 ---
@@ -25,7 +25,6 @@ Please read on to learn more about competition requirements, deadlines, and inst
 -   Judges must be able to build your miner from the provided source.
 -   Your miner must perform block header hashing on GPU.
 -   Your miner must submit valid shares to the Iron Fish pool.
-    
 
 ## Timeline
 
@@ -111,12 +110,10 @@ Please note:
 Here are some links to the Iron Fish source for a CPU miner:
 -   [The source for the Iron Fish pool server and pool client.](https://github.com/iron-fish/ironfish/tree/master/ironfish/src/mining)
     
-
 -   [The socket-based client that communicates with the pool server](https://github.com/iron-fish/ironfish/blob/master/ironfish/src/mining/stratum/clients/client.ts)
     
 -   The PoolMiner uses the above client to communicate to the server, then distributes tasks to the [Rust mining threadpool](https://github.com/iron-fish/ironfish/blob/master/ironfish/src/mining/poolMiner.ts)[](https://github.com/iron-fish/ironfish/blob/master/ironfish/src/mining/poolMiner.ts)
     
-
 -   [The Rust code for the mining threadpool](https://github.com/iron-fish/ironfish/tree/master/ironfish-rust/src/mining)
     
 -   [Setup code for the pool miner](https://github.com/iron-fish/ironfish/blob/dd7bcab84de5babc273cacd33586580b80cc3a07/ironfish-cli/src/commands/miners/start.ts#L57)
@@ -125,3 +122,10 @@ Here are some links to the Iron Fish source for a CPU miner:
 Have any questions? Reach out to us on [Discord](https://discord.com/invite/EkQkEcm8DH) in the #questions channel.
 
 
+• 🎤 [Discord](https://discord.ironfish.network)
+
+• 🐦 [Twitter](https://twitter.com/ironfishcrypto)
+
+• 🚀 [Careers](https://ironfish.network/careers)
+
+• 📧 [Email Updates](https://ironfish.network/#email-signup)
