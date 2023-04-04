@@ -13,11 +13,11 @@ tags: [ironfish, GPU, miner, mining, contest, competition, open-source, Blake3]
 
 
 
-We are thrilled to announce our open-source GPU mining contest!
+We are thrilled to announce our open-source GPU mining competition!
 
 During this contest, eligible users are invited to create open-source GPU miners on the Iron Fish network. The more miners there are, the more secure and decentralized Iron Fish becomes.  
 
-Please read on to learn more about contest requirements, deadlines, and instructions.
+Please read on to learn more about competition requirements, deadlines, and instructions.
 
 ## Requirements
 
@@ -41,7 +41,7 @@ How to enter
     
 ## Eligibility
 
--   This contest is void where prohibited. It is not open to residents of countries on the OFAC sanctions list or those from regions as specified in the [Exclusions section](https://docs.google.com/document/d/1TnwbC1vp2d62VEmKJKh6FaTv0bQ65JQf7c7RPDrwkI0/edit#bookmark=id.qdj3qhpirav) of the contest terms and conditions.
+-   This contest is void where prohibited. It is not open to residents of countries on the OFAC sanctions list or those from regions as specified in the Exclusions section of the [contest terms and conditions](https://drive.google.com/file/d/1WBSBAzHQiD4rhnxBX4NqSmLqiAYczGfb/view?usp=sharing).
 -   Contest winners must be 18 or older and be able to pass KYC. We strongly recommend that all contest entrants verify that they meet KYC requirements before entering the contest.
 -   Both individuals and teams may enter. Teams must designate one person (“Team Leader”) as representative. Any prize awarded to a Team will be presented to the Team Leader, who must pass KYC if selected as a winner.
     
@@ -82,10 +82,9 @@ The pool will log its connection address. By default, it’s 127.0.0.1:9034 . Yo
 ```ironfish miners:start -p 127.0.0.1:9034 --datadir ~/.ironfishdev ``` 
       
 If that command outputs Successfully connected to pool, then displays a non-zero hashrate, then your local pool is set up correctly.  
-      
-    
 
 -   ### Performance
+
 Performance is key. Your goal as a contestant should be to maximize the pool shares found by your miner by maximizing the speed at which your miner hashes block headers. Iron Fish block headers are 180-byte buffers hashed using BLAKE3.  
   
 Note that correctness is a performance factor. For example, submitting the same block header candidate multiple times will result in a penalty.
