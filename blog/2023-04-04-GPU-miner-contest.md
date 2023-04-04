@@ -80,7 +80,7 @@ The pool will log its connection address. By default, it’s 127.0.0.1:9034 . Yo
       
 ```ironfish miners:start -p 127.0.0.1:9034 --datadir ~/.ironfishdev ``` 
       
-If that command outputs Successfully connected to pool, then displays a non-zero hashrate, then your local pool is set up correctly.  
+If that command outputs ```Successfully connected to pool```, then displays a non-zero hashrate, then your local pool is set up correctly.  
 
 -   ### Performance
 
