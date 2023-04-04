@@ -24,7 +24,7 @@ Gets (and optionally streams) the status of the RPC server
 
 <JsDisplay js={`{
   started: boolean
-  adapters: {
+  adapters: Array<{
     name: string
     inbound: number
     outbound: number
@@ -34,6 +34,6 @@ Gets (and optionally streams) the status of the RPC server
     writtenBytes: number
     clients: number
     pending: string[]
-  }[]
+  }>
 }
 `} />

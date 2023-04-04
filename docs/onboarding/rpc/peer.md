@@ -23,10 +23,10 @@ Gets (and optionally streams) banned peers from the node's peer network
 #### Response
 
 <JsDisplay js={`{
-  peers: {
+  peers: Array<{
     identity: string
     reason: string
-  }[]
+  }>
 }
 `} />
 
@@ -123,7 +123,7 @@ Gets (and optionally streams) peers from the node's peer network
 #### Response
 
 <JsDisplay js={`{
-  peers: {
+  peers: Array<{
     state: string
     identity: string | null
     version: number | null
@@ -157,7 +157,7 @@ Gets (and optionally streams) peers from the node's peer network
     features: {
       syncing: boolean
     } | null
-  }[]
+  }>
 }
 `} />
 

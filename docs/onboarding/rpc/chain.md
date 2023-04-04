@@ -117,28 +117,28 @@ Follows the chain from a given sequence and streams blocks from chain connects a
     timestamp: number
     work: string
     main: boolean
-    transactions:{
+    transactions: Array<{
       hash: string
       size: number
       fee: number
-      notes: { 
+      notes: Array<{ 
         commitment: string 
-      }[]
-      spends: { 
+      }>
+      spends: Array<{ 
         nullifier: string 
-      }[]
-      mints: {
+      }>
+      mints: Array<{
         id: string
         metadata: string
         name: string
         owner: string
         value: string
-      }[]
-      burns: {
+      }>
+      burns: Array<{
         id: string
         value: string
-      }[]
-    }[]
+      }>
+    }>
   }
 }
 `} />
@@ -195,13 +195,13 @@ One of hash or sequence must be provided.
     timestamp: number
     noteSize: number
     noteCommitment: string
-    transactions: {
+    transactions: Array<{
       fee: string
       hash: string
       signature: string
       notes: number
       spends: number
-    }[]
+    }>
   }
   metadata: {
     main: boolean
@@ -340,14 +340,14 @@ Gets a transaction from a block hash and transaction hash
   spendsCount: number
   signature: string
   notesEncrypted: string[]
-  mints: {
+  mints: Array<{
     assetId: string
     value: string
-  }[]
-  burns: {
+  }>
+  burns: Array<{
     assetId: string
     value: string
-  }[]
+  }>
 }
 `} />
 
@@ -376,26 +376,26 @@ Streams transactions from a head sequence given an incoming view key
     sequence: number
     timestamp: number
   }
-  transactions: {
+  transactions: Array<{
     hash: string
     isMinersFee: boolean
-    notes: {
+    notes: Array<{
       assetId: string
       assetName: string
       value: string
       memo: string
-    }[]
-    mints: {
+    }>
+    mints: Array<{
       assetId: string
       assetName: string
       value: string
-  }[]
-    burns: {
+    }>
+    burns: Array< {
       assetId: string
       assetName: string
       value: string
-    }[]
-  }[]
+    }>
+  }>
 }
 `} />
 
@@ -438,9 +438,9 @@ This endpoint would primarily be used to construct transactions without using th
 <JsDisplay js={`{
   treeSize: number
   rootHash: string
-  authPath: {
+  authPath: Array<{
     side: 'Left' | 'Right'
     hashOfSibling: string
-  }[]
+  }>
 }
 `} />

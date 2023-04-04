@@ -59,7 +59,7 @@ Creates a transaction burning a custom asset from a given account, posts the tra
 
 ##  <GithubCodeLink link="wallet/create"/> wallet/create
 
-Creates a new account in the wallet with the given name and optionally setting it as the default account.
+Creates a new account in the wallet with the given name and optionally sets it as the default account.
 
 #### Request
 
@@ -88,22 +88,22 @@ The serialized new transaction is returned.
 
 <JsDisplay js={`{
   account: string
-  outputs: {
+  outputs: Array<{
     publicAddress: string
     amount: string
     memo: string
     assetId?: string
-  }[]
-  mints?: {
+  }>
+  mints?: Array<{
     assetId?: string
     name?: string
     metadata?: string
     value: string
-  }[]
-  burns?: {
+  }>
+  burns?: Array<{
     assetId: string
     value: string
-  }[]
+  }>
   fee?: string | null
   feeRate?: string | null
   expiration?: number
@@ -123,7 +123,7 @@ The serialized new transaction is returned.
 
 Exports the keys to the default account, or the named account if specified. 
 
-If `viewOnly = true`, the returned spending key will be null, but the spending key may also be null if exporting a view-only account.
+`spendingKey` will be null in the response if `viewOnly = true` or if exporting a view-only account.
 
 #### Request
 
@@ -239,7 +239,7 @@ Gets the wallet's `$IRON` balance, as well as balances of custom assets of the g
 
 <JsDisplay js={`{
   account: string
-  balances: {
+  balances: Array<{
     assetId: string
     assetName: string
     assetOwner: string
@@ -251,7 +251,7 @@ Gets the wallet's `$IRON` balance, as well as balances of custom assets of the g
     available: string
     blockHash: string | null
     sequence: number | null
-  }[]
+  }>
 }
 `} />
 
@@ -404,11 +404,11 @@ Gets transactions for the given account. If not specified, the default account i
   burnsCount: number
   expiration: number
   timestamp: number
-  assetBalanceDeltas: { 
+  assetBalanceDeltas: Array<{ 
     assetId: string 
     assetName: string
     delta: string 
-  }[]
+  }>
 }
 `} />
 
@@ -540,12 +540,12 @@ Creates a transaction, posts the transaction, and submits it to the wallet, memp
 
 <JsDisplay js={`{
   account: string
-  outputs: {
+  outputs: Array<{
     publicAddress: string
     amount: string
     memo: string
     assetId?: string
-  }[]
+  }>
   fee: string
   expiration?: number | null
   expirationDelta?: number | null

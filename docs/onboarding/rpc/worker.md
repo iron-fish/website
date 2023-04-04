@@ -30,12 +30,12 @@ Gets (and optionally streams) the status of the long-running jobs queued by the 
   executing: number
   change: number
   speed: number
-  jobs: {
+  jobs: Array<{
     name: string
     complete: number
     execute: number
     queue: number
     error: number
-  }[]
+  }>
 }
 `} />
