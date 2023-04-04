@@ -100,7 +100,7 @@ Note that correctness is a performance factor. For example, submitting the same 
 **Use of resources**: Does your miner maximally use GPU and other resources?
 
 
-
+---
 _**Please note:**_
 
 -   We reserve the right to disqualify entries at our discretion. We may disqualify entries if we cannot determine whether the submitter is the author of the code or if the code is found to be copied from somewhere else.
