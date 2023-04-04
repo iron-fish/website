@@ -105,7 +105,7 @@ _**Please note:**_
 
 -   We reserve the right to disqualify entries at our discretion. We may disqualify entries if we cannot determine whether the submitter is the author of the code or if the code is found to be copied from somewhere else.
 -   We reserve the right to alter the contest's rules at any point.
--   You agree to abide by the [terms and conditions](https://docs.google.com/document/d/1TnwbC1vp2d62VEmKJKh6FaTv0bQ65JQf7c7RPDrwkI0/edit?usp=sharing) by entering the contest.
+-   You agree to abide by the [terms and conditions](https://drive.google.com/file/d/1WBSBAzHQiD4rhnxBX4NqSmLqiAYczGfb/view?usp=sharing) by entering the contest.
     
 
 ## Resources
