@@ -48,13 +48,13 @@ How to enter
 
 ## Contest prizes
 
--   ### Cash prizes
+### Cash prizes
 The top three winners will receive the following in $USD:
 -   $5000 for first place
 -   $3000 for second place
 -   $1000 for third place.  
 
--   ### Claiming a prize
+### Claiming a prize
 
 - **KYC:** Please note that winners must be able to pass KYC to claim their prize. An alternate winner will be chosen if you are selected for an award and cannot pass KYC.  
 - **US residents**: If you are a US participant, you must be willing to receive a 1099 and provide an SSN.
@@ -91,6 +91,7 @@ Performance is key. Your goal as a contestant should be to maximize the pool sha
 Note that correctness is a performance factor. For example, submitting the same block header candidate multiple times will result in a penalty.
 
 -   ### Other Criteria
+
 **Code quality:** Is the code easy to read and understand? Judging will also consider other elements like the clarity of function and variable names, comments, and architectural decisions.
 
 **Documentation:** How easy is it to build and run the code? Are build or runtime options documented? Are tradeoffs documented?
