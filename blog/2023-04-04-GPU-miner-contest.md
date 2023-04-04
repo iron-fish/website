@@ -15,7 +15,7 @@ tags: [ironfish, GPU, miner, mining, contest, competition, open-source, Blake3]
 
 We are thrilled to announce our open-source GPU mining competition!
 
-During this contest, eligible users are invited to create open-source GPU miners on the Iron Fish network. The more miners there are, the more secure and decentralized Iron Fish becomes.  
+During this competition, eligible users are invited to create open-source GPU miners on the Iron Fish network. The more miners there are, the more secure and decentralized Iron Fish becomes.  
 
 Please read on to learn more about competition requirements, deadlines, and instructions.
 
@@ -30,7 +30,7 @@ Please read on to learn more about competition requirements, deadlines, and inst
 
 ## Timeline
 
-The contest will run from April 7, 2023, 7:00 pm UTC, until May 5, 2023, 7:00 pm UTC.
+The competition will run from April 7, 2023, 7:00 pm UTC, until May 5, 2023, 7:00 pm UTC.
 
 We will contact and announce the winners on May 12, 2023.  
 
@@ -41,12 +41,12 @@ We will contact and announce the winners on May 12, 2023.
     
 ## Eligibility
 
--   This contest is void where prohibited. It is not open to residents of countries on the OFAC sanctions list or those from regions as specified in the Exclusions section of the [contest terms and conditions](https://drive.google.com/file/d/1WBSBAzHQiD4rhnxBX4NqSmLqiAYczGfb/view?usp=sharing).
--   Contest winners must be 18 or older and be able to pass KYC. We strongly recommend that all contest entrants verify that they meet KYC requirements before entering the contest.
+-   This competition is void where prohibited. It is not open to residents of countries on the OFAC sanctions list or those from regions as specified in the Exclusions section of the [competition terms and conditions](https://drive.google.com/file/d/1WBSBAzHQiD4rhnxBX4NqSmLqiAYczGfb/view?usp=sharing).
+-   Competition winners must be 18 or older and be able to pass KYC. We strongly recommend that all entrants verify that they meet KYC requirements before entering the competition.
 -   Both individuals and teams may enter. Teams must designate one person (“Team Leader”) as representative. Any prize awarded to a Team will be presented to the Team Leader, who must pass KYC if selected as a winner.
     
 
-## Contest prizes
+## Competition prizes
 
 **Cash prizes**
 The top three winners will receive the following in $USD:
@@ -104,8 +104,8 @@ Note that correctness is a performance factor. For example, submitting the same 
 Please note:
 
 -   We reserve the right to disqualify entries at our discretion. We may disqualify entries if we cannot determine whether the submitter is the author of the code or if the code is found to be copied from somewhere else.
--   We reserve the right to alter the contest's rules at any point.
--   You agree to abide by the [terms and conditions](https://docs.google.com/document/d/1TnwbC1vp2d62VEmKJKh6FaTv0bQ65JQf7c7RPDrwkI0/edit?usp=sharing) by entering the contest.
+-   We reserve the right to alter the competition rules at any point.
+-   You agree to abide by the [terms and conditions](https://docs.google.com/document/d/1TnwbC1vp2d62VEmKJKh6FaTv0bQ65JQf7c7RPDrwkI0/edit?usp=sharing) by entering the competition.
     
 
 ## Resources
