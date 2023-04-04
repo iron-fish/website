@@ -12,7 +12,6 @@ tags: [ironfish, GPU, miner, mining, contest, competition, open-source, Blake3]
 ---
 
 
-
 We are thrilled to announce our open-source GPU mining competition!
 
 During this competition, eligible users are invited to create open-source GPU miners on the Iron Fish network. The more miners there are, the more secure and decentralized Iron Fish becomes.  
@@ -30,19 +29,19 @@ Please read on to learn more about competition requirements, deadlines, and inst
 
 ## Timeline
 
-The competition will run from April 7, 2023, 7:00 pm UTC, until May 5, 2023, 7:00 pm UTC.
+The contest will run from April 7, 2023, 7:00 pm UTC, until May 5, 2023, 7:00 pm UTC.
 
 We will contact and announce the winners on May 12, 2023.  
 
 ## How to enter
 -   No pre-registration is required. Before building, please check that you fit the eligibility criteria described below and note the KYC criteria.
--   Submit entries using [the online form](https://docs.google.com/forms/d/e/1FAIpQLSfVyz4E5yOG4NHRXApMbBaEvi4lN3rrN2nmRmejp4pTZ6Kbrw/viewform) at any time during the competition (April 7-May 5). This form asks you for contact information and to upload your submission as a ZIP file – please do not fill out the form until you are ready to upload your submission.
+-   Submit entries using [the online form](https://docs.google.com/forms/d/e/1FAIpQLSfVyz4E5yOG4NHRXApMbBaEvi4lN3rrN2nmRmejp4pTZ6Kbrw/viewform) at any time during the contest (April 7-May 5). This form asks you for contact information and to upload your submission as a ZIP file – please do not fill out the form until you are ready to upload your submission.
 -   Note that all submissions will be added to the Iron Fish repository as open-source submissions.
     
 ## Eligibility
 
--   This competition is void where prohibited. It is not open to residents of countries on the OFAC sanctions list or those from regions as specified in the Exclusions section of the [competition terms and conditions](https://drive.google.com/file/d/1WBSBAzHQiD4rhnxBX4NqSmLqiAYczGfb/view?usp=sharing).
--   Competition winners must be 18 or older and be able to pass KYC. We strongly recommend that all entrants verify that they meet KYC requirements before entering the competition.
+-   This contest is void where prohibited. It is not open to residents of countries on the OFAC sanctions list or those from regions as specified in the Exclusions section of the [contest terms and conditions](https://drive.google.com/file/d/1WBSBAzHQiD4rhnxBX4NqSmLqiAYczGfb/view?usp=sharing).
+-   Contest winners must be 18 or older and be able to pass KYC. We strongly recommend that all entrants verify that they meet KYC requirements before entering the contest.
 -   Both individuals and teams may enter. Teams must designate one person (“Team Leader”) as representative. Any prize awarded to a Team will be presented to the Team Leader, who must pass KYC if selected as a winner.
     
 
@@ -104,8 +103,8 @@ Note that correctness is a performance factor. For example, submitting the same 
 Please note:
 
 -   We reserve the right to disqualify entries at our discretion. We may disqualify entries if we cannot determine whether the submitter is the author of the code or if the code is found to be copied from somewhere else.
--   We reserve the right to alter the competition rules at any point.
--   You agree to abide by the [terms and conditions](https://docs.google.com/document/d/1TnwbC1vp2d62VEmKJKh6FaTv0bQ65JQf7c7RPDrwkI0/edit?usp=sharing) by entering the competition.
+-   We reserve the right to alter the contest's rules at any point.
+-   You agree to abide by the [terms and conditions](https://docs.google.com/document/d/1TnwbC1vp2d62VEmKJKh6FaTv0bQ65JQf7c7RPDrwkI0/edit?usp=sharing) by entering the contest.
     
 
 ## Resources
@@ -124,3 +123,5 @@ Here are some links to the Iron Fish source for a CPU miner:
 
 ## Questions
 Have any questions? Reach out to us on [Discord](https://discord.com/invite/EkQkEcm8DH) in the #questions channel.
+
+
