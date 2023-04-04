@@ -122,6 +122,9 @@ Here are some links to the Iron Fish source for a CPU miner:
 Have any questions? Reach out to us on [Discord](https://discord.com/invite/EkQkEcm8DH) in the #questions channel.
 
 
+
+
+
 • 🎤 [Discord](https://discord.ironfish.network)
 
 • 🐦 [Twitter](https://twitter.com/ironfishcrypto)
