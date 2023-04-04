@@ -34,7 +34,7 @@ The contest will run from April 7, 2023, 7:00 pm UTC, until May 5, 2023, 7:00 pm
 
 We will contact and announce the winners on May 12, 2023.  
 
-How to enter
+## How to enter
 -   No pre-registration is required. Before building, please check that you fit the eligibility criteria described below and note the KYC criteria.
 -   Submit entries using [the online form](https://docs.google.com/forms/d/e/1FAIpQLSfVyz4E5yOG4NHRXApMbBaEvi4lN3rrN2nmRmejp4pTZ6Kbrw/viewform) at any time during the competition (April 7-May 5). This form asks you for contact information and to upload your submission as a ZIP file – please do not fill out the form until you are ready to upload your submission.
 -   Note that all submissions will be added to the Iron Fish repository as open-source submissions.
@@ -48,13 +48,13 @@ How to enter
 
 ## Contest prizes
 
-### Cash prizes
+**Cash prizes**
 The top three winners will receive the following in $USD:
 -   $5000 for first place
 -   $3000 for second place
 -   $1000 for third place.  
 
-### Claiming a prize
+**Claiming a prize**
 
 - **KYC:** Please note that winners must be able to pass KYC to claim their prize. An alternate winner will be chosen if you are selected for an award and cannot pass KYC.  
 - **US residents**: If you are a US participant, you must be willing to receive a 1099 and provide an SSN.
