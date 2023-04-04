@@ -5,8 +5,122 @@ author_url: https://twitter.com/n_doshi_
 author_image_url: "/img/blog/Neil.png"
 author_description: Neil is Content Marketing Manager at Iron Fish
 hide_table_of_contents: true
-title: "GPU Miner Competition"
+title: "GPU Mining Competition"
 description: Iron Fish announces an open-source GPU Miner contest
 image: /img/blog/GPU-miner-contest/GPU.png
 tags: [ironfish, GPU, miner, mining, contest, competition, open-source, Blake3]
 ---
+
+
+
+We are thrilled to announce our open-source GPU mining contest!
+
+During this contest, eligible users are invited to create open-source GPU miners on the Iron Fish network. The more miners there are, the more secure and decentralized Iron Fish becomes.  
+
+Please read on to learn more about contest requirements, deadlines, and instructions.
+
+## Requirements
+
+-   The code must be [MIT licensed](https://opensource.org/license/mit/).
+-   Your miner needs to connect to the Iron Fish Pool.
+-   Judges must be able to build your miner from the provided source.
+-   Your miner must perform block header hashing on GPU.
+-   Your miner must submit valid shares to the Iron Fish pool.
+    
+
+## Timeline
+
+The contest will run from April 7, 2023, 7:00 pm UTC, until May 5, 2023, 7:00 pm UTC.
+
+We will contact and announce the winners on May 12, 2023.  
+
+How to enter
+-   No pre-registration is required. Before building, please check that you fit the eligibility criteria described below and note the KYC criteria.
+-   Submit entries using [the online form](https://docs.google.com/forms/d/e/1FAIpQLSfVyz4E5yOG4NHRXApMbBaEvi4lN3rrN2nmRmejp4pTZ6Kbrw/viewform) at any time during the competition (April 7-May 5). This form asks you for contact information and to upload your submission as a ZIP file – please do not fill out the form until you are ready to upload your submission.
+-   Note that all submissions will be added to the Iron Fish repository as open-source submissions.
+    
+## Eligibility
+
+-   This contest is void where prohibited. It is not open to residents of countries on the OFAC sanctions list or those from regions as specified in the [Exclusions section](https://docs.google.com/document/d/1TnwbC1vp2d62VEmKJKh6FaTv0bQ65JQf7c7RPDrwkI0/edit#bookmark=id.qdj3qhpirav) of the contest terms and conditions.
+-   Contest winners must be 18 or older and be able to pass KYC. We strongly recommend that all contest entrants verify that they meet KYC requirements before entering the contest.
+-   Both individuals and teams may enter. Teams must designate one person (“Team Leader”) as representative. Any prize awarded to a Team will be presented to the Team Leader, who must pass KYC if selected as a winner.
+    
+
+## Contest prizes
+
+-   ### Cash prizes
+The top three winners will receive the following in $USD:
+-   $5000 for first place
+-   $3000 for second place
+-   $1000 for third place.  
+
+-   ### Claiming a prize
+
+- **KYC:** Please note that winners must be able to pass KYC to claim their prize. An alternate winner will be chosen if you are selected for an award and cannot pass KYC.  
+- **US residents**: If you are a US participant, you must be willing to receive a 1099 and provide an SSN.
+
+## Instructions and Criteria
+
+-   ### Connect to an Iron Fish Pool
+Your miner must connect via TCP to an instance of an Iron Fish built-in pool. As such, your miner should take a configuration parameter that specifies the host and port of a pool to connect to. An Iron Fish pool functions similarly to a Stratum mining server.  
+  
+Here’s how to start a pool locally for testing:  
+  
+
+1. [Install `ironfish`](https://ironfish.network/docs/onboarding/installation-iron-fish).
+    
+2.  Start up a node on a development network with the following command:  
+      
+```ironfish start --datadir ~/.ironfishdev --forceMining --networkId 2```
+
+Start a pool connected to your node.  
+      
+```ironfish miners:pools:start --datadir ~/.ironfishdev```  
+      
+The pool will log its connection address. By default, it’s 127.0.0.1:9034 . You can now connect your miner. To test that the pool is functioning correctly, you can connect the built-in Iron Fish miner:  
+      
+```ironfish miners:start -p 127.0.0.1:9034 --datadir ~/.ironfishdev ``` 
+      
+If that command outputs Successfully connected to pool, then displays a non-zero hashrate, then your local pool is set up correctly.  
+      
+    
+
+-   ### Performance
+Performance is key. Your goal as a contestant should be to maximize the pool shares found by your miner by maximizing the speed at which your miner hashes block headers. Iron Fish block headers are 180-byte buffers hashed using BLAKE3.  
+  
+Note that correctness is a performance factor. For example, submitting the same block header candidate multiple times will result in a penalty.
+
+-   ### Other Criteria
+**Code quality:** Is the code easy to read and understand? Judging will also consider other elements like the clarity of function and variable names, comments, and architectural decisions.
+
+**Documentation:** How easy is it to build and run the code? Are build or runtime options documented? Are tradeoffs documented?
+
+**Potential for inclusion into Iron Fish:** How difficult would it be to distribute the code as part of the Iron Fish CLI?
+
+**Compatibility**: How advanced are the system requirements? Does it support both AMD and NVIDIA GPUs? Does it run on a variety of OSes?
+
+**Use of resources**: Does your miner maximally use GPU and other resources?
+
+Please note:
+
+-   We reserve the right to disqualify entries at our discretion. We may disqualify entries if we cannot determine whether the submitter is the author of the code or if the code is found to be copied from somewhere else.
+-   We reserve the right to alter the contest's rules at any point.
+-   You agree to abide by the [terms and conditions](https://docs.google.com/document/d/1TnwbC1vp2d62VEmKJKh6FaTv0bQ65JQf7c7RPDrwkI0/edit?usp=sharing) by entering the contest.
+    
+
+## Resources
+Here are some links to the Iron Fish source for a CPU miner:
+-   [The source for the Iron Fish pool server and pool client.](https://github.com/iron-fish/ironfish/tree/master/ironfish/src/mining)
+    
+
+-   [The socket-based client that communicates with the pool server](https://github.com/iron-fish/ironfish/blob/master/ironfish/src/mining/stratum/clients/client.ts)
+    
+-   The PoolMiner uses the above client to communicate to the server, then distributes tasks to the [Rust mining threadpool](https://github.com/iron-fish/ironfish/blob/master/ironfish/src/mining/poolMiner.ts)[](https://github.com/iron-fish/ironfish/blob/master/ironfish/src/mining/poolMiner.ts)
+    
+
+-   [The Rust code for the mining threadpool](https://github.com/iron-fish/ironfish/tree/master/ironfish-rust/src/mining)
+    
+-   [Setup code for the pool miner](https://github.com/iron-fish/ironfish/blob/dd7bcab84de5babc273cacd33586580b80cc3a07/ironfish-cli/src/commands/miners/start.ts#L57)
+
+## Questions
+Have any questions? Reach out to us on [Discord](https://discord.com/invite/EkQkEcm8DH) in the #questions channel.
