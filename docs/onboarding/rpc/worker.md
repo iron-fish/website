@@ -7,10 +7,11 @@ hide_table_of_contents: false
 ---
 
 import JsDisplay from '../../../src/theme/components/Terminal/JsDisplay'
+import GithubCodeLink from '../../../src/theme/components/Terminal/rpc/GithubCodeLink'
 
-## worker/getStatus
+## <GithubCodeLink link="workers/getStatus" /> worker/getStatus
 
-Displays info on long-running jobs queued with the node's workers (similar to a threadpool).
+Gets (and optionally streams) the status of the long-running jobs queued by the node's workers. The workers operate similar to a threadpool.
 
 #### Request
 

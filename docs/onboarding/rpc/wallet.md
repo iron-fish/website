@@ -7,10 +7,13 @@ hide_table_of_contents: false
 ---
 
 import JsDisplay from '../../../src/theme/components/Terminal/JsDisplay'
+import GithubCodeLink from '../../../src/theme/components/Terminal/rpc/GithubCodeLink'
 
-## wallet/addTransaction
+## <GithubCodeLink link="wallet/addTransaction"/> wallet/addTransaction
 
-Takes in a posted transaction, adds it to the wallet and mempool, and optionally broadcasts it to the network. Returns the names of the wallet accounts involved in the transaction.
+Takes in a posted transaction, adds it to the wallet and mempool, and optionally broadcasts it to the network. 
+
+Returns the names of the wallet accounts involved in the transaction.
 
 #### Request
 
@@ -27,7 +30,7 @@ Takes in a posted transaction, adds it to the wallet and mempool, and optionally
 }
 `} />
 
-## wallet/burnAsset
+## <GithubCodeLink link="wallet/burnAsset"/> wallet/burnAsset
 
 Creates a transaction burning a custom asset from a given account, posts the transaction, and submits it to the wallet, mempool, and network.
 
@@ -54,9 +57,9 @@ Creates a transaction burning a custom asset from a given account, posts the tra
 }
 `} />
 
-## wallet/create
+##  <GithubCodeLink link="wallet/create"/> wallet/create
 
-Creates a new account in the wallet with the given name, optionally setting it as the default account.
+Creates a new account in the wallet with the given name and optionally sets it as the default account.
 
 #### Request
 
@@ -75,30 +78,32 @@ Creates a new account in the wallet with the given name, optionally setting it a
 }
 `} />
 
-## wallet/createTransaction
+##  <GithubCodeLink link="wallet/createTransaction"/> wallet/createTransaction
 
-Creates and returns a new transaction with the given parameters, but doesn't post it (as such, it's also not added to the wallet, mempool, or broadcast to the network). This allows for the transaction to be posted using spending keys stored on a different node.
+Creates a new transaction with the given parameters, but does not post it (as such, it is also not added to the wallet, mempool, or broadcast to the network). This allows for the transaction to be posted using spending keys stored on a different node.
+
+The serialized new transaction is returned.
 
 #### Request
 
 <JsDisplay js={`{
   account: string
-  outputs: {
+  outputs: Array<{
     publicAddress: string
     amount: string
     memo: string
     assetId?: string
-  }[]
-  mints?: {
+  }>
+  mints?: Array<{
     assetId?: string
     name?: string
     metadata?: string
     value: string
-  }[]
-  burns?: {
+  }>
+  burns?: Array<{
     assetId: string
     value: string
-  }[]
+  }>
   fee?: string | null
   feeRate?: string | null
   expiration?: number
@@ -114,9 +119,11 @@ Creates and returns a new transaction with the given parameters, but doesn't pos
 }
 `} />
 
-## wallet/exportAccount
+## <GithubCodeLink link="wallet/exportAccount"/> wallet/exportAccount
 
-Exports the keys to the default account, or the named account if specified. If `viewOnly` is true, the spending key will be null, but the spending key may also be null if exporting a view-only account.
+Exports the keys to the default account, or the named account if specified. 
+
+`spendingKey` will be null in the response if `viewOnly = true` or if exporting a view-only account.
 
 #### Request
 
@@ -141,9 +148,9 @@ Exports the keys to the default account, or the named account if specified. If `
 }
 `} />
 
-## wallet/getAccounts
+## <GithubCodeLink link="wallet/getAccounts"/> wallet/getAccounts
 
-Returns accounts in the wallet.
+Gets the names of the accounts in the wallet.
 
 #### Request
 
@@ -160,9 +167,9 @@ Returns accounts in the wallet.
 }
 `} />
 
-## wallet/getAssets
+## <GithubCodeLink link="wallet/getAssets"/> wallet/getAssets
 
-Returns assets in the wallet.
+Streams all the assets in the wallet of the given account. If not specified, the assets of default account will be returned.
 
 #### Request
 
@@ -185,9 +192,10 @@ Returns assets in the wallet.
 }
 `} />
 
-## wallet/getBalance
+## <GithubCodeLink link="wallet/getBalance"/> wallet/getBalance
 
-Returns the wallet balance for a given asset, or $IRON if none is specified.
+Gets the wallet balance for the given account and asset. If the account is not specified,
+the default account will be used. If the asset is not specified, `$IRON` will be used.
 
 #### Request
 
@@ -215,9 +223,9 @@ Returns the wallet balance for a given asset, or $IRON if none is specified.
 }
 `} />
 
-## wallet/getBalances
+## <GithubCodeLink link="wallet/getBalances"/> wallet/getBalances
 
-Returns the wallet's $IRON balance, as well as balances of custom assets.
+Gets the wallet's `$IRON` balance, as well as balances of custom assets of the given account. If the account is not specified, the default account will be used.
 
 #### Request
 
@@ -231,7 +239,7 @@ Returns the wallet's $IRON balance, as well as balances of custom assets.
 
 <JsDisplay js={`{
   account: string
-  balances: {
+  balances: Array<{
     assetId: string
     assetName: string
     assetOwner: string
@@ -243,13 +251,13 @@ Returns the wallet's $IRON balance, as well as balances of custom assets.
     available: string
     blockHash: string | null
     sequence: number | null
-  }[]
+  }>
 }
 `} />
 
-## wallet/getDefaultAccount
+## <GithubCodeLink link="wallet/getDefaultAccount"/> wallet/getDefaultAccount
 
-Returns the wallet's default account.
+Gets the default account of the wallet.
 
 #### Request
 
@@ -265,9 +273,9 @@ Returns the wallet's default account.
 }
 `} />
 
-## wallet/getAccountNotesStream
+## <GithubCodeLink link="wallet/getNotes"/> wallet/getAccountNotesStream
 
-Returns a stream of notes in an account.
+Streams the notes in the given account. If the account is not specified, the default account will be used.
 
 #### Request
 
@@ -289,9 +297,9 @@ Returns a stream of notes in an account.
 }
 `} />
 
-## wallet/getPublicKey
+## <GithubCodeLink link="wallet/getPublicKey"/> wallet/getPublicKey
 
-Returns an account's public key.
+Gets the public key of the given account. If the account is not specified, the default account will be used.
 
 #### Request
 
@@ -308,9 +316,9 @@ Returns an account's public key.
 }
 `} />
 
-## wallet/getAccountsStatus
+## <GithubCodeLink link="wallet/getStatus"/> wallet/getAccountStatus
 
-Returns the status of an account or of all accounts if no account is provided.
+Gets the status of an account. If not specified, the status of all accounts are returned.
 
 #### Request
 
@@ -322,19 +330,19 @@ Returns the status of an account or of all accounts if no account is provided.
 #### Response
 
 <JsDisplay js={`{
-  accounts: Array<{
+  accounts: {
     name: string
     id: string
     headHash: string
     headInChain: boolean
     sequence: string | number
-  }>
+  }[]
 }
 `} />
 
-## wallet/getAccountTransaction
+## <GithubCodeLink link="wallet/getTransaction"/> wallet/getAccountTransaction
 
-Returns a transaction for an account.
+Gets a transaction for an account. If the account is not specified, the default account is used.
 
 #### Request
 
@@ -367,9 +375,9 @@ Returns a transaction for an account.
 }
 `} />
 
-## wallet/getAccountTransactions
+## <GithubCodeLink link="wallet/getTransactions"/> wallet/getAccountTransactions
 
-Returns transactions for an account. The default account is used if no account is provided.
+Gets transactions for the given account. If not specified, the default account is used.
 
 #### Request
 
@@ -396,13 +404,17 @@ Returns transactions for an account. The default account is used if no account i
   burnsCount: number
   expiration: number
   timestamp: number
-  assetBalanceDeltas: Array<{ assetId: string; assetName: string; delta: string }>
+  assetBalanceDeltas: Array<{ 
+    assetId: string 
+    assetName: string
+    delta: string 
+  }>
 }
 `} />
 
-## wallet/importAccount
+## <GithubCodeLink link="wallet/importAccount"/> wallet/importAccount
 
-Imports an account to the wallet.
+Imports an account into the wallet.
 
 #### Request
 
@@ -429,7 +441,7 @@ Imports an account to the wallet.
 }
 `} />
 
-## wallet/mintAsset
+## <GithubCodeLink link="wallet/mintAsset"/> wallet/mintAsset
 
 Creates a transaction minting a custom asset from a given account, posts the transaction, and submits it to the wallet, mempool, and network.
 
@@ -458,10 +470,11 @@ Creates a transaction minting a custom asset from a given account, posts the tra
 }
 `} />
 
-## wallet/postTransaction
+## <GithubCodeLink link="wallet/postTransaction"/> wallet/postTransaction
 
-Posts a transaction, submitting it to the wallet, mempool, and network if possible.
+Posts a transaction and submits it to the wallet, mempool, and network if possible.
 
+Returns the serialized transaction.
 #### Request
 
 <JsDisplay js={`{
@@ -478,7 +491,7 @@ Posts a transaction, submitting it to the wallet, mempool, and network if possib
 }
 `} />
 
-## wallet/removeAccount
+## <GithubCodeLink link="wallet/removeAccount"/> wallet/removeAccount
 
 Removes an account from the wallet.
 
@@ -498,9 +511,9 @@ Removes an account from the wallet.
 }
 `} />
 
-## wallet/rescanAccount
+## <GithubCodeLink link="wallet/rescanAccount"/> wallet/rescanAccount
 
-Rescans an account in the wallet, updating the balance and available notes.
+Rescans an account in the wallet and updates the balance and available notes.
 
 #### Request
 
@@ -519,7 +532,7 @@ Rescans an account in the wallet, updating the balance and available notes.
 }
 `} />
 
-## wallet/sendTransaction
+## <GithubCodeLink link="wallet/sendTransaction"/> wallet/sendTransaction
 
 Creates a transaction, posts the transaction, and submits it to the wallet, mempool, and network.
 
@@ -527,12 +540,12 @@ Creates a transaction, posts the transaction, and submits it to the wallet, memp
 
 <JsDisplay js={`{
   account: string
-  outputs: {
+  outputs: Array<{
     publicAddress: string
     amount: string
     memo: string
     assetId?: string
-  }[]
+  }>
   fee: string
   expiration?: number | null
   expirationDelta?: number | null
@@ -549,9 +562,9 @@ Creates a transaction, posts the transaction, and submits it to the wallet, memp
 }
 `} />
 
-## wallet/useAccount
+## <GithubCodeLink link="wallet/useAccount"/> wallet/useAccount
 
-Sets an account as the wallet's default account.
+Sets an account as the default account of the wallet.
 
 #### Request
 

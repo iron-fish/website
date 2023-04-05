@@ -7,8 +7,9 @@ hide_table_of_contents: false
 ---
 
 import JsDisplay from '../../../src/theme/components/Terminal/JsDisplay'
+import GithubCodeLink from '../../../src/theme/components/Terminal/rpc/GithubCodeLink'
 
-## mempool/getStatus
+## <GithubCodeLink link="mempool/getStatus" /> mempool/getStatus
 
 Gets (and optionally streams) the status of the mempool
 
@@ -34,10 +35,12 @@ Gets (and optionally streams) the status of the mempool
 }
 `} />
 
-## mempool/getTransactions
+## <GithubCodeLink link="mempool/getTransactions" /> mempool/getTransactions
 
-Streams transactions from the mempool
+Streams transactions from the mempool. Transactions are streamed in case there are a large number of transactions in the mempool.
 
+The `MinMax` type specifies the the minimum and maximum range of the input parameter to filter the returned transactions. 
+For example, `feeRate={min: 30; max:60}` specifies that only transactions with `30 <= txn.feeRate <= 60` are returned.
 #### Request
 
 <JsDisplay js={`{
