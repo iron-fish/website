@@ -37,6 +37,6 @@ We'll release more details soon, but participation will entail running one comma
 
 ### When can I participate?
 
-To give everyone sufficient time to participate, the trusted setup ceremony will run from February 13th through March 3rd.
+The trusted setup ceremony will run from April 7 at 5:00pm UTC until April 12 at 10:00pm UTC.
 
 Stay tuned for more details by following us on [Twitter](https://twitter.com/ironfishcrypto), [joining our Discord server](https://discord.gg/uCWctApGYN), and [signing up for email updates](https://ironfish.network/#email-signup).
