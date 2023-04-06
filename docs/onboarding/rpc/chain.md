@@ -326,8 +326,8 @@ Gets a transaction from a block hash and transaction hash
 #### Request
 
 <JsDisplay js={`{ 
-  blockHash: string
   transactionHash: string 
+  blockHash?: string
 }
 `} />
 
