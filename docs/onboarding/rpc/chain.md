@@ -9,6 +9,24 @@ hide_table_of_contents: false
 import JsDisplay from '../../../src/theme/components/Terminal/JsDisplay'
 import GithubCodeLink from '../../../src/theme/components/Terminal/rpc/GithubCodeLink'
 
+
+## <GithubCodeLink link="chain/broadcastTransaction" /> chain/broadcastTransaction
+
+Broadcasts a transaction (in hex) to the network.
+
+#### Request
+
+<JsDisplay js={`{
+  transaction: string
+}`} />
+
+#### Response
+
+<JsDisplay js={`{
+  hash: string
+}`} />
+
+
 ## <GithubCodeLink link="chain/estimateFeeRate" /> chain/estimateFeeRate 
 
 Estimates the fee rate given an optional priority. If no fee rate is provided, the `average` priority will be used.
