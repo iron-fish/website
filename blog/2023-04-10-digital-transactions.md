@@ -7,7 +7,7 @@ author_description: Elena is the Founder and CEO of Iron Fish — previously wor
 hide_table_of_contents: true
 title: "Iron Fish Use Case: Digital Transactions"
 description: How Iron Fish will support safe, private digital payments.
-image: /img/blog/mainnet-update/mainnetdate.png
+image: /img/blog/digital-transactions/1.png
 tags: [ironfish, mainnet, use case, digital payments, transactions, privacy, Web2, Web3]
 ---
 Over the last several years, the need for privacy has only grown — 2020 accelerated the need for private, safe digital transactions. Fewer businesses wanted to accept cash, and use of [digital payments soared](https://www.worldbank.org/en/news/press-release/2022/06/29/covid-19-drives-global-surge-in-use-of-digital-payments).
