@@ -27,3 +27,11 @@ All Iron Fish transactions are fully encrypted and private to the outside world,
 Iron Fish aims to become the privacy platform for all crypto assets and transactions. With fully private custom asset support and future bridge integration, we are building Iron Fish to be the fundamental Lego piece of crypto that provides safety to crypto users through privacy.
 
 Mainnet launches on April 20, 2023; [follow us on Twitter and keep up with announcements](https://twitter.com/ironfishcrypto).
+
+• 🎤 [Discord](https://discord.ironfish.network)
+
+• 🐦 [Twitter](https://twitter.com/ironfishcrypto)
+
+• 🚀 [Careers](https://ironfish.network/careers)
+
+• 📧 [Email Updates](https://ironfish.network/#email-signup)
