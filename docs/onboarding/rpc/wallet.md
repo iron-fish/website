@@ -361,6 +361,7 @@ Gets a transaction for an account. If the account is not specified, the default 
     hash: string
     status: 'confirmed' | 'expired' | 'pending' | 'unconfirmed' | 'unknown'
     type: 'send' | 'receive' | 'miner'
+    confirmations: number
     fee: string
     blockHash?: string
     blockSequence?: number
@@ -369,8 +370,22 @@ Gets a transaction for an account. If the account is not specified, the default 
     mintsCount: number
     burnsCount: number
     timestamp: number
-    notes: RpcAccountDecryptedNote[]
-    assetBalanceDeltas: Array<{ assetId: string; assetName: string; delta: string }>
+    submittedSequence: number
+    assetBalanceDeltas: Array<{
+      assetId: string
+      assetName: string
+      delta: string
+    }>
+    notes: Array<{
+      isOwner: boolean
+      value: string
+      assetId: string
+      assetName: string
+      memo: string
+      sender: string
+      owner: string
+      spent: boolean
+    }>
   } | null
 }
 `} />
@@ -388,26 +403,41 @@ Gets transactions for the given account. If not specified, the default account i
   limit?: number
   offset?: number
   confirmations?: number
+  notes?: boolean
 }
 `} />
 
 #### Response
 
 <JsDisplay js={`{
+  hash: string
   status: 'confirmed' | 'expired' | 'pending' | 'unconfirmed' | 'unknown'
   type: 'send' | 'receive' | 'miner'
-  hash: string
+  confirmations: number
   fee: string
+  blockHash?: string
+  blockSequence?: string
   notesCount: number
   spendsCount: number
   mintsCount: number
   burnsCount: number
   expiration: number
   timestamp: number
-  assetBalanceDeltas: Array<{ 
-    assetId: string 
+  submittedSequence: number
+  assetBalanceDeltas: Array<{
+    assetId: string
     assetName: string
-    delta: string 
+    delta: string
+  }>
+  notes?: Array<{
+    isOwner: boolean
+    value: string
+    assetId: string
+    assetName: string
+    memo: string
+    sender: string
+    owner: string
+    spent: boolean
   }>
 }
 `} />
