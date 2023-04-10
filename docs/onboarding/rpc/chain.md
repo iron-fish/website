@@ -165,13 +165,9 @@ Gets an asset from the blockchain from a given identifier
 }
 `} />
 
-
 ## <GithubCodeLink link="chain/getBlock" /> chain/getBlock
 
-Gets a block from the chain from a given hash or sequence.
-
-One of hash or sequence must be provided.
-
+Gets a block from the chain from a given hash or sequence. One of hash or sequence must be provided. The returned `noteSize` is the size of notes merkle tree *after* the block has been added
 
 #### Request
 
@@ -321,7 +317,7 @@ Gets information about the node's network
 
 ## <GithubCodeLink link="chain/getTransaction" /> chain/getTransaction
 
-Gets a transaction from a block hash and transaction hash
+Gets a transaction from a block hash and transaction hash. The returned `noteSize` is the size of notes merkle tree *after* the transaction has been applied
 
 #### Request
 
@@ -336,6 +332,7 @@ Gets a transaction from a block hash and transaction hash
 <JsDisplay js={`{
   fee: string
   expiration: number
+  noteSize: number
   notesCount: number
   spendsCount: number
   signature: string
