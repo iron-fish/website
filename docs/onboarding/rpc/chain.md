@@ -340,8 +340,8 @@ Gets a transaction from a block hash and transaction hash. The returned `noteSiz
 #### Request
 
 <JsDisplay js={`{ 
-  blockHash: string
   transactionHash: string 
+  blockHash?: string
 }
 `} />
 
