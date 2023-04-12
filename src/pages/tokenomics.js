@@ -197,7 +197,7 @@ function Tokenomics() {
             </li>
           </ul>
           <p>
-            We can also look at the genesis block broken up over the next few years.
+            We can also look at the circulating supply broken up over the next few years.
           </p>
           <Img
             src="/img/whitepaper/tokenomics/07-distribution-12-mo.avif"
