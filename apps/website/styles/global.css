@@ -1,0 +1,42 @@
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-bottom: 40px;
+}
+
+table td, table th {
+  text-align: left;
+}
+
+table td, table th {
+  padding: 8px;
+}
+
+table tbody tr:nth-child(odd) {
+  background-color: #f2f2f2;
+}
+
+table tr:hover {
+  background-color: #ddd;
+}
+
+table th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+
+.math {
+  max-width: 100%;
+}
+
+.math-inline {
+  display: inline-block;
+}
+
+.katex-display { overflow: auto hidden }
+
+.katex-display > .katex { white-space: normal }
+/* Add space between broken lines: */
+.katex-display > .base { margin: 0.25em 0 }
+/* Compensate by reducing space around display math */
+.katex-display { margin: 0.5em 0; }

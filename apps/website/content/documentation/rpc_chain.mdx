@@ -1,0 +1,469 @@
+---
+title: RPC Chain commands
+description: RPC Chain | Iron Fish Documentation
+---
+
+## [chain/estimateFeeRate](https://github.com/iron-fish/ironfish/blob/master/ironfish/src/rpc/routes/chain/estimateFeeRate)
+
+Estimates the fee rate given an optional priority. If no fee rate is provided, the `average` priority will be used.
+
+Fee rates are estimated from the distribution of transaction fees over the last 10 blocks. The fee rate for each transaction is computed by dividing the transaction fee in $ORE by the size of the transaction in kB.
+
+The slow, average, and fast rates each come from a percentile in the distribution:
+- slow:    10th
+- average: 20th
+- fast:    30th
+
+#### Request
+
+```js
+{
+  priority: 'slow' | 'average' | 'fast'
+} | undefined
+```
+
+#### Response
+
+```js
+{
+  rate: string
+}
+```
+
+
+## [chain/estimateFeeRates](https://github.com/iron-fish/ironfish/blob/master/ironfish/src/rpc/routes/chain/estimateFeeRates)
+
+Estimates the fee rates for all priorities. 
+
+See [here](#chainestimatefeerate) to see how fee rates are estimated.
+
+#### Request
+
+```js
+undefined
+```
+
+#### Response
+
+```js
+{
+  slow: string
+  average: string
+  fast: string
+}
+```
+
+## [chain/exportChain](https://github.com/iron-fish/ironfish/blob/master/ironfish/src/rpc/routes/chain/exportChain)
+
+Exports the chain as a stream of blocks. 
+
+If the start and stop sequences are provided, only the blocks between the start and 
+stop will be returned.
+
+#### Request
+
+```js
+{
+  start?: number | null
+  stop?: number | null
+} | undefined
+```
+
+#### Response
+
+```js
+{
+  start: number
+  stop: number
+  block?: {
+    hash: string
+    seq: number
+    prev: string
+    main: boolean
+    graffiti: string
+    timestamp: number
+    work: string
+    difficulty: string
+    head: boolean
+    latest: boolean
+  }
+}
+```
+
+## [chain/followChain](https://github.com/iron-fish/ironfish/blob/master/ironfish/src/rpc/routes/chain/followChain)
+
+Follows the chain from a given sequence and streams blocks from chain connects and disconnects
+
+#### Request
+
+```js
+{
+  head?: string | null
+} | undefined
+```
+
+#### Response
+
+```js
+{
+  type: 'connected' | 'disconnected' | 'fork'
+  head: {
+    sequence: number
+  }
+  block: {
+    hash: string
+    sequence: number
+    previous: string
+    graffiti: string
+    difficulty: string
+    size: number
+    timestamp: number
+    work: string
+    main: boolean
+    transactions: Array<{
+      hash: string
+      size: number
+      fee: number
+      notes: Array<{ commitment: string }>
+      spends: Array<{ nullifier: string }>
+      mints: Array<{
+        id: string
+        metadata: string
+        name: string
+        owner: string
+        value: string
+      }>
+      burns: Array<{
+        id: string
+        value: string
+      }>
+    }>
+  }
+}
+```
+
+## [chain/getAsset](https://github.com/iron-fish/ironfish/blob/master/ironfish/src/rpc/routes/chain/getAsset)
+Gets an asset from the blockchain from a given identifier
+
+#### Request
+
+```js
+{
+  id: string
+}
+```
+
+#### Response
+
+```js
+{
+  createdTransactionHash: string
+  id: string
+  metadata: string
+  name: string
+  owner: string
+  supply: string
+}
+```
+
+
+## [chain/getBlock](https://github.com/iron-fish/ironfish/blob/master/ironfish/src/rpc/routes/chain/getBlock)
+
+Gets a block from the chain from a given hash or sequence.
+
+One of hash or sequence must be provided.
+
+
+#### Request
+
+```js
+{
+  search?: string
+  hash?: string
+  sequence?: number
+  confirmations?: number
+}
+```
+
+#### Response
+
+```js
+{
+  block: {
+    graffiti: string
+    difficulty: string
+    hash: string
+    previousBlockHash: string
+    sequence: number
+    timestamp: number
+    noteSize: number
+    noteCommitment: string
+    transactions: Array<{
+      fee: string
+      hash: string
+      signature: string
+      notes: number
+      spends: number
+    }>
+  }
+  metadata: {
+    main: boolean
+    confirmed: boolean
+  }
+}
+```
+
+
+## [chain/getChainInfo](https://github.com/iron-fish/ironfish/blob/master/ironfish/src/rpc/routes/chain/getChainInfo)
+
+Gets information about the node's chain
+
+#### Request
+
+```js
+undefined
+```
+
+#### Response
+
+```js
+{
+  currentBlockIdentifier: {
+    index: string
+    hash: string
+  }
+  genesisBlockIdentifier: {
+    index: string
+    hash: string
+  }
+  oldestBlockIdentifier: {
+    index: string
+    hash: string
+  }
+  currentBlockTimestamp: number
+}
+```
+
+## [chain/getConsensusParameters](https://github.com/iron-fish/ironfish/blob/master/ironfish/src/rpc/routes/chain/getConsensusParameters)
+
+Gets consensus parameters from the chain
+
+#### Request
+
+```js
+undefined
+```
+
+#### Response
+
+```js
+{
+  allowedBlockFuturesSeconds: number
+  genesisSupplyInIron: number
+  targetBlockTimeInSeconds: number
+  targetBucketTimeInSeconds: number
+  maxBlockSizeBytes: number
+}
+```
+
+## [chain/getDifficulty](https://github.com/iron-fish/ironfish/blob/master/ironfish/src/rpc/routes/chain/getDifficulty)
+
+Gets block difficulty from a sequence. 
+
+If no sequence is provided, the head will be used
+
+#### Request
+
+```js
+{
+  sequence?: number | null
+} | undefined
+
+```
+
+#### Response
+
+```js
+{
+  sequence: number
+  hash: string
+  difficulty: string
+}
+```
+
+## [chain/getNetworkHashPower](https://github.com/iron-fish/ironfish/blob/master/ironfish/src/rpc/routes/chain/getNetworkHashPower)
+
+Gets hash power from the chain from a sequence or block range. 
+
+If no blocks are provided, the last 120 blocks will be used. If no sequence is provided, the head will be used.
+
+#### Request
+
+```js
+{
+  blocks?: number | null
+  sequence?: number | null
+}
+```
+
+#### Response
+
+
+```js
+{
+  hashesPerSecond: number
+  blocks: number
+  sequence: number
+}
+```
+
+## chain/getNetworkInfo
+
+Gets information about the node's network
+
+#### Request
+
+```js
+undefined
+```
+
+#### Response
+
+```js
+{
+  networkId: number
+}
+```
+
+## [chain/getTransaction](https://github.com/iron-fish/ironfish/blob/master/ironfish/src/rpc/routes/chain/getTransaction)
+
+Gets a transaction from a block hash and transaction hash
+
+#### Request
+
+```js
+{ 
+  blockHash: string
+  transactionHash: string 
+}
+```
+
+#### Response
+
+```js
+{
+  fee: string
+  expiration: number
+  notesCount: number
+  spendsCount: number
+  signature: string
+  notesEncrypted: string[]
+  mints: {
+    assetId: string
+    value: string
+  }[]
+  burns: {
+    assetId: string
+    value: string
+  }[]
+}
+```
+
+## [chain/getTransactionStream](https://github.com/iron-fish/ironfish/blob/master/ironfish/src/rpc/routeschain/getTransactionStream/)
+
+Streams transactions from a head sequence given an incoming view key
+
+#### Request
+
+```js
+{ 
+  incomingViewKey: string
+  head?: string | null
+}
+```
+
+#### Response
+
+```js
+{
+  type: 'connected' | 'disconnected' | 'fork'
+  head: {
+    sequence: number
+  }
+  block: {
+    hash: string
+    previousBlockHash: string
+    sequence: number
+    timestamp: number
+  }
+  transactions: {
+    hash: string
+    isMinersFee: boolean
+    notes: {
+      assetId: string
+      assetName: string
+      value: string
+      memo: string
+    }[]
+    mints: {
+      assetId: string
+      assetName: string
+      value: string
+    }[]
+    burns: {
+      assetId: string
+      assetName: string
+      value: string
+    }[]
+  }[]
+}
+```
+
+## [chain/showChain](https://github.com/iron-fish/ironfish/blob/master/ironfish/src/rpc/routes/chain/showChain)
+
+Renders the entire chain.
+
+If stop and stop values are provided, only the blocks between the start and stop sequences will be shown.
+
+#### Request
+
+```js
+{
+  start?: number | null
+  stop?: number | null
+} | undefined
+```
+
+#### Response
+
+```js
+{
+  content: string[]
+}
+```
+
+
+## chain/getNoteWitness 
+
+Returns a witness (merkle path) to a specified note in the note merkle tree. This witness is necessary for creating a transaction that spends the note. This endpoint would primarily be used to construct transactions without using the Iron Fish wallet. The returned `treeSize` and `rootHash` values will always reference the note merkle tree state at the current HEAD of the chain. If the chain experiences a re-org and the referenced HEAD moves to a fork, this witness will no longer be usable in a transaction.
+
+#### Request
+
+```js
+{
+  index: number
+}
+```
+
+#### Response
+
+```js
+{
+  treeSize: number
+  rootHash: string
+  authPath: {
+    side: 'Left' | 'Right'
+    hashOfSibling: string
+  }[]
+}
+```

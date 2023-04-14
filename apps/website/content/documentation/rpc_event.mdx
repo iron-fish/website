@@ -1,0 +1,29 @@
+---
+title: RPC Event commands
+description: RPC Event | Iron Fish Documentation
+---
+
+## event/onGossip
+
+Streams block headers on gossip events
+
+#### Request
+
+```js
+undefined
+```
+
+#### Response
+
+```js
+{
+  blockHeader: {
+    hash: string
+    sequence: number
+    previousBlockHash: string
+    timestamp: number
+    difficulty: string
+    graffiti: string
+  }
+}
+```

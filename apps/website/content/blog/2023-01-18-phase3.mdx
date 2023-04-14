@@ -1,0 +1,60 @@
+---
+author: elena
+title: Iron Fish Testnet Phase 3
+description: Our third and last testnet phase. Read on about how *you* can participate in Phase 3 today!
+image: /images/blog/phase3.png
+tags: [ironfish, phase2, phase3, testnet, incentivized, community]
+---
+
+### **On January 18th at approximately 1pm ET we are launching the third and final testnet phase for Iron Fish 🙌 **
+
+Our goal for Phase 1 was to invite miners, grow the community, and test out the basic building blocks of Iron Fish. Our goal for Phase 2 was to stress test the system by encouraging transactions and node uptime. And our goal for Phase 3 will be to stress test the multi-asset feature — the first step in bringing responsible privacy to all crypto users.
+
+Multi-asset allows users to create custom assets with the same privacy and compliance features as the native $IRON token. Our vision is for Iron Fish to be the privacy layer for all crypto assets, even ones on other chains via bridges. This multi-asset feature is a fundamental building block towards that future.
+
+## Quick recap of Phase 2
+
+Phase 2 ran from May 10th ‘22 to November 22 ‘22. At the time it was, to our knowledge, the largest testnet for an L1. The final stats for Phase 2 were:
+
+- ✉️ **39,432,178 fully shielded transactions**, making Iron Fish the largest processor of ZKPs _ever_.
+- 🧱 **292,054 blocks**
+- 💁‍♀️ **31,207 participants** with non-zero points on the leaderboard (including several professional mining pools)
+- 🌎 Over **11k concurrent nodes online** at peak with more than 200k daily transactions on average
+
+## What is Phase 3 and how do I participate?
+
+Phase 3 introduces a new feature we’ve been working on for some time — [multi-asset support](https://ironfish.network/blog/2023/01/13/multi-asset-phase3).
+
+### Minting assets
+
+Users will now be able to mint their own custom assets. For this testnet we only support _public_ mints, meaning that minting a new asset reveals who conducted the mint, how many of new coins were minted, the name of the asset, and additional optional metadata.
+
+Once the asset is minted however, custom assets have the same level of privacy as the native $IRON token. Transactions are indistinguishable from one another regardless of which asset they’re transferring. Every single transaction on Iron Fish protects its users by encrypting sensitive financial information such as the sender, recipient, amount, and asset type.
+
+### Burning assets
+
+An owner of an asset (any asset) has the ability to burn that asset. For this testnet we only support _public_ burns, meaning that it is public information what asset was burned, and how much.
+
+### Ready to try out Iron Fish and participate in Phase 3?
+
+For Phase 3, participants get capped weekly leaderboard points for minting, burning, and transferring custom assets. Ready to get started? If at any point you have questions, reach us on [Discord](https://discord.ironfish.network):
+
+1. You’ll need to [sign up](https://testnet.ironfish.network/about) for the testnet and register a graffiti. A graffiti is like a username that is used to keep track of activity on Iron Fish for leaderboard points.
+2. **Install Iron Fish**: As always, we strive to make it as frictionless as possible to get people onboarded. If you already have Node 18 installed, simply open up your terminal and type `npm install -g ironfish`. If you have Iron Fish installed from previous phases, you’ll need to upgrade. For further instructions, visit our [installation page](https://ironfish.network/docs/onboarding/installation-iron-fish).
+3. **Set up your Iron Fish node with your registered graffiti**: we made a CLI command to make this easier. Run `ironfish testnet` to properly set up your node.
+4. Next, you’ll need to **start and sync your node** with `ironfish start`.
+5. Once synced, you’ll be able to **mint** a custom asset with the command `ironfish wallet:mint`.
+   _Please note that in order to earn leaderboard points for minting an asset, the asset name must match your graffiti._
+6. Similarly, to **burn** an asset you can use the command `ironfish wallet:burn`.
+7. To **send** any asset, use the `ironfish wallet:send` command.
+8. To check your balance for all assets, use `ironfish wallet:balances`. This command shows you your confirmed balance. To see your unconfirmed balance (to include transactions that might still be pending) you can use the `--all` flag, e.g. `ironfish wallet:balances --all`.
+
+For full documentation for all these commands (including non-interactive versions), please visit our [documentation](https://ironfish.network/docs/onboarding/iron-fish-tutorial) and [FAQ page](https://testnet.ironfish.network/faq).
+
+### How do I earn leaderboard points for Phase 3?
+
+Every week you’ll be able to earn points from minting, burning, and sending your custom asset. The owner of an asset can mint more of that asset. Make sure that the asset you’re minting has the same name as your graffiti to earn points. To learn more, head over to the [testnet homepage](https://testnet.ironfish.network/about).
+
+For announcements, version upgrade details, or questions, join us on our [Discord](https://discord.ironfish.network) and [Twitter](https://twitter.com/ironfishcrypto).
+
+Thank you for joining the Iron Fish community, and helping us build the future of crypto! 🙏❤️
