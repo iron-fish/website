@@ -3,7 +3,7 @@ title: RPC Chain commands
 description: RPC Chain | Iron Fish Documentation
 ---
 
-## [chain/estimateFeeRate](https://github.com/iron-fish/ironfish/blob/master/ironfish/src/rpc/routes/chain/estimateFeeRate)
+## [chain/estimateFeeRate](https://github.com/iron-fish/ironfish/blob/master/ironfish/src/rpc/routes/chain/estimateFeeRate.ts)
 
 Estimates the fee rate given an optional priority. If no fee rate is provided, the `average` priority will be used.
 
@@ -31,7 +31,7 @@ The slow, average, and fast rates each come from a percentile in the distributio
 ```
 
 
-## [chain/estimateFeeRates](https://github.com/iron-fish/ironfish/blob/master/ironfish/src/rpc/routes/chain/estimateFeeRates)
+## [chain/estimateFeeRates](https://github.com/iron-fish/ironfish/blob/master/ironfish/src/rpc/routes/chain/estimateFeeRates.ts)
 
 Estimates the fee rates for all priorities. 
 
@@ -53,7 +53,7 @@ undefined
 }
 ```
 
-## [chain/exportChain](https://github.com/iron-fish/ironfish/blob/master/ironfish/src/rpc/routes/chain/exportChain)
+## [chain/exportChain](https://github.com/iron-fish/ironfish/blob/master/ironfish/src/rpc/routes/chain/exportChain.ts)
 
 Exports the chain as a stream of blocks. 
 
@@ -90,7 +90,7 @@ stop will be returned.
 }
 ```
 
-## [chain/followChain](https://github.com/iron-fish/ironfish/blob/master/ironfish/src/rpc/routes/chain/followChain)
+## [chain/followChain](https://github.com/iron-fish/ironfish/blob/master/ironfish/src/rpc/routes/chain/followChain.ts)
 
 Follows the chain from a given sequence and streams blocks from chain connects and disconnects
 
@@ -142,7 +142,7 @@ Follows the chain from a given sequence and streams blocks from chain connects a
 }
 ```
 
-## [chain/getAsset](https://github.com/iron-fish/ironfish/blob/master/ironfish/src/rpc/routes/chain/getAsset)
+## [chain/getAsset](https://github.com/iron-fish/ironfish/blob/master/ironfish/src/rpc/routes/chain/getAsset.ts)
 Gets an asset from the blockchain from a given identifier
 
 #### Request
@@ -167,7 +167,7 @@ Gets an asset from the blockchain from a given identifier
 ```
 
 
-## [chain/getBlock](https://github.com/iron-fish/ironfish/blob/master/ironfish/src/rpc/routes/chain/getBlock)
+## [chain/getBlock](https://github.com/iron-fish/ironfish/blob/master/ironfish/src/rpc/routes/chain/getBlock.ts)
 
 Gets a block from the chain from a given hash or sequence.
 
@@ -214,7 +214,7 @@ One of hash or sequence must be provided.
 ```
 
 
-## [chain/getChainInfo](https://github.com/iron-fish/ironfish/blob/master/ironfish/src/rpc/routes/chain/getChainInfo)
+## [chain/getChainInfo](https://github.com/iron-fish/ironfish/blob/master/ironfish/src/rpc/routes/chain/getChainInfo.ts)
 
 Gets information about the node's chain
 
@@ -244,7 +244,7 @@ undefined
 }
 ```
 
-## [chain/getConsensusParameters](https://github.com/iron-fish/ironfish/blob/master/ironfish/src/rpc/routes/chain/getConsensusParameters)
+## [chain/getConsensusParameters](https://github.com/iron-fish/ironfish/blob/master/ironfish/src/rpc/routes/chain/getConsensusParameters.ts)
 
 Gets consensus parameters from the chain
 
@@ -266,7 +266,7 @@ undefined
 }
 ```
 
-## [chain/getDifficulty](https://github.com/iron-fish/ironfish/blob/master/ironfish/src/rpc/routes/chain/getDifficulty)
+## [chain/getDifficulty](https://github.com/iron-fish/ironfish/blob/master/ironfish/src/rpc/routes/chain/getDifficulty.ts)
 
 Gets block difficulty from a sequence. 
 
@@ -291,7 +291,7 @@ If no sequence is provided, the head will be used
 }
 ```
 
-## [chain/getNetworkHashPower](https://github.com/iron-fish/ironfish/blob/master/ironfish/src/rpc/routes/chain/getNetworkHashPower)
+## [chain/getNetworkHashPower](https://github.com/iron-fish/ironfish/blob/master/ironfish/src/rpc/routes/chain/getNetworkHashPower.ts)
 
 Gets hash power from the chain from a sequence or block range. 
 
@@ -335,7 +335,7 @@ undefined
 }
 ```
 
-## [chain/getTransaction](https://github.com/iron-fish/ironfish/blob/master/ironfish/src/rpc/routes/chain/getTransaction)
+## [chain/getTransaction](https://github.com/iron-fish/ironfish/blob/master/ironfish/src/rpc/routes/chain/getTransaction.ts)
 
 Gets a transaction from a block hash and transaction hash
 
@@ -369,7 +369,7 @@ Gets a transaction from a block hash and transaction hash
 }
 ```
 
-## [chain/getTransactionStream](https://github.com/iron-fish/ironfish/blob/master/ironfish/src/rpc/routeschain/getTransactionStream/)
+## [chain/getTransactionStream](https://github.com/iron-fish/ironfish/blob/master/ironfish/src/rpc/routeschain/getTransactionStream.ts)
 
 Streams transactions from a head sequence given an incoming view key
 
@@ -419,7 +419,7 @@ Streams transactions from a head sequence given an incoming view key
 }
 ```
 
-## [chain/showChain](https://github.com/iron-fish/ironfish/blob/master/ironfish/src/rpc/routes/chain/showChain)
+## [chain/showChain](https://github.com/iron-fish/ironfish/blob/master/ironfish/src/rpc/routes/chain/showChain.ts)
 
 Renders the entire chain.
 
