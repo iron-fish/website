@@ -54,11 +54,11 @@ Just like the Merkle Tree of Notes is an accumulator for notes, the Merkle Tree 
 
 We've chosen this tree to be the same size as the Merkle Tree of Notes since it'll grow in linear proportion. However, we chose a different hashing function than Pedersen because this tree is not referenced in any of the zero-knowledge proofs, and therefore can use a faster hashing function. We chose blake3.
 
-We wouldn't have any of these notes and nullifiers if they weren't part of transactions (we cover transactions in more detail [here](learn/whitepaper/transaction#transaction-components)) that get accepted to be part of the overall blockchain. Next, we'll go over exactly how all these components make up blocks, which in turn make up the Iron Fish blockchain.
+We wouldn't have any of these notes and nullifiers if they weren't part of transactions (we cover transactions in more detail [here](/learn/whitepaper/transaction)) that get accepted to be part of the overall blockchain. Next, we'll go over exactly how all these components make up blocks, which in turn make up the Iron Fish blockchain.
 
 ## Block and Block Header
 
-The main ingredient for a blockchain is a block, and each block has an accompanying block header. A block simply holds [transactions](learn/whitepaper/transaction#transaction-components) that are waiting to be finalized by being added to the blockchain, and a block header gives the necessary information about the block for it to be validated and accepted by others in the network. In short, a block header validates a block, and a block holds transactions. The transactions have nullifiers from the sender spending some notes, and new notes that are created for the recipient.
+The main ingredient for a blockchain is a block, and each block has an accompanying block header. A block simply holds [transactions](/learn/whitepaper/transaction) that are waiting to be finalized by being added to the blockchain, and a block header gives the necessary information about the block for it to be validated and accepted by others in the network. In short, a block header validates a block, and a block holds transactions. The transactions have nullifiers from the sender spending some notes, and new notes that are created for the recipient.
 
 With all that in mind, how does a block header help validate a block?
 
