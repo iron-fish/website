@@ -1,0 +1,36 @@
+---
+title: Set up an account
+description: Set up an account | Iron Fish Onboarding
+---
+
+## Create a new account
+
+By default, your node creates an account when you start up your node for the first time. You can create a new account at any time with the following command:
+
+```sh
+ironfish wallet:create
+```
+
+<Terminal
+  command="ironfish wallet:create"
+  output={`Creating account MyNewAccount
+
+Account MyNewAccount created with public address
+6a085865ac5608c8ec64189db54d4b5c085da9da12dad0a0bf00f60e52c16b0303d8a8dd7d82601f577c8d
+
+Run "ironfish wallet:use MyNewAccount" to set the account as default`}
+/>
+
+## Set the account as default
+
+When you have multiple accounts you can set which account to use as the default account:
+
+```sh
+ironfish wallet:use MyNewAccount
+```
+
+## Next steps
+
+You can read about the different wallet commands in [the wallet section](wallet.md).
+
+Now that you have created an account you can [receive transactions](transactions.md#receive-a-transaction) or [start mining $IRON](mine.md).

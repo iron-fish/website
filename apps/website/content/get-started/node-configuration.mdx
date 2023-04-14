@@ -1,0 +1,89 @@
+---
+title: Node configuration
+description: Node configuration | Iron Fish Onboarding
+---
+
+## Data structure
+
+By default, the database and configuration files for the Iron Fish node are created in the `~/.ironfish` directory.
+
+The file structure is composed of the following:
+
+```sh
+[Iron Fish Node]
+├── config.json
+├── internal.json
+└── databases
+...└── chain
+...└── wallet
+```
+
+Configuration files can be edited by the commands described [here](cli.md#config).
+Accounts can be edited by the commands described [here](cli.md#wallet--accounts)
+
+You can change the working directory by passing the flag `--datadir` when running a command. Doing so will require you to sync the node again with the network.
+
+## List of configuration options
+
+| Element                           | Description |
+| :--------                         | :-------------------------------------------------------------------------------------: |
+| blockGraffiti                     | When mining, value to set on the `graffiti` field of new blocks. Truncated to 32 bytes |
+| bootstrapNodes                    | List of addresses to connect to when launching the node |
+| broadcastWorkers                  | Broadcast worker nodes |
+| confirmations                     | The minimum number of block confirmations needed when computing account balance |
+| customNetwork                     | Path to a JSON file containing the network definition of a custom network |
+| databaseMigrate                   | Enabled database migration |
+| editor                            | Path for the default code editor for the config file |
+| enableListenP2P                   | Enable the WebSocket listen server |
+| enableLogFile                     | Enable logging to a file |
+| enableMetrics                     | Enable internal metrics collection (required for status command) |
+| enableRpc                         | Enable the RPC server |
+| enableRpcIpc                      | Enable the RPC to be served on IPC |
+| enableRpcTcp                      | Enable the RPC to be served on TCP |
+| enableRpcTls                      | Enable the RPC to be served on TLS |
+| enableSyncing                     | Enable syncing of the Iron Fish blockchain |
+| enableTelemetry                   | Enable anonymous telemetry collection |
+| explorerBlocksUrl                 | URL for viewing block information in a block explorer |
+| explorerTransactionsUrl           | URL for viewing transaction information in a block explorer |
+| feeEstimatorMaxBlockHistory       | Max blocks to calculate transaction fee estimator |
+| feeEstimatorPercentileHigh        | High percentile for transaction fee estimator |
+| feeEstimatorPercentileLow         | Low percentile for transaction fee estimator |
+| feeEstimatorPercentileMedium      | Medium percentile for transaction fee estimator |
+| generateNewIdentity               | Generate a new identity at start-up |
+| getFundsApi                       | HTTP URL for the Faucet API |
+| ipcPath                           | Path for the RPC IPC directory |
+| jsonLogs                          | Enable logs to the console to be in JSON format |
+| logLevel                          | Log level of the node. Log levels can be applied to tagged logs, e.g. `*:warn,tag:info` |
+| logPrefix                         | String to be prefixed to all logs. If any of the following strings are included, will replace them with the corresponding value: `%time%`, `%level%`, `%tag%` |
+| maxPeers                          | The maximum number of peers to which the node can be connected at a time |
+| maxSyncedAgeBlocks                | The oldest the tip should be before we consider the chain synced |
+| minPeers                          | The minimum number of peers to which the node should be connected at any time |
+| minerBatchSize                    | The number of hashes processed by miner per worker request |
+| miningForce                       | Force mining |
+| networkDefinitionPath             | File path for network definition |
+| networkId                         | Network ID of an official Iron Fish network |
+| nodeName                          | Name of the node to be broadcasted to peers (optional) |
+| nodeWorkers                       | The number of threads to use for workers. A value of -1 will use the maximum possible amount of threads.
+| p2pSimulateLatency                | Randomly delay outbound messages up to this value |
+| peerPort                          | Port on which to host the WebSocket listen server |
+| poolAccountName                   | The name of the account that the pool will use to payout from |
+| poolAttemptPayoutInterval         | The length of time in seconds that the pool will wait between checking if it is time to make a payout |
+| poolBalancePercentPayout          | The percent of the confirmed balance of the pool's account that it will payout |
+| poolBanning                       | Should pool clients be banned for perceived bad behavior |
+| poolDifficulty                    | The pool difficulty, which determines how often miners submit shares |
+| poolDiscordWebhook                | The discord webhook URL to post pool critical pool information to |
+| poolHost                          | The host that the pool is listening for miner connections on |
+| poolMaxConnectionsPerIp           | The maximum number of concurrent open connections per remote address |
+| poolLarkWebhook                   | The lark webhook URL to post pool critical pool information to |
+| poolName                          | Name to use for mining pool (optional) |
+| poolPort                          | The port that the pool is listening for miner connections on |
+| poolRecentShareCutoff             | The length of time in seconds that will be used to calculate hashrate for the pool |
+| poolStatusNotificationInterval    | The length of time in seconds that the pool will wait between status messages |
+| poolSuccessfulPayoutInterval      | The length of time in seconds that the pool will wait between successful payouts |
+| rpcTcpHost                        | Address to connect to when establishing an RPC connection |
+| rpcTcpPort                        | Port to connect to when establishing an RPC connection |
+| tlsKeyPath                        | Private key path for TLS over TCP |
+| tlsCertPath                       | Node certificate path for authorizing TLS over TCP |
+| targetPeers                       | The ideal number of peers we'd like to be connected to. The node will attempt to establish new connections when below this number. |
+| telemetryApi                      | HTTP URL for the Telemetry API |
+| transactionExpirationDelta        | The default delta of block sequence for which to expire transactions from the mempool |
