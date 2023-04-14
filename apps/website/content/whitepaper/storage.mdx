@@ -32,7 +32,7 @@ As mentioned above, Iron Fish stores both notes and nullifiers in Merkle trees. 
 
 The Merkle Tree of Notes is fixed-size, with a depth of 32; and it is used to hold all the notes that are created. Unlike in other blockchains where a UTXO is removed after it is spent, this Merkle tree is an add-only data structure where notes are added sequentially to the tree. Although a Merkle tree of depth 32 is very large (meaning it can hold 4,294,967,296 notes!), it is finite, which isn't a great solution for an ever-growing currency. When the Merkle tree gets to be completely full, it becomes a read-only tree, allowing old notes to be spent from it. A brand new Merkle tree is then constructed.
 
-We use a Pedersen hash both on the notes, and for the intermediate nodes in the Merkle tree — using the [Jubjub elliptic curve](9_appendix.md#bls12-381-and-the-jubjub-curve). Pedersen hashes are SNARK-friendly, meaning they can be efficiently constructed within a zero-knowledge SNARK proving circuit.
+We use a Pedersen hash both on the notes, and for the intermediate nodes in the Merkle tree — using the [Jubjub elliptic curve](/learn/whitepaper/appendix#bls-12-381-and-the-jubjub-curve). Pedersen hashes are SNARK-friendly, meaning they can be efficiently constructed within a zero-knowledge SNARK proving circuit.
 
 Remember that the main purpose for our Merkle Tree of Notes is to store notes that users can spend later while preserving that user's privacy. In order to do this, the notes in our Merkle tree store an encrypted note, along with other helper fields. All the information necessary to spend the note is contained here, thus the note owner doesn't need to download the specific block or transaction that resulted in this note.
 
@@ -54,17 +54,17 @@ Just like the Merkle Tree of Notes is an accumulator for notes, the Merkle Tree 
 
 We've chosen this tree to be the same size as the Merkle Tree of Notes since it'll grow in linear proportion. However, we chose a different hashing function than Pedersen because this tree is not referenced in any of the zero-knowledge proofs, and therefore can use a faster hashing function. We chose blake3.
 
-We wouldn't have any of these notes and nullifiers if they weren't part of transactions (we cover transactions in more detail [here](6_transaction.md#transaction-components)) that get accepted to be part of the overall blockchain. Next, we'll go over exactly how all these components make up blocks, which in turn make up the Iron Fish blockchain.
+We wouldn't have any of these notes and nullifiers if they weren't part of transactions (we cover transactions in more detail [here](/learn/whitepaper/transaction)) that get accepted to be part of the overall blockchain. Next, we'll go over exactly how all these components make up blocks, which in turn make up the Iron Fish blockchain.
 
 ## Block and Block Header
 
-The main ingredient for a blockchain is a block, and each block has an accompanying block header. A block simply holds [transactions](6_transaction.md) that are waiting to be finalized by being added to the blockchain, and a block header gives the necessary information about the block for it to be validated and accepted by others in the network. In short, a block header validates a block, and a block holds transactions. The transactions have nullifiers from the sender spending some notes, and new notes that are created for the recipient.
+The main ingredient for a blockchain is a block, and each block has an accompanying block header. A block simply holds [transactions](/learn/whitepaper/transaction) that are waiting to be finalized by being added to the blockchain, and a block header gives the necessary information about the block for it to be validated and accepted by others in the network. In short, a block header validates a block, and a block holds transactions. The transactions have nullifiers from the sender spending some notes, and new notes that are created for the recipient.
 
 With all that in mind, how does a block header help validate a block?
 
 ### Block Header
 
-A block header consists of the following (some of these terms, such as [Output Description](6_transaction.md#output-description), we cover later in the paper):
+A block header consists of the following (some of these terms, such as [Output Description](/learn/whitepaper/transaction#output-description), we cover later in the paper):
 
 | Block Header            |                                                                                                                                                                                                                                |
 | ----------------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
