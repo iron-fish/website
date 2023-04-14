@@ -41,6 +41,7 @@ export function NavBar({ content, sticky }: Props) {
       justify="space-between"
       alignItems="stretch"
       zIndex={2}
+      color="gray.800"
       {...positionProps}
     >
       <HStack alignItems="center">
