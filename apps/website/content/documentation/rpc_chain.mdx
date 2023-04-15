@@ -317,7 +317,7 @@ If no blocks are provided, the last 120 blocks will be used. If no sequence is p
 }
 ```
 
-## chain/getNetworkInfo
+## [chain/getNetworkInfo](https://github.com/iron-fish/ironfish/blob/master/ironfish/src/rpc/routes/chain/getNetworkInfo.ts)
 
 Gets information about the node's network
 
@@ -443,7 +443,7 @@ If stop and stop values are provided, only the blocks between the start and stop
 ```
 
 
-## chain/getNoteWitness 
+## [chain/getNoteWitness](https://github.com/iron-fish/ironfish/blob/master/ironfish/src/rpc/routes/chain/getNoteWitness.ts) 
 
 Returns a witness (merkle path) to a specified note in the note merkle tree. This witness is necessary for creating a transaction that spends the note. This endpoint would primarily be used to construct transactions without using the Iron Fish wallet. The returned `treeSize` and `rootHash` values will always reference the note merkle tree state at the current HEAD of the chain. If the chain experiences a re-org and the referenced HEAD moves to a fork, this witness will no longer be usable in a transaction.
 
