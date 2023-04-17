@@ -1,0 +1,67 @@
+---
+title: Iron Fish Installation
+description: Iron Fish Installation | Iron Fish Onboarding
+---
+
+## Install or update Iron Fish (Win/Mac)
+
+1. Install [Node.js 18 (on Windows, choose 64-bit/x64)](https://nodejs.org/en/download/).
+	- Note: On Mac and Linux, You can also install Node.js through [nvm](https://nvm.sh/).
+2. Next, run the following:
+
+```sh
+npm install -g ironfish
+```
+
+You're all set! Run the Iron Fish CLI:
+
+```sh
+ironfish
+```
+
+<Terminal
+  command="ironfish"
+  output={`CLI for running and interacting with an Iron Fish node
+
+VERSION
+  ironfish/0.1.62 darwin-arm64 node-v18.12.1
+
+USAGE
+  $ ironfish [COMMAND]
+
+TOPICS
+  blocks      Show the block header of a requested hash or sequence
+  chain       Manage the blockchain
+  config      Print out the entire config
+  migrations  List all the migration statuses
+  miners      Manage an Iron Fish miner
+  peers       List all connected peers
+  rpc         Show the status of the RPC layer
+  wallet      List all the accounts on the node
+  workers     Show the status of the worker pool
+
+COMMANDS
+  config      Print out the entire config
+  faucet      Receive coins from the Iron Fish official Faucet
+  fees        Get fee distribution for most recent blocks
+  help        Display help for ironfish.
+  logs        Tail server logs
+  migrations  List all the migration statuses
+  peers       List all connected peers
+  repl        An interactive terminal to the node
+  reset       Reset the node to its initial state
+  start       Start the node
+  status      Show the status of the node
+  stop        Stop the node from running
+  testnet     Set up your node to mine for the testnet`}
+/>
+
+### Update Iron Fish
+
+When new versions of Iron Fish are released, you can update through NPM:
+
+```sh
+npm install -g ironfish
+```
+
+Iron Fish is now ready to use.
