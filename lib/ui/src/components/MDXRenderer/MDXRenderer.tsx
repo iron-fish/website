@@ -1,4 +1,4 @@
-import { MDXRemote, MDXRemoteProps } from 'next-mdx-remote';
+import { MDXRemote, MDXRemoteProps } from "next-mdx-remote";
 import {
   Heading,
   Text,
@@ -9,20 +9,20 @@ import {
   Box,
   chakra,
   Divider,
-} from '@chakra-ui/react';
-import NextLink from 'next/link';
-import { MDXProvider as BaseMDXProvider } from '@mdx-js/react';
-import { Terminal } from '../../components/Terminal/Terminal';
-import { FAQItem } from '../../components/FAQItem/FAQItem';
-import { ReactNode, ComponentProps, useState, useRef, useEffect } from 'react';
-import { kebabCase } from 'lodash-es';
+} from "@chakra-ui/react";
+import NextLink from "next/link";
+import { MDXProvider as BaseMDXProvider } from "@mdx-js/react";
+import { Terminal } from "../../components/Terminal/Terminal";
+import { FAQItem } from "../../components/FAQItem/FAQItem";
+import { ReactNode, ComponentProps, useState, useRef, useEffect } from "react";
+import { kebabCase } from "lodash-es";
 
 function HeadingWithAnchor(props: ComponentProps<typeof Heading>) {
-  const [headingId, setHeadingId] = useState('');
+  const [headingId, setHeadingId] = useState("");
   const ref = useRef<HTMLHeadingElement>(null);
   useEffect(() => {
     if (ref.current) {
-      const id = kebabCase(ref.current.textContent?.toLowerCase() || '');
+      const id = kebabCase(ref.current.textContent?.toLowerCase() || "");
       setHeadingId(id);
     }
   }, []);
@@ -34,11 +34,11 @@ function HeadingWithAnchor(props: ComponentProps<typeof Heading>) {
       fontWeight="normal"
       _hover={{
         'a[href^="#"]': {
-          color: 'blue',
+          color: "blue",
         },
       }}
     >
-      {props.children}{' '}
+      {props.children}{" "}
       {headingId && (
         <Link href={`#${headingId}`} color="transparent">
           #
@@ -49,11 +49,11 @@ function HeadingWithAnchor(props: ComponentProps<typeof Heading>) {
 }
 
 const DEFAULT_TEXT_PROPS = {
-  fontSize: 'md',
+  fontSize: "md",
   lineHeight: 1.6,
 };
 
-const rendererComponents: ComponentProps<typeof MDXRemote>['components'] = {
+const rendererComponents: ComponentProps<typeof MDXRemote>["components"] = {
   h1: (props) => (
     <HeadingWithAnchor {...props} fontSize="2xl" my="8" fontWeight="medium" />
   ),
@@ -72,15 +72,15 @@ const rendererComponents: ComponentProps<typeof MDXRemote>['components'] = {
   a: ({ href, children }) => {
     return (
       <Link
-        as={href?.startsWith('/') ? NextLink : 'a'}
+        as={href?.startsWith("/") ? NextLink : "a"}
         href={href}
-        target={href?.startsWith('/') ? undefined : '_blank'}
+        target={href?.startsWith("/") ? undefined : "_blank"}
         rel="noreferrer"
         fontWeight="medium"
         textDecoration="underline"
         // https://webaim.org/blog/wcag-2-0-and-link-colors/
         color="#3344dd"
-        _visited={{ color: '#884488' }}
+        _visited={{ color: "#884488" }}
       >
         {children}
       </Link>
@@ -110,7 +110,8 @@ const providerComponents = {
   FAQItem,
   Img: (props: any) => (
     <Box my={6}>
-      <img {...props} />
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img {...props} alt="" />
     </Box>
   ),
 };

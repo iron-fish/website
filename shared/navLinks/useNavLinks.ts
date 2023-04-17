@@ -1,13 +1,13 @@
-import { NavItems } from 'libs/website/ui/src/lib/components/NavBar/types';
-import { useMemo } from 'react';
-import { useIntl } from 'react-intl';
-import { links } from './links';
+import { NavItems } from "@/lib/ui";
+import { useMemo } from "react";
+import { useIntl } from "react-intl";
+import { links } from "./links";
 
 export function useNavLinks(): NavItems {
   const { formatMessage } = useIntl();
   return useMemo(() => {
     return links.map((link) => {
-      if ('href' in link) {
+      if ("href" in link) {
         return {
           label: formatMessage(link.label),
           href: link.href,

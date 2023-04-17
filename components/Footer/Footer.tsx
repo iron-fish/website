@@ -1,27 +1,19 @@
-import {
-  Box,
-  Flex,
-  HStack,
-  List,
-  ListItem,
-  Text,
-  GridItem,
-} from '@/lib/ui';
-import Link from 'next/link';
-import { NewsletterSignUp } from '../NewsletterSignUp/NewsletterSignUp';
-import { useNavLinks } from '../../shared/navLinks/useNavLinks';
-import { Circle } from './assets/Circle';
-import { Logo } from './assets/Logo';
-import { BsTwitter, BsDiscord, BsGithub, BsTelegram } from 'react-icons/bs';
-import { defineMessages, useIntl } from 'react-intl';
-import { CONSTANTS } from '../../shared/constants';
-import { CategoryNavItem } from 'libs/website/ui/src/lib/components/NavBar/types';
+import { Box, Flex, HStack, List, ListItem, Text, GridItem } from "@/lib/ui";
+import Link from "next/link";
+import { NewsletterSignUp } from "../NewsletterSignUp/NewsletterSignUp";
+import { useNavLinks } from "../../shared/navLinks/useNavLinks";
+import { Circle } from "./assets/Circle";
+import { Logo } from "./assets/Logo";
+import { BsTwitter, BsDiscord, BsGithub, BsTelegram } from "react-icons/bs";
+import { defineMessages, useIntl } from "react-intl";
+import { CONSTANTS } from "../../shared/constants";
+import { CategoryNavItem } from "@/lib/ui";
 
 const messages = defineMessages({
   newsletter: {
-    id: 'footer.newsletter',
+    id: "footer.newsletter",
     defaultMessage:
-      'Join our newsletter and stay up to date with privacy and crypto.',
+      "Join our newsletter and stay up to date with privacy and crypto.",
   },
 });
 
@@ -49,19 +41,19 @@ export function Footer() {
       </Box>
       <Box
         display={{
-          base: 'grid',
-          lg: 'flex',
+          base: "grid",
+          lg: "flex",
         }}
         mb={24}
         justifyContent="space-between"
         gridTemplateColumns={{
-          base: 'repeat(2, 1fr)',
-          md: 'repeat(3, 1fr)',
+          base: "repeat(2, 1fr)",
+          md: "repeat(3, 1fr)",
           lg: undefined,
         }}
       >
         {links
-          .filter((link): link is CategoryNavItem => 'items' in link)
+          .filter((link): link is CategoryNavItem => "items" in link)
           .map((category, i, arr) => {
             const categoryColor = `${category.color}.500`;
             return (
@@ -75,7 +67,7 @@ export function Footer() {
                   arr.length === i + 1
                     ? {
                         base: 0,
-                        lg: '3vw',
+                        lg: "3vw",
                       }
                     : undefined
                 }
@@ -94,7 +86,7 @@ export function Footer() {
                           color="rgba(255, 255, 255, 0.7)"
                           _hover={{
                             color: categoryColor,
-                            transition: 'color 0.2s',
+                            transition: "color 0.2s",
                             opacity: 1,
                           }}
                         >
@@ -110,13 +102,13 @@ export function Footer() {
       </Box>
       <Flex
         alignItems={{
-          base: 'flex-start',
-          lg: 'center',
+          base: "flex-start",
+          lg: "center",
         }}
         w="100%"
         flexDirection={{
-          base: 'column',
-          lg: 'row',
+          base: "column",
+          lg: "row",
         }}
       >
         <Flex
@@ -131,19 +123,19 @@ export function Footer() {
           <Flex
             ml={4}
             alignItems={{
-              base: 'flex-start',
-              md: 'center',
+              base: "flex-start",
+              md: "center",
             }}
             flexDirection={{
-              base: 'column',
-              md: 'row',
+              base: "column",
+              md: "row",
             }}
           >
             <Text
               as={Link}
               href="/privacy-policy"
               _hover={{
-                textDecoration: 'underline',
+                textDecoration: "underline",
               }}
             >
               Privacy Policy
@@ -151,8 +143,8 @@ export function Footer() {
             <Text
               mx={2}
               display={{
-                base: 'none',
-                md: 'block',
+                base: "none",
+                md: "block",
               }}
             >
               |
