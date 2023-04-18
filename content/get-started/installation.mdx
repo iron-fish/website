@@ -6,8 +6,18 @@ description: Iron Fish Installation | Iron Fish Onboarding
 ## Install or update Iron Fish (Win/Mac)
 
 1. Install [Node.js 18 (on Windows, choose 64-bit/x64)](https://nodejs.org/en/download/).
-	- Note: On Mac and Linux, You can also install Node.js through [nvm](https://nvm.sh/).
-2. Next, run the following:
+	- On Mac and Linux, You can also install Node.js through [nvm](https://nvm.sh/).
+	- On Windows, be sure to check "Also install required tools" during installation.
+	- On Linux, run the following to install the build-essential package:
+
+	```sh
+	sudo apt update
+	sudo install build-essential
+	```
+
+2. Next, install a [command-line git client](https://git-scm.com/download).
+
+3. Finally, run the following:
 
 ```sh
 npm install -g ironfish
