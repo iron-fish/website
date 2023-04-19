@@ -9,6 +9,7 @@ import {
   Box,
   chakra,
   Divider,
+  Image,
 } from "@chakra-ui/react";
 import NextLink from "next/link";
 import { MDXProvider as BaseMDXProvider } from "@mdx-js/react";
@@ -108,12 +109,7 @@ function MDXRenderer({ markdown }: { markdown: MDXRemoteProps }) {
 const providerComponents = {
   Terminal,
   FAQItem,
-  Img: (props: any) => (
-    <Box my={6}>
-      {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img {...props} alt="" />
-    </Box>
-  ),
+  Img: (props: any) => <Image my={6} alt="" {...props} />,
 };
 
 export function MDXProvider({ children }: { children: ReactNode }) {
