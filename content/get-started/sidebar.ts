@@ -16,6 +16,6 @@ export const sidebar: SidebarDefinition = [
   'mining',
   {
     label: 'Reference',
-    items: ['node-health', 'node-configuration', 'wallet-commands', 'glossary'],
+    items: ['node-health', 'node-configuration', 'wallet-commands', 'glossary',  'cli-commands'],
   },
 ];

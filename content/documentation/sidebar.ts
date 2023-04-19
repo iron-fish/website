@@ -18,5 +18,4 @@ export const sidebar: SidebarDefinition = [
     ],
   },
   'offline-transaction-signing',
-  'iron-fish-cli',
 ];
