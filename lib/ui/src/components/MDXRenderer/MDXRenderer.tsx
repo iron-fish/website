@@ -121,7 +121,7 @@ function MDXRenderer({ markdown }: { markdown: MDXRemoteProps }) {
 const providerComponents = {
   Terminal,
   FAQItem,
-  Img: (props: any) => <Image my={6} alt="" {...props} />,
+  Img: (props: any) => <Image my={6} alt="" w="100%" {...props} />,
 };
 
 export function MDXProvider({ children }: { children: ReactNode }) {
