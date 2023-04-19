@@ -1,25 +1,26 @@
-import { Button, HStack, Box, VStack, Text, Grid } from '@chakra-ui/react';
-import { useLockedBody } from 'usehooks-ts';
-import { CategoryNavItem, NavItems } from '../types';
+import { Button, HStack, Box, VStack, Text, Grid } from "@chakra-ui/react";
+import { useLockedBody } from "usehooks-ts";
+import { NavItems } from "../types";
 import {
   RxHamburgerMenu,
   RxCross1,
   RxChevronDown,
   RxChevronUp,
-} from 'react-icons/rx';
+  RxChevronRight,
+} from "react-icons/rx";
 import {
   Accordion,
   AccordionItem,
   AccordionButton,
   AccordionPanel,
-} from '@chakra-ui/react';
-import Link from 'next/link';
-import { ShadowBox } from '../../ShadowBox/ShadowBox';
-import { Category } from './Category';
-import { FancyArrowRight } from '../../../icons';
-import { NAV_HEIGHT } from '../NavBar';
-import { useCallback, useEffect } from 'react';
-import { useRouter } from 'next/router';
+} from "@chakra-ui/react";
+import Link from "next/link";
+import { ShadowBox } from "../../ShadowBox/ShadowBox";
+import { Category } from "./Category";
+import { FancyArrowRight } from "../../../icons";
+import { NAV_HEIGHT } from "../NavBar";
+import { useCallback, useEffect } from "react";
+import { useRouter } from "next/router";
 
 export function MobileVariant({ content }: { content: NavItems }) {
   const [isOpen, setLocked] = useLockedBody(false);
@@ -40,10 +41,10 @@ export function MobileVariant({ content }: { content: NavItems }) {
       setLocked(false);
     }
 
-    router.events.on('routeChangeStart', handleRouteChange);
+    router.events.on("routeChangeStart", handleRouteChange);
 
     return () => {
-      router.events.off('routeChangeStart', handleRouteChange);
+      router.events.off("routeChangeStart", handleRouteChange);
     };
   }, [router.events, setLocked]);
 
@@ -54,12 +55,12 @@ export function MobileVariant({ content }: { content: NavItems }) {
           <Button
             borderRadius="full"
             height={{
-              base: '52px',
-              sm: '64px',
+              base: "52px",
+              sm: "64px",
             }}
             width={{
-              base: '52px',
-              sm: '64px',
+              base: "52px",
+              sm: "64px",
             }}
             position="relative"
             padding={0}
@@ -86,55 +87,84 @@ export function MobileVariant({ content }: { content: NavItems }) {
         >
           <VStack alignItems="stretch" padding={2} pb={24}>
             {content
-              .filter((item): item is CategoryNavItem => 'items' in item)
-              .map((category, i) => {
-                return (
-                  <AccordionItem key={i}>
-                    {({ isExpanded }) => (
-                      <ShadowBox shadowColor={`${category.color}.500`}>
-                        <AccordionButton
-                          _hover={{
-                            bg: 'transparent',
-                          }}
-                        >
-                          <HStack
-                            justify="space-between"
-                            align="center"
-                            width="100%"
-                            p={4}
-                          >
-                            <Text textStyle="h5">{category.label}</Text>
-                            {isExpanded ? (
-                              <RxChevronUp size="30" />
-                            ) : (
-                              <RxChevronDown size="30" />
-                            )}
-                          </HStack>
-                        </AccordionButton>
-                        <AccordionPanel>
-                          <Grid
-                            templateColumns={{
-                              base: 'repeat(1, 1fr)',
-                              lg: 'repeat(2, 1fr)',
+              // .filter((item): item is CategoryNavItem => 'items' in item)
+              .map((item, i) => {
+                if ("items" in item) {
+                  const category = item;
+                  return (
+                    <AccordionItem key={i}>
+                      {({ isExpanded }) => (
+                        <ShadowBox shadowColor={`${category.color}.500`}>
+                          <AccordionButton
+                            _hover={{
+                              bg: "transparent",
                             }}
+                            p={0}
                           >
-                            {category.items.map(
-                              ({ title, href, image, description }, i) => (
-                                <Category
-                                  key={i}
-                                  title={title}
-                                  description={description}
-                                  href={href}
-                                  image={image}
-                                  color={category.color}
-                                />
-                              )
-                            )}
-                          </Grid>
-                        </AccordionPanel>
-                      </ShadowBox>
-                    )}
-                  </AccordionItem>
+                            <HStack
+                              justify="space-between"
+                              align="center"
+                              width="100%"
+                              px={8}
+                              py={6}
+                            >
+                              <Text textStyle="h5">{category.label}</Text>
+                              {isExpanded ? (
+                                <RxChevronUp size="30" />
+                              ) : (
+                                <RxChevronDown size="30" />
+                              )}
+                            </HStack>
+                          </AccordionButton>
+                          <AccordionPanel>
+                            <Grid
+                              templateColumns={{
+                                base: "repeat(1, 1fr)",
+                                lg: "repeat(2, 1fr)",
+                              }}
+                            >
+                              {category.items.map(
+                                ({ title, href, image, description }, i) => (
+                                  <Category
+                                    key={i}
+                                    title={title}
+                                    description={description}
+                                    href={href}
+                                    image={image}
+                                    color={category.color}
+                                  />
+                                )
+                              )}
+                            </Grid>
+                          </AccordionPanel>
+                        </ShadowBox>
+                      )}
+                    </AccordionItem>
+                  );
+                }
+
+                return (
+                  <ShadowBox
+                    shadowColor={`pink.500`}
+                    key={i}
+                    as={item.href.startsWith("http") ? "a" : Link}
+                    href={item.href}
+                    target={item.href.startsWith("http") ? "_blank" : undefined}
+                    rel={
+                      item.href.startsWith("http") ? "noreferrer" : undefined
+                    }
+                  >
+                    <HStack
+                      justify="space-between"
+                      align="center"
+                      width="100%"
+                      px={8}
+                      py={6}
+                    >
+                      <Text textStyle="h5">{item.label}</Text>
+                      <RxChevronRight size="30" />
+                    </HStack>
+                  </ShadowBox>
                 );
               })}
             <Box py={6}>

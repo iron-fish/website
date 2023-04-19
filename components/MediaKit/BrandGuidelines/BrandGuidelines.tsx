@@ -8,25 +8,25 @@ import {
   GridItem,
   Flex,
   Spacer,
-} from '@/lib/ui';
-import { ReactNode } from 'react';
-import Image from 'next/image';
-import { IoMdCheckmark, IoMdClose } from 'react-icons/io';
-import LogoMargins from './assets/logo-margins.svg';
-import LogoDo from './assets/logo-do.svg';
-import LogoDont from './assets/logo-dont.svg';
+} from "@/lib/ui";
+import { ReactNode } from "react";
+import Image from "next/image";
+import { IoMdCheckmark, IoMdClose } from "react-icons/io";
+import LogoMargins from "./assets/logo-margins.svg";
+import LogoDo from "./assets/logo-do.svg";
+import LogoDont from "./assets/logo-dont.svg";
 
 const sections = [
   {
-    heading: 'Brand Colors',
+    heading: "Brand Colors",
     description:
-      'The Iron Fish logo and mark should have at minimum 32px of spacing between it and other elements.',
+      "The Iron Fish logo and mark should have at minimum 32px of spacing between it and other elements.",
     figure: <Colors />,
   },
   {
-    heading: 'Logo Margin',
+    heading: "Logo Margin",
     description:
-      'The Iron Fish logo and mark should have at minimum 32px of spacing between it and other elements.',
+      "The Iron Fish logo and mark should have at minimum 32px of spacing between it and other elements.",
     figure: (
       <Box mb="70px">
         <Image src={LogoMargins} alt="Logo Margins" />
@@ -34,15 +34,15 @@ const sections = [
     ),
   },
   {
-    heading: 'Logo Contrast',
+    heading: "Logo Contrast",
     description:
-      'The Iron Fish logo and mark should have at minimum 32px of spacing between it and other elements.',
+      "Our logo and mark should mainly be black on a light background. When using a dark background, use white.",
     figure: <Contrast />,
   },
   {
-    heading: 'Logo Construction ',
+    heading: "Logo Construction ",
     description:
-      'The Iron Fish logo and mark should have at minimum 32px of spacing between it and other elements.',
+      "Do not alter the layout of our full logo by changing the location of the hex fish in relation to the word.",
     figure: (
       <Box mb="120px">
         <Do />
@@ -61,18 +61,18 @@ export function BrandGuidelines() {
       <Container
         maxW="container.2xl"
         py={{
-          base: '4rem',
-          md: '8rem',
-          lg: '9rem',
+          base: "4rem",
+          md: "8rem",
+          lg: "9rem",
         }}
         pr={{
           base: 3,
           md: 8,
         }}
         pl={{
-          lg: '40px',
-          xl: '64px',
-          '2xl': '128px',
+          lg: "40px",
+          xl: "64px",
+          "2xl": "128px",
         }}
       >
         <StickySideBySideView>
@@ -113,8 +113,8 @@ function Section({ heading, description, figure }: SectionProps) {
     <Box mb={8}>
       <Box
         maxW={{
-          base: '100%',
-          md: '450px',
+          base: "100%",
+          md: "450px",
         }}
       >
         <ShadowBox p={12}>
@@ -130,18 +130,18 @@ function Section({ heading, description, figure }: SectionProps) {
 }
 
 const COLORS = [
-  { value: '#FFF4E0' },
-  { value: '#FFEC1F' },
-  { value: '#FFCD85' },
-  { value: '#FFC2E8' },
-  { value: '#DE83F0' },
-  { value: '#F15929' },
-  { value: '#8AE1EF' },
-  { value: '#2C72FF' },
-  { value: '#1D0070', textColor: 'white' },
-  { value: '#C7F182' },
-  { value: '#63D798' },
-  { value: '#389810' },
+  { value: "#FFF4E0" },
+  { value: "#FFEC1F" },
+  { value: "#FFCD85" },
+  { value: "#FFC2E8" },
+  { value: "#DE83F0" },
+  { value: "#F15929" },
+  { value: "#8AE1EF" },
+  { value: "#2C72FF" },
+  { value: "#1D0070", textColor: "white" },
+  { value: "#C7F182" },
+  { value: "#63D798" },
+  { value: "#389810" },
 ];
 
 function Colors() {
@@ -158,7 +158,7 @@ function Colors() {
           alignItems="center"
           justifyContent="center"
         >
-          <Text color={item.textColor || 'black'}>{item.value}</Text>
+          <Text color={item.textColor || "black"}>{item.value}</Text>
         </GridItem>
       ))}
     </Grid>
