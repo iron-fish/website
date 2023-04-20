@@ -1,14 +1,12 @@
-import { Flex, chakra } from '@/lib/ui';
-import { MainnetCountdownBanner } from '../../components/MainnetCountdown/Banner/MainnetCountdownBanner';
-import { Footer } from '../../components/Footer/Footer';
-import { NavBar } from '../../components/NavBar/NavBar';
-import { useRouter } from 'next/router';
+import { Flex, chakra } from "@/lib/ui";
+import { Footer } from "../../components/Footer/Footer";
+import { NavBar } from "../../components/NavBar/NavBar";
+import { useRouter } from "next/router";
 
 export function MainLayout({ children }: { children: React.ReactNode }) {
   const router = useRouter();
   return (
     <Flex direction="column" alignItems="stretch" minHeight="100svh">
-      {router.pathname === '/' && <MainnetCountdownBanner />}
       <NavBar />
       <chakra.main
         flexGrow={1}
