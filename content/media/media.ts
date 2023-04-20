@@ -13,8 +13,14 @@ type MediaItem = {
 };
 
 export const MEDIA_ITEMS: Array<MediaItem> = [
+   {
+    title: `"A16z-backed Iron Fish launches privacy-focused blockchain on mainnet" Iron Fish mainnet feature`,
+    link: `https://www.theblock.co/post/227336/a16z-backed-iron-fish-launches-mainnet-blockchain`,
+    date: `Apr, 2023`,
+    category: CATEGORIES.ON_AIR,
+  },
   {
-    title: `CEO Elena on Finnovators Podcast.`,
+    title: `CEO Elena on Finnovators Podcast`,
     link: `https://open.spotify.com/episode/1ldMbhz3mT7CyePNiHbEUH?si=ASHL4gFQToeWtRgqh18z9A&nd=1&utm_content=buffer1f912`,
     date: `Mar, 2023`,
     category: CATEGORIES.ON_AIR,
