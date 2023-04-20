@@ -1,0 +1,38 @@
+---
+title: Validating Deposits
+description: Integration Guide | Validating Deposits | Iron Fish Documentation
+---
+
+This section describes how to listen to incoming transactions and decrypting notes.
+
+## Transaction Streams
+
+If your account is receiving transactions, you can use the Transaction Stream API (see [here](/developers/documentation/rpc_wallet#getAccountTransactions)).
+
+```js
+async function main(): Promise<void> {
+  const config = JSON.parse((await fsAsync.readFile('.ironfish.config.json')).toString());
+  const sdk = await IronfishSdk.init(config);
+  const client = await sdk.connectRpc();
+
+  const account = '<account incoming view key>';
+  const confirmations = <confirmations>;
+  const head = <head sequence>;
+
+  const options = {
+    account,
+    confirmations,
+    head,
+  };
+
+  const response = await client.getAccountTransactionsStream(options);
+  for await (const content of response.contentStream()) {
+    console.log(content);
+  }
+}
+```
+
+It’s recommended to configure confirmations to be greater than 0 if you’d like
+confidence that a block has been confirmed with low probability of a
+reorganization. The default value used in Iron Fish is 2, but you can increase
+this value for higher confidence.

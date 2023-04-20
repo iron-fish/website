@@ -17,5 +17,15 @@ export const sidebar: SidebarDefinition = [
       'rpc_worker',
     ],
   },
+  {
+    label: 'Integration Guide',
+    items: [
+      'integration_local',
+      'integration_rpc',
+      'integration_keys',
+      'integration_transactions',
+      'integration_deposits',
+    ]
+  },
   'offline-transaction-signing',
 ];

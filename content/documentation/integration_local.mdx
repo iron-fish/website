@@ -1,0 +1,45 @@
+---
+title: Local Development
+description: Integration Guide | Local Development | Iron Fish Documentation
+---
+
+To test out integration or workflows, it’s generally easier to create your own
+network rather than using the testnet or mainnet and waiting for funds. Iron
+Fish has a devnet with low difficulty which enables easy block mining and
+transfers.
+
+## Start a Local Node
+
+Run the following command to start a node on the development network:
+
+```sh
+ironfish start --networkId=2 --port=9001 --bootstrap='' --forceMining --datadir=~/.dev0
+```
+
+- `networkId`: Network ID 2 is the development network
+- `port`: Optionally set the running port for the node
+- `bootstrap`: Set this to an empty string to avoid connecting to the default network
+- `forceMining`: Enables mining of blocks without being fully synced or connecting to other nodes
+- `datadir`: Defines the file directory on where to store the node’s data
+
+## Start a Second Node
+
+Run the following command to connect to the first local node:
+
+```sh
+ironfish start --networkId=2 --port 9002 --bootstrap=localhost:9001 --datadir=~/.dev1
+```
+
+- `port`: This value must be different from the `port` of the first local node
+- `datadir`: This value must be different from the `datadir` of the first local node 
+
+## Run a Miner
+
+Run the following command to connect a miner to your node:
+
+```sh
+ironfish miners:start --threads=1 --datadir=~/.dev0
+```
+
+- `threads`: Sets the number of CPU threads for the miner to use
+- `datadir`: Configures which data directory of the node to connect to via IPC

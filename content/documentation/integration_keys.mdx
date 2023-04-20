@@ -1,0 +1,125 @@
+---
+title: Managing Keys
+description: Integration Guide | Managing Keys | Iron Fish Documentation
+---
+
+Iron Fish keys are pieces of data which can be used to encrypt and decrypt data.
+A [wallet](/use/get-started/glossary#Wallet) is a collection of many accounts,
+and an account holds private [keys](/use/get-started/glossary#Keys) which enable users to view transaction details
+and transfer assets to other
+addresses.
+
+> See more in the [glossary](/use/get-started/glossary)
+
+## Create an Account
+
+In order to create an account for your wallet, run the following:
+
+```sh
+ironfish wallet:create
+```
+
+The CLI will prompt you for a new account name and give you the public address:
+
+```sh
+Enter the name of the account: newaccount
+Creating account newaccount
+Account newaccount created with public address 986844f9f4b77e1c44583a97f190de4f97c5df58412abe1b3fdf5d294015a59e
+Run "ironfish wallet:use newaccount" to set the account as default
+✨  Done in 3.19s.
+```
+
+## Spending Keys and Addresses
+
+The Iron Fish [Spending Key](/use/get-started/glossary#Spending-Keys) is a random seed which is used to derive other keys
+in an account. Each Spending Key maps to one single public address.
+
+## Keeping Keys Safe
+
+Your private keys control your assets and allow you to interact with your
+accounts. There is a common phrase in the crypto industry: “Not your keys, not
+your crypto.” It’s highly recommended to secure your keys and keep them safe.
+
+>> Note: Iron Fish wallets currently do not support key encryption.
+
+There are several options to secure your keys.
+
+### Offline USB Drive
+
+Add your keys to an encrypted hard-drive, and ensure that device does not
+connect to an online machine.
+
+### Cryptosteel
+
+There are stainless steel cards available for purchase online which can store
+arbitrary characters (ex. mnemonic phrases). Many of these are fireproof and
+waterproof.
+
+### Paper Wallet
+
+If you do not want to spend a lot of money, writing down keys on a piece of
+paper stored in a fireproof and waterproof safe is a good backup option.
+
+### Distribute Chunks
+
+Take portions of your mnemonic phrase and store them in different locations.
+
+## Exporting an Account
+
+To export your account, run the following:
+
+```sh
+ironfish wallet:export <account>
+```
+
+Copy the output from this command:
+
+```sh
+ironfishaccount0000010....................................................................................fryk
+```
+
+## Importing an Account
+
+To import an account on a new node or wallet, run the following using the output from an export:
+
+```sh
+ironfish wallet:import ironfishaccount0000010....................................................................................fryk
+```
+
+The output will confirm whether or not the account was successfully imported:
+
+```sh
+Account test imported.
+Run "ironfish wallet:use test" to set the account as default
+✨  Done in 2.50s.
+```
+
+## View-Only Wallets
+
+If you’d like to monitor transactions related to an account without ability to
+send transactions, you can use a view-only keys. 
+
+### Export View-Only Key
+
+Run the following to export a view-only key:
+
+```sh
+ironfish wallet:export --viewonly <account>
+```
+
+Copy the output from this command:
+
+```sh
+ironfishaccount0000010....................................................................................
+```
+
+### Import View-Only Key
+
+Run the following to import the view-only key:
+
+```sh
+ironfish wallet:import ironfishaccount0000010......
+```
+
+The node which imports this account can now view all related transactions but
+won’t be able to spend any notes.
