@@ -17,6 +17,12 @@ export const MEDIA_ITEMS: Array<MediaItem> = [
     title: `"A16z-backed Iron Fish launches privacy-focused blockchain on mainnet" Iron Fish mainnet feature`,
     link: `https://www.theblock.co/post/227336/a16z-backed-iron-fish-launches-mainnet-blockchain`,
     date: `Apr, 2023`,
+    category: CATEGORIES.ARTICLE,
+  },
+    {
+    title: `"Iron Fish Network prepares for ZK Privacy layer 1 mainnet launch" CEO Elena on CryptoCoinShow`,
+    link: `https://www.youtube.com/watch?v=uE3KwAdbfpM`,
+    date: `Apr, 2023`,
     category: CATEGORIES.ON_AIR,
   },
   {
