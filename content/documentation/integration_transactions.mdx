@@ -19,8 +19,7 @@ transactions (see docs
 
 ```js
 async function main(): Promise<void> {
-  const config = JSON.parse((await fsAsync.readFile('.ironfish.config.json')).toString());
-  const sdk = await IronfishSdk.init(config);
+  const sdk = await IronfishSdk.init({ dataDir: '~/.dev0' });
   const client = await sdk.connectRpc();
 
   const from = '<sending account>';
@@ -60,8 +59,7 @@ the mempool and broadcasted to the network (see docs
 
 ```js
 async function main(): Promise<void> {
-  const config = JSON.parse((await fsAsync.readFile('.ironfish.config.json')).toString());
-  const sdk = await IronfishSdk.init(config);
+  const sdk = await IronfishSdk.init({ dataDir: '~/.dev0' });
   const client = await sdk.connectRpc();
 
   const from = '<sending account>';
