@@ -1,0 +1,45 @@
+---
+title: RPC Usage
+description: Integration Guide | RPC Usage | Iron Fish Documentation
+---
+
+The Iron Fish process exposes an RPC server which can be used to communicate
+with nodes over TCP, IPC, and HTTP. The request and response patterns are
+similar to JSON HTTP and also return streaming responses.
+
+## API Reference
+
+Refer to our [RPC docs](/developers/documentation/rpc_chain)
+
+## JavaScript SDK
+
+Currently Iron Fish only supports a JavaScript SDK. An example interaction to
+fetch your account’s public address looks like:
+
+```js
+async function main(): Promise<void> {
+  const config = JSON.parse((await fsAsync.readFile('.ironfish.config.json')).toString());
+  const sdk = await IronfishSdk.init(config);
+  const client = await sdk.connectRpc();
+
+  const response = await client.getAccountPublicKey({
+    account: '<account>',
+  });
+  console.log(response);
+}
+```
+
+If you are not using JavaScript / TypeScript, it’s recommended to write your own
+client that interacts with the node over HTTP, TCP, or IPC.
+
+## HTTP Adapter
+
+If you’d like to enable HTTP binding to your RPC server, run the following:
+
+```sh
+ironfish config:set enableRpcHttp true
+ironfish config:set rpcHttpHost 0.0.0.0
+```
+
+You can similarly configure rpcHttpHost and rpcHttpPort if you’d like to
+customize the host and port.
