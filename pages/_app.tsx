@@ -2,6 +2,7 @@ import { AppProps } from "next/app";
 import Head from "next/head";
 import { IronfishUIProvider, LoadFonts, MDXRenderer } from "@/lib/ui";
 import { IntlProvider } from "../intl/IntlProvider";
+import { GoogleAnalytics } from "nextjs-google-analytics";
 
 import hljs from "highlight.js/lib/core";
 import "highlight.js/styles/atom-one-dark.css";
@@ -24,6 +25,7 @@ function App({ Component, pageProps }: AppProps) {
         </title>
         <link rel="shortcut icon" href="/favicon.ico" />
       </Head>
+      <GoogleAnalytics gaMeasurementId="G-GJD73W9V3M" trackPageViews />
       <MDXRenderer.Provider>
         <IntlProvider>
           <IronfishUIProvider>
