@@ -3,7 +3,7 @@ title: Mempool RPCs
 description: RPC Mempool | Iron Fish Documentation
 ---
 
-## mempool/getStatus
+## [mempool/getStatus](https://github.com/iron-fish/ironfish/blob/master/ironfish/src/rpc/routes/mempool/getStatus.ts)
 
 Gets (and optionally streams) the status of the mempool
 
@@ -31,9 +31,12 @@ Gets (and optionally streams) the status of the mempool
 }
 ```
 
-## mempool/getTransactions
+## [mempool/getTransactions](https://github.com/iron-fish/ironfish/blob/master/ironfish/src/rpc/routes/mempool/getTransactions.ts)
 
-Streams transactions from the mempool
+Streams transactions from the mempool. Transactions are streamed in case there are a large number of transactions in the mempool.
+
+The `MinMax` type specifies the the minimum and maximum range of the input parameter to filter the returned transactions. 
+For example, `feeRate={min: 30; max:60}` specifies that only transactions with `30 <= txn.feeRate <= 60` are returned.
 
 #### Request
 
