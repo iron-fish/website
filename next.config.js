@@ -13,8 +13,8 @@ const nextConfig = {
         permanent: true,
       },
       {
-        source: "/learn/faq",
-        destination: "/learn/about-us",
+        source: "/faq",
+        destination: "/learn/faq",
         permanent: true,
       },
       {
