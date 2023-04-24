@@ -361,7 +361,15 @@ Gets a transaction from a block hash and transaction hash
   notesCount: number
   spendsCount: number
   signature: string
-  notesEncrypted: string[]
+  notes: Array<{
+    hash: string
+    serialized: string
+  }>
+  spends: Array<{
+    nullifier: string
+    commitment: string
+    size: number
+  }>
   mints: Array<{
     assetId: string
     value: string
@@ -370,6 +378,7 @@ Gets a transaction from a block hash and transaction hash
     assetId: string
     value: string
   }>
+  notesEncrypted: string[] // Deprecated: use `notes` instead
 }
 ```
 
