@@ -84,6 +84,8 @@ Creates a new transaction with the given parameters, but does not post it (as su
 
 The new serialized transaction is returned.
 
+The `notes` parameter is an optional list of hex strings of the hashes of notes to spend in the transaction.
+
 #### Request
 
 ```js
@@ -110,7 +112,7 @@ The new serialized transaction is returned.
   expiration?: number
   expirationDelta?: number
   confirmations?: number
-  spendNoteHashes?: Array<string>
+  notes?: Array<string>
 }
 ```
 
