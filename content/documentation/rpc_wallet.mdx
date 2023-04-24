@@ -392,6 +392,11 @@ Gets a transaction for an account. If the account is not specified, the default 
     mintsCount: number
     burnsCount: number
     timestamp: number
+    assetBalanceDeltas: Array<{ 
+      assetId: string
+      assetName: string
+      delta: string 
+    }>
     notes: Array<{
       isOwner: boolean
       value: string
@@ -402,10 +407,10 @@ Gets a transaction for an account. If the account is not specified, the default 
       owner: string
       spent: boolean
     }>
-    assetBalanceDeltas: Array<{ 
-      assetId: string
-      assetName: string
-      delta: string 
+    spends: Array<{
+      nullifier: string
+      commitment: string
+      size: number
     }>
   } | null
 }
@@ -425,6 +430,8 @@ Gets transactions for the given account. If not specified, the default account i
   limit?: number
   offset?: number
   confirmations?: number
+  notes?: boolean
+  spends?: boolean
 }
 ```
 
@@ -447,6 +454,21 @@ Gets transactions for the given account. If not specified, the default account i
     assetName: string
     delta: string 
   }>
+  notes: Array<{
+    isOwner: boolean
+    value: string
+    assetId: string
+    assetName: string
+    memo: string
+    sender: string
+    owner: string
+    spent: boolean
+  }> | undefined
+  spends: Array<{
+    nullifier: string
+    commitment: string
+    size: number
+  }> | undefined
 }
 ```
 
