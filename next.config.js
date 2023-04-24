@@ -2,28 +2,43 @@
 const nextConfig = {
   reactStrictMode: true,
   i18n: {
-    locales: ['en'],
-    defaultLocale: 'en',
+    locales: ["en"],
+    defaultLocale: "en",
   },
   async redirects() {
     return [
       {
-        source: '/use/get-started',
-        destination: '/use/get-started/installation',
+        source: "/about",
+        destination: "/learn/about-us",
+        permanent: true,
+      },
+      {
+        source: "/learn/faq",
+        destination: "/learn/about-us",
+        permanent: true,
+      },
+      {
+        source: "/careers",
+        destination: "https://jobs.lever.co/ironfish",
         permanent: false,
       },
       {
-        source: '/learn/whitepaper',
-        destination: '/learn/whitepaper/introduction',
+        source: "/use/get-started",
+        destination: "/use/get-started/installation",
         permanent: false,
       },
       {
-        source: '/developers/documentation',
-        destination: '/developers/documentation/rpc_chain',
+        source: "/learn/whitepaper",
+        destination: "/learn/whitepaper/introduction",
+        permanent: false,
+      },
+      {
+        source: "/developers/documentation",
+        destination: "/developers/documentation/rpc_chain",
         permanent: false,
       },
     ];
   },
-}
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;
