@@ -392,7 +392,16 @@ Gets a transaction for an account. If the account is not specified, the default 
     mintsCount: number
     burnsCount: number
     timestamp: number
-    notes: RpcAccountDecryptedNote[]
+    notes: Array<{
+      isOwner: boolean
+      value: string
+      assetId: string
+      assetName: string
+      memo: string
+      sender: string
+      owner: string
+      spent: boolean
+    }>
     assetBalanceDeltas: Array<{ 
       assetId: string
       assetName: string
