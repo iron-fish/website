@@ -25,6 +25,7 @@ export const sidebar: SidebarDefinition = [
       "integration_keys",
       "integration_transactions",
       "integration_deposits",
+      "integration_combining_notes",
     ],
   },
   "offline-transaction-signing",
