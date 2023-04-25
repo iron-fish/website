@@ -86,6 +86,8 @@ This allows for the transaction to be posted using spending keys stored on a dif
 
 Creating a raw transaction does not require a spend key. They are not added to the wallet, mempool, or broadcast. The notes used in a raw transaction are not marked as spent.
 
+The `notes` parameter is an optional list of hex strings of the hashes of notes to spend in the transaction.
+
 #### Request
 
 ```js
@@ -112,6 +114,7 @@ Creating a raw transaction does not require a spend key. They are not added to t
   expiration?: number
   expirationDelta?: number
   confirmations?: number
+  notes?: Array<string>
 }
 ```
 
