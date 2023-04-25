@@ -485,3 +485,25 @@ If the chain experiences a re-org and the referenced HEAD moves to a fork, this 
   }>
 }
 ```
+
+## [chain/broadcastTransaction](https://github.com/iron-fish/ironfish/blob/master/ironfish/src/rpc/routes/chain/broadcastTransaction.ts)
+
+Broadcast a fully built, serialized transaction to the node's peers. This is useful for broadcasting custom built transactions.
+
+This is a one time broadcast. The transaction will not be rebroadcast like it would if it were created in the wallet.
+
+#### Request
+
+```js
+{
+  transaction: string
+}
+```
+
+#### Response
+
+```js
+{
+  hash: string
+}
+```
