@@ -1,6 +1,7 @@
-import { readdirSync } from 'fs';
-import path from 'path';
-import { parseFileByPath } from './parseFileByPath';
+import { readdirSync } from "fs";
+import path from "path";
+import { parseFileByPath } from "./parseFileByPath";
+import { parseNestedDir } from "./parseNestedDir";
 
 export type SidebarItem =
   | string
@@ -21,7 +22,7 @@ function buildSidebarItem(
   contentMap: Record<string, Record<string, string>>,
   pathPrefix: string
 ) {
-  if (typeof item === 'string') {
+  if (typeof item === "string") {
     return {
       title: contentMap[item].title,
       href: `${pathPrefix}/${contentMap[item].document}`,
@@ -39,13 +40,16 @@ export function getSidebarContent(
   contentPath: string,
   pathPrefix: string
 ) {
-  const contentMap = readdirSync(contentPath)
-    .filter((item) => item.endsWith('.mdx'))
+  const contentMap = parseNestedDir(contentPath)
+    .map((item) => {
+      return item.join("/");
+    })
+    .filter((item) => item.endsWith(".mdx"))
     .map((item) => {
       const builtPath = path.join(contentPath, item);
       return {
         ...parseFileByPath(builtPath).frontMatter,
-        document: item.replace(/\.mdx?$/, ''),
+        document: item.replace(/\.mdx?$/, ""),
       } as Record<string, string>;
     })
     .reduce<Record<string, Record<string, string>>>((acc, current) => {
@@ -54,7 +58,7 @@ export function getSidebarContent(
     }, {});
 
   return sidebarDefinition.map((item) => {
-    if (typeof item !== 'string' && 'items' in item) {
+    if (typeof item !== "string" && "items" in item) {
       return {
         title: item.label,
         items: item.items.map((item) => {
