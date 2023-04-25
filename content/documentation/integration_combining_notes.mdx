@@ -33,7 +33,7 @@ async function main(): Promise<void> {
 
   // Sum all unspent notes with the native asset ID 
   const fee = 10n;
-  const spendNoteHashes = [];
+  const notes = [];
   let noteTotal = 0n;
 
   const stream = client.wallet.getAccountNotesStream({
@@ -42,7 +42,7 @@ async function main(): Promise<void> {
 
   for await (const note of stream.contentStream()) {
     if (!note.spent && note.assetId === Asset.nativeId().toString('hex')) {
-      spendNoteHashes.push(note.noteHash);
+      notes.push(note.noteHash);
       noteTotal += BigInt(note.value);
     }
   }
@@ -59,10 +59,10 @@ async function main(): Promise<void> {
       },
     ],
     fee: CurrencyUtils.encode(fee),
-    spendNoteHashes,
+    notes,
   };
 
   const response = await client.wallet.createTransaction(options);
-  console.log(response);
+  console.log(response.content.transaction);
 }
 ```
