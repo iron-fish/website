@@ -15,30 +15,20 @@ import NextLink from "next/link";
 import { MDXProvider as BaseMDXProvider } from "@mdx-js/react";
 import { Terminal } from "../../components/Terminal/Terminal";
 import { FAQItem } from "../../components/FAQItem/FAQItem";
-import {
-  ReactNode,
-  ComponentProps,
-  useState,
-  useRef,
-  useLayoutEffect,
-  useEffect,
-} from "react";
+import { ReactNode, ComponentProps, useState, useCallback } from "react";
 import { kebabCase } from "lodash-es";
 import { useSmoothScrollToHash } from "../../hooks/useSmoothScrollToHash";
 
 function HeadingWithAnchor(props: ComponentProps<typeof Heading>) {
   const [headingId, setHeadingId] = useState("");
-  const ref = useRef<HTMLHeadingElement>(null);
-  useLayoutEffect(() => {
-    if (ref.current) {
-      const id = kebabCase(ref.current.textContent?.toLowerCase() || "");
-      setHeadingId(id);
-    }
+  const handleHeadingId = useCallback((ref: HTMLHeadingElement | null) => {
+    ref?.innerText && setHeadingId(kebabCase(ref.innerText.toLowerCase()));
   }, []);
+
   return (
     <Heading
       {...props}
-      ref={ref}
+      ref={handleHeadingId}
       id={headingId}
       fontWeight="normal"
       _hover={{

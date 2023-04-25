@@ -7,7 +7,8 @@ export function useSmoothScrollToHash() {
         window.location.hash && document.querySelector(window.location.hash);
       if (hashEl) {
         const headerOffset = 100;
-        const elementPosition = hashEl.getBoundingClientRect().top;
+        const elementPosition =
+          window.scrollY + hashEl.getBoundingClientRect().top;
         window.scrollTo({
           top: elementPosition - headerOffset,
           behavior: "smooth",
