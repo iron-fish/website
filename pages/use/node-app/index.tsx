@@ -8,13 +8,13 @@ import {
 import { NewsletterSignUp } from '../../../components/NewsletterSignUp/NewsletterSignUp';
 import eel from '../../../assets/heroImages/node-app/eel.svg';
 import octopus from '../../../assets/heroImages/node-app/octopus.svg';
-import wallet from '../../../assets/heroImages/node-app/node-app.svg';
+import nodeApp from '../../../assets/heroImages/node-app/node-app.svg';
 import { NodeAppUIImage } from '../../../components/NodeAppUIImage/NodeAppImage';
 import { useIsClient } from 'usehooks-ts';
 
 const eelImage = eel as LocalImage;
 const octopusImage = octopus as LocalImage;
-const appImage = wallet as LocalImage;
+const appImage = nodeApp as LocalImage;
 
 export default function NodeApp() {
   const isClient = useIsClient();

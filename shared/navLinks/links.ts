@@ -42,8 +42,8 @@ export const links = [
         image: '/images/nav/use-book-fish.svg',
       },
       {
-        title: messages.walletTitle,
-        description: messages.walletDescription,
+        title: messages.nodeAppTitle,
+        description: messages.nodeAppDescription,
         href: '/use/node-app',
         image: '/images/nav/use-key-fish.svg',
       },
