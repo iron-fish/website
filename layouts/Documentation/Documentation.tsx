@@ -6,7 +6,7 @@ import {
   MDXRenderer,
   useBreakpointValue,
 } from "@/lib/ui";
-import { ComponentProps, useEffect } from "react";
+import { ComponentProps } from "react";
 
 type SidebarItems = Array<
   | {
