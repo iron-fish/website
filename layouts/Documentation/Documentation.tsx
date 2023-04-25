@@ -6,22 +6,9 @@ import {
   MDXRenderer,
   useBreakpointValue,
   Text,
+  SidebarItems,
 } from "@/lib/ui";
 import { ComponentProps } from "react";
-
-type SidebarItems = Array<
-  | {
-      title: string;
-      href: string;
-    }
-  | {
-      title: string;
-      items: Array<{
-        title: string;
-        href: string;
-      }>;
-    }
->;
 
 type Props = {
   frontMatter: {

@@ -8,7 +8,19 @@ export const sidebar: SidebarDefinition = [
       "rpc_config",
       "rpc_event",
       "rpc_faucet",
-      "rpc_mempool",
+      {
+        label: "Mempool RPCs",
+        items: [
+          {
+            id: "rpc/mempool/get_status", 
+            label: "get_status",
+          },
+          {
+            id: "rpc/mempool/get_transactions", 
+            label: "get_transactions",
+          },
+        ],
+      },
       "rpc_miner",
       "rpc_node",
       "rpc_peer",

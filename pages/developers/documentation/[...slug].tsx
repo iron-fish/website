@@ -1,7 +1,7 @@
 import fs from "fs";
 import { GetStaticPaths, GetStaticProps } from "next";
 import path from "path";
-import { MDXRenderer } from "@/lib/ui";
+import { MDXRenderer, SidebarItems } from "@/lib/ui";
 import {
   getSidebarContent,
   parseFileByPath,
@@ -10,22 +10,9 @@ import {
 import { ComponentProps } from "react";
 import { DocumentationLayout } from "../../../layouts/Documentation/Documentation";
 import { sidebar } from "../../../content/documentation/sidebar";
+import { parseNestedDir } from "@/lib/markdown/src/parseNestedDir";
 
 const CONTENT_DIR = ["content", "documentation"];
-
-type SidebarItems = Array<
-  | {
-      title: string;
-      href: string;
-    }
-  | {
-      title: string;
-      items: Array<{
-        title: string;
-        href: string;
-      }>;
-    }
->;
 
 type Props = {
   slug: string;
@@ -68,38 +55,21 @@ export const getStaticProps: GetStaticProps<Props> = async ({ params }) => {
 
   const markdown = await renderMarkdown(content);
 
+  const sidebarItems = getSidebarContent(
+    sidebar,
+    CONTENT_PATH,
+    "/developers/documentation"
+  );
+
   return {
     props: {
       slug: slug,
       frontMatter,
       markdown,
-      sidebarItems: getSidebarContent(
-        sidebar,
-        CONTENT_PATH,
-        "/developers/documentation"
-      ),
+      sidebarItems: sidebarItems,
     },
   };
 };
-
-function parseNestedDir(
-  workingDirectory: string,
-  _nestedPath?: string[]
-): Array<Array<string>> {
-  const rootPath = path.join(workingDirectory, _nestedPath?.join("/") ?? "");
-  const content = fs.readdirSync(rootPath);
-
-  return content.reduce<Array<Array<string>>>((acc, curr) => {
-    const currentPath = path.join(rootPath, curr);
-
-    if (!fs.statSync(currentPath).isDirectory()) {
-      acc.push([...(_nestedPath ?? []), curr]);
-      return acc;
-    }
-
-    return [...acc, ...parseNestedDir(workingDirectory, [curr])];
-  }, []);
-}
 
 export const getStaticPaths: GetStaticPaths<{
   slug: Array<string>;

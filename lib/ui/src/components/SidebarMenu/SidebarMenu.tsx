@@ -1,4 +1,5 @@
-import NextLink from 'next/link';
+import NextLink from "next/link";
+import { ReactNode } from "react";
 import {
   Link,
   Box,
@@ -13,28 +14,27 @@ import {
   useDisclosure,
   Collapse,
   HStack,
-} from '@chakra-ui/react';
-import { GiHamburgerMenu } from 'react-icons/gi';
-import { IoMdClose } from 'react-icons/io';
-import { useIsClient } from 'usehooks-ts';
-import { useRouter } from 'next/router';
-import { NAV_HEIGHT } from '../NavBar/NavBar';
+} from "@chakra-ui/react";
+import { GiHamburgerMenu } from "react-icons/gi";
+import { IoMdClose } from "react-icons/io";
+import { useIsClient } from "usehooks-ts";
+import { NextRouter, useRouter } from "next/router";
+import { NAV_HEIGHT } from "../NavBar/NavBar";
 
-type SidebarItems = Array<
+export type SidebarItem = {
+  title: string;
+  href: string;
+};
+
+export type SidebarItems = Array<
+  | SidebarItem
   | {
       title: string;
-      href: string;
-    }
-  | {
-      title: string;
-      items: Array<{
-        title: string;
-        href: string;
-      }>;
+      items: SidebarItems;
     }
 >;
 
-const FONT_SIZE = '1rem';
+const FONT_SIZE = "1rem";
 
 export function SidebarMenu({ items }: { items: SidebarItems }) {
   const { isOpen, onToggle } = useDisclosure();
@@ -45,7 +45,7 @@ export function SidebarMenu({ items }: { items: SidebarItems }) {
       md: false,
     },
     {
-      fallback: 'md',
+      fallback: "md",
     }
   );
 
@@ -79,7 +79,86 @@ export function SidebarMenu({ items }: { items: SidebarItems }) {
   );
 }
 
-function MenuList({ items }: { items: SidebarItems }) {
+function createNestedMenuItems(
+  items: SidebarItems,
+  router: NextRouter
+): ReactNode {
+  return items.map((item) => {
+    if ("href" in item) {
+      const isActive = router.asPath === item.href;
+      return (
+        <Link
+          as={NextLink}
+          href={item.href}
+          key={item.href}
+          fontWeight={isActive ? "bold" : "normal"}
+          color={isActive ? "inherit" : "#7f7f7f"}
+        >
+          {item.title}
+        </Link>
+      );
+    }
+
+    function isSelected(
+      item:
+        | SidebarItem
+        | {
+            title: string;
+            items: SidebarItems;
+          }
+    ): boolean {
+      if ("items" in item) {
+        return item.items.some((subItem) => {
+          if ("href" in subItem) {
+            return router.asPath === subItem.href;
+          }
+
+          return isSelected(subItem);
+        });
+      }
+
+      return false;
+    }
+
+    const isAccordionItemSelected = isSelected(item);
+
+    return (
+      <Accordion
+        key={item.title}
+        defaultIndex={isAccordionItemSelected ? 0 : undefined}
+        allowToggle
+        border="none"
+      >
+        <AccordionItem border="none">
+          <Text as="div" role="heading">
+            <AccordionButton
+              fontSize={FONT_SIZE}
+              p={0}
+              position="relative"
+              color={isAccordionItemSelected ? "inherit" : "#7f7f7f"}
+            >
+              <Box
+                as="span"
+                fontWeight={isAccordionItemSelected ? "bold" : "normal"}
+                color={isAccordionItemSelected ? "inherit" : "#7f7f7f"}
+              >
+                {item.title}
+              </Box>
+              <AccordionIcon />
+            </AccordionButton>
+          </Text>
+          <AccordionPanel pl={2} pb={2}>
+            <VStack alignItems="flex-start" gap={1}>
+              {createNestedMenuItems(item.items, router)}
+            </VStack>
+          </AccordionPanel>
+        </AccordionItem>
+      </Accordion>
+    );
+  });
+}
+
+function MenuList({ items }: { items: SidebarItems }): JSX.Element {
   const router = useRouter();
 
   return (
@@ -100,98 +179,24 @@ function MenuList({ items }: { items: SidebarItems }) {
       flexGrow={1}
       alignItems="stretch"
       borderRight={{
-        base: 'none',
-        md: '1.5px solid',
+        base: "none",
+        md: "1.5px solid",
       }}
       position={{
-        base: 'relative',
-        md: 'sticky',
+        base: "relative",
+        md: "sticky",
       }}
       top={{
-        base: 'auto',
+        base: "auto",
         md: NAV_HEIGHT,
       }}
       maxHeight={{
-        base: 'none',
-        md: '100vh',
+        base: "none",
+        md: "100vh",
       }}
       gap={1}
     >
-      {items.map((item, i) => {
-        if ('href' in item) {
-          const isActive = router.asPath === item.href;
-          return (
-            <Link
-              as={NextLink}
-              href={item.href}
-              key={item.href}
-              fontWeight={isActive ? 'bold' : 'normal'}
-              color={isActive ? 'inherit' : '#7f7f7f'}
-            >
-              {item.title}
-            </Link>
-          );
-        }
-
-        const isAccordionItemSelected = item.items.some((subItem) => {
-          return router.asPath === subItem.href;
-        });
-
-        return (
-          <Accordion
-            key={i}
-            defaultIndex={isAccordionItemSelected ? 0 : undefined}
-            allowToggle
-            border="none"
-          >
-            <AccordionItem border="none">
-              <Text as="div" role="heading">
-                <AccordionButton
-                  fontSize={FONT_SIZE}
-                  p={0}
-                  position="relative"
-                  color={isAccordionItemSelected ? 'inherit' : '#7f7f7f'}
-                >
-                  <Box
-                    position="absolute"
-                    right="100%"
-                    display="flex"
-                    justifyContent="center"
-                    width={8}
-                  >
-                    <AccordionIcon />
-                  </Box>
-                  <Box
-                    as="span"
-                    fontWeight={isAccordionItemSelected ? 'bold' : 'normal'}
-                    color={isAccordionItemSelected ? 'inherit' : '#7f7f7f'}
-                  >
-                    {item.title}
-                  </Box>
-                </AccordionButton>
-              </Text>
-              <AccordionPanel pl={2} pb={2}>
-                <VStack alignItems="flex-start" gap={1}>
-                  {item.items.map((subItem) => {
-                    const isActive = router.asPath === subItem.href;
-                    return (
-                      <Link
-                        as={NextLink}
-                        href={subItem.href}
-                        key={subItem.href}
-                        textDecoration={isActive ? 'underline' : 'none'}
-                        color={isActive ? 'inherit' : '#7f7f7f'}
-                      >
-                        {subItem.title}
-                      </Link>
-                    );
-                  })}
-                </VStack>
-              </AccordionPanel>
-            </AccordionItem>
-          </Accordion>
-        );
-      })}
+      {createNestedMenuItems(items, router)}
     </VStack>
   );
 }
