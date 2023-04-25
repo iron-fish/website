@@ -80,9 +80,11 @@ Creates a new account in the wallet with the given name and optionally sets it a
 
 ## [wallet/createTransaction](https://github.com/iron-fish/ironfish/blob/master/ironfish/src/rpc/routes/wallet/createTransaction.ts)
 
-Creates a new transaction with the given parameters, but does not post it (as such, it is also not added to the wallet, mempool, or broadcast to the network). This allows for the transaction to be posted using spending keys stored on a different node.
+Creates a raw transaction that is not posted.
 
-The new serialized transaction is returned.
+This allows for the transaction to be posted using spending keys stored on a different node.
+
+Creating a raw transaction does not require a spend key. They are not added to the wallet, mempool, or broadcast. The notes used in a raw transaction are not marked as spent.
 
 #### Request
 
