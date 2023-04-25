@@ -6,25 +6,25 @@ import {
   LocalImage,
 } from '@/lib/ui';
 import { NewsletterSignUp } from '../../../components/NewsletterSignUp/NewsletterSignUp';
-import eel from '../../../assets/heroImages/wallet/eel.svg';
-import octopus from '../../../assets/heroImages/wallet/octopus.svg';
-import wallet from '../../../assets/heroImages/wallet/wallet.svg';
-import { WalletUIImage } from '../../../components/WalletUIImage/WalletUIImage';
+import eel from '../../../assets/heroImages/node-app/eel.svg';
+import octopus from '../../../assets/heroImages/node-app/octopus.svg';
+import wallet from '../../../assets/heroImages/node-app/node-app.svg';
+import { NodeAppUIImage } from '../../../components/NodeAppUIImage/NodeAppImage';
 import { useIsClient } from 'usehooks-ts';
 
 const eelImage = eel as LocalImage;
 const octopusImage = octopus as LocalImage;
-const walletImage = wallet as LocalImage;
+const appImage = wallet as LocalImage;
 
-export default function Wallet() {
+export default function NodeApp() {
   const isClient = useIsClient();
   return (
     <Box bg="orange.500">
       <Hero
         bg="orange.500"
-        heading="Wallet"
+        heading="Node App"
         subheading="Built for everyone"
-        description="Our desktop wallet is launching soon! Sign up for our newsletter to be informed for its launch."
+        description="Our desktop node app is launching soon! Sign up for our newsletter to be informed for its launch."
         borderBottom="none"
         textContainerProps={{
           pb: {
@@ -47,7 +47,7 @@ export default function Wallet() {
               }}
             />
             <HeroImageUtil
-              image={walletImage}
+              image={appImage}
               bottom={{
                 md: '20px',
                 xl: '15px',
@@ -77,7 +77,7 @@ export default function Wallet() {
           <NewsletterSignUp bordered />
         </Flex>
       </Hero>
-      <Box px={8}>{isClient && <WalletUIImage />}</Box>
+      <Box px={8}>{isClient && <NodeAppUIImage />}</Box>
     </Box>
   );
 }

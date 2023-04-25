@@ -44,7 +44,7 @@ export const links = [
       {
         title: messages.walletTitle,
         description: messages.walletDescription,
-        href: '/use/wallet',
+        href: '/use/node-app',
         image: '/images/nav/use-key-fish.svg',
       },
       {
