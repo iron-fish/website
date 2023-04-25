@@ -15,13 +15,21 @@ import NextLink from "next/link";
 import { MDXProvider as BaseMDXProvider } from "@mdx-js/react";
 import { Terminal } from "../../components/Terminal/Terminal";
 import { FAQItem } from "../../components/FAQItem/FAQItem";
-import { ReactNode, ComponentProps, useState, useRef, useEffect } from "react";
+import {
+  ReactNode,
+  ComponentProps,
+  useState,
+  useRef,
+  useLayoutEffect,
+  useEffect,
+} from "react";
 import { kebabCase } from "lodash-es";
+import { useSmoothScrollToHash } from "../../hooks/useSmoothScrollToHash";
 
 function HeadingWithAnchor(props: ComponentProps<typeof Heading>) {
   const [headingId, setHeadingId] = useState("");
   const ref = useRef<HTMLHeadingElement>(null);
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (ref.current) {
       const id = kebabCase(ref.current.textContent?.toLowerCase() || "");
       setHeadingId(id);
@@ -115,7 +123,8 @@ const rendererComponents: ComponentProps<typeof MDXRemote>["components"] = {
 };
 
 function MDXRenderer({ markdown }: { markdown: MDXRemoteProps }) {
-  return <MDXRemote {...markdown} lazy components={rendererComponents} />;
+  useSmoothScrollToHash();
+  return <MDXRemote {...markdown} components={rendererComponents} />;
 }
 
 const providerComponents = {
