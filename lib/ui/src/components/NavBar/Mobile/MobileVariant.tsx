@@ -86,87 +86,83 @@ export function MobileVariant({ content }: { content: NavItems }) {
           height={`calc(100vh - ${NAV_HEIGHT})`}
         >
           <VStack alignItems="stretch" padding={2} pb={24}>
-            {content
-              // .filter((item): item is CategoryNavItem => 'items' in item)
-              .map((item, i) => {
-                if ("items" in item) {
-                  const category = item;
-                  return (
-                    <AccordionItem key={i}>
-                      {({ isExpanded }) => (
-                        <ShadowBox shadowColor={`${category.color}.500`}>
-                          <AccordionButton
-                            _hover={{
-                              bg: "transparent",
-                            }}
-                            p={0}
-                          >
-                            <HStack
-                              justify="space-between"
-                              align="center"
-                              width="100%"
-                              px={8}
-                              py={6}
-                            >
-                              <Text textStyle="h5">{category.label}</Text>
-                              {isExpanded ? (
-                                <RxChevronUp size="30" />
-                              ) : (
-                                <RxChevronDown size="30" />
-                              )}
-                            </HStack>
-                          </AccordionButton>
-                          <AccordionPanel>
-                            <Grid
-                              templateColumns={{
-                                base: "repeat(1, 1fr)",
-                                lg: "repeat(2, 1fr)",
-                              }}
-                            >
-                              {category.items.map(
-                                ({ title, href, image, description }, i) => (
-                                  <Category
-                                    key={i}
-                                    title={title}
-                                    description={description}
-                                    href={href}
-                                    image={image}
-                                    color={category.color}
-                                  />
-                                )
-                              )}
-                            </Grid>
-                          </AccordionPanel>
-                        </ShadowBox>
-                      )}
-                    </AccordionItem>
-                  );
-                }
-
+            {content.map((item, i) => {
+              if ("items" in item) {
+                const category = item;
                 return (
-                  <ShadowBox
-                    shadowColor={`pink.500`}
-                    key={i}
-                    as={item.href.startsWith("http") ? "a" : Link}
-                    href={item.href}
-                    target={item.href.startsWith("http") ? "_blank" : undefined}
-                    rel={
-                      item.href.startsWith("http") ? "noreferrer" : undefined
-                    }
-                  >
-                    <HStack
-                      justify="space-between"
-                      align="center"
-                      width="100%"
-                      px={8}
-                      py={6}
-                    >
-                      <Text textStyle="h5">{item.label}</Text>
-                      <RxChevronRight size="30" />
-                    </HStack>
-                  </ShadowBox>
+                  <AccordionItem key={i}>
+                    {({ isExpanded }) => (
+                      <ShadowBox shadowColor={`${category.color}.500`}>
+                        <AccordionButton
+                          _hover={{
+                            bg: "transparent",
+                          }}
+                          p={0}
+                        >
+                          <HStack
+                            justify="space-between"
+                            align="center"
+                            width="100%"
+                            px={8}
+                            py={6}
+                          >
+                            <Text textStyle="h5">{category.label}</Text>
+                            {isExpanded ? (
+                              <RxChevronUp size="30" />
+                            ) : (
+                              <RxChevronDown size="30" />
+                            )}
+                          </HStack>
+                        </AccordionButton>
+                        <AccordionPanel>
+                          <Grid
+                            templateColumns={{
+                              base: "repeat(1, 1fr)",
+                              lg: "repeat(2, 1fr)",
+                            }}
+                          >
+                            {category.items.map(
+                              ({ title, href, image, description }, i) => (
+                                <Category
+                                  key={i}
+                                  title={title}
+                                  description={description}
+                                  href={href}
+                                  image={image}
+                                  color={category.color}
+                                />
+                              )
+                            )}
+                          </Grid>
+                        </AccordionPanel>
+                      </ShadowBox>
+                    )}
+                  </AccordionItem>
                 );
-              })}
+              }
+
+              return (
+                <ShadowBox
+                  shadowColor={`pink.500`}
+                  key={i}
+                  as={item.href.startsWith("http") ? "a" : Link}
+                  href={item.href}
+                  target={item.href.startsWith("http") ? "_blank" : undefined}
+                  rel={item.href.startsWith("http") ? "noreferrer" : undefined}
+                >
+                  <HStack
+                    justify="space-between"
+                    align="center"
+                    width="100%"
+                    px={8}
+                    py={6}
+                  >
+                    <Text textStyle="h5">{item.label}</Text>
+                    <RxChevronRight size="30" />
+                  </HStack>
+                </ShadowBox>
+              );
+            })}
             <Box py={6}>
               <Button size="lg" as={Link} href="/use/get-started">
                 <Box mr={4}>Get Started</Box>
