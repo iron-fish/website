@@ -1,4 +1,4 @@
-import { ReactNode } from 'react';
+import { ReactNode } from "react";
 import {
   Box,
   Container,
@@ -8,13 +8,13 @@ import {
   LocalImage,
   ThickLink,
   chakra,
-} from '@/lib/ui';
-import { LogoDownloads } from '../../../components/MediaKit/LogoDownloads/LogoDownloads';
-import { BrandGuidelines } from '../../../components/MediaKit/BrandGuidelines/BrandGuidelines';
-import toothyGuy from '../../../assets/heroImages/media-kit/toothy-guy.svg';
-import school from '../../../assets/heroImages/media-kit/school.svg';
-import verticalFish from '../../../assets/heroImages/media-kit/vertical-fish.svg';
-import { IllustrationPack } from '../../../components/MediaKit/IllustrationPack/IllustrationPack';
+} from "@/lib/ui";
+import { LogoDownloads } from "../../../components/MediaKit/LogoDownloads/LogoDownloads";
+import { BrandGuidelines } from "../../../components/MediaKit/BrandGuidelines/BrandGuidelines";
+import toothyGuy from "../../../assets/heroImages/media-kit/toothy-guy.svg";
+import school from "../../../assets/heroImages/media-kit/school.svg";
+import verticalFish from "../../../assets/heroImages/media-kit/vertical-fish.svg";
+import { IllustrationPack } from "../../../components/MediaKit/IllustrationPack/IllustrationPack";
 
 const toothyGuyImage = toothyGuy as LocalImage;
 const schoolImage = school as LocalImage;
@@ -33,37 +33,37 @@ export default function FAQ() {
             <HeroImageUtil
               image={toothyGuyImage}
               top={{
-                md: '-150px',
-                xl: '-30px',
+                md: "-20px",
+                xl: "20px",
               }}
               left={{
-                md: '-120px',
-                xl: '30px',
-                '2xl': `calc(50vw - 700px)`,
+                md: "-70px",
+                xl: "30px",
+                "2xl": `calc(50vw - 600px)`,
               }}
             />
             <HeroImageUtil
               image={schoolImage}
               bottom={{
-                md: '-80px',
-                xl: '15px',
+                md: "-80px",
+                xl: "25px",
               }}
               left={{
-                md: '-50px',
-                xl: '-20px',
-                '2xl': `calc(50vw - 850px)`,
+                md: "-50px",
+                xl: "-20px",
+                "2xl": `calc(50vw - 750px)`,
               }}
             />
             <HeroImageUtil
               image={verticalFishImage}
               top={{
-                md: '20px',
-                xl: '85px',
+                md: "40px",
+                xl: "120px",
               }}
               right={{
-                md: '-120px',
-                xl: '-20px',
-                '2xl': `calc(50vw - 700px)`,
+                md: "-120px",
+                xl: "-20px",
+                "2xl": `calc(50vw - 700px)`,
               }}
             />
           </>
@@ -73,22 +73,22 @@ export default function FAQ() {
         <Text
           textStyle="h5"
           mt={{
-            base: '50px',
-            md: '100px',
-            lg: '150px',
+            base: "50px",
+            md: "100px",
+            lg: "150px",
           }}
           mb={{
-            base: '96px',
-            md: '128px',
-            lg: '150px',
+            base: "96px",
+            md: "128px",
+            lg: "150px",
           }}
           textAlign="center"
         >
-          Our brand is positioned around the notion of{' '}
+          Our brand is positioned around the notion of{" "}
           <ThickLink underlineColor="pink.400">being novel</ThickLink> - not
           just in terms of the product we are creating, but in our visual
           aesthetic as well. Because why not. Can&apos;t find what you&apos;re
-          looking for?{' '}
+          looking for?{" "}
           <TextLink href="mailto:contact@ironfish.network">
             Send us an email
           </TextLink>

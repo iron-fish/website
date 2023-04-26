@@ -5,6 +5,7 @@ import {
   SidebarMenu,
   MDXRenderer,
   useBreakpointValue,
+  Text,
 } from "@/lib/ui";
 import { ComponentProps } from "react";
 
@@ -23,7 +24,6 @@ type SidebarItems = Array<
 >;
 
 type Props = {
-  slug: string;
   frontMatter: {
     title?: string;
     description?: string;
@@ -31,6 +31,7 @@ type Props = {
   markdown: ComponentProps<typeof MDXRenderer>["markdown"];
   sidebarItems: SidebarItems;
   sidebarWidth?: string;
+  githubPath?: string;
 };
 
 export function DocumentationLayout({
@@ -38,6 +39,7 @@ export function DocumentationLayout({
   markdown,
   sidebarItems,
   sidebarWidth = "235px",
+  githubPath,
 }: Props) {
   const showOnThisPage = useBreakpointValue({
     base: false,
@@ -73,6 +75,22 @@ export function DocumentationLayout({
           {frontMatter.title}
         </Heading>
         <MDXRenderer markdown={markdown} />
+        {githubPath && (
+          <Box textAlign="center" mt="16">
+            <Text
+              as="a"
+              color="#7F7F7F"
+              _hover={{
+                textDecoration: "underline",
+              }}
+              href={`https://github.com/iron-fish/website/tree/master/${githubPath}`}
+              target="_blank"
+              rel="noreferrer"
+            >
+              Edit Page on Github
+            </Text>
+          </Box>
+        )}
       </Box>
       {/* @todo: Build "On this page" component */}
       {showOnThisPage && <Box height="200px" />}

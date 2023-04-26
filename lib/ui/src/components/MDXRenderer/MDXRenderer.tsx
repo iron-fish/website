@@ -56,8 +56,8 @@ const rendererComponents: ComponentProps<typeof MDXRemote>["components"] = {
   h1: (props) => (
     <HeadingWithAnchor {...props} fontSize="2xl" my="8" fontWeight="medium" />
   ),
-  h2: (props) => <HeadingWithAnchor {...props} fontSize="3xl" mt="10" mb="6" />,
-  h3: (props) => <HeadingWithAnchor {...props} fontSize="2xl" mt="10" mb="6" />,
+  h2: (props) => <HeadingWithAnchor {...props} fontSize="3xl" mt="12" mb="6" />,
+  h3: (props) => <HeadingWithAnchor {...props} fontSize="2xl" mt="12" mb="6" />,
   h4: (props) => <HeadingWithAnchor {...props} fontSize="xl" my="4" />,
   h5: (props) => <HeadingWithAnchor {...props} fontSize="lg" my="4" />,
   p: (props) => <Text {...props} mb="6" {...DEFAULT_TEXT_PROPS} />,

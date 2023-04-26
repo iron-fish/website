@@ -11,6 +11,8 @@ import { ComponentProps } from "react";
 import { DocumentationLayout } from "../../../layouts/Documentation/Documentation";
 import { sidebar } from "../../../content/documentation/sidebar";
 
+const CONTENT_DIR = ["content", "documentation"];
+
 type SidebarItems = Array<
   | {
       title: string;
@@ -46,12 +48,12 @@ export default function DocumentationPage({
       frontMatter={frontMatter}
       markdown={markdown}
       sidebarItems={sidebarItems}
-      slug={slug}
+      githubPath={CONTENT_DIR.join("/") + `/${slug}.mdx`}
     />
   );
 }
 
-const CONTENT_PATH = path.join(process.cwd(), "content", "documentation");
+const CONTENT_PATH = path.join(process.cwd(), ...CONTENT_DIR);
 
 export const getStaticProps: GetStaticProps<Props> = async ({ params }) => {
   const slug = Array.isArray(params?.slug) ? params?.slug.join("/") : null;
