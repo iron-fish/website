@@ -25,7 +25,7 @@ export function DocumentationLayout({
   frontMatter,
   markdown,
   sidebarItems,
-  sidebarWidth = "235px",
+  sidebarWidth = "250px",
   githubPath,
 }: Props) {
   const showOnThisPage = useBreakpointValue({

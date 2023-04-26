@@ -128,14 +128,18 @@ function createNestedMenuItems(
         defaultIndex={isAccordionItemSelected ? 0 : undefined}
         allowToggle
         border="none"
+        w="100%"
       >
         <AccordionItem border="none">
-          <Text as="div" role="heading">
+          <Text as="div" role="heading" w="100%">
             <AccordionButton
               fontSize={FONT_SIZE}
               p={0}
               position="relative"
               color={isAccordionItemSelected ? "inherit" : "#7f7f7f"}
+              display="flex"
+              justifyContent="space-between"
+              alignItems="center"
             >
               <Box
                 as="span"
@@ -147,7 +151,7 @@ function createNestedMenuItems(
               <AccordionIcon />
             </AccordionButton>
           </Text>
-          <AccordionPanel pl={2} pb={2}>
+          <AccordionPanel pl={2} pb={2} pr={0}>
             <VStack alignItems="flex-start" gap={1}>
               {createNestedMenuItems(item.items, router)}
             </VStack>
@@ -195,6 +199,7 @@ function MenuList({ items }: { items: SidebarItems }): JSX.Element {
         md: "100vh",
       }}
       gap={1}
+      overflow="auto"
     >
       {createNestedMenuItems(items, router)}
     </VStack>
