@@ -1,7 +1,7 @@
 import { readdirSync } from "fs";
 import { GetStaticPaths, GetStaticProps } from "next";
 import path from "path";
-import { MDXRenderer } from "@/lib/ui";
+import { MDXRenderer, SidebarItems } from "@/lib/ui";
 import {
   getSidebarContent,
   parseFileByPath,
@@ -12,20 +12,6 @@ import { DocumentationLayout } from "../../../layouts/Documentation/Documentatio
 import { sidebar } from "../../../content/whitepaper/sidebar";
 
 const CONTENT_DIR = ["content", "whitepaper"];
-
-type SidebarItems = Array<
-  | {
-      title: string;
-      href: string;
-    }
-  | {
-      title: string;
-      items: Array<{
-        title: string;
-        href: string;
-      }>;
-    }
->;
 
 type Props = {
   slug: string;

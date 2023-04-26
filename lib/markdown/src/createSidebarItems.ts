@@ -1,14 +1,16 @@
-import { readdirSync } from "fs";
 import path from "path";
 import { parseFileByPath } from "./parseFileByPath";
 import { parseNestedDir } from "./parseNestedDir";
 
+export type SidebarLabeledItem = {
+  id: string;
+  label?: string;
+}
+
 export type SidebarItem =
   | string
-  | {
-      id: string;
-      label?: string;
-    };
+  | SidebarLabeledItem
+  | SidebarCategory;
 
 export type SidebarCategory = {
   label: string;
@@ -18,16 +20,16 @@ export type SidebarCategory = {
 export type SidebarDefinition = Array<SidebarCategory | SidebarItem>;
 
 function buildSidebarItem(
-  item: SidebarItem,
+  item: Exclude<SidebarItem, SidebarCategory>,
   contentMap: Record<string, Record<string, string>>,
   pathPrefix: string
-) {
+): {title: string; href: string} {
   if (typeof item === "string") {
     return {
       title: contentMap[item].title,
       href: `${pathPrefix}/${contentMap[item].document}`,
     };
-  }
+  } 
 
   return {
     title: item.label ?? contentMap[item.id].title,
@@ -58,15 +60,28 @@ export function getSidebarContent(
     }, {});
 
   return sidebarDefinition.map((item) => {
-    if (typeof item !== "string" && "items" in item) {
-      return {
-        title: item.label,
-        items: item.items.map((item) => {
-          return buildSidebarItem(item, contentMap, pathPrefix);
-        }),
-      };
-    } else {
-      return buildSidebarItem(item, contentMap, pathPrefix);
-    }
+    return buildSidebar(item, contentMap, pathPrefix);
   });
+}
+
+export type SidebarReference = {
+  title: string
+  href: string
+} | {
+  title: string
+  items: SidebarReference[]
+}
+
+function buildSidebar(item: SidebarItem, contentMap: Record<string, Record<string, string>>, pathPrefix: string): SidebarReference 
+{
+  if (typeof item === "string" || !("items" in item)) {
+    return buildSidebarItem(item, contentMap, pathPrefix);
+  }
+
+  return {
+    title: item.label,
+    items: item.items.map((nestedItem) => {
+        return buildSidebar(nestedItem, contentMap, pathPrefix)
+    }),
+  }    
 }
