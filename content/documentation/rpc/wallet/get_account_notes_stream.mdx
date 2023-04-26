@@ -1,0 +1,31 @@
+---
+title: wallet/getAccountNotesStream RPC
+description: RPC Wallet | Iron Fish Documentation
+---
+
+## [wallet/getAccountNotesStream](https://github.com/iron-fish/ironfish/blob/master/ironfish/src/rpc/routes/wallet/getNotes.ts)
+
+Streams the notes in the given account. If the account is not specified, the default account will be used.
+
+#### Request
+
+```js
+{
+  account?: string
+}
+```
+
+#### Response
+
+```js
+{
+  value: string;
+  assetId: string;
+  assetName: string;
+  memo: string;
+  sender: string;
+  noteHash: string;
+  transactionHash: string;
+  spent: boolean | undefined;
+}
+```

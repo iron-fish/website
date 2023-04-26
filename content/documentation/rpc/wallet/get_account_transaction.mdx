@@ -1,0 +1,54 @@
+---
+title: wallet/getAccountTransaction RPC
+description: RPC Wallet | Iron Fish Documentation
+---
+
+## [wallet/getAccountTransaction](https://github.com/iron-fish/ironfish/blob/master/ironfish/src/rpc/routes/wallet/getTransactions.ts)
+
+Gets a transaction for an account. If the account is not specified, the default account is used.
+
+#### Request
+
+```js
+{
+  hash: string
+  account?: string
+  confirmations?: number
+}
+```
+
+#### Response
+
+```js
+{
+  account: string
+  transaction: {
+    hash: string
+    status: 'confirmed' | 'expired' | 'pending' | 'unconfirmed' | 'unknown'
+    type: 'send' | 'receive' | 'miner'
+    fee: string
+    blockHash?: string
+    blockSequence?: number
+    notesCount: number
+    spendsCount: number
+    mintsCount: number
+    burnsCount: number
+    timestamp: number
+    notes: Array<{
+      isOwner: boolean
+      value: string
+      assetId: string
+      assetName: string
+      memo: string
+      sender: string
+      owner: string
+      spent: boolean
+    }>
+    assetBalanceDeltas: Array<{
+      assetId: string
+      assetName: string
+      delta: string
+    }>
+  } | null
+}
+```

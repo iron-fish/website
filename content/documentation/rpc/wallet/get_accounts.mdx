@@ -1,0 +1,25 @@
+---
+title: wallet/getAccounts RPC
+description: RPC Wallet | Iron Fish Documentation
+---
+
+## [wallet/getAccounts](https://github.com/iron-fish/ironfish/blob/master/ironfish/src/rpc/routes/wallet/getAccounts.ts)
+
+Gets the names of the accounts in the wallet.
+
+#### Request
+
+```js
+{
+  default?: boolean
+  displayName?: boolean
+} | undefined
+```
+
+#### Response
+
+```js
+{
+  accounts: string[]
+}
+```

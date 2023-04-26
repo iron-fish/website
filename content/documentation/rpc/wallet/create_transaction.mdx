@@ -1,0 +1,49 @@
+---
+title: wallet/createTransaction RPC
+description: RPC Wallet | Iron Fish Documentation
+---
+
+## [wallet/createTransaction](https://github.com/iron-fish/ironfish/blob/master/ironfish/src/rpc/routes/wallet/createTransaction.ts)
+
+Creates a raw transaction that is not posted.
+
+This allows for the transaction to be posted using spending keys stored on a different node.
+
+Creating a raw transaction does not require a spend key. They are not added to the wallet, mempool, or broadcast. The notes used in a raw transaction are not marked as spent.
+
+#### Request
+
+```js
+{
+  account: string
+  outputs: Array<{
+    publicAddress: string
+    amount: string
+    memo: string
+    assetId?: string
+  }>
+  mints?: Array<{
+    assetId?: string
+    name?: string
+    metadata?: string
+    value: string
+  }>
+  burns?: Array<{
+    assetId: string
+    value: string
+  }>
+  fee?: string | null
+  feeRate?: string | null
+  expiration?: number
+  expirationDelta?: number
+  confirmations?: number
+}
+```
+
+#### Response
+
+```js
+{
+  transaction: string;
+}
+```

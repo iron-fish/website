@@ -1,0 +1,24 @@
+---
+title: wallet/getDefaultAccount RPC
+description: RPC Wallet | Iron Fish Documentation
+---
+
+## [wallet/getDefaultAccount](https://github.com/iron-fish/ironfish/blob/master/ironfish/src/rpc/routes/wallet/getDefaultAccount.ts)
+
+Gets the default account of the wallet.
+
+#### Request
+
+```js
+{ } | undefined
+```
+
+#### Response
+
+```js
+{
+  account: {
+    name: string
+  } | null
+}
+```

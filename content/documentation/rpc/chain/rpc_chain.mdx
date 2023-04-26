@@ -3,28 +3,6 @@ title: Chain RPCs
 description: RPC Chain | Iron Fish Documentation
 ---
 
-## [chain/broadcastTransaction](https://github.com/iron-fish/ironfish/blob/master/ironfish/src/rpc/routes/chain/broadcastTransaction.ts)
-
-Broadcast a fully built, serialized transaction to the node's peers. This is useful for broadcasting custom built transactions.
-
-This is a one time broadcast. The transaction will not be rebroadcasted automatically like it would if it were created in the wallet.
-
-#### Request
-
-```js
-{
-  transaction: string
-}
-```
-
-#### Response
-
-```js
-{
-  hash: string
-}
-```
-
 ## [chain/estimateFeeRate](https://github.com/iron-fish/ironfish/blob/master/ironfish/src/rpc/routes/chain/estimateFeeRate.ts)
 
 Estimates the fee rate given an optional priority. If no fee rate is provided, the `average` priority will be used.
@@ -75,7 +53,7 @@ undefined
 }
 ```
 
-## [chain/exportChainStream](https://github.com/iron-fish/ironfish/blob/master/ironfish/src/rpc/routes/chain/exportChainStream.ts)
+## [chain/exportChainStream](https://github.com/iron-fish/ironfish/blob/master/ironfish/src/rpc/routes/chain/exportChain.ts)
 
 Exports the chain as a stream of blocks. 
 
@@ -112,7 +90,7 @@ stop will be returned.
 }
 ```
 
-## [chain/followChainStream](https://github.com/iron-fish/ironfish/blob/master/ironfish/src/rpc/routes/chain/followChainStream.ts)
+## [chain/followChainStream](https://github.com/iron-fish/ironfish/blob/master/ironfish/src/rpc/routes/chain/followChain.ts)
 
 Follows the chain from a given sequence and streams blocks from chain connects and disconnects
 
@@ -361,36 +339,6 @@ undefined
 }
 ```
 
-## [chain/getNoteWitness](https://github.com/iron-fish/ironfish/blob/master/ironfish/src/rpc/routes/chain/getNoteWitness.ts)
-
-Gets a witness (merkle path) to a specified note in the note merkle tree.
-This witness is necessary for creating a transaction that spends the note.
-
-This endpoint would primarily be used to construct transactions without using the Iron Fish wallet.
-The returned `treeSize` and `rootHash` values will always reference the note merkle tree state at the current HEAD of the chain.
-If the chain experiences a re-org and the referenced HEAD moves to a fork, this witness will no longer be usable in a transaction.
-
-#### Request
-
-```js
-{
-  index: number
-}
-```
-
-#### Response
-
-```js
-{
-  treeSize: number
-  rootHash: string
-  authPath: Array<{
-    side: 'Left' | 'Right'
-    hashOfSibling: string
-  }>
-}
-```
-
 ## [chain/getTransaction](https://github.com/iron-fish/ironfish/blob/master/ironfish/src/rpc/routes/chain/getTransaction.ts)
 
 Gets a transaction from a block hash and transaction hash
@@ -410,7 +358,6 @@ Gets a transaction from a block hash and transaction hash
 {
   fee: string
   expiration: number
-  noteSize: number
   notesCount: number
   spendsCount: number
   signature: string
@@ -467,7 +414,6 @@ Streams transactions from a head sequence given an incoming view key
     notes: Array<{
       assetId: string
       assetName: string
-      hash: string
       value: string
       memo: string
     }>
@@ -505,5 +451,37 @@ If stop and stop values are provided, only the blocks between the start and stop
 ```js
 {
   content: string[]
+}
+```
+
+
+## [chain/getNoteWitness](https://github.com/iron-fish/ironfish/blob/master/ironfish/src/rpc/routes/chain/getNoteWitness.ts) 
+
+
+Gets a witness (merkle path) to a specified note in the note merkle tree. 
+This witness is necessary for creating a transaction that spends the note. 
+
+This endpoint would primarily be used to construct transactions without using the Iron Fish wallet. 
+The returned `treeSize` and `rootHash` values will always reference the note merkle tree state at the current HEAD of the chain. 
+If the chain experiences a re-org and the referenced HEAD moves to a fork, this witness will no longer be usable in a transaction.
+
+#### Request
+
+```js
+{
+  index: number
+}
+```
+
+#### Response
+
+```js
+{
+  treeSize: number
+  rootHash: string
+  authPath: Array<{
+    side: 'Left' | 'Right'
+    hashOfSibling: string
+  }>
 }
 ```

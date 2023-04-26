@@ -1,0 +1,36 @@
+---
+title: wallet/sendTransaction RPC
+description: RPC Wallet | Iron Fish Documentation
+---
+
+## [wallet/sendTransaction](https://github.com/iron-fish/ironfish/blob/master/ironfish/src/rpc/routes/wallet/sendTransaction.ts)
+
+Creates a transaction, posts the transaction, and submits it to the wallet, mempool, and network.
+
+#### Request
+
+```js
+{
+  account: string
+  outputs: {
+    publicAddress: string
+    amount: string
+    memo: string
+    assetId?: string
+  }[]
+  fee: string
+  expiration?: number | null
+  expirationDelta?: number | null
+  confirmations?: number | null
+}
+```
+
+#### Response
+
+```js
+{
+  account: string;
+  hash: string;
+  transaction: string;
+}
+```
