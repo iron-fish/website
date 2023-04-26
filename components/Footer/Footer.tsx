@@ -155,7 +155,14 @@ export function Footer() {
         <HStack
           alignItems="center"
           flexGrow={1}
-          justifyContent="flex-end"
+          justifyContent={{
+            base: "space-between",
+            lg: "flex-end",
+          }}
+          w={{
+            base: "100%",
+            lg: "auto",
+          }}
           gap={{
             base: 4,
             md: 16,
