@@ -5,7 +5,6 @@ export function parseNestedDir(
   workingDirectory: string,
   _nestedPath?: string[]
 ): Array<Array<string>> {
-
   const rootPath = path.join(workingDirectory, _nestedPath?.join("/") ?? "");
 
   const content = fs.readdirSync(rootPath);
