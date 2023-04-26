@@ -143,7 +143,7 @@ export function MobileVariant({ content }: { content: NavItems }) {
 
               return (
                 <ShadowBox
-                  shadowColor={`pink.500`}
+                  shadowColor={item.color ? `${item.color}.500` : undefined}
                   key={i}
                   as={item.href.startsWith("http") ? "a" : Link}
                   href={item.href}

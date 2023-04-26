@@ -11,6 +11,7 @@ export function useNavLinks(): NavItems {
         return {
           label: formatMessage(link.label),
           href: link.href,
+          color: link.color,
         };
       }
 
