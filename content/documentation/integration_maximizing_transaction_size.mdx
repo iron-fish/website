@@ -1,0 +1,82 @@
+---
+title: Maximizing Transaction Size
+description: Integration Guide | Maximizing Transaction Size | Iron Fish Documentation
+---
+
+Iron Fish transactions, in their simplest form, spend notes to fund payments (plus the miners fee).
+The Iron Fish [block](/use/get-started/glossary#Block) has a predefined size limit, so there is a limit on the size and number of transactions in a block.
+In effect, if you are maximizing transaction size, you are trying to make the transaction size equal to the max
+block size.
+
+Here's an example that creates a transaction with a rough estimate of the number of notes that can fit in a block, then incrementally removes notes until the transaction will fit in a block.
+
+```js
+import { Asset } from '@ironfish/rust-nodejs'
+import {
+  CreateTransactionRequest,
+  CurrencyUtils,
+  IronfishSdk,
+  RawTransactionSerde,
+} from '@ironfish/sdk'
+import { NOTE_ENCRYPTED_SERIALIZED_SIZE_IN_BYTE } from '@ironfish/sdk/src/primitives/noteEncrypted'
+async function main(): Promise<void> {
+  // creating fake outputs for example
+  const outputs: CreateTransactionRequest['outputs'] = []
+  for (let i = 0; i < 100000; i++) {
+    outputs.push({
+      publicAddress: 'd841fcda692fdc030e772037c27c5c8d57b4d55355f8636126f338b74d59de1c',
+      amount: CurrencyUtils.encode(1n),
+      memo: 'test',
+      assetId: Asset.nativeId().toString('hex'),
+    })
+  }
+
+  const sdk = await IronfishSdk.init({ dataDir: '~/.dev0' })
+  const client = await sdk.connectRpc()
+  // Get the max block size from the node
+  const concensusParams = await client.chain.getConsensusParameters()
+  const maxBlockSizeBytes = concensusParams.content.maxBlockSizeBytes
+  let lengthGuess = outputs.length
+  while (NOTE_ENCRYPTED_SERIALIZED_SIZE_IN_BYTE * lengthGuess > maxBlockSizeBytes) {
+    lengthGuess--
+  }
+
+  console.log('Rough estimate of outputs fit in transaction: ', lengthGuess)
+  let options: CreateTransactionRequest = {
+    outputs: outputs.slice(0, lengthGuess),
+    account: 'DummyAccount',
+    feeRate: '200',
+  }
+  let response = await client.wallet.createTransaction(options)
+  let bytes = RawTransactionSerde.deserialize(
+    Buffer.from(response.content.transaction, 'hex'),
+  ).postedSize()
+  // keep recreating the transaction until it fits in the block
+  while (bytes > maxBlockSizeBytes) {
+    console.log(
+      `Transaction still too big, size (bytes): ${bytes}, trying ${lengthGuess - 1} outputs`,
+    )
+    lengthGuess--
+    options = {
+      outputs: outputs.slice(0, lengthGuess),
+      account: 'DummyAccount',
+      feeRate: '200',
+    }
+    response = await client.wallet.createTransaction(options)
+    bytes = RawTransactionSerde.deserialize(
+      Buffer.from(response.content.transaction, 'hex'),
+    ).postedSize()
+  }
+
+  // The greatest output number that creates a transaction with a byte size less than maxBlockSizeBytes
+  console.log(`Fit first ${lengthGuess} outputs in transaction, size (bytes): ${bytes}`)
+}
+```
+
+The corresponding console output:
+```
+Rough estimate of outputs fit in transaction:  1008
+Transaction still too big, size (bytes): 525177, trying 1007 outputs
+Transaction still too big, size (bytes): 524657, trying 1006 outputs
+Fit first 1006 outputs in transaction, size (bytes): 524137
+```
