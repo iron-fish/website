@@ -1,15 +1,17 @@
-import { readdirSync } from 'fs';
-import { GetStaticPaths, GetStaticProps } from 'next';
-import path from 'path';
-import { MDXRenderer } from '@/lib/ui';
+import { readdirSync } from "fs";
+import { GetStaticPaths, GetStaticProps } from "next";
+import path from "path";
+import { MDXRenderer } from "@/lib/ui";
 import {
   getSidebarContent,
   parseFileByPath,
   renderMarkdown,
-} from '@/lib/markdown';
-import { ComponentProps } from 'react';
-import { DocumentationLayout } from '../../../layouts/Documentation/Documentation';
-import { sidebar } from '../../../content/whitepaper/sidebar';
+} from "@/lib/markdown";
+import { ComponentProps } from "react";
+import { DocumentationLayout } from "../../../layouts/Documentation/Documentation";
+import { sidebar } from "../../../content/whitepaper/sidebar";
+
+const CONTENT_DIR = ["content", "whitepaper"];
 
 type SidebarItems = Array<
   | {
@@ -31,7 +33,7 @@ type Props = {
     title?: string;
     description?: string;
   };
-  markdown: ComponentProps<typeof MDXRenderer>['markdown'];
+  markdown: ComponentProps<typeof MDXRenderer>["markdown"];
   sidebarItems: SidebarItems;
 };
 
@@ -46,20 +48,16 @@ export default function DocumentationPage({
       frontMatter={frontMatter}
       markdown={markdown}
       sidebarItems={sidebarItems}
-      slug={slug}
+      githubPath={CONTENT_DIR.join("/") + `/${slug}.mdx`}
     />
   );
 }
 
-const CONTENT_PATH = path.join(
-  process.cwd(),
-  'content',
-  'whitepaper'
-);
+const CONTENT_PATH = path.join(process.cwd(), ...CONTENT_DIR);
 
 export const getStaticProps: GetStaticProps<Props> = async ({ params }) => {
-  if (!params || typeof params.slug !== 'string') {
-    throw new Error('Slug must be a string');
+  if (!params || typeof params.slug !== "string") {
+    throw new Error("Slug must be a string");
   }
 
   const { frontMatter, content } = parseFileByPath(
@@ -76,7 +74,7 @@ export const getStaticProps: GetStaticProps<Props> = async ({ params }) => {
       sidebarItems: getSidebarContent(
         sidebar,
         CONTENT_PATH,
-        '/learn/whitepaper'
+        "/learn/whitepaper"
       ),
     },
   };
@@ -84,9 +82,9 @@ export const getStaticProps: GetStaticProps<Props> = async ({ params }) => {
 
 export const getStaticPaths: GetStaticPaths<{ slug: string }> = async () => {
   const paths = readdirSync(CONTENT_PATH)
-    .filter((item) => item.endsWith('.mdx'))
+    .filter((item) => item.endsWith(".mdx"))
     .map((item) => {
-      const slug = item.replace(/\.mdx?$/, '');
+      const slug = item.replace(/\.mdx?$/, "");
       return {
         params: {
           slug,

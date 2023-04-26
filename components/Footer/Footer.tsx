@@ -33,7 +33,15 @@ export function Footer() {
       <Box mb={24}>
         <Logo />
       </Box>
-      <Text fontSize="36px" maxW="25ch" mb={8} fontFamily="FavoritExtendedIf">
+      <Text
+        fontSize={{
+          base: "24px",
+          lg: "36px",
+        }}
+        maxW="25ch"
+        mb={8}
+        fontFamily="FavoritExtendedIf"
+      >
         {formatMessage(messages.newsletter)}
       </Text>
       <Box mb={24} display="flex" w="100%" justifyContent="flex-start">
@@ -155,7 +163,14 @@ export function Footer() {
         <HStack
           alignItems="center"
           flexGrow={1}
-          justifyContent="flex-end"
+          justifyContent={{
+            base: "space-between",
+            lg: "flex-end",
+          }}
+          w={{
+            base: "100%",
+            lg: "auto",
+          }}
           gap={{
             base: 4,
             md: 16,
