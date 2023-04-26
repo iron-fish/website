@@ -10,7 +10,7 @@ import Link from 'next/link';
 import { ReactNode } from 'react';
 import { defineMessages, useIntl } from 'react-intl';
 import { useIsClient } from 'usehooks-ts';
-import { WalletUIImage } from '../../WalletUIImage/WalletUIImage';
+import { NodeAppUIImage } from '../../NodeAppUIImage/NodeAppImage';
 
 const messages = defineMessages({
   heading: {
@@ -58,7 +58,7 @@ export function UseCase() {
           {formatMessage(messages.description)}
         </Text>
         <HStack justifyContent="center" gap={8}>
-          <FancyLink href="/use/wallet" color="pink.400">
+          <FancyLink href="/use/node-app" color="pink.400">
             The App
           </FancyLink>
           <FancyLink href="/use/get-started" color="green.400">
@@ -66,7 +66,7 @@ export function UseCase() {
           </FancyLink>
         </HStack>
       </Container>
-      {isClient && <WalletUIImage />}
+      {isClient && <NodeAppUIImage />}
     </Box>
   );
 }

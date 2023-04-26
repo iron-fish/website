@@ -5,8 +5,8 @@ import {
   SidebarMenu,
   MDXRenderer,
   useBreakpointValue,
-} from '@/lib/ui';
-import { ComponentProps } from 'react';
+} from "@/lib/ui";
+import { ComponentProps } from "react";
 
 type SidebarItems = Array<
   | {
@@ -28,7 +28,7 @@ type Props = {
     title?: string;
     description?: string;
   };
-  markdown: ComponentProps<typeof MDXRenderer>['markdown'];
+  markdown: ComponentProps<typeof MDXRenderer>["markdown"];
   sidebarItems: SidebarItems;
   sidebarWidth?: string;
 };
@@ -37,7 +37,7 @@ export function DocumentationLayout({
   frontMatter,
   markdown,
   sidebarItems,
-  sidebarWidth = '235px',
+  sidebarWidth = "235px",
 }: Props) {
   const showOnThisPage = useBreakpointValue({
     base: false,
@@ -46,7 +46,7 @@ export function DocumentationLayout({
   return (
     <Grid
       templateColumns={{
-        base: '100%',
+        base: "100%",
         md: `${sidebarWidth} 1fr`,
         xl: `${sidebarWidth} auto ${sidebarWidth}`,
       }}

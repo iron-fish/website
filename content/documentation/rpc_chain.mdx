@@ -1,7 +1,29 @@
 ---
-title: RPC Chain commands
+title: Chain RPCs
 description: RPC Chain | Iron Fish Documentation
 ---
+
+## [chain/broadcastTransaction](https://github.com/iron-fish/ironfish/blob/master/ironfish/src/rpc/routes/chain/broadcastTransaction.ts)
+
+Broadcast a fully built, serialized transaction to the node's peers. This is useful for broadcasting custom built transactions.
+
+This is a one time broadcast. The transaction will not be rebroadcasted automatically like it would if it were created in the wallet.
+
+#### Request
+
+```js
+{
+  transaction: string
+}
+```
+
+#### Response
+
+```js
+{
+  hash: string
+}
+```
 
 ## [chain/estimateFeeRate](https://github.com/iron-fish/ironfish/blob/master/ironfish/src/rpc/routes/chain/estimateFeeRate.ts)
 
@@ -53,7 +75,7 @@ undefined
 }
 ```
 
-## [chain/exportChain](https://github.com/iron-fish/ironfish/blob/master/ironfish/src/rpc/routes/chain/exportChain.ts)
+## [chain/exportChainStream](https://github.com/iron-fish/ironfish/blob/master/ironfish/src/rpc/routes/chain/exportChain.ts)
 
 Exports the chain as a stream of blocks. 
 
@@ -90,7 +112,7 @@ stop will be returned.
 }
 ```
 
-## [chain/followChain](https://github.com/iron-fish/ironfish/blob/master/ironfish/src/rpc/routes/chain/followChain.ts)
+## [chain/followChainStream](https://github.com/iron-fish/ironfish/blob/master/ironfish/src/rpc/routes/chain/followChain.ts)
 
 Follows the chain from a given sequence and streams blocks from chain connects and disconnects
 
@@ -124,8 +146,12 @@ Follows the chain from a given sequence and streams blocks from chain connects a
       hash: string
       size: number
       fee: number
-      notes: Array<{ commitment: string }>
-      spends: Array<{ nullifier: string }>
+      notes: Array<{ 
+        commitment: string 
+      }>
+      spends: Array<{ 
+        nullifier: string 
+      }>
       mints: Array<{
         id: string
         metadata: string
@@ -335,6 +361,36 @@ undefined
 }
 ```
 
+## [chain/getNoteWitness](https://github.com/iron-fish/ironfish/blob/master/ironfish/src/rpc/routes/chain/getNoteWitness.ts)
+
+Gets a witness (merkle path) to a specified note in the note merkle tree.
+This witness is necessary for creating a transaction that spends the note.
+
+This endpoint would primarily be used to construct transactions without using the Iron Fish wallet.
+The returned `treeSize` and `rootHash` values will always reference the note merkle tree state at the current HEAD of the chain.
+If the chain experiences a re-org and the referenced HEAD moves to a fork, this witness will no longer be usable in a transaction.
+
+#### Request
+
+```js
+{
+  index: number
+}
+```
+
+#### Response
+
+```js
+{
+  treeSize: number
+  rootHash: string
+  authPath: Array<{
+    side: 'Left' | 'Right'
+    hashOfSibling: string
+  }>
+}
+```
+
 ## [chain/getTransaction](https://github.com/iron-fish/ironfish/blob/master/ironfish/src/rpc/routes/chain/getTransaction.ts)
 
 Gets a transaction from a block hash and transaction hash
@@ -354,18 +410,28 @@ Gets a transaction from a block hash and transaction hash
 {
   fee: string
   expiration: number
+  noteSize: number
   notesCount: number
   spendsCount: number
   signature: string
-  notesEncrypted: string[]
-  mints: {
+  notes: Array<{
+    hash: string
+    serialized: string
+  }>
+  spends: Array<{
+    nullifier: string
+    commitment: string
+    size: number
+  }>
+  mints: Array<{
     assetId: string
     value: string
-  }[]
-  burns: {
+  }>
+  burns: Array<{
     assetId: string
     value: string
-  }[]
+  }>
+  notesEncrypted: string[] // Deprecated: use `notes` instead
 }
 ```
 
@@ -395,26 +461,27 @@ Streams transactions from a head sequence given an incoming view key
     sequence: number
     timestamp: number
   }
-  transactions: {
+  transactions: Array<{
     hash: string
     isMinersFee: boolean
-    notes: {
+    notes: Array<{
       assetId: string
       assetName: string
+      hash: string
       value: string
       memo: string
-    }[]
-    mints: {
+    }>
+    mints: Array<{
       assetId: string
       assetName: string
       value: string
-    }[]
-    burns: {
+    }>
+    burns: Array<{
       assetId: string
       assetName: string
       value: string
-    }[]
-  }[]
+    }>
+  }>
 }
 ```
 
@@ -438,31 +505,5 @@ If stop and stop values are provided, only the blocks between the start and stop
 ```js
 {
   content: string[]
-}
-```
-
-
-## [chain/getNoteWitness](https://github.com/iron-fish/ironfish/blob/master/ironfish/src/rpc/routes/chain/getNoteWitness.ts) 
-
-Returns a witness (merkle path) to a specified note in the note merkle tree. This witness is necessary for creating a transaction that spends the note. This endpoint would primarily be used to construct transactions without using the Iron Fish wallet. The returned `treeSize` and `rootHash` values will always reference the note merkle tree state at the current HEAD of the chain. If the chain experiences a re-org and the referenced HEAD moves to a fork, this witness will no longer be usable in a transaction.
-
-#### Request
-
-```js
-{
-  index: number
-}
-```
-
-#### Response
-
-```js
-{
-  treeSize: number
-  rootHash: string
-  authPath: {
-    side: 'Left' | 'Right'
-    hashOfSibling: string
-  }[]
 }
 ```

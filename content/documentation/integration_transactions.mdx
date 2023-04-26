@@ -1,0 +1,80 @@
+---
+title: Creating Transactions
+description: Integration Guide | Creating Transactions | Iron Fish Documentation
+---
+
+### Creating a Transaction
+
+Once your account has some assets, you can create transactions to spend notes
+and transfer assets.
+
+### Creating Raw Transactions
+
+[Raw Transactions](/use/get-started/glossary#Raw-Transactions) contain all the
+parameters needed to create a transaction on the Iron Fish chain. These include
+notes to spend, output notes with recipients, assets to mint, assets to burn,
+and a transaction fee. The Iron Fish RPC server can be used to create raw
+transactions (see docs
+[here](/developers/documentation/rpc_wallet#createTransaction)):
+
+```js
+async function main(): Promise<void> {
+  const sdk = await IronfishSdk.init({ dataDir: '~/.dev0' });
+  const client = await sdk.connectRpc();
+
+  const from = '<sending account>';
+  const to = '<recipient public address>';
+  const assetId = '<optional asset identifier'>;
+  const amount = '<amount>';
+  const memo = '<memo>';
+  const fee = <fee>;
+  const expiration = <expiration sequence>;
+  const confirmations = <confirmations>;
+
+  const options = {
+    account: from,
+    outputs: [
+      {
+        publicAddress: to,
+        amount: CurrencyUtils.encode(amount),
+        memo,
+        assetId,
+      },
+    ],
+    fee: CurrencyUtils.encode(flags.fee),
+    expiration,
+    confirmations,
+  };
+
+  const response = await client.createTransaction(options);
+  console.log(response);
+}
+```
+
+### Posting Transactions
+
+After raw transactions are created, they must be posted in order to be added to
+the mempool and broadcasted to the network (see docs
+[here](/developers/documentation/rpc_wallet#postTransaction)):
+
+```js
+async function main(): Promise<void> {
+  const sdk = await IronfishSdk.init({ dataDir: '~/.dev0' });
+  const client = await sdk.connectRpc();
+
+  const from = '<sending account>';
+  // RawTransactionSerde.serialize(rawTransaction).toString('hex')
+  const transaction = '<serialized raw transaction>';
+  // Optionally broadcast to network
+  const broadcast = true;
+
+  const options = {
+    account: from,
+    transaction,
+    broadcast,
+  };
+
+  const response = await client.postTransaction(options);
+  console.log(response);
+}
+```

@@ -1,21 +1,32 @@
-import { SidebarDefinition } from '@/lib/markdown';
+import { SidebarDefinition } from "@/lib/markdown";
 
 export const sidebar: SidebarDefinition = [
   {
-    label: 'RPC API Reference',
+    label: "RPC API Reference",
     items: [
-      'rpc_chain',
-      'rpc_config',
-      'rpc_event',
-      'rpc_faucet',
-      'rpc_mempool',
-      'rpc_miner',
-      'rpc_node',
-      'rpc_peer',
-      'rpc_rpc',
-      'rpc_wallet',
-      'rpc_worker',
+      "rpc_chain",
+      "rpc_config",
+      "rpc_event",
+      "rpc_faucet",
+      "rpc_mempool",
+      "rpc_miner",
+      "rpc_node",
+      "rpc_peer",
+      "rpc_rpc",
+      "rpc_wallet",
+      "rpc_worker",
     ],
   },
-  'offline-transaction-signing',
+  {
+    label: "Integration Guide",
+    items: [
+      "integration_local",
+      "integration_rpc",
+      "integration_keys",
+      "integration_transactions",
+      "integration_deposits",
+      "integration_combining_notes",
+    ],
+  },
+  "offline-transaction-signing",
 ];

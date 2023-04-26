@@ -37,13 +37,13 @@ export const messages = defineMessages({
     id: 'nav.getStartedDescription',
     defaultMessage: 'Everything you need to start using Iron Fish.',
   },
-  walletTitle: {
-    id: 'nav.walletTitle',
-    defaultMessage: 'Wallet',
+  nodeAppTitle: {
+    id: 'nav.nodeAppTitle',
+    defaultMessage: 'Node App',
   },
-  walletDescription: {
-    id: 'nav.walletDescription',
-    defaultMessage: 'Download our desktop wallet application.',
+  nodeAppDescription: {
+    id: 'nav.nodeAppDescription',
+    defaultMessage: 'Download our desktop node application.',
   },
   blockExplorerTitle: {
     id: 'nav.blockExplorerTitle',

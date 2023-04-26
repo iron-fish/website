@@ -1,11 +1,15 @@
 ---
-title: RPC Faucet commands
+title: Faucet RPCs
 description: RPC Faucet | Iron Fish Documentation
 ---
 
-## faucet/getFunds
+## [faucet/getFunds](https://github.com/iron-fish/ironfish/blob/master/ironfish/src/rpc/routes/faucet/getFunds.ts)
 
-Submits a request to get funds from the faucet for an account
+**THIS ENDPOINT IS ONLY AVAILABLE ON TESTNET**
+
+Submits a request to get funds from the faucet for an account.
+
+If an account is not provided, the default account on the node will be used.
 
 #### Request
 

@@ -20,7 +20,7 @@ const sections = [
   {
     heading: "Brand Colors",
     description:
-      "The Iron Fish logo and mark should have at minimum 32px of spacing between it and other elements.",
+      "Our brand colors are chosen to be fun, playful and dynamic. Our main colors are pink, green and blue.",
     figure: <Colors />,
   },
   {

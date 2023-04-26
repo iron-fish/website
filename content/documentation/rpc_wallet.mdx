@@ -1,11 +1,13 @@
 ---
-title: RPC Wallet commands
+title: Wallet RPCs
 description: RPC Wallet | Iron Fish Documentation
 ---
 
-## wallet/addTransaction
+## [wallet/addTransaction](https://github.com/iron-fish/ironfish/blob/master/ironfish/src/rpc/routes/wallet/addTransaction.ts)
 
-Takes in a posted transaction, adds it to the wallet and mempool, and optionally broadcasts it to the network. Returns the names of the wallet accounts involved in the transaction.
+Takes in a posted transaction, adds it to the wallet and mempool, and optionally broadcasts it to the network. 
+
+Returns the names of the wallet accounts involved in the transaction.
 
 #### Request
 
@@ -24,7 +26,7 @@ Takes in a posted transaction, adds it to the wallet and mempool, and optionally
 }
 ```
 
-## wallet/burnAsset
+## [wallet/burnAsset](https://github.com/iron-fish/ironfish/blob/master/ironfish/src/rpc/routes/wallet/burnAsset.ts)
 
 Creates a transaction burning a custom asset from a given account, posts the transaction, and submits it to the wallet, mempool, and network.
 
@@ -53,9 +55,9 @@ Creates a transaction burning a custom asset from a given account, posts the tra
 }
 ```
 
-## wallet/create
+## [wallet/create](https://github.com/iron-fish/ironfish/blob/master/ironfish/src/rpc/routes/wallet/create.ts)
 
-Creates a new account in the wallet with the given name, optionally setting it as the default account.
+Creates a new account in the wallet with the given name and optionally sets it as the default account.
 
 #### Request
 
@@ -76,36 +78,43 @@ Creates a new account in the wallet with the given name, optionally setting it a
 }
 ```
 
-## wallet/createTransaction
+## [wallet/createTransaction](https://github.com/iron-fish/ironfish/blob/master/ironfish/src/rpc/routes/wallet/createTransaction.ts)
 
-Creates and returns a new transaction with the given parameters, but doesn't post it (as such, it's also not added to the wallet, mempool, or broadcast to the network). This allows for the transaction to be posted using spending keys stored on a different node.
+Creates a raw transaction that is not posted.
+
+This allows for the transaction to be posted using spending keys stored on a different node.
+
+Creating a raw transaction does not require a spend key. They are not added to the wallet, mempool, or broadcast. The notes used in a raw transaction are not marked as spent.
+
+The `notes` parameter is an optional list of hex strings of the hashes of notes to spend in the transaction.
 
 #### Request
 
 ```js
 {
   account: string
-  outputs: {
+  outputs: Array<{
     publicAddress: string
     amount: string
     memo: string
     assetId?: string
-  }[]
-  mints?: {
+  }>
+  mints?: Array<{
     assetId?: string
     name?: string
     metadata?: string
     value: string
-  }[]
-  burns?: {
+  }>
+  burns?: Array<{
     assetId: string
     value: string
-  }[]
+  }>
   fee?: string | null
   feeRate?: string | null
   expiration?: number
   expirationDelta?: number
   confirmations?: number
+  notes?: Array<string>
 }
 ```
 
@@ -117,9 +126,11 @@ Creates and returns a new transaction with the given parameters, but doesn't pos
 }
 ```
 
-## wallet/exportAccount
+## [wallet/exportAccount](https://github.com/iron-fish/ironfish/blob/master/ironfish/src/rpc/routes/wallet/exportAccount.ts)
 
-Exports the keys to the default account, or the named account if specified. If `viewOnly` is true, the spending key will be null, but the spending key may also be null if exporting a view-only account.
+Exports the keys to the default account, or the named account if specified. 
+
+The `spendingKey` will be null in the response if `viewOnly = true` or if exporting a view-only account.
 
 #### Request
 
@@ -146,9 +157,9 @@ Exports the keys to the default account, or the named account if specified. If `
 }
 ```
 
-## wallet/getAccounts
+## [wallet/getAccounts](https://github.com/iron-fish/ironfish/blob/master/ironfish/src/rpc/routes/wallet/getAccounts.ts)
 
-Returns accounts in the wallet.
+Gets the names of the accounts in the wallet.
 
 #### Request
 
@@ -167,9 +178,9 @@ Returns accounts in the wallet.
 }
 ```
 
-## wallet/getAssets
+## [wallet/getAssets](https://github.com/iron-fish/ironfish/blob/master/ironfish/src/rpc/routes/wallet/getAssets.ts)
 
-Returns assets in the wallet.
+Streams all the assets in the wallet of the given account. If not specified, the assets of default account will be returned.
 
 #### Request
 
@@ -194,9 +205,10 @@ Returns assets in the wallet.
 }
 ```
 
-## wallet/getBalance
+## [wallet/getBalance](https://github.com/iron-fish/ironfish/blob/master/ironfish/src/rpc/routes/wallet/getBalance.ts)
 
-Returns the wallet balance for a given asset, or $IRON if none is specified.
+Gets the wallet balance for the given account and asset. If the account is not specified,
+the default account will be used. If the asset is not specified, `$IRON` will be used.
 
 #### Request
 
@@ -226,9 +238,9 @@ Returns the wallet balance for a given asset, or $IRON if none is specified.
 }
 ```
 
-## wallet/getBalances
+## [wallet/getBalances](https://github.com/iron-fish/ironfish/blob/master/ironfish/src/rpc/routes/wallet/getBalances.ts)
 
-Returns the wallet's $IRON balance, as well as balances of custom assets.
+Gets the wallet's `$IRON` balance, as well as balances of custom assets of the given account. If the account is not specified, the default account will be used.
 
 #### Request
 
@@ -244,7 +256,7 @@ Returns the wallet's $IRON balance, as well as balances of custom assets.
 ```js
 {
   account: string
-  balances: {
+  balances: Array<{
     assetId: string
     assetName: string
     assetOwner: string
@@ -256,13 +268,13 @@ Returns the wallet's $IRON balance, as well as balances of custom assets.
     available: string
     blockHash: string | null
     sequence: number | null
-  }[]
+  }>
 }
 ```
 
-## wallet/getDefaultAccount
+## [wallet/getDefaultAccount](https://github.com/iron-fish/ironfish/blob/master/ironfish/src/rpc/routes/wallet/getDefaultAccount.ts)
 
-Returns the wallet's default account.
+Gets the default account of the wallet.
 
 #### Request
 
@@ -280,9 +292,9 @@ Returns the wallet's default account.
 }
 ```
 
-## wallet/getAccountNotesStream
+## [wallet/getAccountNotesStream](https://github.com/iron-fish/ironfish/blob/master/ironfish/src/rpc/routes/wallet/getNotes.ts)
 
-Returns a stream of notes in an account.
+Streams the notes in the given account. If the account is not specified, the default account will be used.
 
 #### Request
 
@@ -301,14 +313,16 @@ Returns a stream of notes in an account.
   assetName: string
   memo: string
   sender: string
+  noteHash: string
   transactionHash: string
   spent: boolean | undefined
+  index: number | undefined
 }
 ```
 
-## wallet/getPublicKey
+## [wallet/getPublicKey](https://github.com/iron-fish/ironfish/blob/master/ironfish/src/rpc/routes/wallet/getPublicKey.ts)
 
-Returns an account's public key.
+Gets the public key of the given account. If the account is not specified, the default account will be used.
 
 #### Request
 
@@ -327,9 +341,9 @@ Returns an account's public key.
 }
 ```
 
-## wallet/getAccountsStatus
+## [wallet/getAccountStatus](https://github.com/iron-fish/ironfish/blob/master/ironfish/src/rpc/routes/wallet/getStatus.ts)
 
-Returns the status of an account or of all accounts if no account is provided.
+Gets the status of an account. If not specified, the status of all accounts are returned.
 
 #### Request
 
@@ -353,9 +367,9 @@ Returns the status of an account or of all accounts if no account is provided.
 }
 ```
 
-## wallet/getAccountTransaction
+## [wallet/getAccountTransaction](https://github.com/iron-fish/ironfish/blob/master/ironfish/src/rpc/routes/wallet/getTransactions.ts)
 
-Returns a transaction for an account.
+Gets a transaction for an account. If the account is not specified, the default account is used.
 
 #### Request
 
@@ -384,15 +398,34 @@ Returns a transaction for an account.
     mintsCount: number
     burnsCount: number
     timestamp: number
-    notes: RpcAccountDecryptedNote[]
-    assetBalanceDeltas: Array<{ assetId: string; assetName: string; delta: string }>
+    assetBalanceDeltas: Array<{ 
+      assetId: string
+      assetName: string
+      delta: string 
+    }>
+    notes: Array<{
+      isOwner: boolean
+      value: string
+      assetId: string
+      assetName: string
+      memo: string
+      sender: string
+      owner: string
+      spent: boolean
+      hash: string
+    }>
+    spends: Array<{
+      nullifier: string
+      commitment: string
+      size: number
+    }>
   } | null
 }
 ```
 
-## wallet/getAccountTransactions
+## [wallet/getAccountTransactions](https://github.com/iron-fish/ironfish/blob/master/ironfish/src/rpc/routes/wallet/getTransactions.ts)
 
-Returns transactions for an account. The default account is used if no account is provided.
+Gets transactions for the given account. If not specified, the default account is used.
 
 #### Request
 
@@ -404,6 +437,8 @@ Returns transactions for an account. The default account is used if no account i
   limit?: number
   offset?: number
   confirmations?: number
+  notes?: boolean
+  spends?: boolean
 }
 ```
 
@@ -421,13 +456,33 @@ Returns transactions for an account. The default account is used if no account i
   burnsCount: number
   expiration: number
   timestamp: number
-  assetBalanceDeltas: Array<{ assetId: string; assetName: string; delta: string }>
+  assetBalanceDeltas: Array<{ 
+    assetId: string
+    assetName: string
+    delta: string 
+  }>
+  notes: Array<{
+    isOwner: boolean
+    value: string
+    assetId: string
+    assetName: string
+    memo: string
+    sender: string
+    owner: string
+    spent: boolean
+    hash: string
+  }> | undefined
+  spends: Array<{
+    nullifier: string
+    commitment: string
+    size: number
+  }> | undefined
 }
 ```
 
-## wallet/importAccount
+## [wallet/importAccount](https://github.com/iron-fish/ironfish/blob/master/ironfish/src/rpc/routes/wallet/importAccount.ts)
 
-Imports an account to the wallet.
+Imports an account into the wallet.
 
 #### Request
 
@@ -456,7 +511,7 @@ Imports an account to the wallet.
 }
 ```
 
-## wallet/mintAsset
+## [wallet/mintAsset](https://github.com/iron-fish/ironfish/blob/master/ironfish/src/rpc/routes/wallet/mintAsset.ts)
 
 Creates a transaction minting a custom asset from a given account, posts the transaction, and submits it to the wallet, mempool, and network.
 
@@ -487,9 +542,9 @@ Creates a transaction minting a custom asset from a given account, posts the tra
 }
 ```
 
-## wallet/postTransaction
+## [wallet/postTransaction](https://github.com/iron-fish/ironfish/blob/master/ironfish/src/rpc/routes/wallet/postTransaction.ts)
 
-Posts a transaction, submitting it to the wallet, mempool, and network if possible.
+Posts a transaction and submits it to the wallet, mempool, and network if possible.
 
 #### Request
 
@@ -509,7 +564,7 @@ Posts a transaction, submitting it to the wallet, mempool, and network if possib
 }
 ```
 
-## wallet/removeAccount
+## [wallet/remove](https://github.com/iron-fish/ironfish/blob/master/ironfish/src/rpc/routes/wallet/removeAccount.ts)
 
 Removes an account from the wallet.
 
@@ -531,9 +586,9 @@ Removes an account from the wallet.
 }
 ```
 
-## wallet/rescanAccount
+## [wallet/rescanAccount](https://github.com/iron-fish/ironfish/blob/master/ironfish/src/rpc/routes/wallet/rescanAccount.ts)
 
-Rescans an account in the wallet, updating the balance and available notes.
+Rescans an account in the wallet and updates the balance and available notes.
 
 #### Request
 
@@ -554,7 +609,7 @@ Rescans an account in the wallet, updating the balance and available notes.
 }
 ```
 
-## wallet/sendTransaction
+## [wallet/sendTransaction](https://github.com/iron-fish/ironfish/blob/master/ironfish/src/rpc/routes/wallet/sendTransaction.ts)
 
 Creates a transaction, posts the transaction, and submits it to the wallet, mempool, and network.
 
@@ -586,9 +641,9 @@ Creates a transaction, posts the transaction, and submits it to the wallet, memp
 }
 ```
 
-## wallet/useAccount
+## [wallet/useAccount](https://github.com/iron-fish/ironfish/blob/master/ironfish/src/rpc/routes/wallet/useAccount.ts)
 
-Sets an account as the wallet's default account.
+Sets an account as the default account of the wallet.
 
 #### Request
 
