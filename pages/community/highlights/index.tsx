@@ -1,9 +1,9 @@
-import { readdirSync } from 'fs';
-import path from 'path';
-import Link from 'next/link';
-import { GetStaticProps } from 'next';
-import { parseFileByPath } from '@/lib/markdown';
-import { format, parse } from 'date-fns';
+import { readdirSync } from "fs";
+import path from "path";
+import Link from "next/link";
+import { GetStaticProps } from "next";
+import { parseFileByPath } from "@/lib/markdown";
+import { format, parse } from "date-fns";
 import {
   Box,
   Container,
@@ -20,12 +20,12 @@ import {
   ArrowButton,
   FancyArrowUpRight,
   chakra,
-} from '@/lib/ui';
-import { useState } from 'react';
+} from "@/lib/ui";
+import { useState } from "react";
 
-import love from '../../../assets/heroImages/community-highlights/love.svg';
-import rainbow from '../../../assets/heroImages/community-highlights/rainbow.svg';
-import quatro from '../../../assets/heroImages/community-highlights/quatro.svg';
+import love from "../../../assets/heroImages/community-highlights/love.svg";
+import rainbow from "../../../assets/heroImages/community-highlights/rainbow.svg";
+import quatro from "../../../assets/heroImages/community-highlights/quatro.svg";
 
 type BlogItem = {
   title: string;
@@ -55,44 +55,44 @@ export default function CommunityHighlights({ blogItems }: Props) {
       <Hero
         bg="green.400"
         heading="Community Highlights"
-        subheading="Where ideas find expression."
+        subheading="Where ideas find expression"
         description="Get to know our fun-loving, engaged community members and discover the memes, instructional videos, and articles they've made."
         images={
           <>
             <HeroImageUtil
               image={loveImage}
               top={{
-                md: '10px',
-                xl: '20px',
+                md: "10px",
+                xl: "20px",
               }}
               left={{
-                md: '-120px',
-                xl: '30px',
-                '2xl': `calc(50vw - 700px)`,
+                md: "-120px",
+                xl: "30px",
+                "2xl": `calc(50vw - 700px)`,
               }}
             />
             <HeroImageUtil
               image={rainbowImage}
               bottom={{
-                md: '-80px',
-                xl: '15px',
+                md: "-80px",
+                xl: "15px",
               }}
               left={{
-                md: '-50px',
-                xl: '-20px',
-                '2xl': `calc(50vw - 850px)`,
+                md: "-50px",
+                xl: "-20px",
+                "2xl": `calc(50vw - 850px)`,
               }}
             />
             <HeroImageUtil
               image={quatroImage}
               top={{
-                md: '-10px',
-                xl: '85px',
+                md: "-10px",
+                xl: "85px",
               }}
               right={{
-                md: '-120px',
-                xl: '-20px',
-                '2xl': `calc(50vw - 700px)`,
+                md: "-120px",
+                xl: "-20px",
+                "2xl": `calc(50vw - 700px)`,
               }}
             />
           </>
@@ -110,24 +110,24 @@ export default function CommunityHighlights({ blogItems }: Props) {
         <Text
           textStyle="h5"
           my={{
-            base: '50px',
-            md: '100px',
-            lg: '150px',
+            base: "50px",
+            md: "100px",
+            lg: "150px",
           }}
           textAlign="center"
           maxW="container.md"
           mx="auto"
         >
-          The creative output, passion, and commitment of our community{' '}
+          The creative output, passion, and commitment of our community{" "}
           <ThickLink underlineColor="green.400">drives our project</ThickLink>.
           Explore the interviews and community-production that bring ideas to
           life:
         </Text>
         <Grid
           templateColumns={{
-            base: '100%',
-            lg: 'repeat(2, 1fr)',
-            xl: 'repeat(3, 1fr)',
+            base: "100%",
+            lg: "repeat(2, 1fr)",
+            xl: "repeat(3, 1fr)",
           }}
           gap={6}
         >
@@ -153,7 +153,7 @@ export default function CommunityHighlights({ blogItems }: Props) {
                       size="sm"
                       bg="white"
                       _hover={{
-                        bg: 'gray.200',
+                        bg: "gray.200",
                       }}
                     >
                       <chakra.span mr={1}>View</chakra.span>
@@ -181,15 +181,11 @@ export default function CommunityHighlights({ blogItems }: Props) {
   );
 }
 
-const CONTENT_PATH = path.join(
-  process.cwd(),
-  'content',
-  'blog'
-);
+const CONTENT_PATH = path.join(process.cwd(), "content", "blog");
 
 export const getStaticProps: GetStaticProps<Props> = async ({ params }) => {
   const blogItems = readdirSync(CONTENT_PATH)
-    .filter((item) => item.endsWith('.mdx'))
+    .filter((item) => item.endsWith(".mdx"))
     .map((item, i) => {
       const builtPath = path.join(CONTENT_PATH, item);
       const { frontMatter } = parseFileByPath(builtPath);
@@ -201,19 +197,19 @@ export const getStaticProps: GetStaticProps<Props> = async ({ params }) => {
       }
 
       const image =
-        typeof frontMatter.image === 'string' ? frontMatter.image : null;
+        typeof frontMatter.image === "string" ? frontMatter.image : null;
 
       return {
         title: frontMatter.title as string,
-        slug: item.replace(/\.mdx?$/, ''),
-        date: format(parse(date, 'yyyy-MM-dd', new Date()), 'MMMM dd, yyyy'),
-        timestamp: parse(date, 'yyyy-MM-dd', new Date()).valueOf(),
+        slug: item.replace(/\.mdx?$/, ""),
+        date: format(parse(date, "yyyy-MM-dd", new Date()), "MMMM dd, yyyy"),
+        timestamp: parse(date, "yyyy-MM-dd", new Date()).valueOf(),
         image,
         id: i,
         tags: frontMatter.tags,
       };
     })
-    .filter((item) => item.tags.includes('community-highlight'))
+    .filter((item) => item.tags.includes("community-highlight"))
     .sort((a, b) => {
       return a.timestamp > b.timestamp ? -1 : 1;
     });
