@@ -1,18 +1,18 @@
-import { Box, BoxProps } from '@chakra-ui/react';
+import { Box, BoxProps, ChakraComponent } from "@chakra-ui/react";
 
 type Props = {
   children: React.ReactNode;
-  shadowColor?: BoxProps['bg'];
+  shadowColor?: BoxProps["bg"];
   offset?: string;
-} & Omit<BoxProps, 'children'>;
+} & Omit<BoxProps, "children">;
 
-export function ShadowBox({
+export const ShadowBox: ChakraComponent<"div", Props> = ({
   children,
-  shadowColor = 'pink.500',
-  offset = '6px',
-  borderRadius = '1.5px',
+  shadowColor = "pink.500",
+  offset = "6px",
+  borderRadius = "1.5px",
   ...rest
-}: Props) {
+}: Props) => {
   return (
     <Box
       position="relative"
@@ -44,4 +44,4 @@ export function ShadowBox({
       </Box>
     </Box>
   );
-}
+};
