@@ -54,12 +54,26 @@ const DEFAULT_TEXT_PROPS = {
 
 const rendererComponents: ComponentProps<typeof MDXRemote>["components"] = {
   h1: (props) => (
-    <HeadingWithAnchor {...props} fontSize="2xl" my="8" fontWeight="medium" />
+    <HeadingWithAnchor
+      {...props}
+      as="h1"
+      fontSize="2xl"
+      my="8"
+      fontWeight="medium"
+    />
   ),
-  h2: (props) => <HeadingWithAnchor {...props} fontSize="3xl" mt="12" mb="6" />,
-  h3: (props) => <HeadingWithAnchor {...props} fontSize="2xl" mt="12" mb="6" />,
-  h4: (props) => <HeadingWithAnchor {...props} fontSize="xl" my="4" />,
-  h5: (props) => <HeadingWithAnchor {...props} fontSize="lg" my="4" />,
+  h2: (props) => (
+    <HeadingWithAnchor {...props} as="h2" fontSize="3xl" mt="12" mb="6" />
+  ),
+  h3: (props) => (
+    <HeadingWithAnchor {...props} as="h3" fontSize="2xl" mt="10" mb="6" />
+  ),
+  h4: (props) => (
+    <HeadingWithAnchor {...props} as="h4" fontSize="xl" mt="8" mb="4" />
+  ),
+  h5: (props) => (
+    <HeadingWithAnchor {...props} as="h5" fontSize="lg" mt="8" mb="4" />
+  ),
   p: (props) => <Text {...props} mb="6" {...DEFAULT_TEXT_PROPS} />,
   ul: (props) => (
     <UnorderedList
