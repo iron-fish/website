@@ -1,0 +1,27 @@
+---
+title: chain/showChain
+description: RPC Chain | Iron Fish Documentation
+---
+
+Renders the entire chain.
+
+If stop and stop values are provided, only the blocks between the start and stop sequences will be shown.
+
+#### Request
+
+```js
+{
+  start?: number | null
+  stop?: number | null
+} | undefined
+```
+
+#### Response
+
+```js
+{
+  content: string[]
+}
+```
+
+### [View on Github](https://github.com/iron-fish/ironfish/blob/master/ironfish/src/rpc/routes/chain/showChain.ts)

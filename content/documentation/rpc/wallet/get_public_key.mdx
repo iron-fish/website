@@ -1,0 +1,25 @@
+---
+title: wallet/getPublicKey
+description: RPC Wallet | Iron Fish Documentation
+---
+
+Gets the public key of the given account. If the account is not specified, the default account will be used.
+
+#### Request
+
+```js
+{
+  account?: string
+}
+```
+
+#### Response
+
+```js
+{
+  account: string;
+  publicKey: string;
+}
+```
+
+### [View on Github](https://github.com/iron-fish/ironfish/blob/master/ironfish/src/rpc/routes/wallet/getPublicKey.ts)

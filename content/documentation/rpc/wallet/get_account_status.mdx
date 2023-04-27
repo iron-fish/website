@@ -1,0 +1,30 @@
+---
+title: wallet/getAccountsStatus
+description: RPC Wallet | Iron Fish Documentation
+---
+
+Gets the status of an account. If not specified, the status of all accounts are returned.
+
+#### Request
+
+```js
+{
+  account?: string
+}
+```
+
+#### Response
+
+```js
+{
+  accounts: Array<{
+    name: string
+    id: string
+    headHash: string
+    headInChain: boolean
+    sequence: string | number
+  }>
+}
+```
+
+### [View on Github](https://github.com/iron-fish/ironfish/blob/master/ironfish/src/rpc/routes/wallet/getStatus.ts)

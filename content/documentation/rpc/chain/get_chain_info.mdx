@@ -1,0 +1,34 @@
+---
+title: chain/getChainInfo
+description: RPC Chain | Iron Fish Documentation
+---
+
+Gets information about the node's chain
+
+#### Request
+
+```js
+undefined;
+```
+
+#### Response
+
+```js
+{
+  currentBlockIdentifier: {
+    index: string;
+    hash: string;
+  }
+  genesisBlockIdentifier: {
+    index: string;
+    hash: string;
+  }
+  oldestBlockIdentifier: {
+    index: string;
+    hash: string;
+  }
+  currentBlockTimestamp: number;
+}
+```
+
+### [View on Github](https://github.com/iron-fish/ironfish/blob/master/ironfish/src/rpc/routes/chain/getChainInfo.ts)

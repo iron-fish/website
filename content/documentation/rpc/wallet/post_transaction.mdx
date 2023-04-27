@@ -1,0 +1,26 @@
+---
+title: wallet/postTransaction
+description: RPC Wallet | Iron Fish Documentation
+---
+
+Posts a transaction and submits it to the wallet, mempool, and network if possible.
+
+#### Request
+
+```js
+{
+  account?: string
+  transaction: string
+  broadcast?: boolean
+}
+```
+
+#### Response
+
+```js
+{
+  transaction: string;
+}
+```
+
+### [View on Github](https://github.com/iron-fish/ironfish/blob/master/ironfish/src/rpc/routes/wallet/postTransaction.ts)

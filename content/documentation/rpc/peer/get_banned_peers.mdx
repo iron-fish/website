@@ -1,0 +1,27 @@
+---
+title: peer/getBannedPeers
+description: RPC Peer | Iron Fish Documentation
+---
+
+Gets (and optionally streams) banned peers from the node's peer network
+
+#### Request
+
+```js
+{
+  stream?: boolean
+}
+```
+
+#### Response
+
+```js
+{
+  peers: Array<{
+    identity: string
+    reason: string
+  }>
+}
+```
+
+### [View on Github](https://github.com/iron-fish/ironfish/blob/master/ironfish/src/rpc/routes/peer/getBannedPeers.ts)

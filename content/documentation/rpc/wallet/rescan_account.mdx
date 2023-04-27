@@ -1,0 +1,27 @@
+---
+title: wallet/rescanAccount
+description: RPC Wallet | Iron Fish Documentation
+---
+
+Rescans an account in the wallet and updates the balance and available notes.
+
+#### Request
+
+```js
+{
+  follow?: boolean
+  from?: number
+}
+```
+
+#### Response
+
+```js
+{
+  sequence: number;
+  startedAt: number;
+  endSequence: number;
+}
+```
+
+### [View on Github](https://github.com/iron-fish/ironfish/blob/master/ironfish/src/rpc/routes/wallet/rescanAccount.ts)

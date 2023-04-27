@@ -1,0 +1,27 @@
+---
+title: wallet/create
+description: RPC Wallet | Iron Fish Documentation
+---
+
+Creates a new account in the wallet with the given name and optionally sets it as the default account.
+
+#### Request
+
+```js
+{
+  name: string
+  default?: boolean
+}
+```
+
+#### Response
+
+```js
+{
+  name: string;
+  publicAddress: string;
+  isDefaultAccount: boolean;
+}
+```
+
+### [View on Github](https://github.com/iron-fish/ironfish/blob/master/ironfish/src/rpc/routes/wallet/create.ts)

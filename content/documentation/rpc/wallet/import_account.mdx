@@ -1,0 +1,35 @@
+---
+title: wallet/importAccount
+description: RPC Wallet | Iron Fish Documentation
+---
+
+Imports an account into the wallet.
+
+#### Request
+
+```js
+{
+  account: {
+    version: number
+    name: string
+    spendingKey: string | undefined
+    viewKey: string
+    incomingViewKey: string
+    outgoingViewKey: string
+    publicAddress: string
+    createdAt: Date | undefined
+  }
+  rescan?: boolean
+}
+```
+
+#### Response
+
+```js
+{
+  name: string;
+  isDefaultAccount: boolean;
+}
+```
+
+### [View on Github](https://github.com/iron-fish/ironfish/blob/master/ironfish/src/rpc/routes/wallet/importAccount.ts)

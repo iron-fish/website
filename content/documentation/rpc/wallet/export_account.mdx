@@ -1,0 +1,35 @@
+---
+title: wallet/exportAccount
+description: RPC Wallet | Iron Fish Documentation
+---
+
+Exports the keys to the default account, or the named account if specified.
+
+The `spendingKey` will be null in the response if `viewOnly = true` or if exporting a view-only account.
+
+#### Request
+
+```js
+{
+  account?: string;
+  viewOnly?: boolean
+}
+```
+
+#### Response
+
+```js
+{
+  account: {
+    name: string;
+    spendingKey: string | null;
+    viewKey: string;
+    incomingViewKey: string;
+    outgoingViewKey: string;
+    publicAddress: string;
+    version: number;
+  }
+}
+```
+
+### [View on Github](https://github.com/iron-fish/ironfish/blob/master/ironfish/src/rpc/routes/wallet/exportAccount.ts)

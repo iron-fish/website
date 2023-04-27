@@ -1,0 +1,49 @@
+---
+title: chain/getBlock
+description: RPC Chain | Iron Fish Documentation
+---
+
+Gets a block from the chain from a given hash or sequence.
+
+One of hash or sequence must be provided.
+
+#### Request
+
+```js
+{
+  search?: string
+  hash?: string
+  sequence?: number
+  confirmations?: number
+}
+```
+
+#### Response
+
+```js
+{
+  block: {
+    graffiti: string
+    difficulty: string
+    hash: string
+    previousBlockHash: string
+    sequence: number
+    timestamp: number
+    noteSize: number
+    noteCommitment: string
+    transactions: Array<{
+      fee: string
+      hash: string
+      signature: string
+      notes: number
+      spends: number
+    }>
+  }
+  metadata: {
+    main: boolean
+    confirmed: boolean
+  }
+}
+```
+
+### [View on Github](https://github.com/iron-fish/ironfish/blob/master/ironfish/src/rpc/routes/chain/getBlock.ts)

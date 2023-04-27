@@ -1,0 +1,33 @@
+---
+title: wallet/burnAsset
+description: RPC Wallet | Iron Fish Documentation
+---
+
+Creates a transaction burning a custom asset from a given account, posts the transaction, and submits it to the wallet, mempool, and network.
+
+#### Request
+
+```js
+{
+  account: string
+  assetId: string
+  fee: string
+  value: string
+  expiration?: number
+  expirationDelta?: number
+  confirmations?: number
+}
+```
+
+#### Response
+
+```js
+{
+  assetId: string;
+  hash: string;
+  name: string;
+  value: string;
+}
+```
+
+### [View on Github](https://github.com/iron-fish/ironfish/blob/master/ironfish/src/rpc/routes/wallet/burnAsset.ts)

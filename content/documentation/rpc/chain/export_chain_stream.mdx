@@ -1,0 +1,41 @@
+---
+title: chain/exportChainStream
+description: RPC Chain | Iron Fish Documentation
+---
+
+Exports the chain as a stream of blocks.
+
+If the start and stop sequences are provided, only the blocks between the start and
+stop will be returned.
+
+#### Request
+
+```js
+{
+  start?: number | null
+  stop?: number | null
+} | undefined
+```
+
+#### Response
+
+```js
+{
+  start: number
+  stop: number
+  block?: {
+    hash: string
+    seq: number
+    prev: string
+    main: boolean
+    graffiti: string
+    timestamp: number
+    work: string
+    difficulty: string
+    head: boolean
+    latest: boolean
+  }
+}
+```
+
+### [View on Github](https://github.com/iron-fish/ironfish/blob/master/ironfish/src/rpc/routes/chain/exportChainStream.ts)
