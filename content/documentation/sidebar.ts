@@ -28,5 +28,6 @@ export const sidebar: SidebarDefinition = [
       "integration_combining_notes",
     ],
   },
+  "release-versioning",
   "offline-transaction-signing",
 ];
