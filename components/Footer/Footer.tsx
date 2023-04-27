@@ -36,7 +36,7 @@ export function Footer() {
       <Text
         fontSize={{
           base: "24px",
-          lg: "36px",
+          md: "36px",
         }}
         maxW="25ch"
         mb={8}
