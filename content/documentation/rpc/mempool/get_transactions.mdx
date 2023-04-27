@@ -3,8 +3,6 @@ title: mempool/getTransactions
 description: RPC Mempool GetTransactions | Iron Fish Documentation
 ---
 
-## [mempool/getTransactions](https://github.com/iron-fish/ironfish/blob/master/ironfish/src/rpc/routes/mempool/getTransactions.ts)
-
 Streams transactions from the mempool. Transactions are streamed in case there are a large number of transactions in the mempool.
 
 The `MinMax` type specifies the the minimum and maximum range of the input parameter to filter the returned transactions.
@@ -32,3 +30,5 @@ For example, `feeRate={min: 30; max:60}` specifies that only transactions with `
   expiresIn: number;
 }
 ```
+
+### [View on Github](https://github.com/iron-fish/ironfish/blob/master/ironfish/src/rpc/routes/mempool/getTransactions.ts)

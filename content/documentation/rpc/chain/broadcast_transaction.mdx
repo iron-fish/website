@@ -1,0 +1,26 @@
+---
+title: chain/broadcastTransaction
+description: RPC Chain | Iron Fish Documentation
+---
+
+Broadcast a fully built, serialized transaction to the node's peers. This is useful for broadcasting custom built transactions.
+
+This is a one time broadcast. The transaction will not be rebroadcasted automatically like it would if it were created in the wallet.
+
+#### Request
+
+```js
+{
+  transaction: string;
+}
+```
+
+#### Response
+
+```js
+{
+  hash: string;
+}
+```
+
+### [View on Github](https://github.com/iron-fish/ironfish/blob/master/ironfish/src/rpc/routes/chain/broadcastTransaction.ts)

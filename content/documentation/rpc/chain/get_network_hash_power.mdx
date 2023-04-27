@@ -1,0 +1,29 @@
+---
+title: chain/getNetworkHashPower
+description: RPC Chain | Iron Fish Documentation
+---
+
+Gets hash power from the chain from a sequence or block range.
+
+If no blocks are provided, the last 120 blocks will be used. If no sequence is provided, the head will be used.
+
+#### Request
+
+```js
+{
+  blocks?: number | null
+  sequence?: number | null
+}
+```
+
+#### Response
+
+```js
+{
+  hashesPerSecond: number;
+  blocks: number;
+  sequence: number;
+}
+```
+
+### [View on Github](https://github.com/iron-fish/ironfish/blob/master/ironfish/src/rpc/routes/chain/getNetworkHashPower.ts)

@@ -1,0 +1,60 @@
+---
+title: chain/followChainStream
+description: RPC Chain | Iron Fish Documentation
+---
+
+Follows the chain from a given sequence and streams blocks from chain connects and disconnects
+
+#### Request
+
+```js
+{
+  head?: string | null
+} | undefined
+```
+
+#### Response
+
+```js
+{
+  type: 'connected' | 'disconnected' | 'fork'
+  head: {
+    sequence: number
+  }
+  block: {
+    hash: string
+    sequence: number
+    previous: string
+    graffiti: string
+    difficulty: string
+    size: number
+    timestamp: number
+    work: string
+    main: boolean
+    transactions: Array<{
+      hash: string
+      size: number
+      fee: number
+      notes: Array<{
+        commitment: string
+      }>
+      spends: Array<{
+        nullifier: string
+      }>
+      mints: Array<{
+        id: string
+        metadata: string
+        name: string
+        owner: string
+        value: string
+      }>
+      burns: Array<{
+        id: string
+        value: string
+      }>
+    }>
+  }
+}
+```
+
+### [View on Github](https://github.com/iron-fish/ironfish/blob/master/ironfish/src/rpc/routes/chain/followChainStream.ts)

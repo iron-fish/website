@@ -1,0 +1,36 @@
+---
+title: miner/blockTemplateStream
+description: RPC Miner | Iron Fish Documentation
+---
+
+Streams block templates from the chain for mining blocks
+
+#### Request
+
+```js
+undefined;
+```
+
+#### Response
+
+```js
+{
+  header: {
+    sequence: number
+    previousBlockHash: string
+    noteCommitment: string
+    transactionCommitment: string
+    target: string
+    randomness: string
+    timestamp: number
+    graffiti: string
+  }
+  transactions: string[]
+  previousBlockInfo?: {
+    target: string
+    timestamp: number
+  }
+}
+```
+
+### [View on Github](https://github.com/iron-fish/ironfish/blob/master/ironfish/src/rpc/routes/miner/blockTemplateStream.ts)

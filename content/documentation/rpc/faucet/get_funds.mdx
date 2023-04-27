@@ -1,9 +1,7 @@
 ---
-title: Faucet RPCs
+title: faucet/getFunds
 description: RPC Faucet | Iron Fish Documentation
 ---
-
-## [faucet/getFunds](https://github.com/iron-fish/ironfish/blob/master/ironfish/src/rpc/routes/faucet/getFunds.ts)
 
 **THIS ENDPOINT IS ONLY AVAILABLE ON TESTNET**
 
@@ -16,7 +14,7 @@ If an account is not provided, the default account on the node will be used.
 ```js
 {
   account?: string
-  email?: string 
+  email?: string
 }
 ```
 
@@ -24,6 +22,8 @@ If an account is not provided, the default account on the node will be used.
 
 ```js
 {
-  id: string
+  id: string;
 }
 ```
+
+## [View on Github](https://github.com/iron-fish/ironfish/blob/master/ironfish/src/rpc/routes/faucet/getFunds.ts)

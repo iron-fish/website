@@ -1,0 +1,32 @@
+---
+title: peer/getPeerMessages
+description: RPC peer/getPeerMessages | Iron Fish Documentation
+---
+
+Gets (and optionally streams) peer messages from an identity
+
+#### Request
+
+```js
+{
+  identity: string
+  stream?: boolean
+}
+```
+
+#### Response
+
+```js
+{
+  brokeringPeerDisplayName?: string
+  direction: 'send' | 'receive'
+  message: {
+    payload: string
+    type: string
+  }
+  timestamp: number
+  type: 'WebSocket' | 'WebRtc'
+}
+```
+
+## [View on Github](https://github.com/iron-fish/ironfish/blob/master/ironfish/src/rpc/routes/peer/getPeerMessages.ts)

@@ -8,7 +8,64 @@ export const sidebar: SidebarDefinition = [
         label: "Chain",
         items: [
           {
-            id: "rpc/chain/rpc_chain"
+            id: "rpc/chain/broadcast_transaction",
+            label: "broadcastTransaction",
+          },
+          {
+            id: "rpc/chain/estimate_fee_rate",
+            label: "estimateFeeRate",
+          },
+          {
+            id: "rpc/chain/estimate_fee_rates",
+            label: "estimateFeeRates",
+          },
+          {
+            id: "rpc/chain/follow_chain_stream",
+            label: "followChainStream",
+          },
+          {
+            id: "rpc/chain/get_asset",
+            label: "getAsset",
+          },
+          {
+            id: "rpc/chain/get_block",
+            label: "getBlock",
+          },
+          {
+            id: "rpc/chain/get_chain_info",
+            label: "getChainInfo",
+          },
+          {
+            id: "rpc/chain/get_consensus_parameters",
+            label: "getConsensusParameters",
+          },
+          {
+            id: "rpc/chain/get_difficulty",
+            label: "getDifficulty",
+          },
+          {
+            id: "rpc/chain/get_network_hash_power",
+            label: "getNetworkHashPower",
+          },
+          {
+            id: "rpc/chain/get_network_info",
+            label: "getNetworkInfo",
+          },
+          {
+            id: "rpc/chain/get_note_witness",
+            label: "getNoteWitness",
+          },
+          {
+            id: "rpc/chain/get_transaction",
+            label: "getTransaction",
+          },
+          {
+            id: "rpc/chain/get_transaction_stream",
+            label: "getTransactionStream",
+          },
+          {
+            id: "rpc/chain/show_chain",
+            label: "showChain",
           },
         ],
       },
@@ -16,7 +73,20 @@ export const sidebar: SidebarDefinition = [
         label: "Config",
         items: [
           {
-            id: "rpc/config/rpc_config"
+            id: "rpc/config/get_config",
+            label: "getConfig",
+          },
+          {
+            id: "rpc/config/set_config",
+            label: "setConfig",
+          },
+          {
+            id: "rpc/config/unset_config",
+            label: "unsetConfig",
+          },
+          {
+            id: "rpc/config/upload_config",
+            label: "uploadConfig",
           },
         ],
       },
@@ -24,7 +94,8 @@ export const sidebar: SidebarDefinition = [
         label: "Event",
         items: [
           {
-            id: "rpc/event/rpc_event"
+            id: "rpc/event/on_gossip",
+            label: "onGossip",
           },
         ],
       },
@@ -32,7 +103,8 @@ export const sidebar: SidebarDefinition = [
         label: "Faucet",
         items: [
           {
-            id: "rpc/faucet/rpc_faucet"
+            id: "rpc/faucet/get_funds",
+            label: "getFunds",
           },
         ],
       },
@@ -53,7 +125,12 @@ export const sidebar: SidebarDefinition = [
         label: "Miner",
         items: [
           {
-            id: "rpc/miner/rpc_miner"
+            id: "rpc/miner/block_template_stream",
+            label: "blockTemplateStream",
+          },
+          {
+            id: "rpc/miner/submit_block",
+            label: "submitBlock",
           },
         ],
       },
@@ -61,7 +138,16 @@ export const sidebar: SidebarDefinition = [
         label: "Node",
         items: [
           {
-            id: "rpc/node/rpc_node"
+            id: "rpc/node/get_log_stream",
+            label: "getLogStream",
+          },
+          {
+            id: "rpc/node/get_status",
+            label: "getStatus",
+          },
+          {
+            id: "rpc/node/stop_node",
+            label: "stopNode",
           },
         ],
       },
@@ -69,7 +155,20 @@ export const sidebar: SidebarDefinition = [
         label: "Peer",
         items: [
           {
-            id: "rpc/peer/rpc_peer"
+            id: "rpc/peer/get_banned_peers",
+            label: "getBannedPeers",
+          },
+          {
+            id: "rpc/peer/get_peer",
+            label: "getPeer",
+          },
+          {
+            id: "rpc/peer/get_peers",
+            label: "getPeers",
+          },
+          {
+            id: "rpc/peer/get_peer_messages",
+            label: "getPeerMessages",
           },
         ],
       },
@@ -77,7 +176,8 @@ export const sidebar: SidebarDefinition = [
         label: "RPC",
         items: [
           {
-            id: "rpc/rpc/rpc_rpc"
+            id: "rpc/rpc/get_status",
+            label: "getStatus",
           },
         ],
       },
@@ -93,16 +193,20 @@ export const sidebar: SidebarDefinition = [
             label: "burnAsset",
           },
           {
-            id: "rpc/wallet/create_transaction",
-            label: "createTransaction",
-          },
-          {
             id: "rpc/wallet/create",
             label: "create",
           },
           {
+            id: "rpc/wallet/create_transaction",
+            label: "createTransaction",
+          },
+          {
             id: "rpc/wallet/export_account",
             label: "exportAccount",
+          },
+          {
+            id: "rpc/wallet/get_accounts",
+            label: "getAccounts",
           },
           {
             id: "rpc/wallet/get_account_notes_stream",
@@ -119,10 +223,6 @@ export const sidebar: SidebarDefinition = [
           {
             id: "rpc/wallet/get_account_transactions",
             label: "getAccountTransactions",
-          },
-          {
-            id: "rpc/wallet/get_accounts",
-            label: "getAccounts",
           },
           {
             id: "rpc/wallet/get_assets",
@@ -151,10 +251,6 @@ export const sidebar: SidebarDefinition = [
           {
             id: "rpc/wallet/mint_asset",
             label: "mintAsset",
-          },
-          {
-            id: "rpc/wallet/post_transaction",
-            label: "postTransaction",
           },
           {
             id: "rpc/wallet/post_transaction",

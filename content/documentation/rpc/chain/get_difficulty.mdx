@@ -1,0 +1,29 @@
+---
+title: chain/getDifficulty
+description: RPC Chain | Iron Fish Documentation
+---
+
+Gets block difficulty from a sequence.
+
+If no sequence is provided, the head will be used
+
+#### Request
+
+```js
+{
+  sequence?: number | null
+} | undefined
+
+```
+
+#### Response
+
+```js
+{
+  sequence: number;
+  hash: string;
+  difficulty: string;
+}
+```
+
+### [View on Github](https://github.com/iron-fish/ironfish/blob/master/ironfish/src/rpc/routes/chain/getDifficulty.ts)

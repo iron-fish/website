@@ -1,0 +1,45 @@
+---
+title: miner/submitBlock
+description: RPC Miner | Iron Fish Documentation
+---
+
+Submit a block template to the mining manager
+
+#### Request
+
+```js
+{
+  header: {
+    sequence: number
+    previousBlockHash: string
+    noteCommitment: string
+    transactionCommitment: string
+    target: string
+    randomness: string
+    timestamp: number
+    graffiti: string
+  }
+  transactions: string[]
+  previousBlockInfo?: {
+    target: string
+    timestamp: number
+  }
+}
+```
+
+#### Response
+
+```js
+{
+  added: boolean
+  reason:
+    | 'UNKNOWN_REQUEST'
+    | 'CHAIN_CHANGED'
+    | 'INVALID_BLOCK'
+    | 'ADD_FAILED'
+    | 'FORK'
+    | 'SUCCESS'
+}
+```
+
+### [View on Github](https://github.com/iron-fish/ironfish/blob/master/ironfish/src/rpc/routes/miner/submitBlock.ts)

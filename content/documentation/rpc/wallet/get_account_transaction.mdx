@@ -1,9 +1,7 @@
 ---
-title: wallet/getAccountTransaction RPC
+title: wallet/getAccountTransaction
 description: RPC Wallet | Iron Fish Documentation
 ---
-
-## [wallet/getAccountTransaction](https://github.com/iron-fish/ironfish/blob/master/ironfish/src/rpc/routes/wallet/getTransactions.ts)
 
 Gets a transaction for an account. If the account is not specified, the default account is used.
 
@@ -34,6 +32,11 @@ Gets a transaction for an account. If the account is not specified, the default 
     mintsCount: number
     burnsCount: number
     timestamp: number
+    assetBalanceDeltas: Array<{
+      assetId: string
+      assetName: string
+      delta: string
+    }>
     notes: Array<{
       isOwner: boolean
       value: string
@@ -43,12 +46,15 @@ Gets a transaction for an account. If the account is not specified, the default 
       sender: string
       owner: string
       spent: boolean
+      hash: string
     }>
-    assetBalanceDeltas: Array<{
-      assetId: string
-      assetName: string
-      delta: string
+    spends: Array<{
+      nullifier: string
+      commitment: string
+      size: number
     }>
   } | null
 }
 ```
+
+### [View on Github](https://github.com/iron-fish/ironfish/blob/master/ironfish/src/rpc/routes/wallet/getTransactions.ts)
