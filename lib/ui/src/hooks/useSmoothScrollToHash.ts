@@ -6,14 +6,17 @@ export function useSmoothScrollToHash() {
       const hashEl =
         window.location.hash && document.querySelector(window.location.hash);
       if (hashEl) {
-        const headerOffset = 100;
-        const elementPosition =
-          window.scrollY + hashEl.getBoundingClientRect().top;
-        window.scrollTo({
-          top: elementPosition - headerOffset,
-          behavior: "smooth",
-        });
+        smoothScrollToEl(hashEl);
       }
     }, 0);
   }, []);
+}
+
+export function smoothScrollToEl(el: Element) {
+  const headerOffset = 100;
+  const elementPosition = window.scrollY + el.getBoundingClientRect().top;
+  window.scrollTo({
+    top: elementPosition - headerOffset,
+    behavior: "smooth",
+  });
 }

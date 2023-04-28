@@ -7,8 +7,12 @@ import {
   useBreakpointValue,
   Text,
   SidebarItems,
+  headingToAnchorId,
+  VStack,
+  NAV_HEIGHT,
 } from "@/lib/ui";
-import { ComponentProps } from "react";
+import { smoothScrollToEl } from "@/lib/ui/src/hooks/useSmoothScrollToHash";
+import { ComponentProps, useEffect, useRef, useState } from "react";
 
 type Props = {
   frontMatter: {
@@ -21,6 +25,8 @@ type Props = {
   githubPath?: string;
 };
 
+const HEADING_SELECTOR = "h1[id], h2[id], h3[id], h4[id], h5[id], h6[id]";
+
 export function DocumentationLayout({
   frontMatter,
   markdown,
@@ -32,6 +38,35 @@ export function DocumentationLayout({
     base: false,
     xl: true,
   });
+
+  const contentRef = useRef<HTMLDivElement | null>(null);
+  const markdownSrcRef = useRef<string | null>(null);
+  const [contentHeadings, setContentHeadings] = useState<Array<{
+    label: string;
+    href: string;
+  }> | null>(null);
+
+  useEffect(() => {
+    if (
+      !contentRef.current ||
+      markdownSrcRef.current === markdown.compiledSource
+    )
+      return;
+
+    markdownSrcRef.current = markdown.compiledSource;
+
+    const headings = Array.from(
+      contentRef.current.querySelectorAll<HTMLHeadingElement>(HEADING_SELECTOR)
+    ).map((el) => {
+      return {
+        label: el.innerText,
+        href: `#${headingToAnchorId(el as HTMLHeadingElement)}`,
+      };
+    });
+
+    setContentHeadings(headings);
+  }, [markdown]);
+
   return (
     <Grid
       templateColumns={{
@@ -57,6 +92,7 @@ export function DocumentationLayout({
         mx="auto"
         w="100%"
         overflow="auto"
+        ref={contentRef}
       >
         <Heading as="h1" size="2xl" mt={8} mb={16} fontWeight="medium">
           {frontMatter.title}
@@ -80,7 +116,39 @@ export function DocumentationLayout({
         )}
       </Box>
       {/* @todo: Build "On this page" component */}
-      {showOnThisPage && <Box height="200px" />}
+      {showOnThisPage && contentHeadings && (
+        <Box
+          pt="96px"
+          pr={14}
+          maxH="100vh"
+          position="sticky"
+          overflow="auto"
+          top={NAV_HEIGHT}
+        >
+          <Text textTransform="uppercase" mb={5}>
+            On This Page
+          </Text>
+          <VStack alignItems="flex-start" gap={0}>
+            {contentHeadings.map((heading, i) => (
+              <Text
+                as="a"
+                key={i}
+                href={heading.href}
+                color="#7f7f7f"
+                onClick={(e) => {
+                  e.preventDefault();
+                  const target = document.querySelector(heading.href);
+                  if (target) {
+                    smoothScrollToEl(target);
+                  }
+                }}
+              >
+                {heading.label}
+              </Text>
+            ))}
+          </VStack>
+        </Box>
+      )}
     </Grid>
   );
 }
