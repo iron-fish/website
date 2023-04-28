@@ -293,9 +293,15 @@ export const sidebar: SidebarDefinition = [
       "integration_keys",
       "integration_transactions",
       "integration_deposits",
-      "integration_combining_notes",
-      "integration_maximizing_transaction_size"
     ],
+  },
+  {
+    label: "Recipes",
+    items: [
+      "recipes_combining_notes",
+      "recipes_maximizing_transaction_size",
+      "recipes_splitting_notes"
+    ]
   },
   "release-versioning",
   "offline-transaction-signing",
