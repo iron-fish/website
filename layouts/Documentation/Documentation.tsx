@@ -116,9 +116,9 @@ export function DocumentationLayout({
         )}
       </Box>
       {/* @todo: Build "On this page" component */}
-      {showOnThisPage && contentHeadings && (
+      {showOnThisPage && contentHeadings && contentHeadings.length > 0 && (
         <Box
-          pt="96px"
+          py="96px"
           pr={14}
           maxH="100vh"
           position="sticky"
