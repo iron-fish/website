@@ -18,11 +18,11 @@ fetch your account’s public address looks like:
 
 ```js
 async function main(): Promise<void> {
-  const sdk = await IronfishSdk.init({ dataDir: '~/.dev0' });
+  const sdk = await IronfishSdk.init({ dataDir: "~/.dev0" });
   const client = await sdk.connectRpc();
 
   const response = await client.getAccountPublicKey({
-    account: '<account>',
+    account: "<account>",
   });
   console.log(response);
 }

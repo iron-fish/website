@@ -10,28 +10,32 @@ notes into larger notes.
 Here's an example that combines all the $IRON notes in an account into a single note.
 
 ```js
-import { CreateTransactionRequest, CurrencyUtils, IronfishSdk } from '@ironfish/sdk'
-import { Asset } from '@ironfish/rust-nodejs'
+import {
+  CreateTransactionRequest,
+  CurrencyUtils,
+  IronfishSdk,
+} from "@ironfish/sdk";
+import { Asset } from "@ironfish/rust-nodejs";
 
 async function main(): Promise<void> {
-  const sdk = await IronfishSdk.init({ dataDir: '~/.dev0' });
+  const sdk = await IronfishSdk.init({ dataDir: "~/.dev0" });
   const client = await sdk.connectRpc();
 
   // Fetch an account to combine notes
   const defaultAccountResponse = await client.wallet.getDefaultAccount();
   if (defaultAccountResponse.content.account === null) {
-    throw new Error('Expected a default account')
+    throw new Error("Expected a default account");
   }
 
-  const accountName = defaultAccountResponse.content.account.name
+  const accountName = defaultAccountResponse.content.account.name;
 
   const accountResponse = await client.wallet.getAccountPublicKey({
-    account: accountName
-  })
+    account: accountName,
+  });
 
-  const publicAddress = accountResponse.content.publicKey
+  const publicAddress = accountResponse.content.publicKey;
 
-  // Sum all unspent notes with the native asset ID 
+  // Sum all unspent notes with the native asset ID
   const fee = 10n;
   const notes = [];
   let noteTotal = 0n;
@@ -41,21 +45,21 @@ async function main(): Promise<void> {
   });
 
   for await (const note of stream.contentStream()) {
-    if (!note.spent && note.assetId === Asset.nativeId().toString('hex')) {
+    if (!note.spent && note.assetId === Asset.nativeId().toString("hex")) {
       notes.push(note.noteHash);
       noteTotal += BigInt(note.value);
     }
   }
 
-  // Create the transaction 
+  // Create the transaction
   const options: CreateTransactionRequest = {
     account: accountName,
     outputs: [
       {
         publicAddress,
         amount: CurrencyUtils.encode(noteTotal - fee),
-        memo: '',
-        assetId: Asset.nativeId().toString('hex'),
+        memo: "",
+        assetId: Asset.nativeId().toString("hex"),
       },
     ],
     fee: CurrencyUtils.encode(fee),

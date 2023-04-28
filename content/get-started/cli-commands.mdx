@@ -52,7 +52,6 @@ Prints out:
 - the syncing status of your node and syncing stats
 - the networking status of your node (and networking stats)
 
-
 ```sh
 ironfish status
 ```
@@ -85,7 +84,6 @@ ironfish config
 
 Opens the config file with your default code editor
 
-
 ```sh
 ironfish config:edit
 ```
@@ -95,7 +93,6 @@ Note: you need to set the editor config or the default editor environment variab
 E.g. for Vscode at the config level: `ironfish config:set editor "/Applications/Visual Studio Code.app/Contents/MacOS/Electron"`
 
 E.g. for Vscode at the environment level: `export EDITOR="/Applications/Visual Studio Code.app/Contents/MacOS/Electron"`
-
 
 #### config:set
 
@@ -126,10 +123,10 @@ config:get enableMetrics
 Starts a miner and subscribes to new blocks for the node. The node has to be synced with the network for the miner to start mining.
 
 ```sh
-ironfish miners:start  
+ironfish miners:start
 ```
 
-Join a mining pool with your default account public address. 
+Join a mining pool with your default account public address.
 
 ```sh
 ironfish miners:start -p <ip-address-of-pool>
@@ -334,9 +331,11 @@ Export a part of the chain database to JSON
 ```sh
 ironfish chain:export [START] [STOP]
 ```
+
 Optional arguments: [START] and [STOP] are either positive numbers that indicate the starting and stopping blocks or are negative to count backwards from the head of the chain.
 
 #### chain:forks
+
 Try to detect forks that are being mined
 
 ```sh
@@ -344,6 +343,7 @@ ironfish chain:forks
 ```
 
 #### chain:repair
+
 Rebuild the main chain to fix corruption
 
 ```sh
@@ -351,14 +351,17 @@ ironfish chain:repair
 ```
 
 #### chain:show
+
 Shows the heaviest head and tail of the node's chain. Includes the last ten blocks in the chain.
 
 ```sh
 ironfish chain:show [START] [STOP]
 ```
+
 Optional arguments: [START] and [STOP] are either positive numbers that indicate the starting and stopping blocks or are negative to count backwards from the head of the chain.
 
 #### chain:download
+
 Downloads and imports a snapshot of the chain database
 
 ```sh
@@ -366,7 +369,9 @@ ironfish chain:download
 ```
 
 ### Blocks
+
 #### blocks:show
+
 Show the block header of a requested hash
 
 ```sh
@@ -374,7 +379,9 @@ ironfish blocks:show [HASH]
 ```
 
 ### Workers
+
 #### workers:status
+
 Shows the status of the worker pool
 
 ```sh

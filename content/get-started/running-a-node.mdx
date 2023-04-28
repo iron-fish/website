@@ -3,12 +3,13 @@ title: Run a node
 description: Run a node | Iron Fish Onboarding
 ---
 
-import Terminal from '../../src/theme/components/Terminal/Terminal'
-import Start from '../../src/theme/components/Terminal/Start'
+import Terminal from "../../src/theme/components/Terminal/Terminal";
+import Start from "../../src/theme/components/Terminal/Start";
 
 ## Start the node
 
 Run the Iron Fish CLI
+
 ```sh
 ironfish start
 ```
@@ -39,40 +40,50 @@ Bootstrap                     test.bn1.ironfish.network
 Serving RPC on IPC /Users/username/.ironfish/ironfish.ipc
 
 #################################################################
-#    Thank you for installing the Iron Fish Node.               #
-#    To help improve Ironfish, opt in to collecting telemetry   #
-#    by setting telemetry=true in your configuration file       #
+
+# Thank you for installing the Iron Fish Node.
+
+# To help improve Ironfish, opt in to collecting telemetry
+
+# by setting telemetry=true in your configuration file
+
 #################################################################
 `,
 `
 New default account created: default Account's public address:
 ec7d8422f70b5449a5aabb18c9507b1875b6ec49b8ada1ba991ca09900c1c3b1c7b282a7b93866be02109d`
-  ]}
+]}
 />
 
 ## Using a different directory
+
 By default, the database and configuration files for the Iron Fish node are created in the `~/.ironfish` directory (more details in the [configuration section](/use/get-started/node-configuration)). You can use a different directory for the database and configuration files by using the `--datadir` flag.
 
 E.g.
+
 ```sh
 ironfish start --datadir=~/myCustomFolder
 ```
 
 ## Using a different bootstrap node
+
 By default, your node will connect to the official Iron Fish bootstrap nodes.
 If you are developing and want to use a different bootstrap node, you can make the node connect to a different address with the `--bootstrap` flag.
 
 **Do not use a production bootstrap node that isn't officially endorsed by Iron Fish, you might end up on a malicious network.**
 
 E.g.
+
 ```sh
 ironfish start --bootstrap=localhost:9031
 ```
 
 ## Using a different port
+
 By default, Iron Fish runs on port 9033. If you wish to use a different port, you can use the `--port` flag.
 
 E.g.
+
 ```sh
 ironfish start --port=9045
 ```

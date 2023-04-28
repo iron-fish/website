@@ -1,31 +1,31 @@
-import { useBreakpointValue, Flex } from '@/lib/ui';
-import Image from 'next/image';
+import { useBreakpointValue, Flex } from "@/lib/ui";
+import Image from "next/image";
 
 export function NodeAppUIImage() {
   const imageProps = useBreakpointValue(
     {
       base: {
-        src: '/images/shared/node-app-ui/node-app-ui-base.svg',
+        src: "/images/shared/node-app-ui/node-app-ui-base.svg",
         width: 382,
         height: 216,
       },
       sm: {
-        src: '/images/shared/node-app-ui/node-app-ui-md.svg',
+        src: "/images/shared/node-app-ui/node-app-ui-md.svg",
         width: 832,
         height: 471,
       },
       lg: {
-        src: '/images/shared/node-app-ui/node-app-ui-lg.svg',
+        src: "/images/shared/node-app-ui/node-app-ui-lg.svg",
         width: 1016,
         height: 471,
       },
       xl: {
-        src: '/images/shared/node-app-ui/node-app-ui-xl.svg',
+        src: "/images/shared/node-app-ui/node-app-ui-xl.svg",
         width: 1151,
         height: 471,
       },
-      '2xl': {
-        src: '/images/shared/node-app-ui/node-app-ui-2xl.svg',
+      "2xl": {
+        src: "/images/shared/node-app-ui/node-app-ui-2xl.svg",
         width: 1364,
         height: 478,
       },

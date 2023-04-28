@@ -1,23 +1,23 @@
-import { defineStyle, defineStyleConfig } from '@chakra-ui/react';
+import { defineStyle, defineStyleConfig } from "@chakra-ui/react";
 
 const baseStyle = defineStyle({
-  borderRadius: 'full', // <-- border radius is same for all variants and sizes
-  fontWeight: 'regular',
+  borderRadius: "full", // <-- border radius is same for all variants and sizes
+  fontWeight: "regular",
 });
 
 const sizes = {
   sm: defineStyle({
-    fontSize: 'sm',
+    fontSize: "sm",
     px: 4,
     py: 4,
   }),
   md: defineStyle({
-    fontSize: 'md',
+    fontSize: "md",
     px: 7,
     py: 5,
   }),
   lg: defineStyle({
-    fontSize: 'lg',
+    fontSize: "lg",
     px: 8,
     py: 7,
   }),
@@ -25,20 +25,20 @@ const sizes = {
 
 const variants = {
   solid: defineStyle({
-    border: '1.5px solid',
-    borderColor: 'black',
-    color: 'black',
-    bg: 'pink.500',
-    boxShadow: '2px 3px 0px black',
+    border: "1.5px solid",
+    borderColor: "black",
+    color: "black",
+    bg: "pink.500",
+    boxShadow: "2px 3px 0px black",
 
-    ':hover': {
-      bg: 'purple.500',
+    ":hover": {
+      bg: "purple.500",
     },
   }),
   outline: defineStyle({
-    border: '2px solid',
-    borderColor: 'purple.500',
-    color: 'purple.500',
+    border: "2px solid",
+    borderColor: "purple.500",
+    color: "purple.500",
   }),
 };
 
@@ -47,8 +47,8 @@ export const buttonTheme = defineStyleConfig({
   sizes,
   variants,
   defaultProps: {
-    size: 'md',
-    variant: 'solid',
-    colorScheme: 'pink',
+    size: "md",
+    variant: "solid",
+    colorScheme: "pink",
   },
 });

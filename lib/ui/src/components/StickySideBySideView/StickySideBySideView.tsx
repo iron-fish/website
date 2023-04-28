@@ -1,14 +1,14 @@
-import { Children, cloneElement, ReactElement, useMemo, useRef } from 'react';
+import { Children, cloneElement, ReactElement, useMemo, useRef } from "react";
 import {
   Box,
   BoxProps,
   Flex,
   FlexProps,
   useBreakpointValue,
-} from '@chakra-ui/react';
+} from "@chakra-ui/react";
 // import { useMotionValueEvent, useScroll } from 'framer-motion';
 
-type WrapperProps = Omit<FlexProps, 'children'> & {
+type WrapperProps = Omit<FlexProps, "children"> & {
   children: [ReactElement<StickyItemProps>, ReactElement<StickyItemProps>];
 };
 
@@ -29,12 +29,12 @@ function StickySideBySideView({ children, ...rest }: WrapperProps) {
       ref={containerRef}
       alignItems="flex-start"
       minH={{
-        base: 'auto',
-        md: '100vh',
+        base: "auto",
+        md: "100vh",
       }}
       direction={{
-        base: 'column',
-        md: 'row',
+        base: "column",
+        md: "row",
       }}
       mb={8}
     >
@@ -47,29 +47,29 @@ function StickySideBySideView({ children, ...rest }: WrapperProps) {
   );
 }
 
-type StickyItemProps = Omit<BoxProps, 'width'> & {
+type StickyItemProps = Omit<BoxProps, "width"> & {
   _isStickyChild?: boolean;
 };
 
 function StickyItem({ children, _isStickyChild, ...rest }: StickyItemProps) {
   const top = useBreakpointValue({
     base: 0,
-    md: '100px',
-    xl: '200px',
+    md: "100px",
+    xl: "200px",
   });
 
   const width = useMemo(() => {
     if (_isStickyChild) {
       return {
-        base: '100%',
-        md: '40%',
-        lg: '50%',
+        base: "100%",
+        md: "40%",
+        lg: "50%",
       };
     }
     return {
-      base: '100%',
-      md: '60%',
-      lg: '50%',
+      base: "100%",
+      md: "60%",
+      lg: "50%",
     };
   }, [_isStickyChild]);
 
@@ -78,8 +78,8 @@ function StickyItem({ children, _isStickyChild, ...rest }: StickyItemProps) {
       {...rest}
       width={width}
       position={{
-        base: 'relative',
-        md: 'sticky',
+        base: "relative",
+        md: "sticky",
       }}
       top={top}
       pl={

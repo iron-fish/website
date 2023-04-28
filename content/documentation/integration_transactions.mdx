@@ -59,12 +59,12 @@ the mempool and broadcasted to the network (see docs
 
 ```js
 async function main(): Promise<void> {
-  const sdk = await IronfishSdk.init({ dataDir: '~/.dev0' });
+  const sdk = await IronfishSdk.init({ dataDir: "~/.dev0" });
   const client = await sdk.connectRpc();
 
-  const from = '<sending account>';
+  const from = "<sending account>";
   // RawTransactionSerde.serialize(rawTransaction).toString('hex')
-  const transaction = '<serialized raw transaction>';
+  const transaction = "<serialized raw transaction>";
   // Optionally broadcast to network
   const broadcast = true;
 

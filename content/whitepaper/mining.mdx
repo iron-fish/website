@@ -5,8 +5,10 @@ description: Mining | Iron Fish Whitepaper
 
 So far, we've gone over the structure of the Iron Fish blockchain; this section will focus on how the Iron Fish blockchain is expanded with new blocks. Note that we use the terms nodes and peers interchangeably; a node in Iron Fish is always a peer. A few other quick definitions:
 
-- <em>Mining</em> is the core mechanism that defines by which rules new blocks are created, and by which rules a peer can verify and accept an incoming block.
-- <em>Miners</em> are those nodes that propose a new block to be added to the blockchain to other nodes.
+- <em>Mining</em> is the core mechanism that defines by which rules new blocks are
+  created, and by which rules a peer can verify and accept an incoming block.
+- <em>Miners</em> are those nodes that propose a new block to be added to the blockchain
+  to other nodes.
 - A new block is said to be <em>mined</em> when a miner finds a hash of the block header that is below some threshold that we call the target.
 
 The Iron Fish blockchain algorithm dynamically adjusts the mining difficulty to achieve 60-second average block times, by either increasing or decreasing mining difficulty if previous blocks are observed to be coming in too fast or too slow.
@@ -103,7 +105,12 @@ Therefore, the block reward and total supply for the first few years after launc
 
 The emissions curve using the block reward formula mentioned above, with a cap of 256,970,400 coins for total supply, would look like this:
 
-<Img src ="/images/whitepaper/mining/emissions_curve.svg" width="100%" role="presentation" style={{paddingRight:'25px'}} />
+<Img
+  src="/images/whitepaper/mining/emissions_curve.svg"
+  width="100%"
+  role="presentation"
+  style={{ paddingRight: "25px" }}
+/>
 
 To claim the block reward for successfully mining a new block, the miner constructs a special miner fee transaction in the block header. The value of the miner fee transaction is publicly visible so that others can verify that it is exactly the block reward plus all the transaction fees from the transactions included in that block. The recipient's address for that miner fee transaction remains hidden. Learn more about the miner reward in the Transaction Creation section.
 

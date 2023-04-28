@@ -9,9 +9,9 @@ import {
   AspectRatio,
   Flex,
   ContainerProps,
-} from '@/lib/ui';
-import Image from 'next/image';
-import Link from 'next/link';
+} from "@/lib/ui";
+import Image from "next/image";
+import Link from "next/link";
 
 type Props = {
   heading: string;
@@ -35,14 +35,14 @@ export function FancyLinkSection({
   ctaLink,
   imageUrl,
   reverse,
-  ctaColor = 'black',
+  ctaColor = "black",
   containerProps,
 }: Props) {
   return (
     <Container
       maxW={{
-        base: '704px',
-        lg: '1344px',
+        base: "704px",
+        lg: "1344px",
       }}
       margin="0 auto"
       w="100%"
@@ -50,13 +50,13 @@ export function FancyLinkSection({
     >
       <Grid
         templateColumns={{
-          base: '1fr',
-          lg: 'repeat(2, 1fr)',
+          base: "1fr",
+          lg: "repeat(2, 1fr)",
         }}
         w="100%"
         gap={{
-          base: '4rem',
-          lg: '180px',
+          base: "4rem",
+          lg: "180px",
         }}
       >
         <GridItem order={reverse ? 2 : 1} display="flex" alignItems="center">
@@ -73,16 +73,16 @@ export function FancyLinkSection({
               display="inline-flex"
               alignItems="center"
               gap={3}
-              as={ctaLink.startsWith('http') ? 'a' : Link}
-              target={ctaLink.startsWith('http') ? '_blank' : undefined}
-              rel={ctaLink.startsWith('http') ? 'noreferrer' : undefined}
+              as={ctaLink.startsWith("http") ? "a" : Link}
+              target={ctaLink.startsWith("http") ? "_blank" : undefined}
+              rel={ctaLink.startsWith("http") ? "noreferrer" : undefined}
               href={ctaLink}
               pb={4}
               position="relative"
               color={ctaColor}
               _hover={{
-                '& > div:last-child': {
-                  w: '100%',
+                "& > div:last-child": {
+                  w: "100%",
                 },
               }}
             >
@@ -108,7 +108,7 @@ export function FancyLinkSection({
               <Image
                 src={imageUrl}
                 alt=""
-                style={{ objectFit: 'contain' }}
+                style={{ objectFit: "contain" }}
                 fill
               />
             </AspectRatio>

@@ -5,7 +5,7 @@ description: Glossary | Iron Fish Onboarding
 
 ## Asset
 
-A user-created resource which can be transferred privately, minted, and burned. Contains metadata, a name, the owner public address, and nonce. 
+A user-created resource which can be transferred privately, minted, and burned. Contains metadata, a name, the owner public address, and nonce.
 
 ### Asset Generator
 
@@ -104,6 +104,7 @@ A JavaScript object which contains all the arguments to create a native [Iron Fi
 A collection of actions (ex. transfer of an [Asset](#asset) between two parties, burning supply of an [Asset](#asset), etc.) that is persisted and verified on a blockchain.
 
 The total value of a transaction balances to 0 by the following:
+
 ```
 sum(spends) + sum(mints) - sum(outputs) - sum(burns) - transaction_fee = 0
 ```
@@ -167,5 +168,3 @@ An Iron Fish wallet manages [Accounts](#account), listens to incoming transactio
 ### Account
 
 An Iron Fish account holds private [keys](#keys) which enable users to view transaction details and transfer assets to other addresses.
-
-

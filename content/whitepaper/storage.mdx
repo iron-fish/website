@@ -70,7 +70,7 @@ A block header consists of the following (some of these terms, such as [Output D
 | ----------------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
 | **sequence**            | The sequence number of this block. Blocks in a chain increase in ascending order of sequence. More than one block may have the same sequence number (indicating a fork in the chain), but only one fork is selected at a time. |
 | **previousBlockHash**   |                                                                                          The hash of the previous block in the chain.                                                                                          |
-| **noteCommitment**      | Commitment to the Merkle Tree of Notes after all new notes from transactions in this block have been added to it. Stored as the hash and the size of the tree at the time the hash was calculated. |
+| **noteCommitment**      |               Commitment to the Merkle Tree of Notes after all new notes from transactions in this block have been added to it. Stored as the hash and the size of the tree at the time the hash was calculated.               |
 | **nullifierCommitment** |                           Commitment to the nullifier set after all the spends in this block have been added to it. Stored as the hash and the size of the set at the time the hash was calculated.                            |
 | **target**              |                                                       The hash of this block must be lower than this target value in order for the block to be accepted onto the chain.                                                        |
 | **randomness**          |                                                                                         The nonce used to calculate this block's hash                                                                                          |
@@ -97,7 +97,11 @@ Since we knew that running a full implementation of Iron Fish in the browser was
 
 To prevent having to juggle two separate storage implementations for the two different databases, our implementation of Iron Fish has a generic layer of abstraction for data stores and database access based on [LevelUp](https://github.com/Level/levelup). This abstraction layer takes care of the specific implementations of the underlying database, and exposes a generic layer that can be used both in the browser and NodeJS environment, offering a simple datastore-agnostic API.
 
-<Img src ="/images/whitepaper/storage/storage1.svg" width="50%" role="presentation" />
+<Img
+  src="/images/whitepaper/storage/storage1.svg"
+  width="50%"
+  role="presentation"
+/>
 
 ### The Storage Layer API
 

@@ -1,9 +1,9 @@
 export const breakpoints = {
-  sm: '480px',
-  md: '768px',
-  lg: '960px',
-  xl: '1280px',
-  '2xl': '1600px',
+  sm: "480px",
+  md: "768px",
+  lg: "960px",
+  xl: "1280px",
+  "2xl": "1600px",
 };
 
 type BreakpointValues = {
@@ -13,7 +13,7 @@ type BreakpointValues = {
   md?: string | number;
   lg?: string | number;
   xl?: string | number;
-  '2xl'?: string | number;
+  "2xl"?: string | number;
 };
 
 /**
@@ -43,6 +43,6 @@ export function createBreakpointArray(breakpoints: BreakpointValues) {
     breakpoints.md || null,
     breakpoints.lg || null,
     breakpoints.xl || null,
-    breakpoints['2xl'] || null,
+    breakpoints["2xl"] || null,
   ];
 }

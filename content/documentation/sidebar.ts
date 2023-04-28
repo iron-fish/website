@@ -112,11 +112,11 @@ export const sidebar: SidebarDefinition = [
         label: "Mempool",
         items: [
           {
-            id: "rpc/mempool/get_status", 
+            id: "rpc/mempool/get_status",
             label: "getStatus",
           },
           {
-            id: "rpc/mempool/get_transactions", 
+            id: "rpc/mempool/get_transactions",
             label: "getTransactions",
           },
         ],
@@ -294,7 +294,7 @@ export const sidebar: SidebarDefinition = [
       "integration_transactions",
       "integration_deposits",
       "integration_combining_notes",
-      "integration_maximizing_transaction_size"
+      "integration_maximizing_transaction_size",
     ],
   },
   "release-versioning",

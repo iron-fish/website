@@ -9,7 +9,11 @@ Accounts and transactions in Iron Fish are heavily influenced by the [Sapling pr
 
 We'll start with the key components that are used to view an account's balance, send transactions, or view past transactions. All of the key components for an Iron Fish account are derived from a single secret key. Though the underlying account construction may seem complex, the high level overview is that, in addition to the secret key, each account has a set of keys for spending that account's funds, viewing keys to be given to any third party for read-only access, and a public address to be used to receive funds from others.
 
-<Img src='/images/whitepaper/account/account1.svg' width="100%" style={{paddingTop:'40px', marginBottom:'40px'}} />
+<Img
+  src="/images/whitepaper/account/account1.svg"
+  width="100%"
+  style={{ paddingTop: "40px", marginBottom: "40px" }}
+/>
 
 Note that the term `key` pair here refers to [public key cryptography](https://en.wikipedia.org/wiki/Public-key_cryptography), meaning that the key pair consists of a private key and an accompanying public key.
 
@@ -19,7 +23,10 @@ We'll explain why all these parts are needed as we go along.
 
 The secret key is simply a 32-byte random number. This is the seed necessary to construct all other parts of your wallet.
 
-<Img src='/images/whitepaper/account/2_data_structure_models_secret_key.svg' width="250px" />
+<Img
+  src="/images/whitepaper/account/2_data_structure_models_secret_key.svg"
+  width="250px"
+/>
 
 ## Spending Key Pair (Spending Authorization Key and Authorization Key)
 
@@ -37,9 +44,16 @@ Where **ak** is the authorization key, **ask** is the spend authorization key, a
 
 This key is used in the [Spend description](6_transaction.md#spend-description) of a transaction that is responsible for spending notes. More specifically, it is used in the zero-knowledge proof that is part of the Spend description to prove ownership of the note being spent. It is also used to create the signature for the Spend description.
 
-<Img src='/images/whitepaper/account/account2.svg' width="50%" style={{paddingTop:'40px'}} />
+<Img
+  src="/images/whitepaper/account/account2.svg"
+  width="50%"
+  style={{ paddingTop: "40px" }}
+/>
 <br />
-<em>The secret key is used to derive the spend authorization key (ask) which in turn is used to derive the authorization key (ak)</em>
+<em>
+  The secret key is used to derive the spend authorization key (ask) which in
+  turn is used to derive the authorization key (ak)
+</em>
 
 ## Nullifier Key Pair (Proof Authorization Key and Nullifier Deriving Key)
 
@@ -53,9 +67,16 @@ $$nk = nsk * G_{nk}$$
 
 Where **nk** is the nullifier deriving key, **nsk** is the proof authorization key, and $$G_{nk}$$ is the generator base point for it on the Jubjub curve.
 
-<Img src='/images/whitepaper/account/account3.svg' width="50%" style={{paddingTop:'40px'}} />
+<Img
+  src="/images/whitepaper/account/account3.svg"
+  width="50%"
+  style={{ paddingTop: "40px" }}
+/>
 <br />
-<em>The secret key is used to derive the proof authorization key (nsk) which in turn is used to derive the nullifier deriving key (nk)</em>
+<em>
+  The secret key is used to derive the proof authorization key (nsk) which in
+  turn is used to derive the nullifier deriving key (nk)
+</em>
 
 ## View Key Pair (Incoming and Outgoing View Key)
 
@@ -65,9 +86,17 @@ The **Incoming View Key (ivk)** allows for decrypting incoming transactions. It 
 
 $$ivk = blake2s(ak, nk)$$ <em>converted into a</em> **jubjub scalar**
 
-<Img src='/images/whitepaper/account/account4.svg' width="70%" style={{paddingTop:'40px'}} />
+<Img
+  src="/images/whitepaper/account/account4.svg"
+  width="70%"
+  style={{ paddingTop: "40px" }}
+/>
 <br />
-<em>The secret key is used to derive the outgoing view key. The incoming view key is derived from the authorization key (ak) and the nullifier deriving key (nk).</em>
+<em>
+  The secret key is used to derive the outgoing view key. The incoming view key
+  is derived from the authorization key (ak) and the nullifier deriving key
+  (nk).
+</em>
 
 ## Public Address
 
@@ -89,7 +118,11 @@ $$public \enspace address = (d, pk_d)$$
 
 The public address is a 43-byte number (11 bytes for diversifier + 32 bytes for transmission key).
 
-<Img src='/images/whitepaper/account/account5.svg' width="70%" style={{paddingTop:'40px'}} />
+<Img
+  src="/images/whitepaper/account/account5.svg"
+  width="70%"
+  style={{ paddingTop: "40px" }}
+/>
 <br />
 <br />
 

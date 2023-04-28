@@ -32,7 +32,11 @@ For example, if Alice has a note of value five coins, and wants to send Bob four
 - It would have one Spend description for the note she's spending (in this example a note with a value of five coins) along with the unique nullifier for that note.
 - And it would have two Output descriptions: one for Bob of four coins, and one note as change for herself of one coin since the note used in the Spend description cannot be spent again.
 
-<Img src='/images/whitepaper/transaction/transaction1.svg' width="100%" style={{paddingTop:'10px'}} />
+<Img
+  src="/images/whitepaper/transaction/transaction1.svg"
+  width="100%"
+  style={{ paddingTop: "10px" }}
+/>
 
 To ensure privacy, a Spend description spends a note _without revealing which note was spent_ through the help of a zero-knowledge proof (specifically [zk-SNARK Groth16](https://eprint.iacr.org/2016/260.pdf) Sapling proof). The Output description similarly creates an encrypted note with a zero-knowledge proof that the newly created note was created correctly. The circuit construction for these proofs is taken from Sapling [primitive](https://github.com/zcash/librustzcash/tree/master/zcash_primitives) gadgets which in turn were constructed using the [bellman](https://github.com/zkcrypto/bellman) circuit building tool.
 
@@ -187,14 +191,14 @@ The Output description is the part of the transaction that produces new notes. T
 
 The structure of the Output description contains these fields:
 
-| Element     |                                                                                               Description                                                                                                |
-| :---------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
-| $$cv$$      |                                                                                             value commitment                                                                                             |
-| $$cm$$      |                                                                                             note commitment                                                                                              |
-| $$epk$$     |                                         ephemeral public key (more on this in [Note Encryption and Decryption](6_transaction.md#note-encryption-and-decryption))                                         |
-| $$C^\{enc\}$$ |                                                                                     encrypted plaintext of the note                                                                                      |
+| Element       |                                                                                                Description                                                                                                 |
+| :------------ | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
+| $$cv$$        |                                                                                              value commitment                                                                                              |
+| $$cm$$        |                                                                                              note commitment                                                                                               |
+| $$epk$$       |                                          ephemeral public key (more on this in [Note Encryption and Decryption](6_transaction.md#note-encryption-and-decryption))                                          |
+| $$C^\{enc\}$$ |                                                                                      encrypted plaintext of the note                                                                                       |
 | $$C^\{out\}$$ | encrypted blob that allows the holder of the viewing key to decrypt a decryption key for $$C^\{enc\}$$ (more on this in [Note Encryption and Decryption](6_transaction.md#note-encryption-and-decryption)) |
-| $$proof$$   |                                                                                         the zero-knowledge proof                                                                                         |
+| $$proof$$     |                                                                                          the zero-knowledge proof                                                                                          |
 
 Below is a deeper dive into these fields.
 
@@ -253,13 +257,13 @@ The proof validates that:
 The outputs in the Output description are stored as a [Merkle Tree Note](3_storage.md#merkle-tree-of-notes) in addition to being part of the transaction.
 A **Merkle Tree Note** consists of these fields taken from the Output description:
 
-| Element     |                                   Description                                    |
-| :---------- | :------------------------------------------------------------------------------: |
-| $$cv$$      |                                 value commitment                                 |
-| $$cm$$      |                                 note commitment                                  |
-| $$epk$$     |                               ephemeral public key                               |
-| $$C^\{enc\}$$ |                         encrypted plaintext of the note                          |
-| $$C^out$$   | allows the holder of the viewing key to decrypt a decryption key for $$C^\{enc\}$$ |
+| Element       |                                    Description                                     |
+| :------------ | :--------------------------------------------------------------------------------: |
+| $$cv$$        |                                  value commitment                                  |
+| $$cm$$        |                                  note commitment                                   |
+| $$epk$$       |                                ephemeral public key                                |
+| $$C^\{enc\}$$ |                          encrypted plaintext of the note                           |
+| $$C^out$$     | allows the holder of the viewing key to decrypt a decryption key for $$C^\{enc\}$$ |
 
 ## Transaction Balancing
 
@@ -282,13 +286,13 @@ The transaction is cryptographically signed by a **binding validating key (bvk)*
 
 As an example, say we have a transaction with two inputs, and two outputs:
 
-| Inputs |                                     |
-| ------ | :---------------------------------: |
+| Inputs |                                       |
+| ------ | :-----------------------------------: |
 |        | $$cv1 = v1 * G_v + rcv1 * G_\{rcv\}$$ |
 |        | $$cv2 = v2 * G_v + rcv2 * G_\{rcv\}$$ |
 
-| Outputs |                                     |
-| ------- | :---------------------------------: |
+| Outputs |                                       |
+| ------- | :-----------------------------------: |
 |         | $$cv3 = v3 * G_v + rcv3 * G_\{rcv\}$$ |
 |         | $$cv4 = v4 * G_v + rcv4 * G_\{rcv\}$$ |
 
@@ -308,9 +312,9 @@ This part of the equation is the binding validating key, which acts as a public 
 
 For this example:
 
-| Element                                                     |                           Description                            |
-| :---------------------------------------------------------- | :--------------------------------------------------------------: |
-| $$bsk \enspace (binding \enspace signing \enspace key)$$    |                 $$= rcv1 + rcv2 - rcv3 - rcv4$$                  |
+| Element                                                     |                             Description                              |
+| :---------------------------------------------------------- | :------------------------------------------------------------------: |
+| $$bsk \enspace (binding \enspace signing \enspace key)$$    |                   $$= rcv1 + rcv2 - rcv3 - rcv4$$                    |
 | $$bvk \enspace (binding \enspace validating \enspace key)$$ | $$= G_\{rcv\} * (rcv1 + rcv2 - rcv3 - rcv4) \\ = G_\{rcv\} * (bsk)$$ |
 
 The transaction doesn't reveal the binding validating key ($$bvk$$) directly (the transaction only contains the cryptographic signature of the transaction signed by the binding signing key), however, it can be derived from the publicly available information.
@@ -382,14 +386,14 @@ Remember that the note plaintext (**np**) is made up of:
 
 The Output description stores this note in its encrypted form as $$C^\{enc\}$$.
 
-| Element     |                                           Description                                            |
-| :---------- | :----------------------------------------------------------------------------------------------: |
-| $$cv$$      |                                         value commitment                                         |
-| $$cm$$      |                                         note commitment                                          |
-| $$epk$$     |                                       ephemeral public key                                       |
-| $$C^\{enc\}$$ |                                 encrypted plaintext of the note                                  |
+| Element       |                                            Description                                             |
+| :------------ | :------------------------------------------------------------------------------------------------: |
+| $$cv$$        |                                          value commitment                                          |
+| $$cm$$        |                                          note commitment                                           |
+| $$epk$$       |                                        ephemeral public key                                        |
+| $$C^\{enc\}$$ |                                  encrypted plaintext of the note                                   |
 | $$C^\{out\}$$ | encrypted blob that allows the holder of the viewing key to decrypt a decryption key for C^\{enc\} |
-| $$proof$$   |                                     the zero-knowledge proof                                     |
+| $$proof$$     |                                      the zero-knowledge proof                                      |
 
 #### Note Encryption by the Sender
 
@@ -446,13 +450,13 @@ where **ovk** is the wallet's outgoing view key, and the rest of the fields are 
 
 Output Description:
 
-| Element     |                                             Description                                              |
-| :---------- | :--------------------------------------------------------------------------------------------------: |
-| $$cv$$      |                                           value commitment                                           |
-| $$cm$$      |                                           note commitment                                            |
-| $$epk$$     |                                         ephemeral public key                                         |
-| $$C^\{enc\}$$ |                                   encrypted plaintext of the note                                    |
+| Element       |                                              Description                                               |
+| :------------ | :----------------------------------------------------------------------------------------------------: |
+| $$cv$$        |                                            value commitment                                            |
+| $$cm$$        |                                            note commitment                                             |
+| $$epk$$       |                                          ephemeral public key                                          |
+| $$C^\{enc\}$$ |                                    encrypted plaintext of the note                                     |
 | $$C^\{out\}$$ | encrypted blob that allows the holder of the viewing key to decrypt a decryption key for $$C^\{enc\}$$ |
-| $$proof$$   |                                       the zero-knowledge proof                                       |
+| $$proof$$     |                                        the zero-knowledge proof                                        |
 
 At any given time, the holder of the outgoing view key (e.g. a wallet) can recreate the $$symmetricEncryptionKey$$ to decrypt the $$C^\{out\}$$ field to retrieve ($$esk$$, $$pk_d$$). Then, using ($$esk$$, $$pk_d$$) the wallet can recreate the $$sharedSecret =  esk * pk_d$$ and decrypt the $$C^\{enc\}$$ field to finally retrieve the plaintext.

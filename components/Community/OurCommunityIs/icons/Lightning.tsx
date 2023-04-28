@@ -1,4 +1,4 @@
-import * as React from 'react';
+import * as React from "react";
 
 export const Lightning = () => (
   <svg xmlns="http://www.w3.org/2000/svg" width={58} height={110} fill="none">
