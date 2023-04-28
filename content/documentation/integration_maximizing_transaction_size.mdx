@@ -1,0 +1,90 @@
+---
+title: Maximizing Transaction Size
+description: Integration Guide | Maximizing Transaction Size | Iron Fish Documentation
+---
+
+Each spend, output, mint, and burn in an Iron Fish transaction increases its size. The
+maximum size of a transaction is the maximum size of a [block](/use/get-started/glossary#Block)
+minus the size of the block's header and miner's fee transaction.
+
+This example creates a maximum-size transaction. In practice, you may want to specify
+which notes are spent in the transaction to maximize the number of outputs and set a
+lower transaction size limit to avoid competing for block space with other transactions.
+
+```js
+import { Asset } from '@ironfish/rust-nodejs'
+import {
+  CreateTransactionRequest,
+  CurrencyUtils,
+  IronfishSdk,
+  RawTransactionSerde,
+} from '@ironfish/sdk'
+
+async function main(): Promise<void> {
+  const sdk = await IronfishSdk.init({ dataDir: '~/.dev0' })
+  const client = await sdk.connectRpc()
+
+  // Fetch an account
+  const defaultAccountResponse = await client.wallet.getDefaultAccount()
+  if (defaultAccountResponse.content.account === null) {
+    throw new Error('Expected a default account')
+  }
+
+  const accountName = defaultAccountResponse.content.account.name
+
+  const accountResponse = await client.wallet.getAccountPublicKey({
+    account: accountName,
+  })
+
+  const publicAddress = accountResponse.content.publicKey
+
+  // TODO: The SDK should export this value so users don't have to hardcode it
+  const NOTE_ENCRYPTED_BYTES = 520
+
+  // Get the max transaction size from the node
+  // TODO: This value should subtract the header + miner fee from the max block size
+  const consensusParams = await client.chain.getConsensusParameters()
+  const maxTransactionSizeBytes = consensusParams.content.maxBlockSizeBytes
+  console.log('Max transaction size (bytes):', maxTransactionSizeBytes)
+
+  // Create some example outputs
+  let numOfOutputs = Math.floor(maxTransactionSizeBytes / NOTE_ENCRYPTED_BYTES)
+  console.log('Rough estimate of how many outputs can fit in a transaction:', numOfOutputs)
+
+  const outputs: CreateTransactionRequest['outputs'] = []
+  for (let i = 0; i < numOfOutputs; i++) {
+    outputs.push({
+      publicAddress,
+      amount: CurrencyUtils.encode(1n),
+      memo: 'test',
+      assetId: Asset.nativeId().toString('hex'),
+    })
+  }
+
+  // Recreate the raw transaction until it fits in the block
+  let bytes = Infinity
+  let spends = Infinity
+  while (bytes > maxTransactionSizeBytes) {
+    console.log(`Calculating size of transaction with ${numOfOutputs} outputs...`)
+
+    const options: CreateTransactionRequest = {
+      outputs: outputs.slice(0, numOfOutputs),
+      account: accountName,
+      feeRate: '200',
+    }
+
+    const response = await client.wallet.createTransaction(options)
+    const rawTransaction = RawTransactionSerde.deserialize(
+      Buffer.from(response.content.transaction, 'hex'),
+    )
+    bytes = rawTransaction.size()
+    spends = rawTransaction.spends.length
+
+    numOfOutputs--
+  }
+
+  console.log(
+    `Fit ${numOfOutputs} outputs in a transaction with ${spends} spends. Transaction size (bytes): ${bytes}`,
+  )
+}
+```
