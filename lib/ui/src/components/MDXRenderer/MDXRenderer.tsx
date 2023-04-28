@@ -19,17 +19,21 @@ import { ReactNode, ComponentProps, useState, useCallback } from "react";
 import { kebabCase } from "lodash-es";
 import { useSmoothScrollToHash } from "../../hooks/useSmoothScrollToHash";
 
+export function headingToAnchorId(headingEl: HTMLHeadingElement) {
+  return kebabCase(headingEl.innerText.toLowerCase());
+}
+
 function HeadingWithAnchor(props: ComponentProps<typeof Heading>) {
   const [headingId, setHeadingId] = useState("");
   const handleHeadingId = useCallback((ref: HTMLHeadingElement | null) => {
-    ref?.innerText && setHeadingId(kebabCase(ref.innerText.toLowerCase()));
+    ref?.innerText && setHeadingId(headingToAnchorId(ref));
   }, []);
 
   return (
     <Heading
       {...props}
-      ref={handleHeadingId}
       id={headingId}
+      ref={handleHeadingId}
       fontWeight="normal"
       _hover={{
         'a[href^="#"]': {
