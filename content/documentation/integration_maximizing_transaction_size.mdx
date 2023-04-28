@@ -19,6 +19,7 @@ import {
   IronfishSdk,
   RawTransactionSerde,
 } from '@ironfish/sdk'
+
 async function main(): Promise<void> {
   const sdk = await IronfishSdk.init({ dataDir: '~/.dev0' })
   const client = await sdk.connectRpc()
