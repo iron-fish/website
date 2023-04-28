@@ -4,10 +4,10 @@ import {
   Text,
   GridItem,
   useBreakpointValue,
-} from '@chakra-ui/react';
-import Image from 'next/image';
-import Link from 'next/link';
-import { ColorKeys } from '../../../theme';
+} from "@chakra-ui/react";
+import Image from "next/image";
+import Link from "next/link";
+import { ColorKeys } from "../../../theme";
 
 type Props = {
   href: string;
@@ -19,20 +19,20 @@ type Props = {
 };
 
 function getLinkProps(href: string): {
-  as: 'a' | typeof Link;
+  as: "a" | typeof Link;
   target?: string;
   rel?: string;
 } {
   if (/^mailto:/.test(href)) {
     return {
-      as: 'a',
+      as: "a",
     };
   }
   if (/^https?:/.test(href)) {
     return {
-      target: '_blank',
-      rel: 'noreferrer',
-      as: 'a',
+      target: "_blank",
+      rel: "noreferrer",
+      as: "a",
     };
   }
   return {
@@ -49,8 +49,8 @@ export function Category({
   onClick,
 }: Props) {
   const iconSize = useBreakpointValue({
-    base: '80px',
-    md: '85px',
+    base: "80px",
+    md: "85px",
   });
   return (
     <GridItem
@@ -71,7 +71,7 @@ export function Category({
           position="relative"
           mr={4}
         >
-          <Image fill alt="" src={image} style={{ objectFit: 'contain' }} />
+          <Image fill alt="" src={image} style={{ objectFit: "contain" }} />
         </Box>
         <Box flexGrow={1}>
           <Text fontSize="sm" mb={2} fontWeight="medium">

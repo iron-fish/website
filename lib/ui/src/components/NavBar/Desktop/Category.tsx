@@ -1,8 +1,8 @@
-import { Grid, GridItem, HStack, Text, Box } from '@chakra-ui/react';
-import Image from 'next/image';
-import Link from 'next/link';
-import { ShadowBox } from '../../ShadowBox/ShadowBox';
-import { ColorKeys } from '../../../theme';
+import { Grid, GridItem, HStack, Text, Box } from "@chakra-ui/react";
+import Image from "next/image";
+import Link from "next/link";
+import { ShadowBox } from "../../ShadowBox/ShadowBox";
+import { ColorKeys } from "../../../theme";
 
 type Props = {
   color: ColorKeys;
@@ -16,20 +16,20 @@ type Props = {
 };
 
 function getLinkProps(href: string): {
-  as: 'a' | typeof Link;
+  as: "a" | typeof Link;
   target?: string;
   rel?: string;
 } {
   if (/^mailto:/.test(href)) {
     return {
-      as: 'a',
+      as: "a",
     };
   }
   if (/^https?:/.test(href)) {
     return {
-      target: '_blank',
-      rel: 'noreferrer',
-      as: 'a',
+      target: "_blank",
+      rel: "noreferrer",
+      as: "a",
     };
   }
   return {
@@ -37,15 +37,15 @@ function getLinkProps(href: string): {
   };
 }
 
-const ICON_SIZE = '85px';
+const ICON_SIZE = "85px";
 
 export function Category({ items, color, onLinkClick }: Props) {
   return (
     <ShadowBox p={5} shadowColor={`${color}.500`}>
       <Grid
         templateColumns={{
-          base: 'repeat(1, 1fr)',
-          lg: 'repeat(2, 1fr)',
+          base: "repeat(1, 1fr)",
+          lg: "repeat(2, 1fr)",
         }}
       >
         {items.map((item, i) => {
@@ -73,7 +73,7 @@ export function Category({ items, color, onLinkClick }: Props) {
                     fill
                     alt=""
                     src={item.image}
-                    style={{ objectFit: 'contain' }}
+                    style={{ objectFit: "contain" }}
                   />
                 </Box>
                 <Box flexGrow={1}>

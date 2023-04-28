@@ -1,12 +1,12 @@
-import { SidebarDefinition } from '@/lib/markdown';
+import { SidebarDefinition } from "@/lib/markdown";
 
 export const sidebar: SidebarDefinition = [
-  'introduction',
-  'networking',
-  'storage',
-  'mining',
-  'account',
-  'transaction',
-  'consensus-verification',
-  'appendix',
+  "introduction",
+  "networking",
+  "storage",
+  "mining",
+  "account",
+  "transaction",
+  "consensus-verification",
+  "appendix",
 ];

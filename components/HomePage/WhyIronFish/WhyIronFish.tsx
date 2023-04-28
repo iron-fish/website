@@ -4,29 +4,29 @@ import {
   Text,
   StickySideBySideView,
   ShadowBox,
-} from '@/lib/ui';
-import { ReactNode } from 'react';
-import { Decentralized } from './icons/Decentralized';
-import { Handshake } from './icons/Handdhake';
-import { Lock } from './icons/Lock';
+} from "@/lib/ui";
+import { ReactNode } from "react";
+import { Decentralized } from "./icons/Decentralized";
+import { Handshake } from "./icons/Handdhake";
+import { Lock } from "./icons/Lock";
 
 const sections = [
   {
-    heading: 'Privacy without compromise',
+    heading: "Privacy without compromise",
     description:
-      'Iron Fish is built from the ground up with zk-SNARK technology. Integrating encryption solutions at the foundation of our protocol delivers maximal security across the platform.',
+      "Iron Fish is built from the ground up with zk-SNARK technology. Integrating encryption solutions at the foundation of our protocol delivers maximal security across the platform.",
     image: <Lock />,
   },
   {
-    heading: 'Your finance, truly decentralized',
+    heading: "Your finance, truly decentralized",
     description:
-      'Powered by a global network of miners and nodes, Iron Fish is a censorship resistant, resilient, and privacy-enabled platform for everyday crypto transactions.',
+      "Powered by a global network of miners and nodes, Iron Fish is a censorship resistant, resilient, and privacy-enabled platform for everyday crypto transactions.",
     image: <Decentralized />,
   },
   {
-    heading: 'A common-sense approach to compliance',
+    heading: "A common-sense approach to compliance",
     description:
-      'With an Iron Fish account, users receive a set of view keys that allow them to provide read-only access to their transactions records. This feature enables users to share account information for compliance and situations requiring proof of transaction.',
+      "With an Iron Fish account, users receive a set of view keys that allow them to provide read-only access to their transactions records. This feature enables users to share account information for compliance and situations requiring proof of transaction.",
     image: <Handshake />,
   },
 ];
@@ -44,9 +44,9 @@ export function WhyIronFish() {
       <Container
         maxW="container.2xl"
         py={{
-          base: '4rem',
-          md: '8rem',
-          lg: '9rem',
+          base: "4rem",
+          md: "8rem",
+          lg: "9rem",
         }}
       >
         <StickySideBySideView>
@@ -90,8 +90,8 @@ function Section({
     <Box mb={8}>
       <Box
         maxW={{
-          base: '100%',
-          md: '450px',
+          base: "100%",
+          md: "450px",
         }}
       >
         <ShadowBox p={12}>

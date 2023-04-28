@@ -16,6 +16,9 @@ export function parseNestedDir(
       return acc;
     }
 
-    return [...acc, ...parseNestedDir(workingDirectory, [...(_nestedPath ?? []), curr])];
+    return [
+      ...acc,
+      ...parseNestedDir(workingDirectory, [...(_nestedPath ?? []), curr]),
+    ];
   }, []);
 }

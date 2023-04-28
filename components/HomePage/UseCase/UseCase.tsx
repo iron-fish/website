@@ -1,26 +1,19 @@
-import {
-  Box,
-  Text,
-  Container,
-  FancyArrowRight,
-  Flex,
-  HStack,
-} from '@/lib/ui';
-import Link from 'next/link';
-import { ReactNode } from 'react';
-import { defineMessages, useIntl } from 'react-intl';
-import { useIsClient } from 'usehooks-ts';
-import { NodeAppUIImage } from '../../NodeAppUIImage/NodeAppImage';
+import { Box, Text, Container, FancyArrowRight, Flex, HStack } from "@/lib/ui";
+import Link from "next/link";
+import { ReactNode } from "react";
+import { defineMessages, useIntl } from "react-intl";
+import { useIsClient } from "usehooks-ts";
+import { NodeAppUIImage } from "../../NodeAppUIImage/NodeAppImage";
 
 const messages = defineMessages({
   heading: {
-    id: 'useCase.heading',
-    defaultMessage: 'Find your Use Case',
+    id: "useCase.heading",
+    defaultMessage: "Find your Use Case",
   },
   description: {
-    id: 'useCase.description',
+    id: "useCase.description",
     defaultMessage:
-      'Iron Fish is built for everyone. Decentralized currency should be easy-to-use and convenient while offering developers a needed base for building sophisticated applications on our encrypted network.',
+      "Iron Fish is built for everyone. Decentralized currency should be easy-to-use and convenient while offering developers a needed base for building sophisticated applications on our encrypted network.",
   },
 });
 
@@ -33,7 +26,7 @@ export function UseCase() {
       pt={{
         base: 24,
         lg: 32,
-        xl: '150px',
+        xl: "150px",
       }}
       px={{
         base: 4,
@@ -42,13 +35,13 @@ export function UseCase() {
       <Container
         maxW="62ch"
         textAlign={{
-          base: 'left',
-          md: 'center',
+          base: "left",
+          md: "center",
         }}
         mb={{
           base: 16,
           md: 32,
-          xl: '140px',
+          xl: "140px",
         }}
       >
         <Text as="h2" textStyle="h3" color="white" mb={8}>
@@ -91,8 +84,8 @@ function FancyLink({
       position="relative"
       color={color}
       _hover={{
-        '& > div:last-child': {
-          w: '100%',
+        "& > div:last-child": {
+          w: "100%",
         },
       }}
     >

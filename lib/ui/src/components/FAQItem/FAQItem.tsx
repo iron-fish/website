@@ -5,10 +5,10 @@ import {
   useDisclosure,
   Collapse,
   useBreakpointValue,
-} from '@chakra-ui/react';
-import { Box } from '@chakra-ui/react';
-import { ReactNode } from 'react';
-import { FancyArrowRight } from '../../icons';
+} from "@chakra-ui/react";
+import { Box } from "@chakra-ui/react";
+import { ReactNode } from "react";
+import { FancyArrowRight } from "../../icons";
 
 type Props = {
   title: string;
@@ -17,10 +17,10 @@ type Props = {
 
 export function FAQItem({ children, title }: Props) {
   const { isOpen, onToggle } = useDisclosure();
-  const buttonSize = useBreakpointValue({ base: '48px', md: '67px' });
+  const buttonSize = useBreakpointValue({ base: "48px", md: "67px" });
   const buttonScale = useBreakpointValue({
-    base: '0.8',
-    md: '1',
+    base: "0.8",
+    md: "1",
   });
 
   return (
@@ -44,7 +44,7 @@ export function FAQItem({ children, title }: Props) {
           <Box
             transition="transform 0.2s ease-in-out"
             transform={`rotate(${
-              isOpen ? '-45deg' : '45deg'
+              isOpen ? "-45deg" : "45deg"
             }) scale(${buttonScale})`}
             position="absolute"
           >
@@ -61,7 +61,7 @@ export function FAQItem({ children, title }: Props) {
           pb={6}
           ml={{
             base: 0,
-            lg: '118px',
+            lg: "118px",
           }}
         >
           {children}

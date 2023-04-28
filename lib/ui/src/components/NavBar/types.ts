@@ -1,4 +1,4 @@
-import { ColorKeys } from '../../../index';
+import { ColorKeys } from "../../../index";
 
 export type CategoryNavItem = {
   label: string;

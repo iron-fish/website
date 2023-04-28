@@ -1,2 +1,2 @@
-export { FancyArrowRight } from './FancyArrowRight/FancyArrowRight';
-export { FancyArrowUpRight } from './FancyArrowUpRight/FancyArrowUpRight';
+export { FancyArrowRight } from "./FancyArrowRight/FancyArrowRight";
+export { FancyArrowUpRight } from "./FancyArrowUpRight/FancyArrowUpRight";

@@ -4,29 +4,29 @@ import {
   Text,
   StickySideBySideView,
   ShadowBox,
-} from '@/lib/ui';
-import { ReactNode } from 'react';
-import { Book } from './icons/Book';
-import { Lightning } from './icons/Lightning';
-import { Chat } from './icons/Chat';
+} from "@/lib/ui";
+import { ReactNode } from "react";
+import { Book } from "./icons/Book";
+import { Lightning } from "./icons/Lightning";
+import { Chat } from "./icons/Chat";
 
 const sections = [
   {
-    heading: 'A Place to Learn',
+    heading: "A Place to Learn",
     description:
-      'The diverse Iron Fish community includes new and experienced crypto users keen to learn and share knowledge on places like Discord and the entirely user-driven Community Wiki.',
+      "The diverse Iron Fish community includes new and experienced crypto users keen to learn and share knowledge on places like Discord and the entirely user-driven Community Wiki.",
     image: <Book />,
   },
   {
-    heading: 'A Place to Create',
+    heading: "A Place to Create",
     description:
-      'Iron Fish users express their support in numerous ways, from murals and art to bug reports and community-built tools. If you create something, let us know!',
+      "Iron Fish users express their support in numerous ways, from murals and art to bug reports and community-built tools. If you create something, let us know!",
     image: <Lightning />,
   },
   {
-    heading: 'A Place to Engage',
+    heading: "A Place to Engage",
     description:
-      'What do you care about? We want to know! Through Discord, Twitter, and more, the Iron Fish community is here to spark conversation and drive crypto innovation forward.',
+      "What do you care about? We want to know! Through Discord, Twitter, and more, the Iron Fish community is here to spark conversation and drive crypto innovation forward.",
     image: <Chat />,
   },
 ];
@@ -44,9 +44,9 @@ export function OurCommunityIs() {
       <Container
         maxW="container.2xl"
         py={{
-          base: '4rem',
-          md: '8rem',
-          lg: '9rem',
+          base: "4rem",
+          md: "8rem",
+          lg: "9rem",
         }}
       >
         <StickySideBySideView>
@@ -90,8 +90,8 @@ function Section({
     <Box mb={8}>
       <Box
         maxW={{
-          base: '100%',
-          md: '450px',
+          base: "100%",
+          md: "450px",
         }}
       >
         <ShadowBox p={12} shadowColor="green.500">

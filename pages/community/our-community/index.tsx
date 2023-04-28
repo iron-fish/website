@@ -1,4 +1,4 @@
-import Image from 'next/image';
+import Image from "next/image";
 import {
   Box,
   Container,
@@ -10,14 +10,14 @@ import {
   GridItem,
   ShadowBox,
   ThickLink,
-} from '@/lib/ui';
-import earth from '../../../assets/heroImages/community-our/earth.svg';
-import apple from '../../../assets/heroImages/community-our/apple.svg';
-import octo from '../../../assets/heroImages/community-our/octo.svg';
-import WorldMap from '../../../assets/community/map.svg';
-import { OurCommunityIs } from '../../../components/Community/OurCommunityIs/OurCommunityIs';
-import { Join } from '../../../components/Community/Join/Join';
-import { Quotes } from '../../../components/Community/Quotes/Quotes';
+} from "@/lib/ui";
+import earth from "../../../assets/heroImages/community-our/earth.svg";
+import apple from "../../../assets/heroImages/community-our/apple.svg";
+import octo from "../../../assets/heroImages/community-our/octo.svg";
+import WorldMap from "../../../assets/community/map.svg";
+import { OurCommunityIs } from "../../../components/Community/OurCommunityIs/OurCommunityIs";
+import { Join } from "../../../components/Community/Join/Join";
+import { Quotes } from "../../../components/Community/Quotes/Quotes";
 
 const earthImage = earth as LocalImage;
 const appleImage = apple as LocalImage;
@@ -25,28 +25,28 @@ const octoImage = octo as LocalImage;
 
 const STATS = [
   {
-    metric: '6,000+',
-    label: 'Active Nodes',
+    metric: "6,000+",
+    label: "Active Nodes",
   },
   {
-    metric: 'Every',
-    label: 'Country Represented',
+    metric: "Every",
+    label: "Country Represented",
   },
   {
-    metric: '50,000+',
-    label: 'Blocks Mined',
+    metric: "50,000+",
+    label: "Blocks Mined",
   },
   {
-    metric: '42,000+',
-    label: 'Community Members',
+    metric: "42,000+",
+    label: "Community Members",
   },
   {
-    metric: '13,000+',
-    label: 'Assets Minted',
+    metric: "13,000+",
+    label: "Assets Minted",
   },
   {
-    metric: '140,000+',
-    label: 'Grafittis',
+    metric: "140,000+",
+    label: "Grafittis",
   },
 ];
 
@@ -63,37 +63,37 @@ export default function CommunityHighlights() {
             <HeroImageUtil
               image={earthImage}
               top={{
-                md: '-150px',
-                xl: '-30px',
+                md: "-150px",
+                xl: "-30px",
               }}
               left={{
-                md: '-120px',
-                xl: '30px',
-                '2xl': `calc(50vw - 700px)`,
+                md: "-120px",
+                xl: "30px",
+                "2xl": `calc(50vw - 700px)`,
               }}
             />
             <HeroImageUtil
               image={appleImage}
               bottom={{
-                md: '-80px',
-                xl: '15px',
+                md: "-80px",
+                xl: "15px",
               }}
               left={{
-                md: '-50px',
-                xl: '-20px',
-                '2xl': `calc(50vw - 850px)`,
+                md: "-50px",
+                xl: "-20px",
+                "2xl": `calc(50vw - 850px)`,
               }}
             />
             <HeroImageUtil
               image={octoImage}
               top={{
-                md: '20px',
-                xl: '85px',
+                md: "20px",
+                xl: "85px",
               }}
               right={{
-                md: '-120px',
-                xl: '-20px',
-                '2xl': `calc(50vw - 700px)`,
+                md: "-120px",
+                xl: "-20px",
+                "2xl": `calc(50vw - 700px)`,
               }}
             />
           </>
@@ -111,16 +111,16 @@ export default function CommunityHighlights() {
         <Text
           textStyle="h5"
           my={{
-            base: '50px',
-            md: '100px',
-            lg: '150px',
+            base: "50px",
+            md: "100px",
+            lg: "150px",
           }}
           textAlign="center"
           maxW="container.md"
           mx="auto"
         >
-          The{' '}
-          <ThickLink underlineColor="green.500">Iron Fish community</ThickLink>{' '}
+          The{" "}
+          <ThickLink underlineColor="green.500">Iron Fish community</ThickLink>{" "}
           is home to a diverse group of miners, node operators, everyday users,
           and people curious about crypto. Come find your place in this lively,
           welcoming collective that is united around the idea that crypto can be
@@ -133,7 +133,7 @@ export default function CommunityHighlights() {
         bg="blue.500"
         py={{
           base: 24,
-          md: '128px',
+          md: "128px",
         }}
         overflow="hidden"
       >
@@ -148,8 +148,8 @@ export default function CommunityHighlights() {
         </Box>
         <Box
           mx={{
-            base: '-10vw',
-            md: '-5vw',
+            base: "-10vw",
+            md: "-5vw",
             lg: 0,
           }}
         >
@@ -157,7 +157,7 @@ export default function CommunityHighlights() {
             src={WorldMap}
             alt=""
             style={{
-              margin: '0 auto',
+              margin: "0 auto",
             }}
           />
         </Box>
@@ -172,14 +172,14 @@ export default function CommunityHighlights() {
         }}
         py={{
           base: 24,
-          md: '128px',
+          md: "128px",
         }}
       >
         <Grid
           templateColumns={{
-            base: '100%',
-            lg: 'repeat(2, 1fr)',
-            xl: 'repeat(3, 1fr)',
+            base: "100%",
+            lg: "repeat(2, 1fr)",
+            xl: "repeat(3, 1fr)",
           }}
           gap={6}
         >

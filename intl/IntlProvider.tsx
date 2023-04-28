@@ -1,6 +1,6 @@
-import { useRouter } from 'next/router';
-import { useEffect, useState } from 'react';
-import { IntlProvider as ReactIntlProvider } from 'react-intl';
+import { useRouter } from "next/router";
+import { useEffect, useState } from "react";
+import { IntlProvider as ReactIntlProvider } from "react-intl";
 
 type Props = {
   children: React.ReactNode;
@@ -9,23 +9,23 @@ type Props = {
 export function IntlProvider({ children }: Props) {
   const router = useRouter();
   const [messages, setMessages] = useState<Record<string, string>>({});
-  const locale = router.locale ?? 'en';
+  const locale = router.locale ?? "en";
 
   useEffect(() => {
     async function loadMessages() {
       let match;
       try {
         switch (locale) {
-          case 'en':
-            match = (await import('./messages/en.json')).default;
+          case "en":
+            match = (await import("./messages/en.json")).default;
             break;
           default:
-            match = (await import('./messages/en.json')).default;
+            match = (await import("./messages/en.json")).default;
             break;
         }
       } catch (err) {
         console.log(err);
-        match = (await import('./messages/en.json')).default;
+        match = (await import("./messages/en.json")).default;
       }
       setMessages(match);
     }

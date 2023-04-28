@@ -1,17 +1,17 @@
-import { Box, Text, Container, ArrowButton, Flex } from '@/lib/ui';
-import Link from 'next/link';
-import { defineMessages, useIntl } from 'react-intl';
-import { CONSTANTS } from '../../../shared/constants';
+import { Box, Text, Container, ArrowButton, Flex } from "@/lib/ui";
+import Link from "next/link";
+import { defineMessages, useIntl } from "react-intl";
+import { CONSTANTS } from "../../../shared/constants";
 
 const messages = defineMessages({
   heading: {
-    id: 'community.heading',
-    defaultMessage: 'Connect with a Global Community',
+    id: "community.heading",
+    defaultMessage: "Connect with a Global Community",
   },
   description: {
-    id: 'community.description',
+    id: "community.description",
     defaultMessage:
-      'Iron Fish is open-source and community-focused. Join us on Discord and connect with a lively and highly-engaged collective.',
+      "Iron Fish is open-source and community-focused. Join us on Discord and connect with a lively and highly-engaged collective.",
   },
 });
 
@@ -24,7 +24,7 @@ export function Community() {
       py={{
         base: 24,
         lg: 32,
-        xl: '150px',
+        xl: "150px",
       }}
       px={{
         base: 4,
@@ -34,8 +34,8 @@ export function Community() {
         maxW="68ch"
         mb={8}
         textAlign={{
-          base: 'left',
-          md: 'center',
+          base: "left",
+          md: "center",
         }}
       >
         <Text as="h2" textStyle="h3" mb={8}>
@@ -45,12 +45,12 @@ export function Community() {
       </Container>
       <Flex
         alignItems={{
-          base: 'stretch',
-          sm: 'center',
+          base: "stretch",
+          sm: "center",
         }}
         flexDirection={{
-          base: 'column',
-          sm: 'row',
+          base: "column",
+          sm: "row",
         }}
         justifyContent="center"
         gap={{

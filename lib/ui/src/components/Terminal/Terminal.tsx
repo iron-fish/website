@@ -1,5 +1,5 @@
-import { Box, VStack, Text, HStack, Grid, GridItem } from '@chakra-ui/react';
-import { ComponentProps } from 'react';
+import { Box, VStack, Text, HStack, Grid, GridItem } from "@chakra-ui/react";
+import { ComponentProps } from "react";
 
 type Props = {
   command: string;
@@ -7,9 +7,9 @@ type Props = {
 };
 
 const dracula = {
-  black: '#282a36',
-  green: '#50fa7b',
-  white: '#f8f8f2',
+  black: "#282a36",
+  green: "#50fa7b",
+  white: "#f8f8f2",
 };
 
 export function Terminal({ command, output }: Props) {
@@ -30,8 +30,8 @@ export function Terminal({ command, output }: Props) {
             fontWeight="bold"
             aria-hidden="true"
             _selection={{
-              bg: 'blue',
-              color: 'white',
+              bg: "blue",
+              color: "white",
             }}
           >
             Terminal 🐟
@@ -41,15 +41,15 @@ export function Terminal({ command, output }: Props) {
       <VStack
         alignItems="stretch"
         _selection={{
-          bg: 'blue',
-          color: 'white',
+          bg: "blue",
+          color: "white",
         }}
       >
         <TerminalText color={dracula.green} mb={2}>
-          {'>'} {command}
+          {">"} {command}
         </TerminalText>
 
-        {typeof output === 'string' ? (
+        {typeof output === "string" ? (
           <TerminalText>{output}</TerminalText>
         ) : (
           <VStack alignItems="stretch">
@@ -71,8 +71,8 @@ function TerminalText(props: ComponentProps<typeof Text>) {
       color={dracula.white}
       fontSize="xs"
       _selection={{
-        bg: 'blue',
-        color: 'white',
+        bg: "blue",
+        color: "white",
       }}
       {...props}
     />

@@ -1,1 +1,1 @@
-export * from './src/typeUtils';
+export * from "./src/typeUtils";

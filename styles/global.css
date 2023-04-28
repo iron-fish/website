@@ -4,11 +4,13 @@ table {
   margin-bottom: 40px;
 }
 
-table td, table th {
+table td,
+table th {
   text-align: left;
 }
 
-table td, table th {
+table td,
+table th {
   padding: 8px;
 }
 
@@ -33,10 +35,18 @@ table th {
   display: inline-block;
 }
 
-.katex-display { overflow: auto hidden }
+.katex-display {
+  overflow: auto hidden;
+}
 
-.katex-display > .katex { white-space: normal }
+.katex-display > .katex {
+  white-space: normal;
+}
 /* Add space between broken lines: */
-.katex-display > .base { margin: 0.25em 0 }
+.katex-display > .base {
+  margin: 0.25em 0;
+}
 /* Compensate by reducing space around display math */
-.katex-display { margin: 0.5em 0; }
+.katex-display {
+  margin: 0.5em 0;
+}

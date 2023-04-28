@@ -1,4 +1,4 @@
-import Image from 'next/image';
+import Image from "next/image";
 import {
   Box,
   Button,
@@ -8,9 +8,9 @@ import {
   ShadowBox,
   Stack,
   Text,
-} from '@/lib/ui';
-import FullLogo from './assets/full-logo.svg';
-import HexFish from './assets/hex-fish.svg';
+} from "@/lib/ui";
+import FullLogo from "./assets/full-logo.svg";
+import HexFish from "./assets/hex-fish.svg";
 
 export function LogoDownloads() {
   return (
@@ -20,33 +20,33 @@ export function LogoDownloads() {
         md: 8,
       }}
       maxW={{
-        base: '704px',
-        lg: '1600px',
+        base: "704px",
+        lg: "1600px",
       }}
       w="100%"
       mb={{
         base: 24,
         md: 32,
-        xl: '150px',
+        xl: "150px",
       }}
       pl={{
-        lg: '40px',
-        xl: '64px',
-        '2xl': '128px',
+        lg: "40px",
+        xl: "64px",
+        "2xl": "128px",
       }}
     >
       <Stack
         direction={{
-          base: 'column',
-          lg: 'row',
+          base: "column",
+          lg: "row",
         }}
         gap={{
           base: 16,
           lg: 16,
         }}
         maxW={{
-          base: '704px',
-          lg: '100%',
+          base: "704px",
+          lg: "100%",
         }}
         w="100%"
         margin="0 auto"
@@ -70,7 +70,7 @@ export function LogoDownloads() {
             href="/downloads/media-kit/logos/iron-fish-logos.zip"
             bg="white"
             _hover={{
-              bg: 'gray.200',
+              bg: "gray.200",
             }}
           >
             Download Files
