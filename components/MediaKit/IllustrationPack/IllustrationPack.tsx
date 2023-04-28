@@ -1,4 +1,4 @@
-import { Box, Button, Container, Stack, Text } from '@/lib/ui';
+import { Box, Button, Container, Stack, Text } from "@/lib/ui";
 
 export function IllustrationPack() {
   return (
@@ -6,9 +6,9 @@ export function IllustrationPack() {
       w="100%"
       maxW="container.2xl"
       pl={{
-        lg: '40px',
-        xl: '64px',
-        '2xl': '128px',
+        lg: "40px",
+        xl: "64px",
+        "2xl": "128px",
       }}
       pr={{
         base: 3,
@@ -19,22 +19,22 @@ export function IllustrationPack() {
         alignItems="stretch"
         justifyContent="space-between"
         direction={{
-          base: 'column',
-          lg: 'row',
+          base: "column",
+          lg: "row",
         }}
       >
         <Box
           py={{
             base: 16,
-            lg: '300px',
+            lg: "300px",
           }}
           maxW={{
-            base: '100%',
-            lg: '50%',
+            base: "100%",
+            lg: "50%",
           }}
           pr={{
             base: 0,
-            lg: '110px',
+            lg: "110px",
           }}
         >
           <Text textStyle="h3" mb={8}>
@@ -49,7 +49,7 @@ export function IllustrationPack() {
             href="/downloads/media-kit/iron-fish-illustration-pack.zip"
             bg="white"
             _hover={{
-              bg: 'gray.200',
+              bg: "gray.200",
             }}
           >
             Download Files
@@ -57,18 +57,18 @@ export function IllustrationPack() {
         </Box>
         <Box
           w={{
-            base: '100%',
-            lg: '50%',
+            base: "100%",
+            lg: "50%",
           }}
           h={{
-            base: '440px',
-            lg: 'auto',
+            base: "440px",
+            lg: "auto",
           }}
           bgImage={`url("/images/media-kit/illustration-pack-bg.svg")`}
           backgroundSize="cover"
           backgroundPosition={{
-            base: 'top center',
-            lg: 'left center',
+            base: "top center",
+            lg: "left center",
           }}
         />
       </Stack>

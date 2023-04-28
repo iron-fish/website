@@ -5,12 +5,9 @@ import { parseNestedDir } from "./parseNestedDir";
 export type SidebarLabeledItem = {
   id: string;
   label?: string;
-}
+};
 
-export type SidebarItem =
-  | string
-  | SidebarLabeledItem
-  | SidebarCategory;
+export type SidebarItem = string | SidebarLabeledItem | SidebarCategory;
 
 export type SidebarCategory = {
   label: string;
@@ -23,13 +20,13 @@ function buildSidebarItem(
   item: Exclude<SidebarItem, SidebarCategory>,
   contentMap: Record<string, Record<string, string>>,
   pathPrefix: string
-): {title: string; href: string} {
+): { title: string; href: string } {
   if (typeof item === "string") {
     return {
       title: contentMap[item].title,
       href: `${pathPrefix}/${contentMap[item].document}`,
     };
-  } 
+  }
 
   return {
     title: item.label ?? contentMap[item.id].title,
@@ -64,16 +61,21 @@ export function getSidebarContent(
   });
 }
 
-export type SidebarReference = {
-  title: string
-  href: string
-} | {
-  title: string
-  items: SidebarReference[]
-}
+export type SidebarReference =
+  | {
+      title: string;
+      href: string;
+    }
+  | {
+      title: string;
+      items: SidebarReference[];
+    };
 
-function buildSidebar(item: SidebarItem, contentMap: Record<string, Record<string, string>>, pathPrefix: string): SidebarReference 
-{
+function buildSidebar(
+  item: SidebarItem,
+  contentMap: Record<string, Record<string, string>>,
+  pathPrefix: string
+): SidebarReference {
   if (typeof item === "string" || !("items" in item)) {
     return buildSidebarItem(item, contentMap, pathPrefix);
   }
@@ -81,7 +83,7 @@ function buildSidebar(item: SidebarItem, contentMap: Record<string, Record<strin
   return {
     title: item.label,
     items: item.items.map((nestedItem) => {
-        return buildSidebar(nestedItem, contentMap, pathPrefix)
+      return buildSidebar(nestedItem, contentMap, pathPrefix);
     }),
-  }    
+  };
 }

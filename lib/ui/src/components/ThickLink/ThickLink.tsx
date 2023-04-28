@@ -1,18 +1,18 @@
-import { Text, TextProps, ChakraComponent } from '@chakra-ui/react';
-import { ReactNode } from 'react';
+import { Text, TextProps, ChakraComponent } from "@chakra-ui/react";
+import { ReactNode } from "react";
 
 type Props = {
   children: ReactNode;
   underlineColor: string;
 } & TextProps;
 
-export const ThickLink: ChakraComponent<'span', Props> = ({
+export const ThickLink: ChakraComponent<"span", Props> = ({
   children,
   underlineColor,
   ...rest
 }: Props) => {
-  const color = underlineColor.includes('.')
-    ? `var(--chakra-colors-${underlineColor.split('.').join('-')})`
+  const color = underlineColor.includes(".")
+    ? `var(--chakra-colors-${underlineColor.split(".").join("-")})`
     : underlineColor;
 
   return (

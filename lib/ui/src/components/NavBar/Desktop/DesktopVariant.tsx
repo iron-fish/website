@@ -1,12 +1,12 @@
-import { Box } from '@chakra-ui/react';
-import { Category } from './Category';
-import { IoChevronDownSharp } from 'react-icons/io5';
-import { kebabCase } from 'lodash-es';
-import { Button, HStack, Text, Flex, FancyArrowRight } from '../../../../index';
-import { NavItems } from '../types';
-import { useCallback, useState } from 'react';
-import Link from 'next/link';
-import { useRouter } from 'next/router';
+import { Box } from "@chakra-ui/react";
+import { Category } from "./Category";
+import { IoChevronDownSharp } from "react-icons/io5";
+import { kebabCase } from "lodash-es";
+import { Button, HStack, Text, Flex, FancyArrowRight } from "../../../../index";
+import { NavItems } from "../types";
+import { useCallback, useState } from "react";
+import Link from "next/link";
+import { useRouter } from "next/router";
 
 function useHandleLinkClick() {
   const [forceClose, setForceClose] = useState(false);
@@ -27,7 +27,7 @@ export function DesktopVariant({ content }: { content: NavItems }) {
     <>
       <HStack spacing={0} as="ul" alignItems="stretch">
         {content.map((item, i) => {
-          if ('href' in item) {
+          if ("href" in item) {
             return (
               <Flex
                 key={i}
@@ -47,7 +47,7 @@ export function DesktopVariant({ content }: { content: NavItems }) {
           }
 
           const isActiveItem =
-            'items' in item &&
+            "items" in item &&
             item.items.some((link) => {
               return router.pathname.startsWith(link.href);
             });
@@ -67,17 +67,17 @@ export function DesktopVariant({ content }: { content: NavItems }) {
                 mr={2}
                 sx={{
                   [`#${itemId}:hover &:before`]: {
-                    bg: 'black',
+                    bg: "black",
                   },
                 }}
                 _before={{
                   content: '""',
-                  position: 'absolute',
-                  bottom: '-10px',
+                  position: "absolute",
+                  bottom: "-10px",
                   left: 0,
-                  width: 'calc(100% + 2.25ch)',
-                  height: '1.5px',
-                  bg: isActiveItem ? 'black' : 'transparent',
+                  width: "calc(100% + 2.25ch)",
+                  height: "1.5px",
+                  bg: isActiveItem ? "black" : "transparent",
                 }}
               >
                 {item.label}
@@ -95,7 +95,7 @@ export function DesktopVariant({ content }: { content: NavItems }) {
                 transform="translateX(-50%)"
                 sx={{
                   [`#${itemId}:hover &`]: {
-                    display: forceClose ? 'none' : 'block',
+                    display: forceClose ? "none" : "block",
                   },
                 }}
               >

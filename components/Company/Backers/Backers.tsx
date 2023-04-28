@@ -6,20 +6,20 @@ import {
   Flex,
   Grid,
   GridItem,
-} from '@/lib/ui';
-import { defineMessages, useIntl } from 'react-intl';
-import Image from 'next/image';
-import ImgA16z from './assets/backer-a16z.png';
-import ImgElad from './assets/backer-elad.png';
-import ImgSequoia from './assets/backer-sequoia.png';
-import ImgBalaji from './assets/backer-balaji.png';
-import ImgElectric from './assets/backer-electric.png';
-import ImgLinda from './assets/backer-linda.png';
+} from "@/lib/ui";
+import { defineMessages, useIntl } from "react-intl";
+import Image from "next/image";
+import ImgA16z from "./assets/backer-a16z.png";
+import ImgElad from "./assets/backer-elad.png";
+import ImgSequoia from "./assets/backer-sequoia.png";
+import ImgBalaji from "./assets/backer-balaji.png";
+import ImgElectric from "./assets/backer-electric.png";
+import ImgLinda from "./assets/backer-linda.png";
 
 const messages = defineMessages({
   heading: {
-    id: 'backers.heading',
-    defaultMessage: 'World-class builders and backers',
+    id: "backers.heading",
+    defaultMessage: "World-class builders and backers",
   },
 });
 
@@ -32,7 +32,7 @@ export function Backers() {
       py={{
         base: 24,
         lg: 32,
-        xl: '150px',
+        xl: "150px",
       }}
       px={{
         base: 4,
@@ -44,9 +44,9 @@ export function Backers() {
         </Text>
         <Grid
           templateColumns={{
-            base: 'repeat(2, 1fr)',
-            lg: 'repeat(3, 1fr)',
-            xl: 'repeat(6, 1fr)',
+            base: "repeat(2, 1fr)",
+            lg: "repeat(3, 1fr)",
+            xl: "repeat(6, 1fr)",
           }}
           w="100%"
           gap={{
@@ -76,12 +76,12 @@ export function Backers() {
       </Container>
       <Flex
         alignItems={{
-          base: 'stretch',
-          sm: 'center',
+          base: "stretch",
+          sm: "center",
         }}
         flexDirection={{
-          base: 'column',
-          sm: 'row',
+          base: "column",
+          sm: "row",
         }}
         justifyContent="center"
         gap={{

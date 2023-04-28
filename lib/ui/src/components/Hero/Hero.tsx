@@ -1,12 +1,12 @@
-import { ReactNode } from 'react';
+import { ReactNode } from "react";
 import {
   Box,
   BoxProps,
   Container,
   ContainerProps,
   Text,
-} from '@chakra-ui/react';
-import Image from 'next/image';
+} from "@chakra-ui/react";
+import Image from "next/image";
 
 export type LocalImage = {
   src: string;
@@ -14,7 +14,7 @@ export type LocalImage = {
   width: number;
 };
 
-type Props = Omit<BoxProps, 'children'> & {
+type Props = Omit<BoxProps, "children"> & {
   heading: string;
   subheading: string;
   description: string;
@@ -49,8 +49,8 @@ export function Hero({
         maxW="container.sm"
         textAlign="center"
         py={{
-          base: '96px',
-          md: '116px',
+          base: "96px",
+          md: "116px",
         }}
         position="relative"
         zIndex={1}
@@ -71,10 +71,10 @@ export function Hero({
 
 type HeroImageUtilProps = {
   image: LocalImage;
-  top?: BoxProps['top'];
-  left?: BoxProps['left'];
-  bottom?: BoxProps['bottom'];
-  right?: BoxProps['right'];
+  top?: BoxProps["top"];
+  left?: BoxProps["left"];
+  bottom?: BoxProps["bottom"];
+  right?: BoxProps["right"];
 };
 
 export function HeroImageUtil({ image, ...rest }: HeroImageUtilProps) {
@@ -82,8 +82,8 @@ export function HeroImageUtil({ image, ...rest }: HeroImageUtilProps) {
     <Box
       position="absolute"
       display={{
-        base: 'none',
-        md: 'block',
+        base: "none",
+        md: "block",
       }}
       {...rest}
     >

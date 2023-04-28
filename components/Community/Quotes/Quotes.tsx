@@ -7,31 +7,31 @@ import {
   Text,
   HStack,
   Flex,
-} from '@/lib/ui';
-import { useCallback, useState } from 'react';
+} from "@/lib/ui";
+import { useCallback, useState } from "react";
 
 const QUOTES = [
   {
     quote:
-      'Keeping my financial information confidential is important .Cryptocurrencies like Iron Fish give me peace of mind knowing that my transactions are secure and my privacy is protected.',
-    author: 'Anonymous',
-    title: 'Iron Fish Community Member',
+      "Keeping my financial information confidential is important .Cryptocurrencies like Iron Fish give me peace of mind knowing that my transactions are secure and my privacy is protected.",
+    author: "Anonymous",
+    title: "Iron Fish Community Member",
   },
   {
     quote:
-      'I value my financial privacy and want to ensure that my personal information is not shared with unauthorized parties - Iron Fish keeps my information from being compromised',
-    author: 'Anonymous',
-    title: 'Iron Fish Community Member',
+      "I value my financial privacy and want to ensure that my personal information is not shared with unauthorized parties - Iron Fish keeps my information from being compromised",
+    author: "Anonymous",
+    title: "Iron Fish Community Member",
   },
   {
     quote: `As a cryptocurrency investor, I understand the risks associated with public ledgers that reveal transaction details. I've now found the anonymity that should be the standard`,
-    author: 'Anonymous',
-    title: 'Iron Fish Community Member',
+    author: "Anonymous",
+    title: "Iron Fish Community Member",
   },
   {
     quote: `As a privacy advocate, I believe in the fundamental right to financial privacy. Iron Fish ensure that individuals can maintain control over their financial information.`,
-    author: 'Anonymous',
-    title: 'Iron Fish Community Member',
+    author: "Anonymous",
+    title: "Iron Fish Community Member",
   },
 ];
 
@@ -39,7 +39,7 @@ const QUOTES = [
 
 export function Quotes() {
   const [quoteIndex, setQuoteIndex] = useState(0);
-  const buttonSize = useBreakpointValue({ base: '48px', md: '67px' });
+  const buttonSize = useBreakpointValue({ base: "48px", md: "67px" });
 
   const onNextClick = useCallback(() => {
     setQuoteIndex((index) => (index + 1) % QUOTES.length);
@@ -54,9 +54,9 @@ export function Quotes() {
       <Container
         maxW="container.2xl"
         py={{
-          base: '4rem',
-          md: '8rem',
-          lg: '9rem',
+          base: "4rem",
+          md: "8rem",
+          lg: "9rem",
         }}
       >
         <Box>
@@ -121,7 +121,7 @@ function Indicator({ active }: { active?: boolean }) {
       borderRadius="full"
       height="24px"
       width="24px"
-      bg={active ? 'black' : 'transparent'}
+      bg={active ? "black" : "transparent"}
     />
   );
 }

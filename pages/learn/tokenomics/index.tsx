@@ -1,13 +1,13 @@
-import { GetStaticProps } from 'next';
-import path from 'path';
-import { BlogLayout } from '../../../layouts/Blog/Blog';
-import { ComponentProps } from 'react';
-import { parseFileByPath, renderMarkdown } from '@/lib/markdown';
-import { assertString } from '@/lib/utils';
-import { MDXRenderer } from '@/lib/ui';
+import { GetStaticProps } from "next";
+import path from "path";
+import { BlogLayout } from "../../../layouts/Blog/Blog";
+import { ComponentProps } from "react";
+import { parseFileByPath, renderMarkdown } from "@/lib/markdown";
+import { assertString } from "@/lib/utils";
+import { MDXRenderer } from "@/lib/ui";
 
 type Props = {
-  markdown: ComponentProps<typeof MDXRenderer>['markdown'];
+  markdown: ComponentProps<typeof MDXRenderer>["markdown"];
 };
 
 export default function Tokenomics({ markdown }: Props) {
@@ -16,9 +16,9 @@ export default function Tokenomics({ markdown }: Props) {
 
 const CONTENT_PATH = path.join(
   process.cwd(),
-  'content',
-  'tokenomics',
-  'tokenomics.mdx'
+  "content",
+  "tokenomics",
+  "tokenomics.mdx"
 );
 
 export const getStaticProps: GetStaticProps<Props> = async () => {
@@ -29,7 +29,7 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
   return {
     props: {
       title: assertString(frontMatter.title),
-      description: assertString(frontMatter.description, ''),
+      description: assertString(frontMatter.description, ""),
       markdown,
     },
   };

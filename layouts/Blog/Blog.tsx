@@ -5,16 +5,16 @@ import {
   AspectRatio,
   Container,
   ShadowBox,
-} from '@/lib/ui';
-import { Heading, Box, MDXRenderer } from '@/lib/ui';
-import Head from 'next/head';
-import Image from 'next/image';
-import { ComponentProps } from 'react';
-import { authors } from '../../content/authors/authors';
+} from "@/lib/ui";
+import { Heading, Box, MDXRenderer } from "@/lib/ui";
+import Head from "next/head";
+import Image from "next/image";
+import { ComponentProps } from "react";
+import { authors } from "../../content/authors/authors";
 
 type Props = {
   title: string;
-  markdown: ComponentProps<typeof MDXRenderer>['markdown'];
+  markdown: ComponentProps<typeof MDXRenderer>["markdown"];
   author?: string;
   image?: string;
   description?: string;
@@ -46,8 +46,8 @@ export function BlogLayout({
           md: 24,
         }}
         pb={{
-          base: '100px',
-          md: '200px',
+          base: "100px",
+          md: "200px",
         }}
         mx="auto"
         w="100%"
@@ -100,16 +100,16 @@ export function BlogLayout({
 
 function AuthorDetails({
   author,
-  variant = 'sm',
+  variant = "sm",
 }: {
   author: string;
-  variant?: 'sm' | 'lg';
+  variant?: "sm" | "lg";
 }) {
   const authorDetails = getAuthorDetails(author);
 
   if (!authorDetails) return null;
 
-  if (variant === 'sm') {
+  if (variant === "sm") {
     return (
       <Flex>
         <Box
@@ -136,7 +136,7 @@ function AuthorDetails({
   return (
     <ShadowBox
       p={{
-        base: '48px 24px',
+        base: "48px 24px",
         md: 12,
       }}
       offset="10px"
@@ -144,8 +144,8 @@ function AuthorDetails({
     >
       <Flex
         direction={{
-          base: 'column',
-          md: 'row',
+          base: "column",
+          md: "row",
         }}
       >
         <Box

@@ -1,8 +1,8 @@
-import { Box, Flex, Input, Text, chakra, VStack } from '@/lib/ui';
+import { Box, Flex, Input, Text, chakra, VStack } from "@/lib/ui";
 import {
   useMailchimpSubscribe,
   MAILCHIMP_MESSAGES,
-} from './useMailchimpSubscribe';
+} from "./useMailchimpSubscribe";
 
 export function NewsletterSignUp({ bordered }: { bordered?: boolean }) {
   const { subscribe, status, handleEmailChange } = useMailchimpSubscribe();
@@ -15,17 +15,17 @@ export function NewsletterSignUp({ bordered }: { bordered?: boolean }) {
           md: bordered ? 0 : 2,
         }}
         flexDirection={{
-          base: 'column',
-          md: 'row',
+          base: "column",
+          md: "row",
         }}
         w="100%"
       >
         <Input
           bg="white"
-          border={bordered ? '2px solid black' : 0}
+          border={bordered ? "2px solid black" : 0}
           borderRadius={{
             base: 4,
-            md: '4px 0 0 4px',
+            md: "4px 0 0 4px",
           }}
           flexGrow={1}
           borderRightWidth={
@@ -44,19 +44,19 @@ export function NewsletterSignUp({ bordered }: { bordered?: boolean }) {
           textStyle="md"
           type="text"
           textAlign={{
-            base: 'center',
-            md: 'left',
+            base: "center",
+            md: "left",
           }}
           _placeholder={{
-            color: '#7F7F7F',
+            color: "#7F7F7F",
           }}
         />
         <chakra.button
           bg="pink.400"
-          border={bordered ? '2px solid black' : 0}
+          border={bordered ? "2px solid black" : 0}
           borderRadius={{
             base: 4,
-            md: '0 4px 4px 0',
+            md: "0 4px 4px 0",
           }}
           color="black"
           height="72px"
@@ -67,10 +67,10 @@ export function NewsletterSignUp({ bordered }: { bordered?: boolean }) {
           transition="background-color"
           transitionDuration="fast"
           _hover={{
-            bg: 'purple.500',
+            bg: "purple.500",
           }}
           _focus={{
-            bg: 'purple.500',
+            bg: "purple.500",
           }}
         >
           Subscribe

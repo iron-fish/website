@@ -34,7 +34,8 @@ const nextConfig = {
       },
       {
         source: "/developers/documentation",
-        destination: "/developers/documentation/rpc/chain/broadcast_transaction",
+        destination:
+          "/developers/documentation/rpc/chain/broadcast_transaction",
         permanent: false,
       },
     ];
