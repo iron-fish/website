@@ -60,10 +60,6 @@ const rendererComponents: ComponentProps<typeof MDXRemote>["components"] = {
   h1: (props) => (
     <HeadingWithAnchor
       {...props}
-
-
-
-      
       as="h1"
       fontSize="2xl"
       my="8"
