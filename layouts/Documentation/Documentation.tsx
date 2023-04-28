@@ -115,7 +115,6 @@ export function DocumentationLayout({
           </Box>
         )}
       </Box>
-      {/* @todo: Build "On this page" component */}
       {showOnThisPage && contentHeadings && contentHeadings.length > 0 && (
         <Box
           py="96px"
