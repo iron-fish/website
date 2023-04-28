@@ -1,0 +1,67 @@
+---
+title: Splitting Notes
+description: Recipes | Splitting Notes | Iron Fish Documentation
+---
+
+Iron Fish notes are what store value for an account on the chain. Sometimes you might want to take one note (e.g. with value 1 IRON) and split it into multiple notes (e.g. 0.3, 0.3, 0.4 IRON). 
+This would a separate transactions can be posted at the same time.
+
+Here's an example that splits a note into three separate notes (this can be expanded to N notes). The only requirement is that the source account has a balance capable of funding all the output notes. 
+
+
+```js
+import { Asset } from '@ironfish/rust-nodejs'
+import {
+  CreateTransactionRequest,
+  CurrencyUtils,
+  IronfishSdk,
+  RawTransactionSerde,
+} from '@ironfish/sdk'
+async function main(): Promise<void> {
+  const sdk = await IronfishSdk.init({ dataDir: '~/.dev0' })
+  const client = await sdk.connectRpc()
+  // Fetch an account
+  const defaultAccountResponse = await client.wallet.getDefaultAccount()
+  if (defaultAccountResponse.content.account === null) {
+    throw new Error('Expected a default account')
+  }
+  const accountName = defaultAccountResponse.content.account.name
+  const accountResponse = await client.wallet.getAccountPublicKey({
+    account: accountName,
+  })
+  const publicAddress = accountResponse.content.publicKey
+
+  // Create some example outputs
+  const nativeAssetId = Asset.nativeId().toString('hex')
+  const outputs: CreateTransactionRequest['outputs'] = []
+  
+  // 1 IRON = 100000000 ORE
+  outputs.push({
+    publicAddress,
+    amount: CurrencyUtils.encode(33300000n),
+    memo: 'first',
+    assetId: nativeAssetId,
+  })
+  outputs.push({
+    publicAddress,
+    amount: CurrencyUtils.encode(33300000n),
+    memo: 'second',
+    assetId: Asset.nativeId().toString('hex'),
+  })
+  outputs.push({
+    publicAddress,
+    amount: CurrencyUtils.encode(40000000n),
+    memo: 'third',
+    assetId: Asset.nativeId().toString('hex'),
+  })
+
+  const options: CreateTransactionRequest = {
+    outputs: outputs,
+    account: accountName,
+    feeRate: '200',
+  }
+  const response = await client.wallet.createTransaction(options)
+
+  console.log(response.content.transaction)
+}
+```
