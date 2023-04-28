@@ -89,14 +89,8 @@ export function LogoDownloads() {
                 Full Logo
               </Text>
               <HStack gap={1} mb={24}>
-                <LogoDownload
-                  format="svg"
-                  href="/downloads/logos/media-kit/iron-fish-logo.svg"
-                />
-                <LogoDownload
-                  format="png"
-                  href="/downloads/logos/media-kit/iron-fish-logo-2x.png"
-                />
+                <FileType format="svg" />
+                <FileType format="png" />
               </HStack>
               <Image src={HexFish} alt="Iron Fish logo" />
               <Text
@@ -108,14 +102,8 @@ export function LogoDownloads() {
                 Hex Fish
               </Text>
               <HStack gap={1}>
-                <LogoDownload
-                  format="svg"
-                  href="/downloads/logos/media-kit/iron-fish-logo.svg"
-                />
-                <LogoDownload
-                  format="png"
-                  href="/downloads/logos/media-kit/iron-fish-logo-2x.png"
-                />
+                <FileType format="svg" />
+                <FileType format="png" />
               </HStack>
             </Flex>
           </ShadowBox>
@@ -125,16 +113,9 @@ export function LogoDownloads() {
   );
 }
 
-function LogoDownload({ format, href }: { format: string; href: string }) {
+function FileType({ format }: { format: string }) {
   return (
-    <Box
-      as="a"
-      download
-      href={href}
-      border="1px solid #D9D9D9"
-      borderRadius="6px"
-      px={1}
-    >
+    <Box border="1px solid #D9D9D9" borderRadius="6px" px={1}>
       <Text color="#777777">.{format}</Text>
     </Box>
   );
