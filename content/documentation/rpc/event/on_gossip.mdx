@@ -5,10 +5,10 @@ description: RPC Event | Iron Fish Documentation
 
 Streams block headers on gossip events
 
-#### Request
+#### Request Body
 
 ```js
-undefined;
+undefined
 ```
 
 #### Response
@@ -16,12 +16,32 @@ undefined;
 ```js
 {
   blockHeader: {
-    hash: string;
-    sequence: number;
-    previousBlockHash: string;
-    timestamp: number;
-    difficulty: string;
-    graffiti: string;
+    hash: string
+    sequence: number
+    previousBlockHash: string
+    timestamp: number
+    difficulty: string
+    graffiti: string
+  }
+}
+```
+
+### Example
+```bash
+# Request
+curl -X POST http://localhost:8021/event/onGossip
+
+# Response
+{
+  "data": {
+    "blockHeader": {
+      "hash": "00000000000000218ecad25cc56a6d3906b9123b75eae21dc96a19e5af6c9755",
+      "sequence": 17656,
+      "previousBlockHash": "000000000000003378a17cff8aaec841879c50a1c12c8ae83f7bf0a55229a56b",
+      "timestamp": 1683063373270,
+      "difficulty": "266476277513883085",
+      "graffiti": "0000000000000000000000000000000000000000000000001f91951c00000000"
+    }
   }
 }
 ```
