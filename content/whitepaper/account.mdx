@@ -35,7 +35,7 @@ $$ak = ask * G_{ak}$$
 
 Where **ak** is the authorization key, **ask** is the spend authorization key, and $$G_{ak}$$ is the generator base point for it on the Jubjub curve.
 
-This key is used in the [Spend description](6_transaction.md#spend-description) of a transaction that is responsible for spending notes. More specifically, it is used in the zero-knowledge proof that is part of the Spend description to prove ownership of the note being spent. It is also used to create the signature for the Spend description.
+This key is used in the [Spend description](/learn/whitepaper/transaction#spend-description) of a transaction that is responsible for spending notes. More specifically, it is used in the zero-knowledge proof that is part of the Spend description to prove ownership of the note being spent. It is also used to create the signature for the Spend description.
 
 <Img src='/images/whitepaper/account/account2.svg' width="50%" style={{paddingTop:'40px'}} />
 <br />
@@ -45,7 +45,7 @@ This key is used in the [Spend description](6_transaction.md#spend-description) 
 
 These keys are responsible for creating the nullifiers that are necessary to spend a note, derived from the secret key.
 
-The **Proof Authorization Key (nsk)** is the private key component of the nullifier key pair and is derived by hashing the secret key and a modifier using the Blake2b (with parameters) hashing function and then converting it into a scalar (a.k.a. an integer) for the Jubjub curve. The proof authorization key is used in the [Spend description](6_transaction.md#spend-description) of a transaction proving that the revealed nullifier was computed correctly. Remember that to spend a note a user must reveal its unique nullifier as part of the transaction. The zero-knowledge proof of the Spend description ensures that the revealed nullifier was properly created using the owner's proof authorization key.
+The **Proof Authorization Key (nsk)** is the private key component of the nullifier key pair and is derived by hashing the secret key and a modifier using the Blake2b (with parameters) hashing function and then converting it into a scalar (a.k.a. an integer) for the Jubjub curve. The proof authorization key is used in the [Spend description](/learn/whitepaper/transaction#spend-description) of a transaction proving that the revealed nullifier was computed correctly. Remember that to spend a note a user must reveal its unique nullifier as part of the transaction. The zero-knowledge proof of the Spend description ensures that the revealed nullifier was properly created using the owner's proof authorization key.
 
 The **Nullifier Deriving Key (nk)** is derived as the public key for the proof authorization key created by multiplying the proof authorizing key with a fixed generator base point $$G_{nk}$$:
 

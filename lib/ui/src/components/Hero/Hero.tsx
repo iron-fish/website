@@ -7,6 +7,7 @@ import {
   Text,
 } from "@chakra-ui/react";
 import Image from "next/image";
+import Head from "next/head";
 
 export type LocalImage = {
   src: string;
@@ -33,39 +34,44 @@ export function Hero({
   ...rest
 }: Props) {
   return (
-    <Box
-      borderBottom="1.5px solid black"
-      {...rest}
-      px={{
-        base: 6,
-        md: 12,
-      }}
-      position="relative"
-      overflow="hidden"
-    >
-      {images}
-      <Container
-        w="100%"
-        maxW="container.sm"
-        textAlign="center"
-        py={{
-          base: "96px",
-          md: "116px",
+    <>
+      <Head>
+        <title>{`${heading} • Iron Fish`}</title>
+      </Head>
+      <Box
+        borderBottom="1.5px solid black"
+        {...rest}
+        px={{
+          base: 6,
+          md: 12,
         }}
         position="relative"
-        zIndex={1}
-        {...textContainerProps}
+        overflow="hidden"
       >
-        <Text as="h1" textStyle="lg" mb={10}>
-          {heading}
-        </Text>
-        <Text textStyle="h2" mb={10}>
-          {subheading}
-        </Text>
-        <Text textStyle="lg">{description}</Text>
-      </Container>
-      {children}
-    </Box>
+        {images}
+        <Container
+          w="100%"
+          maxW="container.sm"
+          textAlign="center"
+          py={{
+            base: "96px",
+            md: "116px",
+          }}
+          position="relative"
+          zIndex={1}
+          {...textContainerProps}
+        >
+          <Text as="h1" textStyle="lg" mb={10}>
+            {heading}
+          </Text>
+          <Text textStyle="h2" mb={10}>
+            {subheading}
+          </Text>
+          <Text textStyle="lg">{description}</Text>
+        </Container>
+        {children}
+      </Box>
+    </>
   );
 }
 

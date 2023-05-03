@@ -9,12 +9,12 @@ similar to JSON HTTP and also return streaming responses.
 
 ## API Reference
 
-Refer to our [RPC docs](/developers/documentation/rpc_chain)
+Refer to our [RPC docs](/developers/documentation/rpc/chain/broadcast_transaction)
 
 ## JavaScript SDK
 
 Currently Iron Fish only supports a JavaScript SDK. An example interaction to
-fetch your account’s public address looks like:
+fetch your account's public address looks like:
 
 ```js
 async function main(): Promise<void> {
@@ -28,17 +28,17 @@ async function main(): Promise<void> {
 }
 ```
 
-If you are not using JavaScript / TypeScript, it’s recommended to write your own
+If you are not using JavaScript / TypeScript, it's recommended to write your own
 client that interacts with the node over HTTP, TCP, or IPC.
 
 ## HTTP Adapter
 
-If you’d like to enable HTTP binding to your RPC server, run the following:
+If you'd like to enable HTTP binding to your RPC server, run the following:
 
 ```sh
 ironfish config:set enableRpcHttp true
 ironfish config:set rpcHttpHost 0.0.0.0
 ```
 
-You can similarly configure rpcHttpHost and rpcHttpPort if you’d like to
+You can similarly configure rpcHttpHost and rpcHttpPort if you'd like to
 customize the host and port.
