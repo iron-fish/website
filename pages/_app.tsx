@@ -21,7 +21,7 @@ function App({ Component, pageProps }: AppProps) {
     <>
       <Head>
         <title>
-          Iron Fish - Private, anonymous, and easy to use cryptocurrency
+          Iron Fish • Private, anonymous, and easy to use cryptocurrency
         </title>
         <link rel="shortcut icon" href="/favicon.ico" />
       </Head>

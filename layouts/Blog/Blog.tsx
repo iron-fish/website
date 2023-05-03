@@ -34,10 +34,8 @@ export function BlogLayout({
   return (
     <>
       <Head>
-        <Head>
-          <title>{`Blog - ${title} | Iron Fish`}</title>
-          {description && <meta name="description" content={description} />}
-        </Head>
+        <title>{`${title} • Iron Fish`}</title>
+        {description && <meta name="description" content={description} />}
       </Head>
       <Box
         as="article"
