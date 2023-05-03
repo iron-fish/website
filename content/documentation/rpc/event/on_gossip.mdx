@@ -5,10 +5,10 @@ description: RPC Event | Iron Fish Documentation
 
 Streams block headers on gossip events
 
-#### Request
+#### Request Body
 
 ```js
-undefined;
+undefined
 ```
 
 #### Response
@@ -16,12 +16,44 @@ undefined;
 ```js
 {
   blockHeader: {
-    hash: string;
-    sequence: number;
-    previousBlockHash: string;
-    timestamp: number;
-    difficulty: string;
-    graffiti: string;
+    hash: string
+    sequence: number
+    previousBlockHash: string
+    timestamp: number
+    difficulty: string
+    graffiti: string
+  }
+}
+```
+
+### Example
+```bash
+# Request
+curl -X POST -N http://localhost:8021/event/onGossip
+
+# Response
+{
+  "data": {
+    "blockHeader": {
+      "hash": "000000000000000a8acaf500eb043758421e3de9ba0c3ac49e1dcc4c8d545d52",
+      "sequence": 18797,
+      "previousBlockHash": "000000000000001053c27bd149a65c6a2bb9d4d482a79e69e2962948279f1264",
+      "timestamp": 1683130257370,
+      "difficulty": "284365341300015620",
+      "graffiti": "00000000000000000000000066e58996ee4b41b852b9fb1443b6da1100000000"
+    }
+  }
+}
+{
+  "data": {
+    "blockHeader": {
+      "hash": "0000000000000023d753e3eb6e6b3cfca4293ba39363328715f2917d95b95bdf",
+      "sequence": 18798,
+      "previousBlockHash": "000000000000000a8acaf500eb043758421e3de9ba0c3ac49e1dcc4c8d545d52",
+      "timestamp": 1683130325413,
+      "difficulty": "284226491035708972",
+      "graffiti": "5a4b576f726b312e37323638c553ef071c000000000000000000000000000000"
+    }
   }
 }
 ```
