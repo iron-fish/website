@@ -29,18 +29,30 @@ undefined
 ### Example
 ```bash
 # Request
-curl -X POST http://localhost:8021/event/onGossip
+curl -X POST -N http://localhost:8021/event/onGossip
 
 # Response
 {
   "data": {
     "blockHeader": {
-      "hash": "00000000000000218ecad25cc56a6d3906b9123b75eae21dc96a19e5af6c9755",
-      "sequence": 17656,
-      "previousBlockHash": "000000000000003378a17cff8aaec841879c50a1c12c8ae83f7bf0a55229a56b",
-      "timestamp": 1683063373270,
-      "difficulty": "266476277513883085",
-      "graffiti": "0000000000000000000000000000000000000000000000001f91951c00000000"
+      "hash": "000000000000000a8acaf500eb043758421e3de9ba0c3ac49e1dcc4c8d545d52",
+      "sequence": 18797,
+      "previousBlockHash": "000000000000001053c27bd149a65c6a2bb9d4d482a79e69e2962948279f1264",
+      "timestamp": 1683130257370,
+      "difficulty": "284365341300015620",
+      "graffiti": "00000000000000000000000066e58996ee4b41b852b9fb1443b6da1100000000"
+    }
+  }
+}
+{
+  "data": {
+    "blockHeader": {
+      "hash": "0000000000000023d753e3eb6e6b3cfca4293ba39363328715f2917d95b95bdf",
+      "sequence": 18798,
+      "previousBlockHash": "000000000000000a8acaf500eb043758421e3de9ba0c3ac49e1dcc4c8d545d52",
+      "timestamp": 1683130325413,
+      "difficulty": "284226491035708972",
+      "graffiti": "5a4b576f726b312e37323638c553ef071c000000000000000000000000000000"
     }
   }
 }

@@ -34,6 +34,13 @@ Gets (and optionally streams) the status of the mempool
 # Request
 curl -X POST http://localhost:8021/mempool/getStatus
 
+# Request (with streaming)
+curl -X POST -N http://localhost:8021/mempool/getStatus \
+-H 'Content-Type: application/json' \
+--data '{
+    "stream": true
+}'
+
 # Response
 {
   "status": 200,
@@ -50,6 +57,8 @@ curl -X POST http://localhost:8021/mempool/getStatus
     }
   }
 }
+
+
 ```
 
 
