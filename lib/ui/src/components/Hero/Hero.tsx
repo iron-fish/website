@@ -36,7 +36,7 @@ export function Hero({
   return (
     <>
       <Head>
-        <title>{heading} • Iron Fish</title>
+        <title>{`${heading} • Iron Fish`}</title>
       </Head>
       <Box
         borderBottom="1.5px solid black"
