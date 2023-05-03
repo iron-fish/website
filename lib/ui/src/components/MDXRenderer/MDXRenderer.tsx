@@ -12,11 +12,12 @@ import {
   Image,
 } from "@chakra-ui/react";
 import NextLink from "next/link";
+import Head from "next/head";
 import { MDXProvider as BaseMDXProvider } from "@mdx-js/react";
+import { kebabCase } from "lodash-es";
 import { Terminal } from "../../components/Terminal/Terminal";
 import { FAQItem } from "../../components/FAQItem/FAQItem";
 import { ReactNode, ComponentProps, useState, useCallback } from "react";
-import { kebabCase } from "lodash-es";
 import { useSmoothScrollToHash } from "../../hooks/useSmoothScrollToHash";
 
 export function headingToAnchorId(headingEl: HTMLHeadingElement) {
@@ -132,7 +133,17 @@ const rendererComponents: ComponentProps<typeof MDXRemote>["components"] = {
 
 function MDXRenderer({ markdown }: { markdown: MDXRemoteProps }) {
   useSmoothScrollToHash();
-  return <MDXRemote {...markdown} components={rendererComponents} />;
+  return (
+    <>
+      <Head>
+        <link
+          rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css"
+        />
+      </Head>
+      <MDXRemote {...markdown} components={rendererComponents} />
+    </>
+  );
 }
 
 const providerComponents = {
