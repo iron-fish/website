@@ -150,10 +150,6 @@ export const messages = defineMessages({
     id: "nav.documentationDescription",
     defaultMessage: "Reference materials for builders.",
   },
-  testnetTitle: {
-    id: "nav.testnetTitle",
-    defaultMessage: "Incentivized Testnet",
-  },
   communityHighlightsTitle: {
     id: "nav.communityHighlightsTitle",
     defaultMessage: "Highlights",
