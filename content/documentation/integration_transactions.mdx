@@ -46,7 +46,7 @@ async function main(): Promise<void> {
     confirmations,
   };
 
-  const response = await client.createTransaction(options);
+  const response = await client.wallet.createTransaction(options);
   console.log(response);
 }
 ```
@@ -74,7 +74,7 @@ async function main(): Promise<void> {
     broadcast,
   };
 
-  const response = await client.postTransaction(options);
+  const response = await client.wallet.postTransaction(options);
   console.log(response);
 }
 ```
