@@ -100,12 +100,16 @@ const rendererComponents: ComponentProps<typeof MDXRemote>["components"] = {
   ),
   li: (props) => <ListItem {...props} as="li" {...DEFAULT_TEXT_PROPS} />,
   a: ({ href, children }) => {
+    const isExternalLink =
+      !href?.startsWith("/") &&
+      !href?.startsWith("#") &&
+      !href?.startsWith("mailto:");
     return (
       <Link
         as={href?.startsWith("/") ? NextLink : "a"}
         href={href}
-        target={href?.startsWith("/") ? undefined : "_blank"}
-        rel="noreferrer"
+        target={isExternalLink ? "_blank" : undefined}
+        rel={isExternalLink ? "noreferrer" : undefined}
         fontWeight="medium"
         textDecoration="underline"
         // https://webaim.org/blog/wcag-2-0-and-link-colors/
