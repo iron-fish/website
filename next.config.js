@@ -9,7 +9,7 @@ const nextConfig = {
     return [
       {
         source: "/about",
-        destination: "/learn/about-us",
+        destination: "/company/about-us",
         permanent: true,
       },
       {

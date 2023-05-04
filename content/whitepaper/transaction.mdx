@@ -49,9 +49,9 @@ For learning more about steps 1-4 we recommend this [tutorial](https://blog.dece
 The structure of an Iron Fish transaction is constructed with these parts:
 
 - **Transaction Fee**: The fee (in plaintext) that'll go to any miner that successfully includes this transaction in a block.
-- **Spends**: The list of [Spend Descriptions](/learn/whitepaper/transaction#spend-description).
-- **Outputs**: The list of [Output Descriptions](/learn/whitepaper/transaction#output-description).
-- **Binding Signature**: A binding signature that both signs the transaction and is used to [verify](/learn/whitepaper/transaction#transaction-verification) that it [balances](/learn/whitepaper/transaction#transaction-balancing) — meaning that it did not destroy or create money out of thin air, and that indeed all the funds in the spend descriptions minus the funds in the output descriptions equal to transaction fee. The message that is signed here is the transaction hash, which is a blake2b hash of the serialized transaction fee, spend descriptions and output descriptions.
+- **Spends**: The list of [Spend Descriptions](#spend-description).
+- **Outputs**: The list of [Output Descriptions](#output-description).
+- **Binding Signature**: A binding signature that both signs the transaction and is used to [verify](#transaction-verification) that it [balances](#transaction-balancing) — meaning that it did not destroy or create money out of thin air, and that indeed all the funds in the spend descriptions minus the funds in the output descriptions equal to transaction fee. The message that is signed here is the transaction hash, which is a blake2b hash of the serialized transaction fee, spend descriptions and output descriptions.
 
 Remember that the miner's reward for mining a block is also a type of a transaction. We'll go over the miners reward transaction and cover all these transaction concepts in greater detail further along in this section.
 
@@ -191,9 +191,9 @@ The structure of the Output description contains these fields:
 | :---------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
 | $$cv$$      |                                                                                             value commitment                                                                                             |
 | $$cm$$      |                                                                                             note commitment                                                                                              |
-| $$epk$$     |                                         ephemeral public key (more on this in [Note Encryption and Decryption](/learn/whitepaper/transaction#note-encryption-and-decryption))                                         |
+| $$epk$$     |                                         ephemeral public key (more on this in [Note Encryption and Decryption](#note-encryption-and-decryption))                                         |
 | $$C^\{enc\}$$ |                                                                                     encrypted plaintext of the note                                                                                      |
-| $$C^\{out\}$$ | encrypted blob that allows the holder of the viewing key to decrypt a decryption key for $$C^\{enc\}$$ (more on this in [Note Encryption and Decryption](/learn/whitepaper/transaction#note-encryption-and-decryption)) |
+| $$C^\{out\}$$ | encrypted blob that allows the holder of the viewing key to decrypt a decryption key for $$C^\{enc\}$$ (more on this in [Note Encryption and Decryption](#note-encryption-and-decryption)) |
 | $$proof$$   |                                                                                         the zero-knowledge proof                                                                                         |
 
 Below is a deeper dive into these fields.
@@ -216,7 +216,7 @@ The $$C^\{enc\}$$ is the actual encrypted note that results as part of this Outp
 
 The $$C^\{out\}$$ is an encrypted blob of data to facilitate the holder of the sender's outgoing key to decrypt the encrypted note.
 
-And finally we have the proof (Groth16 zk-SNARK proof) for the Outgoing description that validates all these public parameters against the private ones that were used to create them. For more on the keys and notes discussed above, see the [Note Encryption and Decryption section](/learn/whitepaper/transaction#note-encryption-and-decryption).
+And finally we have the proof (Groth16 zk-SNARK proof) for the Outgoing description that validates all these public parameters against the private ones that were used to create them. For more on the keys and notes discussed above, see the [Note Encryption and Decryption section](#note-encryption-and-decryption).
 
 ### How is the proof generated and verified?
 
@@ -231,7 +231,7 @@ The private parameters that are used to create the proof are:
 | $$v$$    |                                                                                    value                                                                                    |
 | $$rcv$$  |                                                                          randomness for the value                                                                           |
 | $$rcm$$  |                                                                     randomness for the note commitment                                                                      |
-| $$esk$$  | ephemeral private key — a random number chosen by the sender (more on this in the [Note Encryption and Decryption section](/learn/whitepaper/transaction#note-encryption-and-decryption) |
+| $$esk$$  | ephemeral private key — a random number chosen by the sender (more on this in the [Note Encryption and Decryption section](#note-encryption-and-decryption) |
 
 And the **public** parameters that are used to verify the proof are
 
@@ -270,9 +270,9 @@ $$input \enspace values - output \enspace values = transaction \enspace fee$$
 Balancing a transaction happens through the value commitments in the Spend and Output descriptions and the binding signature in the transaction. Remember that the structure of the Iron Fish transaction consists of these parts:
 
 - **Transaction Fee**: the fee that'll go to any miner that successfully includes this transaction in a block
-- **Spends**: the list of [Spend Descriptions](/learn/whitepaper/transaction#spend-description)
-- **Outputs**: the list of [Output Descriptions](/learn/whitepaper/transaction#output-description)
-- **Binding Signature**: a binding signature that both signs the transaction and is used to [verify](/learn/whitepaper/transaction#transaction-verification) that it [balances](/learn/whitepaper/transaction#transaction-balancing)
+- **Spends**: the list of [Spend Descriptions](#spend-description)
+- **Outputs**: the list of [Output Descriptions](#output-description)
+- **Binding Signature**: a binding signature that both signs the transaction and is used to [verify](#transaction-verification) that it [balances](#transaction-balancing)
 
 And both the list of Spend descriptions and list of Output descriptions contain their appropriate value commitments. Remember that a value commitment is constructed as a Pedersen commitment in this format:
 
@@ -343,9 +343,9 @@ The prior section went over how to balance a transaction — to make sure that n
 
 In whole, a validator must perform a series of checks to validate a transaction:
 
-1. Verify all the zero-knowledge proofs against the public parameters from the [Spend description](/learn/whitepaper/transaction#spend-description)
-2. Verify all the zero-knowledge proofs against the public parameters from the [Output description](6_transaction#output-description)
-3. Check that the [transaction balances](/learn/whitepaper/transaction#transaction-balancing)
+1. Verify all the zero-knowledge proofs against the public parameters from the [Spend description](#spend-description)
+2. Verify all the zero-knowledge proofs against the public parameters from the [Output description](#output-description)
+3. Check that the [transaction balances](#transaction-balancing)
 4. Check that every signature in the Spend description signed the transaction hash
 5. Check that the root anchors ($$rt$$) in all the Spend transactions are valid past Merkle tree roots on the validator's Merkle tree
 6. Check that none of the nullifiers in the spend descriptions were revealed in the past
@@ -354,7 +354,7 @@ In whole, a validator must perform a series of checks to validate a transaction:
 
 As mentioned above, an important rule of cryptocurrencies is that no coins can ever be created or destroyed. _Except_ in special cases where the protocol _does_ allow for new coins to be created out of thin air. This is what happens in the special form of a transaction called the Miner Reward transaction. A Miner Reward transaction is a special transaction that awards the miner a set amount for mining the block as well as the sum of all the transaction fees for that block. The exact set amount for mining a block is variable, as described in the previous section on [mining and coin emission schedule](/learn/whitepaper/mining#include-the-miner-reward-based-on-coin-emission-schedule). This section will go over _how_ such a transaction is made.
 
-The Miner Reward transaction looks a lot like a regular [transaction](/learn/whitepaper/transaction#transaction-components), except that it is stored in the block header (and not the block body), contains no Spend description, and has a negative transaction fee. This negative transaction fee contains the set amount allotted for the miner for mining the block as well as the sum of all transaction fees in the block body. Any number of Output descriptions can exist on this transaction with output values adding up to the allotted amount. Remember that a transaction fee on a transaction is in plaintext, and any validator can verify that $$input \enspace values - output \enspace values = transaction \enspace fee$$.
+The Miner Reward transaction looks a lot like a regular [transaction](#transaction-components), except that it is stored in the block header (and not the block body), contains no Spend description, and has a negative transaction fee. This negative transaction fee contains the set amount allotted for the miner for mining the block as well as the sum of all transaction fees in the block body. Any number of Output descriptions can exist on this transaction with output values adding up to the allotted amount. Remember that a transaction fee on a transaction is in plaintext, and any validator can verify that $$input \enspace values - output \enspace values = transaction \enspace fee$$.
 
 Let's say that a Miner awards itself five coins for mining a block, then that Miner Reward transaction would look like this:
 
