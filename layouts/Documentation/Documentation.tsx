@@ -43,8 +43,6 @@ export function DocumentationLayout({
     xl: true,
   });
 
-  console.log({ frontMatter });
-
   const contentRef = useRef<HTMLDivElement | null>(null);
   const markdownSrcRef = useRef<string | null>(null);
   const [contentHeadings, setContentHeadings] = useState<Array<{
