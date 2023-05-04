@@ -25,7 +25,7 @@ async function main(): Promise<void> {
     head,
   };
 
-  const response = await client.getAccountTransactionsStream(options);
+  const response = await client.wallet.getAccountTransactionsStream(options);
   for await (const content of response.contentStream()) {
     console.log(content);
   }
