@@ -11,7 +11,13 @@ type Props = {
 };
 
 export default function PrivacyPolicy({ markdown }: Props) {
-  return <BlogLayout title="Privacy Policy" markdown={markdown} />;
+  return (
+    <BlogLayout
+      title="Privacy Policy"
+      seoTitle="Iron Fish Privacy Policy | Our Commitment to User Privacy"
+      markdown={markdown}
+    />
+  );
 }
 
 const CONTENT_PATH = path.join(

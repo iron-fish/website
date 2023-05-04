@@ -18,6 +18,9 @@ type Props = {
   author?: string;
   image?: string;
   description?: string;
+  seoTitle?: string;
+  seoTitlePrefix?: string;
+  seoTitlePostfix?: string;
 };
 
 function getAuthorDetails(author: string) {
@@ -30,11 +33,14 @@ export function BlogLayout({
   markdown,
   image,
   description,
+  seoTitle,
+  seoTitlePrefix = "",
+  seoTitlePostfix = "",
 }: Props) {
   return (
     <>
       <Head>
-        <title>{`${title} • Iron Fish`}</title>
+        <title>{seoTitlePrefix + (seoTitle || title) + seoTitlePostfix}</title>
         {description && <meta name="description" content={description} />}
       </Head>
       <Box
