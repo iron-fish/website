@@ -35,7 +35,7 @@ export default function DocumentationPage({
       markdown={markdown}
       sidebarItems={sidebarItems}
       githubPath={CONTENT_DIR.join("/") + `/${slug}.mdx`}
-      seoTitlePrefix="Get Started: "
+      seoTitlePrefix="Get Started with Iron Fish | "
     />
   );
 }

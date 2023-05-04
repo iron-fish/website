@@ -18,6 +18,7 @@ import { ComponentProps, useEffect, useRef, useState } from "react";
 type Props = {
   frontMatter: {
     title?: string;
+    "seo-title"?: string;
     description?: string;
   };
   markdown: ComponentProps<typeof MDXRenderer>["markdown"];
@@ -41,6 +42,8 @@ export function DocumentationLayout({
     base: false,
     xl: true,
   });
+
+  console.log({ frontMatter });
 
   const contentRef = useRef<HTMLDivElement | null>(null);
   const markdownSrcRef = useRef<string | null>(null);
@@ -73,7 +76,9 @@ export function DocumentationLayout({
   return (
     <>
       <Head>
-        <title>{`${seoTitlePrefix + frontMatter.title} • Iron Fish`}</title>
+        <title>
+          {seoTitlePrefix + (frontMatter["seo-title"] || frontMatter.title)}
+        </title>
       </Head>
       <Grid
         templateColumns={{
