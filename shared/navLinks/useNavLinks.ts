@@ -7,13 +7,6 @@ export function useNavLinks(): NavItems {
   const { formatMessage } = useIntl();
   return useMemo(() => {
     return links.map((link) => {
-      if ("href" in link) {
-        return {
-          label: formatMessage(link.label),
-          href: link.href,
-        };
-      }
-
       const { label, items, color } = link;
       return {
         label: formatMessage(label),
