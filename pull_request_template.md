@@ -1,7 +1,7 @@
-## Describe your changes
+### What changed?
 
-
+- 
 
 ---
 
-_**Reminder:** If content was moved, please ensure there are no broken links._
+<sub>**Reminder:** If content (docs, blogs, pages) is moved or renamed, please ensure there are no broken links.</sub>
