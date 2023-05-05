@@ -77,6 +77,7 @@ Gets (and optionally streams) the node's status
     isReady: boolean
     inboundTraffic: number
     outboundTraffic: number
+    publicIdentity: string
   }
   telemetry: {
     status: 'started' | 'stopped'
@@ -121,6 +122,7 @@ curl -X POST http://localhost:8021/node/getStatus
       "isReady": true,
       "inboundTraffic": 164.7915348665539,
       "outboundTraffic": 492.89305662948544
+      "publicIdentity": "760FCfHKYns3jg5rTs69I+V0K0iUD396/ae5cnxUmVk"
     },
     "blockchain": {
       "synced": true,
