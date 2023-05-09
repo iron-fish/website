@@ -1,0 +1,54 @@
+---
+title: wallet/getNotes
+description: RPC Wallet | Iron Fish Documentation
+---
+
+Retrieves notes for the given account. If the account is not specified, the default account will be used.
+
+Supports cursor-based pagination using the `pageSize` and `pageCursor` request parameters.
+
+Supports filtering notes by any of the fields in the `filter` request parameter.
+
+#### Request
+
+```js
+{
+  account?: string
+  pageSize?: number
+  pageCursor?: string
+  filter?: {
+    value?: string;
+    assetId?: string;
+    memo?: string;
+    sender?: string;
+    noteHash?: string;
+    transactionHash?: string;
+    nullifier?: string;
+    spent?: boolean;
+    index?: number;
+  }
+}
+```
+
+#### Response
+
+```js
+{
+  notes: Array<{
+    value: string;
+    assetId: string;
+    assetName: string;
+    memo: string;
+    sender: string;
+    owner: string;
+    noteHash: string;
+    transactionHash: string;
+    index: number | null;
+    nullifier: string | null;
+    spent: boolean;
+  }>
+  nextPageCursor: string | null
+}
+```
+
+### [View on Github](https://github.com/iron-fish/ironfish/blob/master/ironfish/src/rpc/routes/wallet/getNotes.ts)

@@ -22,11 +22,13 @@ Streams the notes in the given account. If the account is not specified, the def
   assetName: string;
   memo: string;
   sender: string;
+  owner: string;
   noteHash: string;
   transactionHash: string;
-  spent: boolean | undefined;
-  index: number | undefined;
+  index: number | null;
+  nullifier: string | null;
+  spent: boolean;
 }
 ```
 
-### [View on Github](https://github.com/iron-fish/ironfish/blob/master/ironfish/src/rpc/routes/wallet/getNotes.ts)
+### [View on Github](https://github.com/iron-fish/ironfish/blob/master/ironfish/src/rpc/routes/wallet/getAccountNotesStream.ts)
