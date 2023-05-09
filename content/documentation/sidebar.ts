@@ -241,6 +241,10 @@ export const sidebar: SidebarDefinition = [
             label: "getDefaultAccount",
           },
           {
+            id: "rpc/wallet/get_notes",
+            label: "getNotes",
+          },
+          {
             id: "rpc/wallet/get_public_key",
             label: "getPublicKey",
           },
