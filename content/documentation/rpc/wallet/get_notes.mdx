@@ -5,7 +5,7 @@ description: RPC Wallet | Iron Fish Documentation
 
 Retrieves notes for the given account. If the account is not specified, the default account will be used.
 
-Supports cursor-based pagination using the `pageSize` and `pageCursor` request parameters.
+Supports cursor-based pagination using the `pageSize` and `pageCursor` request parameters. Use the `nextPageCursor` from a response as the value of `pageCursor` in the next request to retrieve the next page of notes.
 
 Supports filtering notes by any of the fields in the `filter` request parameter.
 
