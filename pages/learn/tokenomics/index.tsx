@@ -11,7 +11,13 @@ type Props = {
 };
 
 export default function Tokenomics({ markdown }: Props) {
-  return <BlogLayout title="Tokenomics" markdown={markdown} />;
+  return (
+    <BlogLayout
+      title="Tokenomics"
+      seoTitle="Iron Fish Tokenomics | Understanding Our Network's Economy"
+      markdown={markdown}
+    />
+  );
 }
 
 const CONTENT_PATH = path.join(

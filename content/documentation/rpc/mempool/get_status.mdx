@@ -5,7 +5,7 @@ description: RPC Mempool GetStatus | Iron Fish Documentation
 
 Gets (and optionally streams) the status of the mempool
 
-#### Request
+#### Request Body
 
 ```js
 {
@@ -17,16 +17,49 @@ Gets (and optionally streams) the status of the mempool
 
 ```js
 {
-  size: number;
-  sizeBytes: number;
-  maxSizeBytes: number;
-  evictions: number;
-  headSequence: number;
+  size: number
+  sizeBytes: number
+  maxSizeBytes: number
+  evictions: number
+  headSequence: number
   recentlyEvictedCache: {
-    size: number;
-    maxSize: number;
+    size: number
+    maxSize: number
   }
 }
 ```
+
+### Example
+```bash
+# Request
+curl -X POST http://localhost:8021/mempool/getStatus
+
+# Request (with streaming)
+curl -X POST -N http://localhost:8021/mempool/getStatus \
+-H 'Content-Type: application/json' \
+--data '{
+    "stream": true
+}'
+
+# Response
+{
+  "status": 200,
+  "data": {
+    "size": 19,
+    "sizeBytes": 487869,
+    "maxSizeBytes": 60000000,
+    "headSequence": 17556,
+    "evictions": 0,
+    "recentlyEvictedCache": {
+        "size": 0,
+        "maxSize": 60000,
+        "saturation": 0
+    }
+  }
+}
+
+
+```
+
 
 ### [View on Github](https://github.com/iron-fish/ironfish/blob/master/ironfish/src/rpc/routes/mempool/getStatus.ts)

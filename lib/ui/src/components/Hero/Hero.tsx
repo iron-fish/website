@@ -7,6 +7,7 @@ import {
   Text,
 } from "@chakra-ui/react";
 import Image from "next/image";
+import Head from "next/head";
 
 export type LocalImage = {
   src: string;

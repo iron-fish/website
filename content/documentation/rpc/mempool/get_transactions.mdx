@@ -5,19 +5,34 @@ description: RPC Mempool GetTransactions | Iron Fish Documentation
 
 Streams transactions from the mempool. Transactions are streamed in case there are a large number of transactions in the mempool.
 
-The `MinMax` type specifies the the minimum and maximum range of the input parameter to filter the returned transactions.
+The filters specify the the minimum and maximum range of the input parameter to filter the returned transactions.
 For example, `feeRate={min: 30; max:60}` specifies that only transactions with `30 <= txn.feeRate <= 60` are returned.
 
-#### Request
+#### Request Body
 
 ```js
 {
   limit?: number
-  feeRate?: MinMax
-  fee?: MinMax
-  expiration?: MinMax
-  expiresIn?: MinMax
-  position?: MinMax
+  feeRate?: {
+    min: number
+    max: number
+  }
+  fee?: {
+    min: number
+    max: number
+  }
+  expiration?: {
+    min: number
+    max: number
+  }
+  expiresIn?: {
+    min: number
+    max: number
+  }
+  position?: {
+    min: number
+    max: number
+  }
 }
 ```
 
@@ -25,9 +40,35 @@ For example, `feeRate={min: 30; max:60}` specifies that only transactions with `
 
 ```js
 {
-  serializedTransaction: string;
-  position: number;
-  expiresIn: number;
+  serializedTransaction: string
+  position: number
+  expiresIn: number
+}
+```
+
+### Example
+```bash
+# Request
+curl -X POST 'http://localhost:8021/mempool/getTransactions' \
+-H 'Content-Type: application/json' \
+-d '{
+    "position": {
+        "min": 0,
+        "max": 10
+    },
+    "limit": 1
+}'
+
+# Response
+{
+  "data": {
+    "serializedTransaction": "0102000...",
+    "position": 0,
+    "expiresIn": 14
+  }
+}
+{
+  "status": 200
 }
 ```
 

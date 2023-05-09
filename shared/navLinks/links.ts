@@ -139,8 +139,4 @@ export const links = [
       },
     ],
   },
-  {
-    label: messages.testnetTitle,
-    href: "https://testnet.ironfish.network/dashboard",
-  },
 ] as const;

@@ -11,6 +11,7 @@ type Props = {
   author: string;
   title: string;
   markdown: ComponentProps<typeof MDXRenderer>["markdown"];
+  seoTitle: string;
   image?: string;
   description?: string;
 };
@@ -19,6 +20,7 @@ export default function BlogPage({
   author,
   title,
   markdown,
+  seoTitle,
   image,
   description,
 }: Props) {
@@ -29,6 +31,8 @@ export default function BlogPage({
       markdown={markdown}
       image={image}
       description={description}
+      seoTitle={seoTitle}
+      seoTitlePostfix=" | Iron Fish Blog"
     />
   );
 }
@@ -52,6 +56,7 @@ export const getStaticProps: GetStaticProps<Props> = async ({ params }) => {
       description: assertString(frontMatter.description, ""),
       author: assertString(frontMatter.author),
       image: assertString(frontMatter.image, ""),
+      seoTitle: assertString(frontMatter["seo-title"], ""),
       markdown,
     },
   };

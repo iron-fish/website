@@ -1,6 +1,5 @@
 ---
 title: Mining
-description: Mining | Iron Fish Whitepaper
 ---
 
 So far, we've gone over the structure of the Iron Fish blockchain; this section will focus on how the Iron Fish blockchain is expanded with new blocks. Note that we use the terms nodes and peers interchangeably; a node in Iron Fish is always a peer. A few other quick definitions:
@@ -109,20 +108,20 @@ To claim the block reward for successfully mining a new block, the miner constru
 
 ### Construct the Block Header
 
-After determining the block body, the miner can then construct the [block header](3_storage.md#block-header) for it.
+After determining the block body, the miner can then construct the [block header](/learn/whitepaper/storage#block-header) for it.
 
 A Block Header consists of the following data:
 
 |                         |                                                                                                                                                                                                                                                                                                                                                                    |
 | ----------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | **sequence**            | The **sequence** is constructed using the latest block's sequence number and incrementing it by one. This field indicates the position of that block in the blockchain, starting from zero.                                                                                                                                                                        |
-| **previousBlockHash**   | The **previousBlockHash** is filled out using the hash of the latest block in the blockchain, per the [Iron Fish hashing algorithm](4_mining.md#iron-fish-hashing-algorithm). This indicates that this new block is building off of the latest known block in the blockchain.                                                                                      |
+| **previousBlockHash**   | The **previousBlockHash** is filled out using the hash of the latest block in the blockchain, per the [Iron Fish hashing algorithm](/learn/whitepaper/mining#iron-fish-hashing-algorithm). This indicates that this new block is building off of the latest known block in the blockchain.                                                                                      |
 | **noteCommitment**      | All the new notes included in the block body are applied (in order) to the Merkle Tree of Notes. The resulting new Merkle root for that tree and its size (in terms of the global number of notes) are used to build the noteCommitment for the block header.                                                                                                      |
 | **nullifierCommitment** | The same process is followed, but with the nullifiers revealed, to build the **nullifierCommitment** for the block header.                                                                                                                                                                                                                                         |
-| **target**              | The **target** is determined by the [difficulty and target algorithm](4_mining.md#set-the-difficulty-and-target-for-a-block).                                                                                                                                                                                                                                      |
+| **target**              | The **target** is determined by the [difficulty and target algorithm](/learn/whitepaper/mining#set-the-difficulty-and-target-for-a-block).                                                                                                                                                                                                                                      |
 | **timestamp**           | The **timestamp** is when that block is mined. The timestamp of the current block must be greater than the previous block's timestamp, and can be up to 60 seconds into the future to mitigate for different clocks for whoever is verifying the block in real time.                                                                                               |
 | **minersFee**           | The **minersFee** is a special transaction to award the block reward to any address of the miner's choosing. The value of this block reward transaction is known and can be verified, but the recipient's address is hidden. For more details, see how the block reward transaction is created (link to Miner Reward Transaction section in Transaction Creation). |
-| **randomness**          | The **randomness** is a 64-bit number such that when all the contents of the block header are hashed using the [Iron Fish hashing algorithm](4_mining.md#iron-fish-hashing-algorithm) the result is numerically less than the target.                                                                                                                              |
+| **randomness**          | The **randomness** is a 64-bit number such that when all the contents of the block header are hashed using the [Iron Fish hashing algorithm](/learn/whitepaper/mining#iron-fish-hashing-algorithm) the result is numerically less than the target.                                                                                                                              |
 
 ### Iron Fish Hashing Algorithm
 

@@ -12,11 +12,12 @@ import {
   Image,
 } from "@chakra-ui/react";
 import NextLink from "next/link";
+import Head from "next/head";
 import { MDXProvider as BaseMDXProvider } from "@mdx-js/react";
+import { kebabCase } from "lodash-es";
 import { Terminal } from "../../components/Terminal/Terminal";
 import { FAQItem } from "../../components/FAQItem/FAQItem";
 import { ReactNode, ComponentProps, useState, useCallback } from "react";
-import { kebabCase } from "lodash-es";
 import { useSmoothScrollToHash } from "../../hooks/useSmoothScrollToHash";
 
 export function headingToAnchorId(headingEl: HTMLHeadingElement) {
@@ -99,12 +100,16 @@ const rendererComponents: ComponentProps<typeof MDXRemote>["components"] = {
   ),
   li: (props) => <ListItem {...props} as="li" {...DEFAULT_TEXT_PROPS} />,
   a: ({ href, children }) => {
+    const isExternalLink =
+      !href?.startsWith("/") &&
+      !href?.startsWith("#") &&
+      !href?.startsWith("mailto:");
     return (
       <Link
         as={href?.startsWith("/") ? NextLink : "a"}
         href={href}
-        target={href?.startsWith("/") ? undefined : "_blank"}
-        rel="noreferrer"
+        target={isExternalLink ? "_blank" : undefined}
+        rel={isExternalLink ? "noreferrer" : undefined}
         fontWeight="medium"
         textDecoration="underline"
         // https://webaim.org/blog/wcag-2-0-and-link-colors/
@@ -132,7 +137,17 @@ const rendererComponents: ComponentProps<typeof MDXRemote>["components"] = {
 
 function MDXRenderer({ markdown }: { markdown: MDXRemoteProps }) {
   useSmoothScrollToHash();
-  return <MDXRemote {...markdown} components={rendererComponents} />;
+  return (
+    <>
+      <Head>
+        <link
+          rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css"
+        />
+      </Head>
+      <MDXRemote {...markdown} components={rendererComponents} />
+    </>
+  );
 }
 
 const providerComponents = {
