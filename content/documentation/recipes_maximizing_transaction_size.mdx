@@ -18,6 +18,7 @@ import {
   CurrencyUtils,
   IronfishSdk,
   RawTransactionSerde,
+  Verifier,
 } from '@ironfish/sdk'
 
 async function main(): Promise<void> {
@@ -42,9 +43,8 @@ async function main(): Promise<void> {
   const NOTE_ENCRYPTED_BYTES = 520
 
   // Get the max transaction size from the node
-  // TODO: This value should subtract the header + miner fee from the max block size
   const consensusParams = await client.chain.getConsensusParameters()
-  const maxTransactionSizeBytes = consensusParams.content.maxBlockSizeBytes
+  const maxTransactionSizeBytes = Verifier.getMaxTransactionBytes(consensusParams.content.maxBlockSizeBytes)
   console.log('Max transaction size (bytes):', maxTransactionSizeBytes)
 
   // Create some example outputs
