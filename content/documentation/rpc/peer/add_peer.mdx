@@ -1,0 +1,26 @@
+---
+title: peer/addPeer
+description: RPC peer/addPeer | Iron Fish Documentation
+---
+
+Attempts to connect to a peer through WebSockets using the given host and port. If whitelist is true (by default) the node will continue to attempt connections even if the initial connection fails
+
+#### Request
+
+```js
+{
+  host: string
+  port?: number
+  whitelist?: boolean
+}
+```
+
+#### Response
+
+```js
+{
+  added: boolean
+}
+```
+
+### [View on Github](https://github.com/iron-fish/ironfish/blob/master/ironfish/src/rpc/routes/peer/addPeer.ts)
