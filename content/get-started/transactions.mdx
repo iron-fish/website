@@ -3,6 +3,20 @@ title: Transacting
 seo-title: Sending Transactions
 ---
 
+## Check your balance
+
+You can check your balance at any time by running the following command:
+
+```sh
+ironfish wallet:balance
+```
+
+Your wallet must be synced with the block chain or it will be wrong. You can ask for a balance explanation by running
+
+```sh
+ironfish wallet:balance --explain
+```
+
 ## Send a transaction
 
 Send a transaction using your default account by running:
@@ -34,8 +48,8 @@ Find the transaction on https://explorer.ironfish.network/transaction/ee32e78268
 
 You can also send in non interactive mode by providing flags. Run `ironfish wallet:send --help` to see the different options available. [See more here](/use/get-started/wallet-commands#send-a-transaction).
 
-## Receive a transaction
-If you want to receive a transaction, you need to give the sender your public address. You can see your public address by running the following command:
+## Receive a transactions
+To receive a transaction, give the sender your public key by running the following command:
 
 ```sh
 ironfish wallet:address
@@ -56,20 +70,6 @@ Timestamp               Status    Type    Hash     Expiration Fee Paid ($IRON) A
 3/9/2023 2:26:48 PM PST confirmed receive a4360... 74854                       $IRON (d7c86) 0.00000001
 `}
 />
-
-## Check your balance
-
-You can check your balance at any time by running the following command:
-
-```sh
-ironfish wallet:balance
-```
-
-Your wallet must be synced with the blockchain or it will be wrong. You can ask for a balance explanation by running
-
-```sh
-ironfish wallet:balance --explain
-```
 
 ## Next steps
 
