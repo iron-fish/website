@@ -31,7 +31,7 @@ async function main(): Promise<void> {
 
   const publicAddress = accountResponse.content.publicKey
 
-  // Sum all unspent notes with the native asset ID 
+  // Sum all unspent notes with the native asset ID
   const fee = 10n;
   const notes = [];
   let noteTotal = 0n;
@@ -47,7 +47,7 @@ async function main(): Promise<void> {
     }
   }
 
-  // Create the transaction 
+  // Create the transaction
   const options: CreateTransactionRequest = {
     account: accountName,
     outputs: [

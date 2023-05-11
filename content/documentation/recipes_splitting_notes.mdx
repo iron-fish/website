@@ -3,10 +3,10 @@ title: Splitting Notes
 description: Recipes | Splitting Notes | Iron Fish Documentation
 ---
 
-Iron Fish notes are what store value for an account on the chain. Sometimes you might want to take one note (e.g. with value 1 IRON) and split it into multiple notes (e.g. 0.3, 0.3, 0.4 IRON). 
+Iron Fish notes are what store value for an account on the chain. Sometimes you might want to take one note (e.g. with value 1 IRON) and split it into multiple notes (e.g. 0.3, 0.3, 0.4 IRON).
 This would a separate transactions can be posted at the same time.
 
-Here's an example that splits a note into three separate notes (this can be expanded to N notes). The only requirement is that the source account has a balance capable of funding all the output notes. 
+Here's an example that splits a note into three separate notes (this can be expanded to N notes). The only requirement is that the source account has a balance capable of funding all the output notes.
 
 
 ```js
@@ -34,7 +34,7 @@ async function main(): Promise<void> {
   // Create some example outputs
   const nativeAssetId = Asset.nativeId().toString('hex')
   const outputs: CreateTransactionRequest['outputs'] = []
-  
+
   // 1 IRON = 100000000 ORE
   outputs.push({
     publicAddress,
