@@ -1,15 +1,11 @@
 ---
-title: Transact
-seo-title: Tracking Your Transactions
+title: Transacting
+seo-title: Sending Transactions
 ---
-
-**Your node doesn't have to be running at the same time as the sender to send or receive a transaction.**
 
 ## Send a transaction
 
-### Interactive mode
-
-Send a transaction by running the following command using your default account:
+Send a transaction using your default account by running:
 ```sh
 ironfish wallet:send
 ```
@@ -22,7 +18,7 @@ Enter the the public address of the recipient:
 ab518b8c908d7157eaebdf8159c5813894074d3136826daba4a485598de1b86a597af2821f8400bbfe70c1
 
 You are about to send:
-$IRON 20 to ab518b8c908d7157eaebdf8159c5813894074d3136826daba4a485598de1b86a597af2821f8400bbfe70c1 from the account IronFishGenesisAccount
+$IRON 20 to ab518b8c908d7157eaebdf8159c5813894074d3136826daba4a485598de1b86a597af2821f8400bbfe70c1 from the account ExampleAccount
 
 Do you confirm (Y/N)?: Y
 
@@ -36,39 +32,17 @@ Transaction Fee: 0.00000001
 Find the transaction on https://explorer.ironfish.network/transaction/ee32e78268a1097288503e18510e48d140292ff5ce91d0914ae00f733ad8d166`}
 />
 
-If you want to send a transaction from a different account, you can use the `-f` flag.
-
-E.g.
-
-```sh
-ironfish wallet:send -f MyOtherAccount
-```
-
-### Noninteractive mode
-
-Run `ironfish wallet:send --help` to see the different options available.
-
-E.g. To send 2 coins from the account `Savings`
-
-```sh
-ironfish wallet:send -a 2 -o 0.00000001 -t 997c...7fc52ed -f Savings
-```
+You can also send in non interactive mode by providing flags. Run `ironfish wallet:send --help` to see the different options available. [See more here](/use/get-started/wallet-commands#send-a-transaction).
 
 ## Receive a transaction
-To receive a transaction, you just need to communicate the public key of your account to the sender. If you don't know your public key, run the following command:
+If you want to receive a transaction, you need to give the sender your public address. You can see your public address by running the following command:
 
 ```sh
 ironfish wallet:address
 ```
 
-E.g. To get the public key of a different account on your node
-
-```sh
-ironfish wallet:address Savings
-```
-
-## View transactions
-To view transactions from the current account
+## View your transactions
+To view transactions from the default account
 
 ```sh
 ironfish wallet:transactions
@@ -83,12 +57,18 @@ Timestamp               Status    Type    Hash     Expiration Fee Paid ($IRON) A
 `}
 />
 
-## Balance
+## Check your balance
 
 You can check your balance at any time by running the following command:
 
 ```sh
 ironfish wallet:balance
+```
+
+Your wallet must be synced with the blockchain or it will be wrong. You can ask for a balance explanation by running
+
+```sh
+ironfish wallet:balance --explain
 ```
 
 ## Next steps

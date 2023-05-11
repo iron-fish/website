@@ -293,6 +293,7 @@ export const sidebar: SidebarDefinition = [
     label: "Integration Guide",
     items: [
       "integration_local",
+      "integration_mining",
       "integration_rpc",
       "integration_keys",
       "integration_transactions",
