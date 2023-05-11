@@ -4,85 +4,100 @@ title: Mining
 
 Miners are essential to the health of the Iron Fish network. Without them, blocks won't be generated and transactions won't be transmitted.
 
-⚠️️ **Note:** The instructions on this page are for CPU mining only.
+It's also the key algorithm used to determine consensus and is important to be distributed among many different sets of miners. If any one miner controls too much of the mining power, it will compromise decentralization.
 
-The Iron Fish mainnet will have many miners and mining pools operating more
-powerful GPU miners. CPU mining may be useful for testing, development, and
-learning, but it is not recommended on mainnet.
+This page primarily discusses the mining landscape and how to join and choose an existing pool, or to start your own.
 
-Please refer to the [mining wiki
-page](https://github.com/iron-fish/ironfish/wiki/Iron-Fish-Launch-Day-Mining)
-for more information on mining and joining a mining pool on the Iron Fish
-mainnet.
+## What is a mining pool?
 
-## Requirements
-Install Iron Fish by following the instructions [here](/use/get-started/installation).
+A mining pool pools block rewards and distributes them via various reward distribution schemes such as PPLNS (PAY PER LAST N SHARES). As Iron Fish blocks are mined every 60 seconds, it is unlikely that small miners find rewards after mainnet launches. Pools provide a steady income in return for a fee. They may also provide other services such as customer support or custom software. Pools also run the node for you so that you do not need to maintain your own.
 
-## Quick start
-Start your node by running the following command:
+Please check out the pools websites for instructions on how to join that pool.
 
-```sh
-ironfish start
-```
+⚠️️ **Note:** Any pool with greater than 45% hash rate is hidden from this list. Please do not join a mining pool that has more than 45% hash rate. It is very important to promote decentralization.
 
-Open a new terminal window and run:
+### Kryptex Pool
+ * Payment Model: PPS+
+ * Fees: 1%
+ * Miners: Iron Fish, BzMiner, Rigel, SRBMiner
+ * How do I join?: https://pool.kryptex.com/en/iron
+ * Multi Mining: Yes
 
-```sh
-ironfish miners:start
-```
+ ### HPool
+ * Payment Model: ???
+ * Fees: ???
+ * Miners: Custom
+ * How do I join?: https://www.hpool.in/help/tutorial/42
+ * Multi Mining: No
 
-## Changing the default account
-If you want to use a different account to store the miners fee, you can create a new account by running the following command:
+ ### ZKWork
+ * Payment Model: ???
+ * Fees: ???
+ * Miners: Custom
+ * How do I join?: https://zk.work/en/ironfish/start
+ * Multi Mining: No
 
-```sh
-ironfish wallet:create newAccount
-```
+ ### Flexpool
+ * Payment Model: ???
+ * Fees: 0.95%
+ * Miners: Iron Fish, BzMiner
+ * How do I join?: https://www.flexpool.io/get-started
+ * Multi Mining: Yes, Iron+ZIL, Iron+ETC+ZIL
 
-And then set it up as default:
+### Ezil.me
+ * Payment Model: ???
+ * Fees: 1%
+ * Miners: Iron Fish
+ * How do I join?: https://ezil.me/start?selectedPool=iron
+ * Multi Mining: Yes, ETC/ETHF/ETHW + ZIL + IRON
 
-```sh
-ironfish wallet:use newAccount
-```
+ ### dxpool.com
+ * Payment Model: ???
+ * Fees: 0% for 1st month
+ * Miners:
+ * How do I join?: https://discord.gg/SD3wYt5AaJ
+ * Multi Mining: None
 
-## Set block graffiti (optional)
+## Miners
 
-Iron Fish blocks contain a 32-byte publicly-visible field called `graffiti` that can be set by the block's miner. To set this value to a UTF-8 encoded string on the blocks you mine, update the `blockGraffiti` config option:
+### Iron Fish
+   - Type: CPU
+   - Url: https://ironfish.network/use/get-started/mining
+   - Works on Iron Fish stratum v1
 
+### SRBMiner
+   - Type: GPU (Nvidia+AMD)
+   - URL: https://www.srbminer.com/
+   - Works on Iron Fish Pool
 
-```sh
-ironfish config:set blockGraffiti "<your graffiti here>"
-```
+### BzMiner
+   - Type: GPU (Nvidia+AMD+Intel+CPU)
+   - URL: https://www.bzminer.com/ Discord https://discord.gg/ZagsB4hTUM
+   - Pools supported: Iron Fish Pool, Flexpool
+   - Betas supporting Iron Fish available in #mining in Discord: https://discord.ironfish.network/
+   - Improved Iron Fish mining stratum for Flexpool coming soon
+   - Supports Iron+ZIL Dual mining and Iron+ETC+ZIL Triple Mining using Flexpool's ZMP
 
-## Join a mining pool
-You can join a mining pool in order to increase your chances of mining a block. Block rewards are typically split among miners based on their respective contributions. We also run a basic mining pool on testnet that anyone can join. To get started, retrieve the public key of the account you want to use:
+### Rigel
+   - Type: GPU (Nvidia)
+   - URL: https://github.com/rigelminer/rigel/releases/
+   - Pools supported: Herominers, Flexpool, Kryptex
+   - Supports dual and triple mining (+ZIL)
 
+### Team Red Miner
+   - Type: GPU (AMD)
+   - URL: https://github.com/todxx/teamredminer/releases
+   - Pools supported: Herominers, Flexpool, Kryptex
+   - Supports dual and triple mining (ETC/ERG/ZIL, ETC/ERG + ZIL)
 
-```sh
-ironfish wallet:address
-```
+### HPool
+   - Type: GPU (Nvidia+AMD)
+   - Url: https://github.com/hpool-dev/ironfish-miner/releases
+   - Only works on Hpool's pool
 
-And use that public key to join the mining pool:
+### ZKWork
+   - Type: GPU (Nvidia+AMD)
+   - URL: https://zk.work
+   - Only works on ZKWork's pool
 
-
-```sh
-ironfish miners:start --pool testnet.pool.ironfish.network --address <PUBLIC KEY>
-```
-
-[Join our Discord](https://discord.ironfish.network) if you're interested in creating a different pool for Iron Fish.
-
-## Troubleshooting
-
-#### My miner has been running for a long time - but I haven't mined a block yet
-- Difficulty (and therefore time to mine a block) can change depending on how fast blocks are mined on the Iron Fish network.
-- Make sure you are correctly connected to the Iron Fish network (you should see `Connected to the Iron Fish network` in your node logs).
-
-#### Not connected to a node - waiting 5s before retrying
-Make sure that your node is currently running. If you are using a different `datadir` argument to start your node, make sure to use it as well when starting the miner. For example:
-
-
-```sh
-ironfish miners:start --datadir=~/.ironfish2/
-```
-
-#### The trees aren't the same size as the chain
-- Make sure your node is synced with the network before starting the miner. Run `ironfish status` to check if your node is still syncing.
+### [Edit on Github](https://github.com/iron-fish/website/edit/master/content/get-started/mining.mdx)
