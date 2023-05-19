@@ -213,8 +213,8 @@ export const sidebar: SidebarDefinition = [
             label: "getAccountNotesStream",
           },
           {
-            id: "rpc/wallet/get_account_status",
-            label: "getAccountStatus",
+            id: "rpc/wallet/get_accounts_status",
+            label: "getAccountsStatus",
           },
           {
             id: "rpc/wallet/get_account_transaction",
