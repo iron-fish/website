@@ -129,13 +129,16 @@ export default function Blog() {
                       {item.name}
                     </Text>
                     <ArrowButton
+                      tilted
                       as="a"
                       target="_blank"
                       rel="noreferrer"
                       href={item.link}
                       size="sm"
                       bg="white"
-                      tilted
+                      _focus={{
+                        bg: "gray.200",
+                      }}
                       _hover={{
                         bg: "gray.200",
                       }}
