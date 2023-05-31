@@ -1,5 +1,5 @@
 import { useCallback, useState } from "react";
-import { StackProps, Box, HStack, Text } from "@chakra-ui/react";
+import { StackProps, Box, Flex, Text } from "@chakra-ui/react";
 import { ShadowBox } from "../ShadowBox/ShadowBox";
 
 type Option = {
@@ -25,31 +25,45 @@ type Props = Omit<StackProps, "onChange"> & {
 
 export function Filter({ options, selectedOption, onChange, ...rest }: Props) {
   return (
-    <HStack justifyContent="center" {...rest}>
+    <Flex
+      justifyContent="center"
+      flexDirection={{
+        base: "column",
+        md: "row",
+      }}
+      gap={2}
+      {...rest}
+    >
       {options.map((option) => {
         const selected = option.value === selectedOption.value;
         return (
-          <ShadowBox
-            onClick={() => onChange(option)}
-            key={option.value}
-            shadowColor="white"
-            borderRadius={0}
-            borderWidth="1px"
-            width="auto"
-            cursor="pointer"
-          >
-            <Box
-              px={5}
-              py={3}
-              bg={selected ? "black" : "white"}
-              _hover={{ bg: selected ? "black" : "gray.100" }}
-              _focus={{ bg: selected ? "black" : "gray.100" }}
+          <Box key={option.value}>
+            <ShadowBox
+              onClick={() => onChange(option)}
+              shadowColor="white"
+              borderRadius={0}
+              borderWidth="1px"
+              cursor="pointer"
             >
-              <Text color={selected ? "white" : undefined}>{option.label}</Text>
-            </Box>
-          </ShadowBox>
+              <Box
+                px={5}
+                py={3}
+                bg={selected ? "black" : "white"}
+                _hover={{ bg: selected ? "black" : "gray.100" }}
+                _focus={{ bg: selected ? "black" : "gray.100" }}
+              >
+                <Text
+                  textAlign="center"
+                  whiteSpace="nowrap"
+                  color={selected ? "white" : undefined}
+                >
+                  {option.label}
+                </Text>
+              </Box>
+            </ShadowBox>
+          </Box>
         );
       })}
-    </HStack>
+    </Flex>
   );
 }
