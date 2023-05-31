@@ -95,7 +95,7 @@ export default function Blog() {
           <ThickLink
             underlineColor="orange.500"
             as="a"
-            href="mailto:contact@ironfish.network"
+            href="mailto:partnerships@ironfish.network"
             cursor="pointer"
           >
             partnerships@ironfish.network
@@ -135,13 +135,7 @@ export default function Blog() {
                       rel="noreferrer"
                       href={item.link}
                       size="sm"
-                      bg="white"
-                      _focus={{
-                        bg: "gray.200",
-                      }}
-                      _hover={{
-                        bg: "gray.200",
-                      }}
+                      colorScheme="white"
                     >
                       Visit
                     </ArrowButton>
