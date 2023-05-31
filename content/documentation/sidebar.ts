@@ -2,6 +2,27 @@ import { SidebarDefinition } from "@/lib/markdown";
 
 export const sidebar: SidebarDefinition = [
   {
+    label: "Integration Guide",
+    items: [
+      "integration_local",
+      "integration_mining",
+      "integration_rpc",
+      "integration_keys",
+      "integration_transactions",
+      "integration_deposits",
+    ],
+  },
+  {
+    label: "Recipes",
+    items: [
+      "recipes_combining_notes",
+      "recipes_maximizing_transaction_size",
+      "recipes_splitting_notes",
+    ],
+  },
+  "release-versioning",
+  "offline-transaction-signing",
+  {
     label: "RPC API Reference",
     items: [
       {
@@ -289,25 +310,4 @@ export const sidebar: SidebarDefinition = [
       },
     ],
   },
-  {
-    label: "Integration Guide",
-    items: [
-      "integration_local",
-      "integration_mining",
-      "integration_rpc",
-      "integration_keys",
-      "integration_transactions",
-      "integration_deposits",
-    ],
-  },
-  {
-    label: "Recipes",
-    items: [
-      "recipes_combining_notes",
-      "recipes_maximizing_transaction_size",
-      "recipes_splitting_notes",
-    ],
-  },
-  "release-versioning",
-  "offline-transaction-signing",
 ];
