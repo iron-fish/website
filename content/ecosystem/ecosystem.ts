@@ -1,5 +1,11 @@
 type Ecosystem = "Exchanges" | "Integrators" | "Mining Pools";
 
+export const ECOSYSTEM_TYPES: Array<Ecosystem> = [
+  "Exchanges",
+  "Integrators",
+  "Mining Pools",
+];
+
 export const ECOSYSTEM: Array<{
   type: Ecosystem;
   name: string;

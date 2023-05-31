@@ -16,13 +16,36 @@ import plug from "@/assets/heroImages/ecosystem/plug.svg";
 import hands from "@/assets/heroImages/ecosystem/hands.svg";
 import footGuy from "@/assets/heroImages/ecosystem/foot-guy.svg";
 import Image from "next/image";
-import { ECOSYSTEM } from "@/content/ecosystem/ecosystem";
+import { ECOSYSTEM, ECOSYSTEM_TYPES } from "@/content/ecosystem/ecosystem";
+import {
+  Filter,
+  useFilterOptions,
+} from "@/lib/ui/src/components/Filters/Filter";
 
 const plugImage = plug as LocalImage;
 const handsImage = hands as LocalImage;
 const footGuyImage = footGuy as LocalImage;
 
-export default function Blog() {
+const filterOptions = [
+  {
+    label: "All",
+    value: "all",
+  },
+].concat(
+  ECOSYSTEM_TYPES.map((type) => ({
+    label: type,
+    value: type,
+  }))
+);
+
+export default function Ecosystem() {
+  const { options, selectedOption, handleFilterChange } =
+    useFilterOptions(filterOptions);
+
+  const filteredOptions = ECOSYSTEM.filter((item) =>
+    selectedOption.value === "all" ? true : item.type === selectedOption.value
+  );
+
   return (
     <Box mb="150px">
       <Hero
@@ -102,6 +125,12 @@ export default function Blog() {
           </ThickLink>
           .
         </Text>
+        <Filter
+          options={options}
+          selectedOption={selectedOption}
+          onChange={handleFilterChange}
+          mb={16}
+        />
         <Grid
           templateColumns={{
             base: "100%",
@@ -110,8 +139,7 @@ export default function Blog() {
           }}
           gap={6}
         >
-          {ECOSYSTEM.map((item) => {
-            const imageSrc = item.image ?? "/images/blog/thumbnail-default.png";
+          {filteredOptions.map((item) => {
             return (
               <GridItem key={item.name} display="flex">
                 <ShadowBox shadowColor="white">
@@ -119,7 +147,7 @@ export default function Blog() {
                     ratio={465 / 309}
                     borderBottom="1.5px solid black"
                   >
-                    <Image alt="" src={imageSrc} fill />
+                    <Image alt="" src={item.image} fill />
                   </AspectRatio>
                   <Box p={8} pb={16}>
                     <Text textStyle="sm" mb={4}>
