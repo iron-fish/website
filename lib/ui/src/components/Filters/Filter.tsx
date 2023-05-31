@@ -34,7 +34,7 @@ export function Filter({ options, selectedOption, onChange, ...rest }: Props) {
         base: "column",
         md: "row",
       }}
-      gap={2}
+      gap={3}
       {...rest}
     >
       {options.map((option) => {

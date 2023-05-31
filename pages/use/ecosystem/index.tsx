@@ -51,7 +51,7 @@ export default function Ecosystem() {
       <Hero
         bg="orange.500"
         heading="Ecosystem"
-        subheading="How will you use Iron Fish?"
+        subheading="How Will You Use Iron Fish?"
         description="Our ecosystem is vast and offers a variety of apps and integrations to choose from."
         images={
           <>

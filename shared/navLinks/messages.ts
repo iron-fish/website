@@ -172,6 +172,7 @@ export const messages = defineMessages({
   },
   ecosystemDescription: {
     id: "nav.ecosystemDescription",
-    defaultMessage: "NEED CONTENT FOR THIS LITTLE BLURB RIGHT HERE.",
+    defaultMessage:
+      "Our vast ecosystem offers diverse apps and integrations to choose from.",
   },
 });
