@@ -142,11 +142,12 @@ export default function Ecosystem() {
           {filteredOptions.map((item) => {
             return (
               <GridItem key={item.name} display="flex">
-                <ShadowBox shadowColor="white">
-                  <AspectRatio
-                    ratio={465 / 309}
-                    borderBottom="1.5px solid black"
-                  >
+                <ShadowBox
+                  shadowColor="white"
+                  borderWidth="2px"
+                  borderRadius="4px"
+                >
+                  <AspectRatio ratio={465 / 309} borderBottom="2px solid black">
                     <Image alt="" src={item.image} fill />
                   </AspectRatio>
                   <Box p={8} pb={16}>

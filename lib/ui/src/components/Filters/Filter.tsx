@@ -1,4 +1,4 @@
-import { useCallback, useState } from "react";
+import { useCallback, useState, useMemo } from "react";
 import { StackProps, Box, Flex, Text } from "@chakra-ui/react";
 import { ShadowBox } from "../ShadowBox/ShadowBox";
 
@@ -14,7 +14,10 @@ export function useFilterOptions(options: Array<Option>) {
     setSelectedOption(option);
   }, []);
 
-  return { options, selectedOption, handleFilterChange };
+  return useMemo(
+    () => ({ options, selectedOption, handleFilterChange }),
+    [handleFilterChange, options, selectedOption]
+  );
 }
 
 type Props = Omit<StackProps, "onChange"> & {

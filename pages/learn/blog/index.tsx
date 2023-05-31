@@ -141,7 +141,11 @@ export default function Blog({ blogItems }: Props) {
             const imageSrc = item.image ?? "/images/blog/thumbnail-default.png";
             return (
               <GridItem key={item.id} display="flex">
-                <ShadowBox shadowColor="white">
+                <ShadowBox
+                  shadowColor="white"
+                  borderWidth="2px"
+                  borderRadius="4px"
+                >
                   <AspectRatio
                     ratio={465 / 309}
                     borderBottom="1.5px solid black"
