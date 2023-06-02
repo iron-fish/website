@@ -7,8 +7,13 @@ type Option = {
   value: string;
 };
 
-export function useFilterOptions(options: Array<Option>) {
-  const [selectedOption, setSelectedOption] = useState<Option>(options[0]);
+export function useFilterOptions(
+  options: Array<Option>,
+  defaultOption?: Option
+) {
+  const [selectedOption, setSelectedOption] = useState<Option>(
+    defaultOption ?? options[0]
+  );
 
   const handleFilterChange = useCallback((option: Option) => {
     setSelectedOption(option);

@@ -22,6 +22,10 @@ import {
   Filter,
   useFilterOptions,
 } from "@/lib/ui/src/components/Filters/Filter";
+import { useRouter } from "next/router";
+import { kebabCase } from "lodash-es";
+import { useMemo } from "react";
+import { useIsClient } from "usehooks-ts";
 
 const plugImage = plug as LocalImage;
 const handsImage = hands as LocalImage;
@@ -35,18 +39,102 @@ const filterOptions = [
 ].concat(
   ECOSYSTEM_TYPES.map((type) => ({
     label: type,
-    value: type,
+    value: kebabCase(type),
   }))
 );
 
-export default function Ecosystem() {
-  const { options, selectedOption, handleFilterChange } =
-    useFilterOptions(filterOptions);
+function Cards() {
+  const { query, replace } = useRouter();
+  const defaultOption = useMemo(() => {
+    if (query.category && typeof query.category === "string") {
+      return filterOptions.find((option) => option.value === query.category);
+    }
+  }, [query]);
 
-  const filteredOptions = ECOSYSTEM.filter((item) =>
-    selectedOption.value === "all" ? true : item.type === selectedOption.value
+  const { options, selectedOption, handleFilterChange } = useFilterOptions(
+    filterOptions,
+    defaultOption
   );
 
+  const filteredOptions = ECOSYSTEM.filter((item) =>
+    selectedOption.value === "all"
+      ? true
+      : kebabCase(item.type) === selectedOption.value
+  );
+
+  return (
+    <>
+      <Filter
+        options={options}
+        selectedOption={selectedOption}
+        onChange={(option) => {
+          console.log(option);
+          handleFilterChange(option);
+          replace(
+            {
+              query: {
+                ...query,
+                category: option.value,
+              },
+            },
+            undefined,
+            {
+              shallow: true,
+            }
+          );
+        }}
+        mb={16}
+      />
+      <Grid
+        templateColumns={{
+          base: "100%",
+          lg: "repeat(2, 1fr)",
+          xl: "repeat(3, 1fr)",
+        }}
+        gap={6}
+      >
+        {filteredOptions.map((item) => {
+          return (
+            <GridItem key={item.name} display="flex">
+              <ShadowBox
+                shadowColor="white"
+                borderWidth="2px"
+                borderRadius="4px"
+              >
+                <AspectRatio ratio={465 / 309} borderBottom="2px solid black">
+                  <Image alt="" src={item.image} fill />
+                </AspectRatio>
+                <Box p={8} pb={16}>
+                  <Text textStyle="sm" mb={4}>
+                    {item.type}
+                  </Text>
+                  <Text as="h3" textStyle="h4" marginBottom={8}>
+                    {item.name}
+                  </Text>
+                  <ArrowButton
+                    tilted
+                    as="a"
+                    target="_blank"
+                    rel="noreferrer"
+                    href={item.link}
+                    size="sm"
+                    colorScheme="white"
+                  >
+                    Visit
+                  </ArrowButton>
+                </Box>
+              </ShadowBox>
+            </GridItem>
+          );
+        })}
+      </Grid>
+    </>
+  );
+}
+
+export default function Ecosystem() {
+  const router = useRouter();
+  const isClient = useIsClient();
   return (
     <>
       <Head>
@@ -130,58 +218,7 @@ export default function Ecosystem() {
             </ThickLink>
             .
           </Text>
-          <Filter
-            options={options}
-            selectedOption={selectedOption}
-            onChange={handleFilterChange}
-            mb={16}
-          />
-          <Grid
-            templateColumns={{
-              base: "100%",
-              lg: "repeat(2, 1fr)",
-              xl: "repeat(3, 1fr)",
-            }}
-            gap={6}
-          >
-            {filteredOptions.map((item) => {
-              return (
-                <GridItem key={item.name} display="flex">
-                  <ShadowBox
-                    shadowColor="white"
-                    borderWidth="2px"
-                    borderRadius="4px"
-                  >
-                    <AspectRatio
-                      ratio={465 / 309}
-                      borderBottom="2px solid black"
-                    >
-                      <Image alt="" src={item.image} fill />
-                    </AspectRatio>
-                    <Box p={8} pb={16}>
-                      <Text textStyle="sm" mb={4}>
-                        {item.type}
-                      </Text>
-                      <Text as="h3" textStyle="h4" marginBottom={8}>
-                        {item.name}
-                      </Text>
-                      <ArrowButton
-                        tilted
-                        as="a"
-                        target="_blank"
-                        rel="noreferrer"
-                        href={item.link}
-                        size="sm"
-                        colorScheme="white"
-                      >
-                        Visit
-                      </ArrowButton>
-                    </Box>
-                  </ShadowBox>
-                </GridItem>
-              );
-            })}
-          </Grid>
+          {isClient && router.isReady && <Cards />}
         </Container>
       </Box>
     </>

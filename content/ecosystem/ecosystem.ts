@@ -39,15 +39,15 @@ export const ECOSYSTEM: Array<{
   },
   {
     type: "Mining Pools",
-    name: "Mining Pool Stats",
-    link: "https://miningpoolstats.stream/ironfish",
-    image: "/images/ecosystem/mining-pool-stats.png",
+    name: "Kryptex",
+    link: "https://pool.kryptex.com/iron",
+    image: "/images/ecosystem/kryptex.png",
   },
   {
     type: "Mining Pools",
-    name: "Herominers",
-    link: "https://herominers.com/",
-    image: "/images/ecosystem/herominers.png",
+    name: "Hpool",
+    link: "https://www.hpool.in/statistics/ironfish",
+    image: "/images/ecosystem/hpool.png",
   },
   {
     type: "Mining Pools",
@@ -57,27 +57,27 @@ export const ECOSYSTEM: Array<{
   },
   {
     type: "Mining Pools",
-    name: "Kryptex",
-    link: "https://pool.kryptex.com/iron",
-    image: "/images/ecosystem/kryptex.png",
-  },
-  {
-    type: "Mining Pools",
-    name: "F2Pool",
-    link: "https://www.f2pool.com/",
-    image: "/images/ecosystem/f2-pool.png",
-  },
-  {
-    type: "Mining Pools",
     name: "Flexpool",
     link: "https://flexpool.io/",
     image: "/images/ecosystem/flexpool.png",
   },
   {
     type: "Mining Pools",
-    name: "Hpool",
-    link: "https://www.hpool.in/statistics/ironfish",
-    image: "/images/ecosystem/hpool.png",
+    name: "Ezil",
+    link: "https://ezil.me/",
+    image: "/images/ecosystem/ezil.png",
+  },
+  {
+    type: "Mining Pools",
+    name: "Mining Pool Stats",
+    link: "https://miningpoolstats.stream/ironfish",
+    image: "/images/ecosystem/mining-pool-stats.png",
+  },
+  {
+    type: "Mining Pools",
+    name: "F2Pool",
+    link: "https://www.f2pool.com/",
+    image: "/images/ecosystem/f2-pool.png",
   },
   {
     type: "Mining Pools",
@@ -90,12 +90,6 @@ export const ECOSYSTEM: Array<{
     name: "HashPool",
     link: "https://hashpool.com/",
     image: "/images/ecosystem/hashpool.png",
-  },
-  {
-    type: "Mining Pools",
-    name: "Ezil",
-    link: "https://ezil.me/",
-    image: "/images/ecosystem/ezil.png",
   },
   {
     type: "Mining Pools",
