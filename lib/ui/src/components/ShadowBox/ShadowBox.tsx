@@ -11,6 +11,8 @@ export const ShadowBox: ChakraComponent<"div", Props> = ({
   shadowColor = "pink.500",
   offset = "6px",
   borderRadius = "1.5px",
+  borderWidth = "1.5px",
+  width = "100%",
   ...rest
 }: Props) => {
   return (
@@ -21,10 +23,10 @@ export const ShadowBox: ChakraComponent<"div", Props> = ({
       display="flex"
       alignItems="stretch"
       justifyContent="stretch"
-      w="100%"
+      w={width}
     >
       <Box
-        border="1.5px solid black"
+        border={`${borderWidth} solid black`}
         position="absolute"
         borderRadius={borderRadius}
         inset={0}
@@ -34,7 +36,7 @@ export const ShadowBox: ChakraComponent<"div", Props> = ({
       />
       <Box
         bg="white"
-        border="1.5px solid black"
+        border={`${borderWidth} solid black`}
         borderRadius={borderRadius}
         position="relative"
         w="100%"

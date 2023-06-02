@@ -1,10 +1,9 @@
-import { Text, TextProps, ChakraComponent } from "@chakra-ui/react";
-import { ReactNode } from "react";
+import { Box, Text, ChakraComponent, BoxProps } from "@chakra-ui/react";
 
 type Props = {
-  children: ReactNode;
+  children: string;
   underlineColor: string;
-} & TextProps;
+} & BoxProps;
 
 export const ThickLink: ChakraComponent<"span", Props> = ({
   children,
@@ -16,16 +15,22 @@ export const ThickLink: ChakraComponent<"span", Props> = ({
     : underlineColor;
 
   return (
-    <Text
-      as="span"
-      display="inline-block"
-      boxShadow={`
+    <Box display="inline-block" {...rest}>
+      {children.split("").map((char, i) => {
+        return (
+          <Text
+            key={i}
+            as="span"
+            display="inline-block"
+            boxShadow={`
       inset 0 calc(0.3em * -1) 0 0 white,
       inset 0 calc(0.75em * -1) 0 0 ${color}
     `}
-      {...rest}
-    >
-      {children}
-    </Text>
+          >
+            {char}
+          </Text>
+        );
+      })}
+    </Box>
   );
 };

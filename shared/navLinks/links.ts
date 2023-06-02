@@ -59,6 +59,12 @@ export const links = [
         href: "https://explorer.ironfish.network/",
         image: "/images/nav/use-block.svg",
       },
+      {
+        title: messages.ecosystemTitle,
+        description: messages.ecosystemDescription,
+        href: "/use/ecosystem",
+        image: "/images/nav/use-ecosystem.svg",
+      },
     ],
   },
   {

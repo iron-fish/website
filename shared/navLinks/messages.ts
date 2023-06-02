@@ -166,4 +166,13 @@ export const messages = defineMessages({
     id: "nav.communityDescription",
     defaultMessage: "Keep up with the latest from the Iron Fish community.",
   },
+  ecosystemTitle: {
+    id: "nav.ecosystemTitle",
+    defaultMessage: "Ecosystem",
+  },
+  ecosystemDescription: {
+    id: "nav.ecosystemDescription",
+    defaultMessage:
+      "Our vast ecosystem offers diverse apps and integrations to choose from.",
+  },
 });

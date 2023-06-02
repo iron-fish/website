@@ -4,6 +4,7 @@ import Link from "next/link";
 import { GetStaticProps } from "next";
 import { parseFileByPath } from "@/lib/markdown";
 import { format, parse } from "date-fns";
+import Head from "next/head";
 import {
   Box,
   Container,
@@ -50,146 +51,156 @@ export default function Blog({ blogItems }: Props) {
   const hasMore = blogItems.length > blogsToShow;
 
   return (
-    <Box mb="150px">
-      <Hero
-        bg="blue.500"
-        heading="Blog"
-        subheading="Diving Into Iron Fish"
-        description="Your gateway to the latest developments and happenings from across the network."
-        images={
-          <>
-            <HeroImageUtil
-              image={owlImage}
-              top={{
-                md: "-150px",
-                xl: "-30px",
-              }}
-              left={{
-                md: "-120px",
-                xl: "30px",
-                "2xl": `calc(50vw - 700px)`,
-              }}
-            />
-            <HeroImageUtil
-              image={rubiksImage}
-              bottom={{
-                md: "-80px",
-                xl: "15px",
-              }}
-              left={{
-                md: "-50px",
-                xl: "-20px",
-                "2xl": `calc(50vw - 850px)`,
-              }}
-            />
-            <HeroImageUtil
-              image={readingImage}
-              top={{
-                md: "20px",
-                xl: "85px",
-              }}
-              right={{
-                md: "-120px",
-                xl: "-20px",
-                "2xl": `calc(50vw - 700px)`,
-              }}
-            />
-          </>
-        }
-      />
-      <Container
-        w="100%"
-        maxW="container.2xl"
-        px={{
-          base: 6,
-          lg: 10,
-          xl: 16,
-        }}
-      >
-        <Text
-          textStyle="h5"
-          my={{
-            base: "50px",
-            md: "100px",
-            lg: "150px",
+    <>
+      <Head>
+        <title>Stay up to Date with Iron Fish | Iron Fish Blog</title>
+      </Head>
+      <Box mb="150px">
+        <Hero
+          bg="blue.500"
+          heading="Blog"
+          subheading="Diving Into Iron Fish"
+          description="Your gateway to the latest developments and happenings from across the network."
+          images={
+            <>
+              <HeroImageUtil
+                image={owlImage}
+                top={{
+                  md: "-150px",
+                  xl: "-30px",
+                }}
+                left={{
+                  md: "-120px",
+                  xl: "30px",
+                  "2xl": `calc(50vw - 700px)`,
+                }}
+              />
+              <HeroImageUtil
+                image={rubiksImage}
+                bottom={{
+                  md: "-80px",
+                  xl: "15px",
+                }}
+                left={{
+                  md: "-50px",
+                  xl: "-20px",
+                  "2xl": `calc(50vw - 850px)`,
+                }}
+              />
+              <HeroImageUtil
+                image={readingImage}
+                top={{
+                  md: "20px",
+                  xl: "85px",
+                }}
+                right={{
+                  md: "-120px",
+                  xl: "-20px",
+                  "2xl": `calc(50vw - 700px)`,
+                }}
+              />
+            </>
+          }
+        />
+        <Container
+          w="100%"
+          maxW="container.2xl"
+          px={{
+            base: 6,
+            lg: 10,
+            xl: 16,
           }}
-          textAlign="center"
-          maxW="container.md"
-          mx="auto"
         >
-          If you&apos;d like to work with us or co-publish a blog article, feel
-          free to reach out to us at{" "}
-          <ThickLink
-            underlineColor="blue.500"
-            as="a"
-            href="mailto:contact@ironfish.network"
-            cursor="pointer"
+          <Text
+            textStyle="h5"
+            my={{
+              base: "50px",
+              md: "100px",
+              lg: "150px",
+            }}
+            textAlign="center"
+            maxW="container.md"
+            mx="auto"
           >
-            contact@ironfish.network
-          </ThickLink>
-          .
-        </Text>
-        <Grid
-          templateColumns={{
-            base: "100%",
-            lg: "repeat(2, 1fr)",
-            xl: "repeat(3, 1fr)",
-          }}
-          gap={6}
-        >
-          {blogItems.slice(0, blogsToShow).map((item) => {
-            const imageSrc = item.image ?? "/images/blog/thumbnail-default.png";
-            return (
-              <GridItem key={item.id} display="flex">
-                <ShadowBox shadowColor="white">
-                  <AspectRatio
-                    ratio={465 / 309}
-                    borderBottom="1.5px solid black"
-                  >
-                    <Image alt="" src={imageSrc} fill />
-                  </AspectRatio>
-                  <Box p={8} pb={16}>
-                    <Text textStyle="sm" mb={4}>
-                      {item.date}
-                    </Text>
-                    <Text
-                      as="h3"
-                      textStyle="h4"
-                      marginBottom={4}
-                      minHeight="2.5em"
-                    >
-                      {item.title}
-                    </Text>
-                    <Button
-                      as={Link}
-                      href={`/learn/blog/${item.slug}`}
-                      size="sm"
-                      bg="white"
-                      _hover={{
-                        bg: "gray.200",
-                      }}
-                    >
-                      Read Now
-                    </Button>
-                  </Box>
-                </ShadowBox>
-              </GridItem>
-            );
-          })}
-        </Grid>
-        {hasMore && (
-          <Flex justifyContent="center" mt={16}>
-            <ArrowButton
-              colorScheme="white"
-              size="sm"
-              onClick={() => setBlogChunksCount((prev) => prev + 1)}
+            If you&apos;d like to work with us or co-publish a blog article,
+            feel free to reach out to us at{" "}
+            <ThickLink
+              underlineColor="blue.500"
+              as="a"
+              href="mailto:contact@ironfish.network"
+              cursor="pointer"
             >
-              Read Older Articles
-            </ArrowButton>
-          </Flex>
-        )}
-      </Container>
-    </Box>
+              contact@ironfish.network
+            </ThickLink>
+            .
+          </Text>
+          <Grid
+            templateColumns={{
+              base: "100%",
+              lg: "repeat(2, 1fr)",
+              xl: "repeat(3, 1fr)",
+            }}
+            gap={6}
+          >
+            {blogItems.slice(0, blogsToShow).map((item) => {
+              const imageSrc =
+                item.image ?? "/images/blog/thumbnail-default.png";
+              return (
+                <GridItem key={item.id} display="flex">
+                  <ShadowBox
+                    shadowColor="white"
+                    borderWidth="2px"
+                    borderRadius="4px"
+                  >
+                    <AspectRatio
+                      ratio={465 / 309}
+                      borderBottom="1.5px solid black"
+                    >
+                      <Image alt="" src={imageSrc} fill />
+                    </AspectRatio>
+                    <Box p={8} pb={16}>
+                      <Text textStyle="sm" mb={4}>
+                        {item.date}
+                      </Text>
+                      <Text
+                        as="h3"
+                        textStyle="h4"
+                        marginBottom={4}
+                        minHeight="2.5em"
+                      >
+                        {item.title}
+                      </Text>
+                      <Button
+                        as={Link}
+                        href={`/learn/blog/${item.slug}`}
+                        size="sm"
+                        bg="white"
+                        _hover={{
+                          bg: "gray.200",
+                        }}
+                      >
+                        Read Now
+                      </Button>
+                    </Box>
+                  </ShadowBox>
+                </GridItem>
+              );
+            })}
+          </Grid>
+          {hasMore && (
+            <Flex justifyContent="center" mt={16}>
+              <ArrowButton
+                colorScheme="white"
+                size="sm"
+                onClick={() => setBlogChunksCount((prev) => prev + 1)}
+              >
+                Read Older Articles
+              </ArrowButton>
+            </Flex>
+          )}
+        </Container>
+      </Box>
+    </>
   );
 }
 

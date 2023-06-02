@@ -1,26 +1,35 @@
-import { Button, Box, ButtonProps, ChakraComponent } from "@chakra-ui/react";
+import {
+  Button,
+  Box,
+  ButtonProps,
+  ChakraComponent,
+  BoxProps,
+} from "@chakra-ui/react";
 import { useMemo } from "react";
 import { FancyArrowRight } from "../../icons";
 
 type Props = Omit<ButtonProps, "size" | "colorScheme"> & {
   size?: "sm" | "lg";
   colorScheme?: "pink" | "white";
+  tilted?: boolean;
 };
 
 export const ArrowButton: ChakraComponent<"button", Props> = ({
   children,
   size = "lg",
   colorScheme = "pink",
+  tilted,
   ...rest
 }: Props) => {
   const gap = useMemo(() => {
-    if (size === "sm") return 2;
-    if (size === "lg") return 4;
-  }, [size]);
-  const arrowScale = useMemo(() => {
-    if (size === "sm") return "scale(0.8)";
-    if (size === "lg") return "scale(1)";
-  }, [size]);
+    if (size === "sm") return tilted ? 1 : 2;
+    if (size === "lg") return tilted ? 2 : 4;
+  }, [size, tilted]);
+  const arrowTransform = useMemo(() => {
+    if (size === "sm")
+      return tilted ? "rotate(-45deg) scale(0.65)" : "scale(0.8)";
+    if (size === "lg") return tilted ? "rotate(-45deg) scale(0.8)" : "scale(1)";
+  }, [size, tilted]);
   const py = useMemo(() => {
     if (size === "sm") return 4;
     if (size === "lg") return undefined;
@@ -41,9 +50,15 @@ export const ArrowButton: ChakraComponent<"button", Props> = ({
   }, [colorScheme]);
 
   return (
-    <Button size={size} py={py} {...colorStyles} {...rest}>
+    <Button
+      size={size}
+      py={py}
+      {...colorStyles}
+      {...rest}
+      pr={tilted ? 2 : undefined}
+    >
       <Box mr={gap}>{children}</Box>
-      <Box transform={arrowScale}>
+      <Box transform={arrowTransform}>
         <FancyArrowRight />
       </Box>
     </Button>
