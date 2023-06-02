@@ -51,7 +51,7 @@ export const ECOSYSTEM: Array<{
   },
   {
     type: "Mining Pools",
-    name: "ZkWork",
+    name: "ZK.Work",
     link: "https://zk.work/",
     image: "/images/ecosystem/zk-work.png",
   },
@@ -93,13 +93,13 @@ export const ECOSYSTEM: Array<{
   },
   {
     type: "Mining Pools",
-    name: "GPU Mine",
+    name: "GPUMINE",
     link: "https://gpumine.org/",
     image: "/images/ecosystem/gpu-mine.png",
   },
   {
     type: "Mining Pools",
-    name: "UnMineable",
+    name: "unMineable",
     link: "https://unmineable.com/",
     image: "/images/ecosystem/unmineable.png",
   },
