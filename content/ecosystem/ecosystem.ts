@@ -103,12 +103,12 @@ export const ECOSYSTEM: Array<{
     link: "https://gpumine.org/",
     image: "/images/ecosystem/gpu-mine.png",
   },
-  // {
-  //   type: "Mining Pools",
-  //   name: "UnMineable",
-  //   link: "https://unmineable.com/",
-  //   image: "/images/ecosystem/unmineable.png",
-  // },
+  {
+    type: "Mining Pools",
+    name: "UnMineable",
+    link: "https://unmineable.com/",
+    image: "/images/ecosystem/unmineable.png",
+  },
   {
     type: "Exchanges",
     name: "KuCoin",
