@@ -74,32 +74,6 @@ export function Backers() {
           )}
         </Grid>
       </Container>
-      <Flex
-        alignItems={{
-          base: "stretch",
-          sm: "center",
-        }}
-        flexDirection={{
-          base: "column",
-          sm: "row",
-        }}
-        justifyContent="center"
-        gap={{
-          base: 6,
-          sm: 8,
-        }}
-      >
-        <ArrowButton
-          size="sm"
-          colorScheme="white"
-          as="a"
-          href="https://jobs.lever.co/ironfish"
-          rel="noreferrer"
-          target="_blank"
-        >
-          Careers
-        </ArrowButton>
-      </Flex>
     </Box>
   );
 }
