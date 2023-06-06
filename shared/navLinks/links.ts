@@ -125,12 +125,12 @@ export const links = [
         href: "/company/about-us",
         image: "/images/nav/company-submarine.svg",
       },
-      {
-        title: messages.careersTitle,
-        description: messages.careersDescription,
-        href: "https://jobs.lever.co/ironfish",
-        image: "/images/nav/company-keyhole-fish.svg",
-      },
+      // {
+      //   title: messages.careersTitle,
+      //   description: messages.careersDescription,
+      //   href: "https://jobs.lever.co/ironfish",
+      //   image: "/images/nav/company-keyhole-fish.svg",
+      // },
       {
         title: messages.mediaKitTitle,
         description: messages.mediaKitDescription,
