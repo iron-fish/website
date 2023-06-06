@@ -147,7 +147,7 @@ export const ECOSYSTEM: Array<{
   },
   {
     type: "Wallets",
-    name: "Fox Wallet",
+    name: "FoxWallet",
     link: "https://foxwallet.com/",
     image: "/images/ecosystem/fox-wallet.png",
   },
