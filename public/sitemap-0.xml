@@ -114,6 +114,7 @@
 <url><loc>https://ironfish.network/developers/documentation/rpc/wallet/mint_asset</loc><lastmod>2023-05-04T20:47:59.910Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
 <url><loc>https://ironfish.network/developers/documentation/rpc/wallet/post_transaction</loc><lastmod>2023-05-04T20:47:59.910Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
 <url><loc>https://ironfish.network/developers/documentation/rpc/wallet/remove</loc><lastmod>2023-05-04T20:47:59.910Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://ironfish.network/developers/documentation/rpc/wallet/rename</loc><lastmod>2023-06-20T21:03:29.131Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
 <url><loc>https://ironfish.network/developers/documentation/rpc/wallet/rescan_account</loc><lastmod>2023-05-04T20:47:59.910Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
 <url><loc>https://ironfish.network/developers/documentation/rpc/wallet/send_transaction</loc><lastmod>2023-05-04T20:47:59.910Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
 <url><loc>https://ironfish.network/developers/documentation/rpc/wallet/use_account</loc><lastmod>2023-05-04T20:47:59.910Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
