@@ -1,0 +1,55 @@
+---
+author: meg
+title: "Community Spotlight: FoxWallet"
+description: Learn more about FoxWallet, an Iron Fish ecosystem member
+image: /images/blog/spotlights/spotlight-header-palamar.png
+tags: [community-highlight]
+—
+
+With FoxWallet’s integration, the Iron Fish community has its first non-CLI wallet 🎉
+
+[FoxWallet](https://foxwallet.com/) is a multi-chain web3 wallet where users can access a wide range of dApps, manage digital assets, and interact with various blockchain networks. Over the past two years, it has given over 1 million users an easy entrance into web3.
+
+FoxWallet focuses on security while keeping a high bar for user experience and cross-chain interoperability. Its codebase has been [rigorously audited](https://www.certik.org/projects/fox-wallet), it supports over 46 different networks, and it maintains high average user ratings across major app stores.
+
+## FoxWallet + Iron Fish
+
+The FoxWallet team has a strong background in the implementation of Zero Knowledge Proofs (ZKP). This made working together with Iron Fish a no-brainer.
+
+By integrating Iron Fish, FoxWallet offers end users a secure and private alternative for managing digital assets and engaging with the web3 ecosystem. They now have a gateway to access the Iron Fish mainnet that preserves confidentiality and security. The wallet is also integrated with Iron Fish’s testnet, which developers can make full use of to explore new opportunities.
+
+“FoxWallet chose to collaborate with Iron Fish due to its reputation as a leader in privacy-preserving technologies for the blockchain space. Iron Fish's solution stood out because of its advanced ZKP techniques and robust privacy protocols, which align perfectly with FoxWallet's commitment to keeping up with the frontier of web3." — Codeface, co-founder of FoxWallet.
+
+A key takeaway from the integration is FoxWallet’s support for Iron Fish’s “view key” approach to compliance. This approach also ensures user compliance with regulations and laws related to cryptocurrency while they retain full privacy over their financial data.
+
+You can find more details on the integration and how it works in the FoxWallet [docs](https://hc.foxwallet.com/docs/ironfish/).
+
+## Community Response
+
+The integration has already received positive feedback from both communities and attracted new users to FoxWallet and Iron Fish.
+
+On the [Iron Fish Discord server](https://discord.gg/uCWctApGYN), users have expressed satisfaction with the easy access to the Iron Fish network. The advanced privacy features have empowered them to have greater control over their financial activities and personal data, fostering a sense of trust and confidence in the platform.
+
+Meanwhile, builders found Iron Fish's technology to be reliable, robust, and easy to integrate — they’ve appreciated the support provided by the Iron Fish team throughout the process. They made use of Iron Fish’s open source codebase to implement the generation of ZKPs and the decryption of transaction data into the wallet.
+
+## Looking Forward
+
+FoxWallet is on its way to complete important milestones in its roadmap right after the integration. The project will soon expand supported networks, enhance its user interface, and introduce advanced features. Some notable developments in the FoxWallet pipeline include:
+
+-   Multi-assets on Iron Fish
+    
+-   $IRON fiat on-ramp
+    
+-   Iron Fish cloud mining
+
+Likewise, Iron Fish continues to work with easy ways to participate in and interface with the network. Stay tuned for more non-CLI apps coming very soon…
+
+To stay in the loop with FoxWallet, visit the official [website](https://foxwallet.com/). You can also follow the project on [Twitter](https://twitter.com/FoxWallet), [Discord](http://discord.gg/DeT46k7538), and [Telegram](https://t.me/FoxWallet_EN).
+
+🎤 [Discord](https://discord.ironfish.network/)
+
+🐦 [Twitter](https://twitter.com/ironfishcrypto)
+
+🚀 [Careers](https://ironfish.network/careers)
+
+📧 [Email Updates](https://ironfish.network/#email-signup)
