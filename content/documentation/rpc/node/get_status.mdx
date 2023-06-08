@@ -62,6 +62,7 @@ Gets (and optionally streams) the node's status
     }
     headTimestamp: number
     newBlockSpeed: number
+    dbSizeBytes: number
   }
   blockSyncer: {
     status: 'stopped' | 'idle' | 'stopping' | 'syncing'
@@ -131,7 +132,8 @@ curl -X POST http://localhost:8021/node/getStatus
         "sequence": 6013
       },
       "headTimestamp": 1678400569905,
-      "newBlockSpeed": 0
+      "newBlockSpeed": 0,
+      "dbSizeBytes": 3839482612
     },
     "node": {
       "status": "started",
