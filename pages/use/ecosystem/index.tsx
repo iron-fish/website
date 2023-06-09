@@ -132,7 +132,7 @@ function Cards() {
                       arrowStyle="hidden"
                       ml={3}
                     >
-                      Read Mode
+                      Read More
                     </ArrowButton>
                   )}
                 </Box>
