@@ -101,7 +101,7 @@
 <url><loc>https://ironfish.network/developers/documentation/rpc/wallet/create_transaction</loc><lastmod>2023-05-04T20:47:59.910Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
 <url><loc>https://ironfish.network/developers/documentation/rpc/wallet/export_account</loc><lastmod>2023-05-04T20:47:59.910Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
 <url><loc>https://ironfish.network/developers/documentation/rpc/wallet/get_account_notes_stream</loc><lastmod>2023-05-04T20:47:59.910Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://ironfish.network/developers/documentation/rpc/wallet/get_account_status</loc><lastmod>2023-05-04T20:47:59.910Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://ironfish.network/developers/documentation/rpc/wallet/get_accounts_status</loc><lastmod>2023-05-04T20:47:59.910Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
 <url><loc>https://ironfish.network/developers/documentation/rpc/wallet/get_account_transaction</loc><lastmod>2023-05-04T20:47:59.910Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
 <url><loc>https://ironfish.network/developers/documentation/rpc/wallet/get_account_transactions</loc><lastmod>2023-05-04T20:47:59.910Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
 <url><loc>https://ironfish.network/developers/documentation/rpc/wallet/get_accounts</loc><lastmod>2023-05-04T20:47:59.910Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
