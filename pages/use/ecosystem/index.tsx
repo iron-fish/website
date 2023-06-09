@@ -1,4 +1,5 @@
 import Head from "next/head";
+import Link from "next/link";
 import {
   Box,
   Container,
@@ -112,16 +113,28 @@ function Cards() {
                     {item.name}
                   </Text>
                   <ArrowButton
-                    tilted
                     as="a"
                     target="_blank"
                     rel="noreferrer"
                     href={item.link}
                     size="sm"
                     colorScheme="white"
+                    arrowStyle="tilted"
                   >
                     Visit
                   </ArrowButton>
+                  {item.highlight && (
+                    <ArrowButton
+                      as={Link}
+                      href={item.highlight}
+                      size="sm"
+                      colorScheme="white"
+                      arrowStyle="hidden"
+                      ml={3}
+                    >
+                      Read More
+                    </ArrowButton>
+                  )}
                 </Box>
               </ShadowBox>
             </GridItem>

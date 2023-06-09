@@ -12,6 +12,7 @@ export const ECOSYSTEM: Array<{
   name: string;
   link: string;
   image: string;
+  highlight?: string;
 }> = [
   {
     type: "Tools",
@@ -48,6 +49,7 @@ export const ECOSYSTEM: Array<{
     name: "Hpool",
     link: "https://www.hpool.in/statistics/ironfish",
     image: "/images/ecosystem/hpool.png",
+    highlight: "/learn/blog/2022-12-08-Ecosystem-spotlight-Hpool",
   },
   {
     type: "Mining Pools",
@@ -150,6 +152,7 @@ export const ECOSYSTEM: Array<{
     name: "FoxWallet",
     link: "https://foxwallet.com/",
     image: "/images/ecosystem/fox-wallet.png",
+    highlight: "/learn/blog/2023-06-08-foxwallet-spotlight",
   },
   {
     type: "Wallets",

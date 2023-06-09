@@ -11,25 +11,29 @@ import { FancyArrowRight } from "../../icons";
 type Props = Omit<ButtonProps, "size" | "colorScheme"> & {
   size?: "sm" | "lg";
   colorScheme?: "pink" | "white";
-  tilted?: boolean;
+  arrowStyle?: "right" | "tilted" | "hidden";
 };
 
 export const ArrowButton: ChakraComponent<"button", Props> = ({
   children,
   size = "lg",
   colorScheme = "pink",
-  tilted,
+  arrowStyle = "right",
   ...rest
 }: Props) => {
+  const isArrowTilted = arrowStyle === "tilted";
+  const isArrowHidden = arrowStyle === "hidden";
+
   const gap = useMemo(() => {
-    if (size === "sm") return tilted ? 1 : 2;
-    if (size === "lg") return tilted ? 2 : 4;
-  }, [size, tilted]);
+    if (size === "sm") return isArrowTilted ? 1 : 2;
+    if (size === "lg") return isArrowTilted ? 2 : 4;
+  }, [size, isArrowTilted]);
   const arrowTransform = useMemo(() => {
     if (size === "sm")
-      return tilted ? "rotate(-45deg) scale(0.65)" : "scale(0.8)";
-    if (size === "lg") return tilted ? "rotate(-45deg) scale(0.8)" : "scale(1)";
-  }, [size, tilted]);
+      return isArrowTilted ? "rotate(-45deg) scale(0.65)" : "scale(0.8)";
+    if (size === "lg")
+      return isArrowTilted ? "rotate(-45deg) scale(0.8)" : "scale(1)";
+  }, [size, isArrowTilted]);
   const py = useMemo(() => {
     if (size === "sm") return 4;
     if (size === "lg") return undefined;
@@ -55,12 +59,14 @@ export const ArrowButton: ChakraComponent<"button", Props> = ({
       py={py}
       {...colorStyles}
       {...rest}
-      pr={tilted ? 2 : undefined}
+      pr={isArrowTilted ? 2 : undefined}
     >
-      <Box mr={gap}>{children}</Box>
-      <Box transform={arrowTransform}>
-        <FancyArrowRight />
-      </Box>
+      <Box mr={isArrowHidden ? 0 : gap}>{children}</Box>
+      {arrowStyle !== "hidden" && (
+        <Box transform={arrowTransform}>
+          <FancyArrowRight />
+        </Box>
+      )}
     </Button>
   );
 };
