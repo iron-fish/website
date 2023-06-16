@@ -1,4 +1,4 @@
-type Author = {
+export type Author = {
   name: string;
   title: string;
   url: string;

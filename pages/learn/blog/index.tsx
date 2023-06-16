@@ -24,6 +24,7 @@ import {
 import owl from "../../../assets/heroImages/blog/owl.svg";
 import rubiks from "../../../assets/heroImages/blog/rubiks.svg";
 import reading from "../../../assets/heroImages/blog/reading.svg";
+import generateBlogFeeds from "../../../lib/feeds";
 import Image from "next/image";
 import { useState } from "react";
 
@@ -54,6 +55,18 @@ export default function Blog({ blogItems }: Props) {
     <>
       <Head>
         <title>Stay up to Date with Iron Fish | Iron Fish Blog</title>
+        <link
+          href="/learn/blog/feed.rss"
+          type="application/rss+xml"
+          rel="alternate"
+          title="Iron Fish Blog RSS Feed"
+        />
+        <link
+          href="/learn/blog/feed.atom"
+          type="application/atom+xml"
+          rel="alternate"
+          title="Iron Fish Blog Atom Feed"
+        />
       </Head>
       <Box mb="150px">
         <Hero
@@ -234,6 +247,8 @@ export const getStaticProps: GetStaticProps<Props> = async ({ params }) => {
     .sort((a, b) => {
       return a.timestamp > b.timestamp ? -1 : 1;
     });
+
+  await generateBlogFeeds();
 
   return {
     props: {
