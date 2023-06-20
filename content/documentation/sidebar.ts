@@ -286,6 +286,10 @@ export const sidebar: SidebarDefinition = [
             label: "remove",
           },
           {
+            id: "rpc/wallet/rename",
+            label: "rename",
+          },
+          {
             id: "rpc/wallet/rescan_account",
             label: "rescanAccount",
           },
