@@ -8,6 +8,7 @@ type Props = {
 export const ThickLink: ChakraComponent<"span", Props> = ({
   children,
   underlineColor,
+  as = "span",
   ...rest
 }: Props) => {
   const color = underlineColor.includes(".")
@@ -15,13 +16,14 @@ export const ThickLink: ChakraComponent<"span", Props> = ({
     : underlineColor;
 
   return (
-    <Box display="inline-block" {...rest}>
+    <Box display="inline-block" as={as} {...rest}>
       {children.split("").map((char, i) => {
         return (
           <Text
             key={i}
             as="span"
             display="inline-block"
+            whiteSpace="pre"
             boxShadow={`
       inset 0 calc(0.3em * -1) 0 0 white,
       inset 0 calc(0.75em * -1) 0 0 ${color}
