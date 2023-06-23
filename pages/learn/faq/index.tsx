@@ -18,6 +18,7 @@ import question from "../../../assets/heroImages/faq/question.svg";
 import { CONSTANTS } from "../../../shared/constants";
 import { ReactNode } from "react";
 import Head from "next/head";
+import { FaqMoreInfo } from "@/components/FaqMoreInfo/FaqMoreInfo";
 
 type Props = {
   markdown: MDXRemoteProps;
@@ -81,43 +82,11 @@ export default function FAQ({ markdown }: Props) {
           }
         />
         <Container w="100%" maxW="container.lg">
-          <Text
-            textStyle="h5"
-            my={{
-              base: "50px",
-              md: "100px",
-              lg: "150px",
-            }}
-            textAlign="center"
-          >
-            Don&apos;t see the answer to a question you have? Reach out to us on{" "}
-            <TextLink href={CONSTANTS.SOCIAL_LINKS.twitter}>Twitter</TextLink>{" "}
-            or{" "}
-            <TextLink href={CONSTANTS.SOCIAL_LINKS.discord}>Discord</TextLink>!
-            You can also check out our{" "}
-            <TextLink href={CONSTANTS.GITHUB_LINKS.wiki}>
-              community-run wiki
-            </TextLink>
-            .
-          </Text>
+          <FaqMoreInfo />
           <MDXRenderer markdown={markdown} />
         </Container>
       </Box>
     </>
-  );
-}
-
-function TextLink({ href, children }: { href: string; children: ReactNode }) {
-  return (
-    <chakra.a
-      href={href}
-      target="_blank"
-      rel="noreferrer"
-      textDecoration="underline"
-      textDecorationThickness="2px"
-    >
-      {children}
-    </chakra.a>
   );
 }
 

@@ -15,6 +15,7 @@ import {
   getNodeAppUrlByPlatform,
   DownloadUrlsByPlatform,
 } from "@/utils/nodeAppUrl/getNodeAppUrlByPlatform";
+import { NodeAppFaqs } from "@/components/NodeApp/NodeAppFaqs/NodeAppFaqs";
 
 const eelImage = eel as LocalImage;
 const octopusImage = octopus as LocalImage;
@@ -123,6 +124,7 @@ export default function NodeApp({ downloadUrlsByPlatform }: Props) {
         />
         <FeatureListA />
         <FeatureListB />
+        <NodeAppFaqs />
         <DownloadOptions
           bg="orange.500"
           py={{
