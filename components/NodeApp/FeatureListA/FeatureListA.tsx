@@ -9,6 +9,7 @@ import image1 from "./assets/image-01.svg";
 import image2 from "./assets/image-02.svg";
 import image3 from "./assets/image-03.svg";
 import image4 from "./assets/image-04.svg";
+import { CHIP_COLORS } from "../shared/chipColors";
 
 const IMAGE_BY_INDEX = {
   0: <Image alt="" src={image1} />,
@@ -51,6 +52,7 @@ export function FeatureListA() {
           </Text>
           <AutoExpandingList {...expandingListProps}>
             <AutoExpandingList.Item
+              chipColor={CHIP_COLORS.GREEN}
               heading={
                 <Heading fontSize="xl">
                   Easy Access to Iron Fish Network
@@ -77,6 +79,7 @@ export function FeatureListA() {
               }
             />
             <AutoExpandingList.Item
+              chipColor={CHIP_COLORS.PINK}
               heading={
                 <Heading fontSize="xl">Centralized Account View</Heading>
               }
@@ -99,6 +102,7 @@ export function FeatureListA() {
               }
             />
             <AutoExpandingList.Item
+              chipColor={CHIP_COLORS.BLUE}
               heading={<Heading fontSize="xl">Encryption Made Simple</Heading>}
               body={
                 <Box>
@@ -120,6 +124,7 @@ export function FeatureListA() {
               }
             />
             <AutoExpandingList.Item
+              chipColor={CHIP_COLORS.ORANGE}
               heading={
                 <Flex
                   flexDirection={{

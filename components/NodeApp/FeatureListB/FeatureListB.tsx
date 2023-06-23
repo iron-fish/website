@@ -5,6 +5,7 @@ import {
 } from "@/components/AutoExpandingList/AutoExpandingList";
 import Image from "next/image";
 import { AnimatePresence, motion } from "framer-motion";
+import { CHIP_COLORS } from "../shared/chipColors";
 import image1 from "./assets/image-01.svg";
 import image2 from "./assets/image-02.svg";
 import image3 from "./assets/image-03.svg";
@@ -56,6 +57,7 @@ export function FeatureListB() {
             </Text>
             <AutoExpandingList theme="dark" {...expandingListProps}>
               <AutoExpandingList.Item
+                chipColor={CHIP_COLORS.GREEN}
                 heading={<Heading fontSize="xl">Decentralized Privacy</Heading>}
                 body={
                   <Box>
@@ -77,6 +79,7 @@ export function FeatureListB() {
                 }
               />
               <AutoExpandingList.Item
+                chipColor={CHIP_COLORS.PINK}
                 heading={
                   <Heading fontSize="xl">Accessible, safe crypto</Heading>
                 }
@@ -101,6 +104,7 @@ export function FeatureListB() {
                 }
               />
               <AutoExpandingList.Item
+                chipColor={CHIP_COLORS.ORANGE}
                 heading={
                   <Heading fontSize="xl">Compliance, not compromise</Heading>
                 }

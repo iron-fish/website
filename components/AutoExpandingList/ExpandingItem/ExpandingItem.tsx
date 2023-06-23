@@ -7,6 +7,7 @@ type Theme = "light" | "dark";
 type ItemProps = {
   heading: ReactNode;
   body: ReactNode;
+  chipColor?: string;
   // Props below are provided by AutoExpandingList and should not be passed in.
   _index?: number;
   _active?: boolean;
@@ -21,6 +22,7 @@ type ItemProps = {
 export function ExpandingItem({
   heading,
   body,
+  chipColor,
   _index,
   _active,
   _height,
@@ -63,7 +65,12 @@ export function ExpandingItem({
           gap={8}
         >
           {typeof _index !== "undefined" && typeof _active !== "undefined" && (
-            <ChipCounter num={_index + 1} active={_active} theme={_theme} />
+            <ChipCounter
+              num={_index + 1}
+              active={_active}
+              color={chipColor}
+              theme={_theme}
+            />
           )}
           <Box flexGrow={1}>{heading}</Box>
         </Flex>
