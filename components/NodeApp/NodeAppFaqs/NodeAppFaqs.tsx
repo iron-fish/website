@@ -5,15 +5,8 @@ export function NodeAppFaqs() {
   return (
     <Box borderBottom="1.5px solid black">
       <Container w="100%" maxW="container.xl" pt="150px">
-        <Text
-          as="h2"
-          textStyle="h3"
-          mb={12}
-          textAlign="center"
-          maxW="18ch"
-          mx="auto"
-        >
-          Node App Frequenly Asked Questions
+        <Text as="h2" textStyle="h3" mb={12} textAlign="center">
+          Node App FAQ
         </Text>
         <FAQItem title="How do I get started?">
           You can find the download links here [include]. Also check out our
