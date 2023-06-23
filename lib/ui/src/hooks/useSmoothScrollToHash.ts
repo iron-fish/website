@@ -20,3 +20,10 @@ export function smoothScrollToEl(el: Element) {
     behavior: "smooth",
   });
 }
+
+export function smoothScrollToElByQuerySelector(querySelector: string) {
+  const target = document.querySelector(querySelector);
+  if (target) {
+    smoothScrollToEl(target);
+  }
+}

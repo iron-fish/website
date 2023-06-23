@@ -1,4 +1,4 @@
-import { Box, Flex, Hero, HeroImageUtil, LocalImage } from "@/lib/ui";
+import { Box, Flex, Hero, HeroImageUtil, LocalImage, Text } from "@/lib/ui";
 import eel from "../../../assets/heroImages/node-app/eel.svg";
 import octopus from "../../../assets/heroImages/node-app/octopus.svg";
 import nodeApp from "../../../assets/heroImages/node-app/node-app.svg";
@@ -13,11 +13,8 @@ import {
 } from "@/components/NodeApp/Download/Download";
 import {
   getNodeAppUrlByPlatform,
-  Platform,
   DownloadUrlsByPlatform,
 } from "@/utils/nodeAppUrl/getNodeAppUrlByPlatform";
-import { useState } from "react";
-import { UAParser } from "ua-parser-js";
 
 const eelImage = eel as LocalImage;
 const octopusImage = octopus as LocalImage;
@@ -40,7 +37,24 @@ export default function NodeApp({ downloadUrlsByPlatform }: Props) {
         <Box bg="orange.500">
           <Hero
             bg="orange.500"
-            heading="Node App Beta"
+            heading={
+              <Flex as="h1" alignItems="center" justifyContent="center" mb={10}>
+                <Text as="span" textStyle="lg">
+                  Node App
+                </Text>
+                <Box
+                  as="span"
+                  bg="black"
+                  color="orange.500"
+                  py={1}
+                  px={3}
+                  borderRadius="full"
+                  ml={2}
+                >
+                  Beta
+                </Box>
+              </Flex>
+            }
             subheading="Built for everyone"
             description="Set up a wallet and make secure transactions with our easy-to-use desktop node app."
             borderBottom="none"
@@ -99,9 +113,25 @@ export default function NodeApp({ downloadUrlsByPlatform }: Props) {
           </Hero>
           <Box px={8}>{isClient && <NodeAppUIImage />}</Box>
         </Box>
-        <DownloadOptions downloadUrlsByPlatform={downloadUrlsByPlatform} />
+        <DownloadOptions
+          mt={{
+            base: "50px",
+            md: "100px",
+            lg: "150px",
+          }}
+          downloadUrlsByPlatform={downloadUrlsByPlatform}
+        />
         <FeatureListA />
         <FeatureListB />
+        <DownloadOptions
+          bg="orange.500"
+          py={{
+            base: "100px",
+            md: "150px",
+            lg: "250px",
+          }}
+          downloadUrlsByPlatform={downloadUrlsByPlatform}
+        />
       </Box>
     </>
   );
@@ -120,6 +150,6 @@ export async function getStaticProps() {
     props: {
       downloadUrlsByPlatform,
     },
-    revalidate: 60,
+    revalidate: 60 * 5, // TTL: 5 minutes
   };
 }

@@ -10,14 +10,15 @@ export const PLATFORMS = {
   LINUX: "linux",
 } as const;
 
-export const PLATFORM_LABELS = {
+export type Platform = (typeof PLATFORMS)[keyof typeof PLATFORMS];
+
+export const PLATFORM_LABELS: Record<Platform, string> = {
   [PLATFORMS.WINDOWS]: "Windows",
   [PLATFORMS.MAC_ARM]: "Mac (Apple Silicon)",
   [PLATFORMS.MAC_INTEL]: "Mac (Intel)",
   [PLATFORMS.LINUX]: "Linux",
 } as const;
 
-export type Platform = (typeof PLATFORMS)[keyof typeof PLATFORMS];
 export type DownloadUrlsByPlatform = Record<Platform, string>;
 
 function getDownloadUrlsByPlatform(data: unknown) {

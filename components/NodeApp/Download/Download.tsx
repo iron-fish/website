@@ -1,13 +1,40 @@
-import { ArrowButton, Box, Button, Flex, Text, Container } from "@/lib/ui";
-import { DownloadUrlsByPlatform } from "@/utils/nodeAppUrl/getNodeAppUrlByPlatform";
+import {
+  ArrowButton,
+  Box,
+  Button,
+  Flex,
+  Text,
+  Container,
+  ButtonProps,
+  forwardRef,
+  BoxProps,
+} from "@/lib/ui";
+import { smoothScrollToElByQuerySelector } from "@/lib/ui/src/hooks/useSmoothScrollToHash";
+import {
+  DownloadUrlsByPlatform,
+  PLATFORM_LABELS,
+  Platform,
+} from "@/utils/nodeAppUrl/getNodeAppUrlByPlatform";
 import { useDownloadLinkForPlatform } from "@/utils/nodeAppUrl/useDownloadLinkForPlatform";
 import { useMemo } from "react";
+import { BsDownload } from "react-icons/bs";
 
 type Props = {
   downloadUrlsByPlatform?: DownloadUrlsByPlatform;
 };
 
 const REPO_URL = "https://github.com/iron-fish/node-app";
+const DOWNLOAD_OPTIONS_TARGET = "download-options";
+
+const DownloadButton = forwardRef<ButtonProps, "a">((props, ref) => (
+  <Button
+    bg="white"
+    _hover={{ bg: "gray.100" }}
+    _focus={{ bg: "gray.100" }}
+    ref={ref}
+    {...props}
+  />
+));
 
 export function DownloadForCurrentPlatform({ downloadUrlsByPlatform }: Props) {
   const linkData = useDownloadLinkForPlatform(downloadUrlsByPlatform);
@@ -27,18 +54,15 @@ export function DownloadForCurrentPlatform({ downloadUrlsByPlatform }: Props) {
 
   return (
     <Flex direction="column" alignItems="center">
-      <Button
-        as="a"
-        size="lg"
-        bg="white"
-        _hover={{
-          bg: "gray.100",
-        }}
-        mb={5}
-        {...linkProps}
-      />
+      <DownloadButton as="a" size="lg" mb={5} {...linkProps} />
       {downloadUrlsByPlatform && (
         <Text
+          as="a"
+          onClick={() => {
+            smoothScrollToElByQuerySelector(
+              `[data-target-id="${DOWNLOAD_OPTIONS_TARGET}"]`
+            );
+          }}
           cursor="pointer"
           _hover={{
             textDecoration: "underline",
@@ -51,48 +75,56 @@ export function DownloadForCurrentPlatform({ downloadUrlsByPlatform }: Props) {
   );
 }
 
-export function DownloadOptions({ downloadUrlsByPlatform }: Props) {
+export function DownloadOptions({
+  downloadUrlsByPlatform,
+  ...rest
+}: Props & BoxProps) {
   if (!downloadUrlsByPlatform) return null;
 
-  console.log({ downloadUrlsByPlatform });
-
   return (
-    <Box>
+    <Box {...rest}>
       <Text
         as="h2"
+        data-target-id={DOWNLOAD_OPTIONS_TARGET}
         textStyle="h3"
-        mt={{
-          base: "50px",
-          md: "100px",
-          lg: "150px",
-        }}
-        mb={{
-          base: "96px",
-          md: "128px",
-          lg: "150px",
-        }}
+        mb={10}
         textAlign="center"
       >
         Download the Node App
       </Text>
-      <Container w="100%" maxW="container.xl">
-        <DownloadButton />
+      <Container
+        w="100%"
+        maxW="container.xl"
+        display="flex"
+        justifyContent="center"
+        flexWrap="wrap"
+        gap={4}
+      >
+        {Object.entries(PLATFORM_LABELS).map(([platform, label]) => {
+          return (
+            <DownloadButton
+              key={platform}
+              download
+              as="a"
+              href={downloadUrlsByPlatform[platform as Platform]}
+              size="sm"
+              colorScheme="white"
+              rightIcon={<BsDownload />}
+            >
+              {label}
+            </DownloadButton>
+          );
+        })}
+        <ArrowButton
+          as="a"
+          href="#"
+          size="sm"
+          colorScheme="white"
+          arrowStyle="tilted"
+        >
+          View on GitHub
+        </ArrowButton>
       </Container>
     </Box>
-  );
-}
-
-function DownloadButton() {
-  return (
-    <ArrowButton
-      as="a"
-      href="#"
-      size="sm"
-      colorScheme="white"
-      // arrowStyle="hidden"
-      ml={3}
-    >
-      Read More
-    </ArrowButton>
   );
 }
