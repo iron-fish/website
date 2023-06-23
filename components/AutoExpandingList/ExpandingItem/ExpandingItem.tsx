@@ -1,6 +1,8 @@
 import { Box, Flex, Text } from "@chakra-ui/react";
-import React, { ReactNode, useRef } from "react";
+import React, { ReactNode, useMemo, useRef } from "react";
 import useResizeObserver from "@react-hook/resize-observer";
+
+type Theme = "light" | "dark";
 
 type ItemProps = {
   heading: ReactNode;
@@ -13,6 +15,7 @@ type ItemProps = {
   _registerBodyHeight?: (index: number, height: number) => void;
   _handleItemClick?: (index: number) => void;
   _toggleDuration?: number;
+  _theme?: Theme;
 };
 
 export function ExpandingItem({
@@ -25,6 +28,7 @@ export function ExpandingItem({
   _registerBodyHeight,
   _handleItemClick,
   _toggleDuration,
+  _theme = "light",
 }: ItemProps) {
   const headingWrapperRef = useRef<HTMLDivElement>(null);
   const bodyWrapperRef = useRef<HTMLDivElement>(null);
@@ -52,7 +56,7 @@ export function ExpandingItem({
       <Box ref={headingWrapperRef}>
         <Flex mt={8} gap={8}>
           {typeof _index !== "undefined" && typeof _active !== "undefined" && (
-            <ChipCounter num={_index + 1} active={_active} />
+            <ChipCounter num={_index + 1} active={_active} theme={_theme} />
           )}
           <Box>{heading}</Box>
         </Flex>
@@ -65,7 +69,7 @@ export function ExpandingItem({
         <Box ref={bodyWrapperRef}>
           <Box pt={8} />
           <Flex gap={8}>
-            <ChipCounter spacer />
+            <ChipCounter spacer theme={_theme} />
             <Box>{body}</Box>
           </Flex>
         </Box>
@@ -79,15 +83,31 @@ function ChipCounter({
   spacer,
   num = 0,
   color = "gray.200",
+  theme = "light",
 }: {
   active?: boolean;
   spacer?: boolean;
   num?: number;
   color?: string;
+  theme: Theme;
 }) {
+  const { bg, color: textColor } = useMemo(() => {
+    if (active) {
+      return {
+        bg: color,
+        color: "black",
+      };
+    }
+
+    return {
+      bg: theme === "light" ? "black" : "white",
+      color: theme === "light" ? "white" : "black",
+    };
+  }, [active, color, theme]);
+
   return (
     <Flex
-      bg={active ? color : "black"}
+      bg={bg}
       borderRadius="full"
       h="30px"
       minW="45px"
@@ -98,11 +118,7 @@ function ChipCounter({
       opacity={spacer ? 0 : 1}
     >
       {!spacer && (
-        <Text
-          textStyle="sm"
-          color={active ? "black" : "white"}
-          transform="translateY(1px)"
-        >
+        <Text textStyle="sm" color={textColor} transform="translateY(1px)">
           {num < 10 ? `0${num}` : num}.
         </Text>
       )}

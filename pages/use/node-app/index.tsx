@@ -1,35 +1,34 @@
-import {
-  Box,
-  Flex,
-  Hero,
-  HeroImageUtil,
-  LocalImage,
-  Container,
-  Text,
-  Heading,
-  Grid,
-  GridItem,
-} from "@/lib/ui";
-import { NewsletterSignUp } from "../../../components/NewsletterSignUp/NewsletterSignUp";
+import { Box, Flex, Hero, HeroImageUtil, LocalImage } from "@/lib/ui";
 import eel from "../../../assets/heroImages/node-app/eel.svg";
 import octopus from "../../../assets/heroImages/node-app/octopus.svg";
 import nodeApp from "../../../assets/heroImages/node-app/node-app.svg";
 import { NodeAppUIImage } from "../../../components/NodeAppUIImage/NodeAppImage";
 import { useIsClient } from "usehooks-ts";
 import Head from "next/head";
+import { FeatureListA } from "@/components/NodeApp/FeatureListA/FeatureListA";
+import { FeatureListB } from "@/components/NodeApp/FeatureListB/FeatureListB";
 import {
-  AutoExpandingList,
-  useAutoExpandingList,
-} from "@/components/AutoExpandingList/AutoExpandingList";
-import { DownloadSection } from "@/components/NodeApp/DownloadSection/DownloadSection";
+  DownloadOptions,
+  DownloadForCurrentPlatform,
+} from "@/components/NodeApp/Download/Download";
+import {
+  getNodeAppUrlByPlatform,
+  Platform,
+  DownloadUrlsByPlatform,
+} from "@/utils/nodeAppUrl/getNodeAppUrlByPlatform";
+import { useState } from "react";
+import { UAParser } from "ua-parser-js";
 
 const eelImage = eel as LocalImage;
 const octopusImage = octopus as LocalImage;
 const appImage = nodeApp as LocalImage;
 
-export default function NodeApp() {
+type Props = {
+  downloadUrlsByPlatform?: DownloadUrlsByPlatform;
+};
+
+export default function NodeApp({ downloadUrlsByPlatform }: Props) {
   const isClient = useIsClient();
-  const expandingListProps = useAutoExpandingList();
   return (
     <>
       <Head>
@@ -41,9 +40,9 @@ export default function NodeApp() {
         <Box bg="orange.500">
           <Hero
             bg="orange.500"
-            heading="Node App"
+            heading="Node App Beta"
             subheading="Built for everyone"
-            description="Our desktop node app is launching soon! Sign up for our newsletter to be informed for its launch."
+            description="Set up a wallet and make secure transactions with our easy-to-use desktop node app."
             borderBottom="none"
             textContainerProps={{
               pb: {
@@ -93,13 +92,34 @@ export default function NodeApp() {
             }
           >
             <Flex mb="64px" justifyContent="center">
-              <NewsletterSignUp bordered />
+              <DownloadForCurrentPlatform
+                downloadUrlsByPlatform={downloadUrlsByPlatform}
+              />
             </Flex>
           </Hero>
           <Box px={8}>{isClient && <NodeAppUIImage />}</Box>
         </Box>
-        <DownloadSection />
+        <DownloadOptions />
+        <FeatureListA />
+        <FeatureListB />
       </Box>
     </>
   );
+}
+
+export async function getStaticProps() {
+  let downloadUrlsByPlatform;
+
+  try {
+    downloadUrlsByPlatform = await getNodeAppUrlByPlatform();
+  } catch (err) {
+    console.error(err);
+  }
+
+  return {
+    props: {
+      downloadUrlsByPlatform,
+    },
+    revalidate: 60,
+  };
 }

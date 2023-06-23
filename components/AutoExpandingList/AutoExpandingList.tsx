@@ -1,5 +1,6 @@
 import { Box, BoxProps } from "@chakra-ui/react";
 import React, {
+  ComponentProps,
   ReactElement,
   useCallback,
   useEffect,
@@ -65,6 +66,7 @@ type Props = Omit<BoxProps, "children" | "height"> & {
   isAutoExpanding: boolean;
   handleItemClick: (index: number) => void;
   setItemCount: (count: number) => void;
+  theme?: "light" | "dark";
 };
 
 function AutoExpandingList({
@@ -73,6 +75,7 @@ function AutoExpandingList({
   isAutoExpanding,
   handleItemClick,
   setItemCount,
+  theme = "light",
   ...boxProps
 }: Props) {
   const wrapperRef = useRef<HTMLDivElement>(null);
@@ -116,7 +119,6 @@ function AutoExpandingList({
     <Box
       ref={wrapperRef}
       height={cumulativeHeadingHeight + maxBodyHeight + children.length + "px"}
-      mb={8}
       {...boxProps}
     >
       {React.Children.map(children, (item, i) => {
@@ -130,12 +132,14 @@ function AutoExpandingList({
               _registerBodyHeight: registerBodyHeight,
               _handleItemClick: handleItemClick,
               _toggleDuration: TOGGLE_DURATION,
+              _theme: theme,
             })}
             <ProgressIndicator
               isAutoExpanding={isAutoExpanding}
               active={i === activeIndex}
               cycleDuration={CYCLE_DURATION}
               toggleDuration={TOGGLE_DURATION}
+              filter={theme === "dark" ? "invert(1)" : "none"}
             />
           </Box>
         );

@@ -17,12 +17,12 @@ const IMAGE_BY_INDEX = {
   3: <Image alt="" src={image4} />,
 };
 
-export function DownloadSection() {
+export function FeatureListA() {
   const expandingListProps = useAutoExpandingList();
 
   return (
-    <Container w="100%" maxW="container.xl">
-      <Text
+    <Container w="100%" maxW="container.xl" py="150px">
+      {/* <Text
         as="h2"
         textStyle="h3"
         mt={{
@@ -38,7 +38,7 @@ export function DownloadSection() {
         textAlign="center"
       >
         Download the Node App
-      </Text>
+      </Text> */}
       <Grid templateColumns="repeat(2, 1fr)" mb="200px" gap={10}>
         <GridItem>
           <Text textStyle="h3" mb={10}>

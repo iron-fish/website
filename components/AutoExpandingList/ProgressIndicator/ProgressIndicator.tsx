@@ -1,7 +1,7 @@
-import { Box } from "@chakra-ui/react";
+import { Box, BoxProps } from "@chakra-ui/react";
 import React, { useEffect, useState } from "react";
 
-type Props = {
+type Props = BoxProps & {
   active: boolean;
   isAutoExpanding: boolean;
   cycleDuration: number;
@@ -13,6 +13,7 @@ export function ProgressIndicator({
   isAutoExpanding,
   cycleDuration,
   toggleDuration,
+  ...rest
 }: Props) {
   const [isReady, setIsReady] = useState(false);
   useEffect(() => {
@@ -21,7 +22,7 @@ export function ProgressIndicator({
     }, 1);
   }, []);
   return (
-    <Box bg="rgba(0, 0, 0, 0.2)" my={8}>
+    <Box bg="rgba(0, 0, 0, 0.2)" my={8} {...rest}>
       <Box
         h="1.5px"
         w={isReady && active ? "100%" : "0%"}
