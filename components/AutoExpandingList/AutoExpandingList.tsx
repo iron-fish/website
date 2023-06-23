@@ -1,6 +1,5 @@
 import { Box, BoxProps } from "@chakra-ui/react";
 import React, {
-  ComponentProps,
   ReactElement,
   useCallback,
   useEffect,
@@ -10,7 +9,6 @@ import React, {
 } from "react";
 import { ProgressIndicator } from "./ProgressIndicator/ProgressIndicator";
 import { ExpandingItem } from "./ExpandingItem/ExpandingItem";
-import { ExpandingItemHeading } from "./ExpandingItemHeading/ExpandingItemHeading";
 
 const CYCLE_DURATION = 5000;
 const TOGGLE_DURATION = 300;
@@ -149,6 +147,5 @@ function AutoExpandingList({
 }
 
 AutoExpandingList.Item = ExpandingItem;
-AutoExpandingList.Heading = ExpandingItemHeading;
 
 export { AutoExpandingList };

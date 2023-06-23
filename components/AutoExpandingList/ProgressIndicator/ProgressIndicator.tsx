@@ -22,7 +22,7 @@ export function ProgressIndicator({
     }, 1);
   }, []);
   return (
-    <Box bg="rgba(0, 0, 0, 0.2)" my={8} {...rest}>
+    <Box bg="rgba(0, 0, 0, 0.2)" {...rest}>
       <Box
         h="1.5px"
         w={isReady && active ? "100%" : "0%"}

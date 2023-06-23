@@ -21,8 +21,21 @@ export function FeatureListB() {
   return (
     <Box color="white" bg="black" py="150px">
       <Container w="100%" maxW="container.xl">
-        <Grid templateColumns="repeat(2, 1fr)" mb="200px" gap={10}>
-          <GridItem display="flex" justifyContent="flex-start">
+        <Grid
+          templateColumns={{
+            base: "repeat(1, 1fr)",
+            md: "repeat(2, 1fr)",
+          }}
+          mb="200px"
+          gap={10}
+        >
+          <GridItem
+            display={{
+              base: "none",
+              md: "flex",
+            }}
+            justifyContent="flex-start"
+          >
             <AnimatePresence mode="wait">
               <motion.div
                 key={expandingListProps.activeIndex}
@@ -45,11 +58,22 @@ export function FeatureListB() {
               <AutoExpandingList.Item
                 heading={<Heading fontSize="xl">Decentralized Privacy</Heading>}
                 body={
-                  <Text>
-                    The more the ecosystem grows, the stronger and more
-                    decentralized it is. Check out the node tab in the app to
-                    see all the nodes you&apos;re connected with.
-                  </Text>
+                  <Box>
+                    <Text>
+                      The more the ecosystem grows, the stronger and more
+                      decentralized it is. Check out the node tab in the app to
+                      see all the nodes you&apos;re connected with.
+                    </Text>
+                    <Box
+                      mt={8}
+                      display={{
+                        base: "block",
+                        md: "none",
+                      }}
+                    >
+                      <Image alt="" src={image1} />
+                    </Box>
+                  </Box>
                 }
               />
               <AutoExpandingList.Item
@@ -57,11 +81,23 @@ export function FeatureListB() {
                   <Heading fontSize="xl">Accessible, safe crypto</Heading>
                 }
                 body={
-                  <Text>
-                    With the node app, anyone can use Iron Fish for fully
-                    encrypted transactions, regardless of technical skill. Send
-                    and receive $IRON or custom assets with just a few clicks.
-                  </Text>
+                  <Box>
+                    <Text>
+                      With the node app, anyone can use Iron Fish for fully
+                      encrypted transactions, regardless of technical skill.
+                      Send and receive $IRON or custom assets with just a few
+                      clicks.
+                    </Text>
+                    <Box
+                      mt={8}
+                      display={{
+                        base: "block",
+                        md: "none",
+                      }}
+                    >
+                      <Image alt="" src={image1} />
+                    </Box>
+                  </Box>
                 }
               />
               <AutoExpandingList.Item
@@ -69,12 +105,23 @@ export function FeatureListB() {
                   <Heading fontSize="xl">Compliance, not compromise</Heading>
                 }
                 body={
-                  <Text>
-                    Like all Iron Fish users, node app users receive a set of
-                    view keys that allow them to provide read-only access to
-                    their transaction records. You can offer this access when
-                    proof of payment or other compliance tasks are necessary.
-                  </Text>
+                  <Box>
+                    <Text>
+                      Like all Iron Fish users, node app users receive a set of
+                      view keys that allow them to provide read-only access to
+                      their transaction records. You can offer this access when
+                      proof of payment or other compliance tasks are necessary.
+                    </Text>
+                    <Box
+                      mt={8}
+                      display={{
+                        base: "block",
+                        md: "none",
+                      }}
+                    >
+                      <Image alt="" src={image1} />
+                    </Box>
+                  </Box>
                 }
               />
             </AutoExpandingList>

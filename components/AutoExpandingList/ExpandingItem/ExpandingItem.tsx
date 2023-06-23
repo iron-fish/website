@@ -1,4 +1,4 @@
-import { Box, Flex, Text } from "@chakra-ui/react";
+import { Box, Flex, FlexProps, Text } from "@chakra-ui/react";
 import React, { ReactNode, useMemo, useRef } from "react";
 import useResizeObserver from "@react-hook/resize-observer";
 
@@ -54,11 +54,18 @@ export function ExpandingItem({
       }}
     >
       <Box ref={headingWrapperRef}>
-        <Flex mt={8} gap={8}>
+        <Flex
+          flexDirection={{
+            base: "column",
+            md: "row",
+          }}
+          py={8}
+          gap={8}
+        >
           {typeof _index !== "undefined" && typeof _active !== "undefined" && (
             <ChipCounter num={_index + 1} active={_active} theme={_theme} />
           )}
-          <Box>{heading}</Box>
+          <Box flexGrow={1}>{heading}</Box>
         </Flex>
       </Box>
       <Box
@@ -67,9 +74,15 @@ export function ExpandingItem({
         transition={`height ${_toggleDuration}ms ease-in-out`}
       >
         <Box ref={bodyWrapperRef}>
-          <Box pt={8} />
-          <Flex gap={8}>
-            <ChipCounter spacer theme={_theme} />
+          <Flex gap={8} pb={8}>
+            <ChipCounter
+              display={{
+                base: "none",
+                md: "flex",
+              }}
+              spacer
+              theme={_theme}
+            />
             <Box>{body}</Box>
           </Flex>
         </Box>
@@ -84,13 +97,14 @@ function ChipCounter({
   num = 0,
   color = "gray.200",
   theme = "light",
+  ...rest
 }: {
   active?: boolean;
   spacer?: boolean;
   num?: number;
   color?: string;
   theme: Theme;
-}) {
+} & FlexProps) {
   const { bg, color: textColor } = useMemo(() => {
     if (active) {
       return {
@@ -116,6 +130,7 @@ function ChipCounter({
       alignItems="center"
       transition="background-color 0.3s ease-in-out"
       opacity={spacer ? 0 : 1}
+      {...rest}
     >
       {!spacer && (
         <Text textStyle="sm" color={textColor} transform="translateY(1px)">

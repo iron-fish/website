@@ -106,7 +106,7 @@ export default function NodeApp({ downloadUrlsByPlatform }: Props) {
               </>
             }
           >
-            <Flex mb="64px" justifyContent="center">
+            <Flex mb="64px" justifyContent="center" px={2}>
               <DownloadForCurrentPlatform
                 downloadUrlsByPlatform={downloadUrlsByPlatform}
               />

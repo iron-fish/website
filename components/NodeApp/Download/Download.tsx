@@ -8,6 +8,7 @@ import {
   ButtonProps,
   forwardRef,
   BoxProps,
+  Divider,
 } from "@/lib/ui";
 import { smoothScrollToElByQuerySelector } from "@/lib/ui/src/hooks/useSmoothScrollToHash";
 import {
@@ -48,13 +49,19 @@ export function DownloadForCurrentPlatform({ downloadUrlsByPlatform }: Props) {
     const { url, label } = linkData;
 
     return url && label
-      ? { href: url, children: label }
+      ? { href: url, children: "Download Now" }
       : { href: REPO_URL, children: "View on GitHub", target: "_blank" };
   }, [linkData]);
 
   return (
-    <Flex direction="column" alignItems="center">
-      <DownloadButton as="a" size="lg" mb={5} {...linkProps} />
+    <Flex direction="column" alignItems="center" maxW="100%">
+      <DownloadButton as="a" size="lg" mb={4} {...linkProps} />
+      {linkData?.label && (
+        <>
+          <Text>{linkData.label}</Text>
+          <Box my={3} w="120px" borderBottom="1px dashed black" />
+        </>
+      )}
       {downloadUrlsByPlatform && (
         <Text
           as="a"

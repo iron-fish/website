@@ -1,4 +1,4 @@
-import { Container, Text, Heading, Grid, GridItem } from "@/lib/ui";
+import { Container, Text, Heading, Grid, GridItem, Box, Flex } from "@/lib/ui";
 import {
   AutoExpandingList,
   useAutoExpandingList,
@@ -17,29 +17,34 @@ const IMAGE_BY_INDEX = {
   3: <Image alt="" src={image4} />,
 };
 
+function ComingSoon() {
+  return (
+    <Box
+      textTransform="uppercase"
+      bg="#F3F3F4"
+      color="#7F7F7F"
+      borderRadius="full"
+      fontSize="sm"
+      px={3}
+    >
+      Coming Soon
+    </Box>
+  );
+}
+
 export function FeatureListA() {
   const expandingListProps = useAutoExpandingList();
 
   return (
     <Container w="100%" maxW="container.xl" py="150px">
-      {/* <Text
-        as="h2"
-        textStyle="h3"
-        mt={{
-          base: "50px",
-          md: "100px",
-          lg: "150px",
+      <Grid
+        templateColumns={{
+          base: "1fr",
+          md: "repeat(2, 1fr)",
         }}
-        mb={{
-          base: "96px",
-          md: "128px",
-          lg: "150px",
-        }}
-        textAlign="center"
+        mb="200px"
+        gap={10}
       >
-        Download the Node App
-      </Text> */}
-      <Grid templateColumns="repeat(2, 1fr)" mb="200px" gap={10}>
         <GridItem>
           <Text textStyle="h3" mb={10}>
             The perfect app for everyday use
@@ -52,12 +57,23 @@ export function FeatureListA() {
                 </Heading>
               }
               body={
-                <Text>
-                  Once the app has synced the node, you can start using $IRON
-                  and your custom assets right away. If you do use the command
-                  line wallet, anything you do there is reflected in the node
-                  app, and vice versa.
-                </Text>
+                <Box>
+                  <Text>
+                    Once the app has synced the node, you can start using $IRON
+                    and your custom assets right away. If you do use the command
+                    line wallet, anything you do there is reflected in the node
+                    app, and vice versa.
+                  </Text>
+                  <Box
+                    mt={8}
+                    display={{
+                      base: "block",
+                      md: "none",
+                    }}
+                  >
+                    <Image alt="" src={image1} />
+                  </Box>
+                </Box>
               }
             />
             <AutoExpandingList.Item
@@ -65,38 +81,95 @@ export function FeatureListA() {
                 <Heading fontSize="xl">Centralized Account View</Heading>
               }
               body={
-                <Text>
-                  Access a centralized view of all your accounts: address book,
-                  balances, transactions, and more.
-                </Text>
+                <Box>
+                  <Text>
+                    Access a centralized view of all your accounts: address
+                    book, balances, transactions, and more.
+                  </Text>
+                  <Box
+                    mt={8}
+                    display={{
+                      base: "block",
+                      md: "none",
+                    }}
+                  >
+                    <Image alt="" src={image2} />
+                  </Box>
+                </Box>
               }
             />
             <AutoExpandingList.Item
               heading={<Heading fontSize="xl">Encryption Made Simple</Heading>}
               body={
-                <Text>
-                  The node app has the same level of security as running a node
-                  via the command line, and is more secure than using third
-                  party applications.
-                </Text>
+                <Box>
+                  <Text>
+                    The node app has the same level of security as running a
+                    node via the command line, and is more secure than using
+                    third party applications.
+                  </Text>
+                  <Box
+                    mt={8}
+                    display={{
+                      base: "block",
+                      md: "none",
+                    }}
+                  >
+                    <Image alt="" src={image3} />
+                  </Box>
+                </Box>
               }
             />
             <AutoExpandingList.Item
               heading={
-                <Heading fontSize="xl">Bridge Assets [Coming Soon]</Heading>
+                <Flex
+                  flexDirection={{
+                    base: "column",
+                    md: "row",
+                  }}
+                  alignItems={{
+                    base: "flex-start",
+                    md: "center",
+                  }}
+                  gap={{
+                    base: 4,
+                    md: 2,
+                  }}
+                  justifyContent="space-between"
+                  w="100%"
+                >
+                  <Heading fontSize="xl">Bridge Assets</Heading>
+                  <ComingSoon />
+                </Flex>
               }
               body={
-                <Text>
-                  Soon you&apos;ll be able to encrypt assets like Bitcoin and
-                  Ethereum, we pave the way for complete privacy in web3
-                  transactions. Unlocking the true potential of a private and
-                  secure blockchain ecosystem.
-                </Text>
+                <Box>
+                  <Text>
+                    Soon you&apos;ll be able to encrypt assets like Bitcoin and
+                    Ethereum, we pave the way for complete privacy in web3
+                    transactions. Unlocking the true potential of a private and
+                    secure blockchain ecosystem.
+                  </Text>
+                  <Box
+                    mt={8}
+                    display={{
+                      base: "block",
+                      md: "none",
+                    }}
+                  >
+                    <Image alt="" src={image4} />
+                  </Box>
+                </Box>
               }
             />
           </AutoExpandingList>
         </GridItem>
-        <GridItem display="flex" justifyContent="flex-end">
+        <GridItem
+          display={{
+            base: "none",
+            md: "flex",
+          }}
+          justifyContent="flex-end"
+        >
           <AnimatePresence mode="wait">
             <motion.div
               key={expandingListProps.activeIndex}

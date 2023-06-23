@@ -63,12 +63,12 @@ async function getDataForPlatform(
     return architecture === "arm"
       ? {
           platform: PLATFORMS.MAC_ARM,
-          label: "Download for Mac (Apple Silicon)",
+          label: "macOS (Apple Silicon)",
           url: downloadUrlsByPlatform[PLATFORMS.MAC_ARM],
         }
       : {
           platform: PLATFORMS.MAC_INTEL,
-          label: "Download for Mac (Intel)",
+          label: "macOS (Intel)",
           url: downloadUrlsByPlatform[PLATFORMS.MAC_INTEL],
         };
   }
@@ -76,7 +76,7 @@ async function getDataForPlatform(
   if (ua.os.name === "Windows") {
     return {
       platform: PLATFORMS.WINDOWS,
-      label: "Download for Windows",
+      label: "Windows",
       url: downloadUrlsByPlatform[PLATFORMS.WINDOWS],
     };
   }
@@ -84,7 +84,7 @@ async function getDataForPlatform(
   if (ua.os.name === "Linux") {
     return {
       platform: PLATFORMS.LINUX,
-      label: "Download for Linux",
+      label: "Linux",
       url: downloadUrlsByPlatform[PLATFORMS.LINUX],
     };
   }
