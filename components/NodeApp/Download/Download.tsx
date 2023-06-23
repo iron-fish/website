@@ -1,43 +1,29 @@
 import { ArrowButton, Box, Button, Flex, Text, Container } from "@/lib/ui";
-import {
-  PLATFORMS,
-  Platform,
-  DownloadUrlsByPlatform,
-} from "@/utils/nodeAppUrl/getNodeAppUrlByPlatform";
-import { useEffect, useMemo, useState } from "react";
-import { UAParser } from "ua-parser-js";
+import { DownloadUrlsByPlatform } from "@/utils/nodeAppUrl/getNodeAppUrlByPlatform";
+import { useDownloadLinkForPlatform } from "@/utils/nodeAppUrl/useDownloadLinkForPlatform";
+import { useMemo } from "react";
 
 type Props = {
   downloadUrlsByPlatform?: DownloadUrlsByPlatform;
 };
 
-// function useUserPlatform() {
-//   const [platform, setPlatform] = useState("");
-
-//   useEffect(() => {
-//     const doFetch = () => {
-//       fetch("/api/user-platform")
-//         .then((res) => res.json())
-//         .then((data) => {
-//           setPlatform(data.platform);
-//         });
-//     };
-
-//     doFetch();
-//   }, []);
-
-//   return platform;
-// }
-
 const REPO_URL = "https://github.com/iron-fish/node-app";
 
 export function DownloadForCurrentPlatform({ downloadUrlsByPlatform }: Props) {
-  const { url, label } = useDownloadLinkForPlatform(downloadUrlsByPlatform);
+  const linkData = useDownloadLinkForPlatform(downloadUrlsByPlatform);
 
-  const linkProps =
-    url && label
+  const linkProps = useMemo(() => {
+    if (!linkData)
+      return {
+        opacity: 0,
+      };
+
+    const { url, label } = linkData;
+
+    return url && label
       ? { href: url, children: label }
-      : { href: REPO_URL, children: "View on GitHub" };
+      : { href: REPO_URL, children: "View on GitHub", target: "_blank" };
+  }, [linkData]);
 
   return (
     <Flex direction="column" alignItems="center">
@@ -51,19 +37,25 @@ export function DownloadForCurrentPlatform({ downloadUrlsByPlatform }: Props) {
         mb={5}
         {...linkProps}
       />
-      <Text
-        cursor="pointer"
-        _hover={{
-          textDecoration: "underline",
-        }}
-      >
-        View Download Options
-      </Text>
+      {downloadUrlsByPlatform && (
+        <Text
+          cursor="pointer"
+          _hover={{
+            textDecoration: "underline",
+          }}
+        >
+          View All Download Options
+        </Text>
+      )}
     </Flex>
   );
 }
 
-export function DownloadOptions() {
+export function DownloadOptions({ downloadUrlsByPlatform }: Props) {
+  if (!downloadUrlsByPlatform) return null;
+
+  console.log({ downloadUrlsByPlatform });
+
   return (
     <Box>
       <Text
@@ -103,59 +95,4 @@ function DownloadButton() {
       Read More
     </ArrowButton>
   );
-}
-
-function useDownloadLinkForPlatform(
-  downloadUrlsByPlatform?: DownloadUrlsByPlatform
-) {
-  const [ua] = useState(() => {
-    const parser = new UAParser();
-    return parser.getResult();
-  });
-
-  const { platform, label, url } = useMemo(() => {
-    const notFoundOption = {
-      platform: null,
-      label: null,
-      url: null,
-    };
-
-    if (!downloadUrlsByPlatform) {
-      return notFoundOption;
-    }
-
-    if (ua.os.name === "Mac OS") {
-      return ua.cpu.architecture === "arm64"
-        ? {
-            platform: PLATFORMS.MAC_ARM,
-            label: "Mac (Apple Silicon)",
-            url: downloadUrlsByPlatform[PLATFORMS.MAC_ARM],
-          }
-        : {
-            platform: PLATFORMS.MAC_INTEL,
-            label: "Mac (Intel)",
-            url: downloadUrlsByPlatform[PLATFORMS.MAC_INTEL],
-          };
-    }
-
-    if (ua.os.name === "Windows") {
-      return {
-        platform: PLATFORMS.WINDOWS,
-        label: "Windows",
-        url: downloadUrlsByPlatform[PLATFORMS.WINDOWS],
-      };
-    }
-
-    if (ua.os.name === "Linux") {
-      return {
-        platform: PLATFORMS.LINUX,
-        label: "Linux",
-        url: downloadUrlsByPlatform[PLATFORMS.LINUX],
-      };
-    }
-
-    return notFoundOption;
-  }, [downloadUrlsByPlatform, ua.cpu.architecture, ua.os.name]);
-
-  return { platform, label, url };
 }

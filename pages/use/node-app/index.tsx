@@ -99,7 +99,7 @@ export default function NodeApp({ downloadUrlsByPlatform }: Props) {
           </Hero>
           <Box px={8}>{isClient && <NodeAppUIImage />}</Box>
         </Box>
-        <DownloadOptions />
+        <DownloadOptions downloadUrlsByPlatform={downloadUrlsByPlatform} />
         <FeatureListA />
         <FeatureListB />
       </Box>
