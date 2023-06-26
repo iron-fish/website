@@ -1,7 +1,7 @@
-import { useBreakpointValue, Flex } from "@/lib/ui";
+import { useBreakpointValue, Flex, FlexProps } from "@/lib/ui";
 import Image from "next/image";
 
-export function NodeAppUIImage() {
+export function NodeAppUIImage(props: FlexProps) {
   const imageProps = useBreakpointValue(
     {
       base: {
@@ -35,7 +35,7 @@ export function NodeAppUIImage() {
     }
   );
   return imageProps ? (
-    <Flex justifyContent="center">
+    <Flex justifyContent="center" {...props}>
       <Image {...imageProps} alt="" />
     </Flex>
   ) : null;

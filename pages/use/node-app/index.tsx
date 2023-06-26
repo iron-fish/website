@@ -112,14 +112,12 @@ export default function NodeApp({ downloadUrlsByPlatform }: Props) {
               />
             </Flex>
           </Hero>
-          <Box px={8}>{isClient && <NodeAppUIImage />}</Box>
+          <Box px={8} borderBottom="1.5px solid black">
+            {isClient && <NodeAppUIImage transform="translateY(1.5px)" />}
+          </Box>
         </Box>
         <DownloadOptions
-          mt={{
-            base: "50px",
-            md: "100px",
-            lg: "150px",
-          }}
+          mt="150px"
           downloadUrlsByPlatform={downloadUrlsByPlatform}
         />
         <FeatureListA />
@@ -127,11 +125,7 @@ export default function NodeApp({ downloadUrlsByPlatform }: Props) {
         <NodeAppFaqs />
         <DownloadOptions
           bg="orange.500"
-          py={{
-            base: "100px",
-            md: "150px",
-            lg: "250px",
-          }}
+          py="150px"
           downloadUrlsByPlatform={downloadUrlsByPlatform}
         />
       </Box>

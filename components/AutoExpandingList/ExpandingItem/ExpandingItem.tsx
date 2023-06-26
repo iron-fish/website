@@ -1,6 +1,7 @@
 import { Box, Flex, FlexProps, Text } from "@chakra-ui/react";
 import React, { ReactNode, useMemo, useRef } from "react";
 import useResizeObserver from "@react-hook/resize-observer";
+import { IoChevronDown, IoChevronUp } from "react-icons/io5";
 
 type Theme = "light" | "dark";
 
@@ -65,12 +66,23 @@ export function ExpandingItem({
           gap={8}
         >
           {typeof _index !== "undefined" && typeof _active !== "undefined" && (
-            <ChipCounter
-              num={_index + 1}
-              active={_active}
-              color={chipColor}
-              theme={_theme}
-            />
+            <Flex alignItems="center" justifyContent="space-between">
+              <ChipCounter
+                num={_index + 1}
+                active={_active}
+                color={chipColor}
+                theme={_theme}
+              />
+              <Box
+                display={{
+                  base: "block",
+                  md: "none",
+                }}
+                color="#7F7F7F"
+              >
+                {_active ? <IoChevronUp /> : <IoChevronDown />}
+              </Box>
+            </Flex>
           )}
           <Box flexGrow={1}>{heading}</Box>
         </Flex>

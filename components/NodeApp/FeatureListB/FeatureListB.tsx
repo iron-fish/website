@@ -27,7 +27,6 @@ export function FeatureListB() {
             base: "repeat(1, 1fr)",
             md: "repeat(2, 1fr)",
           }}
-          mb="200px"
           gap={10}
         >
           <GridItem
@@ -52,7 +51,7 @@ export function FeatureListB() {
             </AnimatePresence>
           </GridItem>
           <GridItem>
-            <Text textStyle="h3" mb={10}>
+            <Text textStyle="h3" mb={2}>
               Privacy Needs a Home
             </Text>
             <AutoExpandingList theme="dark" {...expandingListProps}>
@@ -98,7 +97,7 @@ export function FeatureListB() {
                         md: "none",
                       }}
                     >
-                      <Image alt="" src={image1} />
+                      <Image alt="" src={image2} />
                     </Box>
                   </Box>
                 }
@@ -123,7 +122,7 @@ export function FeatureListB() {
                         md: "none",
                       }}
                     >
-                      <Image alt="" src={image1} />
+                      <Image alt="" src={image3} />
                     </Box>
                   </Box>
                 }

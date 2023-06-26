@@ -43,11 +43,10 @@ export function FeatureListA() {
           base: "1fr",
           md: "repeat(2, 1fr)",
         }}
-        mb="200px"
         gap={10}
       >
         <GridItem>
-          <Text textStyle="h3" mb={10}>
+          <Text textStyle="h3" mb={2}>
             The perfect app for everyday use
           </Text>
           <AutoExpandingList {...expandingListProps}>

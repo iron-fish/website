@@ -8,14 +8,14 @@ export function NodeAppFaqs() {
         <Text as="h2" textStyle="h3" mb={12} textAlign="center">
           Node App FAQ
         </Text>
-        <FAQItem title="How do I get started?">
-          You can find the download links here [include]. Also check out our
-          walkthrough.
-        </FAQItem>
         <FAQItem title="Why opt in to telemetry?">
-          Lorem ipusm dolor sit amet, consectetur adipiscing elit. Sed euismod
-          nulla quis semper consectetur. Sed euismod nulla quis semper
-          consectetur. Sed euismod nulla quis semper consectetur.
+          Opting into telemetry allows us to continuously enhance your
+          experience by collecting anonymous data. This data includes valuable
+          metrics such as node performance, block information, and overall
+          health indicators. By enabling telemetry, you contribute to the
+          ongoing improvement of our services. You can easily control your
+          participation in telemetry by enabling or disabling it at any time
+          through the node settings page.
         </FAQItem>
         <FAQItem title="Can I run the node app on my mobile device?">
           The node app requires a desktop, as it runs a full node (the most
