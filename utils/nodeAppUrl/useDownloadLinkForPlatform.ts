@@ -81,13 +81,5 @@ async function getDataForPlatform(
     };
   }
 
-  if (ua.os.name === "Linux") {
-    return {
-      platform: PLATFORMS.LINUX,
-      label: "Linux",
-      url: downloadUrlsByPlatform[PLATFORMS.LINUX],
-    };
-  }
-
   return notFoundOption;
 }
