@@ -124,10 +124,12 @@ export function DownloadOptions({
         })}
         <ArrowButton
           as="a"
-          href="#"
+          href={REPO_URL}
           size="sm"
           colorScheme="white"
           arrowStyle="tilted"
+          target="_blank"
+          rel="noreferrer"
         >
           View on GitHub
         </ArrowButton>
