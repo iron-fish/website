@@ -12,8 +12,11 @@
 /.next/
 /out/
 
-# production
+# generated files
 /build
+/public/**/feed.atom
+/public/**/feed.rss
+/public/**/sitemap*.xml
 
 # misc
 .DS_Store
