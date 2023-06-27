@@ -66,7 +66,12 @@ function getDownloadUrlsByPlatform(data: unknown) {
 
 export async function getNodeAppUrlByPlatform(): Promise<DownloadUrlsByPlatform> {
   const response = await fetch(ENDPOINT);
+
   const data = await response.json();
+
+  if (!response.ok) {
+    throw new Error(data);
+  }
 
   return getDownloadUrlsByPlatform(data);
 }

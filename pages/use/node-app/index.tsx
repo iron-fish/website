@@ -146,6 +146,6 @@ export async function getStaticProps() {
     props: {
       downloadUrlsByPlatform,
     },
-    revalidate: 60 * 5, // TTL: 5 minutes
+    revalidate: 60 * 15, // TTL: 15 mins
   };
 }
