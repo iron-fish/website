@@ -134,7 +134,7 @@ export default function NodeApp({ downloadUrlsByPlatform }: Props) {
 }
 
 export async function getStaticProps() {
-  let downloadUrlsByPlatform;
+  let downloadUrlsByPlatform = {};
 
   try {
     downloadUrlsByPlatform = await getNodeAppUrlByPlatform();
