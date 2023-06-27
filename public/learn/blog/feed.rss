@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0">
+    <channel>
+        <title>Iron Fish Blog</title>
+        <link>https://ironfish.network</link>
+        <description>...</description>
+        <lastBuildDate>Thu, 08 Jun 2023 00:00:00 GMT</lastBuildDate>
+        <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
+        <generator>generator...</generator>
+        <image>
+            <title>Iron Fish Blog</title>
+            <url>https://ironfish.network/images/logo.svg</url>
+            <link>https://ironfish.network</link>
+        </image>
+        <copyright>copyright...</copyright>
+        <item>
+            <title><![CDATA[Ecosystem Spotlight: FoxWallet]]></title>
+            <link>https://ironfish.network/blog/2023-06-08-foxwallet-spotlight</link>
+            <guid>https://ironfish.network/blog/2023-06-08-foxwallet-spotlight</guid>
+            <pubDate>Thu, 08 Jun 2023 00:00:00 GMT</pubDate>
+            <description><![CDATA[Learn more about FoxWallet, a multichain wallet that's integrated Iron Fish]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Community Spotlight: Palamar]]></title>
+            <link>https://ironfish.network/blog/2023-05-30-community-spotlight-palamar</link>
+            <guid>https://ironfish.network/blog/2023-05-30-community-spotlight-palamar</guid>
+            <pubDate>Tue, 30 May 2023 00:00:00 GMT</pubDate>
+            <description><![CDATA[Interview with Iron Fish community member Palamar]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Community Spotlight: Zvix]]></title>
+            <link>https://ironfish.network/blog/2023-05-25-community-spotlight-zvix</link>
+            <guid>https://ironfish.network/blog/2023-05-25-community-spotlight-zvix</guid>
+            <pubDate>Thu, 25 May 2023 00:00:00 GMT</pubDate>
+            <description><![CDATA[Interview with Iron Fish community member Zvix]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Web3 = Web2++]]></title>
+            <link>https://ironfish.network/blog/2023-04-24-web3-our-vision</link>
+            <guid>https://ironfish.network/blog/2023-04-24-web3-our-vision</guid>
+            <pubDate>Mon, 24 Apr 2023 00:00:00 GMT</pubDate>
+            <description><![CDATA[Our vision for Iron Fish is to become the privacy platform for all crypto transactions.]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Iron Fish Mainnet Is Live]]></title>
+            <link>https://ironfish.network/blog/2023-04-20-announcing-mainnet</link>
+            <guid>https://ironfish.network/blog/2023-04-20-announcing-mainnet</guid>
+            <pubDate>Thu, 20 Apr 2023 00:00:00 GMT</pubDate>
+            <description><![CDATA[Check out the Iron Fish mainnet today!]]></description>
+        </item>
+        <item>
+            <title><![CDATA[New Iron Fish Website: An Interview with the Designer]]></title>
+            <link>https://ironfish.network/blog/2023-04-14-website-launch</link>
+            <guid>https://ironfish.network/blog/2023-04-14-website-launch</guid>
+            <pubDate>Fri, 14 Apr 2023 00:00:00 GMT</pubDate>
+            <description><![CDATA[Introducing the New Iron Fish Website]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Iron Fish Use Case: Digital Transactions]]></title>
+            <link>https://ironfish.network/blog/2023-04-10-digital-transactions</link>
+            <guid>https://ironfish.network/blog/2023-04-10-digital-transactions</guid>
+            <pubDate>Mon, 10 Apr 2023 00:00:00 GMT</pubDate>
+            <description><![CDATA[How Iron Fish will support safe, private digital payments.]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Iron Fish: Why KYC?]]></title>
+            <link>https://ironfish.network/blog/2023-04-06-why-kyc</link>
+            <guid>https://ironfish.network/blog/2023-04-06-why-kyc</guid>
+            <pubDate>Thu, 06 Apr 2023 00:00:00 GMT</pubDate>
+            <description><![CDATA[What is KYC and why does Iron Fish need to enforce it?]]></description>
+        </item>
+        <item>
+            <title><![CDATA[GPU Mining Competition]]></title>
+            <link>https://ironfish.network/blog/2023-04-04-GPU-miner-contest</link>
+            <guid>https://ironfish.network/blog/2023-04-04-GPU-miner-contest</guid>
+            <pubDate>Tue, 04 Apr 2023 00:00:00 GMT</pubDate>
+            <description><![CDATA[Iron Fish announces an open-source GPU Miner competition]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Community Spotlight: null]]></title>
+            <link>https://ironfish.network/blog/2023-03-29-community-spotlight-null</link>
+            <guid>https://ironfish.network/blog/2023-03-29-community-spotlight-null</guid>
+            <pubDate>Wed, 29 Mar 2023 00:00:00 GMT</pubDate>
+            <description><![CDATA[Interview with Iron Fish community member null]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Community Spotlight: Digital Spaceport]]></title>
+            <link>https://ironfish.network/blog/2023-03-15-community-spotlight-dsp</link>
+            <guid>https://ironfish.network/blog/2023-03-15-community-spotlight-dsp</guid>
+            <pubDate>Wed, 15 Mar 2023 00:00:00 GMT</pubDate>
+            <description><![CDATA[Interview with Iron Fish community member Digital Spaceport]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Mainnet Date Change]]></title>
+            <link>https://ironfish.network/blog/2023-03-13-mainnet-date</link>
+            <guid>https://ironfish.network/blog/2023-03-13-mainnet-date</guid>
+            <pubDate>Mon, 13 Mar 2023 00:00:00 GMT</pubDate>
+            <description><![CDATA[Mainnet launch updated to April 20, 2023]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Community Spotlight: Pratik]]></title>
+            <link>https://ironfish.network/blog/2023-03-08-community-spotlight-pratik</link>
+            <guid>https://ironfish.network/blog/2023-03-08-community-spotlight-pratik</guid>
+            <pubDate>Wed, 08 Mar 2023 00:00:00 GMT</pubDate>
+            <description><![CDATA[Interview with Iron Fish community member Pratik]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Incentivized Testnet Retrospective]]></title>
+            <link>https://ironfish.network/blog/2023-03-07-testnet-retrospective</link>
+            <guid>https://ironfish.network/blog/2023-03-07-testnet-retrospective</guid>
+            <pubDate>Tue, 07 Mar 2023 00:00:00 GMT</pubDate>
+            <description><![CDATA[Highlights and Stats]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Iron Fish AMA]]></title>
+            <link>https://ironfish.network/blog/2023-03-06-ama-summary</link>
+            <guid>https://ironfish.network/blog/2023-03-06-ama-summary</guid>
+            <pubDate>Mon, 06 Mar 2023 00:00:00 GMT</pubDate>
+            <description><![CDATA[A summary of the AMA held Feb 23]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Iron Fish Community Retrospective]]></title>
+            <link>https://ironfish.network/blog/2023-03-03-community-retrospective</link>
+            <guid>https://ironfish.network/blog/2023-03-03-community-retrospective</guid>
+            <pubDate>Fri, 03 Mar 2023 00:00:00 GMT</pubDate>
+            <description><![CDATA[Celebrating a Creative Community]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Incentivized Testnet Rewards Guide]]></title>
+            <link>https://ironfish.network/blog/2023-02-28-testnet-rewards</link>
+            <guid>https://ironfish.network/blog/2023-02-28-testnet-rewards</guid>
+            <pubDate>Tue, 28 Feb 2023 00:00:00 GMT</pubDate>
+            <description><![CDATA[Instructions and deadlines for claiming your rewards]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Iron Fish Mainnet March 14th]]></title>
+            <link>https://ironfish.network/blog/2023-02-27-mainnet-timeline</link>
+            <guid>https://ironfish.network/blog/2023-02-27-mainnet-timeline</guid>
+            <pubDate>Mon, 27 Feb 2023 00:00:00 GMT</pubDate>
+            <description><![CDATA[Mainnet set to launch on Pi Day]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Phase 3 Timeline Update]]></title>
+            <link>https://ironfish.network/blog/2023-02-23-phase3-update</link>
+            <guid>https://ironfish.network/blog/2023-02-23-phase3-update</guid>
+            <pubDate>Thu, 23 Feb 2023 00:00:00 GMT</pubDate>
+            <description><![CDATA[Phase 3 set to end on Feb 25]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Community Spotlight: Eloquent]]></title>
+            <link>https://ironfish.network/blog/2023-02-17-community-spotlight-eloquent</link>
+            <guid>https://ironfish.network/blog/2023-02-17-community-spotlight-eloquent</guid>
+            <pubDate>Fri, 17 Feb 2023 00:00:00 GMT</pubDate>
+            <description><![CDATA[Interview with Iron Fish community member Eloquent]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Iron Fish Trusted Setup Opens to Community]]></title>
+            <link>https://ironfish.network/blog/2023-02-13-trusted-setup-ceremony</link>
+            <guid>https://ironfish.network/blog/2023-02-13-trusted-setup-ceremony</guid>
+            <pubDate>Mon, 13 Feb 2023 00:00:00 GMT</pubDate>
+            <description><![CDATA[How to participate in the Iron Fish Trusted Setup]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Community Spotlight: ProductGuy]]></title>
+            <link>https://ironfish.network/blog/2023-02-10-community-spotlight-productguy</link>
+            <guid>https://ironfish.network/blog/2023-02-10-community-spotlight-productguy</guid>
+            <pubDate>Fri, 10 Feb 2023 00:00:00 GMT</pubDate>
+            <description><![CDATA[Interview with Iron Fish community member ProductGuy]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Phase 3 Timeline]]></title>
+            <link>https://ironfish.network/blog/2023-02-10-blog-phase3-timeline</link>
+            <guid>https://ironfish.network/blog/2023-02-10-blog-phase3-timeline</guid>
+            <pubDate>Fri, 10 Feb 2023 00:00:00 GMT</pubDate>
+            <description><![CDATA[Our third and last testnet phase ends on March 7]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Trusted Setup - Securing Iron Fish]]></title>
+            <link>https://ironfish.network/blog/2023-02-06-trusted-setup</link>
+            <guid>https://ironfish.network/blog/2023-02-06-trusted-setup</guid>
+            <pubDate>Mon, 06 Feb 2023 00:00:00 GMT</pubDate>
+            <description><![CDATA[Iron Fish announces the Trusted Setup Ceremony, in which all are invited to help secure the network.]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Iron Fish Testnet Phase 3]]></title>
+            <link>https://ironfish.network/blog/2023-01-18-phase3</link>
+            <guid>https://ironfish.network/blog/2023-01-18-phase3</guid>
+            <pubDate>Wed, 18 Jan 2023 00:00:00 GMT</pubDate>
+            <description><![CDATA[Our third and last testnet phase. Read on about how *you* can participate in Phase 3 today!]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Multi-asset Support for Phase 3]]></title>
+            <link>https://ironfish.network/blog/2023-01-13-multi-asset-phase3</link>
+            <guid>https://ironfish.network/blog/2023-01-13-multi-asset-phase3</guid>
+            <pubDate>Fri, 13 Jan 2023 00:00:00 GMT</pubDate>
+            <description><![CDATA[Iron Fish announces that multi-asset functionality will be live on Testnet Phase 3]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Iron Fish Joins the Blockchain Association]]></title>
+            <link>https://ironfish.network/blog/2023-01-12-blockchain-assoc</link>
+            <guid>https://ironfish.network/blog/2023-01-12-blockchain-assoc</guid>
+            <pubDate>Thu, 12 Jan 2023 00:00:00 GMT</pubDate>
+            <description><![CDATA[Iron Fish joins the Blockchain Association, investing in crypto's future]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Iron Fish 2022 Year in Review]]></title>
+            <link>https://ironfish.network/blog/2022-12-22-Year-in-Review</link>
+            <guid>https://ironfish.network/blog/2022-12-22-Year-in-Review</guid>
+            <pubDate>Thu, 22 Dec 2022 00:00:00 GMT</pubDate>
+            <description><![CDATA[A short recap of some of the major events from 2022.]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Privacy and the Iron Fish Community]]></title>
+            <link>https://ironfish.network/blog/2022-12-15-Users-on-Privacy</link>
+            <guid>https://ironfish.network/blog/2022-12-15-Users-on-Privacy</guid>
+            <pubDate>Thu, 15 Dec 2022 00:00:00 GMT</pubDate>
+            <description><![CDATA[Users explain why crypto needs privacy.]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Iron Fish Community Spotlight: Hpool]]></title>
+            <link>https://ironfish.network/blog/2022-12-08-Ecosystem-spotlight-Hpool</link>
+            <guid>https://ironfish.network/blog/2022-12-08-Ecosystem-spotlight-Hpool</guid>
+            <pubDate>Thu, 08 Dec 2022 00:00:00 GMT</pubDate>
+            <description><![CDATA[Interview with Iron Fish community member Hpool.]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Iron Fish November Community Updates]]></title>
+            <link>https://ironfish.network/blog/2022-11-22-November-Community-Update</link>
+            <guid>https://ironfish.network/blog/2022-11-22-November-Community-Update</guid>
+            <pubDate>Tue, 22 Nov 2022 00:00:00 GMT</pubDate>
+            <description><![CDATA[End of Ambassadors Program and Marketing team growth.]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Announcing the Conclusion of Testnet Phase 2]]></title>
+            <link>https://ironfish.network/blog/2022-11-09-phase-2-conclusion</link>
+            <guid>https://ironfish.network/blog/2022-11-09-phase-2-conclusion</guid>
+            <pubDate>Wed, 09 Nov 2022 00:00:00 GMT</pubDate>
+            <description><![CDATA[The end of Phase 2 (Nov 15) and the launch of Phase 3 (Jan 18).]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Top 50 Most Promising Startup & Sequoia Capital Spotlight]]></title>
+            <link>https://ironfish.network/blog/2022-10-31-top-50-sequoia</link>
+            <guid>https://ironfish.network/blog/2022-10-31-top-50-sequoia</guid>
+            <pubDate>Mon, 31 Oct 2022 00:00:00 GMT</pubDate>
+            <description><![CDATA[Highlighting two recent pieces from The Information and Sequoia Capital]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Takeaways from the World’s Largest Anti-Financial Crime Conference]]></title>
+            <link>https://ironfish.network/blog/2022-10-25-acams</link>
+            <guid>https://ironfish.network/blog/2022-10-25-acams</guid>
+            <pubDate>Tue, 25 Oct 2022 00:00:00 GMT</pubDate>
+            <description><![CDATA[Craig's takeaways from being at the world's largest anti-financial crime conference ACAMS.]]></description>
+        </item>
+        <item>
+            <title><![CDATA[The Importance of Responsible Privacy in Digital Assets]]></title>
+            <link>https://ironfish.network/blog/2022-10-06-privacy-in-digital-assets</link>
+            <guid>https://ironfish.network/blog/2022-10-06-privacy-in-digital-assets</guid>
+            <pubDate>Thu, 06 Oct 2022 00:00:00 GMT</pubDate>
+            <description><![CDATA[A paper that the Iron Fish team submitted to the Treasury Department in response to their request to comment on the recent digital asset EO.]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Phase 2 Incentivized Testnet]]></title>
+            <link>https://ironfish.network/blog/2022-05-10-phase2</link>
+            <guid>https://ironfish.network/blog/2022-05-10-phase2</guid>
+            <pubDate>Tue, 10 May 2022 00:00:00 GMT</pubDate>
+            <description><![CDATA[Read on about how *you* can participate in Phase 2 of the Incentivized Testnet today]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Iron Fish Ambassador Program]]></title>
+            <link>https://ironfish.network/blog/2022-05-03-ambassador-program</link>
+            <guid>https://ironfish.network/blog/2022-05-03-ambassador-program</guid>
+            <pubDate>Tue, 03 May 2022 00:00:00 GMT</pubDate>
+            <description><![CDATA[Ambassadors will advance Iron Fish’s goals of usability, privacy, and decentralization for everyone]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Incentivized Testnet & Roadmap Updates]]></title>
+            <link>https://ironfish.network/blog/2022-03-07-incentivized-testnet-roadmap</link>
+            <guid>https://ironfish.network/blog/2022-03-07-incentivized-testnet-roadmap</guid>
+            <pubDate>Mon, 07 Mar 2022 00:00:00 GMT</pubDate>
+            <description><![CDATA[Update on Incentivized Testnet Phase 1 and subsequent future Incentivized Testnet Phase 2]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Iron Fish Series A and Incentivized Testnet]]></title>
+            <link>https://ironfish.network/blog/2021-11-30-series-a-incentivized-testnet</link>
+            <guid>https://ironfish.network/blog/2021-11-30-series-a-incentivized-testnet</guid>
+            <pubDate>Tue, 30 Nov 2021 00:00:00 GMT</pubDate>
+            <description><![CDATA[Iron Fish Series A and Incentivized Testnet]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Announcing Iron Fish - Privacy for Everyone]]></title>
+            <link>https://ironfish.network/blog/2021-03-06-introducing-ironfish</link>
+            <guid>https://ironfish.network/blog/2021-03-06-introducing-ironfish</guid>
+            <pubDate>Sat, 06 Mar 2021 00:00:00 GMT</pubDate>
+            <description><![CDATA[Announcing the first Iron Fish testnet and funding to date]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Is Bitcoin & Ethereum really private?]]></title>
+            <link>https://ironfish.network/blog/2021-03-03-bitcoin-ethreum-privacy</link>
+            <guid>https://ironfish.network/blog/2021-03-03-bitcoin-ethreum-privacy</guid>
+            <pubDate>Wed, 03 Mar 2021 00:00:00 GMT</pubDate>
+            <description><![CDATA[Transparent cryptocurrency systems like Bitcoin and Ethereum are natively the least private way of transacting.]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Why the name 'Iron Fish'?]]></title>
+            <link>https://ironfish.network/blog/2021-03-02-why-iron-fish</link>
+            <guid>https://ironfish.network/blog/2021-03-02-why-iron-fish</guid>
+            <pubDate>Tue, 02 Mar 2021 00:00:00 GMT</pubDate>
+            <description><![CDATA[Read about the history of Iron Fish as a company and how we decided to name it Iron Fish.]]></description>
+        </item>
+    </channel>
+</rss>
