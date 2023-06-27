@@ -13,6 +13,7 @@ import {
   AspectRatio,
   ThickLink,
   ArrowButton,
+  chakra,
 } from "@/lib/ui";
 import plug from "@/assets/heroImages/ecosystem/plug.svg";
 import hands from "@/assets/heroImages/ecosystem/hands.svg";
@@ -229,7 +230,14 @@ export default function Ecosystem() {
             >
               partnerships@ironfish.network
             </ThickLink>
-            .
+            <chakra.span
+              display={{
+                base: "none",
+                md: "inline",
+              }}
+            >
+              {"."}
+            </chakra.span>
           </Text>
           {isClient && router.isReady && <Cards />}
         </Container>
