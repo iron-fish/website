@@ -7,7 +7,6 @@ export const PLATFORMS = {
   WINDOWS: "windows",
   MAC_ARM: "mac-arm",
   MAC_INTEL: "mac-intel",
-  LINUX: "linux",
 } as const;
 
 export type Platform = (typeof PLATFORMS)[keyof typeof PLATFORMS];
@@ -16,7 +15,6 @@ export const PLATFORM_LABELS: Record<Platform, string> = {
   [PLATFORMS.WINDOWS]: "Windows",
   [PLATFORMS.MAC_ARM]: "Mac (Apple Silicon)",
   [PLATFORMS.MAC_INTEL]: "Mac (Intel)",
-  [PLATFORMS.LINUX]: "Linux",
 } as const;
 
 export type DownloadUrlsByPlatform = Record<Platform, string>;
@@ -47,7 +45,6 @@ function getDownloadUrlsByPlatform(data: unknown) {
     windows: "",
     "mac-arm": "",
     "mac-intel": "",
-    linux: "",
   };
 
   for (const url of downloadUrls) {
@@ -57,8 +54,6 @@ function getDownloadUrlsByPlatform(data: unknown) {
       downloadUrlsByPlatform["mac-arm"] = url;
     } else if (url.endsWith("x64.dmg")) {
       downloadUrlsByPlatform["mac-intel"] = url;
-    } else if (url.endsWith("amd64.deb")) {
-      downloadUrlsByPlatform.linux = url;
     }
   }
 
