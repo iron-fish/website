@@ -10,7 +10,6 @@ type BlogPost = {
   title: string;
   description: string;
   date: Date;
-  image?: string;
   slug: string;
 };
 
@@ -49,17 +48,15 @@ export default async function generateBlogFeeds() {
 
   const feedOptions = {
     title: "Iron Fish Blog",
-    description: "...",
+    description:
+      "Diving Into Iron Fish — Your gateway to the latest developments and happenings from across the network.",
     id: siteUrl,
     link: siteUrl,
     updated: lastUpdate,
     image: `${siteUrl}/images/logo.svg`,
     favicon: `${siteUrl}/favicon.ico`,
-    copyright: "copyright...",
-    generator: "generator...",
-    feedLinks: {
-      rss2: `${siteUrl}/rss.xml`,
-    },
+    copyright: `Copyright ${new Date().getFullYear()} Iron Fish`,
+    generator: "",
   };
 
   const feed = new Feed(feedOptions);
