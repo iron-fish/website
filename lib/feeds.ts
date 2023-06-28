@@ -64,7 +64,7 @@ export default async function generateBlogFeeds() {
   for (const post of blogPosts) {
     feed.addItem({
       id: `${siteUrl}/blog/${post.slug}`,
-      link: `${siteUrl}/blog/${post.slug}`,
+      link: `${siteUrl}/blog/${post.slug}?utm_source=blog&utm_medium=feed&utm_campaign=feed-syndication`,
       author: [{ name: post.author.name, link: post.author.url }],
       title: post.title,
       description: post.description,
