@@ -1,0 +1,36 @@
+---
+title: event/onTransactionGossip
+description: RPC Event | Iron Fish Documentation
+---
+
+Streams serialized transactions on gossip events
+
+#### Request Body
+
+```js
+undefined
+```
+
+#### Response
+
+```js
+{
+  serializedTransaction: string
+}
+```
+
+### Example
+```bash
+# Request
+curl -X POST -N http://localhost:8021/event/onTransactionGossip
+
+# Response
+{
+  "data":
+    {
+      "serializedTransaction": "01010000...e931fd04"
+    }
+}
+```
+
+### [View on Github](https://github.com/iron-fish/ironfish/blob/master/ironfish/src/rpc/routes/event/onTransactionGossip.ts)

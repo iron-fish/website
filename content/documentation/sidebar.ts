@@ -125,6 +125,15 @@ export const sidebar: SidebarDefinition = [
         ],
       },
       {
+        label: "Event",
+        items: [
+          {
+            id: "rpc/event/on_transaction_gossip",
+            label: "onTransactionGossip",
+          },
+        ],
+      },
+      {
         label: "Faucet",
         items: [
           {
