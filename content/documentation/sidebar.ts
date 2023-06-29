@@ -121,6 +121,15 @@ export const sidebar: SidebarDefinition = [
         ],
       },
       {
+        label: "Event",
+        items: [
+          {
+            id: "rpc/event/on_reorganize_chain",
+            label: "onReorganizeChain",
+          },
+        ],
+      },
+      {
         label: "Faucet",
         items: [
           {
