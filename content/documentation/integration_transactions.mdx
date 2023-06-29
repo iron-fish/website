@@ -15,7 +15,7 @@ parameters needed to create a transaction on the Iron Fish chain. These include
 notes to spend, output notes with recipients, assets to mint, assets to burn,
 and a transaction fee. The Iron Fish RPC server can be used to create raw
 transactions (see docs
-[here](/developers/documentation/rpc_wallet#createTransaction)):
+[here](/developers/documentation/rpc/wallet/create_transaction)):
 
 ```js
 async function main(): Promise<void> {
@@ -55,7 +55,7 @@ async function main(): Promise<void> {
 
 After raw transactions are created, they must be posted in order to be added to
 the mempool and broadcasted to the network (see docs
-[here](/developers/documentation/rpc_wallet#postTransaction)):
+[here](/developers/documentation/rpc/wallet/post_transaction)):
 
 ```js
 async function main(): Promise<void> {
