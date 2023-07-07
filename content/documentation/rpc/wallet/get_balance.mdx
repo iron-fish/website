@@ -22,6 +22,9 @@ the default account will be used. If the asset is not specified, `$IRON` will be
 {
   account: string;
   assetId: string;
+  assetVerification: {
+    status: 'verified' | 'unverified' | 'unknown';
+  };
   confirmed: string;
   unconfirmed: string;
   unconfirmedCount: number;

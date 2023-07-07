@@ -23,6 +23,9 @@ Gets the wallet's `$IRON` balance, as well as balances of custom assets of the g
     assetId: string
     assetName: string
     assetOwner: string
+    assetVerification: {
+      status: 'verified' | 'unverified' | 'unknown'
+    }
     confirmed: string
     unconfirmed: string
     unconfirmedCount: number
