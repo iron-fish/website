@@ -156,7 +156,7 @@ export const ECOSYSTEM: Array<{
   },
   {
     type: "Wallets",
-    name: "Node App (coming soon)",
+    name: "Node App",
     link: "/use/node-app",
     image: "/images/ecosystem/node-app.png",
   },
