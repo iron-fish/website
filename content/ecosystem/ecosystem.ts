@@ -40,22 +40,10 @@ export const ECOSYSTEM: Array<{
   },
   {
     type: "Mining Pools",
-    name: "Kryptex",
-    link: "https://pool.kryptex.com/iron",
-    image: "/images/ecosystem/kryptex.png",
-  },
-  {
-    type: "Mining Pools",
     name: "Hpool",
     link: "https://www.hpool.in/statistics/ironfish",
     image: "/images/ecosystem/hpool.png",
     highlight: "/learn/blog/2022-12-08-Ecosystem-spotlight-Hpool",
-  },
-  {
-    type: "Mining Pools",
-    name: "ZK.Work",
-    link: "https://zk.work/",
-    image: "/images/ecosystem/zk-work.png",
   },
   {
     type: "Mining Pools",
@@ -65,9 +53,28 @@ export const ECOSYSTEM: Array<{
   },
   {
     type: "Mining Pools",
-    name: "Ezil",
-    link: "https://ezil.me/",
-    image: "/images/ecosystem/ezil.png",
+    name: "Kryptex",
+    link: "https://pool.kryptex.com/iron",
+    image: "/images/ecosystem/kryptex.png",
+  },
+  {
+    type: "Mining Pools",
+    name: "F2Pool",
+    link: "https://www.f2pool.com/",
+    image: "/images/ecosystem/f2-pool.png",
+  },
+  {
+    type: "Mining Pools",
+    name: "ZK.Work",
+    link: "https://zk.work/",
+    image: "/images/ecosystem/zk-work.png",
+    highlight: "/learn/blog/2023-06-20-zkwork-spotlight",
+  },
+  {
+    type: "Mining Pools",
+    name: "HeroMiners",
+    link: "https://ironfish.herominers.com/",
+    image: "/images/ecosystem/herominers.png",
   },
   {
     type: "Mining Pools",
@@ -77,9 +84,9 @@ export const ECOSYSTEM: Array<{
   },
   {
     type: "Mining Pools",
-    name: "F2Pool",
-    link: "https://www.f2pool.com/",
-    image: "/images/ecosystem/f2-pool.png",
+    name: "Ezil",
+    link: "https://ezil.me/",
+    image: "/images/ecosystem/ezil.png",
   },
   {
     type: "Mining Pools",
