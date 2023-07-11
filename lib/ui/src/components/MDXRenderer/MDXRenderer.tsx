@@ -100,10 +100,7 @@ const rendererComponents: ComponentProps<typeof MDXRemote>["components"] = {
   ),
   li: (props) => <ListItem {...props} as="li" {...DEFAULT_TEXT_PROPS} />,
   a: ({ href, children }) => {
-    const isExternalLink =
-      !href?.startsWith("/") &&
-      !href?.startsWith("#") &&
-      !href?.startsWith("mailto:");
+    const isExternalLink = !href?.startsWith("/") && !href?.startsWith("#");
     return (
       <Link
         as={href?.startsWith("/") ? NextLink : "a"}
