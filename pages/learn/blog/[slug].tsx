@@ -16,6 +16,16 @@ type Props = {
   description?: string;
 };
 
+const FOOTER = `
+---
+
+**Want to learn more about Iron Fish?**
+
+* 🎤 [Discord](https://discord.ironfish.network/)
+* 🐦 [Twitter](https://twitter.com/ironfishcrypto)
+* 📧 [Email Updates](https://ironfish.network/#email-signup)
+`;
+
 export default function BlogPage({
   author,
   title,
@@ -45,7 +55,8 @@ export const getStaticProps: GetStaticProps<Props> = async ({ params }) => {
   }
 
   const { frontMatter, content } = parseFileByPath(
-    path.join(CONTENT_PATH, `${params.slug}.mdx`)
+    path.join(CONTENT_PATH, `${params.slug}.mdx`),
+    FOOTER
   );
 
   const markdown = await renderMarkdown(content);
