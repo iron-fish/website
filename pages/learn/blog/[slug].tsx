@@ -19,11 +19,11 @@ type Props = {
 const FOOTER = `
 ---
 
-**Want to learn more about Iron Fish?**
+#### Join the Iron Fish community 🏃🐟
 
 * 🎤 [Discord](https://discord.ironfish.network/)
 * 🐦 [Twitter](https://twitter.com/ironfishcrypto)
-* 📧 [Email Updates](https://ironfish.network/#email-signup)
+* 📧 [Email Updates](mailto:contact@ironfish.network)
 `;
 
 export default function BlogPage({
