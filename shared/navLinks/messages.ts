@@ -175,4 +175,12 @@ export const messages = defineMessages({
     defaultMessage:
       "Our vast ecosystem offers diverse apps and integrations to choose from.",
   },
+  governanceTitle: {
+    id: "nav.governanceTitle",
+    defaultMessage: "Governance",
+  },
+  governanceDescription: {
+    id: "nav.governanceDescription",
+    defaultMessage: "Discourse site for governance request for proposals.",
+  },
 });
