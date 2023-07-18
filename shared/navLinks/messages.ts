@@ -183,4 +183,13 @@ export const messages = defineMessages({
     id: "nav.governanceDescription",
     defaultMessage: "Discourse site for governance request for proposals.",
   },
+  grantsTitle: {
+    id: "nav.grantsTitle",
+    defaultMessage: "Grants",
+  },
+  grantsDescription: {
+    id: "nav.grantsDescription",
+    defaultMessage:
+      "Receive funding for projects that improve the Iron Fish ecosystem.",
+  },
 });

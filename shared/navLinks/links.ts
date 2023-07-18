@@ -119,6 +119,12 @@ export const links = [
         href: "https://discourse.ironfish.network/",
         image: "/images/nav/community-governance.svg",
       },
+      {
+        title: messages.grantsTitle,
+        description: messages.grantsDescription,
+        href: "/community/grants",
+        image: "/images/nav/community-governance.svg",
+      },
     ],
   },
   {
