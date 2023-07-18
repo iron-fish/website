@@ -190,6 +190,6 @@ export const messages = defineMessages({
   grantsDescription: {
     id: "nav.grantsDescription",
     defaultMessage:
-      "Receive funding for projects that improve the Iron Fish ecosystem.",
+      "Apply for funding with projects that improve our ecosystem.",
   },
 });

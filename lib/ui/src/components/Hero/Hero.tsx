@@ -15,7 +15,7 @@ export type LocalImage = {
 };
 
 type Props = Omit<BoxProps, "children"> & {
-  heading: string | ReactNode;
+  heading: string | ReactNode | null;
   subheading: string;
   description: ReactNode;
   images?: ReactNode;
@@ -63,7 +63,7 @@ export function Hero({
         ) : (
           heading
         )}
-        <Text textStyle="h2" mb={10}>
+        <Text as={!!heading ? "h2" : "h1"} textStyle="h2" mb={10}>
           {subheading}
         </Text>
         <Text textStyle="lg">{description}</Text>

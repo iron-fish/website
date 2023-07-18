@@ -12,11 +12,12 @@ export default function Grants() {
   return (
     <>
       <Head>
-        <title>Iron Fish Grants | Improve the Iron Fish ecosystem</title>
+        <title>Iron Fish Grants | Expand the Iron Fish ecosystem</title>
       </Head>
       <Hero
         bg="green.400"
-        heading=""
+        flexGrow={1}
+        heading={null}
         subheading="Grant Application"
         description={
           <>
@@ -24,13 +25,15 @@ export default function Grants() {
             ecosystem in a positive way. If you are a builder passionate about
             privacy in crypto, we invite you to apply. Do you have an idea
             that&apos;ll expand the Iron Fish ecosystem, enhance user experience
-            or increase interoperability for Iron Fish?
-            <br />
-            Click below!
+            or increase interoperability for Iron Fish? Click&nbsp;below!
           </>
         }
         textContainerProps={{
-          maxW: "760px",
+          maxW: {
+            base: "container.sm",
+            xl: "750px",
+            "2xl": "780px",
+          },
           pb: {
             base: "40px",
             md: "50px",
@@ -41,7 +44,7 @@ export default function Grants() {
             <HeroImageUtil
               image={alanImage}
               top={{
-                md: "-30px",
+                md: "-60px",
                 xl: "80px",
               }}
               left={{

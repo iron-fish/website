@@ -123,7 +123,7 @@ export const links = [
         title: messages.grantsTitle,
         description: messages.grantsDescription,
         href: "/community/grants",
-        image: "/images/nav/community-governance.svg",
+        image: "/images/nav/community-grants.svg",
       },
     ],
   },
