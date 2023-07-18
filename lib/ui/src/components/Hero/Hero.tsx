@@ -17,7 +17,7 @@ export type LocalImage = {
 type Props = Omit<BoxProps, "children"> & {
   heading: string | ReactNode;
   subheading: string;
-  description: string;
+  description: ReactNode;
   images?: ReactNode;
   children?: ReactNode;
   textContainerProps?: ContainerProps;
