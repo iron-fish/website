@@ -3,32 +3,47 @@ title: wallet/exportAccount
 description: RPC Wallet | Iron Fish Documentation
 ---
 
-Exports the keys to the default account, or the named account if specified.
+Exports the keys to the default account, or the named account if `account` is specified.
 
 The `spendingKey` will be null in the response if `viewOnly = true` or if exporting a view-only account.
+
+#### Types
+
+```js
+type RpcAccountImport = {
+  version: number
+  id: string
+  name: string
+  spendingKey: string | null
+  viewKey: string
+  incomingViewKey: string
+  outgoingViewKey: string
+  publicAddress: string
+  createdAt: {hash: string; sequence: number} | null
+}
+```
 
 #### Request
 
 ```js
 {
-  account?: string;
+  account?: string
   viewOnly?: boolean
+  format?: AccountFormat
+  language?: LanguageKey
 }
 ```
+[Supported AccountFormats](https://github.com/iron-fish/ironfish/blob/master/ironfish/src/wallet/account/encoder/encoder.ts)
+
+[Supported Mnemonic Languages](https://github.com/iron-fish/ironfish/blob/master/ironfish/src/utils/language.ts)
 
 #### Response
 
+If no format is specified, the legacy `RpcAccountImport` type will be returned. Otherwise, the RPC will serialize the account into a string of the desired format.
+
 ```js
 {
-  account: {
-    name: string;
-    spendingKey: string | null;
-    viewKey: string;
-    incomingViewKey: string;
-    outgoingViewKey: string;
-    publicAddress: string;
-    version: number;
-  }
+  account: string | RpcAccountImport | null
 }
 ```
 
