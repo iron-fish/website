@@ -1,0 +1,106 @@
+---
+author: elena
+title: "Understanding View Keys in Iron Fish"
+description: How View Keys in Iron Fish allow for optional disclosure
+image: /images/blog/view_keys/view_keys.png
+tags: [ironfish, viewkeys, viewkey]
+---
+
+We believe digital assets will be the backbone of the future global payment system, and privacy is paramount for that future. Transparency and traceability are inherent characteristics of most blockchains, and yet current and future users require privacy guarantees for business confidentiality, protection from malicious actors, or simply for personal preference.
+
+We’re building Iron Fish to be the privacy platform for crypto. Iron Fish is a privacy-centric blockchain such that every transaction on Iron Fish is fully encrypted, protecting sensitive user information on every transaction. Iron Fish is the only ZKP-based privacy-focused L1 that supports fully private custom assets, laying the groundwork to support assets from other chains.
+
+## What are View Keys
+
+When working with a fully private digital asset, it’s sometimes necessary to disclose information about an account for audits or compliance purposes. In Iron Fish, every wallet comes with a private key, public key, and a *view key.* View keys allow a user to reveal information about their transactions in a controlled manner.
+
+The main purpose of view keys is to increase transparency and auditability, giving a certain level of access to transaction information without granting full control over the funds. This is useful in a variety of scenarios, such as auditing, tax compliance, or allowing a third party to confirm received transactions without the ability to spend any coins.
+
+## View Keys in Iron Fish
+
+The functionality of a view key in other privacy chains differ. View Keys in Iron Fish give full visibility into a particular wallet. View keys in Iron Fish reveal:
+
+- All details about incoming transactions: the sender’s address, amount, token type, and timestamp
+- All details about outgoing transactions: the recipient’s address, amount, token type, and timestamp
+
+There is no global view for Iron Fish. There is no “backdoor” for Iron Fish. Only the creator of the wallet has initial access to the view key of that wallet.
+
+## How to use View Keys
+
+### View Keys via Wallet CLI
+
+First, you’ll need to [install](https://ironfish.network/use/get-started/installation) the Iron Fish SDK.
+
+To first create a wallet you can do so by running the command: 
+```
+ironfish wallet:create
+```
+
+#### Exporting the View Key
+
+Now that you have wallet, we can export it as a view-only wallet by using the view key:
+```
+ironfish wallet:export --viewonly
+```
+
+If you want to export in JSON format, you can use the `--json` flag, like so:
+```
+ironfish wallet:export --viewonly --json
+```
+
+You can also save it directly to a file by providing a path:
+```
+ironfish wallet:export --viewonly --json --path <file path>
+```
+
+Notice that all parts of your wallet are there *except* for the spending key. Holders of view-only wallets should not have the ability to spend funds.
+
+#### Importing the View Key
+
+You can use the JSON file for your view key only account with:
+```
+ironfish wallet:import --path <file path>
+```
+
+You can also import using the encoded wallet string as well:
+```
+ironfish wallet:import <encoded wallet>
+```
+
+Once you’ve imported your account using the view key, you’ll need a running node to sync blockchain history and then wait for your wallet to sync your accounts. After all that’s done, you’ll be able to view transaction history for that wallet, without the ability to spend any funds.
+
+### View Keys via Node App
+
+If don't have the Node App already, go ahead and [download the latest version](https://ironfish.network/use/node-app) on the Iron Fish website.
+
+#### Exporting the View Key
+
+- *The ability to export view keys directly from the Node app will be added soon. Stay tuned.*
+
+#### Importing the View Key
+
+To import a view key in your Node App:
+
+1. Click on the “+ *Import Account”* button in the Node app’s main dashboard.
+
+![](/images/blog/view_keys/node_app_1.png)
+
+1. Paste the encoded key in the text field and click on the “*Import Account”* button in the tab. Alternatively, you can upload a file for your view key only account.
+
+![](/images/blog/view_keys/node_app_2.png)
+
+1. Your Node App will then sync your wallet to chain history. Afterwards, you’ll have access to all of the Node App’s features for this account, except for the ability to initiate transactions. Notice that your account will be labeled as ‘View Only’.
+
+![](/images/blog/view_keys/node_app_3.png)
+
+## Other uses for view keys
+
+View keys are also useful for builders working on privacy-preserving applications. The view keys feature on Iron Fish can be used as a building block for other other projects, including:
+
+- Compliance tools
+- Accounting and auditing tools
+- Due diligence platforms
+- Privacy-preserving block explorers
+- Privacy-preserving wallets
+
+If you’re interested in building one of these, visit the Iron Fish [docs](https://ironfish.network/developers/documentation/integration_local) and let us know! 
