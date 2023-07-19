@@ -192,4 +192,12 @@ export const messages = defineMessages({
     defaultMessage:
       "Apply for funding with projects that improve our ecosystem.",
   },
+  bugBountyTitle: {
+    id: "nav.bugBountyTitle",
+    defaultMessage: "Bug Bounty",
+  },
+  bugBountyDescription: {
+    id: "nav.bugBountyDescription",
+    defaultMessage: "Participate in our cash incentivized bug bounty.",
+  },
 });
