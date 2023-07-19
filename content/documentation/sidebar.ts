@@ -141,6 +141,10 @@ export const sidebar: SidebarDefinition = [
         label: "Mempool",
         items: [
           {
+            id: "rpc/mempool/accept_transaction",
+            label: "acceptTransaction",
+          },
+          {
             id: "rpc/mempool/get_status",
             label: "getStatus",
           },
