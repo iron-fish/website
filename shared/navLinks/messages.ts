@@ -181,7 +181,7 @@ export const messages = defineMessages({
   },
   governanceDescription: {
     id: "nav.governanceDescription",
-    defaultMessage: "Discourse site for governance request for proposals.",
+    defaultMessage: "How the Iron Fish protocol is governed.",
   },
   grantsTitle: {
     id: "nav.grantsTitle",
