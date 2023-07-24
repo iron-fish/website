@@ -10,6 +10,7 @@ Follows the chain from a given sequence and streams blocks from chain connects a
 ```js
 {
   head?: string | null
+  serialized?: boolean
 } | undefined
 ```
 
@@ -32,6 +33,7 @@ Follows the chain from a given sequence and streams blocks from chain connects a
     work: string
     main: boolean
     transactions: Array<{
+      serialized?: string
       hash: string
       size: number
       fee: number
@@ -41,6 +43,8 @@ Follows the chain from a given sequence and streams blocks from chain connects a
       }>
       spends: Array<{
         nullifier: string
+        commitment: string
+        size: number
       }>
       mints: Array<{
         id: string
