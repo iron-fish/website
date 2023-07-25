@@ -16,10 +16,12 @@ This is a one time broadcast. The transaction will not be rebroadcasted automati
 ```
 
 #### Response
+Returns accepted: true if the transaction was accepted into the node's mempool otherwise false.
 
 ```js
 {
   hash: string;
+  accepted: boolean;
 }
 ```
 
