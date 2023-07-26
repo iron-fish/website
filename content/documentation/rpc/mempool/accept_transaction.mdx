@@ -1,0 +1,25 @@
+---
+title: mempool/acceptTransaction
+description: RPC Mempool Accept Transactions | Iron Fish Documentation
+---
+
+Accepts a transaction into the mempool.
+
+#### Request Body
+
+```js
+{
+  transaction?: string
+}
+```
+
+#### Response
+
+```js
+{
+  accepted: boolean
+  reason?: string
+}
+```
+
+### [View on Github](https://github.com/iron-fish/ironfish/blob/master/ironfish/src/rpc/routes/mempool/acceptTransaction.ts)
