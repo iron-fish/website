@@ -1,0 +1,37 @@
+---
+title: wallet/getAsset
+description: RPC Wallet | Iron Fish Documentation
+---
+
+Gets an asset from the wallet from a given identifier and account
+
+#### Request
+
+```js
+{
+  account?: string
+  confirmations?: number
+  id: string
+}
+```
+
+#### Response
+
+```js
+{
+  createdTransactionHash: string
+  creator: string
+  id: string
+  metadata: string
+  name: string
+  nonce: number
+  status: string
+  // Populated for assets the account owns
+  supply: string | null
+  // Populated once the asset has been added to the main chain
+  blockHash: string | null
+  sequence: number | null
+}
+```
+
+### [View on Github](https://github.com/iron-fish/ironfish/blob/master/ironfish/src/rpc/routes/wallet/getAsset.ts)
