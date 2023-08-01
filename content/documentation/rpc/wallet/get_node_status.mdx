@@ -1,0 +1,209 @@
+---
+title: wallet/getNodeStatus
+description: RPC Wallet | Iron Fish Documentation
+---
+
+Gets (and optionally streams) the status of node that the wallet is connected to
+
+#### Request Body
+
+```js
+{
+  stream?: boolean
+} | undefined
+```
+
+#### Response
+
+```js
+{
+  node: {
+    status: 'started' | 'stopped' | 'error'
+    version: string
+    git: string
+    nodeName: string
+  }
+  cpu: {
+    cores: number
+    percentRollingAvg: number
+    percentCurrent: number
+  }
+  memory: {
+    heapMax: number
+    heapTotal: number
+    heapUsed: number
+    rss: number
+    memFree: number
+    memTotal: number
+  }
+  miningDirector: {
+    status: 'started'
+    miners: number
+    blocks: number
+    blockGraffiti: string
+    newBlockTemplateSpeed: number
+    newBlockTransactionsSpeed: number
+  }
+  memPool: {
+    size: number
+    sizeBytes: number
+    maxSizeBytes: number
+    evictions: number
+    recentlyEvictedCache: {
+      size: number
+      maxSize: number
+    }
+  }
+  blockchain: {
+    synced: boolean
+    head: {
+      hash: string
+      sequence: number
+    }
+    headTimestamp: number
+    newBlockSpeed: number
+    dbSizeBytes: number
+  }
+  blockSyncer: {
+    status: 'stopped' | 'idle' | 'stopping' | 'syncing'
+    syncing?: {
+      blockSpeed: number
+      speed: number
+      downloadSpeed: number
+      progress: number
+    }
+  }
+  peerNetwork: {
+    peers: number
+    isReady: boolean
+    inboundTraffic: number
+    outboundTraffic: number
+    publicIdentity: string
+  }
+  telemetry: {
+    status: 'started' | 'stopped'
+    pending: number
+    submitted: number
+  }
+  workers: {
+    started: boolean
+    workers: number
+    queued: number
+    capacity: number
+    executing: number
+    change: number
+    speed: number
+  }
+  accounts: {
+    scanning?: {
+      sequence: number
+      endSequence: number
+      startedAt: number
+    }
+    head: {
+      hash: string
+      sequence: number
+    }
+  }
+}
+```
+
+### Example
+
+```bash
+# Request
+curl -X POST http://localhost:8021/wallet/getNodeStatus
+
+# Response
+{
+  "status": 200,
+  "data": {
+    "peerNetwork": {
+      "peers": 1,
+      "isReady": true,
+      "inboundTraffic": 164.7915348665539,
+      "outboundTraffic": 492.89305662948544
+      "publicIdentity": "760FCfHKYns3jg5rTs69I+V0K0iUD396/ae5cnxUmVk"
+    },
+    "blockchain": {
+      "synced": true,
+      "head": {
+        "hash": "0000000011d7fab8c852b8ee547452fdc77a10bc55f2ac4b8487b252005cb3a7",
+        "sequence": 6013
+      },
+      "headTimestamp": 1678400569905,
+      "newBlockSpeed": 0,
+      "dbSizeBytes": 3839482612
+    },
+    "node": {
+      "status": "started",
+      "version": "0.1.71",
+      "git": "src",
+      "nodeName": ""
+    },
+    "cpu": {
+      "cores": 10,
+      "percentRollingAvg": 5.094278042633619,
+      "percentCurrent": 7.5034068136272545
+    },
+    "memory": {
+      "heapMax": 4283089400,
+      "heapTotal": 63651840,
+      "heapUsed": 58443312,
+      "rss": 441401344,
+      "memFree": 2373255168,
+      "memTotal": 17179869184
+    },
+    "miningDirector": {
+      "status": "started",
+      "miners": 0,
+      "blocks": 0,
+      "blockGraffiti": "",
+      "newBlockTemplateSpeed": 0,
+      "newBlockTransactionsSpeed": 0
+    },
+    "memPool": {
+      "size": 0,
+      "sizeBytes": 0,
+      "maxSizeBytes": 60000000,
+      "evictions": 0,
+      "recentlyEvictedCache": {
+        "size": 0,
+        "maxSize": 60000
+      }
+    },
+    "blockSyncer": {
+      "status": "idle",
+      "syncing": {
+        "blockSpeed": 0,
+        "speed": 0,
+        "downloadSpeed": 0,
+        "progress": 1
+      }
+    },
+    "telemetry": {
+      "status": "stopped",
+      "pending": 0,
+      "submitted": 0
+    },
+    "workers": {
+      "started": true,
+      "workers": 6,
+      "executing": 0,
+      "queued": 0,
+      "capacity": 6,
+      "change": 0,
+      "speed": 0
+    },
+    "accounts": {
+      "head": {
+        "hash": "0000000011d7fab8c852b8ee547452fdc77a10bc55f2ac4b8487b252005cb3a7",
+        "sequence": -1
+      }
+    }
+  }
+}
+```
+
+
+### [View on Github](https://github.com/iron-fish/ironfish/blob/master/ironfish/src/rpc/routes/wallet/getNodeStatus.ts)
