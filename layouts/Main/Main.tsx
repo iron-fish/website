@@ -11,7 +11,6 @@ export function MainLayout({ children }: { children: React.ReactNode }) {
         display="flex"
         flexDirection="column"
         alignItems="stretch"
-        letterSpacing="0.01em"
       >
         {children}
       </chakra.main>
