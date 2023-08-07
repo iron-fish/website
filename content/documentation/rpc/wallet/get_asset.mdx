@@ -28,9 +28,9 @@ Gets an asset from the wallet from a given identifier and account
   status: string
   // Populated for assets the account owns
   supply: string | null
-  // Populated once the asset has been added to the main chain
-  blockHash: string | null
-  sequence: number | null
+  verification: {
+    status: 'verified' | 'unverified' | 'unknown';
+  };
 }
 ```
 
