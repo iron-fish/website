@@ -116,7 +116,7 @@ export const links = [
       {
         title: messages.governanceTitle,
         description: messages.governanceDescription,
-        href: "https://discourse.ironfish.network/",
+        href: "https://discourse.ironfish.network/t/request-for-proposal-iron-fish-foundation-governance/23#interim-governance-structure-3",
         image: "/images/nav/community-governance.svg",
       },
       {
