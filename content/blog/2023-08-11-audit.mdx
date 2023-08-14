@@ -1,0 +1,31 @@
+---
+author: elena
+title: "Iron Fish Security Audit by Inversed Tech"
+description: Read the published audit by Inversed Tech on Iron Fish core implementation
+image: /images/blog/audit.png
+tags: [ironfish, iron fish foundation, audit]
+---
+
+The Iron Fish core [protocol implementation](https://github.com/iron-fish/ironfish) went through a security audit by [Inversed Tech](http://inversed.tech/), finalized on June 1, 2023. The full audit, including a summary of findings, outline of resources, and a detailed breakdown, can be found [here](https://ironfish-static.s3.amazonaws.com/ironfish-audit-report-FINAL.pdf).
+
+### Why Inversed Tech
+
+The team in charge of the Iron Fish audit at Inversed Tech was composed of [Daniel Benarroch](https://www.linkedin.com/in/daniel-benarroch-guenun-19419264/), [Bryan Gillespie](https://www.linkedin.com/in/bryan-gillespie-88729327/), and [Aurélien Nicolas](https://www.linkedin.com/in/aureliennicolas/)
+
+A big part of why we chose to work with Inversed Tech was due to our familiarity with Daniel Benarroch and his previous work in zero-knowledge proofs (ZKPs) and privacy protocols. Daniel has close to a decade of experience working on cryptography research. He previously led the strategy and research team at QEDIT, a world renown organization working on ZKPs and private asset transfers. QEDIT has a long standing reputation of working with world renown cryptographers, including Shafi Goldwasser, the Turing Award winner and co-creator of ZKPs.
+
+Daniel was also a grant recipient of the Zcash Foundation for the development and implementation of the Zcash Shielded Asset protocol (ZSAs). He is one of the people most familiar with Sapling, the privacy protocol first developed by Zcash, that we used as a basis for the Iron Fish’s privacy mechanism.
+
+We were also familiar with Aurélien Nicolas’ work at Scroll, where he is working as Security Lead on their Ethereum zkEVM implementation.
+
+When it came time to choose an auditing firm, working with Daniel and the rest of the Inversed team was an obvious choice.
+
+### Summary of Audit Findings
+
+The audit focused on both the engineering and cryptographic aspects of the Iron Fish protocol. It reviewed the protocol design, the Rust implementation of the privacy mechanism, as well as the ZKP circuit implementations.
+
+Of the 37 findings from the audit, 33 were categorized as either “informational” or “no issue”, meaning they did not pose any vulnerability or practical risk but were mentioned to show considerations and thoroughness of the audit. Of the remaining 4 findings, 3 were categorized as “critical” and 1 was categorized as a “warning”. Each of those findings was resolved and re-verified by the Inversed Tech team.
+
+The most significant critical bug that was discovered by the Inversed Team in March 2023 (before mainnet launch) was the Asset ID Malleability Vulnerability bug. The malleability issue would have allowed an attacker to break the invariant that “the total input and output values of a transaction must be balanced for each asset type”. The Iron Fish engineering team was able to successfully address the issues in subsequent releases of Iron Fish. The fix was thoroughly tested, and re-audited by the Inversed Team, allowing for mainnet launch on April 20th, 2023.
+
+For a full explanation of the Asset ID Malleability Vulnerability, please refer to section 2 of the report on page 6. The full Inversed Tech Iron Fish audit is available [here](https://ironfish-static.s3.amazonaws.com/ironfish-audit-report-FINAL.pdf).
