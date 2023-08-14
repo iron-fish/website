@@ -160,7 +160,7 @@ export const messages = defineMessages({
   },
   communityTitle: {
     id: "nav.communityTitle",
-    defaultMessage: "Our community",
+    defaultMessage: "Our Community",
   },
   communityDescription: {
     id: "nav.communityDescription",
