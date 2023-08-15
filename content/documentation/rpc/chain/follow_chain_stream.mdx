@@ -3,7 +3,9 @@ title: chain/followChainStream
 description: RPC Chain | Iron Fish Documentation
 ---
 
-Follows the chain from a given sequence and streams blocks from chain connects and disconnects
+Follows the chain from a given sequence and streams blocks from chain connects
+and disconnects. If `wait` is set to false the stream will end when it reaches
+the head of the chain (true by default).
 
 #### Request
 
@@ -11,6 +13,7 @@ Follows the chain from a given sequence and streams blocks from chain connects a
 {
   head?: string | null
   serialized?: boolean
+  wait?: boolean
 } | undefined
 ```
 
