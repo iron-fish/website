@@ -262,6 +262,10 @@ export const sidebar: SidebarDefinition = [
             label: "getAccountTransactions",
           },
           {
+            id: "rpc/wallet/get_asset",
+            label: "getAsset",
+          },
+          {
             id: "rpc/wallet/get_assets",
             label: "getAssets",
           },
