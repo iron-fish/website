@@ -234,6 +234,10 @@ export const sidebar: SidebarDefinition = [
             label: "createTransaction",
           },
           {
+            id: "rpc/wallet/estimate_fee_rates",
+            label: "estimateFeeRates",
+          },
+          {
             id: "rpc/wallet/export_account",
             label: "exportAccount",
           },
