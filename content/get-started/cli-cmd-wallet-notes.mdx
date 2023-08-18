@@ -36,6 +36,16 @@ To start a full node with a different port and a different data directory
 ironfish start --port=9034 --datadir=~/.ironfish2/
 ```
 
+To disable the full node's wallet
+
+```sh
+ironfish start --no-wallet
+```
+
+By appending the `--no-wallet` flag to the `start` command, the Iron Fish full node does not engage in wallet-related tasks such as transaction scanning and note decryption. This configuration can be useful in the following scenarios: 
+- Run the node without participating in wallet operations, preserving computational resources and enhancing performance for other tasks.
+- Run a separate standalone wallet node (coming soon)
+
 #### stop
 
 Stops the full node
