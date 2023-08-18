@@ -1,5 +1,5 @@
 ---
-title: Transacting
+title: Transactions
 seo-title: Sending Transactions
 ---
 
@@ -71,6 +71,32 @@ Timestamp               Status    Type    Hash     Expiration Fee Paid ($IRON) A
 `}
 />
 
+## Track a transaction
+
+Once a transaction is sent, the sender should see a transaction hash displayed.
+
+```sh
+Transaction Hash: 4f484a5355a65be2179fc66d69e149788e78aec35c6db230b182264e3982bc15
+```
+
+You can use the [Iron Fish Block Explorer](https://explorer.ironfish.network/) to display information about this transaction. Of course, because Iron Fish is a fully private cryptocurrency, a limited amount of information is available to the public.
+
+For example, see the transaction above you can go here [https://explorer.ironfish.network/transaction/4f484a5355a65be2179fc66d69e149788e78aec35c6db230b182264e3982bc15](https://explorer.ironfish.network/transaction/4f484a5355a65be2179fc66d69e149788e78aec35c6db230b182264e3982bc15).
+
+### Watching the status of a transaction
+
+You can use the command line to watch a status of a transaction for an account in your wallet
+
+<Terminal
+  command="ironfish wallet:transactions:watch 4f484a5355a65be2179fc66d69e149788e78aec35c6db230b182264e3982bc15"
+  output={`
+ironfish wallet:transaction:watch 4f484a5355a65be2179fc66d69e149788e78aec35c6db230b182264e3982bc15
+Watching transaction 4f484a5355a65be2179fc66d69e149788e78aec35c6db230b182264e3982bc15
+Current Status... pending -> unconfirmed: 50s
+Current Status... unconfirmed -> confirmed: 1m 30s
+Current Status... done after 2m 20s`}
+/>
+
 ## Next steps
 
-You can now track your transaction on the network, or [start mining $IRON](/use/get-started/mining).
+If you are interested you can [start mining $IRON](/use/get-started/mining).

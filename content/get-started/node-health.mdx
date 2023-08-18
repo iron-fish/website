@@ -3,16 +3,33 @@ title: Health of your node
 seo-title: Ensure Node Health
 ---
 
-## Status
+# Status
 
 Run the status command to display the status of your node.
 
+<Terminal
+  command="ironfish status"
+  output={`\
+Version              1.8.0 @ src
+Node                 STARTED
+Node Name
+Peer ID              f5uI8nrLATmehVD/Efg3ADimWv6fSO0EubeTdnaG2kM=
+Block Graffiti
+Network              Mainnet
+Memory               Heap: 69.48 MiB -> 116.65 MiB / 3.99 GiB (1.7%), RSS: 516.59 MiB (3.2%), Free: 421.37 MiB (97.4%)
+CPU                  Cores: 10, Current: 296.8%
+P2P Network          CONNECTED - In: 406.37 KB/s, Out: 3.91 KB/s, peers 31
+Mining               STARTED - 0 miners, 0 mined
+Mem Pool             Count: 0 tx, Bytes: 0 B / 57.22 MiB (0.00%), Evictions: 0
+Syncer               SYNCING - 35.79 blocks synced/sec, 69.69 blocks downloaded/sec, 89.53 blocks added/sec, progress: 94.41%
+Blockchain           000000000000005913624fa8a48383ad1893f5a46744c1878cc9c877099574c3 (164432), Since HEAD: 161h 25m (NOT SYNCED)
+Accounts             SCANNING - 12381 / 159633
+Telemetry            STARTED - 0 <- 1 pending
+Workers              STARTED - 0 -> 1 / 6 - 0 jobs Δ, 498.85 jobs/s
+`}/>
 
-```sh
-ironfish status -f
-```
 
-### Node
+## Node
 The node can have the following status:
 
 | Status       | Description                                                                                                  |
@@ -21,9 +38,62 @@ The node can have the following status:
 | STOPPED      | Node is not running. Start it with `ironfish start`                                                          |
 | ERROR        | An error occured while running the node. Run `ironfish logs -v` to see the latest error messages             |
 
+## Node Name
 
-### Blocks Syncer
-The Blocks syncer can have the following status:
+This is the publically visible node name that your peers will see when you connect to them.
+
+By default, no node name is set. You can set a node name by using
+
+```sh
+ironfish config:set nodeName "My Node"
+```
+
+## Peer ID
+
+This is your P2P network ID. It's consistent between network runs, and is used to identify you among your peers. It's primary function is to also help route messages to you through the network.
+
+If you want to generate a new Peer ID you can pass `--generateNewIdentity` to `start`
+
+```sh
+ironfish start --generateNewIdentity
+```
+
+## Block Graffiti
+
+This is your personal message that you attach to every block that you mine.
+
+```sh
+ironfish config:set blockGraffiti "Hello World"
+```
+
+## Network
+
+This is the network you are connected to.
+
+## Memory
+
+This represents the memory usage of your node.
+
+ - Heap: Node memory used by Javascript
+ - RSS: Resident Set
+ - Free: How much free memory there is left on your computer
+
+## CPU
+
+Information about the CPU the node is running on including cores and current CPU usage.
+
+## Mining
+
+Information about mining on your node. If you have no miners connected to your node, it will show 0 miners.
+
+## Mem Pool
+
+This this information about your pending transactioins and it's total size. Evictions are how many invalid transactions have been evicted and will not be mined.
+
+## Syncer
+The block syncer is the system decides to download chains from peers on the network.
+
+The syncer can have the following status:
 
 | Status          | Description                                                                                               |
 | :--------------:| :--------------------------------------------------------------------------------------------------------:|
@@ -32,38 +102,19 @@ The Blocks syncer can have the following status:
 | SYNCING         | The syncer is currently adding blocks to your local chain                                                 |
 | STOPPED         | The syncer is stopped - either because you are not connected to the network, or your node is not running  |
 
-### Blockchain
+## Workers
+Workers show information about the worker pool which are light processes that can execut asynchronous jobs for the node.
+
+## Blockchain
 Blockchain head indicates the head of your chain on your local node. It changes every 60 seconds.
 
-### P2P Network
-P2P Network can have the following status:
-
-| Status          | Description                                                                                               |
-| :--------------:| :--------------------------------------------------------------------------------------------------------:|
-| CONNECTED       | Your node is connected to the network. Stats about your network traffic is displayed on the right side    |
-| WAITING         | Your node is attempting to connect to the Iron Fish network                                               |
-
-<Terminal
-  command="ironfish status"
-  output={`
-Node:                       STARTED
-Blocks syncing:             SYNCING - 268 / 13802 blocks @ 20.73blocks per seconds
-Blockchain:                 00000894D09B1016B4A982415FC7EAA0C6982919CBCD997277C74E7BB9B3B421 (1000), Since HEAD: 1s (SYNCED)
-P2P Network:                CONNECTED In: 180 KB/s, Out: 160 B/s
-`}
-/>
-
-## Chain information
+### Chain information
 
 Run the following command to display your chain status. Heaviest head is the latest block synced to the genesis block in your chain. Latest head is the latest block received from a peer in the Iron Fish network.
 
-```sh
-ironfish chain:show
-```
-
 <Terminal
   command="ironfish chain:show"
-  output={`
+  output={`\
 Getting the chain blocks...
 
 ======
@@ -108,26 +159,21 @@ TRUE
 `}
 />
 
-## Peers information
+## P2P Network
+P2P Network can have the following status:
+
+| Status          | Description                                                                                               |
+| :--------------:| :--------------------------------------------------------------------------------------------------------:|
+| CONNECTED       | Your node is connected to the network. Stats about your network traffic is displayed on the right side    |
+| WAITING         | Your node is attempting to connect to the Iron Fish network                                               |
+
+### Peers information
 
 To see how is your node connected to the network you can run the following command
 
-```sh
-ironfish peers -f
-```
-
-A peer can have the following status:
-
-| Status          | Description                                                            |
-| :--------------:| :---------------------------------------------------------------------:|
-| CONNECTING      | Your node is attempting to connect to a new peer                       |
-| CONNECTED       | Your node is connected to the peer                                     |
-| CONNECTED(!)    | Your node is connected to the peer. But an error occurred previously   |
-| DISCONNECTED(!) | Your node is disconnected from the peer                                |
-
 <Terminal
   command="ironfish peers"
-  output={`
+  output={`\
 IDENTITY                                     STATE             ADDRESS
 1fkrpde0NXRjYjnHpYR2WvyfCBBQvVrvjBi26uAFkXE= CONNECTED         test.bn1.ironfish.network:9033
 dowjFPeQZBDLUriPFv4f9b/am19eYqCN0w9CUFI+wSI= CONNECTED(!)      104.7.65.165:9034
@@ -138,8 +184,13 @@ dowjFPeQZBDLUriPFv4f9b/am19eYqCN0w9CUFI+wSI= CONNECTED         124.7.65.165:9014
 `}
 />
 
-You can get more information about connections status and errors by running the following command:
+A peer can have the following status:
 
-```sh
-ironfish peers -fe
-```
+| Status          | Description                                                            |
+| :--------------:| :---------------------------------------------------------------------:|
+| CONNECTING      | Your node is attempting to connect to a new peer                       |
+| CONNECTED       | Your node is connected to the peer                                     |
+| CONNECTED(!)    | Your node is connected to the peer. But an error occurred previously   |
+| DISCONNECTED(!) | Your node is disconnected from the peer                                |
+
+Next: [Setup an account](/use/get-started/setting-up-an-account)

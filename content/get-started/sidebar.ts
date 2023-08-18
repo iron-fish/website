@@ -1,24 +1,22 @@
 import { SidebarDefinition } from "@/lib/markdown";
 
 export const sidebar: SidebarDefinition = [
+  "get-started",
+  "installation",
   {
-    label: "Installation",
-    id: "installation",
+    label: "Alternative Installations",
+    items: ["install-brew", "install-docker", "install-source"],
   },
-  "alternative-installation-methods",
   "running-a-node",
+  "node-health",
   "setting-up-an-account",
   "transactions",
-  {
-    label: "Track your transaction",
-    id: "track-transaction",
-  },
   "mining",
   {
     label: "Reference",
     items: [
-      "node-health",
       "node-configuration",
+      "node-datadir",
       "wallet-commands",
       "glossary",
       "cli-commands",
