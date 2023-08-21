@@ -21,16 +21,55 @@ Account MyNewAccount created with public address
 Run "ironfish wallet:use MyNewAccount" to set the account as default`}
 />
 
-## Set the account as default
+## Set the default account
 
 When you have multiple accounts you can set which account to use as the default account:
 
+<Terminal
+  command="ironfish wallet:use MyNewAccount"
+  output={`The default account is now: MyNewAccount`}
+/>
+
+> **Note:** When running a command the default account is used unless you specify another account
+
+## What account am I using?
+
+If you don't know what account you are using you can use the following command
+
+<Terminal
+  command="ironfish wallet:which"
+  output={`MyNewAccount`}
+/>
+
+## Backup your account
+
+You should always backup your account, you can export the account in bech32 format using
+
+<Terminal
+  command="ironfish wallet:export"
+  output={`ifaccount!xqcnqvpsxsmrgd34xejrve33xy6k2cesvg6nfffffffqc3sv33xxvp3xa3ngef4vy6rjce5vfjnjen9xsenscmzxajnvdf4vyenqfffffffxd3exgerqdejxp3x2vph8q6nsdt9x9jrvenxxcenswfsxajrswfevfnx2ceevv6ngvnpxsenwwrrxvmnxvtpx4nrse3kvgmnqd338pjrwcm9xsunvvp3v4jxyctp8pnxzce38ymxzdf5xqmrxvtpvscx2wphvyeryvpjv5cnqdp58pjrxcnzxa3kzdtzvesk2dphxserqdfsvs6nzdfsxgmxydfsxuurycmx8qcn2v3sv56nxv3jxcunxwpe8p3xgwtz8p3kvcnxvfjrjd3evs6r2c3n8pjrvefcvymnqvp58qekzvfevyunwetzxgcn2dnzxpnrsvfkxucr2vekxqcrycnpv56nvcfjxs6rqef5xdjkyef589jkvceevc6kydr9vf3nseryxcerxcnyvenx2drpv4nrxwtzv3snjdfsxyekgefcvyckzdpjxpjr2wpcvcmkxwt98qcrxvphv5crvvfsvd3n2wrrx93kyv3ex5unwd3jx4jx2vpev4nrwcenvv6kzcfsx9snzdtyxqcnqvpsxqcrqvpsxqcrqvpsxq6xgdekxqerwdrpxgenzdtrxuckydfcv5enswpsx56kvwrp8qmnxerzxf3xgcnyxuunwveevvmnydeex4snwcfcxqerqvqhh3n7d`}
+/>
+
+Save this output somewhere physical and keep it safe. you can also get your account in mneomonic format using
+
 ```sh
-ironfish wallet:use MyNewAccount
+ironfish wallet:export --mnemonic
 ```
+
+## See all the accounts
+
+If you want to see all of the accounts in your wallet run this command
+
+<Terminal
+  command="ironfish wallet:accounts"
+  output={`\
+  default
+  john
+  handfish`}
+/>
+
+See more wallet commands in [the wallet section](/use/get-started/wallet-commands).
 
 ## Next steps
 
-You can read about the different wallet commands in [the wallet section](/use/get-started/wallet-commands).
-
-Now that you have created an account you can [receive transactions](/use/get-started/transactions#receive-a-transaction) or [start mining $IRON](/use/get-started/mining).
+[Send and resceive transactions](/use/get-started/transactions)

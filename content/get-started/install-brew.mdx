@@ -1,0 +1,40 @@
+---
+title: Install via Homebrew
+seo-title: Install Iron Fish - Homebrew
+---
+
+> **Note:** Our Homebrew tap does not yet support **Apple Silicon/arm64**. We recommend installing Iron Fish [using NPM](/use/get-started/installation#install-or-update-iron-fish-win-mac). You can also install Iron Fish [from the source](#from-source) or [use Docker](#using-docker) with `x86_64` support.
+
+## Installing
+
+Start by [installing Homebrew](https://brew.sh) and install from [custom tap](https://github.com/iron-fish/homebrew-brew):
+
+```sh
+brew tap iron-fish/brew && brew install ironfish
+```
+
+To verify your CLI installation, use the ironfish --version command.
+
+```sh
+$ ironfish --version
+name       ironfish
+version    1.7.0
+git        b240df1
+runtime    node/18.12.1
+```
+
+## Updating
+
+```sh
+brew install ironfish
+```
+
+## Uninstalling
+
+```sh
+brew uninstall ironfish
+```
+
+## Next steps
+
+[Run a node](/use/get-started/run-a-node)

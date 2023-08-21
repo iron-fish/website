@@ -1,0 +1,59 @@
+---
+title: Install via Docker
+seo-title: Install Iron Fish - Docker
+---
+
+> **Note:** Docker is for advanced users and not recommended.
+
+## Install
+
+Install by downloading the docker image.
+```sh
+docker pull ghcr.io/iron-fish/ironfish:latest
+```
+
+To verify your CLI installation, use this command
+
+```sh
+docker run --rm --tty --interactive ghcr.io/iron-fish/ironfish:latest --version
+```
+
+### Updating
+
+To update your image, use `docker pull` and then start your container:
+
+```sh
+docker pull ghcr.io/iron-fish/ironfish:latest
+```
+
+Optionally you can use tools like [watchtower](https://github.com/containrrr/watchtower) which is a process for automating Docker container base image updates.
+
+### Uninstall
+
+```sh
+docker rmi ghcr.io/iron-fish/ironfish:latest
+```
+
+### Using Docker
+
+Run the Docker image from the GitHub registry, mounting the node's data directory into your home directory and using the host network.
+
+> **Note:** Replace `<home-directory>` with `%USERPROFILE%` on Windows or `$HOME` on others
+
+```sh
+docker run --rm --tty --interactive --network host --volume <home-directory>/.ironfish:/root/.ironfish ghcr.io/iron-fish/ironfish:latest
+```
+
+Now check the status of your node using IPC, again replacing `<home-directory>` according to your OS.
+
+```sh
+docker run --rm --tty --interactive --network host --volume <home-directory>/.ironfish:/root/.ironfish ghcr.io/iron-fish/ironfish:latest status -f
+```
+
+**Note:** `--network host` is needed for 2 Docker containers to connect over IPC.
+
+**Note:** You can also use the RPC layer over TCP by starting your node with `--rpc.tcp`, which connects over the default port 8020.
+
+## Next steps
+
+[Run a node](/use/get-started/run-a-node)

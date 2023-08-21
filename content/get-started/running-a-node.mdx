@@ -8,7 +8,7 @@ import Start from '../../src/theme/components/Terminal/Start'
 
 ## Start the node
 
-Run the Iron Fish CLI
+Use this command to run an Iron Fish node in your terminal.
 ```sh
 ironfish start
 ```
@@ -50,34 +50,7 @@ ec7d8422f70b5449a5aabb18c9507b1875b6ec49b8ada1ba991ca09900c1c3b1c7b282a7b93866be
   ]}
 />
 
-## Using a different directory
-By default, the database and configuration files for the Iron Fish node are created in the `~/.ironfish` directory (more details in the [configuration section](/use/get-started/node-configuration)). You can use a different directory for the database and configuration files by using the `--datadir` flag.
-
-E.g.
-```sh
-ironfish start --datadir=~/myCustomFolder
-```
-
-## Using a different bootstrap node
-By default, your node will connect to the official Iron Fish bootstrap nodes.
-If you are developing and want to use a different bootstrap node, you can make the node connect to a different address with the `--bootstrap` flag.
-
-**Do not use a production bootstrap node that isn't officially endorsed by Iron Fish, you might end up on a malicious network.**
-
-E.g.
-```sh
-ironfish start --bootstrap=localhost:9031
-```
-
-## Using a different port
-By default, Iron Fish runs on port 9033. If you wish to use a different port, you can use the `--port` flag.
-
-E.g.
-```sh
-ironfish start --port=9045
-```
-
-## Next steps
+**Note**: If you close the terminal, the Iron Fish node will stop.
 
 The node will now sync your local chain with the network. It might take a while for the full sync to be complete. But you can still use the node in the meantime.
 
@@ -88,3 +61,41 @@ To sync your local chain with the network more quickly you can download a snapsh
 ```sh
 ironfish chain:download
 ```
+
+**Note**: You must close your node before running `chain:download`.
+
+## Advanced Options
+
+### Using a different directory
+By default, the node stores its data in the `~/.ironfish` directory (see [node data dir](/use/get-started/node-datadir)).
+
+You can use a different directory for the database and configuration files by using the `--datadir` flag.
+
+E.g.
+```sh
+ironfish start --datadir=~/myCustomFolder
+```
+
+### Using a different bootstrap node
+By default, your node will connect to the official Iron Fish bootstrap nodes.
+If you are developing and want to use a different bootstrap node, you can make the node connect to a different address with the `--bootstrap` flag.
+
+**Do not use a production bootstrap node that isn't officially endorsed by Iron Fish, you might end up on a malicious network.**
+
+E.g.
+```sh
+ironfish start --bootstrap=localhost:9031
+```
+
+### Using a different port
+By default, Iron Fish runs on port 9033. If you wish to use a different port, you can use the `--port` flag.
+
+E.g.
+```sh
+ironfish start --port=9045
+```
+
+## Next steps
+
+[Check the health and status of your node](/use/get-started/node-health)
+

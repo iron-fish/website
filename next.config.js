@@ -24,7 +24,7 @@ const nextConfig = {
       },
       {
         source: "/use/get-started",
-        destination: "/use/get-started/installation",
+        destination: "/use/get-started/get-started",
         permanent: false,
       },
       {
