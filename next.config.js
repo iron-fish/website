@@ -69,12 +69,12 @@ const nextConfig = {
       },
       {
         source: "/docs/onboarding/iron-fish-wallet-commands",
-        destination: "/use/get-started/cli-commands",
+        destination: "/use/get-started/cli-how-to-use",
         permanent: true,
       },
       {
         source: "/docs/onboarding/start-an-iron-fish-node",
-        destination: "/use/get-started/running-a-node",
+        destination: "/use/get-started/run-a-node",
         permanent: true,
       },
       {
@@ -84,7 +84,7 @@ const nextConfig = {
       },
       {
         source: "/docs/onboarding/iron-fish-cli",
-        destination: "/use/get-started/cli-commands",
+        destination: "/use/get-started/cli-how-to-use",
         permanent: true,
       },
       {
