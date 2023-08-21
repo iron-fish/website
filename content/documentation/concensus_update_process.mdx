@@ -1,0 +1,28 @@
+---
+title: Concensus Update Process
+description: Concensus Update Process | Iron Fish Blockchain
+---
+
+To maintain consensus, all full nodes validate blocks using the same consensus rules. However, sometimes the consensus rules are changed to introduce new features or prevent network abuse. A hard fork will be performed when the new concensus rules are introduced. Hard fork creates
+a permanent divergence in the block chain, where non-upgraded nodes can’t validate blocks created by upgraded nodes that follow newer consensus rules.
+
+### Requirement for Hard fork
+1. Hard Fork FIP, including the full list of changes in the concensus
+2. New randomness for the circuit if trust setup is required for the hard fork
+
+### Hard Fork Process
+1. Pick hard fork activation block sequence
+2. Get approval for the hard fork FIP
+3. Make testnet block activation PR 
+4. Release and deploy to testnet 
+5. Make announcement about the testnet hard fork 
+6. Testnet upgrade window
+7. Testnet activation 
+8. Make mainnet block activation PR 
+9. Release and deploy to mainnet 
+10. Make announcement about the mainnet hard fork 
+11. Mainnet upgrade window
+12. Mainnet activation 
+
+### Hard Fork Upgrade Window
+We aim to give a 1-week for testnet upgrad window and 3-weeks for mainnet upgrade window. During the upgrad window, we will proactivly encourage miners, exchanges, wallet providers and node users to upgrade to the new version.
