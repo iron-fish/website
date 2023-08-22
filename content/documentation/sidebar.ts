@@ -15,6 +15,7 @@ export const sidebar: SidebarDefinition = [
   "networks",
   "release-versioning",
   "offline-transaction-signing",
+  "glossary",
   {
     label: "Recipes",
     items: [
