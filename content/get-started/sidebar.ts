@@ -12,6 +12,7 @@ export const sidebar: SidebarDefinition = [
   "setting-up-an-account",
   "transactions",
   "mining",
+  "glossary",
   {
     label: "Reference",
     items: ["node-configuration", "node-datadir", "glossary"],
