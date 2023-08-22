@@ -1,0 +1,36 @@
+---
+title: wallet:mint
+seo: Wallet Mint Command
+---
+
+To mint a new asset
+
+```sh
+ironfish wallet:mint
+```
+
+<Terminal command="ironfish wallet:mint"
+  output={`
+Do you want to create a new asset (Y/N)?: y
+Enter the name for the new asset: MyNewAsset
+Enter metadata for the new asset: -
+Enter the amount to mint in the custom asset: 10
+Enter the fee amount in $IRON (min: 0.00000001) [0.00000001]: 0.00000001
+
+You are about to mint Name: MyNewAsset
+10.00000000 plus a transaction fee of $IRON 0.00000001 with the account MyNewAccount
+
+* This action is NOT reversible *
+
+Do you confirm (Y/N)?: Y
+
+Creating the transaction:
+████████████████████████████████████████ 100%
+
+Minted asset MyNewAsset from MyNewAccount
+Asset Identifier: 9d10d3fe1b86a5
+Value: 10.00000000
+Transaction Hash: e032e78268a1097288503e18510e48d140292ff5ce91d0914ae00f733ad8d166
+Find the transaction on https://explorer.ironfish.network/transaction/e032e78268a1097288503e18510e48d140292ff5ce91d0914ae00f733ad8d166
+  `}
+/>

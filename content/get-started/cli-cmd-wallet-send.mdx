@@ -1,0 +1,32 @@
+---
+title: wallet:send
+seo: Wallet Send Command
+---
+
+To send a transaction from the default account
+
+```sh
+ironfish wallet:send
+```
+
+<Terminal command="ironfish wallet:send"
+  output={`
+Enter the amount in $IRON (balance: $IRON 200) 20
+Enter the fee amount in $IRON 0.00000001
+Enter the the public address of the recipient: ab518b8c908d7157eaebdf8159c5813894074d3136826daba4a485598de1b86a597af2821f8400bbfe70c1
+
+You are about to send:
+$IRON 20 to ab518b8c908d7157eaebdf8159c5813894074d3136826daba4a485598de1b86a597af2821f8400bbfe70c1 from the account IronFishGenesisAccount
+
+Do you confirm (Y/N)?: Y
+
+Creating the transaction:
+████████████████████████████████████████ 100%
+
+Sending 20 to ab518b8c908d7157eaebdf8159c5813894074d3136826daba4a485598de1b86a597af2821f8400bbfe70c1 from MyNewAccount
+
+Transaction Hash: e032e78268a1097288503e18510e48d140292ff5ce91d0914ae00f733ad8d166
+Transaction Fee: 0.00000001
+Find the transaction on https://explorer.ironfish.network/transaction/ee32e78268a1097288503e18510e48d140292ff5ce91d0914ae00f733ad8d166
+  `}
+/>

@@ -1,0 +1,22 @@
+---
+title: miners:start
+seo: Miner Start Command
+---
+
+Starts a miner and subscribes to new blocks for the node. The node has to be synced with the network for the miner to start mining.
+
+```sh
+ironfish miners:start
+```
+
+Join a mining pool with your default account public address.
+
+```sh
+ironfish miners:start -p <ip-address-of-pool>
+```
+
+Setting the number of CPU threads to utilize for mining \<-t\> and setting other than your default account address for block rewards \<-a\>.
+
+```sh
+ironfish miners:start -t <number-of-threads-to-use> -a <your-address-to-receive-rewards>
+```

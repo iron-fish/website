@@ -1,0 +1,34 @@
+---
+title: wallet:import
+seo: Wallet Import Command
+---
+
+To import an account from a file:
+
+```sh
+ironfish wallet:import --path filename
+```
+
+To import an account via stdin:
+
+```sh
+ironfish wallet:import {<exported account or spending key>}
+```
+
+To import an account interactively:
+
+```sh
+ironfish wallet:import
+```
+
+<Terminal command="ironfish wallet:import"
+  output={`
+Paste the output of wallet:export, or your spending key: 9cfaf518a343aa5cb6d7ee704f7b0b29fac85ff96912ea7302a3e2a4ae52cff5
+Enter a new account name: wallet
+
+Account wallet imported.
+Run "ironfish wallet:use wallet" to set the account as default
+  `}
+/>
+
+Enter the details requested by the prompts as shown above.
