@@ -108,22 +108,6 @@ export function DocumentationLayout({
             {frontMatter.title}
           </Heading>
           <MDXRenderer markdown={markdown} />
-          {githubPath && (
-            <Box textAlign="center" mt="16">
-              <Text
-                as="a"
-                color="#7F7F7F"
-                _hover={{
-                  textDecoration: "underline",
-                }}
-                href={`https://github.com/iron-fish/website/tree/master/${githubPath}`}
-                target="_blank"
-                rel="noreferrer"
-              >
-                Edit Page on Github
-              </Text>
-            </Box>
-          )}
         </Box>
         {showOnThisPage && contentHeadings && contentHeadings.length > 0 && (
           <Box
@@ -134,6 +118,22 @@ export function DocumentationLayout({
             overflow="auto"
             top={NAV_HEIGHT}
           >
+            {githubPath && (
+              <Box textAlign="left" mb={5}>
+                <Text
+                  as="a"
+                  color="#7F7F7F"
+                  _hover={{
+                    textDecoration: "underline",
+                  }}
+                  href={`https://github.com/iron-fish/website/tree/master/${githubPath}`}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Edit Page on Github
+                </Text>
+              </Box>
+            )}
             <Text textTransform="uppercase" mb={5}>
               On This Page
             </Text>
