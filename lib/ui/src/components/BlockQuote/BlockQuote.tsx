@@ -28,6 +28,7 @@ export function BlockQuote({ children, cite, quotes = true }: Props) {
               base: "4xl",
               "2xl": "5xl",
             }),
+            fontFamily: "FavoritExtendedIF",
             lineHeight: "1.4em",
             mb: "0.65em",
           },
