@@ -10,6 +10,7 @@ export * from "./src/components/ArrowButton/ArrowButton";
 export * from "./src/components/Hero/Hero";
 export * from "./src/components/ThickLink/ThickLink";
 export * from "./src/components/FAQItem/FAQItem";
+export * from "./src/components/BlockQuote/BlockQuote";
 
 // SVGs
 export * from "./src/icons";
