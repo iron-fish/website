@@ -19,6 +19,8 @@ import { Terminal } from "../../components/Terminal/Terminal";
 import { FAQItem } from "../../components/FAQItem/FAQItem";
 import { ReactNode, ComponentProps, useState, useCallback } from "react";
 import { useSmoothScrollToHash } from "../../hooks/useSmoothScrollToHash";
+import { createBreakpointArray } from "../../theme/components/breakpoints";
+import { BlockQuote } from "../BlockQuote/BlockQuote";
 
 export function headingToAnchorId(headingEl: HTMLHeadingElement) {
   return kebabCase(headingEl.innerText.toLowerCase());
@@ -130,6 +132,17 @@ const rendererComponents: ComponentProps<typeof MDXRemote>["components"] = {
       <Box as="table" {...props} {...DEFAULT_TEXT_PROPS} mb={8} />
     </Box>
   ),
+  blockquote: (props) => {
+    return (
+      <Box
+        as="blockquote"
+        borderLeft="4px solid"
+        borderColor="gray.300"
+        px={4}
+        {...props}
+      />
+    );
+  },
 };
 
 function MDXRenderer({ markdown }: { markdown: MDXRemoteProps }) {
@@ -151,6 +164,7 @@ const providerComponents = {
   Terminal,
   FAQItem,
   Img: (props: any) => <Image my={6} alt="" w="100%" {...props} />,
+  BlockQuote,
 };
 
 export function MDXProvider({ children }: { children: ReactNode }) {
