@@ -31,11 +31,11 @@ export function BlockQuote({ children, cite, quotes = true }: Props) {
             lineHeight: "1.4em",
             mb: "0.65em",
           },
-          "& > *:first-child:before": {
-            content: quotes ? `'“'` : "",
+          "& > *:first-child::before": {
+            content: quotes ? `'“'` : `""`,
           },
-          "& > *:last-child:after": {
-            content: quotes ? `'”'` : "",
+          "& > *:last-child::after": {
+            content: quotes ? `'”'` : `""`,
           },
         }}
       >
