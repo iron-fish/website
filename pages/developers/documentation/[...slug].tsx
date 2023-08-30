@@ -1,4 +1,3 @@
-import fs from "fs";
 import { GetStaticPaths, GetStaticProps } from "next";
 import path from "path";
 import { MDXRenderer, SidebarItems } from "@/lib/ui";
@@ -6,11 +5,11 @@ import {
   getSidebarContent,
   parseFileByPath,
   renderMarkdown,
+  parseNestedDir,
 } from "@/lib/markdown";
 import { ComponentProps } from "react";
 import { DocumentationLayout } from "../../../layouts/Documentation/Documentation";
 import { sidebar } from "../../../content/documentation/sidebar";
-import { parseNestedDir } from "@/lib/markdown/src/parseNestedDir";
 
 const CONTENT_DIR = ["content", "documentation"];
 

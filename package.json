@@ -44,9 +44,11 @@
   },
   "devDependencies": {
     "@chakra-ui/cli": "^2.3.0",
+    "@types/elasticlunr": "^0.9.5",
     "@types/jsonp": "^0.2.1",
     "@types/lodash-es": "^4.17.7",
     "@types/ua-parser-js": "^0.7.36",
+    "elasticlunr": "^0.9.5",
     "gray-matter": "^4.0.3",
     "husky": ">=6",
     "lint-staged": ">=10",

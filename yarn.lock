@@ -1410,6 +1410,11 @@
   dependencies:
     "@types/ms" "*"
 
+"@types/elasticlunr@^0.9.5":
+  version "0.9.5"
+  resolved "https://registry.npmjs.org/@types/elasticlunr/-/elasticlunr-0.9.5.tgz#d769e49c77b6a9bc684b8defac46f5dd0ff47d24"
+  integrity sha512-gzY3gZLI6HczDO3vXM+u3P0dClEQ68k2d0UsZY1lyOaOZiGiamu7Ha/YBoc8CgAu5/3R+/u0HguDgD+xakmSEA==
+
 "@types/estree-jsx@^1.0.0":
   version "1.0.0"
   resolved "https://registry.npmjs.org/@types/estree-jsx/-/estree-jsx-1.0.0.tgz"
@@ -2375,6 +2380,11 @@ eastasianwidth@^0.2.0:
   version "0.2.0"
   resolved "https://registry.npmjs.org/eastasianwidth/-/eastasianwidth-0.2.0.tgz"
   integrity sha512-I88TYZWc9XiYHRQ4/3c5rjjfgkjhLyW2luGIheGERbNQ6OY7yTybanSpDXZa8y7VUP9YmDcYa+eyq4ca7iLqWA==
+
+elasticlunr@^0.9.5:
+  version "0.9.5"
+  resolved "https://registry.npmjs.org/elasticlunr/-/elasticlunr-0.9.5.tgz#65541bb309dddd0cf94f2d1c8861b2be651bb0d5"
+  integrity sha512-5YM9LFQgVYfuLNEoqMqVWIBuF2UNCA+xu/jz1TyryLN/wmBcQSb+GNAwvLKvEpGESwgGN8XA1nbLAt6rKlyHYQ==
 
 emoji-regex@^8.0.0:
   version "8.0.0"
