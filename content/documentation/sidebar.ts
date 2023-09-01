@@ -13,6 +13,8 @@ export const sidebar: SidebarDefinition = [
     ],
   },
   "networks",
+  "release-versioning",
+  "offline-transaction-signing",
   {
     label: "Recipes",
     items: [
@@ -21,10 +23,8 @@ export const sidebar: SidebarDefinition = [
       "recipes_splitting_notes",
     ],
   },
-  "release-versioning",
-  "offline-transaction-signing",
   {
-    label: "RPC API Reference",
+    label: "RPC Reference",
     items: [
       {
         label: "Chain",
