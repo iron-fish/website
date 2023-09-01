@@ -12,6 +12,7 @@ export const sidebar: SidebarDefinition = [
       "integration_deposits",
     ],
   },
+  "networks",
   {
     label: "Recipes",
     items: [

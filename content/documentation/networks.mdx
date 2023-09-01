@@ -1,0 +1,82 @@
+---
+title: Networks
+description: Use Testnet | Iron Fish Documentation
+---
+
+Iron Fish has 3 networks built into the SDK by default. These networks are useful for development and testing rather than trying to wait for someone to send you Mainnet $IRON.
+
+> **Note:** Once you start a node on a certain network, that node cannot be used on another network. Use `ironfish reset --networkId ...` to switch a node to another network.
+
+# Testnet
+
+The Testnet is a network that is maintained by the core developer team. All code is first deployed to Testnet before Mainnet.
+
+If you want to use Testnet with the CLI run:
+
+```sh
+ironfish start --networkId 0
+```
+
+**Testnet Faucet**
+
+You can request Testnet funds by using the faucet. First start your node in the Testnet, then request funds.
+
+```sh
+ironfish faucet
+```
+
+# Devnet
+
+The Devnet is a network that is used for spinning up local networks very easily. It has extremely low default difficulty so you can mine blocks very easily.
+
+If you want to use the Devnet with the CLI run:
+
+```sh
+ironfish start --networkId 2
+```
+
+**Devnet Faucet**
+
+There is no Devnet faucet. However, you can instantly mine a block using the built in CPU miner
+
+```sh
+ironfish miners:start
+```
+
+# Mainnet
+
+The Iron Fish CLI, Node App, and SDK each automatically connect to Mainnet by default. You don't need to do anything special to use it.
+
+**Mainnet Faucet**
+
+There is no faucet for Mainnet, please use [Testnet](#testnet-0) for pre-production testing.
+
+# Custom Network
+
+Iron Fish supports custom network definitions. You can create a custom network definition and import it using the [customNetwork config](/use/get-started/node-configuration) or the `--customNetwork` flag like this...
+
+```sh
+ironfish start --customNetwork ~/foonet.json
+```
+
+
+#### Network Definition Files
+
+```json
+{
+    "id": 0,
+    "bootstrapNodes": [
+        "bootstrap.foo.network",
+        "62.11.269.158"
+    ],
+    "genesis": {/* insert genesis block here*/},
+    "consensus": {
+        "allowedBlockFutureSeconds": 15,
+        "genesisSupplyInIron": 42000000,
+        "targetBlockTimeInSeconds": 60,
+        "targetBucketTimeInSeconds": 10,
+        "maxBlockSizeBytes": 524288,
+        "minFee": 1
+    }
+}
+```
