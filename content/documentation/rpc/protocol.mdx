@@ -1,0 +1,92 @@
+---
+title: RPC Protocol
+description: RPC Usage | Iron Fish Documentation
+---
+
+The Iron Fish RPC protocol is a JSON protocol used to communicate with the node over multiple types of transports.
+
+You can implement an RPC adapter for any network transport. There are currently included transports for TCP, TLS, IPC, and HTTP. There is also an in memory adapter for tests and same process access to the RPC layer.
+
+It follows a request response model similar to HTTP, except that it also allows a third type of message which are streaming responses.
+
+If you want to see what the format of the messages are, it's best to inspect our [RpcSocketAdapter](https://github.com/iron-fish/ironfish/blob/staging/ironfish/src/rpc/adapters/tcpAdapter.ts) base class.
+
+## Request Example
+
+Let's use an example request to the RPC endpoint [node/getStatus](/developers/documentation/rpc/node/get_status)
+
+**Request to Node**
+```json
+{
+    "type": "message",
+    "data": {
+        "mid": 1,
+        "type": "node/getStatus"
+    }
+}
+```
+
+**Response from Node**
+```json
+{
+    "type": "message",
+    "data": {
+        "id": 1,
+        "status": 200,
+        "data": {
+            "node": {
+                "status": "started",
+                "version": "0.1.29",
+                "git": "src"
+            },
+            ...
+        }
+    }
+}
+```
+
+# Streaming Example
+
+The protocol also allows streaming. This means you will get multiple response packets back until the request terminates.  This may be unintuitive if you are using HTTP, as each multi-part response is a full JSON payload with a [delimiter](https://github.com/iron-fish/ironfish/blob/master/ironfish/src/rpc/adapters/socketAdapter/protocol.ts#L6) of `\f`.
+
+See an example below from the [miner/blockTemplateStream](/developers/documentation/rpc/miner/blockTemplateStream).
+
+**Request to Node**
+```json
+{
+    "type": "message",
+    "data": {
+        "mid": 1,
+        "type": "miner/blockTemplateStream"
+    }
+}
+```
+
+**Streamed Packet from Node**
+```json
+{
+    "type": "stream",
+    "data": {
+        "id": 1,
+        "data": {
+            "header": {
+                "sequence": 226458,
+                ...
+            },
+            ...
+        }
+    }
+}
+```
+
+**Response from Node**
+```json
+{
+    "type": "message",
+    "data": {
+        "id": 1,
+        "status": 200,
+        "data": undefined
+    }
+}
+```

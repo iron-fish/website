@@ -27,6 +27,7 @@ export const sidebar: SidebarDefinition = [
   {
     label: "RPC Reference",
     items: [
+      "rpc/protocol",
       {
         label: "Chain",
         items: [
