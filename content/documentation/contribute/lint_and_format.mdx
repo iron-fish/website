@@ -1,0 +1,22 @@
+---
+title: Lint and Format
+description: Lint and Format | Contribute Open Source | Iron Fish Documentation
+---
+
+Our codebase uses linters and formatters so that we can avoid common issues, as well as avoid spending time nit-picking minor formatting things, instead letting us focus on the things that matter: writing code!
+
+To keep the process as smooth as possible when putting up pull requests, here are some suggestions. This will be written from the perspective of [Visual Studio Code](https://code.visualstudio.com/) which is an excellent, full-featured code editor, but the same concepts apply to other editors. Most modern editors will have plugins for these same things.
+
+Recommended plugins:
+
+These 2 are useful for writing code in our Typescript files:
+- [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
+- [Prettier ESLint](https://marketplace.visualstudio.com/items?itemName=rvest.vs-code-prettier-eslint)
+
+This one is useful for writing code in our Rust files:
+- [rust-analyzer](https://marketplace.visualstudio.com/items?itemName=rust-lang.rust-analyzer)
+
+Once these are installed, you can turn on "Format on Save" in the settings so you never have to worry about it again. Plus, they can warn you while you're writing code, to help find common issues before you even run the code. This can be found under `Preferences -> Settings -> Format On Save` (You can search for "format" in the search bar in the settings page to find it easily.)
+
+You can also enable the "Problems" tab to see the highlighted issues and suggestions easier. This can be found under `View -> Problems`.
+

@@ -17,6 +17,10 @@ export const sidebar: SidebarDefinition = [
   "offline-transaction-signing",
   "glossary",
   {
+    label: "Contribute Open Source",
+    items: ["contribute/lint_and_format"],
+  },
+  {
     label: "Recipes",
     items: [
       "recipes_combining_notes",
