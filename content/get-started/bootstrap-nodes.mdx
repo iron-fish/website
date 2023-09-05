@@ -1,0 +1,33 @@
+---
+title: Bootstrap Nodes
+seo: Bootstrap Nodes | Get Started
+---
+
+Bootstrap nodes are special nodes that you connect to to get information about new peers. By default there is an Iron Fish foundation provided bootstrap node for each network.
+
+# Foundation
+
+| Address                           | Region | Network |
+| :--------                         | :-----------------------------------: | :--------:  |
+| 1.test.bn.ironfish.network        | N. Virginia                           | Testnet (0) |
+| 2.test.bn.ironfish.network        | Frankfurt                             | Testnet (0) |
+| 1.main.bn.ironfish.network        | N. Virginia                           | Mainnet (1) |
+| 2.main.bn.ironfish.network        | Frankfurt                             | Mainnet (1) |
+
+# Custom
+| Address                           | Runner | Region | Network |
+| :--------:                        | :-----: | :-------------------------: | :--------: |
+| ...                               | ...     | ...                         | ...        |
+
+#### Using a custom bootstrap node
+
+To add a new bootstrap node you need to use `ironfish config:set <boostrap1>,<bootstrap2>` command. See the example below.
+
+```sh
+$ ironfish config:set bootstrapNodes 1.foo.com,2.foo.com
+
+$ ironfish config:get bootstrapNodes
+1.foo.com,2.foo.com
+```
+
+> **Note:** `ironfish config:set` will replace any existing boostrap nodes rather than append new ones. You can also use `ironfish config:edit` to edit your config manually.
