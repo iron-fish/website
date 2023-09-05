@@ -22,10 +22,18 @@ function buildSidebarItem(
   pathPrefix: string
 ): { title: string; href: string } {
   if (typeof item === "string") {
+    if (!contentMap[item]) {
+      throw new Error(`Sidebar references missing page ${item}`);
+    }
+
     return {
       title: contentMap[item].title,
       href: `${pathPrefix}/${contentMap[item].document}`,
     };
+  }
+
+  if (!contentMap[item.id]) {
+    throw new Error(`Sidebar references missing page ${item.id}`);
   }
 
   return {
