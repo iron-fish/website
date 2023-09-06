@@ -14,3 +14,15 @@ To start a full node with a different port and a different data directory
 ```sh
 ironfish start --port=9034 --datadir=~/.ironfish2/
 ```
+
+To disable the node's wallet
+
+```sh
+ironfish start --no-wallet
+```
+
+By appending the `--no-wallet` flag to the `start` command, the Iron Fish full node does not
+ - update your wallet's balance by decrypting notes
+ - track transactions from the blockchain in wallet
+
+The wallet uses CPU and system resources to run which may slow down your node. If you don't need a wallet you can disable it to make your validator run faster. This can be useful for miners running a block template node for a mining pool.
