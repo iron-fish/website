@@ -1,16 +1,15 @@
 ---
-title: Consensus Update Process
-description: Consensus Update Process | Iron Fish Blockchain
+title: Hardfork Update Process
+description: Hardfork Update Process | Iron Fish Blockchain
 ---
 
 To maintain consensus, all full nodes validate blocks using the same consensus rules. However, sometimes the consensus rules are changed to introduce new features or prevent network abuse. A hard fork will be performed when the new consensus rules are introduced. Hard fork creates
 a permanent divergence in the block chain, where non-upgraded nodes can’t validate blocks created by upgraded nodes that follow newer consensus rules.
 
 ### Requirement for Hard fork
-1. Hard Fork FIP, including the full list of changes in the consensus
-2. New randomness for the circuit if trust setup is required for the hard fork
+Hard Fork FIP, including the full list of changes in the consensus
 
-### Hard Fork Process
+### Hard Fork Update Process
 1. Pick hard fork activation block sequence
 2. Get approval for the hard fork FIP
 3. Make testnet block activation PR 
