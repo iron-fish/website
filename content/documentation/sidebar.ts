@@ -28,7 +28,7 @@ export const sidebar: SidebarDefinition = [
       "recipes_splitting_notes",
     ],
   },
-  "hardfork_update_process",
+  "hardfork-update-process",
   {
     label: "RPC Reference",
     items: [
