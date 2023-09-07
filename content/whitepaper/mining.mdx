@@ -72,7 +72,7 @@ Currently, `Target.minDifficulty()` is `131072`, but this is subject to change.
 
 We've discussed adjusting difficulty to ensure 55-65 seconds between blocks — we do this by adjusting a target, which is a number that the block hash needs to fall under (e.g. be numerically less than the target).
 
-The target is calculated from the [difficulty](https://docs.google.com/document/d/14KRwTuWNnLM6sKbItjB8agFaATDj02rktFBArpB92vI/edit#heading=h.v86augr5aqao) given this formula:
+The target is calculated from the difficulty given this formula:
 `target = 2**256 / difficulty `
 
 As covered in the previous section, it has an inverse relationship with difficulty: as difficulty increases, the target decreases, and vice versa. This is because as the target decreases it becomes statistically harder to find that random number such that the hash of the block header is less than the target. Conversely, as the range of acceptable hashes decreases, difficulty increases.
