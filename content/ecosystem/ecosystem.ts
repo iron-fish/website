@@ -171,6 +171,6 @@ export const ECOSYSTEM: Array<{
     type: "Wallets",
     name: "Standalone Wallet",
     link: "https://github.com/iron-fish/ironfish-wallet-cli",
-    image: "/images/ecosystem/iflabs.png",
+    image: "/images/ecosystem/iflabs-standalone-wallet.png",
   },
 ];
