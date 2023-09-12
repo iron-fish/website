@@ -1,5 +1,5 @@
 import { NextApiRequest, NextApiResponse } from "next";
-import { searchIndex, CONTENT_INDEX } from "@/lib/search";
+import { searchIndex } from "@/lib/search";
 
 export default async function handler(
   req: NextApiRequest,
