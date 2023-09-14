@@ -6,12 +6,34 @@ import Head from "next/head";
 import { GovernanceStructure } from "@/components/Governance/GovernanceStructure/GovernanceStructure";
 import { GovernanceFAQ } from "@/components/Governance/GovernanceFAQ/GovernanceFAQ";
 import { DiscordCTA } from "@/components/Governance/DiscordCTA/DiscordCTA";
+import { defineMessages, useIntl } from "react-intl";
 
 const alanImage = alan as LocalImage;
 const handImage = hand as LocalImage;
 const bagImage = bag as LocalImage;
 
+const messages = defineMessages({
+  heading: {
+    id: "governance.heading",
+    defaultMessage: "Iron Fish Governance",
+  },
+  subheading: {
+    id: "governance.subheading",
+    defaultMessage: "Community-led protocol decisions",
+  },
+  description: {
+    id: "governance.description",
+    defaultMessage:
+      "The Foundation has launched a Discourse website and put out a public call for governance submissions.",
+  },
+  submitProposal: {
+    id: "governance.submitProposal",
+    defaultMessage: "Submit Proposal",
+  },
+});
+
 export default function Governance() {
+  const { formatMessage } = useIntl();
   return (
     <Box>
       <Head>
@@ -20,9 +42,9 @@ export default function Governance() {
       <Hero
         bg="green.400"
         flexGrow={1}
-        heading="Iron Fish Governance"
-        subheading="Community-led protocol decisions"
-        description="The Foundation has launched a Discourse website and put out a public call for governance submissions."
+        heading={formatMessage(messages.heading)}
+        subheading={formatMessage(messages.subheading)}
+        description={formatMessage(messages.description)}
         textContainerProps={{
           maxW: {
             base: "container.sm",
@@ -82,11 +104,11 @@ export default function Governance() {
             _focus={{ bg: "gray.100" }}
             size="lg"
             as="a"
-            href="https://docs.google.com/forms/d/e/1FAIpQLSf5ws1lLHg7aao87744Us7wO7dADvPiGl2ZEBPRBnDB-mXiAg/viewform"
+            href="https://discourse.ironfish.network/t/request-for-proposal-iron-fish-foundation-governance/23"
             target="_blank"
             rel="noreferrer"
           >
-            Submit Proposal
+            {formatMessage(messages.submitProposal)}
           </Button>
         </Flex>
       </Hero>

@@ -6,32 +6,101 @@ import {
   ShadowBox,
 } from "@/lib/ui";
 import { ReactNode } from "react";
-import { Decentralized } from "./icons/Decentralized";
-import { Handshake } from "./icons/Handdhake";
-import { Lock } from "./icons/Lock";
+import { useIntl, defineMessages } from "react-intl";
+import { Discussion } from "./icons/Discussion";
+import { Feedback } from "./icons/Feedback";
+import { FIP } from "./icons/FIP";
+import { Merge } from "./icons/Merge";
+import { Review } from "./icons/Review";
+
+const messages = defineMessages({
+  mainHeading: {
+    id: "governanceStructure.mainHeading",
+    defaultMessage: "Governance Structure",
+  },
+  mainDescription: {
+    id: "governanceStructure.mainDescription",
+    defaultMessage:
+      "Anyone can submit a proposal. A proposal is a request to introduce a change to the core Iron Fish protocol. Currently, the interim process for proposals to be accepted is:",
+  },
+  discussionHeading: {
+    id: "governanceStructure.discussionHeading",
+    defaultMessage: "Start a discussion",
+  },
+  discussionDescription: {
+    id: "governanceStructure.discussionDescription",
+    defaultMessage:
+      "Start a discussion about your idea on Discourse. Be as specific as possible, and make your claim for why this proposal is important. ",
+  },
+  feedbackHeading: {
+    id: "governanceStructure.feedbackHeading",
+    defaultMessage: "Get feedback",
+  },
+  feedbackDescription: {
+    id: "governanceStructure.feedbackDescription",
+    defaultMessage:
+      "Get feedback from the community, especially from the core Iron Fish node implementation contributors.",
+  },
+  fipHeading: {
+    id: "governanceStructure.fipHeading",
+    defaultMessage: "Fish Improvement Proposal",
+  },
+  fipDescription: {
+    id: "governanceStructure.fipDescription",
+    defaultMessage:
+      "Once discussions converge, draft a FIP (Fish Improvement Proposal) and submit a clear, well-defined Pull Request with corresponding code contributions as defined by your proposal (either directly through your efforts, or from other developers in the community by championing your idea).",
+  },
+  reviewHeading: {
+    id: "governanceStructure.reviewHeading",
+    defaultMessage: "Review",
+  },
+  reviewDescription: {
+    id: "governanceStructure.reviewDescription",
+    defaultMessage:
+      "Ask those who have merge permissions to review your PR, and resolve any comments.",
+  },
+  mergingHeading: {
+    id: "governanceStructure.mergingHeading",
+    defaultMessage: "Merging",
+  },
+  mergingDescription: {
+    id: "governanceStructure.mergingDescription",
+    defaultMessage:
+      "Once the PR gets merged, that FIP is marked as accepted and merged into the FIP repository.",
+  },
+});
 
 const sections = [
   {
-    heading: "Privacy without compromise",
-    description:
-      "Iron Fish is built from the ground up with zk-SNARK technology. Integrating encryption solutions at the foundation of our protocol delivers maximal security across the platform.",
-    image: <Lock />,
+    heading: messages.discussionHeading,
+    description: messages.discussionDescription,
+    image: <Discussion />,
   },
   {
-    heading: "Your finance, truly decentralized",
-    description:
-      "Powered by a global network of miners and nodes, Iron Fish is a censorship resistant, resilient, and privacy-enabled platform for everyday crypto transactions.",
-    image: <Decentralized />,
+    heading: messages.feedbackHeading,
+    description: messages.feedbackDescription,
+    image: <Feedback />,
   },
   {
-    heading: "A common-sense approach to compliance",
-    description:
-      "With an Iron Fish account, users receive a set of view keys that allow them to provide read-only access to their transactions records. This feature enables users to share account information for compliance and situations requiring proof of transaction.",
-    image: <Handshake />,
+    heading: messages.fipHeading,
+    description: messages.fipDescription,
+    image: <FIP />,
+  },
+  {
+    heading: messages.reviewHeading,
+    description: messages.reviewDescription,
+    image: <Review />,
+  },
+  {
+    heading: messages.mergingHeading,
+    description: messages.mergingDescription,
+    image: <Merge />,
   },
 ];
 
 export function GovernanceStructure() {
+  const { formatMessage } = useIntl();
+
   return (
     <Box
       pl={{
@@ -51,14 +120,19 @@ export function GovernanceStructure() {
       >
         <StickySideBySideView>
           <StickySideBySideView.Item>
-            <Text textStyle="h3">Why Use Iron Fish?</Text>
+            <Text textStyle="h3" mb={8}>
+              {formatMessage(messages.mainHeading)}
+            </Text>
+            <Text textStyle="lg" maxW="37ch">
+              {formatMessage(messages.mainDescription)}
+            </Text>
           </StickySideBySideView.Item>
           <StickySideBySideView.Item>
             {sections.map((section, i, arr) => (
               <Section
                 key={i}
-                heading={section.heading}
-                description={section.description}
+                heading={formatMessage(section.heading)}
+                description={formatMessage(section.description)}
                 image={section.image}
                 number={i + 1}
                 totalItems={arr.length}
@@ -94,10 +168,10 @@ function Section({
           md: "450px",
         }}
       >
-        <ShadowBox p={12}>
+        <ShadowBox p={12} shadowColor="green.400">
           <Box
             borderRadius="full"
-            bg="purple.500"
+            bg="green.400"
             display="inline-block"
             px={3}
             py={1}

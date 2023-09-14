@@ -1,30 +1,108 @@
 import { Container, FAQItem, Text, Box } from "@/lib/ui";
+import { defineMessages, useIntl } from "react-intl";
+
+const messages = defineMessages({
+  heading: {
+    id: "governanceFaq.heading",
+    defaultMessage: "Governance FAQ",
+  },
+  mergeTitle: {
+    id: "governanceFaq.mergeTitle",
+    defaultMessage: "Who has merge permissions?",
+  },
+  mergeDescription: {
+    id: "governanceFaq.mergeDescription",
+    defaultMessage:
+      "Quam diu etiam furor iste tuus nos eludet? Me non paenitet nullum festiviorem excogitasse ad hoc. Etiam habebis sem dicantur magna mollis euismod.",
+  },
+  governanceStructureTitle: {
+    id: "governanceFaq.governanceStructureTitle",
+    defaultMessage: "Where can I discuss governance structure proposals?",
+  },
+  governanceStructureDescription: {
+    id: "governanceFaq.governanceStructureDescription",
+    defaultMessage:
+      "Quam diu etiam furor iste tuus nos eludet? Me non paenitet nullum festiviorem excogitasse ad hoc. Etiam habebis sem dicantur magna mollis euismod.",
+  },
+  namingConventionTitle: {
+    id: "governanceFaq.namingConventionTitle",
+    defaultMessage: "What is the naming convention for proposals?",
+  },
+  namingConventionDescription: {
+    id: "governanceFaq.namingConventionDescription",
+    defaultMessage:
+      "Quam diu etiam furor iste tuus nos eludet? Me non paenitet nullum festiviorem excogitasse ad hoc. Etiam habebis sem dicantur magna mollis euismod.",
+  },
+  deadlineTitle: {
+    id: "governanceFaq.deadlineTitle",
+    defaultMessage: "When is the proposal deadline?",
+  },
+  deadlineDescription: {
+    id: "governanceFaq.deadlineDescription",
+    defaultMessage:
+      "Quam diu etiam furor iste tuus nos eludet? Me non paenitet nullum festiviorem excogitasse ad hoc. Etiam habebis sem dicantur magna mollis euismod.",
+  },
+  reviewProcessLengthTitle: {
+    id: "governanceFaq.reviewProcessLengthTitle",
+    defaultMessage: "How long is the review process?",
+  },
+  reviewProcessLengthDescription: {
+    id: "governanceFaq.reviewProcessLengthDescription",
+    defaultMessage:
+      "Quam diu etiam furor iste tuus nos eludet? Me non paenitet nullum festiviorem excogitasse ad hoc. Etiam habebis sem dicantur magna mollis euismod.",
+  },
+  grantApplicationTitle: {
+    id: "governanceFaq.grantApplicationTitle",
+    defaultMessage:
+      "Where can I apply for a grant to execute an approved proposal?",
+  },
+  grantApplicationDescription: {
+    id: "governanceFaq.grantApplicationDescription",
+    defaultMessage:
+      "Quam diu etiam furor iste tuus nos eludet? Me non paenitet nullum festiviorem excogitasse ad hoc. Etiam habebis sem dicantur magna mollis euismod.",
+  },
+});
+
+const sections = [
+  {
+    title: messages.mergeTitle,
+    description: messages.mergeDescription,
+  },
+  {
+    title: messages.governanceStructureTitle,
+    description: messages.governanceStructureDescription,
+  },
+  {
+    title: messages.namingConventionTitle,
+    description: messages.namingConventionDescription,
+  },
+  {
+    title: messages.deadlineTitle,
+    description: messages.deadlineDescription,
+  },
+  {
+    title: messages.reviewProcessLengthTitle,
+    description: messages.reviewProcessLengthDescription,
+  },
+  {
+    title: messages.grantApplicationTitle,
+    description: messages.grantApplicationDescription,
+  },
+];
 
 export function GovernanceFAQ() {
+  const { formatMessage } = useIntl();
   return (
     <Box borderBottom="1.5px solid black">
       <Container w="100%" maxW="container.xl" py="150px">
         <Text as="h2" textStyle="h3" mb={12} textAlign="center">
-          Node App FAQ
+          {formatMessage(messages.heading)}
         </Text>
-        <FAQItem title="Why opt in to telemetry?">
-          Opting into telemetry allows us to continuously enhance your
-          experience by collecting anonymous data. This data includes valuable
-          metrics such as node performance, block information, and overall
-          health indicators. By enabling telemetry, you contribute to the
-          ongoing improvement of our services. You can easily control your
-          participation in telemetry by enabling or disabling it at any time
-          through the node settings page.
-        </FAQItem>
-        <FAQItem title="Can I run the node app on my mobile device?">
-          The node app requires a desktop, as it runs a full node (the most
-          secure option).
-        </FAQItem>
-        <FAQItem title="Can I mint and burn assets in the node app?">
-          That functionality is not yet available in the app. You need to
-          mint/burn via the command line, but you can then access and transact
-          with minted assets in the app.
-        </FAQItem>
+        {sections.map(({ title, description }, i) => (
+          <FAQItem title={formatMessage(title)} key={i}>
+            {formatMessage(description)}
+          </FAQItem>
+        ))}
       </Container>
     </Box>
   );
