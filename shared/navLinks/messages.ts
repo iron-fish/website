@@ -200,4 +200,12 @@ export const messages = defineMessages({
     id: "nav.bugBountyDescription",
     defaultMessage: "Participate in our cash incentivized bug bounty.",
   },
+  foundationTitle: {
+    id: "nav.foundationTitle",
+    defaultMessage: "Foundation",
+  },
+  foundationDescription: {
+    id: "nav.foundationDescription",
+    defaultMessage: "FILL THIS OUT FILL THIS OUT FILL THIS OUT",
+  },
 });

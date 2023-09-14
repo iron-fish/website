@@ -1,16 +1,16 @@
 import { Hero, HeroImageUtil, LocalImage, Button, Flex, Box } from "@/lib/ui";
-import alan from "../../../assets/heroImages/grants/alan-grant.svg";
-import hand from "../../../assets/heroImages/grants/hand.svg";
-import bag from "../../../assets/heroImages/grants/bag.svg";
 import Head from "next/head";
 import { GovernanceStructure } from "@/components/Governance/GovernanceStructure/GovernanceStructure";
 import { GovernanceFAQ } from "@/components/Governance/GovernanceFAQ/GovernanceFAQ";
 import { DiscordCTA } from "@/components/Governance/DiscordCTA/DiscordCTA";
 import { defineMessages, useIntl } from "react-intl";
+import betta from "../../../assets/heroImages/governance/betta.svg";
+import angler from "../../../assets/heroImages/governance/angler.svg";
+import jelly from "../../../assets/heroImages/governance/jelly.svg";
 
-const alanImage = alan as LocalImage;
-const handImage = hand as LocalImage;
-const bagImage = bag as LocalImage;
+const bettaImg = betta as LocalImage;
+const anglerImg = angler as LocalImage;
+const jellyImg = jelly as LocalImage;
 
 const messages = defineMessages({
   heading: {
@@ -37,7 +37,7 @@ export default function Governance() {
   return (
     <Box>
       <Head>
-        <title>Iron Fish Grants | Expand the Iron Fish ecosystem</title>
+        <title>Iron Fish Governance | Community-led protocol decisions</title>
       </Head>
       <Hero
         bg="green.400"
@@ -59,7 +59,7 @@ export default function Governance() {
         images={
           <>
             <HeroImageUtil
-              image={alanImage}
+              image={betta}
               top={{
                 md: "-60px",
                 xl: "80px",
@@ -71,7 +71,7 @@ export default function Governance() {
               }}
             />
             <HeroImageUtil
-              image={handImage}
+              image={angler}
               bottom={{
                 md: "20px",
                 xl: "100px",
@@ -83,7 +83,7 @@ export default function Governance() {
               }}
             />
             <HeroImageUtil
-              image={bagImage}
+              image={jelly}
               top={{
                 md: "20px",
                 xl: "200px",

@@ -3,6 +3,7 @@ import alan from "../../../assets/heroImages/grants/alan-grant.svg";
 import hand from "../../../assets/heroImages/grants/hand.svg";
 import bag from "../../../assets/heroImages/grants/bag.svg";
 import Head from "next/head";
+import { GRANTS_FORM_URL } from "@/shared/constants";
 
 const alanImage = alan as LocalImage;
 const handImage = hand as LocalImage;
@@ -87,7 +88,7 @@ export default function Grants() {
             _focus={{ bg: "gray.100" }}
             size="lg"
             as="a"
-            href="https://docs.google.com/forms/d/e/1FAIpQLSf5ws1lLHg7aao87744Us7wO7dADvPiGl2ZEBPRBnDB-mXiAg/viewform"
+            href={GRANTS_FORM_URL}
             target="_blank"
             rel="noreferrer"
           >
