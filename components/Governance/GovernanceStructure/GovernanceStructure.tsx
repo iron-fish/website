@@ -103,6 +103,9 @@ export function GovernanceStructure() {
 
   return (
     <Box
+      borderTop="1.5px solid black"
+      borderBottom="1.5px solid black"
+      bg="green.400"
       pl={{
         base: 0,
         md: 8,

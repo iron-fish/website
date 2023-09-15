@@ -14,7 +14,6 @@ export function DiscordCTA() {
   const { formatMessage } = useIntl();
   return (
     <Box
-      borderTop="1.5px solid black"
       bg="green.500"
       py={{
         base: 24,

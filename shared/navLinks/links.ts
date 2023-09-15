@@ -125,12 +125,12 @@ export const links = [
         href: "/community/governance",
         image: "/images/nav/community-governance.svg",
       },
-      {
-        title: messages.grantsTitle,
-        description: messages.grantsDescription,
-        href: "/community/grants",
-        image: "/images/nav/community-grants.svg",
-      },
+      // {
+      //   title: messages.grantsTitle,
+      //   description: messages.grantsDescription,
+      //   href: "/community/grants",
+      //   image: "/images/nav/community-grants.svg",
+      // },
       {
         title: messages.foundationTitle,
         description: messages.foundationDescription,

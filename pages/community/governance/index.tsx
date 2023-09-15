@@ -1,4 +1,13 @@
-import { Hero, HeroImageUtil, LocalImage, Button, Flex, Box } from "@/lib/ui";
+import {
+  Hero,
+  HeroImageUtil,
+  Button,
+  Flex,
+  Box,
+  Container,
+  ThickLink,
+  Text,
+} from "@/lib/ui";
 import Head from "next/head";
 import { GovernanceStructure } from "@/components/Governance/GovernanceStructure/GovernanceStructure";
 import { GovernanceFAQ } from "@/components/Governance/GovernanceFAQ/GovernanceFAQ";
@@ -7,10 +16,6 @@ import { defineMessages, useIntl } from "react-intl";
 import betta from "../../../assets/heroImages/governance/betta.svg";
 import angler from "../../../assets/heroImages/governance/angler.svg";
 import jelly from "../../../assets/heroImages/governance/jelly.svg";
-
-const bettaImg = betta as LocalImage;
-const anglerImg = angler as LocalImage;
-const jellyImg = jelly as LocalImage;
 
 const messages = defineMessages({
   heading: {
@@ -112,6 +117,25 @@ export default function Governance() {
           </Button>
         </Flex>
       </Hero>
+
+      <Container w="100%" maxW="container.md">
+        <Text
+          textStyle="h5"
+          my={{
+            base: "50px",
+            md: "100px",
+            lg: "150px",
+          }}
+          textAlign="center"
+        >
+          Iron Fish has always been a{" "}
+          <ThickLink underlineColor="green.400">
+            community driven project.
+          </ThickLink>
+          Since mainnet launch, our focus has been on how to continue bolstering
+          Iron Fish&apos;s decentralization and resilience.
+        </Text>
+      </Container>
 
       <GovernanceStructure />
       <GovernanceFAQ />

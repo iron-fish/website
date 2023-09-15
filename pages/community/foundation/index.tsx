@@ -16,6 +16,7 @@ import { DiscordCTA } from "@/components/Governance/DiscordCTA/DiscordCTA";
 import flower from "../../../assets/heroImages/foundation/flower.svg";
 import key from "../../../assets/heroImages/foundation/key.svg";
 import weather from "../../../assets/heroImages/foundation/weather.svg";
+import Link from "next/link";
 
 const flowerImg = flower as LocalImage;
 const keyImg = key as LocalImage;
@@ -149,8 +150,15 @@ export default function Governance() {
           The Foundation guides Iron Fish towards premier crypto privacy.
           Through partnerships, grants, and events, it boosts ecosystem growth,
           emphasizing community-driven{" "}
-          <chakra.span textDecoration="underline">governance</chakra.span> and
-          fund allocation.
+          <chakra.span
+            as={Link}
+            href="/community/governance"
+            display="inline-block"
+            borderBottom="2px solid"
+          >
+            governance
+          </chakra.span>{" "}
+          and fund allocation.
         </Text>
       </Container>
 
@@ -186,7 +194,6 @@ export default function Governance() {
           imageUrl="/images/foundation/board-of-directors.svg"
           ctaColor="green.400"
           containerProps={{
-            color: "white",
             maxW: {
               base: "704px",
               lg: "1600px",
@@ -196,6 +203,12 @@ export default function Governance() {
               lg: "40px",
               xl: "64px",
               "2xl": "128px",
+            },
+            sx: {
+              color: "white",
+              p: {
+                color: "#CCC",
+              },
             },
           }}
         />

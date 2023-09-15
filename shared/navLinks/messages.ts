@@ -206,6 +206,6 @@ export const messages = defineMessages({
   },
   foundationDescription: {
     id: "nav.foundationDescription",
-    defaultMessage: "FILL THIS OUT FILL THIS OUT FILL THIS OUT",
+    defaultMessage: "Guiding Iron Fish towards premier crypto privacy.",
   },
 });
