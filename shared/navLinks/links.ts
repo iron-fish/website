@@ -96,18 +96,6 @@ export const links = [
     color: "green",
     items: [
       {
-        title: messages.governanceTitle,
-        description: messages.governanceDescription,
-        href: "/community/governance",
-        image: "/images/nav/community-governance.svg",
-      },
-      {
-        title: messages.foundationTitle,
-        description: messages.foundationDescription,
-        href: "/community/foundation",
-        image: "/images/nav/community-grants.svg",
-      },
-      {
         title: messages.communityHighlightsTitle,
         description: messages.communityHighlightsDescription,
         href: "/community/highlights",
@@ -124,6 +112,18 @@ export const links = [
         description: messages.communityDescription,
         href: "/community/our-community",
         image: "/images/nav/community-earth.svg",
+      },
+      {
+        title: messages.governanceTitle,
+        description: messages.governanceDescription,
+        href: "/community/governance",
+        image: "/images/nav/community-governance.svg",
+      },
+      {
+        title: messages.foundationTitle,
+        description: messages.foundationDescription,
+        href: "/community/foundation",
+        image: "/images/nav/community-grants.svg",
       },
       {
         title: messages.grantsTitle,
