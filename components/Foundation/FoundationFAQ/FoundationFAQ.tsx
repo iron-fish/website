@@ -1,4 +1,5 @@
-import { Container, FAQItem, Text, Box } from "@/lib/ui";
+import { Container, FAQItem, Text, Box, Link } from "@/lib/ui";
+import { GRANTS_FORM_URL } from "@/shared/constants";
 import { defineMessages, useIntl } from "react-intl";
 
 const messages = defineMessages({
@@ -13,7 +14,7 @@ const messages = defineMessages({
   applicationDescription: {
     id: "foundationFAQ.applicationDescription",
     defaultMessage:
-      "Quam diu etiam furor iste tuus nos eludet? Me non paenitet nullum festiviorem excogitasse ad hoc. Etiam habebis sem dicantur magna mollis euismod.",
+      "To be eligible for a grant, you must provide KYC information. All grants are subject to the laws of the recipient's governing country.",
   },
   payoutCurrencyTitle: {
     id: "foundationFAQ.payoutCurrencyTitle",
@@ -22,8 +23,7 @@ const messages = defineMessages({
   },
   payoutCurrencyDescription: {
     id: "foundationFAQ.payoutCurrencyDescription",
-    defaultMessage:
-      "Quam diu etiam furor iste tuus nos eludet? Me non paenitet nullum festiviorem excogitasse ad hoc. Etiam habebis sem dicantur magna mollis euismod.",
+    defaultMessage: "Grants can be made in IRON, USD, or stablecoins.",
   },
   grantRecipientsTitle: {
     id: "foundationFAQ.grantRecipientsTitle",
@@ -32,16 +32,11 @@ const messages = defineMessages({
   grantRecipientsDescription: {
     id: "foundationFAQ.grantRecipientsDescription",
     defaultMessage:
-      "Quam diu etiam furor iste tuus nos eludet? Me non paenitet nullum festiviorem excogitasse ad hoc. Etiam habebis sem dicantur magna mollis euismod.",
+      "Grant acceptance is at the sole discretion of the Foundation.",
   },
   whereToApplyTitle: {
     id: "foundationFAQ.whereToApplyTitle",
     defaultMessage: "Where can I apply for a grant?",
-  },
-  whereToApplyDescription: {
-    id: "foundationFAQ.whereToApplyDescription",
-    defaultMessage:
-      "Quam diu etiam furor iste tuus nos eludet? Me non paenitet nullum festiviorem excogitasse ad hoc. Etiam habebis sem dicantur magna mollis euismod.",
   },
 });
 
@@ -60,7 +55,7 @@ const sections = [
   },
   {
     title: messages.whereToApplyTitle,
-    description: messages.whereToApplyDescription,
+    description: GRANTS_FORM_URL,
   },
 ];
 
@@ -74,7 +69,13 @@ export function FoundationFAQ() {
         </Text>
         {sections.map(({ title, description }, i) => (
           <FAQItem title={formatMessage(title)} key={i}>
-            {formatMessage(description)}
+            {typeof description === "string" ? (
+              <Link href={description} isExternal>
+                {description}
+              </Link>
+            ) : (
+              formatMessage(description)
+            )}
           </FAQItem>
         ))}
       </Container>

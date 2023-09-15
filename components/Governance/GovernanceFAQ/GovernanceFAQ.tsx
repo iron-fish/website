@@ -1,4 +1,5 @@
 import { Container, FAQItem, Text, Box } from "@/lib/ui";
+import { Link } from "@chakra-ui/next-js";
 import { defineMessages, useIntl } from "react-intl";
 
 const messages = defineMessages({
@@ -13,7 +14,7 @@ const messages = defineMessages({
   mergeDescription: {
     id: "governanceFaq.mergeDescription",
     defaultMessage:
-      "Quam diu etiam furor iste tuus nos eludet? Me non paenitet nullum festiviorem excogitasse ad hoc. Etiam habebis sem dicantur magna mollis euismod.",
+      "In our eyes, the ultimate governance is merge permissions into the Iron Fish core node implementation repository. Currently, merge permissions are reserved for IF Labs engineers and the Iron Fish Foundation.",
   },
   governanceStructureTitle: {
     id: "governanceFaq.governanceStructureTitle",
@@ -22,7 +23,7 @@ const messages = defineMessages({
   governanceStructureDescription: {
     id: "governanceFaq.governanceStructureDescription",
     defaultMessage:
-      "Quam diu etiam furor iste tuus nos eludet? Me non paenitet nullum festiviorem excogitasse ad hoc. Etiam habebis sem dicantur magna mollis euismod.",
+      "All submissions should come through the Discourse forum under the Governance section.",
   },
   namingConventionTitle: {
     id: "governanceFaq.namingConventionTitle",
@@ -30,8 +31,7 @@ const messages = defineMessages({
   },
   namingConventionDescription: {
     id: "governanceFaq.namingConventionDescription",
-    defaultMessage:
-      "Quam diu etiam furor iste tuus nos eludet? Me non paenitet nullum festiviorem excogitasse ad hoc. Etiam habebis sem dicantur magna mollis euismod.",
+    defaultMessage: "[Proposal] Username-Governance-Proposal",
   },
   deadlineTitle: {
     id: "governanceFaq.deadlineTitle",
@@ -40,7 +40,7 @@ const messages = defineMessages({
   deadlineDescription: {
     id: "governanceFaq.deadlineDescription",
     defaultMessage:
-      "Quam diu etiam furor iste tuus nos eludet? Me non paenitet nullum festiviorem excogitasse ad hoc. Etiam habebis sem dicantur magna mollis euismod.",
+      "All proposals should be submitted by end of day on October 1, 2023.",
   },
   reviewProcessLengthTitle: {
     id: "governanceFaq.reviewProcessLengthTitle",
@@ -49,7 +49,7 @@ const messages = defineMessages({
   reviewProcessLengthDescription: {
     id: "governanceFaq.reviewProcessLengthDescription",
     defaultMessage:
-      "Quam diu etiam furor iste tuus nos eludet? Me non paenitet nullum festiviorem excogitasse ad hoc. Etiam habebis sem dicantur magna mollis euismod.",
+      "From October 1–31, 2023, the Foundation will review all submitted proposals. During this process, we may suggest amendments or have questions, so please keep an eye out for communication from us.",
   },
   grantApplicationTitle: {
     id: "governanceFaq.grantApplicationTitle",
@@ -59,7 +59,7 @@ const messages = defineMessages({
   grantApplicationDescription: {
     id: "governanceFaq.grantApplicationDescription",
     defaultMessage:
-      "Quam diu etiam furor iste tuus nos eludet? Me non paenitet nullum festiviorem excogitasse ad hoc. Etiam habebis sem dicantur magna mollis euismod.",
+      "Grants are determined by the Iron Fish Foundation. To learn more, visit the <foundationLink>foundation page</foundationLink>.",
   },
 });
 
@@ -90,6 +90,16 @@ const sections = [
   },
 ];
 
+function FormatFoundationLink(value: unknown) {
+  if (!Array.isArray(value)) return null;
+
+  return (
+    <Link textDecoration="underline" href="/community/foundation">
+      {value}
+    </Link>
+  );
+}
+
 export function GovernanceFAQ() {
   const { formatMessage } = useIntl();
   return (
@@ -100,7 +110,9 @@ export function GovernanceFAQ() {
         </Text>
         {sections.map(({ title, description }, i) => (
           <FAQItem title={formatMessage(title)} key={i}>
-            {formatMessage(description)}
+            {formatMessage(description, {
+              foundationLink: FormatFoundationLink,
+            })}
           </FAQItem>
         ))}
       </Container>
