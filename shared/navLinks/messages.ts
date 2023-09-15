@@ -102,14 +102,6 @@ export const messages = defineMessages({
     id: "nav.mediaDescription",
     defaultMessage: `Where we've made our mark in the media.`,
   },
-  wikiTitle: {
-    id: "nav.wikiTitle",
-    defaultMessage: "Community Wiki",
-  },
-  wikiDescription: {
-    id: "nav.wikiDescription",
-    defaultMessage: "Resources and help for and managed by users.",
-  },
   aboutUsTitle: {
     id: "nav.aboutUsTitle",
     defaultMessage: "About Us",
