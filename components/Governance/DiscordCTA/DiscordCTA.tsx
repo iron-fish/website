@@ -8,6 +8,10 @@ const messages = defineMessages({
     id: "joinCommunity.heading",
     defaultMessage: "Join Our Diverse Community",
   },
+  button: {
+    id: "joinCommunity.button",
+    defaultMessage: "Dive into Discord",
+  },
 });
 
 export function DiscordCTA() {
@@ -59,7 +63,7 @@ export function DiscordCTA() {
           size="sm"
           colorScheme="white"
         >
-          Dive into Discord
+          {formatMessage(messages.button)}
         </ArrowButton>
       </Flex>
     </Box>

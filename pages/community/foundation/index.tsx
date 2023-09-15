@@ -41,6 +41,11 @@ const messages = defineMessages({
     defaultMessage:
       "With mainnet launch on April 20th 2023, our ecosystem expanded and a new independent entity, the Iron Fish Foundation, was created.",
   },
+  foundationPurpose: {
+    id: "foundation.foundationPurpose",
+    defaultMessage:
+      "The Foundation guides Iron Fish towards premier crypto privacy. Through partnerships, grants, and events, it boosts ecosystem growth, emphasizing community-driven <govLink>governance</govLink> and fund allocation.",
+  },
   ironFishGrantsTitle: {
     id: "foundation.ironFishGrantsTitle",
     defaultMessage: "Iron Fish Grants",
@@ -64,6 +69,21 @@ const messages = defineMessages({
       "The Board of Directors is responsible for general oversight of the Iron Fish Foundation and weighs in on decisions including, but not limited to, governance, large grants, and ensuring that Iron Fish provides privacy to protect the crypto of everyday users while continuing to deter bad actors. The Foundation is actively adding Board Members alongside an advisory board of experts.",
   },
 });
+
+function GovLink(value: unknown) {
+  if (!Array.isArray(value)) return null;
+
+  return (
+    <chakra.span
+      as={Link}
+      href="/community/governance"
+      display="inline-block"
+      borderBottom="2px solid"
+    >
+      {value}
+    </chakra.span>
+  );
+}
 
 export default function Governance() {
   const { formatMessage } = useIntl();
@@ -147,18 +167,9 @@ export default function Governance() {
           maxW="container.md"
           mx="auto"
         >
-          The Foundation guides Iron Fish towards premier crypto privacy.
-          Through partnerships, grants, and events, it boosts ecosystem growth,
-          emphasizing community-driven{" "}
-          <chakra.span
-            as={Link}
-            href="/community/governance"
-            display="inline-block"
-            borderBottom="2px solid"
-          >
-            governance
-          </chakra.span>{" "}
-          and fund allocation.
+          {formatMessage(messages.foundationPurpose, {
+            govLink: GovLink,
+          })}
         </Text>
       </Container>
 
