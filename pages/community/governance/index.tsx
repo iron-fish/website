@@ -35,7 +35,18 @@ const messages = defineMessages({
     id: "governance.submitProposal",
     defaultMessage: "Submit Proposal",
   },
+  communityDriven: {
+    id: "governance.communityDriven",
+    defaultMessage:
+      "Iron Fish has always been a <underline>community driven project.</underline> Since mainnet launch, our focus has been on how to continue bolstering Iron Fish&apos;s decentralization and resilience.",
+  },
 });
+
+function Underline(value: unknown) {
+  if (!Array.isArray(value)) return null;
+
+  return <ThickLink underlineColor="green.400">{value[0]}</ThickLink>;
+}
 
 export default function Governance() {
   const { formatMessage } = useIntl();
@@ -128,12 +139,9 @@ export default function Governance() {
           }}
           textAlign="center"
         >
-          Iron Fish has always been a{" "}
-          <ThickLink underlineColor="green.400">
-            community driven project.
-          </ThickLink>
-          Since mainnet launch, our focus has been on how to continue bolstering
-          Iron Fish&apos;s decentralization and resilience.
+          {formatMessage(messages.communityDriven, {
+            underline: Underline,
+          })}
         </Text>
       </Container>
 
