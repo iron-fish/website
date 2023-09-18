@@ -123,7 +123,6 @@ export default function AboutUs() {
             imageUrl="/images/about-us/movement-fish.svg"
             ctaColor="green.400"
             containerProps={{
-              color: "white",
               maxW: {
                 base: "704px",
                 lg: "1600px",
@@ -133,6 +132,12 @@ export default function AboutUs() {
                 lg: "40px",
                 xl: "64px",
                 "2xl": "128px",
+              },
+              sx: {
+                color: "white",
+                p: {
+                  color: "#CCC",
+                },
               },
             }}
           />

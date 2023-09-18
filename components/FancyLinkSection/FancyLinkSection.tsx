@@ -16,8 +16,8 @@ import Link from "next/link";
 type Props = {
   heading: string;
   description: string | string[];
-  ctaText: string;
-  ctaLink: string;
+  ctaText?: string;
+  ctaLink?: string;
   imageUrl: string;
   reverse?: boolean;
   ctaColor?: string;
@@ -69,37 +69,39 @@ export function FancyLinkSection({
                 {text}
               </Text>
             ))}
-            <Flex
-              display="inline-flex"
-              alignItems="center"
-              gap={3}
-              as={ctaLink.startsWith("http") ? "a" : Link}
-              target={ctaLink.startsWith("http") ? "_blank" : undefined}
-              rel={ctaLink.startsWith("http") ? "noreferrer" : undefined}
-              href={ctaLink}
-              pb={4}
-              position="relative"
-              color={ctaColor}
-              _hover={{
-                "& > div:last-child": {
-                  w: "100%",
-                },
-              }}
-            >
-              <Text textStyle="h4" fontWeight="bold">
-                {ctaText}
-              </Text>
-              <FancyArrowRight />
-              <Box
-                w="0%"
-                h="2px"
-                bg="currentColor"
-                position="absolute"
-                bottom="0"
-                left="0"
-                transition="width 0.15s ease-in-out"
-              />
-            </Flex>
+            {ctaText && ctaLink && (
+              <Flex
+                display="inline-flex"
+                alignItems="center"
+                gap={3}
+                as={ctaLink.startsWith("http") ? "a" : Link}
+                target={ctaLink.startsWith("http") ? "_blank" : undefined}
+                rel={ctaLink.startsWith("http") ? "noreferrer" : undefined}
+                href={ctaLink}
+                pb={4}
+                position="relative"
+                color={ctaColor}
+                _hover={{
+                  "& > div:last-child": {
+                    w: "100%",
+                  },
+                }}
+              >
+                <Text textStyle="h4" fontWeight="bold">
+                  {ctaText}
+                </Text>
+                <FancyArrowRight />
+                <Box
+                  w="0%"
+                  h="2px"
+                  bg="currentColor"
+                  position="absolute"
+                  bottom="0"
+                  left="0"
+                  transition="width 0.15s ease-in-out"
+                />
+              </Flex>
+            )}
           </Box>
         </GridItem>
         <GridItem position="relative" order={reverse ? 1 : 2}>

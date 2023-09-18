@@ -96,6 +96,30 @@ export const links = [
     color: "green",
     items: [
       {
+        title: messages.foundationTitle,
+        description: messages.foundationDescription,
+        href: "/community/foundation",
+        image: "/images/nav/community-foundation.svg",
+      },
+      {
+        title: messages.governanceTitle,
+        description: messages.governanceDescription,
+        href: "/community/governance",
+        image: "/images/nav/community-governance.svg",
+      },
+      {
+        title: messages.grantsTitle,
+        description: messages.grantsDescription,
+        href: "/community/grants",
+        image: "/images/nav/community-grants.svg",
+      },
+      {
+        title: messages.communityTitle,
+        description: messages.communityDescription,
+        href: "/community/our-community",
+        image: "/images/nav/community-earth.svg",
+      },
+      {
         title: messages.communityHighlightsTitle,
         description: messages.communityHighlightsDescription,
         href: "/community/highlights",
@@ -106,30 +130,6 @@ export const links = [
         description: messages.mediaDescription,
         href: "/community/media",
         image: "/images/nav/community-loudspeaker.svg",
-      },
-      {
-        title: messages.wikiTitle,
-        description: messages.wikiDescription,
-        href: "https://github.com/iron-fish/ironfish/wiki",
-        image: "/images/nav/community-chat-bubbles.svg",
-      },
-      {
-        title: messages.communityTitle,
-        description: messages.communityDescription,
-        href: "/community/our-community",
-        image: "/images/nav/community-earth.svg",
-      },
-      {
-        title: messages.governanceTitle,
-        description: messages.governanceDescription,
-        href: "https://discourse.ironfish.network/t/request-for-proposal-iron-fish-foundation-governance/23#interim-governance-structure-3",
-        image: "/images/nav/community-governance.svg",
-      },
-      {
-        title: messages.grantsTitle,
-        description: messages.grantsDescription,
-        href: "/community/grants",
-        image: "/images/nav/community-grants.svg",
       },
     ],
   },
