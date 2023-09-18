@@ -19,7 +19,7 @@ export const ECOSYSTEM: Array<{
     type: "Apps",
     name: "Orescriptions",
     link: "https://www.orescriptions.com",
-    image: "/images/ecosystem/oreoscan.png",
+    image: "/images/ecosystem/orescriptions.png",
     highlight: "/learn/blog/2023-08-22-orya",
   },
   {
