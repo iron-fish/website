@@ -38,7 +38,7 @@ const messages = defineMessages({
   communityDriven: {
     id: "governance.communityDriven",
     defaultMessage:
-      "Iron Fish has always been a <underline>community driven project.</underline> Since mainnet launch, our focus has been on how to continue bolstering Iron Fish&apos;s decentralization and resilience.",
+      "Iron Fish has always been a <underline>community driven project.</underline> Since mainnet launch, our focus has been on how to continue bolstering Iron Fish's decentralization and resilience.",
   },
 });
 
