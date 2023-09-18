@@ -1,4 +1,5 @@
 export const ECOSYSTEM_TYPES = [
+  "Apps",
   "Tools",
   "Exchanges",
   "Wallets",
@@ -14,6 +15,13 @@ export const ECOSYSTEM: Array<{
   image: string;
   highlight?: string;
 }> = [
+  {
+    type: "Apps",
+    name: "Orescriptions",
+    link: "https://www.orescriptions.com",
+    image: "/images/ecosystem/oreoscan.png",
+    highlight: "/learn/blog/2023-08-22-orya",
+  },
   {
     type: "Tools",
     name: "Oreoscan",
