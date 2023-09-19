@@ -1,0 +1,33 @@
+---
+author: iflabs
+title: Introducing the Iron Fish Wallet Server
+description: 
+image: /images/blog/introducing-wallet-server/hero.png
+tags: [ironfish]
+---
+
+Today we're excited to announce the initial release of the Iron Fish Wallet Server. This project aims to enable the building and running of a fully private light client without the need to run a local Iron Fish node. In this blog post, we'll provide an overview of the Wallet Server, its key features, and talk about how you can help us improve this project.
+
+## TL;DR:
+
+- The Iron Fish Wallet Server is a gRPC server that allows light clients to interact with the Iron Fish network without having to run a full node.
+- The Wallet Server is open source and [available on GitHub](https://github.com/iron-fish/wallet-server).
+- If you're interested in building a light client, talk to us over on Discord on the [#wallet-server](https://discord.com/channels/771503434028941353/1153438621534277785) channel!
+
+## Why do we need a Wallet Server?
+
+Iron Fish is a privacy-first cryptocurrency that uses zero-knowledge proofs to provide fully private transactions. This means that the Iron Fish network does not store any information about the sender, receiver, or amount of a transaction. This is great for privacy, but it also means that you need a full node to interact with the network. This is a problem for those who want to use Iron Fish, but don't have the resources to run a full node—you probably don't want to run a full node on your phone, for instance.
+
+The Wallet Server solves this problem by letting light clients interact with an Iron Fish node without having to run a full node themselves. The Wallet Server is beneficial for both Iron Fish nodes, and light clients. For nodes, it reduces the number of requests they have to handle, and for light clients, it sends them only the information they need to interact with the network.
+
+## How does the Wallet Server work?
+
+The Wallet Server is a gRPC server that talks to one or more Iron Fish nodes. It gets blocks from the Iron Fish nodes, caches them, and provides endpoints to light clients so that they can retrieve the cached blocks.
+
+Light clients can request the latest block, they can request a specific block by hash or sequence, or they can request a range of blocks. The Wallet Server also provides an endpoint for light clients to submit transactions to the network.
+
+## Get involved
+
+The Wallet Server project is open source and [available on GitHub](https://github.com/iron-fish/wallet-server). The repository contains the Wallet Server code, as well as an example client that demonstrates how to use the Wallet Server. The example client is not intended for production use, but it can be used as a reference when building your own client.
+
+This project is still in its early stages, and we're looking for feedback from the community. If you're interested in building a light client, talk to us over on Discord on the [#wallet-server](https://discord.com/channels/771503434028941353/1153438621534277785) channel!
