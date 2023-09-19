@@ -16,7 +16,7 @@ Today we're excited to announce the initial release of the Iron Fish Wallet Serv
 
 ## Why do we need a Wallet Server?
 
-Iron Fish is a privacy-first cryptocurrency that uses zero-knowledge proofs to provide fully private transactions. This means that the Iron Fish network does not store any information about the sender, receiver, or amount of a transaction. This is great for privacy, but it also means that you need a full node to interact with the network. This is a problem for those who want to use Iron Fish, but don't have the resources to run a full node—you probably don't want to run a full node on your phone, for instance.
+Iron Fish is a privacy-first cryptocurrency that uses zero-knowledge proofs to provide fully private transactions. This means that the Iron Fish network does not store any information about the sender, receiver, or amount of a transaction. This is great for privacy, but it also means that you need a full node to interact with the network. This presents a problem for those who want to use Iron Fish from a mobile device, for instance.
 
 The Wallet Server solves this problem by letting light clients interact with an Iron Fish node without having to run a full node themselves. The Wallet Server is beneficial for both Iron Fish nodes, and light clients. For nodes, it reduces the number of requests they have to handle, and for light clients, it sends them only the information they need to interact with the network.
 
@@ -24,7 +24,7 @@ The Wallet Server solves this problem by letting light clients interact with an 
 
 The Wallet Server is a gRPC server that talks to one or more Iron Fish nodes. It gets blocks from the Iron Fish nodes, caches them, and provides endpoints to light clients so that they can retrieve the cached blocks.
 
-Light clients can request the latest block, they can request a specific block by hash or sequence, or they can request a range of blocks. The Wallet Server also provides an endpoint for light clients to submit transactions to the network.
+Light clients can request the latest block, a specific block by hash or sequence, or a range of blocks. The Wallet Server also provides an endpoint for light clients to submit transactions to the network.
 
 ## Get involved
 
