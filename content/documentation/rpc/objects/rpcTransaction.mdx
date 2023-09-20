@@ -1,0 +1,21 @@
+---
+title: Rpc Transaction
+description: RPC Transaction | Iron Fish Documentation
+---
+```typescript
+export type RpcTransaction = {
+  hash: string
+  size: number
+  fee: number
+  expiration: number
+  signature: string
+  notes: RpcEncryptedNote[]
+  spends: RpcSpend[]
+  mints: RpcMint[]
+  burns: RpcBurn[]
+  serialized?: string
+}
+```
+
+Endpoints: 
+- [chain/broadcastTransaction](/developers/documentation/rpc/chain/broadcast_transaction)

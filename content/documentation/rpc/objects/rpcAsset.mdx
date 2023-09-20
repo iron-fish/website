@@ -1,0 +1,24 @@
+---
+title: Rpc Asset
+description: RPC Asset | Iron Fish Documentation
+---
+```typescript
+export type RpcAsset = {
+  id: string
+  name: string
+  nonce: number
+  owner: string
+  creator: string
+  metadata: string
+  createdTransactionHash: string
+  verification: AssetVerification
+  supply?: string
+  /**
+   * @deprecated query for the transaction to find it's status
+   */
+  status: string
+}
+```
+
+Endpoints: 
+- [chain/broadcastTransaction](/developers/documentation/rpc/chain/broadcast_transaction)

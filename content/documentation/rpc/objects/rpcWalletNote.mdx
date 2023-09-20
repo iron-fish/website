@@ -1,0 +1,33 @@
+---
+title: Rpc Wallet Note
+description: Rpc Wallet Note | Iron Fish Documentation
+---
+```typescript
+export type RpcWalletNote = {
+  assetId: string
+  value: string
+  memo: string
+  sender: string
+  owner: string
+  noteHash: string
+  transactionHash: string
+  spent: boolean
+  index: number | null
+  nullifier: string | null
+  /**
+   * @deprecated Please use `asset.name` instead
+   */
+  assetName: string
+  /**
+   * @deprecated Please use `owner` address instead
+   */
+  isOwner: boolean
+  /**
+   * @deprecated Please use `noteHash` instead
+   */
+  hash: string
+}
+```
+
+Endpoints: 
+- [chain/broadcastTransaction](/developers/documentation/rpc/chain/broadcast_transaction)

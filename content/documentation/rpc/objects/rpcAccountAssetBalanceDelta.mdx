@@ -1,0 +1,17 @@
+---
+title: Rpc Account Asset Balance Delta
+description: Rpc Account Asset Balance Delta | Iron Fish Documentation
+---
+```typescript
+export type RpcAccountAssetBalanceDelta = {
+  assetId: string
+  delta: string
+  /**
+   * @deprecated Please use the getAsset RPC to fetch additional asset details
+   */
+  assetName: string
+}
+```
+
+Endpoints: 
+- [chain/broadcastTransaction](/developers/documentation/rpc/chain/broadcast_transaction)

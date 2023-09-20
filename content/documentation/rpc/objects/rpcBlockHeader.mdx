@@ -1,0 +1,27 @@
+---
+title: Rpc Block Header
+description: RPC Block Header | Iron Fish Documentation
+---
+```typescript
+export type RpcBlockHeader = {
+  hash: string
+  sequence: number
+  previousBlockHash: string
+  difficulty: string
+  noteCommitment: string
+  transactionCommitment: string
+  target: string
+  randomness: string
+  timestamp: number
+  graffiti: string
+  work: string
+  noteSize: number | null
+  /**
+   * @deprecated Please use previousBlockHash instead
+   */
+  previous: string
+}
+```
+
+Endpoints: 
+- [chain/broadcastTransaction](/developers/documentation/rpc/chain/broadcast_transaction)

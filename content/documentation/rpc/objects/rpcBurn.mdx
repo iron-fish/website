@@ -1,0 +1,21 @@
+---
+title: Rpc Burn
+description: RPC Burn | Iron Fish Documentation
+---
+```typescript
+export type RpcBurn = {
+  assetId: string
+  value: string
+  /**
+   * @deprecated Please use getAsset endpoint to get this information
+   */
+  id: string
+  /**
+   * @deprecated Please use getAsset endpoint to get this information
+   */
+  assetName: string
+}
+```
+
+Endpoints: 
+- [chain/broadcastTransaction](/developers/documentation/rpc/chain/broadcast_transaction)
