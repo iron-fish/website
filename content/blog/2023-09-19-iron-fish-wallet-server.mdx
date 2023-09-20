@@ -17,7 +17,7 @@ Today we're excited to announce the initial release of the Iron Fish Wallet Serv
 
 ## Why do we need a Wallet Server?
 
-Iron Fish is a privacy-first cryptocurrency that uses zero-knowledge proofs to provide fully private transactions. This means that the Iron Fish network does not publicly display any information about the sender, receiver, or amount of a transaction. The only person who has access to this data is the person who has the private keys for the account of interest. This is very different than other blockchains like Ethereum and Bitcoin where anyone can see this data for any account. With the current architecture, it also means that you need to run a full node to privately interact with the network.
+Iron Fish is a privacy-first cryptocurrency that uses zero-knowledge proofs to provide fully private transactions. This means that the only the sender and receiver of a transaction can view the sender, receiver, amount, and asset of a transaction. This is different from other blockchains like Ethereum and Bitcoin, where transaction data is visible to the public. Iron Fish currently requires running a full node to decrypt your transactions, which is possible to do on most computers. However, full nodes have additional computing, bandwidth, and storage responsibilities, like verifying blocks, propagating transactions to the network, and storing the blockchain, that may be inefficient to run on mobile devices or in a browser extension.
 
 This makes it difficult to use Iron Fish on a mobile device, browser, or any low power machine. In order to use Iron Fish on these devices, we need to be able to build a "light client".
 
