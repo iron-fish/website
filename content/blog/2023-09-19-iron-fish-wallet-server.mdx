@@ -25,7 +25,7 @@ This is where the Wallet Server comes in. The Wallet Server acts as a proxy betw
 
 ## How does the Wallet Server work?
 
-The Wallet Server is a gRPC server that talks to one or more Iron Fish nodes. It gets blocks from the Iron Fish nodes, caches them, and provides endpoints to light clients so that they can retrieve the cached blocks.
+The Wallet Server is a gRPC server that gets blocks from one or more Iron Fish full nodes, strips out data unnecessary for sending transactions and calculating balances, caches them, and provides endpoints that allow light clients to get the cached blocks.
 
 Light clients can request the latest block, a specific block by hash or sequence, or a range of blocks. The Wallet Server also provides an endpoint for light clients to submit transactions to the network. Note that the transactions received and sent via the wallet server are still completely private.
 
