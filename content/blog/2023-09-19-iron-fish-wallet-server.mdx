@@ -27,7 +27,7 @@ This is where the Wallet Server comes in. The Wallet Server acts as a proxy betw
 
 The Wallet Server is a gRPC server that gets blocks from one or more Iron Fish full nodes, strips out data unnecessary for sending transactions and calculating balances, caches them, and provides endpoints that allow light clients to get the cached blocks.
 
-Light clients can request the latest block, a specific block by hash or sequence, or a range of blocks. The Wallet Server also provides an endpoint for light clients to submit transactions to the network. Note that the transactions received and sent via the wallet server are still completely private.
+Light clients can request the latest block, a specific block by hash or sequence, or a range of blocks. The Wallet Server also provides an endpoint for light clients to submit transactions to the network. Transactions sent and received via the Wallet Server are still private, as they're encrypted in the same way as when running a full node. The Wallet Server can see which blocks a client is requesting and the encrypted transactions that a client submits, but it cannot see the sender, receiver, amount, or asset of any transactions. Also, light clients do not transfer their account keys to the Wallet Server. 
 
 ## Get involved
 
