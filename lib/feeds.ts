@@ -3,7 +3,6 @@ import matter from "gray-matter";
 import path from "path";
 import { Author, authors } from "../content/authors/authors";
 import { Feed } from "feed";
-import { GetStaticProps } from "next";
 
 type BlogPost = {
   author: Author;
