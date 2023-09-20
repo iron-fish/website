@@ -6,19 +6,24 @@ image: /images/blog/introducing-wallet-server/heroimg.png
 tags: [ironfish]
 ---
 
-Today we're excited to announce the initial release of the Iron Fish Wallet Server. This project aims to enable the building and running of a fully private light client without the need to run a local Iron Fish node. In this blog post, we'll provide an overview of the Wallet Server, its key features, and talk about how you can help us improve this project.
+Today we're excited to announce the initial release of the Iron Fish Wallet Server. This project aims to enable the building and running of a fully private client without the need to run a local Iron Fish node. In this blog post, we'll provide an overview of the Wallet Server, its key features, and talk about how you can help us improve this project.
 
 ## TL;DR:
 
 - The Iron Fish Wallet Server is a gRPC server that allows light clients to interact with the Iron Fish network without having to run a full node.
 - The Wallet Server is open source and [available on GitHub](https://github.com/iron-fish/wallet-server).
+- We're currently hosting a rate limited version of this server at `walletserver.ironfish.network` for testing.
 - If you're interested in building a light client, talk to us over on Discord on the [#wallet-server](https://discord.com/channels/771503434028941353/1153438621534277785) channel!
 
 ## Why do we need a Wallet Server?
 
-Iron Fish is a privacy-first cryptocurrency that uses zero-knowledge proofs to provide fully private transactions. This means that the Iron Fish network does not publicly display any information about the sender, receiver, or amount of a transaction. The only person who has access to this data is the person who has the private keys for the account of interest. This is very different than other blockchains like ethereum and bitcoin where anyone can see this data for any account. With the current architecture, it also means that you need to run a full node to privately interact with the network. This makes it difficult to use Iron Fish on a mobile device, browser, or any low power machine.
+Iron Fish is a privacy-first cryptocurrency that uses zero-knowledge proofs to provide fully private transactions. This means that the Iron Fish network does not publicly display any information about the sender, receiver, or amount of a transaction. The only person who has access to this data is the person who has the private keys for the account of interest. This is very different than other blockchains like Ethereum and Bitcoin where anyone can see this data for any account. With the current architecture, it also means that you need to run a full node to privately interact with the network.
 
-The Wallet Server solves this problem by acting as a proxy between the light client and the full node. The Wallet Server is beneficial for both Iron Fish nodes, and light clients. For nodes, it reduces the number of incoming requests, and light clients will retrieve all the information necessary to construct their account information without having to run a node.
+This makes it difficult to use Iron Fish on a mobile device, browser, or any low power machine. In order to use Iron Fish on these devices, we need to be able to build a "light client".
+
+A light client is a client that does not run a full node. Instead, it relies on other nodes to provide the information it needs to construct its account information.
+
+This is where the Wallet Server comes in. The Wallet Server acts as a proxy between the light client and the full node, getting block data from the node, caching it, and providing it to light clients. The Wallet Server is beneficial to Iron Fish nodes as well, as it reduces the number of incoming requests they need to process.
 
 ## How does the Wallet Server work?
 
