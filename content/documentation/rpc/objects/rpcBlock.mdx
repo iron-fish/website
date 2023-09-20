@@ -1,13 +1,12 @@
 ---
-title: Rpc Block
+title: RPC Block
 description: RPC Block | Iron Fish Documentation
 ---
 ```typescript
 export type RpcBlock = RpcBlockHeader & {
   size: number
-  transactions: RpcTransaction[]
+  transactions: RpcTransaction
 }
 ```
-
-Endpoints: 
+Usage: 
 - [chain/broadcastTransaction](/developers/documentation/rpc/chain/broadcast_transaction)

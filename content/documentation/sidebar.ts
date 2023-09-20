@@ -37,8 +37,56 @@ export const sidebar: SidebarDefinition = [
         label: "RPC Response Objects",
         items: [
           {
+            id: "rpc/objects/rpcAccountAssetBalanceDelta",
+            label: "Rpc Account Asset Balance Delta",
+          },
+          {
+            id: "rpc/objects/rpcAccountImport",
+            label: "RPC Account Import",
+          },
+          {
+            id: "rpc/objects/rpcAsset",
+            label: "RPC Asset",
+          },
+          {
+            id: "rpc/objects/rpcBlock",
+            label: "RPC Block",
+          },
+          {
+            id: "rpc/objects/rpcBlockHeader",
+            label: "RPC Block Header",
+          },
+          {
+            id: "rpc/objects/rpcBurn",
+            label: "RPC Burn",
+          },
+          {
+            id: "rpc/objects/rpcEncryptedNote",
+            label: "RPC Encrypted Note",
+          },
+          {
+            id: "rpc/objects/rpcMint",
+            label: "RPC Mint",
+          },
+          {
+            id: "rpc/objects/rpcPeerResponse",
+            label: "RPC Peer Response",
+          },
+          {
+            id: "rpc/objects/rpcSpend",
+            label: "RPC Spend",
+          },
+          {
             id: "rpc/objects/rpcTransaction",
             label: "RPC Transaction",
+          },
+          {
+            id: "rpc/objects/rpcWalletNote",
+            label: "RPC Wallet Note",
+          },
+          {
+            id: "rpc/objects/rpcWalletTransaction",
+            label: "RPC Wallet Transaction",
           },
         ],
       },
