@@ -18,42 +18,12 @@ Gets (and optionally streams) peer data from an identity
 
 ```js
 {
-  peer: {
-    state: string
-    identity: string | null
-    version: number | null
-    head: string | null
-    sequence: number | null
-    work: string | null
-    agent: string | null
-    name: string | null
-    address: string | null
-    port: number | null
-    error: string | null
-    connections: number
-    connectionWebSocket:
-      | { type: 'DISCONNECTED' }
-      | { type: 'CONNECTING' }
-      | { type: 'REQUEST_SIGNALING' }
-      | { type: 'SIGNALING' }
-      | { type: 'WAITING_FOR_IDENTITY' }
-      | { type: 'CONNECTED'; identity: string }
-    connectionWebSocketError: string
-    connectionWebRTC:
-      | { type: 'DISCONNECTED' }
-      | { type: 'CONNECTING' }
-      | { type: 'REQUEST_SIGNALING' }
-      | { type: 'SIGNALING' }
-      | { type: 'WAITING_FOR_IDENTITY' }
-      | { type: 'CONNECTED'; identity: string }
-    connectionWebRTCError: string
-    networkId: number | null
-    genesisBlockHash: string | null
-    features: {
-      syncing: null
-    } | null
-  } | null
+  peer: RpcPeerResponse | null
 }
 ```
+
+RPC Objects: 
+- [RpcPeerResponse](/developers/documentation/rpc/objects/rpcPeerResponse)
+
 
 ### [View on Github](https://github.com/iron-fish/ironfish/blob/master/ironfish/src/rpc/routes/peer/getPeer.ts)
