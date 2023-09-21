@@ -13,6 +13,8 @@ import {
   AspectRatio,
   ThickLink,
   ArrowButton,
+  Filter,
+  useFilterOptions,
   chakra,
 } from "@/lib/ui";
 import plug from "@/assets/heroImages/ecosystem/plug.svg";
@@ -20,10 +22,6 @@ import hands from "@/assets/heroImages/ecosystem/hands.svg";
 import footGuy from "@/assets/heroImages/ecosystem/foot-guy.svg";
 import Image from "next/image";
 import { ECOSYSTEM, ECOSYSTEM_TYPES } from "@/content/ecosystem/ecosystem";
-import {
-  Filter,
-  useFilterOptions,
-} from "@/lib/ui/src/components/Filters/Filter";
 import { useRouter } from "next/router";
 import { kebabCase } from "lodash-es";
 import { useMemo } from "react";
@@ -70,7 +68,6 @@ function Cards() {
         options={options}
         selectedOption={selectedOption}
         onChange={(option) => {
-          console.log(option);
           handleFilterChange(option);
           replace(
             {

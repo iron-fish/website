@@ -12,14 +12,10 @@ import {
   HeroImageUtil,
   Text,
   LocalImage,
-  Grid,
-  GridItem,
   ShadowBox,
   AspectRatio,
   Button,
-  ThickLink,
   Flex,
-  ArrowButton,
 } from "@/lib/ui";
 import owl from "../../../assets/heroImages/blog/owl.svg";
 import rubiks from "../../../assets/heroImages/blog/rubiks.svg";
@@ -27,14 +23,10 @@ import reading from "../../../assets/heroImages/blog/reading.svg";
 import generateBlogFeeds from "../../../lib/feeds";
 import Image from "next/image";
 import { useState } from "react";
-
-type BlogItem = {
-  title: string;
-  slug: string;
-  date: string;
-  image: string | null;
-  id: number;
-};
+import {
+  FilteredBlogsList,
+  BlogItem,
+} from "@/components/FilteredBlogsList/FilteredBlogsList";
 
 type Props = {
   blogItems: BlogItem[];
@@ -46,10 +38,32 @@ const readingImage = reading as LocalImage;
 
 const BLOG_CHUNK_SIZE = 6;
 
+const filterOptions = [
+  {
+    label: "All",
+    value: "all",
+  },
+  {
+    label: "Community Spotlights",
+    value: "community",
+  },
+  {
+    label: "Ecosystem Spotlights",
+    value: "ecosystem",
+  },
+  {
+    label: "Product Highlights",
+    value: "product",
+  },
+];
+
 export default function Blog({ blogItems }: Props) {
   const [blogChunksCount, setBlogChunksCount] = useState(1);
   const blogsToShow = blogChunksCount * BLOG_CHUNK_SIZE;
   const hasMore = blogItems.length > blogsToShow;
+  const latestBlog = blogItems.at(0);
+
+  if (!latestBlog) throw new Error("No blogs found");
 
   return (
     <>
@@ -70,10 +84,10 @@ export default function Blog({ blogItems }: Props) {
       </Head>
       <Box mb="150px">
         <Hero
-          bg="blue.500"
+          bg="purple.500"
           heading="Blog"
           subheading="Diving Into Iron Fish"
-          description="Your gateway to the latest developments and happenings from across the network."
+          description="Your go-to hub for all things Iron Fish. Check out our product deep dives, ecosystem highlights, recent news, and so much more."
           images={
             <>
               <HeroImageUtil
@@ -124,29 +138,87 @@ export default function Blog({ blogItems }: Props) {
             xl: 16,
           }}
         >
-          <Text
-            textStyle="h5"
-            my={{
-              base: "50px",
-              md: "100px",
-              lg: "150px",
+          <Flex
+            direction={{
+              base: "column",
+              lg: "row",
             }}
-            textAlign="center"
-            maxW="container.md"
-            mx="auto"
+            alignItems={{
+              base: "stretch",
+              lg: "center",
+            }}
+            mt="150px"
+            mb={16}
           >
-            If you&apos;d like to work with us or co-publish a blog article,
-            feel free to reach out to us at{" "}
-            <ThickLink
-              underlineColor="blue.500"
-              as="a"
-              href="mailto:contact@ironfish.network"
-              cursor="pointer"
+            <Box
+              mb={{
+                base: 8,
+                lg: 0,
+              }}
+              w={{
+                base: "100%",
+                lg: "50%",
+              }}
             >
-              contact@ironfish.network
-            </ThickLink>
-            .
-          </Text>
+              <ShadowBox shadowColor="transparent">
+                <AspectRatio ratio={465 / 309} borderBottom="1.5px solid black">
+                  {latestBlog.image && (
+                    <Image alt="" src={latestBlog.image} fill />
+                  )}
+                </AspectRatio>
+              </ShadowBox>
+            </Box>
+            <Flex
+              direction="column"
+              alignItems="flex-start"
+              justifyContent="center"
+              px={16}
+              w={{
+                base: "100%",
+                lg: "50%",
+              }}
+            >
+              <Text textStyle="h4" textTransform="uppercase" mb={4}>
+                Featured Blog
+              </Text>
+              <Text as="h3" textStyle="h3" marginBottom={4} minHeight="2.5em">
+                {latestBlog.title}
+              </Text>
+              <Button
+                as={Link}
+                href={`/learn/blog/${latestBlog.slug}`}
+                size="sm"
+                bg="white"
+                _hover={{
+                  bg: "gray.200",
+                }}
+              >
+                Read Now
+              </Button>
+            </Flex>
+          </Flex>
+          <FilteredBlogsList blogItems={blogItems} />
+          {/* <Filter
+            options={filterOptions}
+            selectedOption={filterOptions[0]}
+            onChange={(option) => {
+              console.log(option);
+              // handleFilterChange(option);
+              // replace(
+              //   {
+              //     query: {
+              //       ...query,
+              //       category: option.value,
+              //     },
+              //   },
+              //   undefined,
+              //   {
+              //     shallow: true,
+              //   }
+              // );
+            }}
+            mb={16}
+          />
           <Grid
             templateColumns={{
               base: "100%",
@@ -210,7 +282,7 @@ export default function Blog({ blogItems }: Props) {
                 Read Older Articles
               </ArrowButton>
             </Flex>
-          )}
+          )} */}
         </Container>
       </Box>
     </>

@@ -11,6 +11,7 @@ export * from "./src/components/Hero/Hero";
 export * from "./src/components/ThickLink/ThickLink";
 export * from "./src/components/FAQItem/FAQItem";
 export * from "./src/components/BlockQuote/BlockQuote";
+export * from "./src/components/Filter/Filter";
 
 // SVGs
 export * from "./src/icons";
