@@ -9,14 +9,15 @@ Creates a transaction, posts the transaction, and submits it to the wallet, memp
 
 ```js
 {
-  account: string
+  account?: string
   outputs: {
     publicAddress: string
     amount: string
     memo: string
     assetId?: string
   }[]
-  fee: string
+  fee?: string
+  feeRate?: string
   expiration?: number | null
   expirationDelta?: number | null
   confirmations?: number | null

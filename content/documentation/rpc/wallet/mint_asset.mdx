@@ -9,8 +9,9 @@ Creates a transaction minting a custom asset from a given account, posts the tra
 
 ```js
 {
-  account: string
-  fee: string
+  account?: string
+  fee?: string
+  feeRate?: string
   value: string
   assetId?: string
   expiration?: number
@@ -24,12 +25,19 @@ Creates a transaction minting a custom asset from a given account, posts the tra
 #### Response
 
 ```js
-{
-  assetId: string;
-  hash: string;
-  name: string;
-  value: string;
+RpcMint & {
+  asset: RpcAsset
+  transaction: RpcWalletTransaction
+  /**
+   * @deprecated Please use `transaction.hash` instead
+   */
+  hash: string
 }
 ```
+
+RPC Objects: 
+- [RpcMint](/developers/documentation/rpc/objects/rpcMint)
+- [RpcAsset](/developers/documentation/rpc/objects/rpcAsset)
+- [RpcWalletTransaction](/developers/documentation/rpc/objects/rpcWalletTransaction)
 
 ### [View on Github](https://github.com/iron-fish/ironfish/blob/master/ironfish/src/rpc/routes/wallet/mintAsset.ts)

@@ -19,13 +19,8 @@ Gets the wallet's `$IRON` balance, as well as balances of custom assets of the g
 ```js
 {
   account: string
-  balances: Array<{
+  balances: {
     assetId: string
-    assetName: string
-    assetCreator: string
-    assetVerification: {
-      status: 'verified' | 'unverified' | 'unknown'
-    }
     confirmed: string
     unconfirmed: string
     unconfirmedCount: number
@@ -34,7 +29,23 @@ Gets the wallet's `$IRON` balance, as well as balances of custom assets of the g
     available: string
     blockHash: string | null
     sequence: number | null
-  }>
+    /**
+     * @deprecated Please use getAsset endpoint to get this information
+     */
+    assetName: string
+    /**
+     * @deprecated Please use getAsset endpoint to get this information
+     */
+    assetCreator: string
+    /**
+     * @deprecated Please use getAsset endpoint to get this information
+     * */
+    assetOwner: string
+    /**
+     * @deprecated Please use getAsset endpoint to get this information
+     * */
+    assetVerification: AssetVerification
+  }[]
 }
 ```
 
