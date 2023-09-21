@@ -9,9 +9,10 @@ Creates a transaction burning a custom asset from a given account, posts the tra
 
 ```js
 {
-  account: string
+  account?: string
   assetId: string
-  fee: string
+  fee?: string
+  feeRate?: string
   value: string
   expiration?: number
   expirationDelta?: number
@@ -22,12 +23,24 @@ Creates a transaction burning a custom asset from a given account, posts the tra
 #### Response
 
 ```js
-{
-  assetId: string;
-  hash: string;
-  name: string;
-  value: string;
+RpcBurn & {
+  asset: RpcAsset
+  transaction: RpcWalletTransaction
+  /**
+   * @deprecated Please use `transaction.hash` instead
+   */
+  hash: string
+  /**
+   * @deprecated Please use `asset.name` instead
+   */
+  name: string
 }
 ```
+
+RPC Objects: 
+- [RpcBurn](/developers/documentation/rpc/objects/rpcBurn)
+- [RpcAsset](/developers/documentation/rpc/objects/rpcAsset)
+- [RpcWalletTransaction](/developers/documentation/rpc/objects/rpcWalletTransaction)
+
 
 ### [View on Github](https://github.com/iron-fish/ironfish/blob/master/ironfish/src/rpc/routes/wallet/burnAsset.ts)

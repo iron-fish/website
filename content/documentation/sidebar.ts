@@ -296,7 +296,11 @@ export const sidebar: SidebarDefinition = [
           },
           {
             id: "rpc/wallet/create",
-            label: "create",
+            label: "create [DEPRECATED]",
+          },
+          {
+            id: "rpc/wallet/createAccount",
+            label: "createAccount",
           },
           {
             id: "rpc/wallet/create_transaction",
