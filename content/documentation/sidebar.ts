@@ -380,11 +380,19 @@ export const sidebar: SidebarDefinition = [
           },
           {
             id: "rpc/wallet/remove",
-            label: "remove",
+            label: "remove [DEPRECATED]",
+          },
+          {
+            id: "rpc/wallet/removeAccount",
+            label: "removeAccount",
           },
           {
             id: "rpc/wallet/rename",
-            label: "rename",
+            label: "rename [DEPRECATED]",
+          },
+          {
+            id: "rpc/wallet/renameAccount",
+            label: "renameAccount",
           },
           {
             id: "rpc/wallet/rescan_account",
