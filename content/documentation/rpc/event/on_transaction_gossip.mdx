@@ -16,6 +16,7 @@ undefined
 ```js
 {
   serializedTransaction: string
+  valid: boolean
 }
 ```
 
@@ -28,6 +29,7 @@ curl -X POST -N http://localhost:8021/event/onTransactionGossip
 {
   "data": {
     "serializedTransaction": "01010000...e931fd04"
+    "valid": true
   }
 }
 ```
