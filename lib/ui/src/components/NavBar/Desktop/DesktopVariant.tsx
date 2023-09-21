@@ -1,8 +1,7 @@
-import { Box } from "@chakra-ui/react";
 import { Category } from "./Category";
 import { IoChevronDownSharp } from "react-icons/io5";
 import { kebabCase } from "lodash-es";
-import { Button, HStack, Text, Flex, FancyArrowRight } from "../../../../index";
+import { Box, Button, HStack, Text, Flex, FancyArrowRight } from "@/lib/ui";
 import { NavItems } from "../types";
 import { useCallback, useState } from "react";
 import Link from "next/link";
@@ -28,16 +27,24 @@ export function DesktopVariant({ content }: { content: NavItems }) {
       <HStack spacing={0} as="ul" alignItems="stretch">
         {content.map((item, i) => {
           if ("href" in item) {
+            const isInternal = item.href.startsWith("/");
             return (
               <Flex
                 key={i}
                 px={4}
                 cursor="pointer"
                 alignItems="center"
-                as="a"
-                href={item.href as string}
-                target="_blank"
-                rel="noreferrer"
+                // Have to do the conditional props this way to make TS happy
+                {...(isInternal && {
+                  as: Link,
+                  href: item.href,
+                })}
+                {...(!isInternal && {
+                  as: "a" as any,
+                  href: item.href,
+                  target: "_blank",
+                  rel: "noreferrer",
+                })}
               >
                 <Text fontWeight="medium" mr={2}>
                   {item.label}
