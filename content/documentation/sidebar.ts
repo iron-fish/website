@@ -106,6 +106,10 @@ export const sidebar: SidebarDefinition = [
             label: "estimateFeeRates",
           },
           {
+            id: "rpc/chain/export_chain_stream",
+            label: "exportChainStream",
+          },
+          {
             id: "rpc/chain/follow_chain_stream",
             label: "followChainStream",
           },
