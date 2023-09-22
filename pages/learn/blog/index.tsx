@@ -148,7 +148,11 @@ export default function Blog({ blogItems, ...rest }: Props) {
               direction="column"
               alignItems="flex-start"
               justifyContent="center"
-              px={16}
+              px={{
+                base: 0,
+                sm: 8,
+                lg: 16,
+              }}
               w={{
                 base: "100%",
                 lg: "50%",
