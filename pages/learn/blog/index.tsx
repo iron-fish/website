@@ -36,10 +36,12 @@ const rainbowImage = rainbow as LocalImage;
 const rubiksImage = rubiks as LocalImage;
 const plusImage = plus as LocalImage;
 
-export default function Blog({ blogItems, ...rest }: Props) {
-  const latestBlog = blogItems.at(0);
+export default function Blog({ blogItems }: Props) {
+  const latestBlog = blogItems.find((blog) => {
+    return blog.href.startsWith("/");
+  });
 
-  if (!latestBlog) throw new Error("No blogs found");
+  if (!latestBlog) throw new Error("No internal blogs found");
 
   return (
     <>
