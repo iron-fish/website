@@ -38,55 +38,55 @@ export const sidebar: SidebarDefinition = [
         items: [
           {
             id: "rpc/objects/rpcAccountAssetBalanceDelta",
-            label: "Rpc Account Asset Balance Delta",
+            label: "RpcAccountAssetBalanceDelta",
           },
           {
             id: "rpc/objects/rpcAccountImport",
-            label: "RPC Account Import",
+            label: "RpcAccountImport",
           },
           {
             id: "rpc/objects/rpcAsset",
-            label: "RPC Asset",
+            label: "RpcAsset",
           },
           {
             id: "rpc/objects/rpcBlock",
-            label: "RPC Block",
+            label: "RpcBlock",
           },
           {
             id: "rpc/objects/rpcBlockHeader",
-            label: "RPC Block Header",
+            label: "RpcBlockHeader",
           },
           {
             id: "rpc/objects/rpcBurn",
-            label: "RPC Burn",
+            label: "RpcBurn",
           },
           {
             id: "rpc/objects/rpcEncryptedNote",
-            label: "RPC Encrypted Note",
+            label: "RpcEncryptedNote",
           },
           {
             id: "rpc/objects/rpcMint",
-            label: "RPC Mint",
+            label: "RpcMint",
           },
           {
             id: "rpc/objects/rpcPeerResponse",
-            label: "RPC Peer Response",
+            label: "RpcPeerResponse",
           },
           {
             id: "rpc/objects/rpcSpend",
-            label: "RPC Spend",
+            label: "RpcSpend",
           },
           {
             id: "rpc/objects/rpcTransaction",
-            label: "RPC Transaction",
+            label: "RpcTransaction",
           },
           {
             id: "rpc/objects/rpcWalletNote",
-            label: "RPC Wallet Note",
+            label: "RpcWalletNote",
           },
           {
             id: "rpc/objects/rpcWalletTransaction",
-            label: "RPC Wallet Transaction",
+            label: "RpcWalletTransaction",
           },
         ],
       },
