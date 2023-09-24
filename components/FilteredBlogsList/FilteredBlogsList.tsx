@@ -15,6 +15,7 @@ import {
 } from "@/lib/ui";
 import Image from "next/image";
 import { useRouter } from "next/router";
+import { BlogListing } from "../BlogListing/BlogListing";
 
 const BLOG_CHUNK_SIZE = 6;
 
@@ -114,43 +115,12 @@ export function FilteredBlogsList({ blogItems }: Props) {
           const isInternal = item.href.startsWith("/");
           return (
             <GridItem key={item.href} display="flex">
-              <ShadowBox
-                shadowColor="white"
-                borderWidth="2px"
-                borderRadius="4px"
-              >
-                <AspectRatio ratio={465 / 309} borderBottom="1.5px solid black">
-                  <Image alt="" src={imageSrc} fill />
-                </AspectRatio>
-                <Box p={8} pb={16}>
-                  <Text textStyle="sm" mb={4}>
-                    {item.date}
-                  </Text>
-                  <Text
-                    as="h3"
-                    textStyle="h4"
-                    marginBottom={4}
-                    minHeight="2.5em"
-                  >
-                    {item.title}
-                  </Text>
-                  <Button
-                    as={isInternal ? Link : "a"}
-                    href={item.href}
-                    size="sm"
-                    bg="white"
-                    _hover={{
-                      bg: "gray.200",
-                    }}
-                    {...(!isInternal && {
-                      target: "_blank",
-                      rel: "noreferrer",
-                    })}
-                  >
-                    Read Now
-                  </Button>
-                </Box>
-              </ShadowBox>
+              <BlogListing
+                img={imageSrc}
+                href={item.href}
+                date={item.date}
+                title={item.title}
+              />
             </GridItem>
           );
         })}

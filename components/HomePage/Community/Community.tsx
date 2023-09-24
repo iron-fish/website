@@ -1,5 +1,4 @@
 import { Box, Text, Container, ArrowButton, Flex } from "@/lib/ui";
-import Link from "next/link";
 import { defineMessages, useIntl } from "react-intl";
 import { CONSTANTS } from "../../../shared/constants";
 
@@ -67,9 +66,6 @@ export function Community() {
           colorScheme="white"
         >
           Join Our Community
-        </ArrowButton>
-        <ArrowButton as={Link} href="/learn/blog" size="sm" colorScheme="white">
-          Read Our Blog
         </ArrowButton>
       </Flex>
     </Box>
