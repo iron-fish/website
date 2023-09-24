@@ -78,10 +78,11 @@ export function FromTheBlog({ blogItems }: Props) {
               <GridItem
                 key={blogItem.href}
                 display={{
-                  base: position === 0 ? "block" : "none",
-                  md: position !== 2 ? "block" : "none",
-                  lg: "block",
+                  base: position === 0 ? "flex" : "none",
+                  md: position !== 2 ? "flex" : "none",
+                  lg: "flex",
                 }}
+                alignItems="stretch"
               >
                 <BlogListing
                   href={blogItem.href}
