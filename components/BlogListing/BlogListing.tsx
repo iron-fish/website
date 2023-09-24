@@ -7,9 +7,10 @@ type Props = {
   img: string;
   date: string;
   title: string;
+  headingLevel: "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
 };
 
-export function BlogListing({ href, img, date, title }: Props) {
+export function BlogListing({ href, img, date, title, headingLevel }: Props) {
   const isInternal = href.startsWith("/");
   return (
     <ShadowBox shadowColor="white" borderWidth="2px" borderRadius="4px">
@@ -20,7 +21,12 @@ export function BlogListing({ href, img, date, title }: Props) {
         <Text textStyle="sm" mb={4}>
           {date}
         </Text>
-        <Text as="h3" textStyle="h4" marginBottom={4} minHeight="2.5em">
+        <Text
+          as={headingLevel}
+          textStyle="h4"
+          marginBottom={4}
+          minHeight="2.5em"
+        >
           {title}
         </Text>
         <Button

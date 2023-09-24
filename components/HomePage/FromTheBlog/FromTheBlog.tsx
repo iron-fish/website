@@ -88,6 +88,7 @@ export function FromTheBlog({ blogItems }: Props) {
                   img={blogItem.image ?? ""}
                   date={blogItem.date}
                   title={blogItem.title}
+                  headingLevel="h3"
                 />
               </GridItem>
             );

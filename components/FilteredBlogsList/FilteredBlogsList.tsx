@@ -1,19 +1,12 @@
 import { useMemo, useState } from "react";
-import Link from "next/link";
 import {
-  Box,
-  Text,
   Grid,
   GridItem,
-  ShadowBox,
-  AspectRatio,
-  Button,
   Flex,
   ArrowButton,
   Filter,
   useFilterOptions,
 } from "@/lib/ui";
-import Image from "next/image";
 import { useRouter } from "next/router";
 import { BlogListing } from "../BlogListing/BlogListing";
 
@@ -120,6 +113,7 @@ export function FilteredBlogsList({ blogItems }: Props) {
                 href={item.href}
                 date={item.date}
                 title={item.title}
+                headingLevel="h2"
               />
             </GridItem>
           );
