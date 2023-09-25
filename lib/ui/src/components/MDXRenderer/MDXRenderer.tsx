@@ -29,7 +29,6 @@ function Warning(props: ComponentProps<typeof Box>) {
   return (
     <Box
       textAlign={"center"}
-      as="aside"
       bg="#FEF8C3"
       borderRadius="md"
       color={"#7C7322"}
