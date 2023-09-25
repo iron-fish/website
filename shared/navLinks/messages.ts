@@ -90,18 +90,6 @@ export const messages = defineMessages({
     id: "nav.blogTitle",
     defaultMessage: "Blog",
   },
-  blogDescription: {
-    id: "nav.blogDescription",
-    defaultMessage: "News and information from across the Iron Fish network.",
-  },
-  mediaTitle: {
-    id: "nav.mediaTitle",
-    defaultMessage: "Media",
-  },
-  mediaDescription: {
-    id: "nav.mediaDescription",
-    defaultMessage: `Where we've made our mark in the media.`,
-  },
   aboutUsTitle: {
     id: "nav.aboutUsTitle",
     defaultMessage: "About Us",
@@ -109,14 +97,6 @@ export const messages = defineMessages({
   aboutUsDescription: {
     id: "nav.aboutUsDescription",
     defaultMessage: "Learn about the people behind Iron Fish.",
-  },
-  careersTitle: {
-    id: "nav.careersTitle",
-    defaultMessage: "Careers",
-  },
-  careersDescription: {
-    id: "nav.careersDescription",
-    defaultMessage: "Join our team and help build the future of crypto.",
   },
   mediaKitTitle: {
     id: "nav.mediaKitTitle",
@@ -141,14 +121,6 @@ export const messages = defineMessages({
   documentationDescription: {
     id: "nav.documentationDescription",
     defaultMessage: "Reference materials for builders.",
-  },
-  communityHighlightsTitle: {
-    id: "nav.communityHighlightsTitle",
-    defaultMessage: "Highlights",
-  },
-  communityHighlightsDescription: {
-    id: "nav.communityHighlightsDescription",
-    defaultMessage: "Keep up with the latest from the Iron Fish community.",
   },
   communityTitle: {
     id: "nav.communityTitle",
