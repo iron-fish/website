@@ -34,14 +34,13 @@ export function DesktopVariant({ content }: { content: NavItems }) {
                 px={4}
                 cursor="pointer"
                 alignItems="center"
+                href={item.href}
                 // Have to do the conditional props this way to make TS happy
                 {...(isInternal && {
                   as: Link,
-                  href: item.href,
                 })}
                 {...(!isInternal && {
-                  as: "a" as any,
-                  href: item.href,
+                  as: "a",
                   target: "_blank",
                   rel: "noreferrer",
                 })}
