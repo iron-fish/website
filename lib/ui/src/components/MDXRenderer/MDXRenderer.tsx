@@ -1,29 +1,42 @@
-import { MDXRemote, MDXRemoteProps } from "next-mdx-remote";
 import {
+  Box,
+  Divider,
   Heading,
+  Image,
+  Link,
+  ListItem,
+  OrderedList,
   Text,
   UnorderedList,
-  OrderedList,
-  ListItem,
-  Link,
-  Box,
   chakra,
-  Divider,
-  Image,
 } from "@chakra-ui/react";
-import NextLink from "next/link";
-import Head from "next/head";
 import { MDXProvider as BaseMDXProvider } from "@mdx-js/react";
 import { kebabCase } from "lodash-es";
-import { Terminal } from "../../components/Terminal/Terminal";
+import { MDXRemote, MDXRemoteProps } from "next-mdx-remote";
+import Head from "next/head";
+import NextLink from "next/link";
+import { ComponentProps, ReactNode, useCallback, useState } from "react";
 import { FAQItem } from "../../components/FAQItem/FAQItem";
-import { ReactNode, ComponentProps, useState, useCallback } from "react";
+import { Terminal } from "../../components/Terminal/Terminal";
 import { useSmoothScrollToHash } from "../../hooks/useSmoothScrollToHash";
-import { createBreakpointArray } from "../../theme/components/breakpoints";
 import { BlockQuote } from "../BlockQuote/BlockQuote";
 
 export function headingToAnchorId(headingEl: HTMLHeadingElement) {
   return kebabCase(headingEl.innerText.toLowerCase());
+}
+
+function Warning(props: ComponentProps<typeof Box>) {
+  return (
+    <Box
+      textAlign={"center"}
+      bg="#FEF8C3"
+      borderRadius="md"
+      color={"#7C7322"}
+      p={4}
+      mb={8}
+      {...props}
+    />
+  );
 }
 
 function HeadingWithAnchor(props: ComponentProps<typeof Heading>) {
@@ -132,6 +145,7 @@ const rendererComponents: ComponentProps<typeof MDXRemote>["components"] = {
       <Box as="table" {...props} {...DEFAULT_TEXT_PROPS} mb={8} />
     </Box>
   ),
+  Warning: (props) => <Warning>{props.children}</Warning>,
   blockquote: (props) => {
     return (
       <Box

@@ -12,44 +12,40 @@ import {
   HeroImageUtil,
   Text,
   LocalImage,
-  Grid,
-  GridItem,
   ShadowBox,
   AspectRatio,
   Button,
-  ThickLink,
   Flex,
-  ArrowButton,
 } from "@/lib/ui";
-import owl from "../../../assets/heroImages/blog/owl.svg";
-import rubiks from "../../../assets/heroImages/blog/rubiks.svg";
-import reading from "../../../assets/heroImages/blog/reading.svg";
-import generateBlogFeeds from "../../../lib/feeds";
 import Image from "next/image";
-import { useState } from "react";
-
-type BlogItem = {
-  title: string;
-  slug: string;
-  date: string;
-  image: string | null;
-  id: number;
-};
+import {
+  FilteredBlogsList,
+  BlogItem,
+} from "@/components/FilteredBlogsList/FilteredBlogsList";
+import rainbow from "../../../assets/heroImages/blog/rainbow.svg";
+import rubiks from "../../../assets/heroImages/blog/rubiks.svg";
+import plus from "../../../assets/heroImages/blog/plus.svg";
+import generateBlogFeeds from "../../../lib/feeds";
+import { MEDIA_ITEMS } from "@/content/media/media";
 
 type Props = {
   blogItems: BlogItem[];
 };
 
-const owlImage = owl as LocalImage;
+const rainbowImage = rainbow as LocalImage;
 const rubiksImage = rubiks as LocalImage;
-const readingImage = reading as LocalImage;
-
-const BLOG_CHUNK_SIZE = 6;
+const plusImage = plus as LocalImage;
 
 export default function Blog({ blogItems }: Props) {
-  const [blogChunksCount, setBlogChunksCount] = useState(1);
-  const blogsToShow = blogChunksCount * BLOG_CHUNK_SIZE;
-  const hasMore = blogItems.length > blogsToShow;
+  const latestBlog = blogItems.find((blog) => {
+    return blog.href.startsWith("/");
+  });
+
+  const restBlogs = blogItems.filter((blog) => {
+    return blog.href !== latestBlog?.href;
+  });
+
+  if (!latestBlog || !restBlogs) throw new Error("Unable to find blogs");
 
   return (
     <>
@@ -70,20 +66,20 @@ export default function Blog({ blogItems }: Props) {
       </Head>
       <Box mb="150px">
         <Hero
-          bg="blue.500"
+          bg="purple.500"
           heading="Blog"
           subheading="Diving Into Iron Fish"
-          description="Your gateway to the latest developments and happenings from across the network."
+          description="Your go-to hub for all things Iron Fish. Check out our product deep dives, ecosystem highlights, recent news, and so much more."
           images={
             <>
               <HeroImageUtil
-                image={owlImage}
+                image={rainbowImage}
                 top={{
-                  md: "-150px",
-                  xl: "-30px",
+                  md: "-20px",
+                  xl: "30px",
                 }}
                 left={{
-                  md: "-120px",
+                  md: "20px",
                   xl: "30px",
                   "2xl": `calc(50vw - 700px)`,
                 }}
@@ -92,7 +88,7 @@ export default function Blog({ blogItems }: Props) {
                 image={rubiksImage}
                 bottom={{
                   md: "-80px",
-                  xl: "15px",
+                  xl: "30px",
                 }}
                 left={{
                   md: "-50px",
@@ -101,10 +97,10 @@ export default function Blog({ blogItems }: Props) {
                 }}
               />
               <HeroImageUtil
-                image={readingImage}
+                image={plusImage}
                 top={{
-                  md: "20px",
-                  xl: "85px",
+                  md: "10px",
+                  xl: "150px",
                 }}
                 right={{
                   md: "-120px",
@@ -124,93 +120,75 @@ export default function Blog({ blogItems }: Props) {
             xl: 16,
           }}
         >
-          <Text
-            textStyle="h5"
-            my={{
-              base: "50px",
-              md: "100px",
-              lg: "150px",
+          <Flex
+            direction={{
+              base: "column",
+              lg: "row",
             }}
-            textAlign="center"
-            maxW="container.md"
-            mx="auto"
+            alignItems={{
+              base: "stretch",
+              lg: "center",
+            }}
+            mt="150px"
+            mb={16}
           >
-            If you&apos;d like to work with us or co-publish a blog article,
-            feel free to reach out to us at{" "}
-            <ThickLink
-              underlineColor="blue.500"
-              as="a"
-              href="mailto:contact@ironfish.network"
-              cursor="pointer"
+            <Box
+              mb={{
+                base: 8,
+                lg: 0,
+              }}
+              w={{
+                base: "100%",
+                lg: "50%",
+              }}
             >
-              contact@ironfish.network
-            </ThickLink>
-            .
-          </Text>
-          <Grid
-            templateColumns={{
-              base: "100%",
-              lg: "repeat(2, 1fr)",
-              xl: "repeat(3, 1fr)",
-            }}
-            gap={6}
-          >
-            {blogItems.slice(0, blogsToShow).map((item) => {
-              const imageSrc =
-                item.image ?? "/images/blog/thumbnail-default.png";
-              return (
-                <GridItem key={item.id} display="flex">
-                  <ShadowBox
-                    shadowColor="white"
-                    borderWidth="2px"
-                    borderRadius="4px"
-                  >
-                    <AspectRatio
-                      ratio={465 / 309}
-                      borderBottom="1.5px solid black"
-                    >
-                      <Image alt="" src={imageSrc} fill />
-                    </AspectRatio>
-                    <Box p={8} pb={16}>
-                      <Text textStyle="sm" mb={4}>
-                        {item.date}
-                      </Text>
-                      <Text
-                        as="h3"
-                        textStyle="h4"
-                        marginBottom={4}
-                        minHeight="2.5em"
-                      >
-                        {item.title}
-                      </Text>
-                      <Button
-                        as={Link}
-                        href={`/learn/blog/${item.slug}`}
-                        size="sm"
-                        bg="white"
-                        _hover={{
-                          bg: "gray.200",
-                        }}
-                      >
-                        Read Now
-                      </Button>
-                    </Box>
-                  </ShadowBox>
-                </GridItem>
-              );
-            })}
-          </Grid>
-          {hasMore && (
-            <Flex justifyContent="center" mt={16}>
-              <ArrowButton
-                colorScheme="white"
-                size="sm"
-                onClick={() => setBlogChunksCount((prev) => prev + 1)}
+              <ShadowBox
+                shadowColor="transparent"
+                overflow="hidden"
+                borderWidth="2px"
+                borderRadius="4px"
               >
-                Read Older Articles
-              </ArrowButton>
+                <AspectRatio ratio={465 / 309}>
+                  {latestBlog.image && (
+                    <Image alt="" src={latestBlog.image} fill />
+                  )}
+                </AspectRatio>
+              </ShadowBox>
+            </Box>
+            <Flex
+              direction="column"
+              alignItems="flex-start"
+              justifyContent="center"
+              px={{
+                base: 0,
+                sm: 8,
+                lg: 16,
+              }}
+              w={{
+                base: "100%",
+                lg: "50%",
+              }}
+            >
+              <Text textStyle="h4" textTransform="uppercase" mb={4}>
+                Featured Blog
+              </Text>
+              <Text as="h3" textStyle="h3" marginBottom={4} minHeight="2.5em">
+                {latestBlog.title}
+              </Text>
+              <Button
+                as={Link}
+                href={latestBlog.href}
+                size="sm"
+                bg="white"
+                _hover={{
+                  bg: "gray.200",
+                }}
+              >
+                Read Now
+              </Button>
             </Flex>
-          )}
+          </Flex>
+          <FilteredBlogsList blogItems={restBlogs} />
         </Container>
       </Box>
     </>
@@ -219,10 +197,21 @@ export default function Blog({ blogItems }: Props) {
 
 const CONTENT_PATH = path.join(process.cwd(), "content", "blog");
 
-export const getStaticProps: GetStaticProps<Props> = async ({ params }) => {
+export const getStaticProps: GetStaticProps<Props> = async () => {
+  const mediaItems = MEDIA_ITEMS.map((item) => {
+    return {
+      title: item.title,
+      href: item.link,
+      date: format(parse(item.date, "yyyy-MM-dd", new Date()), "MMMM dd, yyyy"),
+      timestamp: parse(item.date, "yyyy-MM-dd", new Date()).valueOf(),
+      image: item.image,
+      tags: ["media"],
+    };
+  });
+
   const blogItems = readdirSync(CONTENT_PATH)
     .filter((item) => item.endsWith(".mdx"))
-    .map((item, i) => {
+    .map((item) => {
       const builtPath = path.join(CONTENT_PATH, item);
       const { frontMatter } = parseFileByPath(builtPath);
 
@@ -237,13 +226,14 @@ export const getStaticProps: GetStaticProps<Props> = async ({ params }) => {
 
       return {
         title: frontMatter.title as string,
-        slug: item.replace(/\.mdx?$/, ""),
+        href: `/learn/blog/${item.replace(/\.mdx?$/, "")}`,
         date: format(parse(date, "yyyy-MM-dd", new Date()), "MMMM dd, yyyy"),
         timestamp: parse(date, "yyyy-MM-dd", new Date()).valueOf(),
+        tags: (frontMatter.tags ?? []) as string[],
         image,
-        id: i,
       };
     })
+    .concat(mediaItems)
     .sort((a, b) => {
       return a.timestamp > b.timestamp ? -1 : 1;
     });

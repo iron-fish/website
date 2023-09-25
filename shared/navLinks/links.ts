@@ -23,12 +23,6 @@ export const links = [
         href: "/learn/tokenomics",
         image: "/images/nav/learn-tokenomics.svg",
       },
-      {
-        title: messages.blogTitle,
-        description: messages.blogDescription,
-        href: "/learn/blog",
-        image: "/images/nav/learn-brain.svg",
-      },
     ],
   },
   {
@@ -119,18 +113,6 @@ export const links = [
         href: "/community/our-community",
         image: "/images/nav/community-earth.svg",
       },
-      {
-        title: messages.communityHighlightsTitle,
-        description: messages.communityHighlightsDescription,
-        href: "/community/highlights",
-        image: "/images/nav/community-rubiks-cube.svg",
-      },
-      {
-        title: messages.mediaTitle,
-        description: messages.mediaDescription,
-        href: "/community/media",
-        image: "/images/nav/community-loudspeaker.svg",
-      },
     ],
   },
   {
@@ -143,12 +125,6 @@ export const links = [
         href: "/company/about-us",
         image: "/images/nav/company-submarine.svg",
       },
-      // {
-      //   title: messages.careersTitle,
-      //   description: messages.careersDescription,
-      //   href: "https://jobs.lever.co/ironfish",
-      //   image: "/images/nav/company-keyhole-fish.svg",
-      // },
       {
         title: messages.mediaKitTitle,
         description: messages.mediaKitDescription,
@@ -162,5 +138,9 @@ export const links = [
         image: "/images/nav/company-jellyfish.svg",
       },
     ],
+  },
+  {
+    label: messages.blogTitle,
+    href: "/learn/blog",
   },
 ] as const;

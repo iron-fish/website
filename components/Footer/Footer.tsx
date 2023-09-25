@@ -1,4 +1,13 @@
-import { Box, Flex, HStack, List, ListItem, Text, GridItem } from "@/lib/ui";
+import {
+  Box,
+  Flex,
+  HStack,
+  List,
+  ListItem,
+  Text,
+  GridItem,
+  chakra,
+} from "@/lib/ui";
 import Link from "next/link";
 import { NewsletterSignUp } from "../NewsletterSignUp/NewsletterSignUp";
 import { useNavLinks } from "../../shared/navLinks/useNavLinks";
@@ -15,7 +24,29 @@ const messages = defineMessages({
     defaultMessage:
       "Join our newsletter and stay up to date with privacy and crypto.",
   },
+  blogLink: {
+    id: "footer.blogPrefix",
+    defaultMessage:
+      "Discover our impactful presence — <blogLink>read our blog.</blogLink>",
+  },
 });
+
+function blogLink(value: unknown) {
+  if (!Array.isArray(value)) return null;
+
+  return (
+    <chakra.span
+      as={Link}
+      href="/learn/blog"
+      color="pink.500"
+      _hover={{
+        textDecoration: "underline",
+      }}
+    >
+      {value}
+    </chakra.span>
+  );
+}
 
 export function Footer() {
   const links = useNavLinks();
@@ -44,8 +75,19 @@ export function Footer() {
       >
         {formatMessage(messages.newsletter)}
       </Text>
-      <Box mb={24} display="flex" w="100%" justifyContent="flex-start">
+      <Box
+        mb={24}
+        display="flex"
+        flexDirection="column"
+        w="100%"
+        justifyContent="flex-start"
+      >
         <NewsletterSignUp />
+        <Text fontSize="lg" mt={8}>
+          {formatMessage(messages.blogLink, {
+            blogLink,
+          })}
+        </Text>
       </Box>
       <Box
         display={{
