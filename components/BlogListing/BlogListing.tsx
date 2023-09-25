@@ -13,7 +13,12 @@ type Props = {
 export function BlogListing({ href, img, date, title, headingLevel }: Props) {
   const isInternal = href.startsWith("/");
   return (
-    <ShadowBox shadowColor="white" borderWidth="2px" borderRadius="4px">
+    <ShadowBox
+      shadowColor="white"
+      borderWidth="2px"
+      borderRadius="4px"
+      overflow="hidden"
+    >
       <AspectRatio ratio={465 / 309} borderBottom="1.5px solid black">
         <Image alt="" src={img} fill />
       </AspectRatio>

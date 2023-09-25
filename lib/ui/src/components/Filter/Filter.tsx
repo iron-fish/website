@@ -37,7 +37,7 @@ export function Filter({ options, selectedOption, onChange, ...rest }: Props) {
       justifyContent="center"
       flexDirection={{
         base: "column",
-        md: "row",
+        lg: "row",
       }}
       gap={3}
       {...rest}
@@ -49,9 +49,10 @@ export function Filter({ options, selectedOption, onChange, ...rest }: Props) {
             <ShadowBox
               onClick={() => onChange(option)}
               shadowColor="white"
-              borderRadius={0}
-              borderWidth="1px"
+              borderRadius="2px"
+              borderWidth="1.5px"
               cursor="pointer"
+              offset="4px"
             >
               <Box
                 px={5}

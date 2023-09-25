@@ -41,7 +41,11 @@ export default function Blog({ blogItems }: Props) {
     return blog.href.startsWith("/");
   });
 
-  if (!latestBlog) throw new Error("No internal blogs found");
+  const restBlogs = blogItems.filter((blog) => {
+    return blog.href !== latestBlog?.href;
+  });
+
+  if (!latestBlog || !restBlogs) throw new Error("Unable to find blogs");
 
   return (
     <>
@@ -138,8 +142,13 @@ export default function Blog({ blogItems }: Props) {
                 lg: "50%",
               }}
             >
-              <ShadowBox shadowColor="transparent">
-                <AspectRatio ratio={465 / 309} borderBottom="1.5px solid black">
+              <ShadowBox
+                shadowColor="transparent"
+                overflow="hidden"
+                borderWidth="2px"
+                borderRadius="4px"
+              >
+                <AspectRatio ratio={465 / 309}>
                   {latestBlog.image && (
                     <Image alt="" src={latestBlog.image} fill />
                   )}
@@ -179,7 +188,7 @@ export default function Blog({ blogItems }: Props) {
               </Button>
             </Flex>
           </Flex>
-          <FilteredBlogsList blogItems={blogItems} />
+          <FilteredBlogsList blogItems={restBlogs} />
         </Container>
       </Box>
     </>
