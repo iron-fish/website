@@ -7,6 +7,7 @@ import {
   ListItem,
   OrderedList,
   Text,
+  TextProps,
   UnorderedList,
   chakra,
 } from "@chakra-ui/react";
@@ -23,20 +24,6 @@ import { BlockQuote } from "../BlockQuote/BlockQuote";
 
 export function headingToAnchorId(headingEl: HTMLHeadingElement) {
   return kebabCase(headingEl.innerText.toLowerCase());
-}
-
-function Warning(props: ComponentProps<typeof Box>) {
-  return (
-    <Box
-      textAlign={"center"}
-      bg="#FEF8C3"
-      borderRadius="md"
-      color={"#7C7322"}
-      p={4}
-      mb={8}
-      {...props}
-    />
-  );
 }
 
 function HeadingWithAnchor(props: ComponentProps<typeof Heading>) {
@@ -145,7 +132,6 @@ const rendererComponents: ComponentProps<typeof MDXRemote>["components"] = {
       <Box as="table" {...props} {...DEFAULT_TEXT_PROPS} mb={8} />
     </Box>
   ),
-  Warning: (props) => <Warning>{props.children}</Warning>,
   blockquote: (props) => {
     return (
       <Box
@@ -157,6 +143,41 @@ const rendererComponents: ComponentProps<typeof MDXRemote>["components"] = {
       />
     );
   },
+};
+
+function Warning({ children }: { children: ReactNode }) {
+  return (
+    <Box
+      textAlign={"center"}
+      bg="#FEF8C3"
+      borderRadius="md"
+      color={"#7C7322"}
+      p={4}
+      mb={8}
+      sx={{
+        a: {
+          color: "#7C7322",
+          _visited: {
+            color: "#7C7322",
+          },
+        },
+        "*:last-child": {
+          mb: 0,
+        },
+      }}
+    >
+      {children}
+    </Box>
+  );
+}
+
+const providerComponents = {
+  Terminal,
+  FAQItem,
+  Img: (props: any) => <Image my={6} alt="" w="100%" {...props} />,
+  BlockQuote,
+  Warning,
+  Text: (props: TextProps) => <Text as="span" {...props} />,
 };
 
 function MDXRenderer({ markdown }: { markdown: MDXRemoteProps }) {
@@ -173,13 +194,6 @@ function MDXRenderer({ markdown }: { markdown: MDXRemoteProps }) {
     </>
   );
 }
-
-const providerComponents = {
-  Terminal,
-  FAQItem,
-  Img: (props: any) => <Image my={6} alt="" w="100%" {...props} />,
-  BlockQuote,
-};
 
 export function MDXProvider({ children }: { children: ReactNode }) {
   return (
