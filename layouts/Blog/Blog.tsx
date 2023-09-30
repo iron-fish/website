@@ -60,7 +60,7 @@ export function BlogLayout({
           maxW="container.sm"
           px={{
             base: 3,
-            md: 8,
+            md: 0,
           }}
         >
           <Heading
