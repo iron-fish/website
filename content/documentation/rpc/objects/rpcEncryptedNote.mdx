@@ -1,0 +1,18 @@
+---
+title: RpcEncryptedNote
+description: RpcEncryptedNote | Iron Fish Documentation
+---
+```typescript
+export type RpcEncryptedNote = {
+  hash: string
+  serialized: string
+  /**
+   * @deprecated Please use hash instead
+   */
+  commitment: string
+}
+
+```
+
+Usage: 
+- [chain/getTransaction](/developers/documentation/rpc/chain/get_transaction)

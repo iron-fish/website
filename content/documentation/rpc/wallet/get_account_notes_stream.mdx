@@ -16,19 +16,11 @@ Streams the notes in the given account. If the account is not specified, the def
 #### Response
 
 ```js
-{
-  value: string;
-  assetId: string;
-  assetName: string;
-  memo: string;
-  sender: string;
-  owner: string;
-  noteHash: string;
-  transactionHash: string;
-  index: number | null;
-  nullifier: string | null;
-  spent: boolean;
-}
+RpcWalletNote
 ```
 
-### [View on Github](https://github.com/iron-fish/ironfish/blob/master/ironfish/src/rpc/routes/wallet/getAccountNotesStream.ts)
+RPC Objects: 
+- [RpcWalletNote](/developers/documentation/rpc/objects/rpcWalletNote)
+
+
+###### [View on Github](https://github.com/iron-fish/ironfish/blob/master/ironfish/src/rpc/routes/wallet/getAccountNotesStream.ts)

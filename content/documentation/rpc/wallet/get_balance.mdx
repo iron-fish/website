@@ -20,21 +20,22 @@ the default account will be used. If the asset is not specified, `$IRON` will be
 
 ```js
 {
-  account: string;
-  assetId: string;
-  assetVerification: {
-    status: 'verified' | 'unverified' | 'unknown';
-  };
-  confirmed: string;
-  unconfirmed: string;
-  unconfirmedCount: number;
-  pending: string;
-  pendingCount: number;
-  available: string;
-  confirmations: number;
-  blockHash: string | null;
-  sequence: number | null;
+  account: string
+  assetId: string
+  confirmed: string
+  unconfirmed: string
+  unconfirmedCount: number
+  pending: string
+  pendingCount: number
+  available: string
+  confirmations: number
+  blockHash: string | null
+  sequence: number | null
+  /**
+   * @deprecated Please use getAsset endpoint to get this information
+   * */
+  assetVerification: AssetVerification
 }
 ```
 
-### [View on Github](https://github.com/iron-fish/ironfish/blob/master/ironfish/src/rpc/routes/wallet/getBalance.ts)
+###### [View on Github](https://github.com/iron-fish/ironfish/blob/master/ironfish/src/rpc/routes/wallet/getBalance.ts)

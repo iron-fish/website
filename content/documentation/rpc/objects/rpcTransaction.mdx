@@ -1,0 +1,23 @@
+---
+title: RpcTransaction
+description: RpcTransaction | Iron Fish Documentation
+---
+```typescript
+export type RpcTransaction = {
+  hash: string
+  size: number
+  fee: number
+  expiration: number
+  signature: string
+  notes: RpcEncryptedNote[]
+  spends: RpcSpend[]
+  mints: RpcMint[]
+  burns: RpcBurn[]
+  serialized?: string
+}
+```
+
+Usage: 
+- [chain/getTransaction](/developers/documentation/rpc/chain/get_transaction)
+- [chain/followChainStream](/developers/documentation/rpc/chain/follow_chain_stream)
+- [chain/getBlock](/developers/documentation/rpc/chain/get_block)

@@ -9,6 +9,27 @@ Supports cursor-based pagination using the `pageSize` and `pageCursor` request p
 
 Supports filtering notes by any of the fields in the `filter` request parameter.
 
+#### Types 
+
+```js
+type StringMinMax = {
+  min?: string
+  max?: string
+}
+
+type GetNotesRequestFilter = {
+  value?: StringMinMax
+  assetId?: string
+  memo?: string
+  sender?: string
+  noteHash?: string
+  transactionHash?: string
+  index?: number
+  nullifier?: string
+  spent?: boolean
+}
+```
+
 #### Request
 
 ```js
@@ -16,17 +37,7 @@ Supports filtering notes by any of the fields in the `filter` request parameter.
   account?: string
   pageSize?: number
   pageCursor?: string
-  filter?: {
-    value?: string;
-    assetId?: string;
-    memo?: string;
-    sender?: string;
-    noteHash?: string;
-    transactionHash?: string;
-    nullifier?: string;
-    spent?: boolean;
-    index?: number;
-  }
+  filter?: GetNotesRequestFilter
 }
 ```
 
@@ -34,21 +45,13 @@ Supports filtering notes by any of the fields in the `filter` request parameter.
 
 ```js
 {
-  notes: Array<{
-    value: string;
-    assetId: string;
-    assetName: string;
-    memo: string;
-    sender: string;
-    owner: string;
-    noteHash: string;
-    transactionHash: string;
-    index: number | null;
-    nullifier: string | null;
-    spent: boolean;
-  }>
+  notes: Array<RpcWalletNote>
   nextPageCursor: string | null
 }
 ```
 
-### [View on Github](https://github.com/iron-fish/ironfish/blob/master/ironfish/src/rpc/routes/wallet/getNotes.ts)
+RPC Objects: 
+- [RpcWalletNote](/developers/documentation/rpc/objects/rpcWalletNote)
+
+
+###### [View on Github](https://github.com/iron-fish/ironfish/blob/master/ironfish/src/rpc/routes/wallet/getNotes.ts)

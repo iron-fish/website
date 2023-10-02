@@ -18,20 +18,10 @@ Gets an asset from the wallet from a given identifier and account
 #### Response
 
 ```js
-{
-  createdTransactionHash: string
-  creator: string
-  id: string
-  metadata: string
-  name: string
-  nonce: number
-  status: string
-  // Populated for assets the account owns
-  supply: string | null
-  verification: {
-    status: 'verified' | 'unverified' | 'unknown';
-  };
-}
+RpcAsset
 ```
 
-### [View on Github](https://github.com/iron-fish/ironfish/blob/master/ironfish/src/rpc/routes/wallet/getAsset.ts)
+RPC Objects: 
+- [RpcAsset](/developers/documentation/rpc/objects/rpcAsset)
+
+###### [View on Github](https://github.com/iron-fish/ironfish/blob/master/ironfish/src/rpc/routes/wallet/getAsset.ts)

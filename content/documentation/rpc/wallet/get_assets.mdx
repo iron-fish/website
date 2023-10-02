@@ -17,19 +17,10 @@ Streams all the assets in the wallet of the given account. If not specified, the
 #### Response
 
 ```js
-{
-  createdTransactionHash: string;
-  id: string;
-  metadata: string;
-  nonce: number;
-  name: string;
-  creator: string;
-  status: string;
-  supply: string | null;
-  verification: {
-    status: 'verified' | 'unverified' | 'unknown';
-  };
-}
+RpcAsset
 ```
 
-### [View on Github](https://github.com/iron-fish/ironfish/blob/master/ironfish/src/rpc/routes/wallet/getAssets.ts)
+RPC Objects: 
+- [RpcAsset](/developers/documentation/rpc/objects/rpcAsset)
+
+###### [View on Github](https://github.com/iron-fish/ironfish/blob/master/ironfish/src/rpc/routes/wallet/getAssets.ts)

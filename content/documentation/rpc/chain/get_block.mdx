@@ -22,23 +22,7 @@ One of hash or sequence must be provided.
 
 ```js
 {
-  block: {
-    graffiti: string
-    difficulty: string
-    hash: string
-    previousBlockHash: string
-    sequence: number
-    timestamp: number
-    noteSize: number
-    noteCommitment: string
-    transactions: Array<{
-      fee: string
-      hash: string
-      signature: string
-      notes: number
-      spends: number
-    }>
-  }
+  block: RpcBlock
   metadata: {
     main: boolean
     confirmed: boolean
@@ -46,4 +30,7 @@ One of hash or sequence must be provided.
 }
 ```
 
-### [View on Github](https://github.com/iron-fish/ironfish/blob/master/ironfish/src/rpc/routes/chain/getBlock.ts)
+RPC Objects: 
+- [RpcBlock](/developers/documentation/rpc/objects/rpcBlock)
+
+###### [View on Github](https://github.com/iron-fish/ironfish/blob/master/ironfish/src/rpc/routes/chain/getBlock.ts)

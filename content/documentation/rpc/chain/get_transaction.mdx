@@ -17,34 +17,26 @@ Gets a transaction from a block hash and transaction hash
 #### Response
 
 ```js
-{
-  fee: string
-  expiration: number
+RpcTransaction & {
   noteSize: number
+  blockHash: string
+  /**
+   * @deprecated Please use `notes.length` instead
+   */
   notesCount: number
+  /**
+   * @deprecated Please use `spends.length` instead
+   */
   spendsCount: number
-  signature: string
-  notes: Array<{
-    hash: string
-    serialized: string
-  }>
-  spends: Array<{
-    nullifier: string
-    commitment: string
-    size: number
-  }>
-  mints: Array<{
-    assetId: string
-    value: string
-    name: string
-    metadata: string
-  }>
-  burns: Array<{
-    assetId: string
-    value: string
-  }>
-  notesEncrypted: string[] // Deprecated: use `notes` instead
+  /**
+   * @deprecated Please use `notes` instead
+   */
+  notesEncrypted: string[]
 }
 ```
+
+RPC Objects: 
+- [RpcTransaction](/developers/documentation/rpc/objects/rpcTransaction)
+
 
 ## [View on Github](https://github.com/iron-fish/ironfish/blob/master/ironfish/src/rpc/routes/chain/getTransaction.ts)

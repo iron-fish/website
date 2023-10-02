@@ -16,6 +16,7 @@ undefined
 ```js
 {
   serializedTransaction: string
+  valid: boolean
 }
 ```
 
@@ -28,8 +29,9 @@ curl -X POST -N http://localhost:8021/event/onTransactionGossip
 {
   "data": {
     "serializedTransaction": "01010000...e931fd04"
+    "valid": true
   }
 }
 ```
 
-### [View on Github](https://github.com/iron-fish/ironfish/blob/master/ironfish/src/rpc/routes/event/onTransactionGossip.ts)
+###### [View on Github](https://github.com/iron-fish/ironfish/blob/master/ironfish/src/rpc/routes/event/onTransactionGossip.ts)

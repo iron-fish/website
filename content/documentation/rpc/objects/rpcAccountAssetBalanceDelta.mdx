@@ -1,0 +1,20 @@
+---
+title: RpcAccountAssetBalanceDelta
+description: RpcAccountAssetBalanceDelta | Iron Fish Documentation
+---
+```typescript
+export type RpcAccountAssetBalanceDelta = {
+  assetId: string
+  delta: string
+  /**
+   * @deprecated Please use the getAsset RPC to fetch additional asset details
+   */
+  assetName: string
+}
+```
+
+Usage: 
+- [wallet/getAccountTransaction](/developers/documentation/rpc/wallet/get_account_transaction)
+- [wallet/getAccountTransactions](/developers/documentation/rpc/wallet/get_account_transactions)
+- [wallet/burnAsset](/developers/documentation/rpc/wallet/burn_asset)
+- [wallet/mintAsset](/developers/documentation/rpc/wallet/mint_asset)

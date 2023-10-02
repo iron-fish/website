@@ -13,29 +13,30 @@ Creating a raw transaction does not require a spend key. They are not added to t
 
 ```js
 {
-  account: string
-  outputs: Array<{
+  account?: string
+  outputs: {
     publicAddress: string
     amount: string
     memo: string
     assetId?: string
-  }>
-  mints?: Array<{
+  }[]
+  mints?: {
     assetId?: string
     name?: string
     metadata?: string
     value: string
-  }>
-  burns?: Array<{
+    transferOwnershipTo?: string
+  }[]
+  burns?: {
     assetId: string
     value: string
-  }>
+  }[]
   fee?: string | null
   feeRate?: string | null
   expiration?: number
   expirationDelta?: number
   confirmations?: number
-  notes?: Array<string>
+  notes?: string[]
 }
 ```
 
@@ -47,4 +48,4 @@ Creating a raw transaction does not require a spend key. They are not added to t
 }
 ```
 
-### [View on Github](https://github.com/iron-fish/ironfish/blob/master/ironfish/src/rpc/routes/wallet/createTransaction.ts)
+###### [View on Github](https://github.com/iron-fish/ironfish/blob/master/ironfish/src/rpc/routes/wallet/createTransaction.ts)

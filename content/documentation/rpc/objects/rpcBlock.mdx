@@ -1,0 +1,13 @@
+---
+title: RpcBlock
+description: RpcBlock | Iron Fish Documentation
+---
+```typescript
+export type RpcBlock = RpcBlockHeader & {
+  size: number
+  transactions: RpcTransaction
+}
+```
+Usage: 
+- [chain/followChainStream](/developers/documentation/rpc/chain/follow_chain_stream)
+- [chain/getBlock](/developers/documentation/rpc/chain/get_block)

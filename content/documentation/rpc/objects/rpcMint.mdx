@@ -1,0 +1,35 @@
+---
+title: RpcMint
+description: RpcMint | Iron Fish Documentation
+---
+```typescript
+export type RpcMint = {
+  assetId: string
+  value: string
+  transferOwnershipTo?: string
+  /**
+   * @deprecated Please use assetId instead
+   */
+  id: string
+  /**
+   * @deprecated Please use getAsset endpoint to get this information
+   */
+  assetName: string
+  /**
+   * @deprecated Please use getAsset endpoint to get this information
+   */
+  metadata: string
+  /**
+   * @deprecated Please use getAsset endpoint to get this information
+   */
+  name: string
+  /**
+   * @deprecated Please use getAsset endpoint to get this information
+   */
+  creator: string
+}
+```
+
+Usage: 
+- [chain/getTransactionStream](/developers/documentation/rpc/chain/get_transaction_stream)
+- [wallet/mintAsset](/developers/documentation/rpc/wallet/mint_asset)

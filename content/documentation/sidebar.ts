@@ -34,6 +34,63 @@ export const sidebar: SidebarDefinition = [
     items: [
       "rpc/protocol",
       {
+        label: "RPC Response Objects",
+        items: [
+          {
+            id: "rpc/objects/rpcAccountAssetBalanceDelta",
+            label: "RpcAccountAssetBalanceDelta",
+          },
+          {
+            id: "rpc/objects/rpcAccountImport",
+            label: "RpcAccountImport",
+          },
+          {
+            id: "rpc/objects/rpcAsset",
+            label: "RpcAsset",
+          },
+          {
+            id: "rpc/objects/rpcBlock",
+            label: "RpcBlock",
+          },
+          {
+            id: "rpc/objects/rpcBlockHeader",
+            label: "RpcBlockHeader",
+          },
+          {
+            id: "rpc/objects/rpcBurn",
+            label: "RpcBurn",
+          },
+          {
+            id: "rpc/objects/rpcEncryptedNote",
+            label: "RpcEncryptedNote",
+          },
+          {
+            id: "rpc/objects/rpcMint",
+            label: "RpcMint",
+          },
+          {
+            id: "rpc/objects/rpcPeerResponse",
+            label: "RpcPeerResponse",
+          },
+          {
+            id: "rpc/objects/rpcSpend",
+            label: "RpcSpend",
+          },
+          {
+            id: "rpc/objects/rpcTransaction",
+            label: "RpcTransaction",
+          },
+          {
+            id: "rpc/objects/rpcWalletNote",
+            label: "RpcWalletNote",
+          },
+          {
+            id: "rpc/objects/rpcWalletTransaction",
+            label: "RpcWalletTransaction",
+          },
+        ],
+      },
+      {
         label: "Chain",
         items: [
           {
@@ -47,6 +104,10 @@ export const sidebar: SidebarDefinition = [
           {
             id: "rpc/chain/estimate_fee_rates",
             label: "estimateFeeRates",
+          },
+          {
+            id: "rpc/chain/export_chain_stream",
+            label: "exportChainStream",
           },
           {
             id: "rpc/chain/follow_chain_stream",
@@ -235,7 +296,11 @@ export const sidebar: SidebarDefinition = [
           },
           {
             id: "rpc/wallet/create",
-            label: "create",
+            label: "create [DEPRECATED]",
+          },
+          {
+            id: "rpc/wallet/createAccount",
+            label: "createAccount",
           },
           {
             id: "rpc/wallet/create_transaction",
@@ -315,11 +380,19 @@ export const sidebar: SidebarDefinition = [
           },
           {
             id: "rpc/wallet/remove",
-            label: "remove",
+            label: "remove [DEPRECATED]",
+          },
+          {
+            id: "rpc/wallet/removeAccount",
+            label: "removeAccount",
           },
           {
             id: "rpc/wallet/rename",
-            label: "rename",
+            label: "rename [DEPRECATED]",
+          },
+          {
+            id: "rpc/wallet/renameAccount",
+            label: "renameAccount",
           },
           {
             id: "rpc/wallet/rescan_account",

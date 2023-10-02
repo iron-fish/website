@@ -1,0 +1,33 @@
+---
+title: RpcPeerResponse
+description: RpcPeerResponse | Iron Fish Documentation
+---
+```typescript
+export type RpcPeerResponse = {
+  state: string
+  connectionWebSocket: ConnectionState
+  connectionWebSocketError: string
+  connectionWebRTC: ConnectionState
+  connectionWebRTCError: string
+  connections: number
+  identity: string | null
+  version: number | null
+  head: string | null
+  sequence: number | null
+  work: string | null
+  agent: string | null
+  name: string | null
+  address: string | null
+  port: number | null
+  error: string | null
+  networkId: number | null
+  genesisBlockHash: string | null
+  features: Features | null
+}
+
+export type ConnectionState = Connection['state']['type'] | ''
+```
+
+Usage: 
+- [peer/getPeer](/developers/documentation/rpc/peer/get_peer)
+- [peer/getPeers](/developers/documentation/rpc/peer/get_peers)

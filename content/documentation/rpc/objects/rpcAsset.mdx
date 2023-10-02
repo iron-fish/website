@@ -1,0 +1,28 @@
+---
+title: RpcAsset
+description: RpcAsset | Iron Fish Documentation
+---
+```typescript
+export type RpcAsset = {
+  id: string
+  name: string
+  nonce: number
+  owner: string
+  creator: string
+  metadata: string
+  createdTransactionHash: string
+  verification: AssetVerification
+  supply?: string
+  /**
+   * @deprecated query for the transaction to find it's status
+   */
+  status: string
+}
+```
+
+Usage: 
+- [chain/getAsset](/developers/documentation/rpc/chain/get_asset)
+- [wallet/burnAsset](/developers/documentation/rpc/wallet/burn_asset)
+- [wallet/mintAsset](/developers/documentation/rpc/wallet/mint_asset)
+- [wallet/getAsset](/developers/documentation/rpc/wallet/get_asset)
+- [wallet/getAssets](/developers/documentation/rpc/wallet/get_assets)

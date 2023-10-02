@@ -14,15 +14,8 @@ undefined
 #### Response
 
 ```js
-{
-  blockHeader: {
-    hash: string
-    sequence: number
-    previousBlockHash: string
-    timestamp: number
-    difficulty: string
-    graffiti: string
-  }
+{ 
+  blockHeader: RpcBlockHeader 
 }
 ```
 
@@ -35,27 +28,26 @@ curl -X POST -N http://localhost:8021/event/onGossip
 {
   "data": {
     "blockHeader": {
-      "hash": "000000000000000a8acaf500eb043758421e3de9ba0c3ac49e1dcc4c8d545d52",
-      "sequence": 18797,
-      "previousBlockHash": "000000000000001053c27bd149a65c6a2bb9d4d482a79e69e2962948279f1264",
-      "timestamp": 1683130257370,
-      "difficulty": "284365341300015620",
-      "graffiti": "00000000000000000000000066e58996ee4b41b852b9fb1443b6da1100000000"
-    }
-  }
-}
-{
-  "data": {
-    "blockHeader": {
-      "hash": "0000000000000023d753e3eb6e6b3cfca4293ba39363328715f2917d95b95bdf",
-      "sequence": 18798,
-      "previousBlockHash": "000000000000000a8acaf500eb043758421e3de9ba0c3ac49e1dcc4c8d545d52",
-      "timestamp": 1683130325413,
-      "difficulty": "284226491035708972",
-      "graffiti": "5a4b576f726b312e37323638c553ef071c000000000000000000000000000000"
+        "hash": "000000041049480a103c646aa6cb10dcaddd666a2d270424f0b874a9739b2d14",
+        "previous": "0000000e669478e4da1f294d31e543a2427319b231591f9c2dc9f0bdf3c652f7",
+        "sequence": 1146,
+        "previousBlockHash": "0000000e669478e4da1f294d31e543a2427319b231591f9c2dc9f0bdf3c652f7",
+        "timestamp": 1695259437975,
+        "difficulty": "147664453",
+        "graffiti": "0000000000000000000000000000000000000000000000000000000000000000",
+        "noteCommitment": "16e9dc0bed8e5e47de6885b228833f1294ed321cdb964b595bc686072f01654e",
+        "transactionCommitment": "bb10e25c80844d9513603445b62c17aaa3f90e47c1122e442f1b2a472aa770fe",
+        "target": "784156829113884269923588075788882703227634511778136367318257590456879",
+        "randomness": "45656757",
+        "work": "0",
+        "noteSize": null
     }
   }
 }
 ```
 
-### [View on Github](https://github.com/iron-fish/ironfish/blob/master/ironfish/src/rpc/routes/event/onGossip.ts)
+RPC Objects: 
+- [RpcBlockHeader](/developers/documentation/rpc/objects/rpcBlockHeader)
+
+
+###### [View on Github](https://github.com/iron-fish/ironfish/blob/master/ironfish/src/rpc/routes/event/onGossip.ts)
