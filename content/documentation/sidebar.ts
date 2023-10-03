@@ -34,7 +34,7 @@ export const sidebar: SidebarDefinition = [
     items: [
       "rpc/protocol",
       {
-        label: "RPC Response Objects",
+        label: "Response Objects",
         items: [
           {
             id: "rpc/objects/rpcAccountAssetBalanceDelta",
