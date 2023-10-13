@@ -2,126 +2,68 @@
 title: Networking
 ---
 
-The networking layer is a significant part of any blockchain and helps support all the features that make that protocol unique. Specifically, the networking layer dictates how nodes interact with one another — what transport layers they can use to communicate, how they gossip messages to all the other peers, and how they request/respond to specific messages from other peers.
+Iron Fish is a decentralized cryptocurrency. As such, Iron Fish relies on a peer-to-peer network of nodes to perform all operations, including:
 
-When building any decentralized [peer-to-peer](https://en.wikipedia.org/wiki/Peer-to-peer) (P2P) system, it must address [Network Address Translation](https://docs.libp2p.io/concepts/nat/) (NAT). Most of our machines, laptops, tablets, and phones are behind routers and firewalls, making it difficult for peers to establish direct connections. This is where the networking layer comes in.
+- validating and accepting mutations to the chain (explained in detail in [Protocol](https://www.notion.so/Protocol-bcd27b53f3ce459e8e8dce23521c2445?pvs=21))
+- distributing a copy of the chain to other nodes
+- distributing pending [transactions](https://www.notion.so/Transactions-0d0b05511fb8401881d6493fe30b57db?pvs=21) to other nodes
+- discovering other nodes in the network
 
-While some other networking layers require the user to set up port-forwarding for their router to address the NAT problem, we designed our implementation with a focus on accessibility, using a combination of WebRTC and WebSockets for our transport layer. They use a plethora of techniques to help nodes establish direct communication. In other words, the Iron Fish node implementation works right out of the box, either in a CLI environment or even directly within the browser. This makes it easy for anyone to use Iron Fish, regardless of technical ability.
+Before digging into the details of how nodes share the chain and the transactions, it is important to understand that there can be many instances of Iron Fish network. There are two official instances of the Iron Fish network:
 
-When a node is first launched, it needs to know of at least one other node it can connect to (known as a bootstrap node) that'll introduce it to more peers in the network. That initial connection to a bootstrap node happens over a WebSocket, and all subsequent peer connections use WebRTC. This section will describe exactly how nodes connect to one another forming a network to support the Iron Fish protocol, starting with how a new node starts.
+- **mainnet:** used for production. This is the network version that is supported by exchanges and miners.
+- **testnet:** used for testing. Major changes to consensus are tested on the testnet before being applied on the mainnet
 
-### Startup Sequence
+What differentiates an Iron Fish network instance from another is its **network definition**, described below. Different Iron Fish networks with different network definitions are incompatible with each other, and a node from one network will not accept chain mutations coming from a node from another network.
 
-As a new node starts up, the following happens:
+# Network Definition
 
-1. The new node randomly selects one bootstrap node from a provided list, and opens a WebSocket connection to it. If a user has a specific node they want to connect to during this step, they can use the config file or the command line to specify their own preferred bootstrap node(s). The bootstrap node sends its identity to the new node.
-2. The bootstrap node broadcasts a peer list to the new node.
-3. Using that list, the new node decides which peers to connect to.
-4. The 3rd step is repeated with every new peer the node connects with, until the maximum amount of connections (up to 50) is made.
-5. In order to maximize the strength of our network and to prevent network fragmentation, the node will prioritize connecting to peers that relatively few of the known peers are currently connected to.
+A network is defined by the following two parameters:
 
-As an end user, all this happens without you having to do anything, or even be aware of it. When you start a node, from your end, all you'll see is your node connecting to a bootstrap node, and then quickly to many others.
+- network id: an unsigned 16-bit integer
+- genesis block: the block with block sequence 1
 
-#### Peer Connections Lifecycle
+These parameters cannot be changed. Attempting to change these parameters would give rise to a new network.
 
-While a node is online, it tries to maintain a full and complete knowledge of the state of its peers, and all peers connected to those peers (two layers deep), checking periodically for any changes. Nodes have no knowledge whatsoever of more distant peers.
+The genesis block is the first block in the chain and may be used to create the first notes.
 
-With that in mind, let's look at how nodes communicate with one another by passing messages.
+The following are the network id and genesis block hashes for the official Iron Fish networks:
 
-### Messaging
+|         | Network ID | Genesis Block Hash                                                 |
+| ------- | ---------- | ------------------------------------------------------------------ |
+| Mainnet | 1          | `eac623b099b8081d2bde92d43a4a7795385c94e2c0ae4097ef488972e83ff2b3` |
+| Testnet | 0          | `7999c680bbd15d9adb7392e0c27a7caac7e596de5560c18e96365d0fd68140e3` |
 
-A message is an agreed-upon format for a piece of information to be shared between peers. There are several types of messages and ways for them to interact with the nodes, depending on the situation.
+A network definition may be associated to a [consensus](https://www.notion.so/Consensus-3eb91b5d0cba4b12b6ac76a254ebd597?pvs=21), although the consensus is not strictly part of the network definition, and is allowed to change over time.
 
-#### Message Types
+A network definition may be associated to a list of [bootstrap nodes](https://www.notion.so/Networking-23c1d6e8c1884a17a4e378b763e92d77?pvs=21): these are nodes with a fixed network address (for example: a static IP address, or a DNS name) that facilitate peer discovery. Bootstrap nodes may be regular nodes, but in most cases they are configured so that they do not actively participate to the network. In any case, they do not affect the security properties or the decentralization properties of the network. Bootstrap nodes are also not part of the network definition, are allowed to change over time, and are optional.
 
-The networking layer of Iron Fish currently has four different internal message types:
+# Peer Communication
 
-- **Identity:** a message by which a peer can identify itself to another
-- **Signal:** a message used to signal a real-time communication (RTC) session between two peers
-- **Peer List:** a message containing the list of peers that this node is currently connected to
-- **Cannot Satisfy Request:** an error message when a problem occurs
+Iron Fish nodes perform communication over UDP/IP using [WebSocket](https://en.wikipedia.org/wiki/WebSocket) and WebRTC. The messages exchanged over WebRTC use a custom binary serialization format.
 
-All messages on the Iron Fish network are routed via one of the following four styles, depending on various factors.
+Because most nodes are expected to be behind NAT firewalls that don’t allow incoming connections, Iron Fish uses hole punching through STUN servers.
 
-- **Gossip**: These messages reach every node in the network. When a node receives a gossip message, it validates the message and forwards it to other connected nodes. This is used to propagate changes to the blockchain to all the nodes in the network. We'll talk more about this in the next section.
-- **Fire and Forget**: These messages are directed to a specific connected peer (it is not possible to send a message to a peer you are not connected to). No response or receipt confirmation is expected from the peer. This is useful when you don't need to make sure that the data was correctly received.
-- **Direct RPC**: Here, a message request is sent to a specific connected peer, and the system expects a response. A [remote procedure call](https://www.geeksforgeeks.org/remote-procedure-call-rpc-in-operating-system/) (RPC) stream is composed of two streams: one for the request and one for the response. This is used as a backing layer for Global RPC.
-- **Global RPC**: These messages are not addressed to a specific peer. The network library will choose a peer to send the message to and retry (up to a specified limited amount) with another peer if it doesn't get a response, or if the response is invalid. The selection algorithm is randomized, and weighted to favor peers who are known to be more likely to respond to the registered type of message.
+# Peer Discovery
 
-Let's dive a little deeper into how the gossip protocol works.
+The Iron Fish peer-to-peer network can be arbitrarily large, and for practical reasons each node will connect to a subset of peers. The maximum number of peers that a node will connect to may be defined by software limits or operating system limits, and for the reference implementation of the Iron Fish node this number is 50.
 
-### Gossip Protocol
+When a node comes online for the first time, it may connect to one or more **bootstrap nodes** in order to find an initial set of peers. A bootstrap node is a node that has a known, fixed address (which is generally hardcoded inside the software, along with the network definition), and serves the purpose of keeping track of the list of peers that connect to it, and sharing this list to new peers.
 
-The Gossip Protocol is primarily used to broadcast new blocks and transactions to all of the peers within the Iron Fish network. To help visualize this: nodes connected together form a network, and a blockchain is the data structure they agree on.
+Once a node has obtained a list of peers, it can connect to them, and ask them for their list of peers, and continue this process until all the reachable peers have been connected, or the maximum number of connections is reached.
 
-Back to the protocol. Once started, each node will then independently verify the incoming transactions before further broadcasting them out to other peers, and validate the incoming blocks before applying their encompassing transactions to the node's local copy of the ledger (a.k.a. the blockchain). There is one main objective for the gossip protocol: when a message is broadcasted, every peer should receive the message as quickly as possible.
+After the first peer discovery, the node may cache the list of discovered peers so that subsequent restarts do not have to rely on bootstrap nodes.
 
-The following section details how Iron Fish's gossip-based broadcast is currently implemented.
+# Block Sharing
 
-#### Basic Implementation
+Peers share blocks using a custom [gossip protocol](https://en.wikipedia.org/wiki/Gossip_protocol). Whenever a new block is mined, it is broadcasted to all the nodes in the network through the gossip protocol.
 
-##### Step 1
+The reference implementation of the Iron Fish node employs some strategies to reduce the amount of data exchanged (and, in particular, to avoid re-sending the same block to the same nodes multiple times).
 
-When a new node comes online and connects with a peer, the peer communicates the list of their direct peers.
+# Transaction Sharing
 
-Let's imagine that our current network is composed of a new Node A, connected to the nodes B and C. C itself is connected to nodes D and E. D itself is connected to F and G. Visually, this would look like the image below.
+When an Iron Fish participant wants to post a new transaction to the Iron Fish chain, they will initially broadcast it as a **pending transaction** to the Iron Fish nodes in the network. The miners will listen for the pending transactions and perform work to mine blocks including some or all of the pending transactions.
 
-<Img src ="/images/whitepaper/networking/nodes.svg" width="50%" role="presentation" />
-<br />
-<em>Visualization of how our example nodes are connected.</em>
-<br />
-<br />
+Pending transactions are put into a data structure called **mempool**. The mempool can be thought of a queue of pending transactions that are waiting to be mined. The mempool is ephemeral and completely disconnected from the Iron Fish chain. Nodes share their mempool with their peers.
 
-Nodes are only aware of their direct neighbors, and their neighbor's neighbors. Node A will have no knowledge of Nodes beyond D and E.
-
-Node A can now decide to connect to some of the peers, and will store a copy of each node peers list.
-
-##### Step 2
-
-When node A decides to broadcast a new message, it'll send out a Gossip-type message to all of its connected peers (in this example, C and B).
-
-<Img src ="/images/whitepaper/networking/nodes2.svg" width="50%" role="presentation" />
-<br />
-<br />
-
-Then, each subsequent node will broadcast the message to their other peers, until the entire network receives the message. In this example, C broadcasts the message to D and E. Then D broadcasts the message to F and G.
-
-<Img src ="/images/whitepaper/networking/nodes3.svg" width="50%" role="presentation" />
-<Img src ="/images/whitepaper/networking/nodes4.svg" width="50%" role="presentation" />
-
-#### Optimization
-
-To reduce network congestion, we implemented the following Gossip Protocol improvements.
-
-##### Local history
-
-In an effort to avoid an infinite broadcast of the same message, each node stores a set of all the gossiped messages it has seen. When a node receives a gossip-type message already in the set (meaning it was seen before), it ignores the message. The set that keeps track of these gossip-type messages is bound to a specific size and old ones are evicted in a first-in first-out order.
-
-##### Neighbor cast
-
-To avoid spamming the peers with duplicated messages, we implemented two other solutions:
-
-- When Node A gossips a message to Node B, Node B does not send back the message to Node A.
-- When Node A sends a message to Node B, Node B (knowing that A already took care of it) will avoid sending messages to any peer Nodes A and B are both connected to.
-
-In the example below, Node A is connected to B, C, D, E, and stores a list of peers connections two levels deep.
-
-When Node A gossips a message, the propagation happens in two steps:
-
-1. Node A broadcasts to Nodes B, C, D, and E.
-2. Node B forwards the message to G. It does not forward it to C and E because it knows that Node A is connected to them and already sent it. Node C forwards the message to H. Node D forwards to I and Node E to F.
-
-<Img src ="/images/whitepaper/networking/nodes5.svg" width="100%" role="presentation" />
-
-When Node F gossips a message, in this example, the propagation happens in four steps:
-
-1. Node F broadcasts the message to Node E.
-2. Node E forwards the message to both A and B.
-3. Node B forward to G. It does not forward to A because it knows that E is connected to A. It does not forward to C, because it knows it is connected to A.
-4. Node C and Node D both forward the message to H and I .
-
-<Img src ="/images/whitepaper/networking/nodes6.svg" width="100%" role="presentation" />
-
-##### Looking Forward
-
-We are exploring how to improve the block propagation at the application level before the main net launch. Instead of sending the entire block, a node will first send a header of the block. The peer node can then verify that it didn't already receive it before requesting the data of the full block. We are also considering other implementations like [IBLTs](https://gist.github.com/gavinandresen/e20c3b5a1d4b97f79ac2) or [Minisketch](https://github.com/sipa/minisketch) to understand the pros and cons of each solution.
+Nodes should validate all individual pending transactions before accepting them in their mempool. Note however that it’s theoretically possible to have multiple pending transactions that are in conflict with each other (for example, “double spend” transactions). Mining is the operation that discriminates between conflicting transactions. For this reason, the mempool should never be used as a source of truth for anything; only the canonical chain can provide sufficient assurance about valid transactions.
