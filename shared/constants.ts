@@ -5,13 +5,8 @@ const SOCIAL_LINKS = {
   telegram: "https://t.me/ironfishcryptochat",
 };
 
-const GITHUB_LINKS = {
-  wiki: "https://github.com/iron-fish/ironfish/wiki",
-};
-
 export const CONSTANTS = {
   SOCIAL_LINKS,
-  GITHUB_LINKS,
 };
 
 export const GRANTS_FORM_URL =
