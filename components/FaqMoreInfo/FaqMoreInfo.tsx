@@ -14,12 +14,7 @@ export function FaqMoreInfo() {
       <Text textStyle="h5" textAlign="center">
         Don&apos;t see the answer to a question you have? Reach out to us on{" "}
         <TextLink href={CONSTANTS.SOCIAL_LINKS.twitter}>Twitter</TextLink> or{" "}
-        <TextLink href={CONSTANTS.SOCIAL_LINKS.discord}>Discord</TextLink>! You
-        can also check out our{" "}
-        <TextLink href={CONSTANTS.GITHUB_LINKS.wiki}>
-          community-run wiki
-        </TextLink>
-        .
+        <TextLink href={CONSTANTS.SOCIAL_LINKS.discord}>Discord</TextLink>!
       </Text>
     </Box>
   );
