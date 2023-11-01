@@ -1,0 +1,422 @@
+---
+title: Transactions
+---
+
+A transaction is a data structure on the Iron Fish chain that allows an account to perform any of the following actions:
+
+- send tokens of an asset to another account
+- increase (mint) or decrease (burn) the supply of an asset
+- create a new asset
+- changing ownership of an asset
+
+Each transaction contains the encoding of one of more of the above actions, plus a zero-knowledge proof that demonstrates that the account has the necessary ownership over the assets that are being exchanged or modified. For example: a transaction that sends 1 \$IRON from account A to account B will contain a proof that account A really owns 1 \$IRON. This proof is “zero-knowledge” in the sense that the identity of account A, account B, the amount, and the type of asset transferred are not revealed as part of the proof, but only account A and B can see them.
+
+The action of sending tokens of an asset is always encoded on a transaction in encrypted form, so that only the sender or the recipient of the transaction can view the details of what is being transmitted. This action is opaque to all other Iron Fish participants. Iron Fish does not support sending of tokens in cleartext (not encrypted) form.
+
+Other actions (creation, minting, burning, ownership change of assets) are not encrypted, and instead are transparent and may be fully observed by any Iron Fish participant. In particular, any Iron Fish participant may know the total supply of a given asset.
+
+Transactions are incorporated into blocks of the Iron Fish chain. The operation of incorporating transactions into blocks is called **mining**.
+
+# Transaction Balancing
+
+A transaction is composed of **spends** and **outputs**. Both inputs and outputs are expressed as the number of tokens of an asset. The key property of a transaction is that:
+
+$$\text{spends} - \text{outputs} = \text{fee} - \text{mints} + \text{burns}$$
+
+The fee is awarded to the account that mines the transaction into a block. The fee must be strictly greater than zero for the native asset (\$IRON), and must be zero for other assets. This implies that each and every transaction must always have tokens of the native asset (\$IRON) as one of the inputs.
+
+# Notes and Nullifiers
+
+The way a transaction may add or remove tokens from an account is by creating or destroying **notes**. A note is a structure that encodes the number of tokens, the asset, the sender, and the receiver of the tokens. A note is created whenever an account receives some tokens, either through an exchange with another account, or by minting an asset. A note may also be created by mining (see Miner Reward Transaction).
+
+Notes are always encrypted on the Iron Fish chain and only the sender or receiver of a note may be able to decrypt them.
+
+An existing note can also be destroyed, either by sending its value to another account, or by burning it. A note is be destroyed by using its **nullifier**: a special construct that allows referencing a note without revealing the note contents, or when the note was created. Nullifiers are unique in the sense that each note can have only one nullifier. This property allows validators to detect when a transaction attempts to destroy a note that was already destroyed in a previous transaction (preventing double spends).
+
+# Transaction Structure
+
+A transaction is a collection of **descriptions**, which describe the actions performed by the transactions. The descriptions may be of 4 different kinds:
+
+- **spend description:** used to describe the spends of a transaction; contains a nullifier, which references a note that gets destroyed as part of the transaction, as well as a zero-knowledge proof to demonstrate that the note is owned by the account that generated the transaction, and that the note wasn’t previously destroyed.
+- **output description:** used to create new notes
+- **mint description:** used to create new assets, or to increase the supply of existing assets, or to changing the owner of an existing asset. A mint description that creates a new asset or increases the supply of an existing asset must have a corresponding note as an output description. The note in the output description is bound to the mint description via a zero-knowledge proof that is included in the mint description.
+- **burn description:** used to decrease the supply of existing assets. A burn description must have a corresponding nullifier as a spend description.
+
+Other than the collection of descriptions, a transaction also contains:
+
+- the **fee**, expressed as number of tokens of the native asset (\$IRON)
+- a **randomized public key (rk)**, used for verification of the descriptions (see [Randomized Public Key](#randomized-public-key) and [Using the sender’s outgoing view key](#using-the-senders-outgoing-view-key))
+- a **binding signature**, used to verify that the balance equation is respected (see [Transaction Balancing Proof](#transaction-balancing-proof))
+
+# Miner Reward Transaction
+
+The Iron Fish protocol allows a special kind of transaction, called miner reward transaction, which has the property that it allows a negative fee. The miner reward transaction may only appear in a block header (see \<some page about blocks\>) and would be considered an invalid transaction if it was included anywhere else other than a block header.
+
+The purpose of the miner reward transaction is to allow an Iron Fish miner (see \<mining\>) to generate new tokens of the native asset (\$IRON) as a reward for their mining operation. Because this transaction is meant to have no spends and have only outputs, and because the native asset cannot be minted, the only way to respect the [transaction balance equation](#transaction-balancing) is to have a negative fee:
+
+$$\cancel{\text{spends}} - \text{outputs} = \text{fee} - \cancel{\text{mints}} + \cancel{\text{burns}} \\ \text{fee} = - \text{outputs}$$
+
+The miner reward transaction has the special property that its fee can be negative, and thus it’s *creating* new tokens of the native asset (\$IRON). The value of this negative fee must be the sum of outputs and must be the block reward plus the sum of transaction fees included in the block.
+
+# Transaction Verification
+
+Any Iron Fish transaction can be verified for correctness by any Iron Fish participant. Verifying a transaction employs the following steps:
+
+1. Checking that all the zero-knowledge proofs attached to descriptions are valid (see the individual descriptions in [Descriptions](#descriptions))
+2. Checking that all the signatures attached to descriptions are valid (see the individual descriptions in [Descriptions](#descriptions))
+3. Checking that the transaction balances (see [Transaction Balancing Proof](#transaction-balancing-proof))
+
+# Randomized Public Key
+
+The randomized public key (rk) is constructed from the authorization key (ak) of the account that created the transaction, and a random element ar from the JubJub group scalar field:
+
+```
+rk = ak + ar * SPENDING_KEY_GENERATOR
+```
+
+The element ar is stored into the zero-knowledge circuit used to prove the validity of the transaction descriptions (see [Descriptions](#descriptions) for more details), and it is never exposed outside of the zero-knowledge circuit, so no Iron Fish participant may access it. The randomized public key (rk) is then used to prove that the transaction is spending notes that belong to the account that created of the transaction, without revealing any information about the account.
+
+Because the randomized public key (rk) is different for each and every transaction (provided that the value ar is different every time), it is not possible for a generic Iron Fish participant to tell whether two arbitrary transactions originated from the same account.
+
+# Note
+
+A note is the most basic data structure that describes an asset on Iron Fish. An Iron Fish note in plaintext contains:
+
+- The **owner**’s transmission key (pk), or public address
+- The **value** of the note
+- The **note randomness** that ensures notes are indistinguishable from each other when hashed
+- The **memo** field which is a 32 byte field on the note that can be used for arbitrary data
+- The **sender** field, which is the transmission key (pk), or public key, of the sender of the note. If this note is the block reward for mining a block, the sender is the miner that mined the block.
+- The **asset identifier** is a 32-byte hash representing the asset type for the note
+
+The plaintext version of the note is never saved on chain—it’s only saved as an encrypted data blob.
+
+# Note Commitment
+
+The note commitment is a hash of the Note. The contents of the Note that are hashed are in this order:
+
+- **asset identifier** (32 bytes)
+- **value** (8 bytes)
+- **owner** (32 bytes)
+- **sender** (32 bytes)
+
+```
+note_contents = asset_identifier || vaue || owner || sender
+```
+
+The hash function used to construct the Merkle tree of notes is the Pedersen hash on the JubJub group, which can be computed efficiently in SNARK circuits.
+
+The note commitment is the u coordinate of the commitment full point:
+
+```
+commitment_full_point =(NOTE_COMMITMENT_RANDOMNESS_GENERATOR * rcm) + hash_of_contents
+note_commitment = commitment_full_point.get_u()
+```
+
+# Nullifier
+
+The nullifier is what is used to ensure that a note is not allowed to be spent more than one time (e.g. it is used to prevent a double spend). A nullifier is computed as:
+
+```
+rho = cm + NULLIFIER_POSITION_GENERATOR * position_of_the_note
+nullifier = blake2s::blake2s(persnalization: PRF_NF_PERSONALIZATION, nk || rho)
+```
+
+Where:
+
+- `cm` is the note commitment of the note being spent
+- `nk` is the nullifier deriving key, see Account Creation.
+
+When a note is spent as part of the Spend Description in a Transaction, its nullifier is publicly revealed. Full nodes keep track of previously revealed nullifiers and disallow Spend Descriptions that reveal previously seen nullifiers. The integrity of the nullifier is checked in the zero-knowledge proof of the Spend Description to ensure that it is computed correctly.
+
+# Merkle Tree of Notes
+
+Iron Fish tracks all notes ever created in a binary Merkle tree called the **Merkle Tree of notes**. In this tree, every leaf node contains a note commitment, and is labeled with the hash of the note. Every node that is not a leaf is labeled with the hash of the child nodes.
+
+The hash function used to construct the Merkle tree of notes is the Pedersen hash on the JubJub group, which can be computed efficiently in SNARK circuits.
+
+The Merkle tree of notes has a fixed height of 32, and as such it can contain up to 2^32 notes.
+
+The Merkle tree of notes is an append-only data structure: notes can be added but never removed from it (spent notes instead are invalidated using nullifiers). Because the Merkle tree of notes has a maximum size, once it gets full, a brand new tree is constructed from scratch.
+
+# Asset
+
+An asset is custom private token supported by the Iron Fish blockchain. The mint and burn operation for an asset is public knowledge, but all subsequent asset transfers are private—custom assets and native assets all share the same anonymity pool and transactions do not reveal which assets are being transacted.
+
+An asset is uniquely identified and constructed from the following 4 fields:
+
+- **name**: an arbitrary 32-byte string. By convention, this is usually a utf-8 string padded with 0 bytes
+- **metadata**: an arbitrary 96-byte string. By convention, this is usually a utf-8 string padded with 0 bytes
+- **creator**: the public address of the account that first created the asset
+- **nonce**: a 1-byte number that allows constructing a valid generator (see Generator below for information about why this is needed)
+
+These fields are immutable and cannot be altered once the asset is created.
+
+Assets are also characterized by 2 properties that are derived from the 4 fields above:
+
+- **identifier**: a 32-byte string. This can be used to uniquely identify the asset as an alternative to the 4-tuple (name, metadata, creator, nonce). See Identifier for details on how this is constructed.
+- **generator**: an element of the JubJub group that is used in transaction proofs (see [Transaction Balancing Proof](#transaction-balancing-proof)). See Generator below for details on how this is constructed.
+
+Because both the identifier and the generator are derived from the 4 immutable fields, these properties are also immutable.
+
+Assets also have a supply and an owner. The **supply** is the number of tokens (ores) that are available to spend. Supply can be increased or decreased by the owner of an asset using mint and burn transactions. The supply at a given time can be calculated by aggregating all mint and burn transactions that ever happened on the chain.
+
+The **owner** is the public address of the account that may mint or burn the asset. By default, the owner and the creator are the same, but the owner may be changed at any time to an arbitrary public address using a special mint transaction.
+
+### Identifier
+
+The identifier of an asset is a 32-byte string that is constructed from the 256-bit Blake2s hash of the 4 fields of an asset: name, metadata, creator, and nonce.
+
+More specifically, it is constructed as follows:
+
+```
+identifier = blake2s(
+  0x096b36a5804bfacef1691e173c366a47ff5ba84a44f26ddd7e8d9f79d5b42df0
+  || creator
+  || name
+  || metadata
+  || nonce,
+  length: 256 bits,
+  personalization: "ironf_A_")
+```
+
+### Generator
+
+The generator is an element of the JubJub group that generates a subgroup. It is unique per asset, and is derived from the identifier (which in turn is derived from the name, metadata, creator, and nonce).
+
+The generator is constructed first by computing the 256-bit Blake2s hash of the identifier:
+
+```
+identifier_hash = blake2s(identifier, length: 256 bits, personalization: "ironf_cv")
+```
+
+The hash is then interpreted as an affine point on the JubJub curve in compressed form. This point is the generator.
+
+The map between the hash of the identifier and a JubJub curve point is not bijective (not all hashes can be interpreted as affine points in compressed form), therefore this last operation may fail in the general case. A valid asset must contain a nonce that allows the constructor of a generator.
+
+When constructing a new asset, one may try all nonces from 0 to 255 until one that yields a valid generator is found. The chances that a random 256 bit string maps to an affine point in compressed form is about 45%, so any naive algorithm (including “brute force”) for choosing a nonce can find a valid nonce in an acceptable time.
+
+### Native Asset
+
+The asset that is used for miner rewards and transaction fees is special: it is called **native asset** or **\$IRON**, and is not constructed as described above.
+
+The native asset is not constructed from the 4-tuple (name, metadata, creator, nonce) but has a fixed identifier:
+
+```
+51f33a2f14f92735e562dc658a5639279ddca3d5079a6d1242b2a588a9cbf44c
+```
+
+The native asset does not have a creator or owner. Attempting to construct the native asset identifier from a 4-tuple above requires solving the preimage problem for the Blake2s hash function. As such, no Iron Fish account may ever mint or burn the native asset. The supply for the native asset is entirely controlled by miner rewards and may only increase over time.
+
+# Transaction Balancing Proof
+
+A transaction may have some private input and output values (the note values), and some public input and output values (fee, mints, and burns). Nonetheless, every Iron Fish participant is able to verify the balance equation for a given transaction:
+
+$$\text{spends} - \text{outputs} = \text{fee} - \text{mints} + \text{burns}$$
+
+The way this equation is verified without revealing the private values is through **value commitments (cv)**. A commitment is a cryptographic construct that is bound to a hidden message: the commitment does not reveal any information of the message, but altering the message would make the commitment invalid. In the context of Iron Fish, a value commitment is a commitment on the value of a note that is part of a spend or an output. Value commitments are implemented as Pedersen commitments on the JubJub group.
+
+For a given value *v* expressing the number of tokens of an asset *A*, its value commitment (cv) is calculated first by generating a random number *rnd*, and then calculating the following:
+
+$$cv = v G_A h + r G_R$$
+
+Where:
+
+- $G_A$ is the **asset generator**: an element of the JubJub group that is unique per asset. See … for information of how this is constructed from the identifier of the asset.
+- $G_R$ is the Value Commitment Randomness Generator
+- $h$ is the cofactor of the JubJub group. $G_A$ is multiplied by the cofactor because it is an arbitrary JubJub group element, as such it may generate a subgroup of composite order. $G_R$ instead is not multiplied by the cofactor because that is a fixed element that is known to generate a subgroup of prime order (TODO: verify this!)
+
+Each spend description and output description contains a value commitment (cv) for the value of their note.
+
+The value commitment (cv) is computed only for private values (the note values). For all other public values (fee, mints, and burns) an analogous of the value commitment (cv) called **pseudo-value commitment (pcv)** can be calculated as follows:
+
+$$pcv = v G_A h$$
+
+This is essentially the same expression as before with $r = 0$. Note that the pseudo-value commitments (pcv) can be calculated on the fly by any Iron Fish participant as the formula to calculate them only contains only public information.
+
+By appropriately combining each value commitment and pseudo-value commitment, one can obtain an analogue of the transaction balance equation:
+
+$$cv_\text{spends} - cv_\text{outputs} = pcv_\text{fee} - pcv_\text{mints} + pcv_\text{burns} + R$$
+
+Where R represents the contribution of all the $r G_R$ terms that appear in the value commitments:
+
+$$R = \sum_{s \in \text{spends}} r_s G_R - \sum_{o \in \text{outputs}} r_o G_R = \left(\sum_{s \in \text{spends}} r_s - \sum_{o \in \text{outputs}} r_o\right) G_R$$
+
+The sum of the r terms (taken with appropriate signs) is called **binding signing key (bsk)**:
+
+$$bsk = \sum_{s \in \text{spends}} r_s - \sum_{o \in \text{outputs}} r_o$$
+
+R is called **binding validation key (bvk)**:
+
+$$bvk = bsk G_R$$
+
+These keys are used to implement digital signatures using the RedDSA scheme (a variant of the EdDSA scheme for the JubJub group).
+
+Note that the binding signing key (bsk) can only be known to the creator of the transaction, while the binding verification key (bvk) can be computed by any Iron Fish participant by rearranging the terms of the previous equation:
+
+$$bvk = cv_\text{spends} - cv_\text{outputs} - pcv_\text{fee} + pcv_\text{mints} - pcv_\text{burns}$$
+
+The creator of the transaction uses the bsk to sign the transaction, and any Iron Fish participant can use the bvk to verify the signature. The process of verifying the signature ensures that the transaction balance equation is respected. In fact, any attempt to construct an unbalanced transaction would require solving the discrete logarithm problem for elliptic curves (ECDLP) due to the fact that the token amounts and the random numbers are multiplied by different generators whose relation is unknown.
+
+The data that is signed is, more specifically:
+
+```
+bvk || transaction_hash
+```
+
+Where bvk is represented as an affine point in compressed form (256 bits), and the transaction hash is computed as the 256-bit Blake2b hash of the serialized transaction, with personalization string `IFsighsh`. See https://github.com/iron-fish/ironfish/blob/v1.9.0/ironfish-rust/src/transaction/mod.rs#L372-L420 for precise details of how the transaction hash is constructed.
+
+# Descriptions
+
+## Spend Description
+
+A Spend Description is a component of a transaction that let’s a wallet **spend** its notes. The structure of a Spend Description contains:
+
+- A **value commitment** of the note it’s spending
+- The **root** of the Notes Merkle Tree that’s associated with the merkle path to the note used to create the zero-knowledge proof
+- The resulting **nullifier** associated with the note being spent
+- The **authorizing signature** using the randomized private key and randomized public key (**rk**)
+- A **zero-knowledge proof**
+
+The proof is a Groth16 zk-SNARK proof that can be verified by any Iron Fish participant to prove the following statements:
+
+- the authorizing key (ak) is a valid element of the JubJub subgroup of 255-bit prime order
+- the randomized public key (rk) was properly constructed from the authorization key (ak) and randomness (see [Randomized Public Key](#randomized-public-key) for details about the construction of the randomized public key)
+- the note being spent exists in the Merkle tree of notes
+- the note being spent is owned by the creator of the transaction
+- the note’s nullifier was computed correctly (see [Nullifier](#nullifier) for details about how the nullifier is computed)
+
+## Output Description
+
+An Output Description **creates** all new notes. The structure of an Output Description contains:
+
+- The ephemeral public key **(epk)**
+- $C^{enc}$ a 152 byte encrypted blob
+- $C^{out}$ an 80 byte encrypted blob
+- A value commitment **cv**) of the note
+
+- A note commitment (**cm**), a Pedersen hash of the note
+- A **zero-knowledge proof**
+
+The proof is a Groth16 zk-SNARK proof that can be verified by any Iron Fish participant to prove the following statements:
+
+- the authorizing key (ak) is a valid element of the JubJub subgroup of 255-bit prime order
+- the randomized public key (rk) was properly constructed from the authorization key (ak) and randomness (see [Randomized Public Key](#randomized-public-key) for details about the construction of the randomized public key)
+- the note commitment was computed correctly (see [Note Commitment](#note-commitment) for details about how the note commitment is computed)
+
+## Mint Description
+
+A Mint Description **allows** the Transaction to create more of a custom asset through Output Description(s) in the same Transaction. Since notes can only be created by an Output Description, the Mint Description simply specifies how much **more** of a custom asset there should be.
+
+A Mint Description is valid if it’s either being created by the owner of the asset, or by an address that is designated as the owner.
+
+The structure of a Mint Description contains:
+
+- An Asset identifier [LINK TO ASSET]
+- The plaintext **value** for how much of the asset should be minted
+- The current **owner** for an asset that has permission to mint
+- An *optional* field for **transferring ownership to a new address**
+- And a **zero-knowledge proof**
+
+The proof on the Mint Description is a Groth16 zk-SNARK proof that can be verified by any Iron Fish participant to prove the following statements:
+
+- The **owner**’s authorizing key (ak) is a valid element of the JubJub subgroup of 255-bit prime order
+- Given the publicly available key randomness (**rk**), ensure that it was derived from the owner’s authorizing key and **α** which is a point on the JubJub curve derived with randomness
+- Ensure that the **owner** transmission key (or public key) is derived from the authorizing key
+
+## Burn Description
+
+A Burn Description **allows** the Transaction to burn any Iron Fish asset through Spend Description(s) in the same Transaction. Since notes can only be consumed by a Spend Description, the Burn Description simply specifies how much **less** of an asset there should be. Unlike a spend description, which contains an encrypted note, a burn description contains only public data and any Iron Fish participant may read it for the purpose of knowing the supply of an asset.
+
+The structure of a Burn Description contains:
+
+- A 32 byte **asset identifier** of the asset its burning
+- The plaintext **value** signifying how much of the asset is allowed to be burned
+
+Notice that there is no zero-knowledge proof, and no signature attached to this Description. This is because the Spend Description contains a signature that signs the hash of all transaction contents, including any Burn Descriptions, tying it to the Transaction.
+
+# Note Encryption and Decryption
+
+A note is spent as part of the Spend Description, and created as part of the Output Description. All notes are encrypted such that only the sender and recipient of a note may decrypt them, whereas other Iron Fish participants may not. More specifically, notes on the Output Description are encrypted in such way that the sender’s outgoing view key and recipient’s incoming view key are the only keys able to decrypt it. The encryption method is a hybrid encryption method involving the Elliptic Curve Diffie–Hellman Key Exchange scheme on the JubJub group, and ChaCha20-Poly1305.
+
+There are 3 fields on the **Output Description** that facilitate Note encryption and decryption:
+
+- The **ephemeral public key (epk)**
+- $C^{enc}$ a 152 byte encrypted blob, that contains encrypted information for the recipient of a note
+- $C^{out}$ an 80 byte encrypted blob, that contains encrypted information for the sender of a note
+
+### Encryption
+
+When a sender sends a transaction to the recipient, the following happens:
+
+1. An **ephemeral secret key (esk)** is randomly generated as a random JubJub group scalar field element
+2. The **ephemeral public key (epk)** is generated from the esk as: `epk = esk * PUBLIC_KEY_GENERATOR`
+3. A **shared secret** is computed using the Elliptic Curve Diffie-Hellman key exchange as `shared_secret = esk * pk_recipient` where recipient is the transmission key (pk) of the recipient.
+
+**Using the shared secret for symmetric encryption of the Note:**
+
+Given a shared_secret, the **symmetric encryption key** is calculated as `symmetric_encryption_key = blake2b(shared_secret || epk, personalization: "Iron Fish shared")`
+
+The plaintext Note is encrypted via ChaCha20-Poly1305 using the **symmetric encryption key** as $C^{enc}$ that’s saved on the Output Description.
+
+Given the **shared secret**, one can also decrypt the Note by computing **symmetric encryption key** using the **shared secret** and publicly available data on the Output Description.
+
+### Decryption
+
+#### Using the recipient’s incoming view key
+
+The **shared secret** for the **recipient** is computed as: `epk * ivk_recipient`**.** This **shared secret** is then used to compute the **symmetric encryption key** in the same way as it was created during encryption:
+
+```
+symmetric_encryption_key = blake2b(shared_secret || epk, personalization: "Iron Fish shared")
+```
+
+The recipient’s wallet then tries to decrypt incoming Notes on the incoming transactions via ChaCha20-Poly1305 using the **symmetric encryption key**.
+
+Because all transactions are private, it’s not possible for an account to know which output descriptions the account is a recipient for. In order to received notes, an account needs to attempt to decrypt each and every output description on the Iron Fish chain, and keep the ones where decryption was successful (an unsuccessful decryption would cause the Poly1305 MAC verification to fail). The operation of searching for received notes by decrypting all transactions is called **scanning**.
+
+#### Using the sender’s outgoing view key
+
+After the transaction is constructed and transmitted, the sender would need access to the **esk** that was used for encrypting the Note in order to decrypt it later on for accurate transaction history. The **esk** is saved in its encrypted form as part of $C^{out}$ encrypted blob on the Outgoing Description. It’s encrypted using an **encryption key** that’s computed as
+
+```
+encryption_key = blake2(personalization: SHARED_KEY_PERSONALIZATION, ovk_sender || cv || cm || epk)
+```
+
+The **esk** is then encrypted using the **encryption key** and ChaCha20-Poly1305 as $C^{out}$ on the Output Description. The sender’s wallet can therefore get access to outgoing transaction details using publicly available information on the Output Description and sender’s outgoing view key.
+
+# Actions
+
+The transaction descriptions described above may be combined to construct transactions to perform various actions. The most basic actions are described below, but please note that a transaction may contain an arbitrary combination of descriptions (as long as the balance equation is respected), and as such multiple actions may be included in the same transaction.
+
+## Sending Tokens
+
+An Iron Fish account may send tokens of an asset to another account by creating a transaction with one or more spend descriptions (each containing one note to destroy), and one or more output descriptions (each containing one new note).
+
+When sending tokens of the native asset (\$IRON), the difference between the spend description values and the output description values is the transaction fee.
+
+When sending tokens of any other asset, the sum of the spend description values must equal the sum of the output description values.
+
+## Minting
+
+Minting (increasing the supply of an asset) can be done by creating a transaction with one or more mint descriptions, and one or more output descriptions (each containing one new note).
+
+The output descriptions allow sending the newly minted tokens to arbitrary accounts.
+
+The sum of the values of the mint descriptions must equal the sum of the value of the output descriptions.
+
+## Burning
+
+Burning (decreasing the supply of an asset) can be done by creating a transaction with one or more spend descriptions (each containing one note to destroy), and one or more burn descriptions.
+
+The sum of the values of the spend descriptions must equal the sum of the value of the burn descriptions.
+
+It follows that an account may only burn tokens that they own in the form of notes. In particular, the owner of an asset may not burn the asset if they do not own any token of that asset.
+
+## Asset creation
+
+Asset creation is a special case of [minting](#minting). In order to create a new asset, an account may simply mint a non-zero amount of it.
+
+## Changing asset ownership
+
+Changing the ownership of an asset can be done by creating a transaction with a mint description, by setting the dedicated field of the mint description to the new owner account address.
