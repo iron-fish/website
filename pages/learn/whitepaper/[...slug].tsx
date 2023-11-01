@@ -70,7 +70,9 @@ export const getStaticProps: GetStaticProps<Props> = async ({ params }) => {
   };
 };
 
-export const getStaticPaths: GetStaticPaths<{ slug: string }> = async () => {
+export const getStaticPaths: GetStaticPaths<{
+  slug: Array<string>;
+}> = async () => {
   const paths = parseNestedDir(CONTENT_PATH)
     .filter((item) => item[item.length - 1].endsWith(".mdx"))
     .map((item) => {
