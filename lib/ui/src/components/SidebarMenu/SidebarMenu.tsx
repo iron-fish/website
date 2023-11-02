@@ -125,7 +125,7 @@ function createNestedMenuItems(
     return (
       <Accordion
         key={item.title}
-        defaultIndex={isAccordionItemSelected ? 0 : undefined}
+        defaultIndex={0}
         allowToggle
         border="none"
         w="100%"

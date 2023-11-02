@@ -1,11 +1,18 @@
 import { FaqMoreInfo } from "@/components/FaqMoreInfo/FaqMoreInfo";
-import { Container, FAQItem, Text, Box } from "@/lib/ui";
+import { Container, FAQItem, Text, Box, Link } from "@/lib/ui";
+import { CONSTANTS } from "@/shared/constants";
 
 export function NodeAppFaqs() {
   return (
     <Box borderBottom="1.5px solid black">
       <Container w="100%" maxW="container.xl" pt="150px">
-        <Text as="h2" textStyle="h3" mb={12} textAlign="center">
+        <Text
+          id="node-app-faq"
+          as="h2"
+          textStyle="h3"
+          mb={12}
+          textAlign="center"
+        >
           Node App FAQ
         </Text>
         <FAQItem title="Why opt in to telemetry?">
@@ -26,7 +33,33 @@ export function NodeAppFaqs() {
           mint/burn via the command line, but you can then access and transact
           with minted assets in the app.
         </FAQItem>
-
+        <FAQItem title="The app crashes on startup with the error: A JavaScript error occurred in the main process">
+          If you&apos;re on Windows and seeing this error, please install the
+          Visual C++ Redistributable and try again. You can download it from
+          Microsoft{" "}
+          <Link
+            isExternal
+            href="https://aka.ms/vs/17/release/vc_redist.x64.exe"
+            color="#3344dd"
+            _visited={{ color: "#884488" }}
+          >
+            right here
+          </Link>
+          .
+        </FAQItem>
+        <FAQItem title="Where can I ask for help with the Node App?">
+          If you have any questions or need additional help, you can talk to us
+          on about the Node App on{" "}
+          <Link
+            isExternal
+            href={CONSTANTS.SOCIAL_LINKS.discord}
+            color="#3344dd"
+            _visited={{ color: "#884488" }}
+          >
+            Discord
+          </Link>{" "}
+          in the #node-app channel.
+        </FAQItem>
         <FaqMoreInfo />
       </Container>
     </Box>
