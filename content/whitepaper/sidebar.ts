@@ -8,7 +8,11 @@ export const sidebar: SidebarDefinition = [
       "protocol/accounts",
       "protocol/crypto-primitives",
       "protocol/transactions",
+      "protocol/consensus",
+      "protocol/blocks",
     ],
   },
   "networking",
+  "glossary",
+  "governance",
 ];
