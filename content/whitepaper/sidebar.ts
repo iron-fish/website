@@ -11,10 +11,4 @@ export const sidebar: SidebarDefinition = [
     ],
   },
   "networking",
-  "storage",
-  "mining",
-  "account",
-  "transaction",
-  "consensus-verification",
-  "appendix",
 ];

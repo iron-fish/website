@@ -1,0 +1,144 @@
+---
+title: Networking (WIP, links need to be updated)
+seo-title: Iron Fish Protocol Whitepaper Networking
+---
+
+The networking layer is a significant part of any blockchain and it dictates how nodes interact with one another — what transport layers they use to communicate, how messages get across, and how they request/respond to specific messages from other peers.
+
+Iron Fish is a decentralized network, which means it relies on a peer-to-peer network of nodes to perform operations including:
+
+- distributing a copy of the chain
+- distributing pending [transactions](https://www.notion.so/Transactions-0d0b05511fb8401881d6493fe30b57db?pvs=21) and blocks
+- help nodes discover other nodes in the network
+
+Before digging into the details of how nodes share the chain and transactions, it is important to understand that there can be multiple instances of the Iron Fish network. There are two official instances of the Iron Fish network:
+
+- **mainnet:** used for production. This is the network version that is supported by exchanges and miners.
+- **testnet:** used for testing. Major changes to consensus are tested on the testnet before being applied on the mainnet
+
+What differentiates an Iron Fish network instance from another is its **network definition**, described below. Different Iron Fish networks with different network definitions are incompatible with each other, and a node from one network will not accept chain mutations coming from a node from another network.
+
+## Network Definition
+
+A network is defined by the following two parameters:
+
+- network id: an unsigned 16-bit integer
+- genesis block: the block with block sequence 1
+
+These parameters cannot be changed. Attempting to change these parameters would result in a new network. Therefore, these specific network definitions are considered to be part of [consensus](https://www.notion.so/Consensus-3eb91b5d0cba4b12b6ac76a254ebd597?pvs=21). 
+
+The genesis block is the first block in the chain and must be used to create subsequent blocks for that network. 
+
+The following are the network id and genesis block hashes for the official Iron Fish networks:
+
+|  | Network ID | Genesis Block Hash |
+| --- | --- | --- |
+| Mainnet | 1 | eac623b099b8081d2bde92d43a4a7795385c94e2c0ae4097ef488972e83ff2b3 |
+| Testnet | 0 | 7999c680bbd15d9adb7392e0c27a7caac7e596de5560c18e96365d0fd68140e3 |
+
+## Peer Communication
+
+Iron Fish nodes perform communication with peers using WebSocket and WebRTC. Messages exchanged between peers use a custom binary serialization format. WebRTC connections can make use of hole punching through STUN servers to allow nodes that may be behind NAT firewalls to receive connections
+
+## Bootstrap Nodes
+
+An Iron Fish node gets connected to the network by using bootstrap nodes. 
+
+Bootstrap nodes are Iron Fish nodes that are presumed to be accessible, part of the Iron Fish network, and have a fixed network address (for example: a static IP address, or a DNS name). They may be regular nodes, but in most cases they are configured to just facilitate peer discovery for other nodes and therefore do not participate in the network in any other way. 
+
+Anyone can host their own bootstrap nodes and advertise them to the Iron Fish community. Node configuration of the reference Iron Fish implementation can also be easily modified to use any preferred set of bootstrap nodes. 
+
+## Peer Discovery
+
+The Iron Fish peer-to-peer network can be arbitrarily large, and for practical reasons each node will connect to a subset of overall peers. The reference Iron Fish implementation has the node configuration settings for the target number of peers and maximum number of peers. The target number of peers is what the node will naturally try to connect to, and the maximum number of peers is a slightly larger number to allow for incoming connections from other peers. The default settings for the target number of peers is 45, and the default setting for maximum number of peers is 50.  However, a node operator can choose to adjust these numbers when considering software limits, operating system limits, or hardware limitations. 
+
+When a node comes online for the first time, it may connect to one or more **bootstrap nodes** in order to find an initial set of peers. A bootstrap node is a node that has a known, fixed IP address, and serves the purpose of keeping track of the list of peers that connect to it, and sharing this list to new peers.
+
+Once a node has obtained a list of peers, defined as a set of public key identities and IP addresses, it can connect to them, and ask them for their list of peers. The node continues this process until all the reachable peers have been connected, or the maximum number of connections is reached.
+
+After the first peer discovery, the node may cache the list of discovered peers so that subsequent restarts do not have to rely on bootstrap nodes.
+
+## Startup Sequence
+
+As a new node starts up, the following happens:
+
+1. The node generates a unique key-pair for itself. The network identity for the node is the generated public key and its IP address. 
+2. The new node randomly selects one bootstrap node from a provided list, and opens a WebSocket connection to it. If a user has a specific node they want to connect to during this step, they can use the config file or the command line to specify their own preferred bootstrap node(s).
+3. The new node and the bootstrap node send an initial “Identity” message to each other.
+4. The new node sends a PeerListRequest message to the bootstrap node, and the bootstrap node responds with a PeerList message.
+5. Using that list, the new node decides which peers to connect to.
+6. The 3rd step is repeated with every new peer the node connects with, until the target number of connections is made.
+
+## Transaction Sharing
+
+When an Iron Fish participant wants to post a new transaction to the Iron Fish chain, they will initially broadcast it as a **pending transaction** to the Iron Fish nodes in the network using a gossip protocol. 
+
+Pending transactions are put into a data structure called **mempool**. The mempool can be thought of a queue of pending transactions that are waiting to be fully verified and mined. The mempool is ephemeral and completely disconnected from the Iron Fish chain. Nodes do not share their mempool with their peers.
+
+## Block Sharing
+
+Peers share blocks using a [gossip protocol](https://en.wikipedia.org/wiki/Gossip_protocol). Whenever a new block is mined, it is broadcasted to all the nodes in the network through the gossip protocol.
+
+The reference implementation of the Iron Fish node employs some strategies to reduce the amount of data exchanged (and, in particular, to avoid re-sending the same block to the same nodes multiple times).
+
+## Gossip Protocol
+
+The goal of the gossip protocol is to get new blocks and new transactions to every peer as quickly as possible, while using the least amount of network data.
+
+The way transactions and blocks are gossiped to the Iron Fish network differs. Below is an overview of the Transaction and Block Protocol that happens when blocks and transactions are gossiped. 
+
+### Transaction Gossip Protocol
+
+When handling a new transaction (whether creating it or re-gossiping) a node sends a full transaction to a randomly chosen square root set of its peers (NewTransactions), and a hash of the transaction to all the rest (NewPooledTransactionHashes).
+
+When a node receives a hash of a transaction it hasn't seen before (via NewPooledTransactionHashes), it waits briefly (1000 ms) to see if any peers will send the full transaction. During that time, the peer maintains a list of any additional peers that send it the same hash. After the waiting period, the node chooses a random peer from this list to request the full transaction (using PooledTransactionsRequest).
+
+When a node receives a full transaction (via NewTransactions or PooledTransactionsResponse message type) the node does a full validation of the transaction, adds it to its own mempool, and then repeats the gossip process with its peers.
+
+### Block Gossip Protocol
+
+Broadcasting blocks work similarly to broadcasting transactions. The main difference is that instead of broadcasting a full block, a node broadcasts a structure called a **CompactBlock**. A CompactBlock includes the block header and hashes of all the transactions on the block (the same hashes that go out during transaction propagation, i.e. the unique identifiers for transactions). Using a compact block helps with speed and efficiency, due to the large size of transactions.
+
+When a node receives a new block hash from NewBlockHashes, it handles it similarly to receiving new transaction hashes. It will wait a short time (1000ms) to see if it receives a CompactBlock from any other peer. In that period it keeps track of any other peer who sent it that block hash. Once the waiting period is over, the node will request the CompactBlock (using GetCompactBlockRequest) from a random peer in the list.
+
+Once a node receives a compact block (either through GetCompactBlockResponse or NewCompactBlock), it uses the transaction hashes on the compact block to fetch matching transactions from its mempool, then uses those transactions to reconstruct the full block.
+
+In some cases, a node may not have the necessary transactions in its mempool to rebuild the block. If that happens, a node can request a subset of the transactions from a peer node that told it about the block. The node then tests that the block header is valid. If it’s valid, the node sends a compact block to the square root of its peers, then validates the block’s transactions. Once the transactions have been validated, the node adds the block to its local blockchain and sends block hashes to the remaining peers.
+
+### Local History
+
+In an effort to avoid an infinite broadcast of the same message, each node uses a bloom filter to store a set of transaction hashes and block hashes that its peers have seen. When a node receives a block or transaction, before re-gossiping, it filters out peers that have already been marked as having that block or transaction (i.e the block or transaction hash is in the bloom filter for that peer).
+
+## Messaging
+
+A message is an agreed-upon format for a piece of information to be shared between peers. There are several types of messages and ways for them to interact with the nodes, depending on the situation.
+
+**Message Types**
+
+The networking layer relies on these different Message Types:
+
+| Message Type | Message Numerical Number | Description |
+| --- | --- | --- |
+| Disconnecting | 0 | Notifies that a node is not accepting a connection (e.g. that peer is at max peers |
+| CannotSatisfyRequest | 1 | Used for request/response messages |
+| GetBlockHashesRequest | 2 | Requests a block hash during syncing |
+| GetBlockHashesResponse | 3 | Responds with a list of block hashes so the syncing node can perform a binary search to find where the syncing node should start syncing from |
+| GetBlocksRequest | 4 | Requests a block during sync |
+| GetBlocksResponse | 5 | Responds with a list of full blocks to the requesting node to facilitate syncing |
+| Identify | 6 | Upon node startup, nodes use this message to to introduce one another by exchanging their identities |
+| PeerList | 7 | Responds with a peer list to facilitate the requesting peer in peer discovery |
+| PeerListRequest | 8 | Requests peer lists from your peers for node discovery |
+| Signal | 9 | WebRTC session data |
+| SignalRequest | 10 | Requests to start a WebRTC connection with another peer |
+| PooledTransactionsRequest | 11 | Using a list of transaction hashes, requests full transactions from another peer’s mempool (pool of pending transactions) |
+| PooledTransactionsResponse | 12 | Responds to a PooledTransactionsRequest request with full transactions |
+| NewPooledTransactionHashes | 13 | Notifies peers of newly gossiped transaction hashes |
+| NewTransactions | 14 | Notifies peers of newly gossiped transactions |
+| NewBlockHashes | 15 | Notifies peers of newly gossiped block hashes |
+| NewCompactBlock | 16 | Notifies peers of newly gossiped block headers with transaction hashes |
+| GetBlockTransactionsRequest | 17 | Requests full transactions from a CompactBlock by index |
+| GetBlockTransactionsResponse | 18 | Responds to a request for full transactions within a CompactBlock by index |
+| GetCompactBlockRequest | 19 | Given a block hash (from a NewBlockHashes message), requests a CompactBlock |
+| GetCompactBlockResponse | 20 | Responds to a GetCompactBlockRequest |
+
+For full description of all message types and exact formats, see [here](https://github.com/iron-fish/ironfish/tree/v1.11.0/ironfish/src/network/messages).
