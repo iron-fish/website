@@ -1,4 +1,60 @@
 ---
 title: Consensus
 seo-title: Iron Fish Protocol Whitepaper Consensus
----
+--- 
+
+The Iron Fish network has a set of rules that establish how blocks are accepted to the canonical chain, and what transactions are allowed (beyond the constraints already described in Mining and [Transactions](https://www.notion.so/Transactions-0d0b05511fb8401881d6493fe30b57db?pvs=21)). These rules, collectively, are called **consensus**. Every Iron Fish participant must obey the consensus in order to successfully push transactions or blocks to the Iron Fish chain.
+
+The consensus is used to determine properties of the network, including (but not limited to) the following:
+
+- what blocks constitute the canonical chain
+- the minimum fee for transactions
+- the mining difficulty and target block time
+- the proof-of-work algorithm
+- whether certain block or transaction features are enabled
+- the serialization format used for blocks and transactions
+- the serialization format of network messages
+
+The consensus may change over time: this is often done to introduce new features to Iron Fish. When the consensus is changed, it is changed after a carefully chosen activation block: this is the block height where the new consensus will take place. See Governance for more information about how and why consensus can be modified.
+
+# Consensus parameters
+
+This is an overview of the current rules that make up the consensus for the Iron Fish Mainnet and Testnet:
+
+|  | Description | Introduced | Mainnet Value | Testnet Value |
+| --- | --- | --- | --- | --- |
+| allowedBlockFutureSeconds | Each block on the Iron Fish chain has a timestamp associated to it. This is the duration that the timestamp of a block is allowed to be in the future, as observed by an Iron Fish node. When an Iron Fish node receives a new block, if the timestamp of the new block is in the future compared to the node’s clock, this duration expresses how far in the future the timestamp may be. If the timestamp exceeds this duration, then the block is rejected. Used to amortize clock drifting and synchronization issues between Iron Fish nodes. | At Launch | 15 seconds | 15 seconds |
+| genesisSupplyInIron | The amount of tokens of the native asset ($IRON) in the genesis block [link to page that explains genesis block] | At Launch | 42000000 $IRON | 42000000 $IRON |
+| targetBlockTimeInSeconds | The average time that all blocks should be mined. Used to adjust mining difficulty [link to page that explains difficulty] | At Launch | 60 seconds | 60 seconds |
+| targetBucketTimeInSeconds | Time window during which mining difficulty should not change. [link to page that explains difficulty] | At Launch | 10 seconds | 10 seconds |
+| maxBlockSizeBytes | Maximum size of a block. Blocks bigger than this size should not be mined and are rejected by Iron Fish nodes. | At Launch | 524288 bytes (0.5 MiB) | 524288 bytes (0.5 MiB) |
+| minFee | The minimum fee that a transaction must have in order to be accepted. | At Launch | 0.00000001 $IRON (1 ore) | 0.00000001 $IRON (1 ore) |
+| enableAssetOwnership | Whether ownership of assets can be transferred between accounts (see Changing asset ownership (https://www.notion.so/Changing-asset-ownership-bc791db69e844230b6eadbedaf172fb4?pvs=21)) | Hard Fork 1 [link to FIP] | TBD | TBD |
+| enforceSequentialBlockTime | Whether block timestamps must be strictly monotonic (non-decreasing) | Hard Fork 1 [link to FIP] | TBD | TBD |
+
+# Canonical Chain and Forks
+
+All blocks on the Iron Fish chain are ordered, and each block is linked to the previous one by referencing the hash of the parent in its Block Header. The process of adding new blocks to the chain (mining) may be carried out by any Iron Fish participant. Due to the decentralized nature of the Iron Fish network, it’s possible that once the chain is at block sequence *n*, two or more miners may successfully mine a block with sequence *n*+1. Miners may then start generating more blocks with sequence n+2, n+3, …, on top of them. When such event occurs, the network is in a situation where multiple chains exist at the same time. This event is called **fork**, and it’s a natural occurrence in decentralized blockchains.
+
+<img src="/images/whitepaper/protocol/accounts/forks.svg" width="65%" style={{marginBottom: 1 + 'em'}}/>
+
+The consensus also establishes rules to reconcile forks and establish a **canonical chain**. The method used to perform this reconciliation is known as **fork choice algorithm**. This method compares the head block of each fork and chooses the **“heaviest” block** by comparing the following properties, in this order:
+
+1. the cumulative work of the block: the block with the highest cumulative work wins
+2. the block sequence number: the block with the highest sequence number wins (the longest chain wins)
+3. the target difficulty: the block with the highest difficulty wins
+4. the hash: the block with the lowest hash wins
+
+Once the heaviest block has been identified, the canonical chain is set to be the one containing the heaviest block.
+
+## Chain Reorganization
+
+Forks may occur at any point in time, and at any block sequence (after the genesis block). It is possible that an Iron Fish node may be working on a forked chain for some time, and later become aware that another “heavier” chain exist. 
+
+When such situation occurs, the node has to retrace the block sequence at which the fork happened, remove the forked blocks from its copy of the chain, and add the new blocks from the heavier chain. This process is known as **chain reorganization**.
+
+Because a chain reorganization removes blocks from a node, it also removes transactions from that node. Therefore, some notes that were previously spent may become unspent, and some notes that were created may be destroyed.
+
+Chain reorganizations therefore carry some uncertainty on the state of transactions. For this reason, it is common for Iron Fish users (as well as users of other blockchains) to wait for a certain number of blocks to be mined before considering a transaction as **confirmed**.  For example, if a transaction is initially mined on block *n*, it is common (although not mandatory) for users to wait until block *n*+*k* has been mined before considering that transaction confirmed. The number *k* is called **number of confirmations**. This number can be chosen such that the probability of a chain reorganization that would delete block *n* is low enough. The recommended number of confirmations for Iron Fish is 2.
+
+It must be said that, statistically speaking, chain reorganizations on the Iron Fish chain that involve more than 1 block are rare.
