@@ -49,7 +49,7 @@ Once the heaviest block has been identified, the canonical chain is set to be th
 
 ## Chain Reorganization
 
-Forks may occur at any point in time, and at any block sequence (after the genesis block). It is possible that an Iron Fish node may be working on a forked chain for some time, and later become aware that another “heavier” chain exist. 
+Forks may occur at any point in time, and at any block sequence (after the genesis block). It is possible that an Iron Fish node may be working on a forked chain for some time, and later become aware that another “heavier” chain exist.
 
 When such situation occurs, the node has to retrace the block sequence at which the fork happened, remove the forked blocks from its copy of the chain, and add the new blocks from the heavier chain. This process is known as **chain reorganization**.
 

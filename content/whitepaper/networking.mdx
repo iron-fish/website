@@ -27,7 +27,7 @@ A network is defined by the following two parameters:
 
 These parameters cannot be changed. Attempting to change these parameters would result in a new network. Therefore, these specific network definitions are considered to be part of [consensus](protocol/consensus).
 
-The genesis block is the first block in the chain and must be used to create subsequent blocks for that network. 
+The genesis block is the first block in the chain and must be used to create subsequent blocks for that network.
 
 The following are the network id and genesis block hashes for the official Iron Fish networks:
 
@@ -42,15 +42,15 @@ Iron Fish nodes perform communication with peers using WebSocket and WebRTC. Mes
 
 ## Bootstrap Nodes
 
-An Iron Fish node gets connected to the network by using bootstrap nodes. 
+An Iron Fish node gets connected to the network by using bootstrap nodes.
 
-Bootstrap nodes are Iron Fish nodes that are presumed to be accessible, part of the Iron Fish network, and have a fixed network address (for example: a static IP address, or a DNS name). They may be regular nodes, but in most cases they are configured to just facilitate peer discovery for other nodes and therefore do not participate in the network in any other way. 
+Bootstrap nodes are Iron Fish nodes that are presumed to be accessible, part of the Iron Fish network, and have a fixed network address (for example: a static IP address, or a DNS name). They may be regular nodes, but in most cases they are configured to just facilitate peer discovery for other nodes and therefore do not participate in the network in any other way.
 
-Anyone can host their own bootstrap nodes and advertise them to the Iron Fish community. Node configuration of the reference Iron Fish implementation can also be easily modified to use any preferred set of bootstrap nodes. 
+Anyone can host their own bootstrap nodes and advertise them to the Iron Fish community. Node configuration of the reference Iron Fish implementation can also be easily modified to use any preferred set of bootstrap nodes.
 
 ## Peer Discovery
 
-The Iron Fish peer-to-peer network can be arbitrarily large, and for practical reasons each node will connect to a subset of overall peers. The reference Iron Fish implementation has the node configuration settings for the target number of peers and maximum number of peers. The target number of peers is what the node will naturally try to connect to, and the maximum number of peers is a slightly larger number to allow for incoming connections from other peers. The default settings for the target number of peers is 45, and the default setting for maximum number of peers is 50.  However, a node operator can choose to adjust these numbers when considering software limits, operating system limits, or hardware limitations. 
+The Iron Fish peer-to-peer network can be arbitrarily large, and for practical reasons each node will connect to a subset of overall peers. The reference Iron Fish implementation has the node configuration settings for the target number of peers and maximum number of peers. The target number of peers is what the node will naturally try to connect to, and the maximum number of peers is a slightly larger number to allow for incoming connections from other peers. The default settings for the target number of peers is 45, and the default setting for maximum number of peers is 50.  However, a node operator can choose to adjust these numbers when considering software limits, operating system limits, or hardware limitations.
 
 When a node comes online for the first time, it may connect to one or more **bootstrap nodes** in order to find an initial set of peers. A bootstrap node is a node that has a known, fixed IP address, and serves the purpose of keeping track of the list of peers that connect to it, and sharing this list to new peers.
 
@@ -62,7 +62,7 @@ After the first peer discovery, the node may cache the list of discovered peers 
 
 As a new node starts up, the following happens:
 
-1. The node generates a unique key-pair for itself. The network identity for the node is the generated public key and its IP address. 
+1. The node generates a unique key-pair for itself. The network identity for the node is the generated public key and its IP address.
 2. The new node randomly selects one bootstrap node from a provided list, and opens a WebSocket connection to it. If a user has a specific node they want to connect to during this step, they can use the config file or the command line to specify their own preferred bootstrap node(s).
 3. The new node and the bootstrap node send an initial “Identity” message to each other.
 4. The new node sends a PeerListRequest message to the bootstrap node, and the bootstrap node responds with a PeerList message.
@@ -71,7 +71,7 @@ As a new node starts up, the following happens:
 
 ## Transaction Sharing
 
-When an Iron Fish participant wants to post a new transaction to the Iron Fish chain, they will initially broadcast it as a **pending transaction** to the Iron Fish nodes in the network using a gossip protocol. 
+When an Iron Fish participant wants to post a new transaction to the Iron Fish chain, they will initially broadcast it as a **pending transaction** to the Iron Fish nodes in the network using a gossip protocol.
 
 Pending transactions are put into a data structure called **mempool**. The mempool can be thought of a queue of pending transactions that are waiting to be fully verified and mined. The mempool is ephemeral and completely disconnected from the Iron Fish chain. Nodes do not share their mempool with their peers.
 
@@ -85,7 +85,7 @@ The reference implementation of the Iron Fish node employs some strategies to re
 
 The goal of the gossip protocol is to get new blocks and new transactions to every peer as quickly as possible, while using the least amount of network data.
 
-The way transactions and blocks are gossiped to the Iron Fish network differs. Below is an overview of the Transaction and Block Protocol that happens when blocks and transactions are gossiped. 
+The way transactions and blocks are gossiped to the Iron Fish network differs. Below is an overview of the Transaction and Block Protocol that happens when blocks and transactions are gossiped.
 
 ### Transaction Gossip Protocol
 
