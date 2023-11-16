@@ -224,7 +224,7 @@ Where:
 
 - $G_A$ is the **asset generator**: an element of the JubJub group that is unique per asset. See … for information of how this is constructed from the identifier of the asset.
 - $G_R$ is the Value Commitment Randomness Generator
-- $h$ is the cofactor of the JubJub group. $G_A$ is multiplied by the cofactor because it is an arbitrary JubJub group element, as such it may generate a subgroup of composite order. $G_R$ instead is not multiplied by the cofactor because that is a fixed element that is known to generate a subgroup of prime order (TODO: verify this!)
+- $h$ is the cofactor of the JubJub group. $G_A$ is multiplied by the cofactor because it is an arbitrary JubJub group element, as such it may generate a subgroup of composite order. $G_R$ instead is not multiplied by the cofactor because that is a fixed element that is known to generate a subgroup of prime order.
 
 Each spend description and output description contains a value commitment (cv) for the value of their note.
 
