@@ -8,7 +8,6 @@ import {
   ButtonProps,
   forwardRef,
   BoxProps,
-  Divider,
 } from "@/lib/ui";
 import { smoothScrollToElByQuerySelector } from "@/lib/ui/src/hooks/useSmoothScrollToHash";
 import {
@@ -78,6 +77,18 @@ export function DownloadForCurrentPlatform({ downloadUrlsByPlatform }: Props) {
           View All Download Options
         </Text>
       )}
+      <Text
+        mt={2}
+        as="button"
+        onClick={() => {
+          smoothScrollToElByQuerySelector("#node-app-faq");
+        }}
+        _hover={{
+          textDecoration: "underline",
+        }}
+      >
+        Having trouble? Check out the Node App FAQ
+      </Text>
     </Flex>
   );
 }
