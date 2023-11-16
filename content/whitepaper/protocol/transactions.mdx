@@ -50,9 +50,9 @@ Other than the collection of descriptions, a transaction also contains:
 
 # Miner Reward Transaction
 
-The Iron Fish protocol allows a special kind of transaction, called miner reward transaction, which has the property that it allows a negative fee. The miner reward transaction may only appear in a block header (see \<some page about blocks\>) and would be considered an invalid transaction if it was included anywhere else other than a block header.
+The Iron Fish protocol allows a special kind of transaction, called miner reward transaction, which has the property that it allows a negative fee. The miner reward transaction may only appear in a block header (see [Block Header](blocks#block-header)) and would be considered an invalid transaction if it was included anywhere else other than a block header.
 
-The purpose of the miner reward transaction is to allow an Iron Fish miner (see \<mining\>) to generate new tokens of the native asset (\$IRON) as a reward for their mining operation. Because this transaction is meant to have no spends and have only outputs, and because the native asset cannot be minted, the only way to respect the [transaction balance equation](#transaction-balancing) is to have a negative fee:
+The purpose of the miner reward transaction is to allow an Iron Fish miner (see [Block Mining](blocks#block-mining)) to generate new tokens of the native asset (\$IRON) as a reward for their mining operation. Because this transaction is meant to have no spends and have only outputs, and because the native asset cannot be minted, the only way to respect the [transaction balance equation](#transaction-balancing) is to have a negative fee:
 
 $$\cancel{\text{spends}} - \text{outputs} = \text{fee} - \cancel{\text{mints}} + \cancel{\text{burns}} \\ \text{fee} = - \text{outputs}$$
 
