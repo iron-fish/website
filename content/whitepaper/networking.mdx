@@ -31,10 +31,10 @@ The genesis block is the first block in the chain and must be used to create sub
 
 The following are the network id and genesis block hashes for the official Iron Fish networks:
 
-|  | Network ID | Genesis Block Hash |
-| --- | --- | --- |
-| Mainnet | 1 | eac623b099b8081d2bde92d43a4a7795385c94e2c0ae4097ef488972e83ff2b3 |
-| Testnet | 0 | 7999c680bbd15d9adb7392e0c27a7caac7e596de5560c18e96365d0fd68140e3 |
+|         | Network ID | Genesis Block Hash                                                 |
+| ------- | ---------- | ------------------------------------------------------------------ |
+| Mainnet |          1 | `eac623b099b8081d2bde92d43a4a7795385c94e2c0ae4097ef488972e83ff2b3` |
+| Testnet |          0 | `7999c680bbd15d9adb7392e0c27a7caac7e596de5560c18e96365d0fd68140e3` |
 
 ## Peer Communication
 
@@ -113,32 +113,32 @@ In an effort to avoid an infinite broadcast of the same message, each node uses 
 
 A message is an agreed-upon format for a piece of information to be shared between peers. There are several types of messages and ways for them to interact with the nodes, depending on the situation.
 
-**Message Types**
+### Message Types
 
-The networking layer relies on these different Message Types:
+The networking layer relies on these different message types:
 
-| Message Type | Message Numerical Number | Description |
-| --- | --- | --- |
-| Disconnecting | 0 | Notifies that a node is not accepting a connection (e.g. that peer is at max peers |
-| CannotSatisfyRequest | 1 | Used for request/response messages |
-| GetBlockHashesRequest | 2 | Requests a block hash during syncing |
-| GetBlockHashesResponse | 3 | Responds with a list of block hashes so the syncing node can perform a binary search to find where the syncing node should start syncing from |
-| GetBlocksRequest | 4 | Requests a block during sync |
-| GetBlocksResponse | 5 | Responds with a list of full blocks to the requesting node to facilitate syncing |
-| Identify | 6 | Upon node startup, nodes use this message to to introduce one another by exchanging their identities |
-| PeerList | 7 | Responds with a peer list to facilitate the requesting peer in peer discovery |
-| PeerListRequest | 8 | Requests peer lists from your peers for node discovery |
-| Signal | 9 | WebRTC session data |
-| SignalRequest | 10 | Requests to start a WebRTC connection with another peer |
-| PooledTransactionsRequest | 11 | Using a list of transaction hashes, requests full transactions from another peer’s mempool (pool of pending transactions) |
-| PooledTransactionsResponse | 12 | Responds to a PooledTransactionsRequest request with full transactions |
-| NewPooledTransactionHashes | 13 | Notifies peers of newly gossiped transaction hashes |
-| NewTransactions | 14 | Notifies peers of newly gossiped transactions |
-| NewBlockHashes | 15 | Notifies peers of newly gossiped block hashes |
-| NewCompactBlock | 16 | Notifies peers of newly gossiped block headers with transaction hashes |
-| GetBlockTransactionsRequest | 17 | Requests full transactions from a CompactBlock by index |
-| GetBlockTransactionsResponse | 18 | Responds to a request for full transactions within a CompactBlock by index |
-| GetCompactBlockRequest | 19 | Given a block hash (from a NewBlockHashes message), requests a CompactBlock |
-| GetCompactBlockResponse | 20 | Responds to a GetCompactBlockRequest |
+| Message Type                  | Message ID | Description                                                                                                              |
+| ----------------------------- | ---------- | --------------------------------------------------------------------------------------------------------------------------------------------- |
+| Disconnecting                 |          0 | Notifies that a node is not accepting a connection (e.g. that peer is at max peers                                                            |
+| CannotSatisfyRequest          |          1 | Used for request/response messages                                                                                                            |
+| GetBlockHashesRequest         |          2 | Requests a block hash during syncing                                                                                                          |
+| GetBlockHashesResponse        |          3 | Responds with a list of block hashes so the syncing node can perform a binary search to find where the syncing node should start syncing from |
+| GetBlocksRequest              |          4 | Requests a block during sync                                                                                                                  |
+| GetBlocksResponse             |          5 | Responds with a list of full blocks to the requesting node to facilitate syncing                                                              |
+| Identify                      |          6 | Upon node startup, nodes use this message to to introduce one another by exchanging their identities                                          |
+| PeerList                      |          7 | Responds with a peer list to facilitate the requesting peer in peer discovery                                                                 |
+| PeerListRequest               |          8 | Requests peer lists from your peers for node discovery                                                                                        |
+| Signal                        |          9 | WebRTC session data                                                                                                                           |
+| SignalRequest                 |         10 | Requests to start a WebRTC connection with another peer                                                                                       |
+| PooledTransactionsRequest     |         11 | Using a list of transaction hashes, requests full transactions from another peer’s mempool (pool of pending transactions)                     |
+| PooledTransactionsResponse    |         12 | Responds to a PooledTransactionsRequest request with full transactions                                                                        |
+| NewPooledTransactionHashes    |         13 | Notifies peers of newly gossiped transaction hashes                                                                                           |
+| NewTransactions               |         14 | Notifies peers of newly gossiped transactions                                                                                                 |
+| NewBlockHashes                |         15 | Notifies peers of newly gossiped block hashes                                                                                                 |
+| NewCompactBlock               |         16 | Notifies peers of newly gossiped block headers with transaction hashes                                                                        |
+| GetBlockTransactionsRequest   |         17 | Requests full transactions from a CompactBlock by index                                                                                       |
+| GetBlockTransactionsResponse  |         18 | Responds to a request for full transactions within a CompactBlock by index                                                                    |
+| GetCompactBlockRequest        |         19 | Given a block hash (from a NewBlockHashes message), requests a CompactBlock                                                                   |
+| GetCompactBlockResponse       |         20 | Responds to a GetCompactBlockRequest                                                                                                          |
 
 For full description of all message types and exact formats, see the [source code for the reference implementation](https://github.com/iron-fish/ironfish/tree/v1.11.0/ironfish/src/network/messages).

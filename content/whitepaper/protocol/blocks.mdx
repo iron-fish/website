@@ -15,7 +15,7 @@ Blocks are batches of ordered valid transactions with a Block Header and are use
 
 At any given moment in time, participants in the network should all be in agreement on the exact history of blocks and transactions, except in rare cases of re-orgs.
 
-Any node in the network can create a new block and propose it as the next block for the canonical chain. Once a node constructs a valid block, it then propagates that block to the rest of the network. A block is deemed accepted and finalized when the majority of the network accepts that block as part of the canonical chain, and a sufficient of subsequent blocks are built on top of it. If multiple blocks are presented at the same height, nodes decide which chain to accept according to the “heaviest chain” fork choice rule algorithm. For proof-of-work chains, finality is *******probabilistic,******* meaning that the chances of a block being reverted after it is accepted decreases as subsequent blocks are built on top of it, but is never zero.
+Any node in the network can create a new block and propose it as the next block for the canonical chain. Once a node constructs a valid block, it then propagates that block to the rest of the network. A block is deemed accepted and finalized when the majority of the network accepts that block as part of the canonical chain, and a sufficient of subsequent blocks are built on top of it. If multiple blocks are presented at the same height, nodes decide which chain to accept according to the “heaviest chain” fork choice rule algorithm. For proof-of-work chains, finality is *probabilistic*, meaning that the chances of a block being reverted after it is accepted decreases as subsequent blocks are built on top of it, but is never zero.
 
 ### Transaction Merkle Tree
 
@@ -72,9 +72,9 @@ When a miner proposes a block, the miner also includes a special Miner Reward Tr
 
 The target average block time for an Iron Fish block is currently set to 60 seconds. The difficulty of a block is adjusted at every block to meet the target block time.
 
-A **target** is a 32 byte number such that the hash of the Block Header using the Iron Fish Hashing Algorithm is numerically ****less**** than the target. Difficulty is the inverse of ************target.************
+A **target** is a 32 byte number such that the hash of the Block Header using the Iron Fish Hashing Algorithm is numerically *less* than the target. **Difficulty** is the inverse of target.
 
-```jsx
+```
 target = 2**256 / difficulty
 
 difficulty = 2**256 / target
@@ -84,7 +84,7 @@ If it is taking the network greater than 65 seconds to produce a block, difficul
 
 Difficulty for an upcoming block based on its timestamp and previous block timestamp is calculated as follows:
 
-```tsx
+```
 timeFromPreviousBlockInSeconds = currentBlockTimestamp - previousBlockTimestamp
 
 adjustment = floor((timeFromPreviousBlockInSeconds - 65) / 10)
