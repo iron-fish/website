@@ -1,9 +1,9 @@
 ---
 title: Consensus
 seo-title: Iron Fish Protocol Whitepaper Consensus
---- 
+---
 
-The Iron Fish network has a set of rules that establish how blocks are accepted to the canonical chain, and what transactions are allowed (beyond the constraints already described in Mining and [Transactions](https://www.notion.so/Transactions-0d0b05511fb8401881d6493fe30b57db?pvs=21)). These rules, collectively, are called **consensus**. Every Iron Fish participant must obey the consensus in order to successfully push transactions or blocks to the Iron Fish chain.
+The Iron Fish network has a set of rules that establish how blocks are accepted to the canonical chain, and what transactions are allowed (beyond the constraints already described in [Block Mining](blocks#block-mining) and [Transactions](transactions)). These rules, collectively, are called **consensus**. Every Iron Fish participant must obey the consensus in order to successfully push transactions or blocks to the Iron Fish chain.
 
 The consensus is used to determine properties of the network, including (but not limited to) the following:
 
@@ -29,7 +29,7 @@ This is an overview of the current rules that make up the consensus for the Iron
 | targetBucketTimeInSeconds | Time window during which mining difficulty should not change. [link to page that explains difficulty] | At Launch | 10 seconds | 10 seconds |
 | maxBlockSizeBytes | Maximum size of a block. Blocks bigger than this size should not be mined and are rejected by Iron Fish nodes. | At Launch | 524288 bytes (0.5 MiB) | 524288 bytes (0.5 MiB) |
 | minFee | The minimum fee that a transaction must have in order to be accepted. | At Launch | 0.00000001 $IRON (1 ore) | 0.00000001 $IRON (1 ore) |
-| enableAssetOwnership | Whether ownership of assets can be transferred between accounts (see Changing asset ownership (https://www.notion.so/Changing-asset-ownership-bc791db69e844230b6eadbedaf172fb4?pvs=21)) | Hard Fork 1 [link to FIP] | TBD | TBD |
+| enableAssetOwnership | Whether ownership of assets can be transferred between accounts (see [Changing asset ownership](transactions#changing-asset-ownership)) | Hard Fork 1 [link to FIP] | TBD | TBD |
 | enforceSequentialBlockTime | Whether block timestamps must be strictly monotonic (non-decreasing) | Hard Fork 1 [link to FIP] | TBD | TBD |
 
 # Canonical Chain and Forks

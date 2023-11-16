@@ -8,7 +8,7 @@ The networking layer is a significant part of any blockchain and it dictates how
 Iron Fish is a decentralized network, which means it relies on a peer-to-peer network of nodes to perform operations including:
 
 - distributing a copy of the chain
-- distributing pending [transactions](https://www.notion.so/Transactions-0d0b05511fb8401881d6493fe30b57db?pvs=21) and blocks
+- distributing pending [transactions](protocol/transactions) and [blocks](protocol/blocks)
 - help nodes discover other nodes in the network
 
 Before digging into the details of how nodes share the chain and transactions, it is important to understand that there can be multiple instances of the Iron Fish network. There are two official instances of the Iron Fish network:
@@ -25,7 +25,7 @@ A network is defined by the following two parameters:
 - network id: an unsigned 16-bit integer
 - genesis block: the block with block sequence 1
 
-These parameters cannot be changed. Attempting to change these parameters would result in a new network. Therefore, these specific network definitions are considered to be part of [consensus](https://www.notion.so/Consensus-3eb91b5d0cba4b12b6ac76a254ebd597?pvs=21). 
+These parameters cannot be changed. Attempting to change these parameters would result in a new network. Therefore, these specific network definitions are considered to be part of [consensus](protocol/consensus).
 
 The genesis block is the first block in the chain and must be used to create subsequent blocks for that network. 
 
@@ -141,4 +141,4 @@ The networking layer relies on these different Message Types:
 | GetCompactBlockRequest | 19 | Given a block hash (from a NewBlockHashes message), requests a CompactBlock |
 | GetCompactBlockResponse | 20 | Responds to a GetCompactBlockRequest |
 
-For full description of all message types and exact formats, see [here](https://github.com/iron-fish/ironfish/tree/v1.11.0/ironfish/src/network/messages).
+For full description of all message types and exact formats, see the [source code for the reference implementation](https://github.com/iron-fish/ironfish/tree/v1.11.0/ironfish/src/network/messages).
