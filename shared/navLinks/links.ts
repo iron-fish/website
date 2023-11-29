@@ -77,12 +77,6 @@ export const links = [
         href: "https://github.com/iron-fish/ironfish",
         image: "/images/nav/dev-tv-fish.svg",
       },
-      {
-        title: messages.bugBountyTitle,
-        description: messages.bugBountyDescription,
-        href: "https://hackerone.com/iron_fish_bbp",
-        image: "/images/nav/dev-bug-bounty.svg",
-      },
     ],
   },
   {
