@@ -11,7 +11,6 @@ import {
   Text,
   chakra,
 } from "@/lib/ui";
-import { FoundationFAQ } from "@/components/Foundation/FoundationFAQ/FoundationFAQ";
 import { DiscordCTA } from "@/components/Governance/DiscordCTA/DiscordCTA";
 import flower from "../../../assets/heroImages/foundation/flower.svg";
 import key from "../../../assets/heroImages/foundation/key.svg";
@@ -224,8 +223,6 @@ export default function Governance() {
           }}
         />
       </Box>
-
-      <FoundationFAQ />
       <DiscordCTA />
     </Box>
   );

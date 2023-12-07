@@ -1,15 +1,32 @@
-import { Hero, HeroImageUtil, LocalImage, Button, Flex } from "@/lib/ui";
+import {
+  Hero,
+  HeroImageUtil,
+  LocalImage,
+  Button,
+  Flex,
+  MDXRenderer,
+  Container,
+  Text,
+} from "@/lib/ui";
 import alan from "../../../assets/heroImages/grants/alan-grant.svg";
 import hand from "../../../assets/heroImages/grants/hand.svg";
 import bag from "../../../assets/heroImages/grants/bag.svg";
 import Head from "next/head";
 import { GRANTS_FORM_URL } from "@/shared/constants";
+import { parseFileByPath, renderMarkdown } from "@/lib/markdown";
+import path from "path";
+import { MDXRemoteProps } from "next-mdx-remote";
+import { GetStaticProps } from "next";
 
 const alanImage = alan as LocalImage;
 const handImage = hand as LocalImage;
 const bagImage = bag as LocalImage;
 
-export default function Grants() {
+type Props = {
+  markdown: MDXRemoteProps;
+};
+
+export default function Grants({ markdown }: Props) {
   return (
     <>
       <Head>
@@ -96,6 +113,26 @@ export default function Grants() {
           </Button>
         </Flex>
       </Hero>
+      <Container w="100%" maxW="container.xl" py="150px">
+        <Text as="h2" textStyle="h3" mb={12} textAlign="center">
+          Grants FAQ
+        </Text>
+        <MDXRenderer markdown={markdown} />
+      </Container>
     </>
   );
 }
+
+export const getStaticProps: GetStaticProps<Props> = async () => {
+  const { content } = parseFileByPath(
+    path.join(process.cwd(), "content", "grants", "grants-faqs.mdx")
+  );
+
+  const markdown = await renderMarkdown(content);
+
+  return {
+    props: {
+      markdown,
+    },
+  };
+};
