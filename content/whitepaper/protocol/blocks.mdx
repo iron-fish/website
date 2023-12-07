@@ -1,0 +1,102 @@
+---
+title: Blocks
+seo-title: Iron Fish Protocol Whitepaper — Blocks
+---
+
+A blockchain is an ordered list of *blocks*.
+
+Blocks are batches of ordered valid transactions with a Block Header and are used to ensure that all participants on the network maintain a synchronized local state and agree on the precise history of transactions. The proof-of-work mechanism spaces out blocks to give the network enough time to sync and come to a consensus on transaction history.
+
+
+<img src="/images/whitepaper/protocol/accounts/tx-block.png" width="65%"/>
+
+
+(Illustration from https://ethereum.org/en/developers/docs/blocks/)
+
+At any given moment in time, participants in the network should all be in agreement on the exact history of blocks and transactions, except in rare cases of re-orgs.
+
+Any node in the network can create a new block and propose it as the next block for the canonical chain. Once a node constructs a valid block, it then propagates that block to the rest of the network. A block is deemed accepted and finalized when the majority of the network accepts that block as part of the canonical chain, and a sufficient of subsequent blocks are built on top of it. If multiple blocks are presented at the same height, nodes decide which chain to accept according to the “heaviest chain” fork choice rule algorithm. For proof-of-work chains, finality is *probabilistic*, meaning that the chances of a block being reverted after it is accepted decreases as subsequent blocks are built on top of it, but is never zero.
+
+### Transaction Merkle Tree
+
+The Transaction Merkle Tree is a merkle tree of all the transactions within a particular block. It is a binary Merkle Tree that commits to an ordered list of transactions using the blake3 hashing algorithm. The root of this Merkle Tree is included in the Block Header.
+
+### Block
+
+A Block consists of a Block Header and list of Transactions.
+
+### Block Header
+
+The structure of Block Header contains:
+
+- A **sequence** which is a 64-bit number representing the numerical position of the Block from the Genesis block
+- A **previous block hash** which is a 32 byte hash of the block prior to it
+- A 32 byte hash representing the **root of the Merkle Tree of Notes**
+- A 32 byte hash representing the **root of the Transaction Merkle Tree** for transactions in the block
+- A **target** is a 32 byte number such that the hash of the Block Header using the Iron Fish Hashing Algorithm must be numerically lower than the target.
+- The **randomness** (or sometimes called nonce) is the field that gets adjusted in order to ensure that the hash of the Block Header using the Iron Fish Hashing Algorithm is numerically lower than the target.
+- The **timestamp**
+- A **graffiti** field, which is a 32 byte arbitrary data field
+
+### Target Block Time
+
+60 seconds
+
+### Hashing Algorithm
+
+Iron Fish currently uses Blake3 as its hashing algorithm. This is subject to change.
+
+### Emission Curve
+
+The emissions curve starts out with 42,000,000 coins in the genesis. After the first year, the total for new coins created due to mining rewards is 1/4th of the genesis, or 10,500,000 coins. Every subsequent year fewer and fewer coins will be created, until a terminal supply of 256,970,400 coins is reached (roughly at year 115 post genesis).
+
+The formula to determine how many new coins will be minted for a particular year after genesis is:
+
+$$g(x) = \frac{s}{4} \exp(k \lfloor x \rfloor)$$
+
+Where *s* is the initial supply of 42,000,000 coins in the genesis block, and x is the number of years after mainnet launch, and k is the decay factor of -0.05.
+
+The Iron Fish “year” in blocks is 525,600 given the target average block time of 60 seconds.
+
+### Block Reward
+
+The mining block reward is a reward in IRON coins to the miner that successfully mines a block that is accepted by the network.
+
+Using the formula for the emissions curve with the assumed Iron Fish “year” in blocks being 525,600 with 60 second block times, the block reward formula is as follows rounded to the nearest 0.125 of a coin:
+
+$$\text{block reward} = \operatorname{round}\left(\frac{\frac{s}{4}}{525600}, 0.125\right)$$
+
+When a miner proposes a block, the miner also includes a special Miner Reward Transaction within that block to reward itself with the block reward and any transaction fees from including user transactions in that block.
+
+### Target Block Time and Difficulty Adjustment
+
+The target average block time for an Iron Fish block is currently set to 60 seconds. The difficulty of a block is adjusted at every block to meet the target block time.
+
+A **target** is a 32 byte number such that the hash of the Block Header using the Iron Fish Hashing Algorithm is numerically *less* than the target. **Difficulty** is the inverse of target.
+
+```
+target = 2**256 / difficulty
+
+difficulty = 2**256 / target
+```
+
+If it is taking the network greater than 65 seconds to produce a block, difficulty is lowered in comparison to the previous block. Conversely, if a miner is attempting to produce a block in less than 55 seconds from the previous block, difficulty is increased.
+
+Difficulty for an upcoming block based on its timestamp and previous block timestamp is calculated as follows:
+
+```
+timeFromPreviousBlockInSeconds = currentBlockTimestamp - previousBlockTimestamp
+
+adjustment = floor((timeFromPreviousBlockInSeconds - 65) / 10)
+
+difficulty = previousBlockDifficulty -
+  (previousBlockDifficulty / 2048) * adjustment;
+
+difficulty = max(difficulty, minDifficulty)
+```
+
+The minimum difficulty allowed for a block is 131072.
+
+## Block Mining
+
+Block mining is the process of finding a valid block that satisfies the difficulty requirement. For proof-of-work chains, this process involves calculating the difficulty for a potential block, and repeatedly hashing block header contents in accordance to the Hashing Algorithm until the target requirement is satisfied.

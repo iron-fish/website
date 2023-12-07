@@ -1,42 +1,49 @@
 ---
-title: Introduction
-seo-title: Introduction to a Revolutionary Network
+title: Iron Fish Intro
+seo-title: Iron Fish Protocol Whitepaper
 ---
 
-## Abstract
+Iron Fish is built to be the chain-agnostic privacy platform for crypto.
 
-Iron Fish is a decentralized, proof-of-work (PoW) based, censorship-resistant, and publicly accessible blockchain project. It is designed to support strong privacy guarantees on every transaction. Similarly to how the invention of the SSL/TLS layer in the '90s paved the way to e-commerce and benefited countless industries, we believe that privacy is a fundamental requirement to protect the user and expand the use of cryptocurrency.
+Today, most cryptocurrency systems are transparent—publicly revealing all actions and balances of a wallet. We are building Iron Fish to be the privacy platform for crypto with a mission to make web3 safer, more accessible, and more attractive for mainstream adoption, while deterring bad actors.
 
-We have designed Iron Fish to be a new cryptocurrency from the ground up to enable easy-to-use, fully-private payments by closely following the [Sapling protocol](https://github.com/zcash/zips/blob/master/protocol/sapling.pdf). Every account is equipped with a view key to grant its holder read-only permission for the details of that account.
+Why are we focusing on privacy above all else in crypto?
 
-With this protocol, we are challenging previous patterns of full node usability. The Iron Fish networking layer supports WebRTC with WebSockets, making it trivial for all users to make a true P2P connection with no other setup requirements. Our first Iron Fish implementation is built such that it can be extended to run a full node directly in the browser in future iterations. And our focus is to lower the barrier to entry so that any person with a computer feels comfortable enough to run a full node.
+1. **Transparency makes users vulnerable to attacks:** The transparent nature of blockchains forces users to reveal all their blockchain actions publicly by simply interacting with the system. This not only forces users to leak their sensitive financial information to everyone in the world, but this level of *transparency also makes them easy targets for phishing attacks, scams, fraud, social engineering and theft*.
+2. **Privacy unlocks use cases necessary for mass adoption:** Private payments would allow employers to pay employees via crypto, provide a true alternative to bank wires, unlock safe crypto payments between individuals, let financial institutions digitize assets in a privacy compliant way, and much more.
+3. **Public payments can negatively affect users**: crypto payments today are completely transparent, *leaving users vulnerable by leaking sensitive information around purchases, account balances, and affiliations*.
+4. **MEV deterrence:** MEV (Maximum Extractible Value) is a complex issue across the crypto space.  While some consider MEV to play a constructive role in helping mitigate economic inefficiencies across DeFi protocols, such as helping token prices on various DEXs more closely reflect market-wide demand, as a general matter MEV is considered a meaningful attack vector needing management. The practice of MEV is very well established due to the very public nature of blockchains. MEV is so prevalent that it accounts for well over $1B in profits for block producers and searchers. In some cases, MEV is neutral. In other cases, it hurts retail. Different “solutions” are being worked on — at both technical (prevention, such as private mempools) and economic-governance (fair distribution, order flow auctions, batch auctions) levels. Giving a layer of privacy for users and service providers would deter some of the more harmful MEV practices.
+5. **Unintended market reaction:** “Whales” (aka large holders of an asset) can move the market by placing an order to buy or sell an asset. A well known account is frequently watched and monitored by bots to repeat its actions in hopes of a profit. A project’s reputation can be made or harmed by the perception of a whale buying into or selling off project assets. This leads to unintentional market movement that privacy could solve for.
 
-## Introduction
+Why build an entire infrastructure layer as opposed to a smart contract on an existing chain?
 
-Privacy is controversial, but it shouldn't be. In fact, privacy leads to innovation — social evolution through changing laws, and the freedom to simply be you. Take doors on houses or passwords for bank accounts, both of which are precautions most people take even though they might say they have nothing to hide.
+1. A transparent chain like Ethereum is built on the premise of pseudonymity. Pseudonymity is easily broken either through blockchain analytics, NFT profile pictures, or simply by asking users to link their identity with their wallet to get funds, airdrops, or other perks.
+2. A robust privacy solution based on a smart contract on an EVM chain typically requires a network of relayers or batchers that post transactions on a user’s behalf. Users using relayers or batchers leak their some of their data to them, while typically paying high transaction fees.
+3. On Iron Fish, a user always has the confidence that their data is protected without the user needing to know the cryptography behind the tech, or be aware of the sequence of their actions. Just like a user uses a website with https without needing to know or do anything extra to get encrypted traffic, we hope users of crypto will use Iron Fish with the same ease.
+4. Building an L1 as opposed to an L2 gives the project resilience in decentralization and lack of a single sequencer that all L2 designs currently have.
 
-At Iron Fish, we are building something we're truly proud of: a cryptocurrency that does not compromise on privacy or accessibility. Digital cash that embodies using privacy for good. We are all moving towards becoming fully digital global citizens where our every activity and purchase is carefully logged, analyzed and sold. In this world, privacy is more important than ever and has growing demand worldwide.
+### What is Iron Fish Today
 
-Popular cryptocurrencies like Bitcoin, Ethereum, and others are the least private way of transacting — their protocols fundamentally work on complete transparency to verify transactions. Though other privacy coins exist, they all either lack the privacy guarantees they've promised or are so hard to use they barely have any real usage (and oftentimes both).
+Today, Iron Fish is:
 
-There is huge untapped potential here — but only if users feel truly protected by their cryptocurrency, and are able to access it. Just like the introduction of SSL/TLS in the '90s opened up the floodgates to e-commerce (the predecessors of HTTPS), we believe that an accessible privacy coin will lead to a new class of industries of borderless products and companies.
+- mainnet launched as of April 20th, 2023
+- proof-of-work L1 chain
+- all transactions are private and validated by zero knowledge proofs (ZKPs)
+- supports custom assets
 
-In this paper, we cover how Iron Fish works, and why we've built it this way. While we endeavor to explain things as much as possible and go over all relevant terminology, some parts will require a basic understanding of elliptic curve cryptography.
+### View Keys for Audits
 
-## Organization of this paper
+In Iron Fish, every wallet comes with a private key, public key, and a *view key.* View keys allow a user to reveal information about their transactions in a controlled manner.
 
-All blockchains, regardless of their feature sets, have six main ingredients: the networking layer, storage layer, mining (or mechanism of block creation), account creation, transaction creation, and consensus (the rules for accepting new blocks). We go over each of these ingredients, as follows:
+The main purpose of view keys is to increase transparency and auditability, giving a certain level of access to transaction information without granting full control over the funds. This is useful in a variety of scenarios, such as auditing, tax compliance, or allowing a third party to confirm received transactions without the ability to spend any coins.
 
-- [Networking](/learn/whitepaper/networking)
-  This section goes over the basic networking stack, startup sequence, message types, and gossip protocol implementation.
-- [Storage](/learn/whitepaper/storage)
-  The Storage section familiarizes the reader with the main data structures and models for Iron Fish, as well as our first implementation of how the storage layer is accessible in both the CLI and browser full node implementation.
-- [Mining](/learn/whitepaper/mining)
-  The Mining section describes how new blocks are constructed containing the necessary randomness for proof of work (PoW), as well as the miners reward calculation.
-- [Account Creation](/learn/whitepaper/account)
-  The Accounts Creation section describes how Iron Fish accounts are created following the Sapling protocol and breaks down the uses of all the necessary key components for an account.
-- [Transaction Creation](/learn/whitepaper/transaction)
-  Iron Fish transactions also closely follow the Sapling protocol, and this section goes over exactly where and how zero-knowledge proofs are applied, how transaction fees are included, and how to balance and validate any existing transaction.
-- [Verification and Consensus](/learn/whitepaper/consensus-verification)
-  Finally, the last section ties everything together by outlining the rules for how new blocks containing user transactions are accepted.
+The functionality of a view key differs in other privacy projects. View Keys in Iron Fish give full visibility into a particular wallet. View keys in Iron Fish reveal:
 
+- ***All details about incoming transactions:*** the sender’s address, amount, token type, and timestamp
+- ***All details about outgoing transactions***: the recipient’s address, amount, token type, and timestamp
+
+There is no global view for Iron Fish. There is no “backdoor” for Iron Fish. Only the creator of the wallet has initial access to the view key of that wallet.
+
+### Privacy — A Force for Good
+
+Our aim is for Iron Fish to provide a safer, better, more approachable user experience for crypto holders with an easily accessible privacy layer. Our intention is for Iron Fish to be used by good actors who are just as excited as we are about the positive impact crypto can make to our collective future.

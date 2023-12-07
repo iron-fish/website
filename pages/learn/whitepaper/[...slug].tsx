@@ -10,6 +10,7 @@ import {
 import { ComponentProps } from "react";
 import { DocumentationLayout } from "../../../layouts/Documentation/Documentation";
 import { sidebar } from "../../../content/whitepaper/sidebar";
+import { parseNestedDir } from "@/lib/markdown/src/parseNestedDir";
 
 const CONTENT_DIR = ["content", "whitepaper"];
 
@@ -43,19 +44,21 @@ export default function DocumentationPage({
 const CONTENT_PATH = path.join(process.cwd(), ...CONTENT_DIR);
 
 export const getStaticProps: GetStaticProps<Props> = async ({ params }) => {
-  if (!params || typeof params.slug !== "string") {
+  const slug = Array.isArray(params?.slug) ? params?.slug.join("/") : null;
+
+  if (typeof slug !== "string") {
     throw new Error("Slug must be a string");
   }
 
   const { frontMatter, content } = parseFileByPath(
-    path.join(CONTENT_PATH, `${params.slug}.mdx`)
+    path.join(CONTENT_PATH, `${slug}.mdx`)
   );
 
   const markdown = await renderMarkdown(content);
 
   return {
     props: {
-      slug: params.slug,
+      slug,
       frontMatter,
       markdown,
       sidebarItems: getSidebarContent(
@@ -67,14 +70,16 @@ export const getStaticProps: GetStaticProps<Props> = async ({ params }) => {
   };
 };
 
-export const getStaticPaths: GetStaticPaths<{ slug: string }> = async () => {
-  const paths = readdirSync(CONTENT_PATH)
-    .filter((item) => item.endsWith(".mdx"))
+export const getStaticPaths: GetStaticPaths<{
+  slug: Array<string>;
+}> = async () => {
+  const paths = parseNestedDir(CONTENT_PATH)
+    .filter((item) => item[item.length - 1].endsWith(".mdx"))
     .map((item) => {
-      const slug = item.replace(/\.mdx?$/, "");
+      item[item.length - 1] = item[item.length - 1].replace(/\.mdx?$/, "");
       return {
         params: {
-          slug,
+          slug: item,
         },
       };
     });

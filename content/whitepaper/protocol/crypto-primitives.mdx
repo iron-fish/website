@@ -1,0 +1,80 @@
+---
+title: Cryptographic Primitives
+---
+
+## JubJub Curve
+
+Iron Fish makes use of the JubJub curve, which is a 255-bit twisted Edwards curve with the following affine equation:
+
+$$a x^2 + y^2 \equiv 1 + d x^2 y^2 \pmod{p}$$
+
+where:
+
+* $p$: `0x73eda753299d7d483339d80809a1d80553bda402fffe5bfeffffffff00000001` (255 bits)
+* $a$: `0x73eda753299d7d483339d80809a1d80553bda402fffe5bfeffffffff00000000` ($a \equiv -1 \pmod{p}$)
+* $d$: `0x2a9318e74bfa2b48f5fd9207e6bd7fd4292d7f6d37579d2601065fd6d6343eb1` ($d \equiv -10240/10241 \pmod{p}$)
+
+## JubJub Group
+
+The points on the JubJub curve give origin to a finite cyclic group of order:
+
+$n$: `0x73eda753299d7d483339d80809a1d8053341049e6640841684b872f6b7b965b8` (255 bits)
+
+With the 2-torsion point (0, 1) serving as the identity element.
+
+This group contains a subgroup with a large prime order:
+
+* order ($r$): `0xe7db4ea6533afa906673b0101343b00a6682093ccc81082d0970e5ed6f72cb7` (252 bits)
+* cofactor ($h$): `0x08`
+
+Iron Fish operates in this large prime subgroup.
+
+## Generators
+
+Iron Fish makes use of different generators for the JubJub group. The generators are:
+
+| Name                                  | Affine Coordinates                                                                                                                           | Order |
+| ------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------- | ----- |
+| Spending Key Generator                | (`0x0926d4f32059c712d418a7ff26753b6ad5b9a7d3ef8e282747bf46920a95a753`, `0x57a1019e6de9b67553bb37d0c21cfd056d65674dcedbddbc305632adaaf2b530`) | $r$   |
+| Proof Generation Key Generator        | (`0x1457a50231cde2df704303f1e8906081adf2d038f2fbb8203af2dbefb96e2571`, `0x54b6d10718df2a7adec901840f4948cc50df51eaf5a149d2467af9f7e05de8e7`) | $r$   |
+| Public Key Generator                  | (`0x6dad65e62328d37a0daf03b547e2022b77ff8c90a9a0d8f43edcc85f4d1a44cd`, `0x6996932cece1f4bbca01f5809c00eee2f0b703d53a3edd4e50951f1feff08278`) | $r$   |
+| Value Commitment Randomness Generator | (`0x6800f4fa0f001cfc7ff6826ad58004b4d1d8da41af03744e3bce3b7793664337`, `0x6d81d3a9cb45dedbe6fb2a6e1e22ab50ad46f1b0473b803b3caefab9380b6a8b`) | $r$   |
+| Native Value Commitment Generator     | (`0x66235382bd3b37417398aab3c907f5abd63c001aa39a799194d27f25df35ab48`, `0x074c0767fd99d42f4808b27f848e59b348e29b1aefc3a67c6f79906c2a588644`) | $r$   |
+| Note Commitment Randomness Generator  | (`0x26eb9f8a9ec72a8ca1409aa1f33bec2cf0919d06ffb1ecdaa5143b34a8e36462`, `0x114b7501ad104c57949d77476e262c9596b78beafa9cc44cd4fc6365796c77ac`) | $r$   |
+
+Note that these generators all generate the large prime subgroup mentioned above, so multiplication by the cofactor is not needed when performing algebra using these generators.
+
+# Summary of cryptographic schemes
+
+This is an overview of all the cryptographic keys and cryptographic schemes used by Iron Fish in different places. The exact details of how these are employed are laid out in [Accounts](accounts), [Transactions](transactions), and [Blocks](blocks).
+
+**Keys:**
+
+| Name               | Type                                | Classical Security Level |
+| ------------------ | ----------------------------------- | ------------------------ |
+| Secret Key         | Symmetric key                       | 256 bits                 |
+| Spending Key Pair  | ECC key pair on the JubJub group    | 126 bits                 |
+| Nullifier Key Pair | ECC key pair on the JubJub group    | 126 bits                 |
+| Outgoing View Key  | Symmetric key                       | 256 bits                 |
+| Incoming View Key  | ECC private key on the JubJub group | 126 bits                 |
+| Transmission Key   | ECC public key on the JubJub group  | 126 bits                 |
+
+**Schemes:**
+
+| Purpose                  | Used For                                     | Scheme                                             | Classical Security Level                                         |
+| ------------------------ | -------------------------------------------- | -------------------------------------------------- | ---------------------------------------------------------------- |
+| Key Generation           | Secret Key                                   | System Entropy                                     |                                                                  |
+| Key Derivation           | Account Keys (other than the Secret Key)     | Blake2b                                            | 512 bits (preimage resistance) / 256 bits (collision resistance) |
+| Authenticated Encryption | Notes                                        | ChaCha20-Poly1305                                  | 256 bits                                                         |
+| Hashing                  | Nullifiers                                   | Blake2s                                            | 256 bits (preimage resistance) / 128 bits (collision resistance) |
+| Digital Signatures       | Authentication of spends, outputs, and mints | RedDSA on JubJub with Blake2b                      | 126 bits                                                         |
+| Commitment               | Transaction balancing                        | Pedersen commitment on the JubJub group            | 126 bits                                                         |
+| Zero-Knowledge Proofing  | Proofing of spends, outputs, and mints       | Groth16 zk-SNARK on BLS12                          | 126 bits                                                         |
+| Hash Tree                | Merkle Tree of Notes                         | Merkle Tree with Pedersen Hash on the JubJub group | 126 bits (preimage and collision resistance)                     |
+| Hashing                  | Mining                                       | Blake3                                             | 256 bits (preimage resistance) / 128 bits (collision resistance) |
+
+## Signature Scheme
+
+The signature scheme used by Iron Fish is RedDSA, which is a variant of the Elliptic Curve Schnorr Signature scheme defined in the Sapling protocol (see https://zips.z.cash/protocol/protocol.pdf#concretereddsa).
+
+The hashing algorithm used in conjunction with RedDSA is Blake2b.
