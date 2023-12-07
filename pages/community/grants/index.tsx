@@ -13,7 +13,6 @@ import hand from "../../../assets/heroImages/grants/hand.svg";
 import bag from "../../../assets/heroImages/grants/bag.svg";
 import Head from "next/head";
 import { GRANTS_FORM_URL } from "@/shared/constants";
-import { GrantsFAQ } from "@/components/Grants/GrantsFAQ/GrantsFAQ";
 import { parseFileByPath, renderMarkdown } from "@/lib/markdown";
 import path from "path";
 import { MDXRemoteProps } from "next-mdx-remote";
