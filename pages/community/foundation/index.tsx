@@ -1,7 +1,6 @@
 import Head from "next/head";
 import { defineMessages, useIntl } from "react-intl";
 import { FancyLinkSection } from "@/components/FancyLinkSection/FancyLinkSection";
-import { GRANTS_FORM_URL } from "@/shared/constants";
 import {
   Hero,
   HeroImageUtil,
@@ -54,9 +53,9 @@ const messages = defineMessages({
     defaultMessage:
       "The Iron Fish Foundation offers grants for projects enhancing the Iron Fish ecosystem. If you're passionate about privacy-centric cryptocurrency, apply for a grant. We prioritize projects that improve user experience, interoperability, or expand Iron Fish use-cases. See this application as a chance to highlight your vision and potential impact on Iron Fish.",
   },
-  applyNow: {
-    id: "foundation.applyNow",
-    defaultMessage: "Apply Now",
+  learnMore: {
+    id: "foundation.learnMore",
+    defaultMessage: "Learn More",
   },
   boardOfDirectorsTitle: {
     id: "foundation.boardOfDirectorsTitle",
@@ -175,8 +174,8 @@ export default function Governance() {
       <FancyLinkSection
         heading={formatMessage(messages.ironFishGrantsTitle)}
         description={formatMessage(messages.ironFishGrantsDescription)}
-        ctaText={formatMessage(messages.applyNow)}
-        ctaLink={GRANTS_FORM_URL}
+        ctaText={formatMessage(messages.learnMore)}
+        ctaLink="/community/grants"
         imageUrl="/images/foundation/grants.svg"
         containerProps={{
           maxW: {
