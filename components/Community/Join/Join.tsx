@@ -64,7 +64,7 @@ export function Join() {
         </ArrowButton>
         <ArrowButton
           as={Link}
-          href="/community/highlights"
+          href="/learn/blog?category=community-highlight"
           size="sm"
           colorScheme="white"
         >
