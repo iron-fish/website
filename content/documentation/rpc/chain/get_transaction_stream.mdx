@@ -7,7 +7,7 @@ Streams transactions from a head sequence given an incoming view key
 
 #### Request
 
-```js
+```ts
 {
   incomingViewKey: string
   head?: string | null
@@ -16,7 +16,7 @@ Streams transactions from a head sequence given an incoming view key
 
 #### Response
 
-```js
+```ts
 {
   type: 'connected' | 'disconnected' | 'fork'
   head: {
@@ -29,7 +29,7 @@ Streams transactions from a head sequence given an incoming view key
 
 Sub Objects: 
 
-```js
+```ts
 interface Note {
   assetId: string
   /**

@@ -11,7 +11,7 @@ Supports filtering notes by any of the fields in the `filter` request parameter.
 
 #### Types 
 
-```js
+```ts
 type StringMinMax = {
   min?: string
   max?: string
@@ -32,7 +32,7 @@ type GetNotesRequestFilter = {
 
 #### Request
 
-```js
+```ts
 {
   account?: string
   pageSize?: number
@@ -43,7 +43,7 @@ type GetNotesRequestFilter = {
 
 #### Response
 
-```js
+```ts
 {
   notes: Array<RpcWalletNote>
   nextPageCursor: string | null

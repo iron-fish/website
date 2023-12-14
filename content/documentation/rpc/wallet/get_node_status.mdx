@@ -7,7 +7,7 @@ Gets (and optionally streams) the status of node that the wallet is connected to
 
 #### Request Body
 
-```js
+```ts
 {
   stream?: boolean
 } | undefined
@@ -15,7 +15,7 @@ Gets (and optionally streams) the status of node that the wallet is connected to
 
 #### Response
 
-```js
+```ts
 {
   node: {
     status: 'started' | 'stopped' | 'error'

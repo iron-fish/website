@@ -7,7 +7,7 @@ Creates a transaction burning a custom asset from a given account, posts the tra
 
 #### Request
 
-```js
+```ts
 {
   account?: string
   assetId: string
@@ -22,7 +22,7 @@ Creates a transaction burning a custom asset from a given account, posts the tra
 
 #### Response
 
-```js
+```ts
 RpcBurn & {
   asset: RpcAsset
   transaction: RpcWalletTransaction
