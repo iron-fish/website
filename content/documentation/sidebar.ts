@@ -272,6 +272,10 @@ export const sidebar: SidebarDefinition = [
             id: "rpc/peer/get_peer_messages",
             label: "getPeerMessages",
           },
+          {
+            id: "rpc/peer/add_peer",
+            label: "addPeer",
+          },
         ],
       },
       {
