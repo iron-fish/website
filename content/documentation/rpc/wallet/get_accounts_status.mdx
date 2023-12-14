@@ -3,7 +3,7 @@ title: wallet/getAccountsStatus
 description: RPC Wallet | Iron Fish Documentation
 ---
 
-Gets the status of the accounts in the wallet.
+Gets the status of accounts in the wallet.
 
 #### Request
 
@@ -15,15 +15,11 @@ undefined
 
 ```ts
 {
-  accounts: Array<{
-    name: string
-    id: string
-    headHash: string
-    headInChain?: boolean
-    sequence: string | number
-    viewOnly: boolean
-  }>
+  accounts: Array<RpcAccountStatus>
 }
 ```
+
+RPC Objects:
+- [RpcAccountStatus](/developers/documentation/rpc/objects/rpcAccountStatus)
 
 ###### [View on Github](https://github.com/iron-fish/ironfish/blob/master/ironfish/src/rpc/routes/wallet/getAccountsStatus.ts)
