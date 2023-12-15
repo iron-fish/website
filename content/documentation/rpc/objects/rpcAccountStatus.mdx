@@ -1,0 +1,20 @@
+---
+title: RpcAccountStatus
+description: RpcAccountStatus | Iron Fish Documentation
+---
+```typescript
+export type RpcAccountStatus = {
+  name: string
+  id: string
+  head: {
+    hash: string
+    sequence: number
+    inChain: boolean | null
+  } | null
+  viewOnly: boolean
+}
+```
+
+Usage: 
+- [wallet/getAccountsStatus](/developers/documentation/rpc/wallet/get_accounts_status)
+- [wallet/getAccountStatus](/developers/documentation/rpc/wallet/get_account_status)

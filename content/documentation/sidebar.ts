@@ -45,6 +45,10 @@ export const sidebar: SidebarDefinition = [
             label: "RpcAccountImport",
           },
           {
+            id: "rpc/objects/rpcAccountStatus",
+            label: "RpcAccountStatus",
+          },
+          {
             id: "rpc/objects/rpcAsset",
             label: "RpcAsset",
           },
@@ -329,6 +333,10 @@ export const sidebar: SidebarDefinition = [
           {
             id: "rpc/wallet/get_accounts_status",
             label: "getAccountsStatus",
+          },
+          {
+            id: "rpc/wallet/get_account_status",
+            label: "getAccountStatus",
           },
           {
             id: "rpc/wallet/get_account_transaction",
