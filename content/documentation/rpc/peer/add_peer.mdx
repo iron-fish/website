@@ -3,15 +3,15 @@ title: peer/addPeer
 description: RPC peer/addPeer | Iron Fish Documentation
 ---
 
-Attempts to connect to a peer through WebSockets using the given host and port. If whitelist is true (by default) the node will continue to attempt connections even if the initial connection fails
+Attempts to connect to a peer through WebSockets using the given host and port. The request waits for the result of the connection before returning. If whitelist is true (by default) the node will continue to attempt connections even if the initial connection fails
 
 #### Request
 
 ```ts
 {
   host: string
-  port?: number
-  whitelist?: boolean
+  port: number | undefined
+  whitelist: boolean | undefined
 }
 ```
 
@@ -20,6 +20,7 @@ Attempts to connect to a peer through WebSockets using the given host and port. 
 ```ts
 {
   added: boolean
+  error: string | undefined
 }
 ```
 
