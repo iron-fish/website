@@ -257,6 +257,10 @@ export const sidebar: SidebarDefinition = [
         label: "Peer",
         items: [
           {
+            id: "rpc/peer/add_peer",
+            label: "addPeer",
+          },
+          {
             id: "rpc/peer/get_banned_peers",
             label: "getBannedPeers",
           },
@@ -271,10 +275,6 @@ export const sidebar: SidebarDefinition = [
           {
             id: "rpc/peer/get_peer_messages",
             label: "getPeerMessages",
-          },
-          {
-            id: "rpc/peer/add_peer",
-            label: "addPeer",
           },
         ],
       },
