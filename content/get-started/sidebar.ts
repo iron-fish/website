@@ -39,6 +39,7 @@ export const sidebar: SidebarDefinition = [
           "cli-cmd-wallet-export",
           "cli-cmd-wallet-import",
           "cli-cmd-wallet-mint",
+          "cli-cmd-wallet-notes-combine",
           "cli-cmd-wallet-notes",
           "cli-cmd-wallet-post",
           "cli-cmd-wallet-prune",
