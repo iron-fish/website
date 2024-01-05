@@ -122,6 +122,12 @@ export const ECOSYSTEM: Array<{
   },
   {
     type: "Exchanges",
+    name: "MEXC",
+    link: "https://www.mexc.com/",
+    image: "/images/ecosystem/mexc.png",
+  },
+  {
+    type: "Exchanges",
     name: "KuCoin",
     link: "https://www.kucoin.com/",
     image: "/images/ecosystem/kucoin.png",
