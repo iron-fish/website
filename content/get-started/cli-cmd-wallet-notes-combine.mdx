@@ -1,0 +1,80 @@
+---
+title: wallet:notes:combine
+seo: Wallet Notes Combine Command
+---
+This command to combines your notes into a single note. This command takes into account how fast your machine can create proofs and suggests the number of notes you should combine. **You can run this command multiple times until you have two notes remaining.**
+
+# Usage
+
+Flow to combine notes:
+
+```sh
+ironfish wallet:notes:combine
+```
+
+<Terminal command="ironfish wallet:notes:combine"
+  output={`Measuring time to combine 1 note... 580ms
+
+? Select the number of notes you wish to combine (MAX):  (Use arrow keys)
+❯ ~1 minute: 103 notes
+  ~5 minutes: 515 notes
+  ~10 minutes: 1030 notes
+? Select the number of notes you wish to combine (MAX):  ~1 minute: 103 notes
+
+Enter the memo (or leave blank): combining notes
+
+Calculating fees... done
+? Select the fee you wish to use for this transaction (Use arrow keys)
+❯ Slow 0.00000037
+  Average 0.00000037
+  Fast 0.00000037
+  Enter a custom fee
+? Select the fee you wish to use for this transaction Slow 0.00000037
+
+TRANSACTION SUMMARY:
+From                 default
+To                   a4ffcedb47b442687fd1962677768229b975b6b88e25ede25c4bb0184d2d884c
+Amount               $IRON 2020.00000000
+Fee                  $IRON 0.00000037
+Memo                 combining notes
+Outputs              1
+Spends               102
+Expiration           5926
+
+Time to send: 59s
+
+Do you confirm (Y/N)?: Y
+
+Sending the transaction: [===-------------------------------------] 8% | 54s
+Sending the transaction: [========================================] 100% | 8s
+Sending took 52s
+
+Sent $IRON 2020.00000000 to a4ffcedb47b442687fd1962677768229b975b6b88e25ede25c4bb0184d2d884c from default
+Hash: bf614dc8e83634e0d78c988f5f760c2ebdd86806cd549abf759fe2c00670b005
+Fee: $IRON 0.00000037
+Memo: combining notes
+
+If the transaction is mined, it will appear here https://explorer.ironfish.network/transaction/bf614dc8e83634e0d78c988f5f760c2ebdd86806cd549abf759fe2c00670b005
+✨  Done in 116.83s.
+`}
+/>
+
+## Flags
+
+| Flag | Description | Default |
+| ---- | ----------- | ------- |
+| `--f` | The account to use | `default` |
+| `--m` | The memo of the transaction | `''` |
+| `--o` | The fee amount in IRON | `` |
+| `--r` | The fee rate amount in IRON/Kilobyte | `` |
+| `--t` | The public address of the recipient | `public address of default account` |
+| `--watch` | Wait for the transaction to be confirmed | `false` |
+| `--notes` | How many notes to combine | `` |
+| `--confirm` | Confirm without asking | `false` |
+| `--benchmark` | Force run the benchmark to measure the time to combine 1 note | `false` |
+
+# Motivation
+
+The time it takes to send a transaction is proportional to the number of notes (UTXOs) that are being spent in that transaction. The process of creating proofs for your notes is time intensive and depends on your machines CPU. If your transaction includes too many notes, it will take a long time to send. In addition to that, if your expiration is too short, you may not be able to send the transaction in time. All of this leads to your transactions being "stuck".
+
+We created this command to help consolidate your notes while taking into account your machines performance. 
