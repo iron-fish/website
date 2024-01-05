@@ -5,7 +5,12 @@ export const sidebar: SidebarDefinition = [
   "installation",
   {
     label: "Alternative Installations",
-    items: ["install-brew", "install-docker", "install-source"],
+    items: [
+      "install-brew",
+      "install-docker",
+      "install-source",
+      "install-binary",
+    ],
   },
   "run-a-node",
   "node-health",
