@@ -48,9 +48,9 @@ export const ECOSYSTEM: Array<{
   },
   {
     type: "Mining Pools",
-    name: "Hpool",
-    link: "https://www.hpool.in/statistics/ironfish",
-    image: "/images/ecosystem/hpool.png",
+    name: "H9",
+    link: "https://www.h9.com/statistics/ironfish",
+    image: "/images/ecosystem/h9.png",
     highlight: "/learn/blog/2022-12-08-Ecosystem-spotlight-Hpool",
   },
   {
