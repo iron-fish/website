@@ -1,0 +1,58 @@
+---
+title: Install via Standalone Executable
+seo-title: Install Iron Fish - Standalone Executable
+---
+
+## Download
+
+Download the [latest release](https://github.com/iron-fish/ironfish/releases/latest) of ironfish single file standalone executable for your platform
+
+
+## Unzip
+
+```sh
+unzip ironfish-apple-arm64-v1.15.0.zip
+```
+
+## Verify install
+
+To verify your CLI installation, use the ironfish --version command.
+
+```sh
+$ ./ironfish --version
+name       ironfish
+version    1.15.0
+git        e3492d3
+runtime    node/18.19.0
+```
+
+## Adding the Standalone Executable to Your PATH
+
+To run `ironfish` from any directory, add the standalone executable to your PATH.
+
+### macOS/Linux:
+
+1. Open Terminal.
+2. Edit your shell profile (`~/.bash_profile`, `~/.bashrc`, or `~/.zshrc`).
+3. Add: `export PATH=$PATH:/path/to/ironfish` (replace with your standalone executable path).
+4. Run `source ~/.bash_profile`, `source ~/.bashrc`, or `source ~/.zshrc`.
+
+### Windows:
+
+1. Search for 'Environment Variables' and open 'Edit the system environment variables'.
+2. Click 'Environment Variables', then under 'System variables', select 'Path' and 'Edit'.
+3. Click 'New' and add the path to your Iron Fish Standalone Executable.
+4. Click 'OK' to save.
+
+
+## Updating
+
+Overwrite the original file with the newest version of Iron Fish Standalone Executable, downloaded from the link above.
+
+## Uninstalling
+
+Delete the file
+
+## Next steps
+
+[Run a node](/use/get-started/run-a-node)
