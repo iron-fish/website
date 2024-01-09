@@ -9,7 +9,7 @@ export const sidebar: SidebarDefinition = [
       "install-brew",
       "install-docker",
       "install-source",
-      "install-binary",
+      "install-standalone",
     ],
   },
   "run-a-node",
