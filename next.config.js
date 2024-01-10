@@ -5,6 +5,23 @@ const nextConfig = {
     locales: ["en"],
     defaultLocale: "en",
   },
+  async headers() {
+    return [
+      {
+        source: '/(.*)',
+        headers: [
+          {
+            key: 'X-Frame-Options',
+            value: 'SAMEORIGIN'
+          },
+          {
+            key: 'Content-Security-Policy',
+            value: "frame-ancestors 'none';",
+          },
+        ],
+      },
+    ]
+  },
   async redirects() {
     return [
       {
