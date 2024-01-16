@@ -152,6 +152,12 @@ export const ECOSYSTEM: Array<{
   },
   {
     type: "Exchanges",
+    name: "Bitrue",
+    link: "https://www.bitrue.com/",
+    image: "/images/ecosystem/bitrue.png",
+  },
+  {
+    type: "Exchanges",
     name: "BingX",
     link: "https://bingx.com/en-us/",
     image: "/images/ecosystem/bingx.png",
