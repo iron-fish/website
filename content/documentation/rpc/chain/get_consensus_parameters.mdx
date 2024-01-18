@@ -49,20 +49,20 @@ undefined;
   /**
    * The block height that enables the use of V2 transactions instead of V1
    */
-  enableAssetOwnership: ActivationSequence
+  enableAssetOwnership: number | null
 
   /**
    * Before upgrade we have block timestamp smaller than previous block. After this
    * block we enforce the block timestamps in the sequential order as the block sequences.
    */
-  enforceSequentialBlockTime: ActivationSequence
+  enforceSequentialBlockTime: number | null
 
   /**
    * Sequence at which to start mining and validating blocks with the FishHash algorithm
    * instead Blake3. This sequence also modifies the block header serialization to move graffiti
    * to the beginning of the block header before mining.
    */
-  enableFishHash: ActivationSequence
+  enableFishHash: number | null
 }
 ```
 
