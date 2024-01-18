@@ -15,11 +15,54 @@ undefined;
 
 ```ts
 {
-  allowedBlockFuturesSeconds: number;
-  genesisSupplyInIron: number;
-  targetBlockTimeInSeconds: number;
-  targetBucketTimeInSeconds: number;
-  maxBlockSizeBytes: number;
+  /**
+   * When adding a block, the block can be this amount of seconds into the future
+   * without rejecting it
+   */
+  allowedBlockFutureSeconds: number
+
+  /**
+   * The amount of coins in the genesis block
+   */
+  genesisSupplyInIron: number
+
+  /**
+   * The average time that all blocks should be mined
+   */
+  targetBlockTimeInSeconds: number
+
+  /**
+   * The time range when difficulty and target not change
+   */
+  targetBucketTimeInSeconds: number
+
+  /**
+   * Max block size
+   */
+  maxBlockSizeBytes: number
+
+  /**
+   * The minimum fee that a transaction must have to be accepted
+   */
+  minFee: number
+
+  /**
+   * The block height that enables the use of V2 transactions instead of V1
+   */
+  enableAssetOwnership: ActivationSequence
+
+  /**
+   * Before upgrade we have block timestamp smaller than previous block. After this
+   * block we enforce the block timestamps in the sequential order as the block sequences.
+   */
+  enforceSequentialBlockTime: ActivationSequence
+
+  /**
+   * Sequence at which to start mining and validating blocks with the FishHash algorithm
+   * instead Blake3. This sequence also modifies the block header serialization to move graffiti
+   * to the beginning of the block header before mining.
+   */
+  enableFishHash: ActivationSequence
 }
 ```
 
