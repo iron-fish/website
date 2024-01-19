@@ -1,3 +1,4 @@
+import { SearchField } from "@/components/SearchField/SearchField";
 import {
   Heading,
   Box,
@@ -10,6 +11,7 @@ import {
   headingToAnchorId,
   VStack,
   NAV_HEIGHT,
+  HStack,
 } from "@/lib/ui";
 import { smoothScrollToEl } from "@/lib/ui/src/hooks/useSmoothScrollToHash";
 import Head from "next/head";
@@ -104,6 +106,11 @@ export function DocumentationLayout({
           overflow="auto"
           ref={contentRef}
         >
+          <HStack justifyContent="flex-end">
+            <Box w="100%" maxW="250px">
+              <SearchField />
+            </Box>
+          </HStack>
           <Heading as="h1" size="2xl" mt={8} mb={16} fontWeight="medium">
             {frontMatter.title}
           </Heading>

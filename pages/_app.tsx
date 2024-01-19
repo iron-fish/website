@@ -8,6 +8,7 @@ import hljs from "highlight.js/lib/core";
 import "highlight.js/styles/atom-one-dark.css";
 import javascript from "highlight.js/lib/languages/javascript";
 import rust from "highlight.js/lib/languages/rust";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
 import { MainLayout } from "../layouts/Main/Main";
 
@@ -15,6 +16,8 @@ import "../styles/global.css";
 
 hljs.registerLanguage("javascript", javascript);
 hljs.registerLanguage("rust", rust);
+
+const queryClient = new QueryClient();
 
 function App({ Component, pageProps }: AppProps) {
   return (
@@ -28,12 +31,14 @@ function App({ Component, pageProps }: AppProps) {
       <GoogleAnalytics gaMeasurementId="G-GJD73W9V3M" trackPageViews />
       <MDXRenderer.Provider>
         <IntlProvider>
-          <IronfishUIProvider>
-            <LoadFonts />
-            <MainLayout>
-              <Component {...pageProps} />
-            </MainLayout>
-          </IronfishUIProvider>
+          <QueryClientProvider client={queryClient}>
+            <IronfishUIProvider>
+              <LoadFonts />
+              <MainLayout>
+                <Component {...pageProps} />
+              </MainLayout>
+            </IronfishUIProvider>
+          </QueryClientProvider>
         </IntlProvider>
       </MDXRenderer.Provider>
     </>
