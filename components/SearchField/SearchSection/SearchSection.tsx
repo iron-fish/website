@@ -1,6 +1,5 @@
 import { ReactNode } from "react";
-import { Box, HStack, Text, TextProps, VStack } from "@chakra-ui/react";
-import Link from "next/link";
+import { Box, HStack, Text } from "@chakra-ui/react";
 
 function SearchSection({
   heading,
