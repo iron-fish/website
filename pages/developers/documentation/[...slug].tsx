@@ -6,11 +6,11 @@ import {
   getSidebarContent,
   parseFileByPath,
   renderMarkdown,
+  parseNestedDir,
 } from "@/lib/markdown";
 import { ComponentProps } from "react";
 import { DocumentationLayout } from "../../../layouts/Documentation/Documentation";
 import { sidebar } from "../../../content/documentation/sidebar";
-import { parseNestedDir } from "@/lib/markdown/src/parseNestedDir";
 
 const CONTENT_DIR = ["content", "documentation"];
 
