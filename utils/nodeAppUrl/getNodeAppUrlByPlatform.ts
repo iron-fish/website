@@ -1,7 +1,9 @@
 import { isArray, isObject } from "lodash-es";
 
+export const REPO_URL = "https://github.com/iron-fish/ironfish-node-app";
+
 const ENDPOINT =
-  "https://api.github.com/repos/iron-fish/node-app/releases/latest";
+  "https://api.github.com/repos/iron-fish/ironfish-node-app/releases/latest";
 
 export const PLATFORMS = {
   WINDOWS: "windows",
@@ -52,7 +54,7 @@ function getDownloadUrlsByPlatform(data: unknown) {
       downloadUrlsByPlatform.windows = url;
     } else if (url.endsWith("arm64.dmg")) {
       downloadUrlsByPlatform["mac-arm"] = url;
-    } else if (url.endsWith("x64.dmg")) {
+    } else if (url.endsWith(".dmg")) {
       downloadUrlsByPlatform["mac-intel"] = url;
     }
   }

@@ -14,6 +14,7 @@ import {
   DownloadUrlsByPlatform,
   PLATFORM_LABELS,
   Platform,
+  REPO_URL,
 } from "@/utils/nodeAppUrl/getNodeAppUrlByPlatform";
 import { useDownloadLinkForPlatform } from "@/utils/nodeAppUrl/useDownloadLinkForPlatform";
 import { useMemo } from "react";
@@ -23,7 +24,6 @@ type Props = {
   downloadUrlsByPlatform?: DownloadUrlsByPlatform;
 };
 
-const REPO_URL = "https://github.com/iron-fish/node-app";
 const DOWNLOAD_OPTIONS_TARGET = "download-options";
 
 const DownloadButton = forwardRef<ButtonProps, "a">((props, ref) => (
