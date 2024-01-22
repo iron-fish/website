@@ -1,7 +1,16 @@
-import { NextApiRequest, NextApiResponse } from "next";
-import { search } from "@/lib/search";
-import { parseFileByPath, renderMarkdown } from "@/lib/markdown";
+import { parseFileByPath } from "@/lib/markdown";
 import { removeMarkdown } from "@/lib/markdown/src/removeMarkdown";
+import lunr from "lunr";
+import { NextApiRequest, NextApiResponse } from "next";
+
+function getHostUrl(headers: NextApiRequest["headers"]) {
+  const protocol = headers["x-forwarded-proto"] || "http";
+  const originalHost = String(headers["x-forwarded-host"] || headers.host);
+  const host = originalHost?.startsWith("localhost:")
+    ? originalHost.replace("localhost", "127.0.0.1")
+    : originalHost;
+  return `${protocol}://${host}`;
+}
 
 export default async function handler(
   req: NextApiRequest,
@@ -13,9 +22,17 @@ export default async function handler(
     return res.status(400).json({ message: "Bad Request" });
   }
 
+  const searchIndexResponse = await fetch(
+    `${getHostUrl(req.headers)}/api/search/documentation/searchIndex`
+  );
+
+  const searchIndex = await searchIndexResponse.json();
+
+  const lunrIndex = lunr.Index.load(searchIndex);
+
   const maxResults = isNaN(Number(max)) ? 10 : Number(max);
 
-  const searchResults = await search(q, maxResults);
+  const searchResults = lunrIndex.search(q).slice(0, maxResults);
 
   let formattedResults: {
     title: string;
@@ -45,6 +62,5 @@ export default async function handler(
       highlights: highlights,
     });
   }
-
   return res.status(200).json(formattedResults);
 }

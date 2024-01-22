@@ -19,8 +19,8 @@ import { MdOutlineInsertDriveFile } from "react-icons/md";
 import { useRouter } from "next/router";
 
 function fetchSearchResults(query: string) {
-  return fetch(`/api/search?q=${encodeURIComponent(query)}`).then((res) =>
-    res.json()
+  return fetch(`/api/search/documentation?q=${encodeURIComponent(query)}`).then(
+    (res) => res.json()
   );
 }
 
