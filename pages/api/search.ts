@@ -17,34 +17,36 @@ export default async function handler(
 
   const searchResults = await search(q, maxResults);
 
-  let formattedResults: {
-    title: string;
-    slug: string;
-    body: string;
-    highlights: { title: number[]; body: number[] };
-  }[] = [];
+  return res.status(200).json(searchResults);
 
-  for (const item of searchResults) {
-    const { documentPath, slug } = JSON.parse(item.ref);
-    const parsed = parseFileByPath(documentPath);
+  // let formattedResults: {
+  //   title: string;
+  //   slug: string;
+  //   body: string;
+  //   highlights: { title: number[]; body: number[] };
+  // }[] = [];
 
-    const highlights = Object.values(item.matchData.metadata).reduce(
-      (acc, { body, title }) => {
-        return {
-          title: title ? [...acc.title, ...title.position] : acc.title,
-          body: body ? [...acc.body, ...body.position] : acc.body,
-        };
-      },
-      { title: [], body: [] }
-    );
+  // for (const item of searchResults) {
+  //   const { documentPath, slug } = JSON.parse(item.ref);
+  //   const parsed = parseFileByPath(documentPath);
 
-    formattedResults.push({
-      title: parsed.frontMatter.title,
-      slug,
-      body: await removeMarkdown(parsed.content),
-      highlights: highlights,
-    });
-  }
+  //   const highlights = Object.values(item.matchData.metadata).reduce(
+  //     (acc, { body, title }) => {
+  //       return {
+  //         title: title ? [...acc.title, ...title.position] : acc.title,
+  //         body: body ? [...acc.body, ...body.position] : acc.body,
+  //       };
+  //     },
+  //     { title: [], body: [] }
+  //   );
 
-  return res.status(200).json(formattedResults);
+  //   formattedResults.push({
+  //     title: parsed.frontMatter.title,
+  //     slug,
+  //     body: await removeMarkdown(parsed.content),
+  //     highlights: highlights,
+  //   });
+  // }
+
+  // return res.status(200).json(formattedResults);
 }

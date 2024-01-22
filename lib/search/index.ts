@@ -55,5 +55,6 @@ async function getSearchIndex() {
 
 export async function search(query: string, maxResults = 10) {
   const index = await getSearchIndex();
-  return index.search(query).slice(0, maxResults);
+  return index;
+  // return index.search(query).slice(0, maxResults);
 }
