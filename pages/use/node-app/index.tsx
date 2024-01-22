@@ -27,6 +27,7 @@ type Props = {
 
 export default function NodeApp({ downloadUrlsByPlatform }: Props) {
   const isClient = useIsClient();
+  console.log({ downloadUrlsByPlatform });
   return (
     <>
       <Head>

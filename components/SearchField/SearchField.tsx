@@ -7,7 +7,13 @@ export function SearchField() {
 
   return (
     <>
-      <SearchInput as="button" onClick={onOpen} />
+      <SearchInput
+        as="button"
+        onClick={onOpen}
+        _placeholder={{
+          color: "#7F7F7F",
+        }}
+      />
       <SearchModal isOpen={isOpen} onClose={onClose} />
     </>
   );

@@ -95,10 +95,7 @@ export function DocumentationLayout({
         <Box
           as="article"
           maxW="container.lg"
-          py={{
-            base: 8,
-            md: 24,
-          }}
+          py={8}
           pb={40}
           px={8}
           mx="auto"
@@ -107,7 +104,13 @@ export function DocumentationLayout({
           ref={contentRef}
         >
           <HStack justifyContent="flex-end">
-            <Box w="100%" maxW="250px">
+            <Box
+              w="100%"
+              maxW={{
+                base: "100%",
+                sm: "250px",
+              }}
+            >
               <SearchField />
             </Box>
           </HStack>
