@@ -5,22 +5,25 @@ const nextConfig = {
     locales: ["en"],
     defaultLocale: "en",
   },
+  outputFileTracingIncludes: {
+    "/api/search/documentation": ["./content/**/*"],
+  },
   async headers() {
     return [
       {
-        source: '/(.*)',
+        source: "/(.*)",
         headers: [
           {
-            key: 'X-Frame-Options',
-            value: 'SAMEORIGIN'
+            key: "X-Frame-Options",
+            value: "SAMEORIGIN",
           },
           {
-            key: 'Content-Security-Policy',
+            key: "Content-Security-Policy",
             value: "frame-ancestors 'none';",
           },
         ],
       },
-    ]
+    ];
   },
   async redirects() {
     return [
