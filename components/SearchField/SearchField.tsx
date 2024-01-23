@@ -4,9 +4,13 @@ import { SearchModal, Domains } from "./SearchModal/SearchModal";
 
 type Props = BoxProps & {
   domain: Domains;
+  suggestions?: Array<{
+    heading: string;
+    slug: string;
+  }>;
 };
 
-export function SearchField({ domain, ...rest }: Props) {
+export function SearchField({ domain, suggestions, ...rest }: Props) {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   return (
@@ -18,7 +22,12 @@ export function SearchField({ domain, ...rest }: Props) {
           color: "#7F7F7F",
         }}
       />
-      <SearchModal domain={domain} isOpen={isOpen} onClose={onClose} />
+      <SearchModal
+        domain={domain}
+        suggestions={suggestions}
+        isOpen={isOpen}
+        onClose={onClose}
+      />
     </Box>
   );
 }

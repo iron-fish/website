@@ -32,28 +32,17 @@ function fetchSearchResults(domain: Domains, query: string) {
   );
 }
 
-const SUGGESTIONS = [
-  {
-    heading: "Installing the CLI",
-    slug: "/use/get-started/installation",
-  },
-  {
-    heading: "Download the Desktop App",
-    slug: "/use/node-app",
-  },
-  {
-    heading: "Mining",
-    slug: "/use/get-started/mining",
-  },
-];
-
 type Props = {
   domain: Domains;
+  suggestions?: Array<{
+    heading: string;
+    slug: string;
+  }>;
   isOpen: boolean;
   onClose: () => void;
 };
 
-export function SearchModal({ domain, isOpen, onClose }: Props) {
+export function SearchModal({ domain, suggestions, isOpen, onClose }: Props) {
   const router = useRouter();
   const [searchQuery, setSearchQuery] = useState("");
   const debouncedQuery = useDebounce<string>(searchQuery.toLowerCase(), 1000);
@@ -72,14 +61,14 @@ export function SearchModal({ domain, isOpen, onClose }: Props) {
   const hasQuery = debouncedQuery.length > 0;
   const showResults = hasQuery && !isLoading && data?.length > 0;
   const showNoReultsFound = hasQuery && !isLoading && data?.length === 0;
-  const showSuggested = !hasQuery || showNoReultsFound;
+  const showSuggested = !!suggestions && (!hasQuery || showNoReultsFound);
 
   return (
     <Modal isOpen={isOpen} onClose={handleClose}>
       <ModalOverlay />
       <ModalContent w="calc(100% - 1rem)" maxW="650px">
-        <ModalBody px={6} pt={4} pb={6}>
-          <HStack gap={6} mb={8}>
+        <ModalBody px={6} pt={4} pb={hasQuery || showSuggested ? 6 : 4}>
+          <HStack gap={6} mb={hasQuery || showSuggested ? 8 : 0}>
             <SearchInput
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
@@ -94,7 +83,7 @@ export function SearchModal({ domain, isOpen, onClose }: Props) {
               <MdClose size="1.8rem" color="#7F7F7F" />
             </Box>
           </HStack>
-          {debouncedQuery.length > 0 && (
+          {hasQuery && (
             <SearchSection heading="Search Results">
               {isLoading && (
                 <HStack justifyContent="center">
@@ -140,7 +129,7 @@ export function SearchModal({ domain, isOpen, onClose }: Props) {
           )}
           {showSuggested && (
             <SearchSection heading="Suggested">
-              {SUGGESTIONS.map((suggestion, i) => (
+              {suggestions.map((suggestion, i) => (
                 <SearchSection.Item
                   key={i}
                   icon={<MdOutlineInsertDriveFile />}
