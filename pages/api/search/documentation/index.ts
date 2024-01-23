@@ -34,12 +34,12 @@ export default async function handler(
 
   const searchResults = lunrIndex.search(q).slice(0, maxResults);
 
-  let formattedResults: {
+  let formattedResults: Array<{
     title: string;
     slug: string;
     body: string;
     highlights: { title: number[]; body: number[] };
-  }[] = [];
+  }> = [];
 
   for (const item of searchResults) {
     const { documentPath, slug } = JSON.parse(item.ref);
