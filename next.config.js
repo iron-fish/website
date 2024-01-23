@@ -5,8 +5,10 @@ const nextConfig = {
     locales: ["en"],
     defaultLocale: "en",
   },
-  outputFileTracingIncludes: {
-    "/api/search/documentation": ["./content/**/*"],
+  experimental: {
+    outputFileTracingIncludes: {
+      "/api/search/documentation": ["./content/**/*"],
+    },
   },
   async headers() {
     return [
