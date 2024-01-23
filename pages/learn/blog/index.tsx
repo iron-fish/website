@@ -16,6 +16,7 @@ import {
   AspectRatio,
   Button,
   Flex,
+  VStack,
 } from "@/lib/ui";
 import Image from "next/image";
 import {
@@ -27,6 +28,7 @@ import rubiks from "../../../assets/heroImages/blog/rubiks.svg";
 import plus from "../../../assets/heroImages/blog/plus.svg";
 import generateBlogFeeds from "../../../lib/feeds";
 import { MEDIA_ITEMS } from "@/content/media/media";
+import { SearchField } from "@/components/SearchField/SearchField";
 
 type Props = {
   blogItems: BlogItem[];
@@ -65,52 +67,91 @@ export default function Blog({ blogItems }: Props) {
         />
       </Head>
       <Box mb="150px">
-        <Hero
+        <Box
           bg="purple.500"
-          heading="Blog"
-          subheading="Diving Into Iron Fish"
-          description="Your go-to hub for all things Iron Fish. Check out our product deep dives, ecosystem highlights, recent news, and so much more."
-          images={
-            <>
-              <HeroImageUtil
-                image={rainbowImage}
-                top={{
-                  md: "-20px",
-                  xl: "30px",
+          borderBottom="1.5px solid black"
+          py={{
+            base: 8,
+            md: 16,
+          }}
+          px={{
+            base: 6,
+            md: 12,
+          }}
+          mb={{
+            base: 8,
+            md: "150px",
+          }}
+        >
+          <Container w="100%" maxW="container.lg">
+            <Flex
+              direction={{
+                base: "column",
+                lg: "row",
+              }}
+              alignItems={{
+                base: "stretch",
+                lg: "center",
+              }}
+            >
+              <Box
+                mb={{
+                  base: 8,
+                  lg: 0,
                 }}
-                left={{
-                  md: "20px",
-                  xl: "30px",
-                  "2xl": `calc(50vw - 700px)`,
+                w={{
+                  base: "100%",
+                  lg: "50%",
                 }}
-              />
-              <HeroImageUtil
-                image={rubiksImage}
-                bottom={{
-                  md: "-80px",
-                  xl: "30px",
+              >
+                <ShadowBox
+                  shadowColor="transparent"
+                  overflow="hidden"
+                  borderWidth="2px"
+                  borderRadius="4px"
+                >
+                  <AspectRatio ratio={465 / 309}>
+                    {latestBlog.image && (
+                      <Image alt="" src={latestBlog.image} fill />
+                    )}
+                  </AspectRatio>
+                </ShadowBox>
+              </Box>
+              <Flex
+                direction="column"
+                alignItems="flex-start"
+                justifyContent="center"
+                px={{
+                  base: 0,
+                  sm: 8,
+                  lg: 16,
                 }}
-                left={{
-                  md: "-50px",
-                  xl: "-20px",
-                  "2xl": `calc(50vw - 850px)`,
+                w={{
+                  base: "100%",
+                  lg: "50%",
                 }}
-              />
-              <HeroImageUtil
-                image={plusImage}
-                top={{
-                  md: "10px",
-                  xl: "150px",
-                }}
-                right={{
-                  md: "-120px",
-                  xl: "-20px",
-                  "2xl": `calc(50vw - 700px)`,
-                }}
-              />
-            </>
-          }
-        />
+              >
+                <Text textStyle="h4" textTransform="uppercase" mb={4}>
+                  Featured Blog
+                </Text>
+                <Text as="h3" textStyle="h3" marginBottom={4} minHeight="2.5em">
+                  {latestBlog.title}
+                </Text>
+                <Button
+                  as={Link}
+                  href={latestBlog.href}
+                  size="sm"
+                  bg="white"
+                  _hover={{
+                    bg: "gray.200",
+                  }}
+                >
+                  Read Now
+                </Button>
+              </Flex>
+            </Flex>
+          </Container>
+        </Box>
         <Container
           w="100%"
           maxW="container.2xl"
@@ -120,75 +161,13 @@ export default function Blog({ blogItems }: Props) {
             xl: 16,
           }}
         >
-          <Flex
-            direction={{
-              base: "column",
-              lg: "row",
-            }}
-            alignItems={{
-              base: "stretch",
-              lg: "center",
-            }}
-            mt="150px"
-            mb={16}
-          >
-            <Box
-              mb={{
-                base: 8,
-                lg: 0,
-              }}
-              w={{
-                base: "100%",
-                lg: "50%",
-              }}
-            >
-              <ShadowBox
-                shadowColor="transparent"
-                overflow="hidden"
-                borderWidth="2px"
-                borderRadius="4px"
-              >
-                <AspectRatio ratio={465 / 309}>
-                  {latestBlog.image && (
-                    <Image alt="" src={latestBlog.image} fill />
-                  )}
-                </AspectRatio>
-              </ShadowBox>
-            </Box>
-            <Flex
-              direction="column"
-              alignItems="flex-start"
-              justifyContent="center"
-              px={{
-                base: 0,
-                sm: 8,
-                lg: 16,
-              }}
-              w={{
-                base: "100%",
-                lg: "50%",
-              }}
-            >
-              <Text textStyle="h4" textTransform="uppercase" mb={4}>
-                Featured Blog
-              </Text>
-              <Text as="h3" textStyle="h3" marginBottom={4} minHeight="2.5em">
-                {latestBlog.title}
-              </Text>
-              <Button
-                as={Link}
-                href={latestBlog.href}
-                size="sm"
-                bg="white"
-                _hover={{
-                  bg: "gray.200",
-                }}
-              >
-                Read Now
-              </Button>
-            </Flex>
+          <Flex direction="column" gap={8} alignItems="center">
+            <Text as="h3" textStyle="h3" textAlign="center">
+              Explore Topics
+            </Text>
+            <SearchField domain="blog" w="100%" maxW="800px" />
+            <FilteredBlogsList blogItems={restBlogs} />
           </Flex>
-          <FilteredBlogsList blogItems={restBlogs} />
         </Container>
       </Box>
     </>

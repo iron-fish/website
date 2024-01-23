@@ -1,12 +1,16 @@
-import { useDisclosure } from "@chakra-ui/react";
+import { Box, BoxProps, useDisclosure } from "@chakra-ui/react";
 import { SearchInput } from "./SearchInput/SearchInput";
-import { SearchModal } from "./SearchModal/SearchModal";
+import { SearchModal, Domains } from "./SearchModal/SearchModal";
 
-export function SearchField() {
+type Props = BoxProps & {
+  domain: Domains;
+};
+
+export function SearchField({ domain, ...rest }: Props) {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   return (
-    <>
+    <Box {...rest}>
       <SearchInput
         as="button"
         onClick={onOpen}
@@ -14,7 +18,7 @@ export function SearchField() {
           color: "#7F7F7F",
         }}
       />
-      <SearchModal isOpen={isOpen} onClose={onClose} />
-    </>
+      <SearchModal domain={domain} isOpen={isOpen} onClose={onClose} />
+    </Box>
   );
 }

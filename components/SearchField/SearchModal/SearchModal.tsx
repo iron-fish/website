@@ -18,9 +18,17 @@ import { SearchSection } from "../SearchSection/SearchSection";
 import { MdOutlineInsertDriveFile } from "react-icons/md";
 import { useRouter } from "next/router";
 
-function fetchSearchResults(query: string) {
-  return fetch(`/api/search/documentation?q=${encodeURIComponent(query)}`).then(
-    (res) => res.json()
+const ENDPOINTS_BY_DOMAIN = {
+  documentation: "/api/search/documentation",
+  blog: "/api/search/blog",
+};
+
+export type Domains = keyof typeof ENDPOINTS_BY_DOMAIN;
+
+function fetchSearchResults(domain: Domains, query: string) {
+  const endpoint = ENDPOINTS_BY_DOMAIN[domain];
+  return fetch(`${endpoint}?q=${encodeURIComponent(query)}`).then((res) =>
+    res.json()
   );
 }
 
@@ -39,20 +47,20 @@ const SUGGESTIONS = [
   },
 ];
 
-export function SearchModal({
-  isOpen,
-  onClose,
-}: {
+type Props = {
+  domain: Domains;
   isOpen: boolean;
   onClose: () => void;
-}) {
+};
+
+export function SearchModal({ domain, isOpen, onClose }: Props) {
   const router = useRouter();
   const [searchQuery, setSearchQuery] = useState("");
   const debouncedQuery = useDebounce<string>(searchQuery.toLowerCase(), 1000);
 
   const { data, isLoading } = useQuery({
-    queryKey: ["SearchField", debouncedQuery],
-    queryFn: () => fetchSearchResults(searchQuery),
+    queryKey: ["SearchField", domain, debouncedQuery],
+    queryFn: () => fetchSearchResults(domain, searchQuery),
     enabled: debouncedQuery.length > 0,
   });
 

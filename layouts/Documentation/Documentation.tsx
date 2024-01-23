@@ -111,7 +111,7 @@ export function DocumentationLayout({
                 sm: "250px",
               }}
             >
-              <SearchField />
+              <SearchField domain="documentation" />
             </Box>
           </HStack>
           <Heading as="h1" size="2xl" mt={8} mb={16} fontWeight="medium">
