@@ -19,7 +19,7 @@ export const sidebar: SidebarDefinition = [
   "mining",
   {
     label: "Reference",
-    items: ["node-configuration", "node-datadir", "bootstrap-nodes"],
+    items: ["node-config", "node-datadir", "bootstrap-nodes"],
   },
   {
     label: "CLI Commands",

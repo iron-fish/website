@@ -1,18 +1,17 @@
 ---
-title: Node Configuration
-seo-title: Configure Your Node
+title: Node Config
+seo-title: Node Config Options
 ---
 
-## List of configuration options
-To change configuration of your node, you can do so from the command line using the command:
-```
-ironfish config:set <config option> <config value>
-```
+To change configuration of your node, you can do so from the command line using the [config:set command](/use/get-started/cli-cmd-config-set).
+
 For example, if you wanted to change the number of confirmed blocks necessary to calculate your balance, you could do so with:
-```
+
+```sh
 ironfish config:set confirmations 3
 ```
 
+## Options
 | Element                           | Description |
 | :--------                         | :-------------------------------------------------------------------------------------: |
 | blockGraffiti                     | When mining, value to set on the `graffiti` field of new blocks. Truncated to 32 bytes |
