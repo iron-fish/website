@@ -21,7 +21,6 @@ export function SearchInput({ as, ...rest }: Props) {
         role={isButton ? "button" : undefined}
         readOnly={isButton}
         type={isButton ? undefined : "text"}
-        placeholder="Search the docs"
         fontSize="sm"
         borderColor="black"
         borderRadius={4}

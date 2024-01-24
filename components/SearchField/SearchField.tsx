@@ -1,6 +1,6 @@
 import { Box, BoxProps, useDisclosure } from "@chakra-ui/react";
 import { SearchInput } from "./SearchInput/SearchInput";
-import { SearchModal, Domains } from "./SearchModal/SearchModal";
+import { SearchModal, Domains, DOMAINS } from "./SearchModal/SearchModal";
 
 type Props = BoxProps & {
   domain: Domains;
@@ -18,6 +18,7 @@ export function SearchField({ domain, suggestions, ...rest }: Props) {
       <SearchInput
         as="button"
         onClick={onOpen}
+        placeholder={DOMAINS[domain].placeholder}
         _placeholder={{
           color: "#7F7F7F",
         }}

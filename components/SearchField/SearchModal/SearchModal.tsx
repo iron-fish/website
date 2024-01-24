@@ -18,15 +18,21 @@ import { SearchSection } from "../SearchSection/SearchSection";
 import { MdOutlineInsertDriveFile } from "react-icons/md";
 import { useRouter } from "next/router";
 
-const ENDPOINTS_BY_DOMAIN = {
-  documentation: "/api/search/documentation",
-  blog: "/api/search/blog",
+export const DOMAINS = {
+  documentation: {
+    endpoint: "/api/search/documentation",
+    placeholder: "Search the docs",
+  },
+  blog: {
+    endpoint: "/api/search/blog",
+    placeholder: "Search the blog",
+  },
 };
 
-export type Domains = keyof typeof ENDPOINTS_BY_DOMAIN;
+export type Domains = keyof typeof DOMAINS;
 
 function fetchSearchResults(domain: Domains, query: string) {
-  const endpoint = ENDPOINTS_BY_DOMAIN[domain];
+  const endpoint = DOMAINS[domain].endpoint;
   return fetch(`${endpoint}?q=${encodeURIComponent(query)}`).then((res) =>
     res.json()
   );
