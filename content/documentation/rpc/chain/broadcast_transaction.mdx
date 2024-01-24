@@ -3,9 +3,11 @@ title: chain/broadcastTransaction
 description: RPC Chain | Iron Fish Documentation
 ---
 
-Broadcast a fully built, serialized transaction to the node's peers. This is useful for broadcasting custom built transactions.
+Broadcast a transaction to the node's peers.
 
-This is a one time broadcast. The transaction will not be rebroadcasted automatically like it would if it were created in the wallet.
+This is a one time broadcast. If the transaction fails to broadcast it will not be rebroadcast. This is in comparison to the wallet which rebroadcasts pending transactions at an interval.
+
+This will also add the transaction to the node's mempool.
 
 #### Request
 
@@ -16,13 +18,17 @@ This is a one time broadcast. The transaction will not be rebroadcasted automati
 ```
 
 #### Response
-Returns accepted: true if the transaction was accepted into the node's mempool otherwise false.
 
 ```ts
 {
   hash: string;
+  broadcasted: boolean;
   accepted: boolean;
 }
 ```
+
+- **hash** The transaction hash
+- **broadcasted** true if the transaction was successfully sent out to the network.
+- **accepted** true if the transaction was accepted into the node's mempool
 
 ###### [View on Github](https://github.com/iron-fish/ironfish/blob/master/ironfish/src/rpc/routes/chain/broadcastTransaction.ts)
