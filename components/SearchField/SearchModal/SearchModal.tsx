@@ -18,41 +18,44 @@ import { SearchSection } from "../SearchSection/SearchSection";
 import { MdOutlineInsertDriveFile } from "react-icons/md";
 import { useRouter } from "next/router";
 
-function fetchSearchResults(query: string) {
-  return fetch(`/api/search/documentation?q=${encodeURIComponent(query)}`).then(
-    (res) => res.json()
+export const DOMAINS = {
+  documentation: {
+    endpoint: "/api/search/documentation",
+    placeholder: "Search the docs",
+  },
+  blog: {
+    endpoint: "/api/search/blog",
+    placeholder: "Search the blog",
+  },
+};
+
+export type Domains = keyof typeof DOMAINS;
+
+function fetchSearchResults(domain: Domains, query: string) {
+  const endpoint = DOMAINS[domain].endpoint;
+  return fetch(`${endpoint}?q=${encodeURIComponent(query)}`).then((res) =>
+    res.json()
   );
 }
 
-const SUGGESTIONS = [
-  {
-    heading: "Installing the CLI",
-    slug: "/use/get-started/installation",
-  },
-  {
-    heading: "Download the Desktop App",
-    slug: "/use/node-app",
-  },
-  {
-    heading: "Mining",
-    slug: "/use/get-started/mining",
-  },
-];
-
-export function SearchModal({
-  isOpen,
-  onClose,
-}: {
+type Props = {
+  domain: Domains;
+  suggestions?: Array<{
+    heading: string;
+    slug: string;
+  }>;
   isOpen: boolean;
   onClose: () => void;
-}) {
+};
+
+export function SearchModal({ domain, suggestions, isOpen, onClose }: Props) {
   const router = useRouter();
   const [searchQuery, setSearchQuery] = useState("");
   const debouncedQuery = useDebounce<string>(searchQuery.toLowerCase(), 1000);
 
   const { data, isLoading } = useQuery({
-    queryKey: ["SearchField", debouncedQuery],
-    queryFn: () => fetchSearchResults(searchQuery),
+    queryKey: ["SearchField", domain, debouncedQuery],
+    queryFn: () => fetchSearchResults(domain, searchQuery),
     enabled: debouncedQuery.length > 0,
   });
 
@@ -64,14 +67,14 @@ export function SearchModal({
   const hasQuery = debouncedQuery.length > 0;
   const showResults = hasQuery && !isLoading && data?.length > 0;
   const showNoReultsFound = hasQuery && !isLoading && data?.length === 0;
-  const showSuggested = !hasQuery || showNoReultsFound;
+  const showSuggested = !!suggestions && (!hasQuery || showNoReultsFound);
 
   return (
     <Modal isOpen={isOpen} onClose={handleClose}>
       <ModalOverlay />
       <ModalContent w="calc(100% - 1rem)" maxW="650px">
-        <ModalBody px={6} pt={4} pb={6}>
-          <HStack gap={6} mb={8}>
+        <ModalBody px={6} pt={4} pb={hasQuery || showSuggested ? 6 : 4}>
+          <HStack gap={6} mb={hasQuery || showSuggested ? 8 : 0}>
             <SearchInput
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
@@ -86,7 +89,7 @@ export function SearchModal({
               <MdClose size="1.8rem" color="#7F7F7F" />
             </Box>
           </HStack>
-          {debouncedQuery.length > 0 && (
+          {hasQuery && (
             <SearchSection heading="Search Results">
               {isLoading && (
                 <HStack justifyContent="center">
@@ -132,7 +135,7 @@ export function SearchModal({
           )}
           {showSuggested && (
             <SearchSection heading="Suggested">
-              {SUGGESTIONS.map((suggestion, i) => (
+              {suggestions.map((suggestion, i) => (
                 <SearchSection.Item
                   key={i}
                   icon={<MdOutlineInsertDriveFile />}

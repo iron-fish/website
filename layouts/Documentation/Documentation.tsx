@@ -32,6 +32,21 @@ type Props = {
 
 const HEADING_SELECTOR = "h1[id], h2[id], h3[id], h4[id], h5[id], h6[id]";
 
+const SEARCH_SUGGESTIONS = [
+  {
+    heading: "Installing the CLI",
+    slug: "/use/get-started/installation",
+  },
+  {
+    heading: "Download the Desktop App",
+    slug: "/use/node-app",
+  },
+  {
+    heading: "Mining",
+    slug: "/use/get-started/mining",
+  },
+];
+
 export function DocumentationLayout({
   frontMatter,
   markdown,
@@ -111,7 +126,10 @@ export function DocumentationLayout({
                 sm: "250px",
               }}
             >
-              <SearchField />
+              <SearchField
+                domain="documentation"
+                suggestions={SEARCH_SUGGESTIONS}
+              />
             </Box>
           </HStack>
           <Heading as="h1" size="2xl" mt={8} mb={16} fontWeight="medium">

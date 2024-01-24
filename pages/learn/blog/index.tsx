@@ -1,40 +1,22 @@
 import { readdirSync } from "fs";
 import path from "path";
-import Link from "next/link";
 import { GetStaticProps } from "next";
 import { parseFileByPath } from "@/lib/markdown";
 import { format, parse } from "date-fns";
 import Head from "next/head";
-import {
-  Box,
-  Container,
-  Hero,
-  HeroImageUtil,
-  Text,
-  LocalImage,
-  ShadowBox,
-  AspectRatio,
-  Button,
-  Flex,
-} from "@/lib/ui";
-import Image from "next/image";
+import { Box, Container, Text, Flex } from "@/lib/ui";
 import {
   FilteredBlogsList,
   BlogItem,
 } from "@/components/FilteredBlogsList/FilteredBlogsList";
-import rainbow from "../../../assets/heroImages/blog/rainbow.svg";
-import rubiks from "../../../assets/heroImages/blog/rubiks.svg";
-import plus from "../../../assets/heroImages/blog/plus.svg";
 import generateBlogFeeds from "../../../lib/feeds";
 import { MEDIA_ITEMS } from "@/content/media/media";
+import { SearchField } from "@/components/SearchField/SearchField";
+import { FeaturedBlog } from "@/components/Blog/FeaturedBlog/FeaturedBlog";
 
 type Props = {
   blogItems: BlogItem[];
 };
-
-const rainbowImage = rainbow as LocalImage;
-const rubiksImage = rubiks as LocalImage;
-const plusImage = plus as LocalImage;
 
 export default function Blog({ blogItems }: Props) {
   const latestBlog = blogItems.find((blog) => {
@@ -65,51 +47,10 @@ export default function Blog({ blogItems }: Props) {
         />
       </Head>
       <Box mb="150px">
-        <Hero
-          bg="purple.500"
-          heading="Blog"
-          subheading="Diving Into Iron Fish"
-          description="Your go-to hub for all things Iron Fish. Check out our product deep dives, ecosystem highlights, recent news, and so much more."
-          images={
-            <>
-              <HeroImageUtil
-                image={rainbowImage}
-                top={{
-                  md: "-20px",
-                  xl: "30px",
-                }}
-                left={{
-                  md: "20px",
-                  xl: "30px",
-                  "2xl": `calc(50vw - 700px)`,
-                }}
-              />
-              <HeroImageUtil
-                image={rubiksImage}
-                bottom={{
-                  md: "-80px",
-                  xl: "30px",
-                }}
-                left={{
-                  md: "-50px",
-                  xl: "-20px",
-                  "2xl": `calc(50vw - 850px)`,
-                }}
-              />
-              <HeroImageUtil
-                image={plusImage}
-                top={{
-                  md: "10px",
-                  xl: "150px",
-                }}
-                right={{
-                  md: "-120px",
-                  xl: "-20px",
-                  "2xl": `calc(50vw - 700px)`,
-                }}
-              />
-            </>
-          }
+        <FeaturedBlog
+          image={latestBlog.image}
+          title={latestBlog.title}
+          href={latestBlog.href}
         />
         <Container
           w="100%"
@@ -120,75 +61,13 @@ export default function Blog({ blogItems }: Props) {
             xl: 16,
           }}
         >
-          <Flex
-            direction={{
-              base: "column",
-              lg: "row",
-            }}
-            alignItems={{
-              base: "stretch",
-              lg: "center",
-            }}
-            mt="150px"
-            mb={16}
-          >
-            <Box
-              mb={{
-                base: 8,
-                lg: 0,
-              }}
-              w={{
-                base: "100%",
-                lg: "50%",
-              }}
-            >
-              <ShadowBox
-                shadowColor="transparent"
-                overflow="hidden"
-                borderWidth="2px"
-                borderRadius="4px"
-              >
-                <AspectRatio ratio={465 / 309}>
-                  {latestBlog.image && (
-                    <Image alt="" src={latestBlog.image} fill />
-                  )}
-                </AspectRatio>
-              </ShadowBox>
-            </Box>
-            <Flex
-              direction="column"
-              alignItems="flex-start"
-              justifyContent="center"
-              px={{
-                base: 0,
-                sm: 8,
-                lg: 16,
-              }}
-              w={{
-                base: "100%",
-                lg: "50%",
-              }}
-            >
-              <Text textStyle="h4" textTransform="uppercase" mb={4}>
-                Featured Blog
-              </Text>
-              <Text as="h3" textStyle="h3" marginBottom={4} minHeight="2.5em">
-                {latestBlog.title}
-              </Text>
-              <Button
-                as={Link}
-                href={latestBlog.href}
-                size="sm"
-                bg="white"
-                _hover={{
-                  bg: "gray.200",
-                }}
-              >
-                Read Now
-              </Button>
-            </Flex>
+          <Flex direction="column" gap={8} alignItems="center">
+            <Text as="h3" textStyle="h3" textAlign="center">
+              Explore Topics
+            </Text>
+            <SearchField domain="blog" w="100%" maxW="800px" />
+            <FilteredBlogsList blogItems={restBlogs} />
           </Flex>
-          <FilteredBlogsList blogItems={restBlogs} />
         </Container>
       </Box>
     </>

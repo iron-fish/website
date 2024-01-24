@@ -15,7 +15,7 @@ export default async function handler(
   }
 
   const searchIndexResponse = await fetch(
-    `${getRequestHostUrl(req.headers)}/api/search/documentation/searchIndex`
+    `${getRequestHostUrl(req.headers)}/api/search/blog/searchIndex`
   );
 
   const searchIndex = await searchIndexResponse.json();
