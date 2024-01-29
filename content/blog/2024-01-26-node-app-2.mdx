@@ -1,0 +1,48 @@
+---
+author: elena
+title: Unveiling Node App 2.0
+description: Explore all the new improvements and features of the Node App 2.0
+image: /images/blog/node_app_2_0.png
+tags: [node app 2.0, deskptop, wallet, ironfish]
+---
+
+The launch of our [Node App 2.0](https://ironfish.network/use/node-app) marks a significant milestone in the evolution of the Node App project. Building on the foundation laid by its predecessor, Node App 1.0, this latest iteration introduces a host of improvements and new features that enhance the user experience and streamline functionality.
+
+## 🥳 Node App 2.0
+
+Node App 2.0 is not just an update; it is a complete overhaul that offers a more robust foundation for future developments, as well as introducing several improved user experience features and updated designs.
+
+### Core Improvements
+
+The primary enhancement in Node App 2.0 lies in its integration with the Iron Fish RPC. The large amount of custom business logic in the previous Node App made adding features or making changes more difficult. The Node App 2.0 is a graphical interface for the RPC layer to allow the core logic to live in the Iron Fish SDK — like how the CLI wallet tool works today. This improvement makes it easier to share code between the CLI wallet and the Node App. Since the Node App is now relying on the RPC layer, it will be easier to extend it in the future to connect to remote nodes, light client servers, and more by simply changing the RPC to connect to a remote location rather than the node that is running in-process.
+
+Overhauling the app to rely on the Iron Fish RPC layer brought in a ton of benefits, such as:
+
+1. **Simplified Feature Additions and Upgrades:** The reduced complexity in adding features or upgrading the Iron Fish SDK version enhances the app's adaptability and responsiveness to evolving user needs.
+2. **Enhanced Stability and Reduced Brittleness:** The new architecture minimizes the issues that were previously encountered due to the heavy reliance on custom business logic.
+3. **Streamlined User Interface:** The Node App 2.0 functions primarily as a graphical interface to the RPC layer, making it more user-friendly, intuitive, and in line with the previous CLI wallet experience.
+
+### What else is new in Node App 2.0?
+
+Node App 2.0 has other huge user experience advantages over the previous version:
+
+- **🙌 Multi-language Support:** One of the biggest feature requests from the community was to add multi language support, and therefore Node App 2.0 is launching with several languages out of the box: English, Spanish, Russian, Ukrainian, and Chinese. If you want to see more languages, please include that in your feedback of the app!
+- **UI Refresh:** A new visual design that aligns with the Iron Fish brand, offering a fresher, more cohesive user experience.
+- **Customizable Account Importing:** When importing an account, users can now override the account name. If you do not specify a name, we will still attempt to extract it from your encoded keys.
+
+### Community Involvement: Your Role in Shaping Node App 2.0
+
+The development of Node App 2.0 is a collaborative process. Please report any issues you might face, or any further features you want to see from the Node App. If you want to see another language be introduced, or make corrections to the existing translations, please reach out on Discord in the [#node-app](https://discord.com/channels/771503434028941353/1123369260522143825) channel or make edits directly by opening a PR in our GitHub for localized content (found [here](https://github.com/iron-fish/ironfish-node-app/tree/main/renderer/intl/locales)).
+
+### A Technical Perspective for Developers: Under the Hood of Node App 2.0
+
+For engineers who are curious on how Node App 2.0 works:
+
+- The Node App 2.0 is an Electron application bootstrapped using Nextron, a project that brings Next.js and Electron together. Node App 1.0's build system used webpack and oftentimes required special cases for node-specific code. Nextron uses Next.js for the frontend, works with minor modifications, and webpack for the backend, but has smarter defaults that eliminated all our custom build configuration; we added some code for internationalization.
+- tRPC simplifies communication between the front-end and Electron back-end. In 1.0 we had a custom-built RPC layer with layers of abstraction that required us to edit five or more files to add a new RPC endpoint. Since the Node App 2.0 uses electron-tRPC to automatically generate type-safe client calls between the electron backend and our Next.js frontend, it just takes editing one file and adding the RPC call for what we want to use in the electron frontend.
+- We are using Chakra UI for our component library and for styling.
+- The new architecture uses electron’s [ASAR](https://www.electronjs.org/docs/latest/glossary#asar) format for bundling assets. Electron shims Node’s fs module to read files out of it without unpacking the file. This improves performance on Windows.
+
+Node App 2.0 represents a significant leap forward in terms of functionality, user experience, and development efficiency.
+
+Ready to upgrade or download? Available today on the official [Iron Fish Node App download page](https://ironfish.network/use/node-app).
