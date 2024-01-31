@@ -62,6 +62,7 @@ export const ArrowButton: ChakraComponent<"button", Props> = ({
       {...rest}
       pr={isArrowTilted ? 2 : undefined}
       display="flex"
+      alignItems="center"
       gap={gap}
     >
       {hasLeftArrow && (
