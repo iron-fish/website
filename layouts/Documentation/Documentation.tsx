@@ -12,10 +12,15 @@ import {
   VStack,
   NAV_HEIGHT,
   HStack,
+  Button,
+  SidebarItem,
+  ArrowButton,
 } from "@/lib/ui";
 import { smoothScrollToEl } from "@/lib/ui/src/hooks/useSmoothScrollToHash";
 import Head from "next/head";
-import { ComponentProps, useEffect, useRef, useState } from "react";
+import Link from "next/link";
+import { useRouter } from "next/router";
+import { ComponentProps, useEffect, useMemo, useRef, useState } from "react";
 
 type Props = {
   frontMatter: {
@@ -136,6 +141,7 @@ export function DocumentationLayout({
             {frontMatter.title}
           </Heading>
           <MDXRenderer markdown={markdown} />
+          <PrevNextButtons sidebarItems={sidebarItems} />
         </Box>
         {showOnThisPage && contentHeadings && contentHeadings.length > 0 && (
           <Box
@@ -188,5 +194,66 @@ export function DocumentationLayout({
         )}
       </Grid>
     </>
+  );
+}
+
+function flattenSidebarItems(sidebarItems: SidebarItems): SidebarItem[] {
+  return sidebarItems.flatMap((item) => {
+    if ("items" in item) {
+      return flattenSidebarItems(item.items);
+    }
+
+    return item;
+  });
+}
+
+function PrevNextButtons({ sidebarItems }: { sidebarItems: SidebarItems }) {
+  const router = useRouter();
+
+  const flattenedItems = useMemo(() => {
+    return flattenSidebarItems(sidebarItems);
+  }, [sidebarItems]);
+
+  const { prevHref, nextHref } = useMemo(() => {
+    const currentIndex = flattenedItems.findIndex(
+      (item) => item.href === router.asPath
+    );
+
+    return {
+      prevHref: flattenedItems[currentIndex - 1]?.href ?? null,
+      nextHref: flattenedItems[currentIndex + 1]?.href ?? null,
+    };
+  }, [flattenedItems, router.asPath]);
+
+  debugger;
+
+  return (
+    <HStack justifyContent="space-between" mt={20}>
+      <ArrowButton
+        size="sm"
+        colorScheme="white"
+        arrowStyle="left"
+        {...(prevHref
+          ? {
+              as: Link,
+              href: prevHref,
+            }
+          : { isDisabled: true })}
+      >
+        Prev
+      </ArrowButton>
+      <ArrowButton
+        size="sm"
+        colorScheme="white"
+        {...(nextHref
+          ? {
+              as: Link,
+              href: nextHref,
+            }
+          : { isDisabled: true })}
+      >
+        Next
+      </ArrowButton>
+    </HStack>
   );
 }

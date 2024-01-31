@@ -14,6 +14,21 @@ import { MEDIA_ITEMS } from "@/content/media/media";
 import { SearchField } from "@/components/SearchField/SearchField";
 import { FeaturedBlog } from "@/components/Blog/FeaturedBlog/FeaturedBlog";
 
+const SEARCH_SUGGESTIONS = [
+  {
+    heading: "Web3: Our Vision for the Future of the Internet",
+    slug: "/learn/blog/2023-04-24-web3-our-vision",
+  },
+  {
+    heading: "A Clear Use Case: Digital Transactions",
+    slug: "/learn/blog/2023-04-10-digital-transactions",
+  },
+  {
+    heading: "The Story Behind the 'Iron Fish' Name",
+    slug: "/learn/blog/2021-03-02-why-iron-fish",
+  },
+];
+
 type Props = {
   blogItems: BlogItem[];
 };
@@ -65,7 +80,12 @@ export default function Blog({ blogItems }: Props) {
             <Text as="h3" textStyle="h3" textAlign="center">
               Explore Topics
             </Text>
-            <SearchField domain="blog" w="100%" maxW="800px" />
+            <SearchField
+              domain="blog"
+              suggestions={SEARCH_SUGGESTIONS}
+              w="100%"
+              maxW="800px"
+            />
             <FilteredBlogsList blogItems={restBlogs} />
           </Flex>
         </Container>

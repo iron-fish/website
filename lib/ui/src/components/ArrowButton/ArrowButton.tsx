@@ -11,7 +11,7 @@ import { FancyArrowRight } from "../../icons";
 type Props = Omit<ButtonProps, "size" | "colorScheme"> & {
   size?: "sm" | "lg";
   colorScheme?: "pink" | "white";
-  arrowStyle?: "right" | "tilted" | "hidden";
+  arrowStyle?: "right" | "left" | "tilted" | "hidden";
 };
 
 export const ArrowButton: ChakraComponent<"button", Props> = ({
@@ -22,7 +22,8 @@ export const ArrowButton: ChakraComponent<"button", Props> = ({
   ...rest
 }: Props) => {
   const isArrowTilted = arrowStyle === "tilted";
-  const isArrowHidden = arrowStyle === "hidden";
+  const hasLeftArrow = arrowStyle === "left";
+  const hasRightArrow = !["hidden", "left"].includes(arrowStyle);
 
   const gap = useMemo(() => {
     if (size === "sm") return isArrowTilted ? 1 : 2;
@@ -60,9 +61,16 @@ export const ArrowButton: ChakraComponent<"button", Props> = ({
       {...colorStyles}
       {...rest}
       pr={isArrowTilted ? 2 : undefined}
+      display="flex"
+      gap={gap}
     >
-      <Box mr={isArrowHidden ? 0 : gap}>{children}</Box>
-      {arrowStyle !== "hidden" && (
+      {hasLeftArrow && (
+        <Box transform={`${arrowTransform} rotate(180deg)`}>
+          <FancyArrowRight />
+        </Box>
+      )}
+      <Box>{children}</Box>
+      {hasRightArrow && (
         <Box transform={arrowTransform}>
           <FancyArrowRight />
         </Box>
