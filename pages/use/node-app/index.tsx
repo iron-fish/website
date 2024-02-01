@@ -30,9 +30,7 @@ export default function NodeApp({ downloadUrlsByPlatform }: Props) {
   return (
     <>
       <Head>
-        <title>
-          Iron Fish Node App | A User-Friendly Interface for Managing Your Node
-        </title>
+        <title>Iron Fish Node App | A Privacy-Focused Desktop GUI</title>
       </Head>
       <Box>
         <Box bg="orange.500">

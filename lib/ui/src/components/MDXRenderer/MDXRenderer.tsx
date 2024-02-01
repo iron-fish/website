@@ -19,7 +19,10 @@ import NextLink from "next/link";
 import { ComponentProps, ReactNode, useCallback, useState } from "react";
 import { FAQItem } from "../../components/FAQItem/FAQItem";
 import { Terminal } from "../../components/Terminal/Terminal";
-import { useSmoothScrollToHash } from "../../hooks/useSmoothScrollToHash";
+import {
+  smoothScrollToElByQuerySelector,
+  useSmoothScrollToHash,
+} from "../../hooks/useSmoothScrollToHash";
 import { BlockQuote } from "../BlockQuote/BlockQuote";
 
 export function headingToAnchorId(headingEl: HTMLHeadingElement) {
@@ -46,7 +49,14 @@ function HeadingWithAnchor(props: ComponentProps<typeof Heading>) {
     >
       {props.children}&nbsp;
       {headingId && (
-        <Link href={`#${headingId}`} color="transparent">
+        <Link
+          href={`#${headingId}`}
+          color="transparent"
+          onClick={(e) => {
+            e.preventDefault();
+            smoothScrollToElByQuerySelector(`#${headingId}`);
+          }}
+        >
           #
         </Link>
       )}
