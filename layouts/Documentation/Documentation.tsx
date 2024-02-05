@@ -225,8 +225,6 @@ function PrevNextButtons({ sidebarItems }: { sidebarItems: SidebarItems }) {
     };
   }, [flattenedItems, router.asPath]);
 
-  debugger;
-
   return (
     <HStack justifyContent="space-between" mt={20}>
       <ArrowButton
