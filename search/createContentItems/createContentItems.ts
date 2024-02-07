@@ -22,11 +22,12 @@ export async function createContentItems(
   let contentIndex: ContentItem[] = [];
 
   for (const subpath of withNestedDirs) {
-    const documentPath = `${contentPath}/${subpath.join("/")}`;
-    const { frontMatter, content } = parseFileByPath(documentPath);
+    const { frontMatter, content } = parseFileByPath(
+      `${contentPath}/${subpath.join("/")}`
+    );
     const slug = `${slugRoot}/${subpath.join("/").replace(".mdx", "")}`;
     const ref = JSON.stringify({
-      documentPath,
+      documentPath: path.join(...contentDir, ...subpath),
       slug,
     });
     const body = content ? await removeMarkdown(content) : "";

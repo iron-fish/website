@@ -1,6 +1,6 @@
+import path from "path";
 import { parseFileByPath } from "@/lib/markdown";
 import { removeMarkdown } from "@/lib/markdown/src/removeMarkdown";
-import { getRequestHostUrl } from "@/utils/getRequestHostUrl";
 import lunr from "lunr";
 import { NextApiRequest, NextApiResponse } from "next";
 import blogSearchIndex from "@/search/indexes/blog-index.json";
@@ -30,7 +30,7 @@ export default async function handler(
 
   for (const item of searchResults) {
     const { documentPath, slug } = JSON.parse(item.ref);
-    const parsed = parseFileByPath(documentPath);
+    const parsed = parseFileByPath(path.join(process.cwd(), documentPath));
 
     const highlights = Object.values(item.matchData.metadata).reduce(
       (acc, { body, title }) => {
