@@ -3,12 +3,13 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
+    "dev": "yarn gen-search-index && next dev",
+    "build": "yarn gen-search-index && next build",
     "postbuild": "next-sitemap",
     "start": "next start",
     "lint": "next lint",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "gen-search-index": "node --loader @swc-node/register/esm search/generateSearchIndexes.ts"
   },
   "dependencies": {
     "@chakra-ui/next-js": "^2.1.2",
@@ -48,6 +49,7 @@
   },
   "devDependencies": {
     "@chakra-ui/cli": "^2.3.0",
+    "@swc-node/register": "^1.8.0",
     "@types/jsonp": "^0.2.1",
     "@types/lodash-es": "^4.17.7",
     "@types/lunr": "^2.3.7",

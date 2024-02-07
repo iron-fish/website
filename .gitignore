@@ -17,6 +17,7 @@
 /public/**/feed.atom
 /public/**/feed.rss
 /public/**/sitemap*.xml
+/search/indexes/**/*
 
 # misc
 .DS_Store
