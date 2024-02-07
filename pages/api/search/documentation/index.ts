@@ -3,6 +3,7 @@ import { removeMarkdown } from "@/lib/markdown/src/removeMarkdown";
 import { getRequestHostUrl } from "@/utils/getRequestHostUrl";
 import lunr from "lunr";
 import { NextApiRequest, NextApiResponse } from "next";
+import documentationSearchIndex from "@/search/indexes/documentation-index.json";
 
 export default async function handler(
   req: NextApiRequest,
@@ -14,13 +15,7 @@ export default async function handler(
     return res.status(400).json({ message: "Bad Request" });
   }
 
-  const searchIndexResponse = await fetch(
-    `${getRequestHostUrl(req.headers)}/api/search/documentation/searchIndex`
-  );
-
-  const searchIndex = await searchIndexResponse.json();
-
-  const lunrIndex = lunr.Index.load(searchIndex);
+  const lunrIndex = lunr.Index.load(documentationSearchIndex);
 
   const maxResults = isNaN(Number(max)) ? 10 : Number(max);
 
