@@ -1,7 +1,7 @@
 import {
   ContentItem,
   createContentItems,
-} from "./createContentItems/createContentItems";
+} from "./createContentItems/createContentItems.js";
 import lunr from "lunr";
 
 const SEARCH_CONTENT = [

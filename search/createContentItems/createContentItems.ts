@@ -1,6 +1,6 @@
 import path from "path";
-import { parseNestedDir, parseFileByPath } from "../../../lib/markdown";
-import { removeMarkdown } from "../../../lib/markdown/src/removeMarkdown";
+import { parseNestedDir, parseFileByPath } from "../../lib/markdown";
+import { removeMarkdown } from "../../lib/markdown/src/removeMarkdown";
 
 export type ContentItem = {
   title: any;
