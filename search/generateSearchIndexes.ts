@@ -12,8 +12,6 @@ const INDEXES_DIR = path.join(
   "indexes"
 );
 
-console.log({ INDEXES_DIR });
-
 async function buildSearchIndex(
   content: Array<{
     contentDir: string[];
