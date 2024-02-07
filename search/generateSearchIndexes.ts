@@ -7,10 +7,7 @@ import {
 } from "./createContentItems/createContentItems";
 import lunr from "lunr";
 
-const INDEXES_DIR = path.join(
-  url.fileURLToPath(new URL(".", import.meta.url)),
-  "indexes"
-);
+const INDEXES_DIR = path.join(process.cwd(), "search", "indexes");
 
 async function buildSearchIndex(
   content: Array<{
