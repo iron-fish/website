@@ -46,6 +46,8 @@ async function buildSearchIndex(
 }
 
 async function main() {
+  console.log("Generating search indices...");
+  console.time("Generated search indices in ");
   const documentationIndex = await buildSearchIndex([
     {
       contentDir: ["content", "documentation"],
@@ -77,6 +79,7 @@ async function main() {
     path.join(INDEXES_DIR, "blog-index.json"),
     JSON.stringify(blogIndex)
   );
+  console.timeEnd("Generated search indices in ");
 }
 
 main();
