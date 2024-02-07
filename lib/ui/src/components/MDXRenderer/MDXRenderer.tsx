@@ -194,13 +194,10 @@ function MDXRenderer({ markdown }: { markdown: MDXRemoteProps }) {
   useSmoothScrollToHash();
   return (
     <>
-      <Head>
-        <link
-          rel="stylesheet"
-          href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css"
-        />
-      </Head>
       <MDXRemote {...markdown} components={rendererComponents} />
+      <style global jsx>{`
+        @import url("https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css");
+      `}</style>
     </>
   );
 }
