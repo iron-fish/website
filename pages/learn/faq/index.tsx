@@ -15,8 +15,6 @@ import {
 import glass from "../../../assets/heroImages/faq/glass.svg";
 import jelly from "../../../assets/heroImages/faq/jelly.svg";
 import question from "../../../assets/heroImages/faq/question.svg";
-import { CONSTANTS } from "../../../shared/constants";
-import { ReactNode } from "react";
 import Head from "next/head";
 import { FaqMoreInfo } from "@/components/FaqMoreInfo/FaqMoreInfo";
 

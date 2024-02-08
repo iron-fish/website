@@ -82,6 +82,7 @@ type HeroImageUtilProps = {
 };
 
 export function HeroImageUtil({ image, ...rest }: HeroImageUtilProps) {
+  const { src, height, width } = image;
   return (
     <Box
       position="absolute"
@@ -91,7 +92,7 @@ export function HeroImageUtil({ image, ...rest }: HeroImageUtilProps) {
       }}
       {...rest}
     >
-      <Image {...image} alt="" />
+      <Image src={src} height={height} width={width} alt="" />
     </Box>
   );
 }
