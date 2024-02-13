@@ -1,6 +1,8 @@
 import {
   Box,
   Divider,
+  Grid,
+  GridItem,
   Heading,
   Image,
   Link,
@@ -188,6 +190,8 @@ const providerComponents = {
   BlockQuote,
   Warning,
   Text: (props: TextProps) => <Text as="span" {...props} />,
+  Grid,
+  GridItem,
 };
 
 function MDXRenderer({ markdown }: { markdown: MDXRemoteProps }) {
