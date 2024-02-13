@@ -85,7 +85,7 @@ function createNestedMenuItems(
 ): ReactNode {
   return items.map((item) => {
     if ("href" in item) {
-      const isActive = router.asPath === item.href;
+      const isActive = router.asPath.split("#")[0] === item.href;
       return (
         <Link
           as={NextLink}
@@ -110,18 +110,16 @@ function createNestedMenuItems(
       if ("items" in item) {
         return item.items.some((subItem) => {
           if ("href" in subItem) {
-            return router.asPath === subItem.href;
+            return router.asPath.split("#")[0] === subItem.href;
           }
 
           return isSelected(subItem);
         });
       }
-
       return false;
     }
 
     const isAccordionItemSelected = isSelected(item);
-
     return (
       <Accordion
         key={item.title}
