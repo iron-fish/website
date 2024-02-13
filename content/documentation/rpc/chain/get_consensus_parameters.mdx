@@ -63,6 +63,12 @@ undefined;
    * to the beginning of the block header before mining.
    */
   enableFishHash: number | null
+
+  /**
+   * Sequence at which to use an increased max bucket in the target calculation,
+   * allowing for a greater per-block downward shift.
+   */
+  enableIncreasedDifficultyChange: number | null
 }
 ```
 
