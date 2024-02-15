@@ -5,6 +5,8 @@ description: RPC Node | Iron Fish Documentation
 
 Shuts the node down
 
+> **Note:** When the response for this RPC ends, it does not mean the node is stopped. Shutting down the node terminates the RPC server, which terminates all pending requests including the `node/stopNode` request itself.
+
 #### Request Body
 
 ```ts
