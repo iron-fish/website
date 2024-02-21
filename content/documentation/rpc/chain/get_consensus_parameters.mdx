@@ -69,6 +69,12 @@ undefined;
    * allowing for a greater per-block downward shift.
    */
   enableIncreasedDifficultyChange: number | null
+
+  /**
+   * Mapping of block height to the hash of the block at that height. Once a node has added this block to
+   * its main chain, it will not be disconnected from the main chain.
+   */
+  checkpoints: { sequence: number; hash: string }[]
 }
 ```
 
