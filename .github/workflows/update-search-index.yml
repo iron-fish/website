@@ -35,6 +35,6 @@ jobs:
         git config --global user.email 'github-actions[bot]@users.noreply.github.com'
         git add -A
         git commit -m "Update search index" || echo "No changes to commit"
-        git push
+        git push origin "${GITHUB_REF#refs/heads/}" # Dynamically push to the current branch
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
