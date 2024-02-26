@@ -1,0 +1,44 @@
+---
+author: elena
+title: Fish Hash Testnet Activation
+description: Testnet hardfork activation & mainnet hardfork timeline 
+image: /images/blog/testnet_hardfork.png
+tags: [ChainPort, bridge, privacy layer, privacy platform]
+---
+
+Iron Fish is preparing for its first hardfork. The first hardfork will include [FIP-2](https://fips.ironfish.network/fips/fip-2-enforce-sequential-block-time), [FIP-3](https://fips.ironfish.network/fips/fip-3-memory-hard-mining-algorithm), [FIP-8](https://fips.ironfish.network/fips/fip-8-difficulty-adjustment), [FIP-9](https://fips.ironfish.network/fips/fip-9-swap-randomness-and-graffiti). 
+
+The most notable change is the hashing algorithm switch from blake3 to FishHash. To read more about FishHash, the motivation behind finding a new hashing algorithm for Iron Fish, as well as exploration of other algorithm choices, please see [FIP-3](https://fips.ironfish.network/fips/fip-3-memory-hard-mining-algorithm) (or community created video walkthroughs like this [one](https://youtu.be/1R7VffTzM9g?si=U0PhustQsp8TG9ak)). 
+
+Logistically, the timeline for the mainnet hardfork is as follows: 
+
+- Feb 20th: Release of the Iron Fish node version that includes Testnet hardfork activation ([release notes and binaries](https://github.com/iron-fish/ironfish/releases/tag/v1.20.0))
+- Feb 28th: Testnet hardfork activation at block sequence 419,193 on the Iron Fish [Testnet](https://testnet.explorer.ironfish.network/), estimated February 28 2024 17:00 GMT
+- March 6th: Release of the Iron Fish node version that includes Mainnet hardfork activation
+- April 2nd: Mainnet hardfork activation at block sequence 503,338 on the Iron Fish [Mainnet](https://explorer.ironfish.network/), estimated April 2 2024 13:00 GMT
+
+### Why you should participate in the Iron Fish Testnet leading up to the Mainnet Hardfork
+
+The biggest reason you should participate is that it’ll get you ready to keep mining Iron Fish on mainnet post the algorithm switch. FishHash is designed to be more memory hard which means it’ll require at least 5GB of memory and produce less hashes per second on comparable hardware than the existing blake3 algorithm. 
+
+Between now and Mainnet hardfork activation in April, the Iron Fish Foundation and IF Labs team is acutely dedicated to helping mining pools and mining software providers migrate to FishHash. Please note that as part of this hardfork there are other changes that are going in that will slightly change the format of the Block Header, so *just* switching from blake3 to FishHash is not sufficient. The change that’s going in that’ll change Block Header format is [FIP-9](https://fips.ironfish.network/fips/fip-9-swap-randomness-and-graffiti) that swaps the `randomness` and `graffiti` field. 
+
+### Top Miners for Testnet between block height 416,313 - 429,273 (approximately 2/26 9AM PST - 3/06 9AM PST)
+
+For top miners who contribute to **Testnet** blocks using a dedicated graffiti (that you can register using this [google form](https://forms.gle/FkC4N3X6HtJMqgXe8)) between block height 416,313 - 429,273 (approximately 2/26 9AM PST - 3/06 9AM PST) we are giving away awesome *limited edition* Iron Fish swag bags! 
+
+For the top 5 miners according to number of block graffitis between block height 416,313 - 429,273 we’re giving away: 
+
+- Top place 🏆: Nvidia 4090 GPU + ***Large*** swag bag of Iron Fish goodies
+- 2nd place: ***Extra large*** swag bag of premium Iron Fish merch
+- 3rd place: ***Large*** Iron Fish swag bag
+- 4th place: ***Medium*** Iron Fish swag bag
+- 5th place: ***Small*** Iron Fish swag bag packed with love from everyone at the Iron Fish Foundation
+
+Please note that we are limited by shipping restrictions. If you are not in a country we can ship to, we’ll reach out with alternative prizes. 
+
+### How do I get started? What are next steps?
+
+If you’re not already there, head on over to the [mining](https://discord.gg/nn6h2FqTec) channel on Discord and see the [FAQ](https://www.notion.so/2cf65e0223584b25ae59befd456c2ab8?pvs=21) page about Testnet mining.
+
+Happy mining! 
