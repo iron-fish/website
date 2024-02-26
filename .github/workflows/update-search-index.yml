@@ -3,10 +3,10 @@ name: Update Search Index
 on:
   push:
     branches:
-      - main  # or your default branch, e.g., master
+      - master
   pull_request:
     branches:
-      - main
+      - master
 
 jobs:
   update-index:
