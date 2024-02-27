@@ -1,0 +1,46 @@
+name: Update Search Index
+
+on:
+  pull_request:
+    branches:
+      - master
+
+jobs:
+  update-index:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v3
+      with:
+        ref: ${{ github.head_ref }}
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '20'
+
+    - name: Install Dependencies
+      run: yarn install
+
+    - name: Generate Search Index
+      run: yarn gen-search-index
+
+    - name: Set up Git Config
+      run: |
+        git config --global user.name 'github-actions[bot]'
+        git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+
+    - name: Extract Branch Name
+      id: extract_branch
+      shell: bash
+      run: |
+        echo "::set-output name=branch::${{ github.head_ref }}"
+
+    - name: Commit and Push Search Index Updates
+      run: |
+        git add -A
+        git commit -m "Update search index" || echo "No changes to commit"
+        git push origin ${{ steps.extract_branch.outputs.branch }}
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
