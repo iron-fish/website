@@ -12,7 +12,6 @@ import {
   VStack,
   NAV_HEIGHT,
   HStack,
-  Button,
   SidebarItem,
   ArrowButton,
 } from "@/lib/ui";
@@ -21,6 +20,7 @@ import Head from "next/head";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { ComponentProps, useEffect, useMemo, useRef, useState } from "react";
+import { useIsClient } from "usehooks-ts";
 
 type Props = {
   frontMatter: {
@@ -209,6 +209,7 @@ function flattenSidebarItems(sidebarItems: SidebarItems): SidebarItem[] {
 
 function PrevNextButtons({ sidebarItems }: { sidebarItems: SidebarItems }) {
   const router = useRouter();
+  const isClient = useIsClient();
 
   const flattenedItems = useMemo(() => {
     return flattenSidebarItems(sidebarItems);
@@ -224,6 +225,8 @@ function PrevNextButtons({ sidebarItems }: { sidebarItems: SidebarItems }) {
       nextHref: flattenedItems[currentIndex + 1]?.href ?? null,
     };
   }, [flattenedItems, router.asPath]);
+
+  if (!isClient) return null;
 
   return (
     <HStack justifyContent="space-between" mt={20}>
