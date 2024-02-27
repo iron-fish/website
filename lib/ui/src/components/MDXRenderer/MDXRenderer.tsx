@@ -16,7 +16,6 @@ import {
 import { MDXProvider as BaseMDXProvider } from "@mdx-js/react";
 import { kebabCase } from "lodash-es";
 import { MDXRemote, MDXRemoteProps } from "next-mdx-remote";
-import Head from "next/head";
 import NextLink from "next/link";
 import { ComponentProps, ReactNode, useCallback, useState } from "react";
 import { FAQItem } from "../../components/FAQItem/FAQItem";
@@ -43,6 +42,7 @@ function HeadingWithAnchor(props: ComponentProps<typeof Heading>) {
       id={headingId}
       ref={handleHeadingId}
       fontWeight="normal"
+      scrollMarginTop="100px"
       _hover={{
         'a[href^="#"]': {
           color: "blue",
@@ -51,14 +51,7 @@ function HeadingWithAnchor(props: ComponentProps<typeof Heading>) {
     >
       {props.children}&nbsp;
       {headingId && (
-        <Link
-          href={`#${headingId}`}
-          color="transparent"
-          onClick={(e) => {
-            e.preventDefault();
-            smoothScrollToElByQuerySelector(`#${headingId}`);
-          }}
-        >
+        <Link href={`#${headingId}`} color="transparent">
           #
         </Link>
       )}
