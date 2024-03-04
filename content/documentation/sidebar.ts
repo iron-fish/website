@@ -314,6 +314,10 @@ export const sidebar: SidebarDefinition = [
                 label: "createParticipant",
               },
               {
+                id: "rpc/wallet/multisig/create_trusted_dealer_key_package",
+                label: "createTrustedDealerKeyPackage",
+              },
+              {
                 id: "rpc/wallet/multisig/create_signing_commitment",
                 label: "createSiginingCommitment",
               },
