@@ -3,7 +3,7 @@ title: wallet/multisig/createTrustedDealerPackage
 description: RPC Wallet/Multisig | Iron Fish Documentation
 ---
 
-Defines the structure of a multisig account. The result is a set of accounts to import by each participant using the RPC wallet/accountImport. It is the responsibility of the dealer to securely distribute the accounts to the participants.
+Defines the structure of a multisig account. The result is a set of accounts to import by each participant using the RPC [wallet/importAccount](https://ironfish.network/developers/documentation/rpc/wallet/import_account). It is the responsibility of the dealer to securely distribute the accounts to the participants.
 
 **Note:** The account imports are encrypted using the participant's identity. This means that the dealer is not able to spend funds from the multisig account. Only the participants are able to import their own account. 
 
@@ -30,7 +30,7 @@ Defines the structure of a multisig account. The result is a set of accounts to 
 }
 ```
 
-## Examples
+#### Example
 
 The following request body creates a 2-of-3 multisig account:
 
