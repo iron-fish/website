@@ -1,0 +1,26 @@
+---
+title: wallet/multisig/createSigningCommitment
+description: RPC Wallet | Iron Fish Documentation
+---
+
+Creates the siging commitment for a participant of a multisig wallet. This means that the participant will participate in the signing process. These commitments will be aggregated from all participants and used in the createSigningPackage RPC to create the signing package. 
+
+#### Request
+
+```ts
+{
+  account?: string
+  unsignedTransaction: string
+  signers: Array<{ identity: string }>
+}
+```
+
+#### Response
+
+```ts
+{
+  commitment: string
+}
+```
+
+###### [View on Github](https://github.com/iron-fish/ironfish/blob/master/ironfish/src/rpc/routes/wallet/multisig/createSigningCommitment.ts)
