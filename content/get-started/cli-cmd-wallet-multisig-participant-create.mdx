@@ -1,0 +1,33 @@
+---
+title: wallet:multisig:participant:create
+seo: Wallet Multisig Participant Creation Command
+---
+
+# Usage
+
+To create a new key pair for participating in a multisig signing group
+
+```sh
+ironfish wallet:multisig:participant:create
+```
+
+<Terminal command="ironfish wallet:multisig:participant:create"
+  output={`
+Enter a name for the participant: participant-1
+Participant Identity:
+72709fc4f310aab17dc1e7e470e96f90d69ea477910744d2ca47341ff6a0860b217ec2181aa55fb6a38072dfd8976c6306ef41336afef58c8e049df3f9669ca73614eff096e13b1f2fc7f16c686eec04ea3e9b92785eca7993b83458ba04a1023ef4cdc9126b07cd5ad864c2d32d9cda575869be9c5192c37e5410465cb1fbed0f
+  `}
+/>
+
+<Terminal command="ironfish wallet:multisig:participant:create --name participant-2"
+  output={`
+Participant Identity:
+72b3bf8e75ac92b0ac8cc176bdefc89abddc208b815009176d9f659f6813a5b6204686e73b8de17a426ac71b32fe9258acfa8538c54c13ef4eb1cfd9ad52987f267d5eb62f354a5fc0244926f6884ec134ef458deca281ee2c9344e24761d1ff8b8098791cee169f30b0b613482f4e474b94e25e0b55c3cb4aff63699bdf066202
+  `}
+/>
+
+# Flags
+
+| Flag | Description |
+| ---- | ----------- |
+| `-n, --name` | Name to associate with the participant |
