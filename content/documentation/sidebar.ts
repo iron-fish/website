@@ -295,6 +295,15 @@ export const sidebar: SidebarDefinition = [
         label: "Wallet",
         items: [
           {
+            label: "Multisig",
+            items: [
+              {
+                id: "rpc/wallet/multisig/create_participant",
+                label: "createParticipant",
+              },
+            ],
+          },
+          {
             id: "rpc/wallet/add_transaction",
             label: "addTransaction",
           },
