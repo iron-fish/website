@@ -3,9 +3,9 @@ title: wallet/multisig/createTrustedDealerKeyPackage
 description: RPC Wallet/Multisig | Iron Fish Documentation
 ---
 
-Defines the structure of a multisig account. The result is a set of accounts to import by each participant using the RPC [wallet/importAccount](/developers/documentation/rpc/wallet/import_account). It is the responsibility of the dealer to securely distribute the accounts to the participants.
+Creates the key package for a trusted dealer account for the trusted dealer keg generation multi signature signing process. The result also includes the account import for every participant. The account can be imported using the RPC [wallet/importAccount](/developers/documentation/rpc/wallet/import_account).
 
-**Note:** The account imports are encrypted using the participant's identity. This means that the dealer is not able to spend funds from the multisig account. Only the participants are able to import their own account. 
+**Note:** The participant account information is encrypted using the participant's identity. This means that the dealer will be unable to import all accounts and spend the funds in the multi signature account. Only the participants are able to import their own account. 
 
 #### Request
 
