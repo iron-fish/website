@@ -60,7 +60,10 @@ export const sidebar: SidebarDefinition = [
           "cli-cmd-wallet-which",
           {
             label: "multisig",
-            items: ["cli-cmd-wallet-multisig-commitment-create"],
+            items: [
+              "cli-cmd-wallet-multisig-commitment-create",
+              "cli-cmd-wallet-multisig-commitment-aggregate",
+            ],
           },
         ],
       },
