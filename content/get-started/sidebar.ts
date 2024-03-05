@@ -16,6 +16,7 @@ export const sidebar: SidebarDefinition = [
   "node-health",
   "setting-up-an-account",
   "transactions",
+  "multisig-accounts",
   "mining",
   {
     label: "Reference",
