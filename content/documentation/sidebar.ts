@@ -309,6 +309,10 @@ export const sidebar: SidebarDefinition = [
                 id: "rpc/wallet/multisig/create_participant",
                 label: "createParticipant",
               },
+              {
+                id: "rpc/wallet/multisig/create_signature_share",
+                label: "createSignatureShare",
+              },
             ],
           },
           {
