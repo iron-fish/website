@@ -371,6 +371,10 @@ export const sidebar: SidebarDefinition = [
             label: "getNodeStatus",
           },
           {
+            id: "rpc/wallet/get_unsigned_transaction_notes",
+            label: "getUnsignedTransactionNotes",
+          },
+          {
             id: "rpc/wallet/get_notes",
             label: "getNotes",
           },

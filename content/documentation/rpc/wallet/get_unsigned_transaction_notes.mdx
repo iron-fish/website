@@ -1,0 +1,30 @@
+---
+title: wallet/getUnsignedTransactionNotes
+description: RPC Wallet | Iron Fish Documentation
+---
+
+Retrieves sent and received notes from an unsigned transaction's outputs for a given account. If the account is not specified, the default account will be used.
+
+#### Request
+
+```ts
+{
+  account?: string
+  unsignedTransaction: string
+}
+```
+
+#### Response
+
+```ts
+{
+  receivedNotes: RpcUnsignedTransactionNote[]
+  sentNotes: RpcUnsignedTransactionNote[]
+}
+```
+
+RPC Objects: 
+- [RpcUnsignedTransactionNote](/developers/documentation/rpc/objects/rpcUnsignedTransactionNote)
+
+
+###### [View on Github](https://github.com/iron-fish/ironfish/blob/master/ironfish/src/rpc/routes/wallet/getUnsignedTransactionNotes.ts)
