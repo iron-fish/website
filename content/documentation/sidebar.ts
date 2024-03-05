@@ -332,6 +332,10 @@ export const sidebar: SidebarDefinition = [
             label: "addTransaction",
           },
           {
+            id: "rpc/wallet/build_transaction",
+            label: "buildTransaction",
+          },
+          {
             id: "rpc/wallet/burn_asset",
             label: "burnAsset",
           },

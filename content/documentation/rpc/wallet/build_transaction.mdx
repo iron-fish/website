@@ -1,0 +1,29 @@
+---
+title: wallet/buildTransaction
+description: RPC Wallet | Iron Fish Documentation
+---
+
+Builds a raw transaction to produce an unsigned transaction. An unsigned transaction includes pre-computed zero-knowledge proofs for transaction spends and outputs, but is not yet signed.
+
+Building a raw transaction does not require a spend key. Unsigned transactions are not added to the wallet, mempool, or broadcast.
+
+Use the [`wallet/createTransaction`](/developers/documentation/rpc/wallet/create_transaction) RPC to create a raw transaction.
+
+#### Request
+
+```ts
+{
+  account?: string
+  rawTransaction: string
+}
+```
+
+#### Response
+
+```ts
+{
+  unsignedTransaction: string;
+}
+```
+
+###### [View on Github](https://github.com/iron-fish/ironfish/blob/master/ironfish/src/rpc/routes/wallet/buildTransaction.ts)
