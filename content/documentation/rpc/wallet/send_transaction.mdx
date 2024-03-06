@@ -13,7 +13,8 @@ Creates a transaction, posts the transaction, and submits it to the wallet, memp
   outputs: {
     publicAddress: string
     amount: string
-    memo: string
+    memo?: string
+    memoHex?: string
     assetId?: string
   }[]
   fee?: string
@@ -23,6 +24,8 @@ Creates a transaction, posts the transaction, and submits it to the wallet, memp
   confirmations?: number | null
 }
 ```
+
+> **Note:** outputs.memoHex is a hex-encoded string with a max length of 32 bytes (64 characters)
 
 #### Response
 
