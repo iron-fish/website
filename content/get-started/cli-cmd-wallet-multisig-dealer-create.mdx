@@ -3,7 +3,10 @@ title: wallet:multisig:dealer:create
 seo: Wallet Multisig Trusted Dealer Account Creation
 ---
 
-Creates a list of account imports from a list of unique participant identities using [Trusted Dealer Key Generation](https://frost.zfnd.org/tutorial/trusted-dealer.html).
+Creates a list of account imports from a list of unique participant identities using Trusted Dealer Key Generation.
+
+> **Note**: This process involves generating an authorizing key for the multisig account, and then splitting the key in multiple parts, one for each participant. This means that the Iron Fish node where `wallet:multisig:dealer:create` is run will hold in memory for a brief period of time the full (unsplit) authorizing key, which allows authorization of transactions. For this reason it is important that the dealer node is fully trusted, and that it runs in a secure compute environment. If an eavesdropper is able to get access to the internal memory of the machine where the dealer node runs, they may be able to get access to the full (unsplit) authorizing key.
+
 
 # Usage
 
