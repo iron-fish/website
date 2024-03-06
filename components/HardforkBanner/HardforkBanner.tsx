@@ -31,7 +31,7 @@ export function HardforkBanner() {
       <Text>
         The hardfork is coming on&nbsp;
         <Text color="purple.400" as="span">
-          {format(HARDFORK_DATE, "MMMM do, h b z")}.
+          {format(HARDFORK_DATE, "MMMM do, h b")}.
         </Text>
       </Text>
       <Link href="/learn/blog/2024-02-26-testnet-hardfork">
