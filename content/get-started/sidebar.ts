@@ -16,6 +16,10 @@ export const sidebar: SidebarDefinition = [
   "node-health",
   "setting-up-an-account",
   "transactions",
+  {
+    label: "Multisig Accounts",
+    items: ["multisig-creation", "multisig-signing"],
+  },
   "mining",
   {
     label: "Reference",
