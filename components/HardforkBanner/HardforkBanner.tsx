@@ -1,4 +1,4 @@
-import { Container, Flex, HStack, Link, Text } from "@/lib/ui";
+import { Box, Flex, Link, Text } from "@/lib/ui";
 import { RightCaret } from "@/lib/ui/src/icons/RightCaret/RightCaret";
 import { format } from "date-fns";
 
@@ -10,26 +10,38 @@ export function HardforkBanner() {
   }
 
   return (
-    <Flex bg="black" h="52px" alignItems="center">
-      <Container
-        textAlign={{
-          base: "left",
-          md: "center",
-        }}
-      >
-        <HStack>
-          <Text color="white">
-            The hardfork is coming on {format(HARDFORK_DATE, "MMMM do, h b z")}
-            .&nbsp;
-          </Text>
-          <Link href="/learn/blog/2024-02-26-testnet-hardfork">
-            <HStack>
-              <Text color="white">Learn more</Text>
-              <RightCaret />
-            </HStack>
-          </Link>
-        </HStack>
-      </Container>
+    <Flex
+      bg="black"
+      color="white"
+      minHeight={{
+        base: "78px",
+        sm: "52px",
+      }}
+      justifyContent={{
+        sm: "center",
+      }}
+      alignItems="center"
+      gap={1}
+      flexWrap="wrap"
+      padding={{
+        base: 4,
+        sm: 0,
+      }}
+    >
+      <Text>
+        The hardfork is coming on&nbsp;
+        <Text color="purple.400" as="span">
+          {format(HARDFORK_DATE, "MMMM do, h b z")}.
+        </Text>
+      </Text>
+      <Link href="/learn/blog/2024-02-26-testnet-hardfork">
+        <Flex justifyContent="center" alignItems="center">
+          Learn more&nbsp;
+          <Box as="span" marginTop={0.5}>
+            <RightCaret />
+          </Box>
+        </Flex>
+      </Link>
     </Flex>
   );
 }
