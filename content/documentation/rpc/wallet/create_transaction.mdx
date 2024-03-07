@@ -17,7 +17,8 @@ Creating a raw transaction does not require a spend key. They are not added to t
   outputs: {
     publicAddress: string
     amount: string
-    memo: string
+    memo?: string
+    memoHex?: string
     assetId?: string
   }[]
   mints?: {
@@ -39,6 +40,8 @@ Creating a raw transaction does not require a spend key. They are not added to t
   notes?: string[]
 }
 ```
+
+> **Note:** outputs.memoHex is a hex-encoded string with a max length of 32 bytes (64 characters)
 
 #### Response
 
