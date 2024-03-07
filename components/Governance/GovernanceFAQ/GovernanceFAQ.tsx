@@ -1,6 +1,6 @@
-import { Container, FAQItem, Text, Box } from "@/lib/ui";
-import { Link } from "@chakra-ui/next-js";
-import { defineMessages, useIntl } from "react-intl";
+import { Container, FAQItem, Text, Box } from "@/lib/ui"
+import { Link } from "@chakra-ui/next-js"
+import { defineMessages, useIntl } from "react-intl"
 
 const messages = defineMessages({
   heading: {
@@ -54,14 +54,14 @@ const messages = defineMessages({
   grantApplicationTitle: {
     id: "governanceFaq.grantApplicationTitle",
     defaultMessage:
-      "Where can I apply for a grant to execute an approved proposal?",
+      "Where can I apply for a grant to executee an approved proposal?",
   },
   grantApplicationDescription: {
     id: "governanceFaq.grantApplicationDescription",
     defaultMessage:
       "Grants are determined by the Iron Fish Foundation. To learn more, visit the <foundationLink>foundation page</foundationLink>.",
   },
-});
+})
 
 const sections = [
   {
@@ -88,20 +88,20 @@ const sections = [
     title: messages.grantApplicationTitle,
     description: messages.grantApplicationDescription,
   },
-];
+]
 
 function FormatFoundationLink(value: unknown) {
-  if (!Array.isArray(value)) return null;
+  if (!Array.isArray(value)) return null
 
   return (
     <Link textDecoration="underline" href="/community/foundation">
       {value}
     </Link>
-  );
+  )
 }
 
 export function GovernanceFAQ() {
-  const { formatMessage } = useIntl();
+  const { formatMessage } = useIntl()
   return (
     <Box borderBottom="1.5px solid black">
       <Container w="100%" maxW="container.xl" py="150px">
@@ -117,5 +117,5 @@ export function GovernanceFAQ() {
         ))}
       </Container>
     </Box>
-  );
+  )
 }
