@@ -34,7 +34,7 @@ export function HardforkBanner() {
           {format(HARDFORK_DATE, "MMMM do, h b")}.
         </Text>
       </Text>
-      <Link href="/learn/blog/2024-02-26-testnet-hardfork">
+      <Link href="/learn/blog/2024-02-26-mainnet-hardfork">
         <Flex justifyContent="center" alignItems="center">
           Learn more&nbsp;
           <Box as="span" marginTop={0.5}>
