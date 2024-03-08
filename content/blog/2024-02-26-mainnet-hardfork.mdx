@@ -29,13 +29,16 @@ If you’re an Iron Fish user, developer, wallet provider, miner, exchange, or a
 
 If you’re using the Node App, please make sure to upgrade it as well to **[version 3.0](https://ironfish.network/use/node-app) (or greater if available).** 
 
-### What you need to know if you’re a miner or a mining pool
+### What you need to know if you’re a miner
+At block 503,338 (~April 2nd) miners will need to manually switch their devices to start mining FishHash instead of blake3. Your mining pool should already be compatible with the change. All [major mining software](https://ironfish.network/use/get-started/mining#mining-software) developers are planning on releasing new versions that include a FishHash miner. Be on the lookout for a new release of your mining software that includes FishHash which should be available at least a week before the hardfork. 
 
-If you’re a miner or a mining pool supporting Iron Fish, this hardfork activation will replace the old blake3 based hashing algorithm with [FishHash](https://fips.ironfish.network/fips/fip-3-memory-hard-mining-algorithm), a memory hard mining algorithm. 
+### What you need to know if you’re a mining pool
+You need to **upgrade** your Iron Fish node **as soon as possible** to [version 2.0.0](https://github.com/iron-fish/ironfish/releases/tag/v2.0.0). Some notable changes for pools:
+- [FIP-2](https://fips.ironfish.network/fips/fip-2-enforce-sequential-block-time) : If your pool creates blocks with negative timestamps those will no longer be valid after the hardfork
+- [FIP-3](https://fips.ironfish.network/fips/fip-3-memory-hard-mining-algorithm) : The obvious switch of the mining algorithm from blake3 to FishHash
+- [FIP-9](https://fips.ironfish.network/fips/fip-9-swap-randomness-and-graffiti) :  randomness and graffiti field positions are switched in the Block Header
 
-There is a reference open-source GPU implementation for FishHash compatible with Iron Fish called [FishHashMiner](https://github.com/Lolliedieb/FishHashMiner). This should be treated as a reference solution only. 
-
-You need to **upgrade** your Iron Fish node **as soon as possible** to [version 2.0.0](https://github.com/iron-fish/ironfish/releases/tag/v2.0.0) (or greater if available) and plan on switching to a new mining algorithm software. 
+All these changes are included in the Node v2.0.0 release but if you have customized your node make sure that those changes are still compatible
 
 ### If you’re a mining software developer
 If you're a mining software developer and interested in supporting Iron Fish, please see resources below: 
