@@ -80,6 +80,12 @@ export const ECOSYSTEM: Array<{
   },
   {
     type: "Mining Pools",
+    name: "HumPool",
+    link: "https://humpool.com/",
+    image: "/images/ecosystem/humpool.png",
+  },
+  {
+    type: "Mining Pools",
     name: "HeroMiners",
     link: "https://ironfish.herominers.com/",
     image: "/images/ecosystem/herominers.png",
