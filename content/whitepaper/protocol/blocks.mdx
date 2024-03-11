@@ -44,7 +44,7 @@ The structure of Block Header contains:
 
 ### Hashing Algorithm
 
-Iron Fish uses both Blake3 and [FishHash](https://github.com/iron-fish/fish-hash) as hashing algorithms. Blocks previous to sequence 503,338 are hashed with Blake3, and blocks at or after sequence 503,338 are hashed with FishHash. FishHash was introduced in [Hardfork 1](https://fips.ironfish.network/fips/fip-10-hardfork-1)
+Iron Fish uses Blake3 to hash blocks previous to block 503,338 and [FishHash](https://github.com/iron-fish/fish-hash) to hash blocks 503,338 and onwards. FishHash was introduced in [Hardfork 1](https://fips.ironfish.network/fips/fip-10-hardfork-1)
 
 ### Emission Curve
 

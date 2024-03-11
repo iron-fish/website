@@ -71,8 +71,8 @@ This is an overview of all the cryptographic keys and cryptographic schemes used
 | Commitment               | Transaction balancing                        | Pedersen commitment on the JubJub group            | 126 bits                                                         |
 | Zero-Knowledge Proofing  | Proofing of spends, outputs, and mints       | Groth16 zk-SNARK on BLS12                          | 126 bits                                                         |
 | Hash Tree                | Merkle Tree of Notes                         | Merkle Tree with Pedersen Hash on the JubJub group | 126 bits (preimage and collision resistance)                     |
-| Hashing                  | Mining                                       | Blake3                                             | 256 bits (preimage resistance) / 128 bits (collision resistance) |
-| Hashing                  | Mining                                       | FishHash                                           | 128 bits                                                         |
+| Hashing                  | Mining (until block 503337)                  | Blake3                                             | 256 bits (preimage resistance) / 128 bits (collision resistance) |
+| Hashing                  | Mining (from block 503338 onwards)           | FishHash                                           | 128 bits                                                         |
 
 ## Signature Scheme
 
