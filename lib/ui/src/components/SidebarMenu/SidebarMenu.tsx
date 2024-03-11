@@ -1,24 +1,24 @@
-import NextLink from "next/link";
-import { ReactNode } from "react";
 import {
-  Link,
-  Box,
-  Text,
-  VStack,
   Accordion,
-  AccordionItem,
   AccordionButton,
-  AccordionPanel,
   AccordionIcon,
-  useBreakpointValue,
-  useDisclosure,
+  AccordionItem,
+  AccordionPanel,
+  Box,
   Collapse,
   HStack,
+  Link,
+  Text,
+  VStack,
+  useBreakpointValue,
+  useDisclosure,
 } from "@chakra-ui/react";
+import NextLink from "next/link";
+import { NextRouter, useRouter } from "next/router";
+import { ReactNode } from "react";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { IoMdClose } from "react-icons/io";
 import { useIsClient } from "usehooks-ts";
-import { NextRouter, useRouter } from "next/router";
 import { NAV_HEIGHT } from "../NavBar/NavBar";
 
 export type SidebarItem = {
@@ -123,7 +123,7 @@ function createNestedMenuItems(
     return (
       <Accordion
         key={item.title}
-        defaultIndex={0}
+        defaultIndex={isAccordionItemSelected ? 0 : -1}
         allowToggle
         border="none"
         w="100%"
