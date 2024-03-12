@@ -55,12 +55,6 @@ export const ECOSYSTEM: Array<{
   },
   {
     type: "Mining Pools",
-    name: "Flexpool",
-    link: "https://flexpool.io/",
-    image: "/images/ecosystem/flexpool.png",
-  },
-  {
-    type: "Mining Pools",
     name: "Kryptex",
     link: "https://pool.kryptex.com/iron",
     image: "/images/ecosystem/kryptex.png",
