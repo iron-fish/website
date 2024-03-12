@@ -203,13 +203,13 @@ export const ECOSYSTEM: Array<{
   {
     type: "Mining Software",
     name: "lolMiner",
-    link: "https://www.srbminer.com/",
+    link: "https://github.com/Lolliedieb/lolMiner-releases/",
     image: "/images/ecosystem/lol-miner.png",
   },
   {
     type: "Mining Software",
     name: "SRBMiner",
-    link: "https://github.com/Lolliedieb/lolMiner-releases/",
+    link: "https://www.srbminer.com/",
     image: "/images/ecosystem/srb-miner.png",
   },
   {
