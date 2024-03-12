@@ -20,46 +20,21 @@ Please check out the [ecosystem page](/use/ecosystem?category=mining-pools) for 
 
 ## Mining Software
 
-### Iron Fish
-   - Type: CPU
-   - Url: https://ironfish.network/use/get-started/mining
-   - Works on Iron Fish stratum v1
+Please check out the [ecosystem page](/use/ecosystem?category=mining-software) for a list of miners that support Iron Fish.
 
-### SRBMiner
-   - Type: GPU (Nvidia+AMD)
-   - URL: https://www.srbminer.com/
-   - Works on Iron Fish Pool
+## Solo Mining
 
-### BzMiner
-   - Type: GPU (Nvidia+AMD+Intel+CPU)
-   - URL: https://www.bzminer.com/ Discord https://discord.gg/ZagsB4hTUM
-   - Betas supporting Iron Fish available in #mining in Discord: https://discord.ironfish.network/
-   - Improved Iron Fish mining stratum for Flexpool coming soon
-   - Supports Iron+ZIL Dual mining and Iron+ETC+ZIL Triple Mining using Flexpool's ZMP
+The Iron Fish CLI also supports solo mining with most of the available mining softwares. After [installing](/use/get-started/installation) the CLI, [start](http://localhost:3000/use/get-started/run-a-node) your node and make sure it is synced before starting a local mining pool.
 
-### Rigel
-   - Type: GPU (Nvidia)
-   - URL: https://github.com/rigelminer/rigel/releases/
-   - Pools supported: Herominers, Flexpool, Kryptex
-   - Supports dual and triple mining (+ZIL)
+To start a local mining pool on port 9034 by running the following command:
 
-### Team Red Miner
-   - Type: GPU (AMD)
-   - URL: https://github.com/todxx/teamredminer/releases
-   - Supports dual and triple mining (ETC/ERG/ZIL, ETC/ERG + ZIL)
+```bash
+ironfish miners:pools:start
+```
 
-### lolMiner
-   - Type: GPU (Nvidia+AMD+Intel)
-   - URL: https://github.com/Lolliedieb/lolMiner-releases
+You should then be able to connect your miner to `http://localhost:9034` and start mining.
 
-### H9
-   - Type: GPU (Nvidia+AMD)
-   - Url: https://github.com/h9-dev/ironfish-miner/releases
-   - Only works on H9's pool
-
-### ZKWork
-   - Type: GPU (Nvidia+AMD)
-   - URL: https://zk.work
-   - Only works on ZKWork's pool
+## Questions?
+Have any questions about mining? Come ask in the [#mining](https://discord.com/channels/771503434028941353/828803908067262484) channel in the Iron Fish Discord
 
 ### [Edit on Github](https://github.com/iron-fish/website/edit/master/content/get-started/mining.mdx)

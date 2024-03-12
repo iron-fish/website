@@ -4,6 +4,7 @@ export const ECOSYSTEM_TYPES = [
   "Exchanges",
   "Wallets",
   "Mining Pools",
+  "Mining Software",
 ] as const;
 
 type Ecosystem = (typeof ECOSYSTEM_TYPES)[number];
@@ -192,5 +193,59 @@ export const ECOSYSTEM: Array<{
     name: "Standalone Wallet",
     link: "https://github.com/iron-fish/ironfish-wallet-cli",
     image: "/images/ecosystem/iflabs-standalone-wallet.png",
+  },
+  {
+    type: "Mining Software",
+    name: "RigelMiner",
+    link: "https://rigel-miner.bz/",
+    image: "/images/ecosystem/rigel-miner.png",
+  },
+  {
+    type: "Mining Software",
+    name: "lolMiner",
+    link: "https://www.srbminer.com/",
+    image: "/images/ecosystem/lol-miner.png",
+  },
+  {
+    type: "Mining Software",
+    name: "SRBMiner",
+    link: "https://github.com/Lolliedieb/lolMiner-releases/",
+    image: "/images/ecosystem/srb-miner.png",
+  },
+  {
+    type: "Mining Software",
+    name: "Team Red Miner",
+    link: "https://www.teamredminer.com/",
+    image: "/images/ecosystem/team-red-miner.png",
+  },
+  {
+    type: "Mining Software",
+    name: "ZKWork",
+    link: "https://zk.work/",
+    image: "/images/ecosystem/zk-work.png",
+  },
+  {
+    type: "Mining Software",
+    name: "BZ Miner",
+    link: "https://www.bzminer.com/",
+    image: "/images/ecosystem/bz-miner.png",
+  },
+  {
+    type: "Mining Software",
+    name: "GMiner",
+    link: "https://gminer.info/",
+    image: "/images/ecosystem/g-miner.png",
+  },
+  {
+    type: "Mining Software",
+    name: "H9 Miner",
+    link: "https://github.com/h9-dev/ironfish-miner",
+    image: "/images/ecosystem/h9.png",
+  },
+  {
+    type: "Mining Software",
+    name: "HiveOS",
+    link: "https://hiveon.com/os/",
+    image: "/images/ecosystem/hive-os.png",
   },
 ];
