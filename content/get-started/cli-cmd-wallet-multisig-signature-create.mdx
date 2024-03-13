@@ -52,3 +52,19 @@ Signature share:
 | `-f, --account` | The account to use for generating the signature share, must be a multisig participant account | The wallet's default account is used |
 | `-s, --signingPackage` | The signing package (unsigned transaction and commitments) for which the signature will be created ||
 | `--confirm` | Create signature share without confirming transaction details ||
+| `--path` | Path to a JSON file containing participant identities ||
+
+# Multisig Transaction JSON
+
+You can use the `--path` flag and a JSON file like the example shown below to pass a signing package to this command:
+
+```json
+{
+  "signingPackage": "f100000000c3d2051e0257eb8aaee9aa...9844a3e90873a5a5808e83417c336105"
+}
+```
+
+Note that the JSON file can contain other fields, like `commitment`, so you can use the same file throughout the multisig signing flow.
+
+
+

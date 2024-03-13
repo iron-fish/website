@@ -59,3 +59,21 @@ The signing commitment will be valid only if all participant identities specifie
 | `-i, --identity` | The identity of the participants that will sign the transaction (may be specified multiple times to add multiple signers) ||
 | `-u, --unsignedTransaction` | The serialized unsigned transaction that needs to be signed ||
 | `--confirm` | Create signing commitment without confirming transaction details ||
+| `--path` | Path to a JSON file containing participant identities ||
+
+# Multisig Transaction JSON
+
+You can use the `--path` flag and a JSON file like the example shown below to pass a list of identities and an unsigned transaction to this command:
+
+```json
+{
+  "identity": [
+    "723f415e10ec47955036105834ab7dcc...89557882a9d3834e9ee9a82dc4ac2f0a",
+    "721cb9582cec837588df0b08d77d4870...2b269850be9d80d1f8360fa57df0a306"
+  ],
+  "unsignedTransaction": "01010000000000000002000000000000...9f3fb432907a84c8483586a6a565d308"
+}
+```
+
+Note that the JSON file can contain other fields, like `commitment`, so you can use the same file throughout the multisig signing flow.
+
