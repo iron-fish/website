@@ -144,3 +144,28 @@ Fee: $IRON 0.00000001
 />
  
 The signature aggregation command broadcasts the signed transaction to the network by default. If the transaction is not broadcast, use the `ironfish wallet:transaction:add` command to braodcast it to the network.
+
+# Multisig Transaction JSON
+
+Each of the commands in steps 3 through 6, above, accepts a `--path` flag that should refer to a JSON file with any of the fields below:
+
+```json
+{
+  "identity": [
+    "723f415e10ec47955036105834ab7dcc...89557882a9d3834e9ee9a82dc4ac2f0a",
+    "721cb9582cec837588df0b08d77d4870...2b269850be9d80d1f8360fa57df0a306"
+  ],
+  "unsignedTransaction": "01010000000000000002000000000000...9f3fb432907a84c8483586a6a565d308",
+  "commitment": [
+    "723f415e10ec47955036105834ab7dcc...342022941ff351bd60723b9a9aa2d29a",
+    "721cb9582cec837588df0b08d77d4870...abc27377671c68323af864b57b718380"
+  ],
+  "signingPackage": "f100000000c3d2051e0257eb8aaee9aa...9844a3e90873a5a5808e83417c336105",
+  "signatureShare": [
+    "723f415e10ec47955036105834ab7dcc...be94dd1ae640f3fcf8bddb9478a0cb02",
+    "721cb9582cec837588df0b08d77d4870...ad47e9f3ba751c77ec7530708d1d2b07"
+  ]
+}
+```
+
+Users can use the same file throughout the signing process by updating the multisig transaction JSON file with new commitments or signature shares as these are created and passing the file to the next command in the process.
