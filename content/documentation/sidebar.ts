@@ -26,6 +26,10 @@ export const sidebar: SidebarDefinition = [
       "recipes_combining_notes",
       "recipes_maximizing_transaction_size",
       "recipes_splitting_notes",
+      {
+        label: "Multisig",
+        items: ["recipes_multisig_create_account"],
+      },
     ],
   },
   "hardfork-update-process",
