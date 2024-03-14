@@ -27,7 +27,7 @@ import { multisig } from '@ironfish/rust-nodejs'
 const participantIdentities = [
     "723729d1b6af022a4c5d67e126a3a797...63ec486317bd1e72b8628e6116340304",
     "72c60942feac595aa83bb0856c264dfc...af2708a2961ef6c9e15541e288dcad03"
-] // get the identities from the participants
+]
 
 const participantCommitment = multisig.createSigningCommitment( 
     participantAccount.multisigKeys.secret,
@@ -46,7 +46,6 @@ Once all participants have created their signing commitments, the commitments ar
 ```js
 import { UnsignedTransaction } from '@ironfish/rust-nodejs'
 
-
 const unsignedTransactionData = "01010000000000000002000000000000...9f3fb432907a84c8483586a6a565d308"
 
 const unsignedTransaction = new UnsignedTransaction(
@@ -56,7 +55,7 @@ const unsignedTransaction = new UnsignedTransaction(
 const participantCommitments = [
     "723f415e10ec47955036105834ab7dcc...342022941ff351bd60723b9a9aa2d29a",
     "721cb9582cec837588df0b08d77d4870...abc27377671c68323af864b57b718380"
-] // aggregate commitments from all participants
+]
 
 const signingPackage = unsignedTransaction.signingPackage(participantCommitments)
 ```
@@ -87,10 +86,10 @@ import { multisig } from '@ironfish/rust-nodejs'
 const participantSignatures = [
     "723f415e10ec47955036105834ab7dcc...be94dd1ae640f3fcf8bddb9478a0cb02", 
     "721cb9582cec837588df0b08d77d4870...ad47e9f3ba751c77ec7530708d1d2b07"
-] // aggregate signatures from all participants
+]
 
 const serialized = multisig.aggregateSignatureShares(
-    coordinatorAccount.multisigKeys.publicKeyPackage, // this can also be performed by a participant. 
+    coordinatorAccount.multisigKeys.publicKeyPackage,
     signingPackage,
     participantSignatures,
 )
