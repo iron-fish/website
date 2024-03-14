@@ -94,7 +94,7 @@ const participantSignatures = [
 ] // aggregate signatures from all participants
 
 const serialized = multisig.aggregateSignatureShares(
-    dealerAccount.multisigKeys.publicKeyPackage, // this can also be performed by the trusted dealer. 
+    dealerAccount.multisigKeys.publicKeyPackage, // this can also be performed by a participant. 
     signingPackage,
     participantSignatures,
 )
