@@ -125,7 +125,7 @@ The networking layer relies on these different message types:
 | GetBlockHashesResponse        |          3 | Responds with a list of block hashes so the syncing node can perform a binary search to find where the syncing node should start syncing from |
 | GetBlocksRequest              |          4 | Requests a block during sync                                                                                                                  |
 | GetBlocksResponse             |          5 | Responds with a list of full blocks to the requesting node to facilitate syncing                                                              |
-| Identify                      |          6 | Upon node startup, nodes use this message to to introduce one another by exchanging their identities                                          |
+| Identify                      |          6 | Upon node startup, nodes use this message to introduce one another by exchanging their identities                                             |
 | PeerList                      |          7 | Responds with a peer list to facilitate the requesting peer in peer discovery                                                                 |
 | PeerListRequest               |          8 | Requests peer lists from your peers for node discovery                                                                                        |
 | Signal                        |          9 | WebRTC session data                                                                                                                           |

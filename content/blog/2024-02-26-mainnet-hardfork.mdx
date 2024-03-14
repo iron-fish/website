@@ -1,0 +1,66 @@
+---
+author: elena
+title: Mainnet Activation for Hardfork-1
+description: Everything you need to know for the upcoming hardfork-1 on Iron Fish mainnet 
+image: /images/blog/mainnet_hardfork.png
+tags: [ironfish, iron fish, hardfork, hard-fork, hard fork, activation, mainnet]
+---
+
+# Mainnet Activation for Hardfork-1
+
+Iron Fish is preparing for its first hardfork. The first hardfork will include:
+- [FIP-2](https://fips.ironfish.network/fips/fip-2-enforce-sequential-block-time) : Enforce sequential block time (a block’s timestamp has to be greater than the timestamp of its parent) 
+- [FIP-3](https://fips.ironfish.network/fips/fip-3-memory-hard-mining-algorithm) : Switch hashing algorithm from blake3 to FishHash
+- [FIP-8](https://fips.ironfish.network/fips/fip-8-difficulty-adjustment) : Difficulty adjustment (to accommodate the algorithm change)
+- [FIP-9](https://fips.ironfish.network/fips/fip-9-swap-randomness-and-graffiti) : Swap randomness and graffiti field positions in the Block Header
+
+The most notable change is the hashing algorithm switch from blake3 to FishHash. To read more about FishHash, the motivation behind finding a new hashing algorithm for Iron Fish, as well as exploration of other algorithm choices, please see [FIP-3](https://fips.ironfish.network/fips/fip-3-memory-hard-mining-algorithm) (or community created video walkthroughs like this [one](https://youtu.be/1R7VffTzM9g?si=U0PhustQsp8TG9ak)).
+
+The timeline for the mainnet hardfork is as follows: 
+
+| status | date | milestone |
+| --- | --- | --- |
+| deployed ✅  | Feb 20th | Release of the Iron Fish node version that includes Testnet hardfork activation (see [release notes and binaries](https://github.com/iron-fish/ironfish/releases/tag/v1.20.0)) |
+| deployed ✅  | Feb 28th | [Testnet](https://testnet.explorer.ironfish.network/) hardfork activation at block sequence 419,193 |
+| deployed ✅  | March 6th | Release of the Iron Fish node version that includes Mainnet hardfork activation (see [release notes and binaries](https://github.com/iron-fish/ironfish/releases/tag/v2.0.0)) |
+| upcoming 👉 | April 2nd | [Mainnet](https://explorer.ironfish.network/) hardfork activation at block sequence 503,338, estimated April 2 2024 12:00 GMT |
+
+If you’re an Iron Fish user, developer, wallet provider, miner, exchange, or anyone in between, please make sure to **upgrade your Iron Fish Node to [version 2.0.0](https://github.com/iron-fish/ironfish/releases/tag/v2.0.0) (or greater if available) by no later than April 2nd to ensure a smooth transition for all Iron Fish users.** If you’ve used `npm` previously to install Iron Fish node you can upgrade by simply running the same command again: `npm install -g ironfish`.
+
+If you’re using the Node App, please make sure to upgrade it as well to **[version 3.0](https://ironfish.network/use/node-app) (or greater if available).** 
+
+### What you need to know if you’re a miner
+At block 503,338 (~April 2nd) miners will need to manually switch their devices to start mining FishHash instead of blake3. Your mining pool should already be compatible with the change. All [major mining software](https://ironfish.network/use/get-started/mining#mining-software) developers are planning on releasing new versions that include a FishHash miner. Be on the lookout for a new release of your mining software that includes FishHash which should be available at least a week before the hardfork. 
+
+### What you need to know if you’re a mining pool
+You need to **upgrade** your Iron Fish node **as soon as possible** to [version 2.0.0](https://github.com/iron-fish/ironfish/releases/tag/v2.0.0). Some notable changes for pools:
+- [FIP-2](https://fips.ironfish.network/fips/fip-2-enforce-sequential-block-time) : If your pool creates blocks with negative timestamps those will no longer be valid after the hardfork
+- [FIP-3](https://fips.ironfish.network/fips/fip-3-memory-hard-mining-algorithm) : The obvious switch of the mining algorithm from blake3 to FishHash
+- [FIP-9](https://fips.ironfish.network/fips/fip-9-swap-randomness-and-graffiti) :  randomness and graffiti field positions are switched in the Block Header
+
+All these changes are included in the Node v2.0.0 release but if you have customized your node make sure that those changes are still compatible
+
+### If you’re a mining software developer
+If you're a mining software developer and interested in supporting Iron Fish, please see resources below: 
+- [FishHash definition, specs, and CPU implementation (in C++ and Rust)](https://github.com/iron-fish/fish-hash)
+- [GPU reference implementation](https://github.com/Lolliedieb/FishHashMiner)
+- [Instructions to run your own local Iron Fish network with a local mining pool for testing](https://www.notion.so/Local-Mining-Pool-Development-for-Fish-Hash-and-Hardfork-1-6899e63aac8446e884d297d59467023b?pvs=21)
+
+### What you need to know if you’re an exchange
+
+You need to **upgrade** your Iron Fish node **as soon as possible** to [version 2.0.0](https://github.com/iron-fish/ironfish/releases/tag/v2.0.0) (or greater if available), and by no later than April 2nd. 
+
+**We recommend being extra cautious of processing transactions on the Iron Fish network during the hardfork activation (estimated April 2nd, 12:00 GMT).**
+
+If you any questions, please reach out via Telegram or [Discord](https://discord.ironfish.network/). 
+
+### What you need to know if you’re a user
+
+If you are running a node or using the CLI wallet, please **upgrade** your Iron Fish node **as soon as possible** to [version 2.0.0](https://github.com/iron-fish/ironfish/releases/tag/v2.0.0) (or greater if available).
+
+If you are using the Node App, please upgrade to version 3.0 (or greater if available) using the [official download page](https://ironfish.network/use/node-app).   
+
+Your wallet and balances are not affected by the hardfork.
+
+
+Thank you everyone, and thank you in advance for all your help in ensuring a smooth hardfork transition 🙌 
