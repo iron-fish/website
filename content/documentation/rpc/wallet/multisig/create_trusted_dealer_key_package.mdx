@@ -1,0 +1,56 @@
+---
+title: wallet/multisig/createTrustedDealerKeyPackage
+description: RPC Wallet/Multisig | Iron Fish Documentation
+---
+
+Creates a multisig account using [Trusted Dealer Key Generation](https://frost.zfnd.org/tutorial/trusted-dealer.html). It splits a random secret into pieces, giving each participant a part to control. It returns a list of account imports for each participant, encrypting each account with the participant's identity.
+
+Participants can import these accounts through the [wallet/importAccount](/developers/documentation/rpc/wallet/import_account) RPC.
+
+#### Request
+
+```ts
+{
+  minSigners: number
+  participants: Array<{ identity: string }>
+}
+```
+
+#### Response
+
+```ts
+{
+  publicAddress: string
+  publicKeyPackage: string
+  viewKey: string
+  incomingViewKey: string
+  outgoingViewKey: string
+  proofAuthorizingKey: string
+  participantAccounts: Array<{ identity: string; account: string }>
+}
+```
+
+#### Example
+
+The following request body creates a 2-of-3 multisig account:
+
+```json
+{
+  "minSigners": 2,
+  "participants": [
+    {
+      "identity": "724a32cfd168333c2992e8d2d89f0118d235816f6303c4a3230dbd9cca6bc21ab7e7d4afc348e4a7f9a11d71d1f1ed7fa4ec8545fa2e7831352f47a084d475602a80f316c9bc4b21984c9faf6ce4ca89e18c5146306fbe7ede7a796e800acb1e65778c05dfca0aec87f5b0efc311c092a274a3417fd4802807c362e1025bf6bd00"
+    },
+    {
+      "identity": "721dd1ef96ea4070f4e713dfd15be57d326988683f18e4a08ebf7023f164bb0e9b38c3ced8230efe7c5cda03b84504f451c61699c47f2e30f884fefa008ab8650822cf05e5bc7a93f2a930d6f12645225451cdaae84ea202671982757b28c3a5728c088b35349ee77c9aacc8b515d7118311847fdf2115ecb8331145b0c3cd1201"
+    },
+    {
+      "identity": "72a527b3a3f0ce2772c7526cf17c3ecbfc5ca82ad1181cb21a27e2c91484a721ffeae31f833af73a4ca2a0d1e08ecdfba9be56e14be97bec34435b3a97cd8d720c7686743c9f56a8733c5a4e636251555ea1a543621e4ed97081a9cb992bb256aef8febd8eeaa96527816071ee2f635b494a0ccd3d9b67fd2a1c129551b4f6160e"
+    }
+  ]
+}
+```
+
+Participant identities can be created using the RPC wallet/createParticipant.
+
+###### [View on Github](https://github.com/iron-fish/ironfish/blob/master/ironfish/src/rpc/routes/wallet/multisig/createTrustedDealerKeyPackage.ts)

@@ -1,0 +1,55 @@
+---
+title: wallet:multisig:signature:aggregate
+seo: Wallet Multisig Signature Aggregate command
+---
+
+# Usage
+
+Aggregates signature shares from participants to sign a transaction.
+
+```sh
+ironfish wallet:multisig:signature:aggregate
+```
+
+The example below aggregates signature shares for a transaction signed by two signers.
+
+The signing package and signature shares in the example are truncated for readability.
+
+<Terminal command="ironfish wallet:multisig:signature:aggregate \
+-s 723f415e10ec47955036105834ab7dcc...be94dd1ae640f3fcf8bddb9478a0cb02 \
+-s 721cb9582cec837588df0b08d77d4870...ad47e9f3ba751c77ec7530708d1d2b07 \
+-p f100000000c3d2051e0257eb8aaee9aa...9844a3e90873a5a5808e83417c336105"
+  output={`
+Signing the multisig transaction... done
+Hash: a28ce23d635b1552bdf4897fa3d8f93447a7aa78a3d43985bf2029ff3e4098ba
+Fee: $IRON 0.00000001
+  `}
+/>
+
+# Flags
+
+| Flag | Description | Default |
+| ---- | ----------- | ------- |
+| `-f, --account` | The account to use for generating the commitment, must be a multisig participant account | The wallet's default account is used |
+| `-p, --signingPackage` | The signing package (unsigned transaction and commitments) for which the signature will be created ||
+| `-s, --signatureShare` | Participant signature share (may be specified multiple times) ||
+| `--[no]-broadcast` | Broadcast the transaction to the network after signing ||
+| `--path` | Path to a JSON file containing participant identities ||
+
+# Multisig Transaction JSON
+
+You can use the `--path` flag and a JSON file like the example shown below to pass a signing package and list of signature shares to this command:
+
+```json
+{
+  "signatureShare": [
+    "723f415e10ec47955036105834ab7dcc...be94dd1ae640f3fcf8bddb9478a0cb02",
+    "721cb9582cec837588df0b08d77d4870...ad47e9f3ba751c77ec7530708d1d2b07"
+  ],
+  "signingPackage": "f100000000c3d2051e0257eb8aaee9aa...9844a3e90873a5a5808e83417c336105"
+}
+```
+
+Note that the JSON file can contain other fields, like `commitment`, so you can use the same file throughout the multisig signing flow.
+
+

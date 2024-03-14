@@ -16,6 +16,10 @@ export const sidebar: SidebarDefinition = [
   "node-health",
   "setting-up-an-account",
   "transactions",
+  {
+    label: "Multisig Accounts",
+    items: ["multisig-creation", "multisig-signing"],
+  },
   "mining",
   {
     label: "Reference",
@@ -58,6 +62,19 @@ export const sidebar: SidebarDefinition = [
           "cli-cmd-wallet-transaction-watch",
           "cli-cmd-wallet-use",
           "cli-cmd-wallet-which",
+          {
+            label: "multisig",
+            items: [
+              "cli-cmd-wallet-multisig-participant-create",
+              "cli-cmd-wallet-multisig-participant-get",
+              "cli-cmd-wallet-multisig-participants-list",
+              "cli-cmd-wallet-multisig-dealer-create",
+              "cli-cmd-wallet-multisig-commitment-create",
+              "cli-cmd-wallet-multisig-commitment-aggregate",
+              "cli-cmd-wallet-multisig-signature-create",
+              "cli-cmd-wallet-multisig-signature-aggregate",
+            ],
+          },
         ],
       },
       {

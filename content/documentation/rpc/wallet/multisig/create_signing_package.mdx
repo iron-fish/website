@@ -1,0 +1,26 @@
+---
+title: wallet/multisig/createSigningPackage
+description: RPC Multisig | Iron Fish Documentation
+---
+
+Creates a signing package for a given transaction for a multisig account. After this step, the created signing package will be used by the participants to create a signature share using the [wallet/multisig/createSignatureShare](/developers/documentation/rpc/wallet/multisig/create_signature_share) RPC.
+
+#### Request
+
+```ts
+{
+  unsignedTransaction: string
+  commitments: Array<string>
+  account?: string
+}
+```
+
+#### Response
+
+```ts
+{
+  signingPackage: string
+}
+```
+
+###### [View on Github](https://github.com/iron-fish/ironfish/blob/master/ironfish/src/rpc/routes/wallet/multisig/createSigningPackage.ts)

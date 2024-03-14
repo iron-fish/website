@@ -26,6 +26,13 @@ export const sidebar: SidebarDefinition = [
       "recipes_combining_notes",
       "recipes_maximizing_transaction_size",
       "recipes_splitting_notes",
+      {
+        label: "Multisig",
+        items: [
+          "recipes_multisig_create_account",
+          "recipes_multisig_sign_transaction",
+        ],
+      },
     ],
   },
   "hardfork-update-process",
@@ -295,8 +302,45 @@ export const sidebar: SidebarDefinition = [
         label: "Wallet",
         items: [
           {
+            label: "Multisig",
+            items: [
+              {
+                id: "rpc/wallet/multisig/get_participant",
+                label: "getParticipant",
+              },
+              {
+                id: "rpc/wallet/multisig/get_participants",
+                label: "getParticipants",
+              },
+              {
+                id: "rpc/wallet/multisig/create_participant",
+                label: "createParticipant",
+              },
+              {
+                id: "rpc/wallet/multisig/create_trusted_dealer_key_package",
+                label: "createTrustedDealerKeyPackage",
+              },
+              {
+                id: "rpc/wallet/multisig/create_signing_commitment",
+                label: "createSiginingCommitment",
+              },
+              {
+                id: "rpc/wallet/multisig/create_signature_share",
+                label: "createSignatureShare",
+              },
+              {
+                id: "rpc/wallet/multisig/create_signing_package",
+                label: "createSigningPackage",
+              },
+            ],
+          },
+          {
             id: "rpc/wallet/add_transaction",
             label: "addTransaction",
+          },
+          {
+            id: "rpc/wallet/build_transaction",
+            label: "buildTransaction",
           },
           {
             id: "rpc/wallet/burn_asset",

@@ -1,0 +1,171 @@
+---
+title: Sign a transaction with a multisig account
+seo-title: Multisig Signing
+---
+
+Sending a transaction from a multisig account requires that at least the minimum number of signers (set at account creation) signs the transaction.
+
+### Step 1: Create an unsigned transaction
+
+Any participant in the group or a view-only account that possesses the group view keys can initiate sending a transaction by creating an unsigned transaction using the `send` command:
+
+```sh
+ironfish wallet:send --unsignedTransaction
+```
+
+Note that by specifying the `--unsignedTransaction` flag the transaction is not broadcast to the network, but only printed to the command-line. After creating the unsigned transaction the participant must share it with the rest of the group.
+
+### Step 2: Identify signers
+
+Before beginning the signing process, participants who will sign the transaction must communicate that they plan to sign the transaction and share their identity with other signers. This list of identities for planned signers is an input to the next step. Note that the number of planned signers must be at least the minimum number of signers specified during [account generation](/use/get-started/multisig-creation#generate-multisig-account-imports).
+
+### Step 3: Create signing commitments
+
+Each member of the group must first create a "signing commitment" for the given transaction and list of signer identities.
+
+```sh
+ironfish wallet:multisig:commitment:create
+```
+
+Example:
+<Terminal command="ironfish wallet:multisig:commitment:create \
+-i 723f415e10ec47955036105834ab7dcc...89557882a9d3834e9ee9a82dc4ac2f0a \
+-i 721cb9582cec837588df0b08d77d4870...2b269850be9d80d1f8360fa57df0a306 \
+-u 01010000000000000002000000000000...9f3fb432907a84c8483586a6a565d308"
+  output={`
+==================
+Notes sent:
+==================
+
+Amount:        $IRON 0.00000010
+Memo:          
+Recipient:     95b4d767410460fb8f093c1261c9a499ceae23801c14bde88675b27cf1c5718c
+Sender:        ca860e5c6c87118f738e1764a87b1cec1913e3e624237bddecb88d289a445c2c
+
+
+==================
+Notes received:
+==================
+
+Amount:        $IRON 0.00099989
+Memo:          
+Recipient:     ca860e5c6c87118f738e1764a87b1cec1913e3e624237bddecb88d289a445c2c
+Sender:        ca860e5c6c87118f738e1764a87b1cec1913e3e624237bddecb88d289a445c2c
+
+
+Confirm signing commitment creation (Y/N): Y
+
+Commitment:
+
+07749d787c6f3c0bce91fb3f3869c96b...342022941ff351bd60723b9a9aa2d29a
+  `}
+/>
+
+Each participant must use the same list of identities from Step 2.
+
+### Step 4: Aggregate signing commitments
+
+One participant (or a view-only account that possesses the group view keys) must act as a "coordinator" and aggregate all signing commitments from Step 3 to produce the "signing package" for the transaction.
+
+```sh
+ironfish wallet:multisig:commitment:aggregate
+```
+
+Example:
+<Terminal command="ironfish wallet:multisig:commitment:aggregate \
+-c 723f415e10ec47955036105834ab7dcc...342022941ff351bd60723b9a9aa2d29a \
+-c 721cb9582cec837588df0b08d77d4870...abc27377671c68323af864b57b718380 \
+-u 01010000000000000002000000000000...9f3fb432907a84c8483586a6a565d308"
+  output={`
+Signing Package for commitments from 2 participants:
+
+f100000000c3d2051e0257eb8aaee9aa...9844a3e90873a5a5808e83417c336105
+  `}
+/>
+
+### Step 5: Create signature shares
+
+Each participant who created a signing commitment in Step 3 must now create a signature share by signing the signing package from Step 4.
+
+```sh
+ironfish wallet:multisig:signature:create
+```
+
+Example: 
+<Terminal command="ironfish wallet:multisig:signature:create -s f100000000c3d2051e0257eb8aaee9aa...9844a3e90873a5a5808e83417c336105"
+  output={`
+==================
+Notes sent:
+==================
+
+Amount:        $IRON 0.00000010
+Memo:          
+Recipient:     95b4d767410460fb8f093c1261c9a499ceae23801c14bde88675b27cf1c5718c
+Sender:        ca860e5c6c87118f738e1764a87b1cec1913e3e624237bddecb88d289a445c2c
+
+
+==================
+Notes received:
+==================
+
+Amount:        $IRON 0.00099989
+Memo:          
+Recipient:     ca860e5c6c87118f738e1764a87b1cec1913e3e624237bddecb88d289a445c2c
+Sender:        ca860e5c6c87118f738e1764a87b1cec1913e3e624237bddecb88d289a445c2c
+
+
+Confirm new signature share creation (Y/N): Y
+
+Signature share:
+
+721cb9582cec837588df0b08d77d4870...ad47e9f3ba751c77ec7530708d1d2b07
+  `}
+/>
+
+### Step 6: Aggregate signature shares
+
+After every participant who committed to signing the transaction in Step 2 has created and shared a signature share, one participant (or a view-only account that possesses the group view keys) must aggregate the signature shares to produce a single signature and sign the transaction.
+
+```sh
+ironfish wallet:mutisig:signature:aggregate
+```
+
+Example: 
+<Terminal command="ironfish wallet:multisig:signature:aggregate \
+-s 723f415e10ec47955036105834ab7dcc...be94dd1ae640f3fcf8bddb9478a0cb02 \
+-s 721cb9582cec837588df0b08d77d4870...ad47e9f3ba751c77ec7530708d1d2b07 \
+-p f100000000c3d2051e0257eb8aaee9aa...9844a3e90873a5a5808e83417c336105"
+  output={`
+Signing the multisig transaction... done
+Transaction: 01010000000000000002000000000000...ef75dd551058b561aedee4c818a7f001 
+Hash: a28ce23d635b1552bdf4897fa3d8f93447a7aa78a3d43985bf2029ff3e4098ba
+Fee: $IRON 0.00000001
+  `}
+/>
+ 
+The signature aggregation command broadcasts the signed transaction to the network by default. If the transaction is not broadcast, use the `ironfish wallet:transaction:add` command to braodcast it to the network.
+
+# Multisig Transaction JSON
+
+Each of the commands in steps 3 through 6, above, accepts a `--path` flag that should refer to a JSON file with any of the fields below:
+
+```json
+{
+  "identity": [
+    "723f415e10ec47955036105834ab7dcc...89557882a9d3834e9ee9a82dc4ac2f0a",
+    "721cb9582cec837588df0b08d77d4870...2b269850be9d80d1f8360fa57df0a306"
+  ],
+  "unsignedTransaction": "01010000000000000002000000000000...9f3fb432907a84c8483586a6a565d308",
+  "commitment": [
+    "723f415e10ec47955036105834ab7dcc...342022941ff351bd60723b9a9aa2d29a",
+    "721cb9582cec837588df0b08d77d4870...abc27377671c68323af864b57b718380"
+  ],
+  "signingPackage": "f100000000c3d2051e0257eb8aaee9aa...9844a3e90873a5a5808e83417c336105",
+  "signatureShare": [
+    "723f415e10ec47955036105834ab7dcc...be94dd1ae640f3fcf8bddb9478a0cb02",
+    "721cb9582cec837588df0b08d77d4870...ad47e9f3ba751c77ec7530708d1d2b07"
+  ]
+}
+```
+
+Users can use the same file throughout the signing process by updating the multisig transaction JSON file with new commitments or signature shares as these are created and passing the file to the next command in the process.

@@ -1,0 +1,52 @@
+---
+title: wallet:multisig:commitment:aggregate
+seo: Wallet Multisig Commitment Aggregate command
+---
+
+# Usage
+
+Aggregates signing commitments from a group of multisig signers for a given transaction to produce a signing package.
+
+```sh
+ironfish wallet:multisig:commitment:aggregate
+```
+
+The example below aggregates signing commitments for a transaction to be signed by two signers.
+
+The unsigned transaction, signing commitments, and signing package in the example are truncated for readability.
+
+<Terminal command="ironfish wallet:multisig:commitment:aggregate \
+-c 723f415e10ec47955036105834ab7dcc...342022941ff351bd60723b9a9aa2d29a \
+-c 721cb9582cec837588df0b08d77d4870...abc27377671c68323af864b57b718380 \
+-u 01010000000000000002000000000000...9f3fb432907a84c8483586a6a565d308"
+  output={`
+Signing Package for commitments from 2 participants:
+
+f100000000c3d2051e0257eb8aaee9aa...9844a3e90873a5a5808e83417c336105
+  `}
+/>
+
+# Flags
+
+| Flag | Description | Default |
+| ---- | ----------- | ------- |
+| `-c, --commitment | Signing commitment from participant (may be specified multiple times) ||
+| `-f, --account` | The account to use for generating the commitment, must be a multisig participant account | The wallet's default account is used |
+| `-u, --unsignedTransaction` | The serialized unsigned transaction that needs to be signed ||
+| `--path` | Path to a JSON file containing unsigned transaction and commitments ||
+
+# Multisig Transaction JSON
+
+You can use the `--path` flag and a JSON file like the example shown below to pass an unsigned transaction and list of commitments to this command:
+
+```json
+{
+  "commitment": [
+    "723f415e10ec47955036105834ab7dcc...342022941ff351bd60723b9a9aa2d29a",
+    "721cb9582cec837588df0b08d77d4870...abc27377671c68323af864b57b718380"
+  ],
+  "unsignedTransaction": "01010000000000000002000000000000...9f3fb432907a84c8483586a6a565d308"
+}
+```
+
+Note that the JSON file can contain other fields, like `identity`, so you can use the same file throughout the multisig signing flow.
