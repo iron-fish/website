@@ -19,7 +19,7 @@ Once the participants agree on the contents of a transaction and who is going to
 
 The identities of the participant and the unsigned transaction are required to generate a commitment. 
 
-**Tip:** Make sure the unsigned transaction has a sufficient expiration time to allow for the completion of the signing process. The expiration can be set to 0 to effectively disable it (sets the expiration of the transaction to infinity). 
+**Tip:** Make sure the unsigned transaction has a sufficient expiration time to allow for the completion of the signing process. The expiration can be set to 0 to ensure the transaction never expires. 
 
 ```js
 import { multisig } from '@ironfish/rust-nodejs'
