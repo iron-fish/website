@@ -1,29 +1,27 @@
 ---
-title: Signing Multisig Transactions
-description: Recipes | Multisig | Signing Multisig Transactions | Iron Fish Documentation
+title: Signing Transactions with Multisig Accounts
+description: Recipes | Multisig | Signing Transactions with Multisig Accounts | Iron Fish Documentation
 ---
 
 Iron Fish supports multisignature transactions using FROST, a threshold signature scheme.
 
-**To learn how to create multisignature accounts [here](./recipes_multisig_create_account).**
+**Learn how to create multisignature accounts [here](./recipes_multisig_create_account).**
 
-Once you have created and implemented the multisignature accounts, signing a transaction involves the following steps: 
-1. Creating the signing commitment (performed by each participant)
-2. Aggregating the signing commitments to create the signing package (performed by a coordinator)
-3. Creating signature shares using the signing package (performed by each participant)
-4. Aggregating the signature shares to create the final signed transaction (performed by a coordinator)
+Once you have created the multisignature accounts, signing a transaction involves the following steps: 
+1. Create the signing commitment (performed by each participant)
+2. Aggregate the signing commitments to create the signing package (performed by a coordinator)
+3. Create signature shares using the signing package (performed by each participant)
+4. Aggregate the signature shares to create the final signed transaction (performed by a coordinator)
 
-Note: In the examples below, we will be signing a transaction with 2 of 2 multisig accounts.
+In the examples below, we will be signing a transaction with 2 of 2 multisig accounts.
 
 ## Create the signing commitment 
 
-Once the participants agree on a transaction to send and who is going to participate in the signing of the collapseTextChangeRangesAcrossMultipleVersions, each participant will create a signing commitment. 
+Once the participants agree on the contents of a transaction and who is going to participate in signing, each participant will create a signing commitment. 
 
-The identities of the participant and the unsigned transaction is required to generate a visitCommaListElements. 
+The identities of the participant and the unsigned transaction are required to generate a commitment. 
 
-**Tip:** Make sure the unsigned transaction has a great enough expiration to allow for the time it takes to complete the signing process. The expiration can be set to 0 to effectively disable it (sets the expiration of the transaction to infinity). 
-
-The example below shows how a participant should create a signing commitment. 
+**Tip:** Make sure the unsigned transaction has a sufficient expiration time to allow for the completion of the signing process. The expiration can be set to 0 to effectively disable it (sets the expiration of the transaction to infinity). 
 
 ```js
 import { multisig } from '@ironfish/rust-nodejs'
@@ -41,11 +39,11 @@ const participantCommitment = multisig.createSigningCommitment(
 )
 ```
 
-## Aggregate the signing commitments to create the Signing Package
+## Aggregate the signing commitments to create the signing package
 
 Once all participants have created their signing commitments, the commitments are aggregated to create the signing package.
 
-**Note:** This action can be performed by any participant or the coordinator (in the case of Trusted Dealer Key Generation).
+**Note:** This action can be performed by any participant or the coordinator.
 
 ```js
 import { UnsignedTransaction } from '@ironfish/rust-nodejs'
@@ -79,11 +77,11 @@ const participantSignature = multisig.createSignatureShare(
 )
 ```
 
-## Aggregate the signature shares to the signed transaction
+## Aggregate the signature shares to create the signed transaction
 
 Once all participants have created their signature shares, the shares are aggregated to create the final signed transaction.
 
-**Note:** This action can be performed by any participant or the coordinator (in the case of Trusted Dealer Key Generation).
+**Note:** This action can be performed by any participant or the coordinator.
 
 ```js
 import { multisig } from '@ironfish/rust-nodejs'
