@@ -45,7 +45,7 @@ const participantCommitment = multisig.createSigningCommitment(
 
 Once all participants have created their signing commitments, the commitments are aggregated to create the signing package.
 
-**Note:** This action can be performed by both the participant and the dealer (in the case of Trusted Dealer Key Generation).
+**Note:** This action can be performed by any participant or the coordinator (in the case of Trusted Dealer Key Generation).
 
 ```js
 import { UnsignedTransaction } from '@ironfish/rust-nodejs'
@@ -83,7 +83,7 @@ const participantSignature = multisig.createSignatureShare(
 
 Once all participants have created their signature shares, the shares are aggregated to create the final signed transaction.
 
-**Note:** This action can be performed by both the participant and the dealer (in the case of Trusted Dealer Key Generation).
+**Note:** This action can be performed by any participant or the coordinator (in the case of Trusted Dealer Key Generation).
 
 ```js
 import { multisig } from '@ironfish/rust-nodejs'
@@ -94,7 +94,7 @@ const participantSignatures = [
 ] // aggregate signatures from all participants
 
 const serialized = multisig.aggregateSignatureShares(
-    dealerAccount.multisigKeys.publicKeyPackage, // this can also be performed by a participant. 
+    coordinatorAccount.multisigKeys.publicKeyPackage, // this can also be performed by a participant. 
     signingPackage,
     participantSignatures,
 )
