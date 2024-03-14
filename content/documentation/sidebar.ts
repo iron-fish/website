@@ -28,7 +28,10 @@ export const sidebar: SidebarDefinition = [
       "recipes_splitting_notes",
       {
         label: "Multisig",
-        items: ["recipes_multisig_create_account"],
+        items: [
+          "recipes_multisig_create_account",
+          "recipes_multisig_sign_transaction",
+        ],
       },
     ],
   },

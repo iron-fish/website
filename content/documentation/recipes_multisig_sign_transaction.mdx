@@ -1,0 +1,105 @@
+---
+title: Signing Multisig Transactions
+description: Recipes | Multisig | Signing Multisig Transactions | Iron Fish Documentation
+---
+
+Iron Fish supports multisignature transactions using FROST, a threshold signature scheme.
+
+**To learn how to create multisignature accounts [here](./recipes_multisig_create_account).**
+
+Once you have created and implemented the multisignature accounts, signing a transaction involves the following steps: 
+1. Creating the signing commitment (performed by each participant)
+2. Aggregating the signing commitments to create the signing package (performed by a coordinator)
+3. Creating signature shares using the signing package (performed by each participant)
+4. Aggregating the signature shares to create the final signed transaction (performed by a coordinator)
+
+Note: In the examples below, we will be signing a transaction with 2 of 2 multisig accounts.
+
+## Create the signing commitment 
+
+Once the participants agree on a transaction to send and who is going to participate in the signing of the collapseTextChangeRangesAcrossMultipleVersions, each participant will create a signing commitment. 
+
+The identities of the participant and the unsigned transaction is required to generate a visitCommaListElements. 
+
+**Tip:** Make sure the unsigned transaction has a great enough expiration to allow for the time it takes to complete the signing process. The expiration can be set to 0 to effectively disable it (sets the expiration of the transaction to infinity). 
+
+The example below shows how a participant should create a signing commitment. 
+
+```js
+import { multisig } from '@ironfish/rust-nodejs'
+
+const participantIdentities = [
+    "723729d1b6af022a4c5d67e126a3a797...63ec486317bd1e72b8628e6116340304",
+    "72c60942feac595aa83bb0856c264dfc...af2708a2961ef6c9e15541e288dcad03"
+] // get the identities from the participants
+
+const participantCommitment = multisig.createSigningCommitment( 
+    participantAccount.multisigKeys.secret,
+    participantAccount.multisigKeys.keyPackage,
+    unsignedTransaction.hash(),
+    participantIdentities,
+)
+```
+
+## Aggregate the signing commitments to create the Signing Package
+
+Once all participants have created their signing commitments, the commitments are aggregated to create the signing package.
+
+**Note:** This action can be performed by any participant or the coordinator (in the case of Trusted Dealer Key Generation).
+
+```js
+import { UnsignedTransaction } from '@ironfish/rust-nodejs'
+
+
+const unsignedTransactionData = "01010000000000000002000000000000...9f3fb432907a84c8483586a6a565d308"
+
+const unsignedTransaction = new UnsignedTransaction(
+    Buffer.from(unsignedTransactionData, 'hex'),
+)
+
+const participantCommitments = [
+    "723f415e10ec47955036105834ab7dcc...342022941ff351bd60723b9a9aa2d29a",
+    "721cb9582cec837588df0b08d77d4870...abc27377671c68323af864b57b718380"
+] // aggregate commitments from all participants
+
+const signingPackage = unsignedTransaction.signingPackage(participantCommitments)
+```
+
+## Create signature shares
+
+Once the signing package is created and distributed to all participants, each participant can create a signature share using their secret key and the signing package.
+
+```js
+import { multisig } from '@ironfish/rust-nodejs'
+
+const participantSignature = multisig.createSignatureShare(
+    participantAccount.multisigKeys.secret,
+    participantAccount.multisigKeys.keyPackage,
+    signingPackage,
+)
+```
+
+## Aggregate the signature shares to the signed transaction
+
+Once all participants have created their signature shares, the shares are aggregated to create the final signed transaction.
+
+**Note:** This action can be performed by any participant or the coordinator (in the case of Trusted Dealer Key Generation).
+
+```js
+import { multisig } from '@ironfish/rust-nodejs'
+
+const participantSignatures = [
+    "723f415e10ec47955036105834ab7dcc...be94dd1ae640f3fcf8bddb9478a0cb02", 
+    "721cb9582cec837588df0b08d77d4870...ad47e9f3ba751c77ec7530708d1d2b07"
+] // aggregate signatures from all participants
+
+const serialized = multisig.aggregateSignatureShares(
+    coordinatorAccount.multisigKeys.publicKeyPackage, // this can also be performed by a participant. 
+    signingPackage,
+    participantSignatures,
+)
+
+const transaction = new Transaction(serialized)
+```
+
+
