@@ -176,6 +176,12 @@ export const ECOSYSTEM: Array<{
     image: "/images/ecosystem/trade-ogre.png",
   },
   {
+    type: "Exchanges",
+    name: "StealthEX",
+    link: "https://stealthex.io/?to=iron",
+    image: "/images/ecosystem/stealthex.png",
+  },
+  {
     type: "Wallets",
     name: "FoxWallet",
     link: "https://foxwallet.com/",
