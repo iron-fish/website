@@ -7,6 +7,7 @@ export type RpcWalletNote = {
   assetId: string
   value: string
   memo: string
+  memoHex: string
   sender: string
   owner: string
   noteHash: string
@@ -28,6 +29,8 @@ export type RpcWalletNote = {
   hash: string
 }
 ```
+
+The `memo` field returns the note memo as a utf-8 string with any Unicode control characters removed. The `memoHex` field returns the note memo as a hex string.
 
 Usage: 
 - [wallet/getAccountNotesStream](/developers/documentation/rpc/wallet/get_account_notes_stream)
