@@ -37,11 +37,23 @@ export function BlogLayout({
   seoTitlePrefix = "",
   seoTitlePostfix = "",
 }: Props) {
+  const fullTitle = seoTitlePrefix + (seoTitle || title) + seoTitlePostfix;
+  const imageUrl = image && new URL(image, process.env.NEXT_PUBLIC_ORIGIN);
   return (
     <>
       <Head>
-        <title>{seoTitlePrefix + (seoTitle || title) + seoTitlePostfix}</title>
-        {description && <meta name="description" content={description} />}
+        <title>{fullTitle}</title>
+        {description && (
+          <>
+            <meta name="description" content={description} />
+            <meta name="og:description" content={description} />
+          </>
+        )}
+        {imageUrl && (
+          <>
+            <meta name="og:image" content={imageUrl.href} />
+          </>
+        )}
       </Head>
       <Box
         as="article"
