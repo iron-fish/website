@@ -21,8 +21,13 @@ Any account in the multisig group (or a view-only account that possesses the gro
 The example below shows how to create a raw transaction to send 10 $ORE to two addresses and then generate an unsigned transaction from that raw transaction:
 
 ```js
-import { BuildTransactionRequest, CreateTransactionRequest, CurrencyUtils, IronfishSdk } from '@ironfish/sdk'
 import { Asset } from '@ironfish/rust-nodejs'
+import {
+  BuildTransactionRequest,
+  CreateTransactionRequest,
+  CurrencyUtils,
+  IronfishSdk,
+} from '@ironfish/sdk'
 
 async function main(): Promise<void> {
   const sdk = await IronfishSdk.init({ dataDir: '~/.dev0' });
