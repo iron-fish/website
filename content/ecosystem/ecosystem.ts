@@ -203,7 +203,7 @@ export const ECOSYSTEM: Array<{
   {
     type: "Mining Software",
     name: "RigelMiner",
-    link: "https://rigel-miner.bz/",
+    link: "https://github.com/rigelminer/rigel/releases/",
     image: "/images/ecosystem/rigel-miner.png",
   },
   {
