@@ -336,6 +336,15 @@ export const sidebar: SidebarDefinition = [
                 id: "rpc/wallet/multisig/aggregate_signature_shares",
                 label: "aggregateSignatureShares",
               },
+              {
+                label: "DKG",
+                items: [
+                  {
+                    id: "rpc/wallet/multisig/dkg/round1",
+                    label: "round1",
+                  },
+                ],
+              },
             ],
           },
           {
