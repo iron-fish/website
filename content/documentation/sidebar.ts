@@ -332,6 +332,15 @@ export const sidebar: SidebarDefinition = [
                 id: "rpc/wallet/multisig/create_signing_package",
                 label: "createSigningPackage",
               },
+              {
+                label: "DKG",
+                items: [
+                  {
+                    id: "rpc/wallet/multisig/dkg/round1",
+                    label: "round1",
+                  },
+                ],
+              },
             ],
           },
           {
