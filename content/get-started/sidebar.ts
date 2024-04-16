@@ -75,7 +75,10 @@ export const sidebar: SidebarDefinition = [
               "cli-cmd-wallet-multisig-signature-aggregate",
               {
                 label: "dkg",
-                items: ["cli-cmd-wallet-multisig-dkg-round1"],
+                items: [
+                  "cli-cmd-wallet-multisig-dkg-round1",
+                  "cli-cmd-wallet-multisig-dkg-round2",
+                ],
               },
             ],
           },
