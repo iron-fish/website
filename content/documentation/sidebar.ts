@@ -343,6 +343,10 @@ export const sidebar: SidebarDefinition = [
                     id: "rpc/wallet/multisig/dkg/round1",
                     label: "round1",
                   },
+                  {
+                    id: "rpc/wallet/multisig/dkg/round2",
+                    label: "round2",
+                  },
                 ],
               },
             ],
