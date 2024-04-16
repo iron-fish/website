@@ -11,7 +11,13 @@ export type RpcAsset = {
   creator: string
   metadata: string
   createdTransactionHash: string
-  verification: AssetVerification
+  verification: {
+    status: 'verified' | 'unverified' | 'unknown'
+    symbol?: string
+    decimals?: number
+    logoURI?: string
+    website?: string
+  }
   supply?: string
   symbol?: string,
   decimals?: number,
