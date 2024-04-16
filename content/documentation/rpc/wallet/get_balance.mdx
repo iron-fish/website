@@ -34,7 +34,9 @@ the default account will be used. If the asset is not specified, `$IRON` will be
   /**
    * @deprecated Please use getAsset endpoint to get this information
    * */
-  assetVerification: AssetVerification
+  assetVerification: {
+    status: 'verified' | 'unverified' | 'unknown'
+  }
 }
 ```
 
