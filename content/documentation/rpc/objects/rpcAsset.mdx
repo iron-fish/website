@@ -13,6 +13,10 @@ export type RpcAsset = {
   createdTransactionHash: string
   verification: AssetVerification
   supply?: string
+  symbol?: string,
+  decimals?: number,
+  logoURI?: string,
+  website?: string,
   /**
    * @deprecated query for the transaction to find it's status
    */
