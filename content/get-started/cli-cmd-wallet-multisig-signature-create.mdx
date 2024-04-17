@@ -1,0 +1,70 @@
+---
+title: wallet:multisig:signature:create
+seo: Wallet Multisig Signature Create command
+---
+
+# Usage
+
+Creates a signature share for a participant for a given signing package.
+
+```sh
+ironfish wallet:multisig:signature:create
+```
+
+The example below creates a signature share for a transaction
+
+The signing package and signature share in the example are truncated for readability.
+
+<Terminal command="ironfish wallet:multisig:signature:create -s f100000000c3d2051e0257eb8aaee9aa...9844a3e90873a5a5808e83417c336105"
+  output={`
+==================
+Notes sent:
+==================
+
+Amount:        $IRON 0.00000010
+Memo:          
+Recipient:     95b4d767410460fb8f093c1261c9a499ceae23801c14bde88675b27cf1c5718c
+Sender:        ca860e5c6c87118f738e1764a87b1cec1913e3e624237bddecb88d289a445c2c
+
+
+==================
+Notes received:
+==================
+
+Amount:        $IRON 0.00099989
+Memo:          
+Recipient:     ca860e5c6c87118f738e1764a87b1cec1913e3e624237bddecb88d289a445c2c
+Sender:        ca860e5c6c87118f738e1764a87b1cec1913e3e624237bddecb88d289a445c2c
+
+
+Confirm new signature share creation (Y/N): Y
+
+Signature share:
+
+721cb9582cec837588df0b08d77d4870...ad47e9f3ba751c77ec7530708d1d2b07
+  `}
+/>
+
+# Flags
+
+| Flag | Description | Default |
+| ---- | ----------- | ------- |
+| `-f, --account` | The account to use for generating the signature share, must be a multisig participant account | The wallet's default account is used |
+| `-s, --signingPackage` | The signing package (unsigned transaction and commitments) for which the signature will be created ||
+| `--confirm` | Create signature share without confirming transaction details ||
+| `--path` | Path to a JSON file containing participant identities ||
+
+# Multisig Transaction JSON
+
+You can use the `--path` flag and a JSON file like the example shown below to pass a signing package to this command:
+
+```json
+{
+  "signingPackage": "f100000000c3d2051e0257eb8aaee9aa...9844a3e90873a5a5808e83417c336105"
+}
+```
+
+Note that the JSON file can contain other fields, like `commitment`, so you can use the same file throughout the multisig signing flow.
+
+
+

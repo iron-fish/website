@@ -1,0 +1,58 @@
+---
+title: wallet:multisig:dealer:create
+seo: Wallet Multisig Trusted Dealer Account Creation
+---
+
+Creates a list of account imports from a list of unique participant identities using Trusted Dealer Key Generation.
+
+> **Note**: This process involves generating an authorizing key for the multisig account, and then splitting the key in multiple parts, one for each participant. This means that the Iron Fish node where `wallet:multisig:dealer:create` is run will hold in memory for a brief period of time the full (unsplit) authorizing key, which allows authorization of transactions. For this reason it is important that the dealer node is fully trusted, and that it runs in a secure compute environment. If an eavesdropper is able to get access to the internal memory of the machine where the dealer node runs, they may be able to get access to the full (unsplit) authorizing key.
+
+
+# Usage
+
+```sh
+ironfish wallet:multisig:dealer:create
+```
+
+The example below demonstrates how to create account imports for a group of three participants, a minimum number of two signers, and the name `MyMultisigAccount`. Use the [`wallet:multisig:participant:create`](/use/get-started/cli-cmd-wallet-multisig-participant-create) command to create participant identities.
+
+Note that the example truncates account imports for readability.
+
+<Terminal command="ironfish wallet:multisig:dealer:create \
+-i 72c9f4746cc76d8a4d6a9a065fa78902cf6213842434e6de188cd5af04dec1022a3938c5e795f59b26b61600779f98650d784ff9f9c62d7b90d86ee15508ab16293a9b7b6de2851c1dc3bfc763fa5a4929ee284699ad984207df46cec8704c95f6e1e8a484df477b89d9e9cc8e14a859086868f618d971e256189e18afaa308a0b \
+-i 72f64a2091abae9d5e46f16afcdff4cf4fd0acb593a006f60b61ca23656bc86fcb3aa013e98cc967f91d38e6ce62e607aaa0f63749ac510fd7c24451156ef54e1566d168a2f9e67518747f889713e688e986dd0d09a3eaab06be458da8b930f4dab2714c99d3b1961642c7c207bbd42b8159e8dbcd92efab95930c2d68a3bec307 \
+-i 724921060d33a228e1f397573d1cbc47c219109350ca222b0e0a0ba612438a2decb3deca348420b66f685dacca5fd3bd84e4d080493a061984b1dd5a41d8138e01726991d9d959067bd3afe9630c325365ee98bc0b4b6d7087e295d1706dc19aa7317e5f2fcabb4f76edc5a5732400b8bda2240138a069d9e845258ef2464fff08 \
+-m 2 \
+-n MyMultisigAccount
+"
+  output={`
+Account 1
+Identity 72c9f4746cc76d8a4d6a9a065fa78902cf6213842434e6de188cd5af04dec1022a3938c5e795f59b26b61600779f98650d784ff9f9c62d7b90d86ee15508ab16293a9b7b6de2851c1dc3bfc763fa5a4929ee284699ad984207df46cec8704c95f6e1e8a484df477b89d9e9cc8e14a859086868f618d971e256189e18afaa308a0b
+----------------
+ifmsaccountnkRNm3IPBUK0BBz/sQg+Z4JuffsYKMQBeZ82hLnORggBAAAAlWi21Y+hl2hAO0Fun38bpSSYgbe8offURRTct6Scitu5CgAAnZFZy1WrH6zS6Ymvv6IWM...
+
+
+
+Account 2
+Identity 72f64a2091abae9d5e46f16afcdff4cf4fd0acb593a006f60b61ca23656bc86fcb3aa013e98cc967f91d38e6ce62e607aaa0f63749ac510fd7c24451156ef54e1566d168a2f9e67518747f889713e688e986dd0d09a3eaab06be458da8b930f4dab2714c99d3b1961642c7c207bbd42b8159e8dbcd92efab95930c2d68a3bec307
+----------------
+ifmsaccount6EkhMoZjM5pi/TzlJQIXDb2PCTRtpLlk+OmpBVZ0wHMBAAAAE0rqF3zwTQ1uKm4sX42rdgCnbg5eg12jpTllJFxJpky5CgAA4XvpWm/CWkGpmDqgXO3EJ...
+
+
+
+Account 3
+Identity 724921060d33a228e1f397573d1cbc47c219109350ca222b0e0a0ba612438a2decb3deca348420b66f685dacca5fd3bd84e4d080493a061984b1dd5a41d8138e01726991d9d959067bd3afe9630c325365ee98bc0b4b6d7087e295d1706dc19aa7317e5f2fcabb4f76edc5a5732400b8bda2240138a069d9e845258ef2464fff08
+----------------
+ifmsaccountAKLQe4HMT9QpBO9Kls3NHIstM05KO01NUFZb3RicZCwBAAAAgq3GMK8peqPmGFW+q/xyYhHsVAE1PUkSpHKu+gX7kVi5CgAA7sDEk6AaayQmo89XY4WMS...
+
+  `}
+/>
+
+# Flags
+
+| Flag | Description | Default |
+| ---- | ----------- | ------- |
+| `-c, --importCoordinator` |  Import a view-only 'coordinator' account after creating key packages | `true` |
+| `-i, --identity` |  Identity of a participant ||
+| `-m, --minSigners` |  Minimum number of signers to meet signing threshold ||
+| `-n, --name` | Name to use for the coordinator account ||

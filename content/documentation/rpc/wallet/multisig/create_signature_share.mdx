@@ -1,0 +1,25 @@
+---
+title: wallet/multisig/createSignatureShare
+description: RPC Multisig | Iron Fish Documentation
+---
+
+Creates a signature share for a participant for a given signing package. After this step, the signatures are collected and used by the [wallet/multisig/aggregateSignatureShares](/developers/documentation/rpc/wallet/multisig/aggregate_signature_shares) RPC to create the final signed transaction.
+
+#### Request
+
+```ts
+{
+  account?: string
+  signingPackage: string
+}
+```
+
+#### Response
+
+```ts
+{
+  signatureShare: string
+}
+```
+
+###### [View on Github](https://github.com/iron-fish/ironfish/blob/master/ironfish/src/rpc/routes/wallet/multisig/createSignatureShare.ts)

@@ -1,12 +1,18 @@
 import fs from "fs";
 import path from "path";
+import lunr from "lunr";
 import {
   ContentItem,
   createContentItems,
 } from "./createContentItems/createContentItems";
-import lunr from "lunr";
+import {
+  buildNormalizedHyphens,
+  registerNormalizeHyphens,
+} from "./utils/normalizeHyphens";
 
 const INDEXES_DIR = path.join(process.cwd(), "search", "indexes");
+
+registerNormalizeHyphens();
 
 async function buildSearchIndex(
   content: Array<{
@@ -25,6 +31,8 @@ async function buildSearchIndex(
   contentIndex = contentIndex.flat();
 
   const searchIndex = lunr(function () {
+    this.use(buildNormalizedHyphens);
+
     this.field("title");
     this.field("ref");
     this.field("category");
@@ -44,6 +52,7 @@ async function buildSearchIndex(
 async function main() {
   console.log("Generating search indices...");
   console.time("Generated search indices in ");
+
   const documentationIndex = await buildSearchIndex([
     {
       contentDir: ["content", "documentation"],

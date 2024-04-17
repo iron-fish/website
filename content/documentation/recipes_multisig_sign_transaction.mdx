@@ -1,0 +1,158 @@
+---
+title: Signing Transactions with Multisig Accounts
+description: Recipes | Multisig | Signing Transactions with Multisig Accounts | Iron Fish Documentation
+---
+
+**Learn how to create multisignature accounts [here](./recipes_multisig_create_account).**
+
+Once you have created the multisignature accounts, signing a transaction involves the following steps: 
+1. Create an unsigned transaction for participants to sign
+2. Create the signing commitment (performed by each participant)
+3. Aggregate the signing commitments to create the signing package (performed by a coordinator)
+4. Create signature shares using the signing package (performed by each participant)
+5. Aggregate the signature shares to create the final signed transaction (performed by a coordinator)
+
+In the examples below, we will be signing a transaction with 2 of 2 multisig accounts.
+
+## Create the unsigned transaction
+
+Any account in the multisig group (or a view-only account that possesses the group view keys) can initiate sending a transaction by generating an "unsigned transaction". A raw transaction contains the parameters of a transaction, like which notes will be spent, which notes will be created, and who will own the notes. An unsigned transaction contains pre-computed zero-knowledge proofs in its spend, output, mint, and burn descriptions, but lacks the authorizing signature required for valid spends and mints.
+
+The example below shows how to create a raw transaction to send 10 $ORE to two addresses and then generate an unsigned transaction from that raw transaction:
+
+```js
+import { Asset } from '@ironfish/rust-nodejs'
+import {
+  BuildTransactionRequest,
+  CreateTransactionRequest,
+  CurrencyUtils,
+  IronfishSdk,
+} from '@ironfish/sdk'
+
+async function main(): Promise<void> {
+  const sdk = await IronfishSdk.init({ dataDir: '~/.dev0' });
+  const client = await sdk.connectRpc();
+
+  const accountName = 'MyMultisigAccount';
+
+  // Create the raw transaction
+  const createOptions: CreateTransactionRequest = {
+    account: accountName,
+    outputs: [
+      {
+        publicAddress: 'b28b5d5a629b57f15e73ee6040efe9a8a0abca54a439e9ef5a8686b5765684ee',
+        amount: CurrencyUtils.encode(10n),
+        memo: '',
+        assetId: Asset.nativeId().toString('hex'),
+      },
+      {
+        publicAddress: '34ba96315e36de52a3138475776f91df215ebbd868757c61a32dfe34563bd51f',
+        amount: CurrencyUtils.encode(10n),
+        memo: '',
+        assetId: Asset.nativeId().toString('hex'),
+      },
+    ],
+    fee: CurrencyUtils.encode(1n),
+    // don't expire until 60 blocks from the current chain head to allow enough time for signing
+    expirationDelta: 60,
+  };
+
+  const createResponse = await client.wallet.createTransaction(createOptions);
+  const rawTransaction = createResponse.content.transaction;
+
+  // Build the raw transaction to create an unsigned transaction
+  const buildOptions: BuildTransactionRequest = {
+    account: accountName,
+    rawTransaction,
+  };
+
+  const buildResponse = await client.wallet.buildTransaction(buildOptions);
+  console.log(buildResponse.content.unsignedTransaction);
+}
+```
+
+**Tip:** Make sure the unsigned transaction has a sufficient expiration time to allow for the completion of the signing process. The expiration can be set to 0 to ensure the transaction never expires. 
+
+## Create the signing commitment 
+
+Once the participants agree on the contents of a transaction and who is going to participate in signing, each participant will create a signing commitment. 
+
+The identities of the participant and the unsigned transaction are required to generate a commitment. 
+
+```js
+import { multisig } from '@ironfish/rust-nodejs'
+
+const participantIdentities = [
+    "723729d1b6af022a4c5d67e126a3a797...63ec486317bd1e72b8628e6116340304",
+    "72c60942feac595aa83bb0856c264dfc...af2708a2961ef6c9e15541e288dcad03"
+]
+
+const participantCommitment = multisig.createSigningCommitment( 
+    participantAccount.multisigKeys.secret,
+    participantAccount.multisigKeys.keyPackage,
+    unsignedTransaction.hash(),
+    participantIdentities,
+)
+```
+
+## Aggregate the signing commitments to create the signing package
+
+Once all participants have created their signing commitments, the commitments are aggregated to create the signing package.
+
+**Note:** This action can be performed by any participant or the coordinator.
+
+```js
+import { UnsignedTransaction } from '@ironfish/rust-nodejs'
+
+const unsignedTransactionData = "01010000000000000002000000000000...9f3fb432907a84c8483586a6a565d308"
+
+const unsignedTransaction = new UnsignedTransaction(
+    Buffer.from(unsignedTransactionData, 'hex'),
+)
+
+const participantCommitments = [
+    "723f415e10ec47955036105834ab7dcc...342022941ff351bd60723b9a9aa2d29a",
+    "721cb9582cec837588df0b08d77d4870...abc27377671c68323af864b57b718380"
+]
+
+const signingPackage = unsignedTransaction.signingPackage(participantCommitments)
+```
+
+## Create signature shares
+
+Once the signing package is created and distributed to all participants, each participant can create a signature share using their secret key and the signing package.
+
+```js
+import { multisig } from '@ironfish/rust-nodejs'
+
+const participantSignature = multisig.createSignatureShare(
+    participantAccount.multisigKeys.secret,
+    participantAccount.multisigKeys.keyPackage,
+    signingPackage,
+)
+```
+
+## Aggregate the signature shares to create the signed transaction
+
+Once all participants have created their signature shares, the shares are aggregated to create the final signed transaction.
+
+**Note:** This action can be performed by any participant or the coordinator.
+
+```js
+import { multisig } from '@ironfish/rust-nodejs'
+
+const participantSignatures = [
+    "723f415e10ec47955036105834ab7dcc...be94dd1ae640f3fcf8bddb9478a0cb02", 
+    "721cb9582cec837588df0b08d77d4870...ad47e9f3ba751c77ec7530708d1d2b07"
+]
+
+const serialized = multisig.aggregateSignatureShares(
+    coordinatorAccount.multisigKeys.publicKeyPackage,
+    signingPackage,
+    participantSignatures,
+)
+
+const transaction = new Transaction(serialized)
+```
+
+

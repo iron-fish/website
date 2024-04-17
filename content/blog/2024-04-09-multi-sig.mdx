@@ -1,0 +1,94 @@
+---
+author: iflabs
+title: "Announcing private multi-sig transactions"
+description: "Fully private multi-sig transactions in Iron Fish."
+image: /images/blog/multisig.png
+tags: [ironfish, iron fish, multi-sig, multi sig, multi-sig walelts]
+---
+Today we’re excited to announce the support for multisignature transactions. In this article, we’ll talk about what multisig transactions are, how they work, and how to use them with Iron Fish.
+
+# Introduction
+
+Imagine you are safeguarding a precious family heirloom. Instead of keeping the cherished goods in a locked box with one key, you use a safe-box with multiple locks and distribute the keys to trusted family members.
+
+Multisignature transactions, often referred to as multisig, operate on a similar principle in the world of blockchain security. Traditional transactions by default rely on a single signature to authorize some action (ex. transferring funds or minting a new token). As the name suggests, multisignature transactions require multiple signatures produced by distinct parties in order to authorize a transaction to ensure that no single entity can perform a malicious action.
+
+Just as entrusting the family heirloom to multiple trusted relatives adds layers of security, multisignature transactions have risen as a major step in improving security in the cryptocurrency industry by dispersing control among multiple signers.
+
+# Why are multisigs necessary?
+
+The cryptocurrency industry is a landscape regularly susceptible to hacking, theft, unauthorized access, and even misplaced private keys. Some of the most popular examples are:
+
+1. **QuadrigaCX**: 
+    
+    QuadrigaCX was once the largest cryptocurrency exchange in Canada which collapsed in 2019 soon after the sudden passing of its CEO, Gerald Cotten. It was soon revealed that Cotten had sole control over the exchange’s cold storage wallets, and the private keys were never shared with others board members. As a result, approximately $190M worth of assets were inaccessible, leaving many customers unable to recover their assets.
+    
+2. **Coincheck**:
+    
+    Coincheck was one of Japan’s largest cryptocurrency exchanges which experienced a hack of $500M+ in 2018. The company’s executives informed the public that the cause was the compromise of a single private key for a hot wallet, which made it an attractive target for attackers and enabled the hackers to steal funds. 
+    
+
+Multisignature transactions offer a myriad of benefits, chief among them being enhanced security. By distributing control of funds among multiple parties, multisignature wallets mitigate the risks associated with a single point of failure. This significantly reduces the likelihood of unauthorized access and could have been a strong defense against some of the notable thefts.
+
+<aside>
+🏕️ Iron Fish’s mission is to be the privacy platform for the cryptocurrency ecosystem, and supporting multisig is a catalyst to integrating with bridge operators, exchanges, and other chains.
+</aside>
+
+# Who should use it?
+
+Multisignature transactions can be used by anyone and can cater to a diverse range of users. Some of the key target users of multisig include:
+
+1. **Cryptocurrency Exchanges**
+    
+    Exchanges tend to be a prime target for hackers simply due to the large volume of assets they hold on behalf of their users. Multisignature transactions enable these exchanges to lock down customer funds and can be an extra layer of protection to avoid misuse of funds.
+    
+2. **DAOs**
+    
+    DAOs are decentralized autonomous organizations which are governed by smart contracts and governed by token holders. Multisignature wallets play a crucial role in governance by mandating consensus among a minimum quorum of participants, fostering transparency and accountability. 
+    
+3. **Escrow Services**
+    
+    Platforms offering escrow services (such as bridge operators) can leverage multisignature transactions to help make transactions more trustless among parties. By requiring a threshold of signatures to release funds or perform an action, multisig can help ensure that locked funds are not fraudulently managed.
+    
+4. **Individual Investors**
+    
+    While multisig transactions tend to be more popular for corporate entities to manage funds securely, cryptocurrency enthusiasts who prioritize security can opt for storing assets in a multisignature wallet. By storing individual private key packages separately, multisig can be used for individual traders to add an extra layer of protection against omnipresent online hacks.
+    
+
+# How does it work?
+
+Iron Fish now supports multisignature transactions via the Flexible Round-Optimized Schnorr Threshold (FROST) Protocol. This protocol leverages the Schnorr signature scheme, where any group of *T* or more participants of a group of *N* total signers can produce signatures on behalf of the group. One interesting aspect of these signatures is that they are indistinguishable from the traditional single signatures used in Iron Fish, so no hard fork is necessary.
+
+Iron Fish utilizes Trusted Key Dealer generation to split existing keys. Here is how it works:
+
+1. **Participant Creation**
+    
+    Parties who are part of the multisig signing group create private secrets and public identities.
+    
+2. **Key Generation**
+A single coordinator takes the private key that needs to be split up, a minimum threshold of signers, and the signer identities created in step 1 to create encrypted pieces of data that are sent to each participant. Each participant decrypts these packages with a stored secret and imports a view-only account that can produce a partial signature.
+3. **Unsigned Transaction Creation**
+When the multisignature transaction is first initiated, a participant in the signing group builds all the transaction descriptions and associated proofs into an unsigned transaction.
+4. **Signing Commitment Creation**
+Each participant who wants to sign the transaction produces a signing commitment for the provided unsigned transaction. These signing commitments are authenticated with a signature that can be verified with the public identity.
+5. **Signing Package Creation**
+All the signing commitments are verified and aggregated with the unsigned transaction to produce a signing package.
+6. **Signature Share Creation**
+Each participant uses their initially created secret and imported key package to produce an individual signature share for the signing package.
+7. **Signature Share Aggregation and Verification**
+All the signature shares are aggregated to produce a signed transaction. The transaction signature is verified and can be now broadcasted to the network.
+
+![Signing.svg](/images/blog/Signing.svg)
+
+## What’s next?
+
+Multisignature transactions with a trusted dealer for key generation is the simplest to get started with FROST and offers a lot of flexibility, but requires one party to coordinate this process and store the entire private key for some amount of time. 
+
+The multisig feature will be expanded to include Distributed Key Generation (DKG) which decentralizes the key generation process and eliminates the need for a single party to manage splitting up a private key. DKG is a multi-step protocol which enables each participant to hold their secret share without the full private key ever being materialized.
+
+## Conclusion
+
+As the cryptocurrency ecosystem continues to evolve, embracing innovative solutions like multisignature transactions is crucial to fortifying the foundations of security and trust. Whether for individuals, businesses, or financial institutions, the adoption of multisignature technology heralds a new era of secure and transparent financial transactions in the digital age.
+
+You can start using multisignature transactions by updating `ironfish` to `v2.1.0`. We have uploaded a [recipe](https://ironfish.network/developers/documentation/recipes_multisig_create_account) on how to get started and updated our [CLI documentation](https://ironfish.network/use/get-started/multisig-creation) with all the available multisig commands.
+

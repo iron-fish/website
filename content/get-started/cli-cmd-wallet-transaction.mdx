@@ -2,3 +2,41 @@
 title: wallet:transaction
 seo: Wallet Transactions Command
 ---
+
+Displays information about the transaction such as the status, type, timestamp, fee, notes, spends, mints, burns, and asset balance deltas.
+
+<Terminal
+  command="ironfish wallet:transaction e4deaeaea4db793bef3d8df9e528a9a0b937290db4b7c2f5a83e1afea64873a0 default"
+  output={`
+Transaction: e4deaeaea4db793bef3d8df9e528a9a0b937290db4b7c2f5a83e1afea64873a0
+Account: default
+Status: pending
+Type: send
+Timestamp: 3/18/2024 2:11:21 PM PDT
+Fee: $IRON 0.00000010
+Notes Count: 2
+Spends Count: 1
+Mints Count: 0
+Burns Count: 0
+Sender: f37bfa72e6e0986e1fd40c98d97fd73e2ba659dd2ff842642dce120eb9e39703
+
+---Notes---
+
+ Amount Asset Name Asset Id Spent Memo Owner Address
+ ────── ────────── ──────── ───── ──── ─────────────
+ 19.99… $IRON      51f33a2… x          f37bfa72e6e0…
+ 0.000… $IRON      51f33a2… x     fun… 9234a26b1211…
+
+---Spends---
+
+ Size Nullifier Commitment
+ ──── ───────── ────────────────────────────────
+ 3664 620b1539… 43c1db0cfe9a6c4c07306e1546581ab…
+
+---Asset Balance Deltas---
+
+ Asset ID                         Balance Change
+ ──────────────────────────────── ──────────────
+ 51f33a2f14f92735e562dc658a56392… -20
+`}
+/>

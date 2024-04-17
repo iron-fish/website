@@ -1,0 +1,55 @@
+---
+title: Creating Multisig Accounts
+description: Recipes | Multisig | Creating Multisig Accounts | Iron Fish Documentation
+---
+
+Iron Fish supports multisig accounts using FROST, a threshold signature scheme.
+
+### Creating participant identities
+
+Each signer or participant in a multisig account must have a unique identity. The participant identity is a public key derived from a participant's secret key and allows other participants to encrypt data before sending it.
+
+The example below shows how to generate a random signer identity using the Iron Fish SDK:
+
+```js
+import { multisig } from '@ironfish/rust-nodejs'
+
+const secret = multisig.ParticipantSecret.random()
+const identity = secret.toIdentity()
+```
+
+You can also use the [`wallet/multisig/createParticipant`](/developers/documentation/rpc/wallet/multisig/create_participant) RPC to create a participant identity and store the participant secret key in the wallet.
+
+### Generating multisig accounts
+
+Once all participants have created and shared their identities you can create a multisig account for the list of participant identities using Trusted Dealer Key Generation. When creating an account the trusted dealer must also specify the minumum number of signers required to sign a transaction.
+
+In the example below we use the Iron Fish SDK to create 'key packages' for each of a list of participant identities.
+
+```js
+import { multisig } from '@ironfish/rust-nodejs'
+
+const minSigners = 2
+const identities = [
+  "723729d1b6af022a4c5d67e126a3a797...63ec486317bd1e72b8628e6116340304",
+  "72c60942feac595aa83bb0856c264dfc...af2708a2961ef6c9e15541e288dcad03"
+]
+
+const {
+  publicAddress,
+  publicKeyPackage,
+  viewKey,
+  incomingViewKey,
+  outgoingViewKey,
+  proofAuthorizingKey,
+  keyPackages,
+} = multisig.generateAndSplitKey(minSigners, identities)
+```
+
+The `publicAddress`, `publicKeyPackage`, `viewKey`, `incomingViewKey`, `outgoingViewKey`, and `proofAuthorizingKey` in the example are all shared keys for the multisig account. `keyPackages` contains one key package per participant and contains the participant's share of the signing key.
+
+
+You can also use the [`wallet/multisig/createTrustedDealerKeyPackage`](/developers/documentation/rpc/wallet/multisig/create_trusted_dealer_key_package) RPC to generate account imports for each participant. Each account import is encrypted using the participant's identity, so only the participant can decrypt and import their signing share.
+
+
+> **Note**: This process involves generating an authorizing key for the multisig account, and then splitting the key in multiple parts, one for each participant. This means that the Iron Fish node where `generateAndSplitKey()` or `wallet/multisig/createTrustedDealerKeyPackage` is run will hold in memory for a brief period of time the full (unsplit) authorizing key, which allows authorization of transactions. For this reason it is important that the dealer node is fully trusted, and that it runs in a secure compute environment. If an eavesdropper is able to get access to the internal memory of the machine where the dealer node runs, they may be able to get access to the full (unsplit) authorizing key.

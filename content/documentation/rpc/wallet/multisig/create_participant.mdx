@@ -1,0 +1,24 @@
+---
+title: wallet/multisig/createParticipant
+description: RPC Wallet | Iron Fish Documentation
+---
+
+To create a new key pair for participating in a multisig signing group. Returns the identity of the new participant.
+
+#### Request
+
+```ts
+{
+   name: string
+}
+```
+
+#### Response
+
+```ts
+{
+  identity: string
+}
+```
+
+###### [View on Github](https://github.com/iron-fish/ironfish/blob/master/ironfish/src/rpc/routes/wallet/multisig/createParticipant.ts)
