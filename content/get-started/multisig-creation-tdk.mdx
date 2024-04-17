@@ -1,7 +1,11 @@
 ---
-title: Create a multisig account
+title: Trusted Dealer Key Generation
 seo-title: Multisig Accounts
 ---
+
+Iron Fish supports two methods for creating multisig accounts: Trusted Dealer Key Generation and [Distributed Key Generation (DKG)](/use/get-started/multisig-creation-dkg). In Trusted Dealer Key Generation a single party, the trusted dealer, generates accounts for participants in a multisig group by generating an authorizing key for the account and then splitting it into multiple parts; one for each participant.
+
+> **Note**: This means that the Iron Fish node where `wallet:multisig:dealer:create` is run will hold in memory for a brief period of time the full (unsplit) authorizing key, which allows authorization of transactions. For this reason it is important that the dealer node is fully trusted, and that it runs in a secure compute environment. If an eavesdropper is able to get access to the internal memory of the machine where the dealer node runs, they may be able to get access to the full (unsplit) authorizing key.
 
 ### Create a participant identity
 
@@ -20,8 +24,6 @@ Once all participants have created and shared their identities you can create a 
 ```sh
 ironfish wallet:multisig:dealer:create
 ```
-
-> **Note**: This process involves generating an authorizing key for the multisig account, and then splitting the key in multiple parts, one for each participant. This means that the Iron Fish node where `wallet:multisig:dealer:create` is run will hold in memory for a brief period of time the full (unsplit) authorizing key, which allows authorization of transactions. For this reason it is important that the dealer node is fully trusted, and that it runs in a secure compute environment. If an eavesdropper is able to get access to the internal memory of the machine where the dealer node runs, they may be able to get access to the full (unsplit) authorizing key.
 
 Example:
 <Terminal command="ironfish wallet:multisig:dealer:create \
