@@ -4,6 +4,7 @@ import { removeMarkdown } from "@/lib/markdown/src/removeMarkdown";
 import lunr from "lunr";
 import { NextApiRequest, NextApiResponse } from "next";
 import documentationSearchIndex from "@/search/indexes/documentation-index.json";
+import { unhyphenateWords } from "@/search/utils/unhyphenateWords";
 
 export default async function handler(
   req: NextApiRequest,
@@ -19,7 +20,9 @@ export default async function handler(
 
   const maxResults = isNaN(Number(max)) ? 10 : Number(max);
 
-  const searchResults = lunrIndex.search(q).slice(0, maxResults);
+  const searchResults = lunrIndex
+    .search(unhyphenateWords(q))
+    .slice(0, maxResults);
 
   let formattedResults: Array<{
     title: string;
