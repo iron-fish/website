@@ -78,6 +78,7 @@ export const sidebar: SidebarDefinition = [
                 items: [
                   "cli-cmd-wallet-multisig-dkg-round1",
                   "cli-cmd-wallet-multisig-dkg-round2",
+                  "cli-cmd-wallet-multisig-dkg-round3",
                 ],
               },
             ],
