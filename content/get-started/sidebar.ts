@@ -18,7 +18,11 @@ export const sidebar: SidebarDefinition = [
   "transactions",
   {
     label: "Multisig Accounts",
-    items: ["multisig-creation", "multisig-signing"],
+    items: [
+      "multisig-creation-tdk",
+      "multisig-creation-dkg",
+      "multisig-signing",
+    ],
   },
   "mining",
   {
