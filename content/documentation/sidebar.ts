@@ -30,6 +30,7 @@ export const sidebar: SidebarDefinition = [
         label: "Multisig",
         items: [
           "recipes_multisig_create_account",
+          "recipes_multisig_create_account_dkg",
           "recipes_multisig_sign_transaction",
         ],
       },
