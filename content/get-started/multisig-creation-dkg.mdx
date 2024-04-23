@@ -19,7 +19,7 @@ The participant identity uniquely identifies the participant in the group. The i
 
 Once all participants have created and shared their identities each participant must perform round 1 of the DKG protocol. During round 1 each participant must specify the full list of participant identities in the group and the minimum number of signers required to authorize a transaction.
 
-Each participant must also specify the name of the secret that they will use to decrypt messages during DKG. This should be the name that they used when creating an identity in the first step.
+Each participant must also specify the name of the participant identity that they will use during DKG. This should be the name that they used when creating an identity in the first step.
 
 
 ```sh
@@ -28,7 +28,7 @@ ironfish wallet:multisig:dkg:round1
 
 Example:
 <Terminal command="ironfish wallet:multisig:dkg:round1 \
---secretName MyMultisig \
+--participantName MyMultisig \
 -i 722f8ce1ff2e73f83604eab390826c2ca63ae37fdf5e9b5d1b8e99bc5351892e23ce2f6e90ca158d8a3929358225936ed749bca009fb5b94c9ed0b44f9b7202b11239a85ab24eee287b1158a51b533c2db2e5e90e9c43480be536bb3fdc7f8f9c5b485c54cbd636b057c5009515b409b5fd7e460b0b04efa3650a6e8298ae91406 \
 -i 72b77943a1af7d0b6dcf0f281d7eb57dcc0540930da6f3c330c1dcf71789dfea2113149ef55e69fc6cb6855435821fe83031c253e26b2499f6d6989984230c962db98971be7aae233c302a3a44cfd17d957e9666f58e31c073b76ee2f4b72cb72f92fce80df70956c591d72013cf3a578587a6e403361138cf7e5960fab304f501 \
 -m 2 \
@@ -43,7 +43,7 @@ Public Package:
   `}
 />
 
-The command above outputs an Encrypted Secret Package, which can only be decrypted using the secret that the participant specified, and a Public Package.
+The command above outputs an Encrypted Secret Package, which can only be decrypted using the secret corresponding to the participant name that the participant specified, and a Public Package.
 
 Each participant must share the Public Package with each of the other participants in the group.
 
@@ -51,7 +51,7 @@ Each participant must share the Public Package with each of the other participan
 
 After all participants have run `round1` and shared their Public Packages with all participants in the group each participant can perform round 2 of the DKG protocol. 
 
-In round 2 each participant inputs their secret name, their own Encrypted Secret Package from round 1, and *all* Public Packages from round 1 (including their own).
+In round 2 each participant inputs their participant name, their own Encrypted Secret Package from round 1, and *all* Public Packages from round 1 (including their own).
 
 ```sh
 ironfish wallet:multisig:dkg:round2
@@ -59,7 +59,7 @@ ironfish wallet:multisig:dkg:round2
 
 Example:
 <Terminal command="ironfish wallet:multisig:dkg:round2 \
---secretName MyMultisig \
+--participantName MyMultisig \
 -e 96934f206374d5e61a0517f5c9d21cb77776b4d9e49446c6490d098481b52c4c01000000f7e8a7fbd4c792102993ba73a17fe4c329fd208aafa0d22d4ece3b061247297cbc000000a37ba23225a4f719af8c8797603dfb3985bd845e43f8d14906737d28063be9c15b9a1084e3cb35cfa5e18525ab6ad1b4a9dcb07e98e365bf55c065d464892fde8a095db775e0a0d341fcdae767752564d0c87d9a34621cb5e2d7cb2f198b576a89a529a0682915297d6766cf7af29145e61af4bbffd871671936edd20f08436a2c75dcd28e1bcd691b0fbb40945445ebb9135ede46c5b4f480957681b802837f4d6ab17c1ce823ff81ad11986303cf5db2c4939e15b2ba6cca8020b2 \
 -p 722f8ce1ff2e73f83604eab390826c2ca63ae37fdf5e9b5d1b8e99bc5351892e23ce2f6e90ca158d8a3929358225936ed749bca009fb5b94c9ed0b44f9b7202b11239a85ab24eee287b1158a51b533c2db2e5e90e9c43480be536bb3fdc7f8f9c5b485c54cbd636b057c5009515b409b5fd7e460b0b04efa3650a6e8298ae914068700000000c3d2051e021988d7101e92a49d8fd613ec59fbf13fcf969379664b914d78e998b35b60b9c322c7c02919678e3363d2e9e72df8a9b38318b95de95c354efff6926728e7979a40dff243a3e454c54625626ef9049a878b0e86c361888bb1e656c0b489a1eaddab2c69f0142a54510ba882835d27c20cd534f55340c27d5dca36449f04d987a404e6916ecb4e5ad3891de0a543e5a6bb135ec6512b91f0b561ec17110cc117657002000000141ce04290bdd911f95426dffbb260000071c7cad735f89ac915fe0dc5a2992d49ef4e8bf52c474f7f2126803c0304c569043c51d380973709738eac865378223000000077d8ea9b69b06d511b8cd0b0c55ab2935d6d6b35f7d718c230d16d2c7ae7f889f5b72f63f7e0bbe164629bd25d6ce03d2561b06cd1fa9c0f \
 -p 72b77943a1af7d0b6dcf0f281d7eb57dcc0540930da6f3c330c1dcf71789dfea2113149ef55e69fc6cb6855435821fe83031c253e26b2499f6d6989984230c962db98971be7aae233c302a3a44cfd17d957e9666f58e31c073b76ee2f4b72cb72f92fce80df70956c591d72013cf3a578587a6e403361138cf7e5960fab304f5018700000000c3d2051e02eb346711bcc12dc6377d706c21b3cd21bb3ef30f451c22a75e49b86a779a79672741dd0fc7d8994353a42b2e4132f3cffd4eef64280f08a7d25df39c31ea1cb4405b72979d862fe51226cdc4c03659f8d79c3ef3a9aa6069f200cf7e4cb9157c3bd7ff098c775a5bd99ef8438941be2670955734b50fdf02268e2ef83b9cc6e30319ec4f40d77615aab9df530a499d44a5b6cdc372b9eb953d95ec31634d4dc06602000000c624216a75cbe8d3235220205f0f09d8d84acc66989bc27a64b6c512b2846d42e5fd9f14ac44b3690d4108a00a6a3dc2735ef12aad9f64847e3a7ca7ec78e1fe300000004623d75c58facc2c948a8ce5779b96acdcf0f9ceeba6ecb2547f4b5abb522a948480c26697a6be3067d1511aaef5f2b42561b06cd1fa9c0f
@@ -76,7 +76,7 @@ Public Package:
   `}
 />
 
-The `round2` command outputs an Encrypted Secret Package, which can only be decrypted using the secret that the participant specified, and a Public Package.
+The `round2` command outputs an Encrypted Secret Package, which can only be decrypted using the secret corresponding to the participant name that the participant specified, and a Public Package.
 
 Each participant must share the Public Package with each of the other participants in the group.
 
@@ -84,7 +84,7 @@ Each participant must share the Public Package with each of the other participan
 
 Once all participants have run `round3` and shared the Public Packages that they generated with the corresponding participants, all participants can run round 3 of the DKG protocol. Round 3 is the final round of the protocol, and after running it each participant will have a new account in their wallet for the multisig group.
 
-Round 3 requires that each participant input their secret name, the Encrypted Secret Package that they generated in round 2, _all_ Public Packages from round 1 (including their own), and all Public Packages that they received after round 2.
+Round 3 requires that each participant input their participant name, the Encrypted Secret Package that they generated in round 2, _all_ Public Packages from round 1 (including their own), and all Public Packages that they received after round 2.
 
 ```sh
 ironfish wallet:multisig:dkg:round3
@@ -92,7 +92,7 @@ ironfish wallet:multisig:dkg:round3
 
 Example:
 <Terminal command="ironfish wallet:multisig:dkg:round2 \
---secretName MyMultisig \
+--participantName MyMultisig \
 -e 581f93d2cfb2ee8ee41407fe9fa2b92d72145473da1f86cbeb55b8af1610b46a01000000d67a0f27972dbbcb89381f8a3edfdf6e08c91f64d899d9d211f32513050687d6980000000c5c7ae8ae69e3f49a28507417b4fe11c61fbf6b8e4a922a4117a78e110575384d25129d76c38cf078415fc9ba3bdb8195e96486a6a13d4becfe9c48828d8ab059571df0946860bdf87cd0fb7006b8de9fced1c672e1e1a87d7f2b0b294f8daba69e86f47d497fc647315cc1b7a9eba7e12e5742b2d7c6aa8866f1154bc06e576d2f166d5387196ffe1f9415e30e7994da32bd078ef77258 \
 -p 722f8ce1ff2e73f83604eab390826c2ca63ae37fdf5e9b5d1b8e99bc5351892e23ce2f6e90ca158d8a3929358225936ed749bca009fb5b94c9ed0b44f9b7202b11239a85ab24eee287b1158a51b533c2db2e5e90e9c43480be536bb3fdc7f8f9c5b485c54cbd636b057c5009515b409b5fd7e460b0b04efa3650a6e8298ae914068700000000c3d2051e021988d7101e92a49d8fd613ec59fbf13fcf969379664b914d78e998b35b60b9c322c7c02919678e3363d2e9e72df8a9b38318b95de95c354efff6926728e7979a40dff243a3e454c54625626ef9049a878b0e86c361888bb1e656c0b489a1eaddab2c69f0142a54510ba882835d27c20cd534f55340c27d5dca36449f04d987a404e6916ecb4e5ad3891de0a543e5a6bb135ec6512b91f0b561ec17110cc117657002000000141ce04290bdd911f95426dffbb260000071c7cad735f89ac915fe0dc5a2992d49ef4e8bf52c474f7f2126803c0304c569043c51d380973709738eac865378223000000077d8ea9b69b06d511b8cd0b0c55ab2935d6d6b35f7d718c230d16d2c7ae7f889f5b72f63f7e0bbe164629bd25d6ce03d2561b06cd1fa9c0f \
 -p 72b77943a1af7d0b6dcf0f281d7eb57dcc0540930da6f3c330c1dcf71789dfea2113149ef55e69fc6cb6855435821fe83031c253e26b2499f6d6989984230c962db98971be7aae233c302a3a44cfd17d957e9666f58e31c073b76ee2f4b72cb72f92fce80df70956c591d72013cf3a578587a6e403361138cf7e5960fab304f5018700000000c3d2051e02eb346711bcc12dc6377d706c21b3cd21bb3ef30f451c22a75e49b86a779a79672741dd0fc7d8994353a42b2e4132f3cffd4eef64280f08a7d25df39c31ea1cb4405b72979d862fe51226cdc4c03659f8d79c3ef3a9aa6069f200cf7e4cb9157c3bd7ff098c775a5bd99ef8438941be2670955734b50fdf02268e2ef83b9cc6e30319ec4f40d77615aab9df530a499d44a5b6cdc372b9eb953d95ec31634d4dc06602000000c624216a75cbe8d3235220205f0f09d8d84acc66989bc27a64b6c512b2846d42e5fd9f14ac44b3690d4108a00a6a3dc2735ef12aad9f64847e3a7ca7ec78e1fe300000004623d75c58facc2c948a8ce5779b96acdcf0f9ceeba6ecb2547f4b5abb522a948480c26697a6be3067d1511aaef5f2b42561b06cd1fa9c0f \
