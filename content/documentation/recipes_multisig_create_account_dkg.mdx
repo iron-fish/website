@@ -38,7 +38,7 @@ const participantIdentities = [
   '72c60942feac595aa83bb0856c264dfc...af2708a2961ef6c9e15541e288dcad03', // participant Y
 ]
 
-const { encryptedSecretPackage, publicPackage } = multisig.round1(
+const { round1SecretPackage, round1PublicPackage } = multisig.round1(
   identity,
   minSigners,
   participantIdentities
@@ -67,9 +67,9 @@ const round1PublicPackages = [
   '...',               // round 1 public package from participant Y
 ]
 
-const { encryptedSecretPackage, publicPackages } = multisig.round2(
+const { round2SecretPackage, round2PublicPackage } = multisig.round2(
   secret,
-  encryptedSecretRound1Package,
+  round1SecretPackage,
   round1PublicPackages
 )
 ```
@@ -111,7 +111,7 @@ const {
   proofAuthorizingKey,
 } = multisig.round3(
   secret,
-  round2EncryptedSecretPackage,
+  round2SecretPackage,
   round1PublicPackages,
   round2PublicPackages
 )
@@ -143,7 +143,7 @@ const {
   proofAuthorizingKey,
 } = multisig.round3(
   secret,
-  round2EncryptedSecretPackage,
+  round2SecretPackage,
   round1PublicPackages,
   round2PublicPackages
 )
