@@ -1,0 +1,31 @@
+---
+title: wallet/multisig/aggregateSignatureShares
+description: RPC Multisig | Iron Fish Documentation
+---
+
+Aggregates signature shares for a given signing package to produce a signed transaction. The signed transaction is broadcast to the network by default. 
+
+#### Request
+
+```ts
+{
+  account?: string
+  signingPackage: string
+  signatureShares: Array<string>
+  broadcast?: boolean
+}
+```
+
+The response returns the serialized transaction and boolean flags indicating whether the transaction was accepted into the mempool and whether it was broadcast to the network.
+
+#### Response
+
+```ts
+{
+  accepted: boolean
+  broadcasted: boolean
+  transaction: string
+}
+```
+
+###### [View on Github](https://github.com/iron-fish/ironfish/blob/master/ironfish/src/rpc/routes/wallet/multisig/aggregateSignatureShares.ts)
