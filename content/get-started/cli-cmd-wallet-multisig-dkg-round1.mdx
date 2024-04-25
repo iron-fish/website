@@ -1,0 +1,40 @@
+---
+title: wallet:multisig:dkg:round1
+seo: Wallet Multisig DKG Round One Account Creation
+---
+
+Performs round 1 of the FROST DKG protocol for multisig account creation.
+
+# Usage
+
+```sh
+ironfish wallet:multisig:dkg:round1
+```
+
+The example below demonstrates how to run round 1 of DKG for a group of two participants, a minimum of two signers, and the participant name `participant0`. Use the [`wallet:multisig:participant:create`](/use/get-started/cli-cmd-wallet-multisig-participant-create) command to create participants identities.
+
+<Terminal command="ironfish wallet:multisig:dkg:round1 \
+--participantName participant0 \
+-i 72c9f4746cc76d8a4d6a9a065fa78902cf6213842434e6de188cd5af04dec1022a3938c5e795f59b26b61600779f98650d784ff9f9c62d7b90d86ee15508ab16293a9b7b6de2851c1dc3bfc763fa5a4929ee284699ad984207df46cec8704c95f6e1e8a484df477b89d9e9cc8e14a859086868f618d971e256189e18afaa308a0b \
+-i 72f64a2091abae9d5e46f16afcdff4cf4fd0acb593a006f60b61ca23656bc86fcb3aa013e98cc967f91d38e6ce62e607aaa0f63749ac510fd7c24451156ef54e1566d168a2f9e67518747f889713e688e986dd0d09a3eaab06be458da8b930f4dab2714c99d3b1961642c7c207bbd42b8159e8dbcd92efab95930c2d68a3bec307 \
+-m 2
+"
+  output={`
+Round 1 Encrypted Secret Package:
+
+2a4caa45f8036381348c03ceeb64637648caccea1dcae519a8852448476af23701000000de43f8a679b9385db2219f486146c7cbe33d84a09b7af6bf86ea1253af0959cfbc00000l27b98021bf14d0e22e08ea36cebd6763d3920a8cab886490c48f97014f6eab313b58a1030913272cda2ad9026199632e58f7e629be5c2ac4279288a6a2cf438d1af80d001c440ee52ba58310ca392d924669005d628934d1707a881974e4
+
+
+Round 1 Public Package:
+
+72709fc4f310aab17dc1e7e470e96f90d69ea477910744d2ca47341ff6a0860b217ec2181aa55fb6a38072dfd8976c6306ef41336afef58c8e049df3f9669ca73614eff096e13b12c37e5410465cb1fbed0f8700000000c3d2051e0232419d7395ecb0d63a0fb4a3a11480c0a8d541d928e577a1a6dbe1f1f524ba6144fcf79aa7c62d58e46dfff317d31da19ab80fa3099caa569112ba0a1bb531e575ab8108551d62333f77ed6115dfb4cb4704af4d9a092cd1042775844bc60e50de7004563aa637f3170b32ce8f9122a5b6690200000091c2d505252d70d1e42fff06871687dabe30000000b288a5957431e5dfc1baf6e123c413db33f114ebaec0c77fa3e20c4c1a585b698a061a52cdc2629eb1e34dbcf212d7b2554b2277f86abl
+  `}
+/>
+
+# Flags
+
+| Flag | Description | Default |
+| ---- | ----------- | ------- |
+| `-i, --identity` |  Identity of a participant ||
+| `-m, --minSigners` |  Minimum number of signers to meet signing threshold ||
+| `-n, --participantName` | Name of the participant to use in round one ||

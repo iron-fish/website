@@ -1,0 +1,27 @@
+---
+title: wallet/multisig/dkg/round2
+description: RPC Multisig DKG Round2| Iron Fish Documentation
+---
+
+Performs Round 2 of the Distributed Key Generation (DKG) protocol for multisig account generation.
+
+#### Request
+
+```ts
+{
+  participantName: string
+  round1SecretPackage: string
+  round1PublicPackages: Array<string>
+}
+```
+
+#### Response
+
+```ts
+{
+  round2SecretPackage: string
+  round2PublicPackage: string
+}
+```
+
+###### [View on Github](https://github.com/iron-fish/ironfish/blob/master/ironfish/src/rpc/routes/wallet/multisig/dkg/round2.ts)

@@ -1,0 +1,27 @@
+---
+title: wallet:multisig:account:participants
+seo: Wallet Multisig Participants List Command
+---
+
+# Usage
+
+List the participant identities for a multisig account
+
+```sh
+ironfish wallet:multisig:account:participants
+```
+
+<Terminal command="ironfish wallet:multisig:account:participants -f participant-1"
+  output={`
+72f64a2091abae9d5e46f16afcdff4cf4fd0acb593a006f60b61ca23656bc86fcb3aa013e98cc967f91d38e6ce62e607aaa0f63749ac510fd7c24451156ef54e1566d168a2f9e67518747f889713e688e986dd0d09a3eaab06be458da8b930f4dab2714c99d3b1961642c7c207bbd42b8159e8dbcd92efab95930c2d68a3bec307
+72c9f4746cc76d8a4d6a9a065fa78902cf6213842434e6de188cd5af04dec1022a3938c5e795f59b26b61600779f98650d784ff9f9c62d7b90d86ee15508ab16293a9b7b6de2851c1dc3bfc763fa5a4929ee284699ad984207df46cec8704c95f6e1e8a484df477b89d9e9cc8e14a859086868f618d971e256189e18afaa308a0b
+724921060d33a228e1f397573d1cbc47c219109350ca222b0e0a0ba612438a2decb3deca348420b66f685dacca5fd3bd84e4d080493a061984b1dd5a41d8138e01726991d9d959067bd3afe9630c325365ee98bc0b4b6d7087e295d1706dc19aa7317e5f2fcabb4f76edc5a5732400b8bda2240138a069d9e845258ef2464fff08
+  `}
+/>
+
+# Flags
+
+| Flag | Description |
+| ---- | ----------- |
+| `-f, --account` | The account to list identities for |
+

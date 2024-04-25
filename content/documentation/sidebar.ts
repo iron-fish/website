@@ -30,6 +30,7 @@ export const sidebar: SidebarDefinition = [
         label: "Multisig",
         items: [
           "recipes_multisig_create_account",
+          "recipes_multisig_create_account_dkg",
           "recipes_multisig_sign_transaction",
         ],
       },
@@ -335,6 +336,23 @@ export const sidebar: SidebarDefinition = [
               {
                 id: "rpc/wallet/multisig/aggregate_signature_shares",
                 label: "aggregateSignatureShares",
+              },
+              {
+                label: "DKG",
+                items: [
+                  {
+                    id: "rpc/wallet/multisig/dkg/round1",
+                    label: "round1",
+                  },
+                  {
+                    id: "rpc/wallet/multisig/dkg/round2",
+                    label: "round2",
+                  },
+                  {
+                    id: "rpc/wallet/multisig/dkg/round3",
+                    label: "round3",
+                  },
+                ],
               },
             ],
           },

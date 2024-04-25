@@ -1,0 +1,29 @@
+---
+title: wallet/multisig/dkg/round3
+description: RPC Multisig DKG Round3| Iron Fish Documentation
+---
+
+Performs Round 3 of the Distributed Key Generation (DKG) protocol for multisig account generation. Round 3 is the final round of the protocol. After performing Round 3 a new multisig account is added to the wallet.
+
+#### Request
+
+```ts
+{
+  participantName: string
+  round2SecretPackage: string
+  round1PublicPackages: Array<string>
+  round2PublicPackages: Array<string>
+  accountName?: string
+}
+```
+
+#### Response
+
+```ts
+{
+  name: string
+  publicAddress: string
+}
+```
+
+###### [View on Github](https://github.com/iron-fish/ironfish/blob/master/ironfish/src/rpc/routes/wallet/multisig/dkg/round3.ts)

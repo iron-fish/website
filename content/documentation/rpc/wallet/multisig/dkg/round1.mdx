@@ -1,0 +1,29 @@
+---
+title: wallet/multisig/dkg/round1
+description: RPC Multisig DKG Round1| Iron Fish Documentation
+---
+
+Performs Round 1 of the Distributed Key Generation (DKG) protocol for multisig account generation.
+
+#### Request
+
+```ts
+{
+  participantName: string
+  minSigners: number
+  participants: Array<{ identity: string }>
+}
+```
+
+#### Response
+
+```ts
+{
+  round1SecretPackage: string
+  round1PublicPackage: string
+}
+```
+
+> **Note**: the identity for the `participantName` parameter is automatically included in the list of participant identities.
+
+###### [View on Github](https://github.com/iron-fish/ironfish/blob/master/ironfish/src/rpc/routes/wallet/multisig/dkg/round1.ts)

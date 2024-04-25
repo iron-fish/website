@@ -1,0 +1,42 @@
+---
+title: wallet:multisig:dkg:round3
+seo: Wallet Multisig DKG Round Three Account Creation
+---
+
+Performs round 3 of the FROST DKG protocol for multisig account creation.
+
+# Usage
+
+```sh
+ironfish wallet:multisig:dkg:round3
+```
+
+The example below demonstrates how to run round 3 of DKG for a group of two participants and the secret name `participant0`. Use the [`wallet:multisig:multisig:dkg:round2`](/use/get-started/cli-cmd-wallet-multisig-dkg-round2) command to create an encrypted secret package.
+
+`round3` requires the round 1 public packages that all participants generated using [`wallet:multisig:multisig:dkg:round1`](/use/get-started/cli-cmd-wallet-multisig-dkg-round1) (including your own).
+
+To run `round3` you must also enter the round 2 public packages that each _other_ participant in the group generated for your identity.
+
+<Terminal command="ironfish wallet:multisig:dkg:round3 \
+--participantName participant0 \
+-e edf4a84b14bb0e78b4d63aab52b41185ed3ba8f2d4c0ff90b833efab57a38e6301000000a647f2eceee7b07dfe0fefbc5abd45b3e30e63b4eaa819a421f437fe11f66760bc000000ddb56bea4e9f059228635f32b8b4e540a8533fb37ac240b7948ec1f13268daac471342710a8cce6821857ebc86b2ca5b1a9e2630cd667504f26d3521b5a35f3952eb8d242e05124afc9fe353d41f1bcac8494a3a476e9f06ef8a09f9cef32a1e4f7d680de266631928e35c3450f07d0a3cf3ee5c436b7aed6ff3b8c8da31bd02bd420284717c4c3083714bd23395d7c18216234a40019f587650e20d97f662b31dcd878635b589dbe9aa4fd9c6d1b5ea4bc76f33d1322060b7d67498 \
+-p 72709fc4f310aab17dc1e7e470e96f90d69ea477910744d2ca47341ff6a0860b217ec2181aa55fb6a38072dfd8976c6306ef41336afef58c8e049df3f9669ca73614eff096e13b1f2fc7f16c686eec04ea3e9b92785eca7993b83458ba04a1023ef4cdc9126b07cd5ad864c2d32d9cda575869be9c5192c37e5410465cb1fbed0f8700000000c3d2051e0232419d7395ecb0d63a0fb4a3a11480c0a8d541d928e577a1a6dbe1f1f524ba6144fcf79aa7c62d58e46dfff317d31da19ab80f1f01419d3ea3f5912d7a5213c840d91107a8ee25307341dc30ba7cb278ce0953cf7dca49664a7539ec7035825cad1fa3099caa569112ba0a1bb531e575ab8108551d62333f77ed6115dfb4cb4704af4d9a092cd1042775844bc60e50de7004563aa637f3170b32ce8f9122a5b6690200000091c2d5052f58ae45dd85c18c549267a2c8f189ad4c7c8dd5bc31fa6d890125565ab538a85a72e62dde9a7463ed8fc78d816d0d052d70d1e42fff06871687dabe30000000b288a5957431e5dfc1baf6e123c413db33f114eb8aec0c77fa3e20c4c1a585b698a061a52cdc2629eb1e34dbcf212d7b2554b2277f86ab02 \
+-p 72b3bf8e75ac92b0ac8cc176bdefc89abddc208b815009176d9f659f6813a5b6204686e73b8de17a426ac71b32fe9258acfa8538c54c13ef4eb1cfd9ad52987f267d5eb62f354a5fc0244926f6884ec134ef458deca281ee2c9344e24761d1ff8b8098791cee169f30b0b613482f4e474b94e25e0b55c3cb4aff63699bdf0662028700000000c3d2051e02281eb29d5abef8ac56c5798dcd38fa41064f336fdb7b07dff12338d4400190f354de2cb55764dc76099580b799c18254bcf7da38cd8ea8694e9b82a350c50e0c40a095df396e8d49ea7642f20c17bc7ed22a93976e3cf5bbf4c63ea9399418856324392a802c4b9e3b5f89e825e517d719ba95e75d7364be5dbee4eec32e8ba802dbce6cace1eaa6dc2fa17e871eefa1c41b3bf09cf2fc82351debaf16d9211b7b020000002efd437d6c770b6342647acb4c718d02fad3ae40cb00d57d9b0d91bc18676858fbbc5df7fc790bdac5dc674cdb23a369c8fbfae7206706ca4827691ec7e3304c3000000041431ea349f94d56cce00a9d551eaad6b8dc1f130bf9d0b8746c2bb3d3b85054669dc0ad081746e714d2213e1f9b52fc2554b2277f86ab02
+-q 72264fedce3c28c138d17510dc3012c05fbea9180421beb4e98aa8e651c70cdcd742400d4b7fb257822ca2971872905c7db794a19251ce34d10b7bbf2c1e1cb56ccd39e297f22d3af2127d5470c30bd8cae5afbf6ee628a3aa8bf36080ba20122ae027e156b623201fac4e00e0dc88c17cc2fe5599f82f4fef2f382a2fa39a3c0f7256ddb07b39dc4671c6b8d14a576f74e2abf4f26214cf171ce1e8be84660f48c043b66cbc46a2d604b622737227b715d0b22dc63d73a4738e426d28294ecf9f1fdfb0820f8c1c3ef8c62c24f05b0eb180b55a226ad8f867a95cb845b7e4528c0fe8f4bde807099060fb537ad52ea267616aab069c8383a5f2cc3c4e36b8d7f3022500000000c3d2051e9fc14ce20a34e1be079b20fe2708a5361c5f76e002772605234b97430eb4a101d92b43fdce80e395
+"
+  output={`
+Account participant0 imported with public address: 247d174ae0d8ba192535066d67039852ce7988efb7758b1a6dbaeb8005780685
+  `}
+/>
+
+The `wallet:multisig:multisig:dkg:round3` command completes the DKG protocol and creates a new multisig account in the wallet.
+
+# Flags
+
+| Flag | Description | Default |
+| ---- | ----------- | ------- |
+| `-n, --participantName` | The name of the participant to use for decryption during DKG ||
+| `-e, --round2SecretPackage` | The encrypted secret package created during DKG round2 ||
+| `-p, --round1PublicPackage` | The public package that a participant generated during DKG round1 (may be specified multiple times for multiple participants). Must include your own round1 public package' ||
+| `-q, --round2PublicPackage` | The public package that a participant generated during DKG round2 where the recipient matches the identity associated with the secret ||
+| `-a, --accountName` | The name to set for the imported account ||

@@ -1,0 +1,167 @@
+---
+title: Creating Multisig Accounts With DKG
+description: Recipes | Multisig | DKG | Creating Multisig Accounts | Iron Fish Documentation
+---
+
+Iron Fish supports multisig accounts using FROST, a threshold signature scheme. This recipe reviews how to create accounts using distributed key generation (DKG).
+
+### Creating participant identities
+
+Each signer or participant in a multisig account must have a unique identity. The participant identity is a public key derived from a participant's secret key and allows other participants to encrypt data before sending it.
+
+The example below shows how to generate a random signer identity using the Iron Fish SDK:
+
+```js
+import { multisig } from '@ironfish/rust-nodejs'
+
+const secret = multisig.ParticipantSecret.random()
+const identity = secret.toIdentity()
+```
+
+You can also use the [`wallet/multisig/createParticipant`](/developers/documentation/rpc/wallet/multisig/create_participant) RPC to create a participant identity and store the participant secret key in the wallet.
+
+### Running round 1 for each participant
+
+Once all participants have created their secrets, each participant will need to run round 1 of DKG.
+
+The example below shows how to run round 1 using the Iron Fish SDK:
+
+```js
+import { multisig } from '@ironfish/rust-nodejs'
+
+// This is our own identity, generated from the previous step
+const selfIdentity = '72173b37ef74412e5d0b79831505eb61...4fe930e60abdd0274ac3c0577112e503'
+
+const minSigners = 2
+const participantIdentities = [
+  '723729d1b6af022a4c5d67e126a3a797...63ec486317bd1e72b8628e6116340304', // participant X
+  '72c60942feac595aa83bb0856c264dfc...af2708a2961ef6c9e15541e288dcad03', // participant Y
+]
+
+const { round1SecretPackage, round1PublicPackage } = multisig.round1(
+  identity,
+  minSigners,
+  participantIdentities
+)
+```
+
+You can also use the [`wallet/multisig/dkg/round1`](/developers/documentation/rpc/wallet/multisig/dkg/round1) RPC to run round 1 and create the round 1 packages.
+
+### Running round 2 for each participant
+
+Once all participants have run round 1, each participant will need to collect the round 1 public package from the other participants.
+
+> **Note**: It is critical that you pass in your own public package from the previous step in addition to the rest of the public packages that the group generated.
+
+The example below shows how to run round 2 using the Iron Fish SDK:
+
+```js
+import { multisig } from '@ironfish/rust-nodejs'
+
+// This is our own secret, generated from the first step
+const secret = '...'
+
+const round1PublicPackages = [
+  round1PublicPackage, // round 1 public package we generated
+  '...',               // round 1 public package from participant X
+  '...',               // round 1 public package from participant Y
+]
+
+const { round2SecretPackage, round2PublicPackage } = multisig.round2(
+  secret,
+  round1SecretPackage,
+  round1PublicPackages
+)
+```
+
+You can also use the [`wallet/multisig/dkg/round2`](/developers/documentation/rpc/wallet/multisig/dkg/round2) RPC to run round 2 and create the round 2 packages.
+
+### Running round 3 for each participant
+
+Once all participants have run round 2, each participant will need to collect the round 2 public packages from the other participants.
+
+> **Note**: The encrypted secret package must be the one that you generated in round2. You must pass in your encrypted round 2 secret package, all of the public packages from round 1 (*including* your own), and all of the public packages from round 2 (*excluding* your own).
+
+The example below shows how to run round 3 using the Iron Fish SDK:
+
+```js
+import { multisig } from '@ironfish/rust-nodejs'
+
+// This is our own secret, generated from the first step
+const secret = '...'
+
+const round1PublicPackages = [
+  round1PublicPackage, // round 1 public package we generated
+  '...',               // round 1 public package from participant X
+  '...',               // round 1 public package from participant Y
+]
+
+const round2PublicPackages = [
+  '...',               // round 2 public package from participant X
+  '...',               // round 2 public package from participant Y
+]
+
+const {
+  publicAddress,
+  keyPackage,
+  publicKeyPackage,
+  viewKey,
+  incomingViewKey,
+  outgoingViewKey,
+  proofAuthorizingKey,
+} = multisig.round3(
+  secret,
+  round2SecretPackage,
+  round1PublicPackages,
+  round2PublicPackages
+)
+```
+
+You can also use the [`wallet/multisig/dkg/round3`](/developers/documentation/rpc/wallet/multisig/dkg/round3) RPC to run round 3 and create the round 3 packages.
+
+> **Note**: If using the RPC for round3, the account will automatically be imported.
+
+### Importing the account
+
+The `publicAddress`, `publicKeyPackage`, `viewKey`, `incomingViewKey`, `outgoingViewKey`, and `proofAuthorizingKey` in the example are all shared keys for the multisig account. `keyPackages` contains one key package per participant and contains the participant's share of the signing key.
+
+The example below shows how to import a multisig account after running round 3:
+
+```js
+import { multisig } from '@ironfish/rust-nodejs'
+
+// Setup the node
+const node = ...
+
+const {
+  publicAddress,
+  keyPackage,
+  publicKeyPackage,
+  viewKey,
+  incomingViewKey,
+  outgoingViewKey,
+  proofAuthorizingKey,
+} = multisig.round3(
+  secret,
+  round2SecretPackage,
+  round1PublicPackages,
+  round2PublicPackages
+)
+
+const account = await node.wallet.importAccount({
+  name: '<insert_account_name>',
+  version: ACCOUNT_SCHEMA_VERSION,
+  createdAt: null,
+  spendingKey: null,
+  viewKey,
+  incomingViewKey,
+  outgoingViewKey,
+  publicAddress,
+  proofAuthorizingKey,
+  multisigKeys: {
+    identity,
+    keyPackage,
+    publicKeyPackage,
+  },
+})
+```

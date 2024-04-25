@@ -18,7 +18,11 @@ export const sidebar: SidebarDefinition = [
   "transactions",
   {
     label: "Multisig Accounts",
-    items: ["multisig-creation", "multisig-signing"],
+    items: [
+      "multisig-creation-tdk",
+      "multisig-creation-dkg",
+      "multisig-signing",
+    ],
   },
   "mining",
   {
@@ -67,12 +71,21 @@ export const sidebar: SidebarDefinition = [
             items: [
               "cli-cmd-wallet-multisig-participant-create",
               "cli-cmd-wallet-multisig-participant-get",
-              "cli-cmd-wallet-multisig-participants-list",
               "cli-cmd-wallet-multisig-dealer-create",
               "cli-cmd-wallet-multisig-commitment-create",
               "cli-cmd-wallet-multisig-commitment-aggregate",
               "cli-cmd-wallet-multisig-signature-create",
               "cli-cmd-wallet-multisig-signature-aggregate",
+              "cli-cmd-wallet-multisig-account-participants-list",
+              "cli-cmd-wallet-multisig-participants-list",
+              {
+                label: "dkg",
+                items: [
+                  "cli-cmd-wallet-multisig-dkg-round1",
+                  "cli-cmd-wallet-multisig-dkg-round2",
+                  "cli-cmd-wallet-multisig-dkg-round3",
+                ],
+              },
             ],
           },
         ],
