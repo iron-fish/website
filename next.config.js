@@ -166,6 +166,11 @@ upgrade-insecure-requests;
         destination: "/developers/documentation/rpc/node/get_log_stream",
         permanent: true,
       },
+      {
+        source: "/use/get-started/multisig-creation",
+        destination: "/use/get-started/multisig-creation-tdk",
+        permanent: true,
+      },
     ];
   },
 };
