@@ -1,0 +1,51 @@
+---
+author: iflabs
+title: "Announcing Distributed Key Generation for multisig"
+description: "Iron Fish multisignature wallets now supports Distrubuted Key Generation (DKG) in addition to Trusted Dealer Key Generation (TDK)."
+image: /images/blog/multisig.png
+tags: [ironfish, iron fish, multi-sig, multi sig, multi-sig wallets]
+---
+
+Earlier this month we announced support for multisignature transactions, or multisig, which allow you to spread the key required to approve a transaction among multiple participants. Need a refresher on what multisignature transactions are? Check out the previous [blog post](/learn/blog/2024-04-09-multi-sig)!
+
+Today we’re happy to announce that we extended our multisignature implementation to support a new method to generate keys: distributed key generation, or DKG.
+
+# Different methods for generating keys
+
+When we initially launched support for multisig, we supported only one key generation method: Trusted Dealer Key Generation (TDK). With this method, a trusted entity, called “dealer”, generates a cryptographic key, then splits this key and distributes the parts among the participants.
+
+The advantage of TDK is that it’s relatively simple to use. The downside is that all participants need to trust the dealer not to keep any copy of the initial cryptographic key or its parts. If the dealer has malicious intentions (or if their machine is compromised by malicious actors), then they could become able to fully authorize transactions autonomously, without the cooperation of other participants.
+
+<figure>
+<figcaption>Trusted Dealer Key Generation</figcaption>
+<img src="/images/blog/multisig-tdk.svg" alt="Trusted Dealer Key Generation" style={{margin: '2em auto', maxHeight: '22em'}}/>
+</figure>
+
+Distributed Key Generation (DKG) is an alternative to Trusted Dealer Key Generation (TDK). It is a method that involves only the participants, and does not require any trusted entity. Through DKG, participants work cooperatively to generate a set of keys, and none of them ever gets access to enough information to gain an advantage over other participants.
+
+DKG can therefore be considered safer than TDK under many aspects. The price to pay with DKG is that it is a more complicated process that involves more steps.
+
+<figure>
+<figcaption>Distributed Key Generation</figcaption>
+<img src="/images/blog/multisig-dkg.svg" alt="Distributed Key Generation (DKG)" style={{margin: '2em auto', maxHeight: '22em'}}/>
+</figure>
+
+# How do I choose between DKG and TDK?
+
+There are many possible use cases for both of the methods, so there is not a definitive answer, but here are some general suggestions.
+
+Use TDK if:
+
+- you want to use the **simplest** method to generate multisignature accounts
+- you have an entity or a machine that you can fully trust with your keys, who will never leak or copy them
+
+Use DKG if:
+
+- you want to use the **most secure** method to generate multisignature accounts
+- you don’t mind the extra steps required
+
+# Get Started
+
+Support for Distributed Key Generation (DKG) was released in the node and SDK version 2.3.0.
+
+To get you started, we have published both an [SDK recipe](https://ironfish.network/developers/documentation/recipes_multisig_create_account_dkg) and a [CLI recipe](https://ironfish.network/use/get-started/multisig-creation-dkg). Check them out for a step-by-step guide on how to generate keys with DKG!
