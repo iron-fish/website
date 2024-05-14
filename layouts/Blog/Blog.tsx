@@ -38,7 +38,9 @@ export function BlogLayout({
   seoTitlePostfix = "",
 }: Props) {
   const fullTitle = seoTitlePrefix + (seoTitle || title) + seoTitlePostfix;
-  const imageUrl = image && new URL(image, process.env.NEXT_PUBLIC_ORIGIN);
+  const imageUrl =
+    image &&
+    new URL(image, process.env.NEXT_PUBLIC_ORIGIN || "http://localhost:3000");
   return (
     <>
       <Head>
