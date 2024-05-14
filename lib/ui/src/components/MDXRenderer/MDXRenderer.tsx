@@ -61,7 +61,6 @@ function HeadingWithAnchor(props: ComponentProps<typeof Heading>) {
 
 const DEFAULT_TEXT_PROPS = {
   fontSize: "md",
-  lineHeight: 1.6,
 };
 
 const rendererComponents: ComponentProps<typeof MDXRemote>["components"] = {

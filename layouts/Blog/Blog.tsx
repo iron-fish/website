@@ -93,7 +93,7 @@ export function BlogLayout({
           )}
         </Container>
         {image && (
-          <Container maxW="container.lg" px={0} mb={24}>
+          <Container maxW="container.sm" px={0} mb={24}>
             <AspectRatio ratio={1064 / 708}>
               <Image alt="" src={image} fill />
             </AspectRatio>
