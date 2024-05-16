@@ -1,0 +1,45 @@
+---
+author: elena
+title: "FishHash Audit Report"
+description: "Publishing the audit report for FishHash, a new hashing algorithm for Iron Fish"
+image: /images/blog/fishhash_audit.png
+tags: [ironfish, iron fish, fish hash, proof of work, hashing algorithm]
+---
+
+Iron Fish is a community-led project which means every major feature of Iron Fish is directly influenced by feedback from users and community members.
+
+Iron Fish launched its mainnet on April 20th, 2023. In the first few days/weeks it was observed that there was a high percentage of blocks coming from an unknown origin and hash power. This unknown hashrate was unaffected by price changes. This behavior is atypical of GPU mining and the community started to suspect that this hash rate was coming from FPGAs or some other form of specialized hardware. As such, the community voted on whether Iron Fish should switch its hashing algorithm, and if so, to what. That voting period concluded in October 2023, and the winning algorithm was FishHash — a custom hashing algorithm designed for Iron Fish by Lolliedieb, the core contributor to one of the most popular GPU mining softwares called [lolminer](https://github.com/Lolliedieb/lolMiner-releases) and an avid Iron Fish community member. 
+
+The goal for FishHash is to be a memory hard algorithm that performs relatively equally on different device categories and the performance/efficiency difference between specialized and widely available hardware is as small as possible. 
+
+The timeline for the creation, implementation, and deployment of FishHash into Iron Fish is as follows: 
+
+👉 September 2023: first proposed by Lolliedieb on a community call ([slides](https://drive.google.com/file/d/1QUZ9tdtRfCA3FJG9zmQPy-3rODZyVTpp/view), [video](https://drive.google.com/file/d/1hjSSB0yEk1M6B0pkvNAf5YPYjwOsZNoy/view))   
+👉 October 2023: [formal whitepaper published](https://github.com/iron-fish/fish-hash/blob/main/FishHash.pdf)   
+👉 November 2023: [reference implementation (CPU & GPU)](https://github.com/iron-fish/fish-hash?tab=readme-ov-file) by IF Labs & Lolliedieb    
+👉 February 2024: [testnet hardfork announced](https://ironfish.network/learn/blog/2024-02-26-testnet-hardfork)  
+👉 March 2024: testnet period for hardfork activation / FishHash concluded   
+👉 April 2024: [Hardfork-1](https://ironfish.network/learn/blog/2024-02-26-testnet-hardfork) activated to switch Iron Fish to use FishHash   
+
+FishHash was formally audited by [Trail of Bits](https://www.trailofbits.com/), an independent third-party audit and research security firm. The full report can be found [here](https://ironfish-static.s3.amazonaws.com/%5B202402%5DIron+Fish+FishHash+-+Summary+Report+with+Fix+Review.pdf). 
+
+### **The Audit Process**
+
+Iron Fish Foundation and IF Labs engaged the cybersecurity firm, Trail of Bits, in January 2024 to conduct a seven-day security assessment of FishHash. The Trail of Bits team has leading  security and cryptography experts and they reviewed both the specification and the CPU implementations of FishHash in Rust and C++. The audit spanned several key phases, culminating in a detailed report that addresses our community's most pressing questions about the algorithm's memory usage, ASIC resistance, and adherence to its design specifications.
+
+### **Key Findings and Overall Assessment**
+
+The audit primarily focused on these questions:
+
+- Is FishHash a memory-bound function? Is it possible to compute FishHash hashes
+efficiently while using considerably less memory than an honest evaluator?
+- FishHash was inspired by Ethash. Is FishHash ASIC resistant? How do the changes made from Ethash affect the ASIC resistance of FishHash?
+- Does the Rust reference implementation follow the specification?
+
+The overall assessment of the audit is that FishHash is not vulnerable to trivial/efficient pre-image computations to speed up the mining process, and no practical exploitations were discovered around the memory-hardness requirement of FishHash. The Rust reference implementation matched the C++ implementations. The audit process did reveal some implementation considerations, which were all resolved or partially resolved as of the publishing of the final audit report. Some potential risks were identified in the design itself; however, the audit team found no means of exploiting these during the timeframe of the audit.
+
+### **Community Involvement and Future Steps**
+
+The audit report is now [publicly available](https://ironfish-static.s3.amazonaws.com/%5B202402%5DIron+Fish+FishHash+-+Summary+Report+with+Fix+Review.pdf), making FishHash fully accessible to other PoW projects looking for a memory-hard algorithm, and being transparent with the Iron Fish community about the development and consideration thought process. 
+
+We invite our community to stay engaged, provide feedback, and contribute to the Iron Fish ecosystem. If there’s ever any feedback or questions on FishHash, the audit report, or this process, please reach out on the Iron Fish Discord [#mining](https://discord.gg/qNnwshytnJ) channel. See you there!
