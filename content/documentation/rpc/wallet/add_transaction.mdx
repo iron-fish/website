@@ -5,7 +5,9 @@ description: RPC Wallet | Iron Fish Documentation
 
 Takes in a posted transaction, adds it to the wallet and mempool, and optionally broadcasts it to the network.
 
-Returns the names of the wallet accounts involved in the transaction.
+Returns the list names of the wallet accounts involved in the transaction, the transaction hash, and whether the transaction was accepted into the node's mempool.
+
+⚠️️ **Note:** A transaction will not be accepted into the mempool if the mempool already has the transaction, if the transaction is expired, or if another transaction already in the mempool supersedes the transaction (i.e., the other transaction spends one or more of the same notes, but uses a higher fee).
 
 #### Request
 
