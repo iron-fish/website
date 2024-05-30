@@ -38,7 +38,9 @@ export function BlogLayout({
   seoTitlePostfix = "",
 }: Props) {
   const fullTitle = seoTitlePrefix + (seoTitle || title) + seoTitlePostfix;
-  const imageUrl = image && new URL(image, process.env.NEXT_PUBLIC_ORIGIN);
+  const imageUrl =
+    image &&
+    new URL(image, process.env.NEXT_PUBLIC_ORIGIN || "http://localhost:3000");
   return (
     <>
       <Head>
@@ -91,7 +93,7 @@ export function BlogLayout({
           )}
         </Container>
         {image && (
-          <Container maxW="container.lg" px={0} mb={24}>
+          <Container maxW="container.sm" px={0} mb={24}>
             <AspectRatio ratio={1064 / 708}>
               <Image alt="" src={image} fill />
             </AspectRatio>
