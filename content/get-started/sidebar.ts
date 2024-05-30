@@ -64,6 +64,7 @@ export const sidebar: SidebarDefinition = [
           "cli-cmd-wallet-transactions",
           "cli-cmd-wallet-transaction",
           "cli-cmd-wallet-transaction-watch",
+          "cli-cmd-wallet-transaction-view",
           "cli-cmd-wallet-use",
           "cli-cmd-wallet-which",
           {

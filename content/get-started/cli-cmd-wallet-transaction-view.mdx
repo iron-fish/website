@@ -1,0 +1,41 @@
+---
+title: wallet:transaction:view
+seo: Wallet Transaction View Command
+---
+
+You can use the command line to view transaction details for an account. The `wallet:transaction:view` command currently supports raw transactions and unsigned transactions.
+
+The serialized transaction in the example below is truncated for readability.
+
+<Terminal
+  command="ironfish wallet:transaction:view -f MyAccount -t 01010000000000000002000000000000...630b0773fe862dab8ffd51d081490800b"
+  output={`
+==================
+Notes sent:
+==================
+
+Amount:        $IRON 1.00000000
+Memo:          spend wisely
+Recipient:     dcd9e197f9526faf7046136d24e694a1ac4db1ff17c01af76f9717e81ca26df1
+Sender:        6c7a03154ddca1417f20287fa73fa914ff70cf23bfa402eae6d4f379cfd4862a
+
+
+==================
+Notes received:
+==================
+
+Amount:        $IRON 999.99999999
+Memo:          
+Recipient:     6c7a03154ddca1417f20287fa73fa914ff70cf23bfa402eae6d4f379cfd4862a
+Sender:        6c7a03154ddca1417f20287fa73fa914ff70cf23bfa402eae6d4f379cfd4862a
+`}
+
+/>
+
+
+# Flags
+
+| Flag | Description |
+| ---- | ----------- |
+| `-f, --account` | The name of the account to use to for viewing transaction details |
+| `-t, --transaction` | The hex-encoded raw transaction or unsigned transaction to view |
