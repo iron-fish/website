@@ -87,3 +87,22 @@ Recommended minimum requirements:
  * **STORAGE:** 50 GB
 
 </FAQItem>
+
+<FAQItem title="What is the Maximum Transactions Per Second?">
+
+TPS depends on the size of the transactions. Note: Max block size is 0.5MB. If we are assuming an average transaction of 3 inputs and 2 outputs which is around 2.2 KB and a max block size of 0.5 MB, then a block could contain about 225 such transactions. Iron Fish network has a target block time of 60 seconds, which would imply about 4 transactions per second on average.
+
+</FAQItem>
+
+<FAQItem title="What are the size differences between a normal IRON transaction vs an Asset vs a transaction created on a multisig account?">
+
+They are the same size! There is no way to determine whether a user is sending a transaction, an asset, how much IRON, to/from a user or whether the transaction was sent from a multisignature account. This is due to the nature of the privacy that is offered by Iron Fish—every single transaction on Iron Fish is encrypted from end to end!
+
+</FAQItem>
+
+<FAQItem title="Is there a mempool size limit?">
+
+Nope! The default is 60MB but can be increased dependent on the user's hardware.
+
+</FAQItem>
+
