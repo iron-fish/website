@@ -59,6 +59,7 @@ export const sidebar: SidebarDefinition = [
           "cli-cmd-wallet-prune",
           "cli-cmd-wallet-repair",
           "cli-cmd-wallet-rescan",
+          "cli-cmd-wallet-reset",
           "cli-cmd-wallet-send",
           "cli-cmd-wallet-status",
           "cli-cmd-wallet-transactions",
