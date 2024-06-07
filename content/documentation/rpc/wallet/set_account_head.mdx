@@ -1,0 +1,45 @@
+---
+title: wallet/setAccountHead
+description: RPC Wallet | Iron Fish Documentation
+---
+
+Update an account's head from `start` to `end. You must provide hashes of all transactions in which the account is either a sender or a recipient, or else the account's balances will be incorrect. You also must disable scanning with [`wallet/setScanning`](/developers/documentation/rpc/wallet/set_scanning) before calling this RPC.
+
+This is useful to quickly catch up an account if you already know transactions belonging to that account.
+
+Block hashes and transaction hashes are hex strings.
+
+#### Request
+
+```ts
+{
+  /**
+   * Name of the account to update.
+   */
+  account: string
+  /**
+   * Starting block hash (inclusive). Used to verify that you haven't accidentally skipped
+   * decrypting transactions in blocks between the account head and this block hash.
+   * This block must connect to the account head with no gaps.
+   */
+  start: string
+  /**
+   * Last block hash (inclusive). Account head will be set to this
+   * when the request finishes successfully.
+   */
+  end: string
+  /**
+   * Blocks between start and end (inclusive) that contain transactions in which the
+   * account is either a sender or a recipient.
+   */
+  blocks: { hash: string; transactions: { hash: string }[] }[]
+}
+```
+
+#### Response
+
+```ts
+undefined;
+```
+
+###### [View on Github](https://github.com/iron-fish/ironfish/blob/master/ironfish/src/rpc/routes/wallet/setAccountHead.ts)
