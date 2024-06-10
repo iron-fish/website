@@ -49,10 +49,6 @@ export const sidebar: SidebarDefinition = [
             label: "RpcAccountAssetBalanceDelta",
           },
           {
-            id: "rpc/objects/rpcAccountImport",
-            label: "RpcAccountImport",
-          },
-          {
             id: "rpc/objects/rpcAccountStatus",
             label: "RpcAccountStatus",
           },

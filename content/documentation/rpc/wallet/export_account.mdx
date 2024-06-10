@@ -3,7 +3,7 @@ title: wallet/exportAccount
 description: RPC Wallet | Iron Fish Documentation
 ---
 
-Exports the keys to the default account, or the named account if `account` is specified.
+Exports the keys of the default account, or the named account if `account` is specified.
 
 The `spendingKey` will be null in the response if `viewOnly = true` or if exporting a view-only account.
 
@@ -17,21 +17,23 @@ The `spendingKey` will be null in the response if `viewOnly = true` or if export
   language?: LanguageKey
 }
 ```
-[Supported AccountFormats](https://github.com/iron-fish/ironfish/blob/master/ironfish/src/wallet/account/encoder/encoder.ts)
 
-[Supported Mnemonic Languages](https://github.com/iron-fish/ironfish/blob/master/ironfish/src/utils/language.ts)
+Supported [AccountFormats](https://github.com/iron-fish/ironfish/blob/master/ironfish/src/wallet/account/encoder/encoder.ts#L27)
+ - Base64Json: The full account and all keys as a JSON string then encoded in base64.
+ - JSON: The full account and all keys as a JSON string
+ - Mnemonic: The private key in 12 word format in the specified language
+ - SpendingKey: The private key as a hex-encoded string.
+
+[Supported Mnemonic Languages](https://github.com/iron-fish/ironfish/blob/master/ironfish/src/utils/language.ts#L7)
 
 #### Response
 
-If no format is specified, the legacy `RpcAccountImport` type will be returned. Otherwise, the RPC will serialize the account into a string of the desired format.
+The RPC will serialize the account into a string of the desired format.
 
 ```ts
 {
-  account: string | RpcAccountImport | null
+  account: string | null
 }
 ```
-
-RPC Objects: 
-- [RpcAccountImport](/developers/documentation/rpc/objects/rpcAccountImport)
 
 ###### [View on Github](https://github.com/iron-fish/ironfish/blob/master/ironfish/src/rpc/routes/wallet/exportAccount.ts)
