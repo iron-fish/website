@@ -41,26 +41,30 @@ export function DownloadForCurrentPlatform({ downloadUrlsByPlatform }: Props) {
 
   const linkProps = useMemo(() => {
     if (!linkData)
-      return {
-        opacity: 0,
-      };
+      return [
+        {
+          opacity: 0,
+        },
+      ];
 
-    const { url, label } = linkData;
-
-    return url && label
-      ? { href: url, children: "Download Now" }
-      : { href: REPO_URL, children: "View on GitHub", target: "_blank" };
+    return linkData.map(({ url, label }) => {
+      return url && label
+        ? { href: url, children: "Download Now" }
+        : { href: REPO_URL, children: "View on GitHub", target: "_blank" };
+    });
   }, [linkData]);
 
   return (
     <Flex direction="column" alignItems="center" maxW="100%">
-      <DownloadButton as="a" size="lg" mb={4} {...linkProps} />
-      {linkData?.label && (
-        <>
-          <Text>{linkData.label}</Text>
-          <Box my={3} w="120px" borderBottom="1px dashed black" />
-        </>
-      )}
+      <Flex direction="row" gap={4}>
+        {linkProps.map((lp, i) => (
+          <Flex direction="column" alignItems="center" key={i}>
+            <DownloadButton as="a" size="lg" mb={4} {...lp} />
+            <Text>{linkData && linkData[i].label}</Text>
+            <Box my={3} w="120px" borderBottom="1px dashed black" />
+          </Flex>
+        ))}
+      </Flex>
       {downloadUrlsByPlatform && (
         <Text
           as="a"
