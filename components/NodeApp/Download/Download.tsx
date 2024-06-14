@@ -47,21 +47,67 @@ export function DownloadForCurrentPlatform({ downloadUrlsByPlatform }: Props) {
         },
       ];
 
-    return linkData.map(({ url, label }) => {
-      return url && label
-        ? { href: url, children: "Download Now" }
+    return linkData.map(({ url, label, platform }) => {
+      if (url && label && platform) {
+        if (linkData.length === 1) {
+          return { href: url, children: "Download Now" };
+        }
+
+        const downloadButtonLabel: string = (() => {
+          switch (platform) {
+            case "mac-arm": {
+              return "Apple Silicon";
+            }
+            case "mac-intel": {
+              return "Intel";
+            }
+            case "windows": {
+              return "Windows";
+            }
+          }
+        })();
+
+        return {
+          href: url,
+          children:
+            linkData.length === 1
+              ? "Download Now"
+              : `Download for ${downloadButtonLabel}`,
+        };
+      }
+      if (!url || !label || !platform)
+        return { href: REPO_URL, children: "View on GitHub", target: "_blank" };
+
+      return url && label && platform
+        ? {
+            href: url,
+            children:
+              linkData.length === 1
+                ? "Download Now"
+                : `Download for ${platform}`,
+          }
         : { href: REPO_URL, children: "View on GitHub", target: "_blank" };
     });
   }, [linkData]);
 
   return (
     <Flex direction="column" alignItems="center" maxW="100%">
-      <Flex direction="row" gap={4}>
+      <Flex
+        direction="row"
+        gap={4}
+        flexWrap="wrap"
+        justifyContent="center"
+        mb={linkProps.length > 1 ? 8 : 0}
+      >
         {linkProps.map((lp, i) => (
           <Flex direction="column" alignItems="center" key={i}>
-            <DownloadButton as="a" size="lg" mb={4} {...lp} />
-            <Text>{linkData && linkData[i].label}</Text>
-            <Box my={3} w="120px" borderBottom="1px dashed black" />
+            <DownloadButton as="a" size="lg" {...lp} />
+            {linkProps.length === 1 && (
+              <>
+                <Text mt={4}>{linkData && linkData[i].label}</Text>
+                <Box my={3} w="120px" borderBottom="1px dashed black" />
+              </>
+            )}
           </Flex>
         ))}
       </Flex>
