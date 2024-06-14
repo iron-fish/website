@@ -71,6 +71,11 @@ upgrade-insecure-requests;
         permanent: false,
       },
       {
+        source: "/community/grants",
+        destination: "/grants/how_to_apply",
+        permanent: false,
+      },
+      {
         source: "/use/wallet",
         destination: "/use/node-app",
         permanent: true,
