@@ -1,0 +1,26 @@
+---
+title: wallet/resetAccount
+description: RPC Wallet | Iron Fish Documentation
+---
+
+Resets an account's head to its createdAt block (or to the genesis block, if `resetCreatedAt` is true). If `resetScanningEnabled` is true, `scanningEnabled` will be set to true, otherwise `scanningEnabled` will be left at its current value.
+
+Useful if your account is missing transactions or balances are incorrect. Setting `resetCreatedAt` to true will start from the genesis block rather than the account head, which will take longer, but will fix accounts with an incorrect `createdAt` block.
+
+#### Request
+
+```ts
+ {
+  account: string
+  resetCreatedAt?: boolean
+  resetScanningEnabled?: boolean
+}
+```
+
+#### Response
+
+```ts
+undefined
+```
+
+###### [View on Github](https://github.com/iron-fish/ironfish/blob/master/ironfish/src/rpc/routes/wallet/resetAccount.ts)
