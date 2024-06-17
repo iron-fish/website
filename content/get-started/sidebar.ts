@@ -68,6 +68,10 @@ export const sidebar: SidebarDefinition = [
           "cli-cmd-wallet-use",
           "cli-cmd-wallet-which",
           {
+            label: "chainport",
+            items: ["cli-cmd-wallet-chainport-send"],
+          },
+          {
             label: "multisig",
             items: [
               "cli-cmd-wallet-multisig-participant-create",
@@ -91,6 +95,7 @@ export const sidebar: SidebarDefinition = [
           },
         ],
       },
+
       {
         label: "config",
         items: [
