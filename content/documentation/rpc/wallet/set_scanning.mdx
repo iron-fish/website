@@ -1,0 +1,23 @@
+---
+title: wallet/setScanning
+description: RPC Wallet | Iron Fish Documentation
+---
+
+Enable or disable scanning for an account. Scanning is enabled by default. When scanning is enabled, the wallet with scan the blockchain for transactions for this account.
+
+#### Request
+
+```ts
+{
+  account: string;
+  enabled: boolean;
+}
+```
+
+#### Response
+
+```ts
+undefined;
+```
+
+###### [View on Github](https://github.com/iron-fish/ironfish/blob/master/ironfish/src/rpc/routes/wallet/setScanning.ts)
