@@ -43,7 +43,6 @@ export default function DocumentationPage({
 const CONTENT_PATH = path.join(process.cwd(), ...CONTENT_DIR);
 
 export const getStaticProps: GetStaticProps<Props> = async ({ params }) => {
-  console.log("IM HERE");
   const slug = Array.isArray(params?.slug) ? params?.slug.join("/") : null;
 
   if (typeof slug !== "string") {
@@ -56,7 +55,11 @@ export const getStaticProps: GetStaticProps<Props> = async ({ params }) => {
 
   const markdown = await renderMarkdown(content);
 
-  const sidebarItems = getSidebarContent(sidebar, CONTENT_PATH, "/grants");
+  const sidebarItems = getSidebarContent(
+    sidebar,
+    CONTENT_PATH,
+    "/community/grants"
+  );
 
   return {
     props: {

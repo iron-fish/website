@@ -72,7 +72,7 @@ upgrade-insecure-requests;
       },
       {
         source: "/community/grants",
-        destination: "/grants/how_to_apply",
+        destination: "/community/grants/how_to_apply",
         permanent: false,
       },
       {
