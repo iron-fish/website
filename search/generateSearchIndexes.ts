@@ -63,6 +63,10 @@ async function main() {
       slugRoot: "/use/get-started",
     },
     {
+      contentDir: ["content", "grants"],
+      slugRoot: "/community/grants",
+    },
+    {
       contentDir: ["content", "whitepaper"],
       slugRoot: "/learn/whitepaper",
     },
