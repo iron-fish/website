@@ -1,0 +1,29 @@
+---
+title: wallet/rescan
+description: RPC Wallet | Iron Fish Documentation
+---
+
+Resets all accounts and rescans them for transsactions
+
+#### Request
+
+```ts
+{
+  /**
+   * If true, the RPC will stream back the progress of the rescan
+   */
+  follow?: boolean
+}
+```
+
+#### Response
+
+```ts
+{
+  sequence: number;
+  startedAt: number;
+  endSequence: number;
+}
+```
+
+###### [View on Github](https://github.com/iron-fish/ironfish/blob/master/ironfish/src/rpc/routes/wallet/rescan.ts)

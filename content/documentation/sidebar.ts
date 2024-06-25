@@ -477,8 +477,8 @@ export const sidebar: SidebarDefinition = [
             label: "renameAccount",
           },
           {
-            id: "rpc/wallet/rescan_account",
-            label: "rescanAccount",
+            id: "rpc/wallet/rescan",
+            label: "rescan",
           },
           {
             id: "rpc/wallet/send_transaction",

@@ -1,0 +1,20 @@
+---
+title: wallet:reset
+seo: Wallet Reset Command
+---
+
+Resets the transactions and balances of an account but keeps all keys.
+
+```sh
+ironfish wallet:reset MyAccount
+```
+
+<Terminal command="ironfish wallet:reset MyAccount"
+  output={`
+Are you sure you want to reset the account MyAccount
+This will delete your transactions.
+Your keys will not be deleted.
+Are you sure? (Y)es / (N)o: y
+
+Account MyAccount has been reset.`}
+/>
