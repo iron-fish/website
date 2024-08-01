@@ -1,0 +1,29 @@
+---
+title: wallet/signTransaction
+description: RPC Wallet | Iron Fish Documentation
+---
+
+Takes in an unsigned transaction and signs it with the wallet's spending key. You do not need to specify the account, the RPC will iterate through all accounts to find the one that can sign the transaction.
+
+Returns the signed transaction and the account name that signed the transaction.
+
+You can use the [`addTransaction`](/developers/documentation/rpc/wallet/add_transaction) RPC to add the signed transaction to the wallet and mempool.
+
+#### Request
+
+```ts
+{
+  unsignedTransaction: string
+}
+```
+
+#### Response
+
+```ts
+{
+  transaction: string
+  account: string
+}
+```
+
+###### [View on Github](https://github.com/iron-fish/ironfish/blob/master/ironfish/src/rpc/routes/wallet/signTransaction.ts)

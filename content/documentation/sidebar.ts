@@ -481,6 +481,10 @@ export const sidebar: SidebarDefinition = [
             label: "sendTransaction",
           },
           {
+            id: "rpc/wallet/sign_transaction",
+            label: "signTransaction",
+          },
+          {
             id: "rpc/wallet/use_account",
             label: "useAccount",
           },
