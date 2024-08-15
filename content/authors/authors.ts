@@ -59,4 +59,12 @@ export const authors: Record<string, Author> = {
     image_url: "/images/blog/iflabs.jpeg",
     description: `IF Labs is an encryption-focused team that uses the Iron Fish protocol to build a world where users control their data.`,
   },
+  foundation: {
+    name: "Iron Fish Foundation",
+    title: "Safe optional privacy for any asset",
+    url: "https://twitter.com/ironfishcrypto",
+    image_url: "/images/blog/ironfish_logo.png",
+    description: `Iron Fish is a Zero-Knowledge Proof based Layer 1 blockchain offering compliant, optional privacy for digital assets across 24 chains (and counting!).
+Founded by Silicon Valley veterans and backed by prominent investors like a16z, Electric Capital, Dragonfly, Iron Fish is the first privacy chain to support multi-asset transactions.`,
+  },
 } as const;
