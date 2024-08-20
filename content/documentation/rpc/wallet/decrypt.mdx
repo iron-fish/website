@@ -1,0 +1,24 @@
+---
+title: wallet/decrypt
+description: RPC Wallet | Iron Fish Documentation
+---
+
+Decrypts the accounts in the wallet with a given passphrase.
+
+Throws an error if the wallet is already decrypted or if the passphrase is invalid.
+
+#### Request
+
+```ts
+{
+  passphrase?: string
+}
+```
+
+#### Response
+
+```ts
+undefined
+```
+
+###### [View on Github](https://github.com/iron-fish/ironfish/blob/master/ironfish/src/rpc/routes/wallet/decrypt.ts)
