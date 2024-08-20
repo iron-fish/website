@@ -377,6 +377,10 @@ export const sidebar: SidebarDefinition = [
             label: "createTransaction",
           },
           {
+            id: "rpc/wallet/encrypt",
+            label: "encrypt",
+          },
+          {
             id: "rpc/wallet/estimate_fee_rates",
             label: "estimateFeeRates",
           },

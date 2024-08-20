@@ -1,0 +1,24 @@
+---
+title: wallet/encrypt
+description: RPC Wallet | Iron Fish Documentation
+---
+
+Encrypts the accounts in the wallet with a given passphrase. Locks the wallet upon successful encryption.
+
+Throws an error if the wallet is already encrypted.
+
+#### Request
+
+```ts
+{
+  passphrase?: string
+}
+```
+
+#### Response
+
+```ts
+undefined
+```
+
+###### [View on Github](https://github.com/iron-fish/ironfish/blob/master/ironfish/src/rpc/routes/wallet/encrypt.ts)
