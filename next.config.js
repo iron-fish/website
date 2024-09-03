@@ -11,6 +11,8 @@ const nextConfig = {
     },
   },
   async headers() {
+    const isDev = process.env.NEXT_PUBLIC_ORIGIN !== 'https://ironfish.network/';
+
     return [
       {
         source: "/:path*",
@@ -31,7 +33,7 @@ object-src 'none';
 base-uri 'self';
 form-action 'self';
 frame-ancestors 'none';
-upgrade-insecure-requests;
+${isDev ? '' : 'upgrade-insecure-requests;'}
             `.replace(/\n/g, ""),
           },
         ],
