@@ -1,4 +1,4 @@
-type MediaItem = {
+export type MediaItem = {
   title: string;
   link: string;
   date: string;

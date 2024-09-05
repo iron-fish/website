@@ -1,12 +1,4 @@
-import {
-  Box,
-  Text,
-  Container,
-  ArrowButton,
-  Flex,
-  Grid,
-  GridItem,
-} from "@/lib/ui";
+import { Box, Text, Container, Grid, GridItem } from "@/lib/ui";
 import { defineMessages, useIntl } from "react-intl";
 import Image from "next/image";
 import ImgA16z from "./assets/backer-a16z.png";
@@ -38,7 +30,7 @@ export function Backers() {
         base: 4,
       }}
     >
-      <Container mb={8} textAlign="center" w="100%" maxW="container.xl">
+      <Container textAlign="center" w="100%" maxW="container.xl">
         <Text as="h2" textStyle="h3" maxW="20ch" mx="auto">
           {formatMessage(messages.heading)}
         </Text>
