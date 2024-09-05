@@ -1,3 +1,4 @@
+import { BridgeDropdown } from "@/components/BridgeDropdown/BridgeDropdown";
 import {
   Heading,
   Grid,
@@ -8,6 +9,7 @@ import {
   Button,
   FancyArrowRight,
   AspectRatio,
+  HStack,
 } from "@/lib/ui";
 import Image from "next/image";
 import Link from "next/link";
@@ -58,10 +60,13 @@ export function Hero() {
               asset information from public view. With read-only view keys, you
               remain compliant and in control.
             </Text>
-            <Button size="lg" as={Link} href="/use/get-started">
-              <Box mr={4}>Get Started</Box>
-              <FancyArrowRight />
-            </Button>
+            <HStack gap={4}>
+              <Button size="lg" as={Link} href="/use/get-started">
+                <Box mr={4}>Get Started</Box>
+                <FancyArrowRight />
+              </Button>
+              <BridgeDropdown />
+            </HStack>
           </Box>
         </GridItem>
         <GridItem position="relative">
