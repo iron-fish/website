@@ -9,8 +9,18 @@ import {
 } from "@/lib/ui";
 import Image from "next/image";
 import { MEDIA_ITEMS } from "@/content/media/media";
+import { defineMessages, useIntl } from "react-intl";
+
+const messages = defineMessages({
+  heading: {
+    id: "NewsDesk.heading",
+    defaultMessage: "Iron Fish on the News Desk",
+  },
+});
 
 export function NewsDesk() {
+  const { formatMessage } = useIntl();
+
   return (
     <Container
       maxW={{
@@ -25,7 +35,7 @@ export function NewsDesk() {
     >
       <Box>
         <Text fontSize="md" textTransform="uppercase" textAlign="center" mb={8}>
-          Iron Fish on the News Desk
+          {formatMessage(messages.heading)}
         </Text>
         <Box>
           {MEDIA_ITEMS.slice(0, 3).map((item, i) => (

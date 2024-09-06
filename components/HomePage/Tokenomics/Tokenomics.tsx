@@ -1,9 +1,28 @@
 import { Box } from "@/lib/ui";
 import { FancyLinkSection } from "../../FancyLinkSection/FancyLinkSection";
+import { defineMessages, useIntl } from "react-intl";
 
 const BG = "#C7F182";
 
+const messages = defineMessages({
+  heading: {
+    id: "Tokenomics.heading",
+    defaultMessage: "Understanding our Tokenomics",
+  },
+  description: {
+    id: "Tokenomics.description",
+    defaultMessage:
+      "Learn how Iron Fish's tokenomics are designed to foster community participation and to secure the network, with a capped token supply and strategic distribution to reward early contributors.",
+  },
+  ctaText: {
+    id: "Tokenomics.ctaText",
+    defaultMessage: "Learn More",
+  },
+});
+
 export function Tokenomics() {
+  const { formatMessage } = useIntl();
+
   return (
     <Box
       bg={BG}
@@ -16,9 +35,9 @@ export function Tokenomics() {
     >
       <FancyLinkSection
         reverse
-        heading="Understanding our Tokenomics"
-        description={`Learn how Iron Fish's tokenomics are designed to foster community participation and to secure the network, with a capped token supply and strategic distribution to reward early contributors.`}
-        ctaText="Learn More"
+        heading={formatMessage(messages.heading)}
+        description={formatMessage(messages.description)}
+        ctaText={formatMessage(messages.ctaText)}
         ctaLink="/learn/tokenomics"
         imageUrl="/images/home/fish-coins.svg"
         containerProps={{
