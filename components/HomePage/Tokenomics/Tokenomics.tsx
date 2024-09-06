@@ -5,7 +5,15 @@ const BG = "#C7F182";
 
 export function Tokenomics() {
   return (
-    <Box bg={BG} py="150px" borderY="1px solid black">
+    <Box
+      bg={BG}
+      py={{
+        base: 24,
+        md: 32,
+        xl: "150px",
+      }}
+      borderY="1px solid black"
+    >
       <FancyLinkSection
         reverse
         heading="Understanding our Tokenomics"
@@ -20,11 +28,6 @@ export function Tokenomics() {
             lg: "1600px",
           },
           w: "100%",
-          mb: {
-            base: 24,
-            md: 32,
-            xl: "150px",
-          },
           pl: {
             lg: "40px",
             xl: "64px",

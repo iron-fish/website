@@ -10,6 +10,8 @@ import {
   FancyArrowRight,
   AspectRatio,
   HStack,
+  Stack,
+  Flex,
 } from "@/lib/ui";
 import Image from "next/image";
 import Link from "next/link";
@@ -60,13 +62,23 @@ export function Hero() {
               asset information from public view. With read-only view keys, you
               remain compliant and in control.
             </Text>
-            <HStack gap={4}>
+            <Flex
+              gap={4}
+              flexDirection={{
+                base: "column",
+                lg: "row",
+              }}
+              alignItems={{
+                base: "stretch",
+                lg: "center",
+              }}
+            >
               <Button size="lg" as={Link} href="/use/get-started">
                 <Box mr={4}>Get Started</Box>
                 <FancyArrowRight />
               </Button>
               <BridgeDropdown />
-            </HStack>
+            </Flex>
           </Box>
         </GridItem>
         <GridItem position="relative">

@@ -31,9 +31,10 @@ function ButtonContents({
       boxShadow="2px 3px 0px black"
       borderRadius={28}
       onClick={toggleIsOpen}
+      w="100%"
       {...rest}
     >
-      <Flex px={10} h={14} alignItems="center" gap={2}>
+      <Flex px={10} h={14} alignItems="center" gap={2} justifyContent="center">
         <Text fontSize="lg">Bridge</Text>
         {isOpen ? <IoChevronUp size={20} /> : <IoChevronDown size={20} />}
       </Flex>
@@ -51,7 +52,7 @@ function BridgeLink({ direction }: { direction: "out" | "in" }) {
   return (
     <Flex
       as="a"
-      h="44px"
+      h="64px"
       alignItems="center"
       borderTop="1px solid black"
       px={5}
