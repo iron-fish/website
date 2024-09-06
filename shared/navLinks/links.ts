@@ -2,30 +2,6 @@ import { messages } from "./messages";
 
 export const links = [
   {
-    label: messages.learn,
-    color: "blue",
-    items: [
-      {
-        title: messages.faqTitle,
-        description: messages.faqDescription,
-        href: "/learn/faq",
-        image: "/images/nav/learn-mag-glass.svg",
-      },
-      {
-        title: messages.whitepaperTitle,
-        description: messages.whitepaperDescription,
-        href: "/learn/whitepaper",
-        image: "/images/nav/learn-whitepaper.svg",
-      },
-      {
-        title: messages.tokenomicsTitle,
-        description: messages.tokenomicsDescription,
-        href: "/learn/tokenomics",
-        image: "/images/nav/learn-tokenomics.svg",
-      },
-    ],
-  },
-  {
     label: messages.use,
     color: "orange",
     items: [
@@ -62,20 +38,26 @@ export const links = [
     ],
   },
   {
-    label: messages.developers,
-    color: "yellow",
+    label: messages.learn,
+    color: "blue",
     items: [
       {
-        title: messages.documentationTitle,
-        description: messages.documentationDescription,
-        href: "/developers/documentation",
-        image: "/images/nav/dev-blowfish.svg",
+        title: messages.faqTitle,
+        description: messages.faqDescription,
+        href: "/learn/faq",
+        image: "/images/nav/learn-mag-glass.svg",
       },
       {
-        title: messages.githubTitle,
-        description: messages.githubDescription,
-        href: "https://github.com/iron-fish/ironfish",
-        image: "/images/nav/dev-tv-fish.svg",
+        title: messages.whitepaperTitle,
+        description: messages.whitepaperDescription,
+        href: "/learn/whitepaper",
+        image: "/images/nav/learn-whitepaper.svg",
+      },
+      {
+        title: messages.tokenomicsTitle,
+        description: messages.tokenomicsDescription,
+        href: "/learn/tokenomics",
+        image: "/images/nav/learn-tokenomics.svg",
       },
     ],
   },
@@ -110,26 +92,32 @@ export const links = [
     ],
   },
   {
+    label: messages.developers,
+    color: "yellow",
+    items: [
+      {
+        title: messages.documentationTitle,
+        description: messages.documentationDescription,
+        href: "/developers/documentation",
+        image: "/images/nav/dev-blowfish.svg",
+      },
+      {
+        title: messages.githubTitle,
+        description: messages.githubDescription,
+        href: "https://github.com/iron-fish/ironfish",
+        image: "/images/nav/dev-tv-fish.svg",
+      },
+    ],
+  },
+  {
     label: messages.company,
     color: "pink",
     items: [
-      {
-        title: messages.aboutUsTitle,
-        description: messages.aboutUsDescription,
-        href: "/company/about-us",
-        image: "/images/nav/company-submarine.svg",
-      },
       {
         title: messages.mediaKitTitle,
         description: messages.mediaKitDescription,
         href: "/company/media-kit",
         image: "/images/nav/company-vertical-fish.svg",
-      },
-      {
-        title: messages.contactUsTitle,
-        description: messages.contactUsDescription,
-        href: "mailto:contact@ironfish.network",
-        image: "/images/nav/company-jellyfish.svg",
       },
     ],
   },

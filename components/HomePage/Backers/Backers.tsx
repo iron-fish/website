@@ -4,9 +4,9 @@ import Image from "next/image";
 import ImgA16z from "./assets/backer-a16z.png";
 import ImgElad from "./assets/backer-elad.png";
 import ImgSequoia from "./assets/backer-sequoia.png";
-import ImgBalaji from "./assets/backer-balaji.png";
 import ImgElectric from "./assets/backer-electric.png";
 import ImgLinda from "./assets/backer-linda.png";
+import ImgDragonfly from "./assets/backer-dragonfly.png";
 
 export function Backers() {
   return (
@@ -15,13 +15,18 @@ export function Backers() {
         Founded by veterans and top investors
       </Text>
       <Marquee autoFill>
-        {[ImgA16z, ImgElad, ImgSequoia, ImgBalaji, ImgElectric, ImgLinda].map(
-          (img, i) => (
-            <Box key={i} mx={16} filter="grayscale(1)">
-              <Image src={img} height={52} alt="" />
-            </Box>
-          )
-        )}
+        {[
+          ImgLinda,
+          ImgElad,
+          ImgSequoia,
+          ImgElectric,
+          ImgA16z,
+          ImgDragonfly,
+        ].map((img, i) => (
+          <Box key={i} mx={16} filter="grayscale(1)">
+            <Image src={img} height={30} alt="" />
+          </Box>
+        ))}
       </Marquee>
     </Box>
   );

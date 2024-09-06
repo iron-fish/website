@@ -8,11 +8,12 @@ import { FromTheBlog } from "@/components/HomePage/FromTheBlog/FromTheBlog";
 import { BlogItem } from "@/components/FilteredBlogsList/FilteredBlogsList";
 import { Community } from "../components/HomePage/Community/Community";
 import { Hero } from "../components/HomePage/Hero/Hero";
-import { Whitepaper } from "../components/HomePage/Whitepaper/Whitepaper";
+import { Encrypt } from "../components/HomePage/Encrypt/Encrypt";
 import { WhyIronFish } from "../components/HomePage/WhyIronFish/WhyIronFish";
 import { Backers } from "@/components/HomePage/Backers/Backers";
 import { NewsDesk } from "@/components/HomePage/NewsDesk/NewsDesk";
 import { Safety } from "@/components/HomePage/Safety/Safety";
+import { Tokenomics } from "@/components/HomePage/Tokenomics/Tokenomics";
 
 type Props = {
   blogItems: BlogItem[];
@@ -25,7 +26,8 @@ export default function Index({ blogItems }: Props) {
       <Backers />
       <NewsDesk />
       <Safety />
-      <Whitepaper />
+      <Encrypt />
+      <Tokenomics />
       <WhyIronFish />
       <FromTheBlog blogItems={blogItems} />
       <Community />

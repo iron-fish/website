@@ -9,11 +9,13 @@ import { CHIP_COLORS } from "../shared/chipColors";
 import image1 from "./assets/image-01.svg";
 import image2 from "./assets/image-02.svg";
 import image3 from "./assets/image-03.svg";
+import image4 from "./assets/image-04.svg";
 
 const IMAGE_BY_INDEX = {
   0: <Image alt="" src={image1} />,
   1: <Image alt="" src={image2} />,
   2: <Image alt="" src={image3} />,
+  3: <Image alt="" src={image4} />,
 };
 
 export function FeatureListB() {
@@ -123,6 +125,28 @@ export function FeatureListB() {
                       }}
                     >
                       <Image alt="" src={image3} />
+                    </Box>
+                  </Box>
+                }
+              />
+              <AutoExpandingList.Item
+                chipColor={CHIP_COLORS.BLUE}
+                heading={<Heading fontSize="xl">Ledger Support</Heading>}
+                body={
+                  <Box>
+                    <Text>
+                      Physically secure your Iron Fish transactions with full
+                      Ledger integration in the Node App. This is the easiest
+                      and safest way to secure your assets.
+                    </Text>
+                    <Box
+                      mt={8}
+                      display={{
+                        base: "block",
+                        md: "none",
+                      }}
+                    >
+                      <Image alt="" src={image4} />
                     </Box>
                   </Box>
                 }

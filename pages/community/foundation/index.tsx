@@ -10,11 +10,12 @@ import {
   Text,
   chakra,
 } from "@/lib/ui";
-import { DiscordCTA } from "@/components/Governance/DiscordCTA/DiscordCTA";
+import { ContactUs } from "@/components/ContactUs/ContactUs";
 import flower from "../../../assets/heroImages/foundation/flower.svg";
 import key from "../../../assets/heroImages/foundation/key.svg";
 import weather from "../../../assets/heroImages/foundation/weather.svg";
 import Link from "next/link";
+import { OurPrinciples } from "@/components/Foundation/OurPrinciples/OurPrinciples";
 
 const flowerImg = flower as LocalImage;
 const keyImg = key as LocalImage;
@@ -222,7 +223,8 @@ export default function Governance() {
           }}
         />
       </Box>
-      <DiscordCTA />
+      <OurPrinciples />
+      <ContactUs />
     </Box>
   );
 }
