@@ -223,7 +223,9 @@ export default function Governance() {
           }}
         />
       </Box>
-      <OurPrinciples />
+      <Box borderBottom="1px solid black">
+        <OurPrinciples />
+      </Box>
       <ContactUs />
     </Box>
   );
