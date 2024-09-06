@@ -1,6 +1,13 @@
-import { Box, Text, AspectRatio, HStack, Heading, Container } from "@/lib/ui";
+import {
+  Box,
+  Text,
+  AspectRatio,
+  Heading,
+  Container,
+  Grid,
+  GridItem,
+} from "@/lib/ui";
 import Image from "next/image";
-import Link from "next/link";
 import { MEDIA_ITEMS } from "@/content/media/media";
 
 export function NewsDesk() {
@@ -11,7 +18,10 @@ export function NewsDesk() {
         lg: "1600px",
       }}
       w="100%"
-      px={16}
+      px={{
+        base: 4,
+        lg: 16,
+      }}
     >
       <Box>
         <Text fontSize="md" textTransform="uppercase" textAlign="center" mb={8}>
@@ -45,30 +55,49 @@ function Story({
   image?: string | null;
 }) {
   return (
-    <HStack
+    <Grid
       as="a"
       href={href}
       target="_blank"
-      justify="space-between"
+      templateColumns={{
+        base: "1fr",
+        lg: "7fr 3fr",
+      }}
       borderTop="1px solid black"
       py={8}
+      flexDirection={{
+        base: "column",
+        lg: "row",
+      }}
+      gap={{
+        base: 6,
+        lg: 8,
+      }}
       _hover={{
         textDecoration: "underline",
       }}
     >
-      <Box maxW="60ch">
+      <GridItem
+        display="flex"
+        flexDirection="column"
+        justifyContent="center"
+        maxW={{
+          base: "auto",
+          lg: "60ch",
+        }}
+      >
         <Text fontSize="md" mb={3}>
           {date}
         </Text>
         <Heading fontSize="lg">{title}</Heading>
-      </Box>
-      <Box w="40%" borderRadius={9} overflow="hidden">
+      </GridItem>
+      <GridItem borderRadius={9} overflow="hidden">
         {image && (
           <AspectRatio ratio={362 / 154}>
             <Image alt="" src={image} fill />
           </AspectRatio>
         )}
-      </Box>
-    </HStack>
+      </GridItem>
+    </Grid>
   );
 }

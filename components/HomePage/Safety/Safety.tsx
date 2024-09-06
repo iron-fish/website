@@ -53,7 +53,17 @@ export function Safety() {
           encrypted network.
         </Text>
 
-        <Grid templateColumns="1fr 1fr" gap={8} mb="128px">
+        <Grid
+          templateColumns={{
+            base: "1fr",
+            lg: "1fr 1fr",
+          }}
+          gap={{
+            base: 6,
+            lg: 8,
+          }}
+          mb="128px"
+        >
           <GridItem display="flex" alignItems="stretch">
             <ItemCard
               name="The Node App"
@@ -83,7 +93,16 @@ export function Safety() {
           eiusmod tempor incididunt ut labore et dolore magna aliqua.
         </Text>
 
-        <Grid templateColumns="1fr 1fr" gap={8}>
+        <Grid
+          templateColumns={{
+            base: "1fr",
+            lg: "1fr 1fr",
+          }}
+          gap={{
+            base: 6,
+            lg: 8,
+          }}
+        >
           <GridItem display="flex" alignItems="stretch">
             <ItemCard
               name="Chainport Bridge"
