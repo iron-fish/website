@@ -18,6 +18,77 @@ import oreoWalletImage from "./assets/oreowallet.png";
 import mobileAppImage from "./assets/mobile-app.png";
 import Image, { StaticImageData } from "next/image";
 
+const messages = defineMessages({
+  safeAccessibleWallets: {
+    id: "Safety.safeAccessibleWallets",
+    defaultMessage: "Safe, Accessible Wallets",
+  },
+  walletsDescription: {
+    id: "Safety.walletsDescription",
+    defaultMessage:
+      "We provide a user-friendly decentralized currency that's secure and convenient, while supporting sophisticated applications on our encrypted network.",
+  },
+  biDirectionalBridging: {
+    id: "Safety.biDirectionalBridging",
+    defaultMessage: "Bi-Directional Bridging",
+  },
+  bridgingDescription: {
+    id: "Safety.bridgingDescription",
+    defaultMessage:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+  },
+  nodeApp: {
+    id: "Safety.nodeApp",
+    defaultMessage: "The Node App",
+  },
+  nodeAppDescription: {
+    id: "Safety.nodeAppDescription",
+    defaultMessage:
+      "Send, receive and bridge assets from your desktop while running your own node.",
+  },
+  nodeAppLink: {
+    id: "Safety.nodeAppLink",
+    defaultMessage: "Go to downloads",
+  },
+  oreoWallet: {
+    id: "Safety.oreoWallet",
+    defaultMessage: "OreoWallet",
+  },
+  oreoWalletDescription: {
+    id: "Safety.oreoWalletDescription",
+    defaultMessage: "Make secure transactions right from your browser.",
+  },
+  oreoWalletLink: {
+    id: "Safety.oreoWalletLink",
+    defaultMessage: "Go to website",
+  },
+  chainportBridge: {
+    id: "Safety.chainportBridge",
+    defaultMessage: "Chainport Bridge",
+  },
+  chainportBridgeDescription: {
+    id: "Safety.chainportBridgeDescription",
+    defaultMessage:
+      "Encrypt assets from 24+ chains and bridge them to your Iron Fish account.",
+  },
+  chainportBridgeLink: {
+    id: "Safety.chainportBridgeLink",
+    defaultMessage: "Go to bridge",
+  },
+  ironFishBridge: {
+    id: "Safety.ironFishBridge",
+    defaultMessage: "Bridge.IronFish",
+  },
+  ironFishBridgeDescription: {
+    id: "Safety.ironFishBridgeDescription",
+    defaultMessage: "Bridge your $IRON directly to the Ethereum network.",
+  },
+  ironFishBridgeLink: {
+    id: "Safety.ironFishBridgeLink",
+    defaultMessage: "Go to Bridge",
+  },
+});
+
 export function Safety() {
   const { formatMessage } = useIntl();
   return (
@@ -45,12 +116,10 @@ export function Safety() {
         }}
       >
         <Text as="h2" textStyle="h3" color="white" mb={8}>
-          Safe, Accessible Wallets
+          {formatMessage(messages.safeAccessibleWallets)}
         </Text>
         <Text color="#CCC" textStyle="lg" maxW="40ch" margin="0 auto 2rem">
-          We provide a user-friendly decentralized currency that&apos;s secure
-          and convenient, while supporting sophisticated applications on our
-          encrypted network.
+          {formatMessage(messages.walletsDescription)}
         </Text>
 
         <Grid
@@ -66,31 +135,30 @@ export function Safety() {
         >
           <GridItem display="flex" alignItems="stretch">
             <ItemCard
-              name="The Node App"
-              description="Send, receive and bridge assets from your desktop while running your own node."
+              name={formatMessage(messages.nodeApp)}
+              description={formatMessage(messages.nodeAppDescription)}
               href="/use/node-app"
-              linkText="Go to downloads"
+              linkText={formatMessage(messages.nodeAppLink)}
               imageSrc={nodeAppImage}
             />
           </GridItem>
 
           <GridItem display="flex" alignItems="stretch">
             <ItemCard
-              name="OreoWallet"
-              description="Make secure transactions right from your browser."
+              name={formatMessage(messages.oreoWallet)}
+              description={formatMessage(messages.oreoWalletDescription)}
               href="/use/node-app"
-              linkText="Go to website"
+              linkText={formatMessage(messages.oreoWalletLink)}
               imageSrc={oreoWalletImage}
             />
           </GridItem>
         </Grid>
 
         <Text as="h2" textStyle="h3" color="white" mb={8}>
-          Bi-Directional Bridging
+          {formatMessage(messages.biDirectionalBridging)}
         </Text>
         <Text color="#CCC" textStyle="lg" maxW="40ch" margin="0 auto 2rem">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          {formatMessage(messages.bridgingDescription)}
         </Text>
 
         <Grid
@@ -105,20 +173,20 @@ export function Safety() {
         >
           <GridItem display="flex" alignItems="stretch">
             <ItemCard
-              name="Chainport Bridge"
-              description="Encrypt assets from 24+ chains and bridge them to your Iron Fish account."
+              name={formatMessage(messages.chainportBridge)}
+              description={formatMessage(messages.chainportBridgeDescription)}
               href="/use/node-app"
-              linkText="Go to bridge"
+              linkText={formatMessage(messages.chainportBridgeLink)}
               imageSrc={chainportImage}
             />
           </GridItem>
 
           <GridItem display="flex" alignItems="stretch">
             <ItemCard
-              name="Bridge.IronFish"
-              description="Bridge your $IRON directly to the Ethereum network."
+              name={formatMessage(messages.ironFishBridge)}
+              description={formatMessage(messages.ironFishBridgeDescription)}
               href="https://testnet.bridge.ironfish.network/"
-              linkText="Go to Bridge"
+              linkText={formatMessage(messages.ironFishBridgeLink)}
               imageSrc={mobileAppImage}
             />
           </GridItem>

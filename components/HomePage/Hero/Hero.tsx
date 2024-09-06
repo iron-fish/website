@@ -9,14 +9,31 @@ import {
   Button,
   FancyArrowRight,
   AspectRatio,
-  HStack,
-  Stack,
   Flex,
 } from "@/lib/ui";
 import Image from "next/image";
 import Link from "next/link";
+import { defineMessages, useIntl } from "react-intl";
+
+const messages = defineMessages({
+  heading: {
+    id: "Hero.heading",
+    defaultMessage: "Seamless, Safe Crypto",
+  },
+  description: {
+    id: "Hero.description",
+    defaultMessage:
+      "Iron Fish encrypts every transaction, shielding your sensitive asset information from public view. With read-only view keys, you remain compliant and in control.",
+  },
+  getStarted: {
+    id: "Hero.getStarted",
+    defaultMessage: "Get Started",
+  },
+});
 
 export function Hero() {
+  const { formatMessage } = useIntl();
+
   return (
     <Container
       maxW={{
@@ -55,12 +72,10 @@ export function Hero() {
             }}
           >
             <Heading as="h1" size="h1" mb={4}>
-              Seamless, Safe Crypto
+              {formatMessage(messages.heading)}
             </Heading>
             <Text textStyle="lg" mb={10}>
-              Iron Fish encrypts every transaction, shielding your sensitive
-              asset information from public view. With read-only view keys, you
-              remain compliant and in control.
+              {formatMessage(messages.description)}
             </Text>
             <Flex
               gap={4}
@@ -74,7 +89,7 @@ export function Hero() {
               }}
             >
               <Button size="lg" as={Link} href="/use/get-started">
-                <Box mr={4}>Get Started</Box>
+                <Box mr={4}>{formatMessage(messages.getStarted)}</Box>
                 <FancyArrowRight />
               </Button>
               <BridgeDropdown />
