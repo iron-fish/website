@@ -41,17 +41,6 @@ export default function NodeApp({ downloadUrlsByPlatform }: Props) {
                 <Text as="span" textStyle="lg">
                   Node App
                 </Text>
-                <Box
-                  as="span"
-                  bg="black"
-                  color="orange.500"
-                  py={1}
-                  px={3}
-                  borderRadius="full"
-                  ml={2}
-                >
-                  Beta
-                </Box>
               </Flex>
             }
             subheading="Built for everyone"

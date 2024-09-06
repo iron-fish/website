@@ -11,7 +11,7 @@ import {
 import Head from "next/head";
 import { GovernanceStructure } from "@/components/Governance/GovernanceStructure/GovernanceStructure";
 import { GovernanceFAQ } from "@/components/Governance/GovernanceFAQ/GovernanceFAQ";
-import { DiscordCTA } from "@/components/Governance/DiscordCTA/DiscordCTA";
+import { ContactUs } from "@/components/ContactUs/ContactUs";
 import { defineMessages, useIntl } from "react-intl";
 import betta from "../../../assets/heroImages/governance/betta.svg";
 import angler from "../../../assets/heroImages/governance/angler.svg";
@@ -147,7 +147,7 @@ export default function Governance() {
 
       <GovernanceStructure />
       <GovernanceFAQ />
-      <DiscordCTA />
+      <ContactUs />
     </Box>
   );
 }

@@ -8,32 +8,16 @@ import { AnimatePresence, motion } from "framer-motion";
 import image1 from "./assets/image-01.svg";
 import image2 from "./assets/image-02.svg";
 import image3 from "./assets/image-03.svg";
-import image4 from "./assets/image-04.svg";
-import { CHIP_COLORS } from "../shared/chipColors";
+
+export const CHIP_COLOR = "#C7F182";
 
 const IMAGE_BY_INDEX = {
   0: <Image alt="" src={image1} />,
   1: <Image alt="" src={image2} />,
   2: <Image alt="" src={image3} />,
-  3: <Image alt="" src={image4} />,
 };
 
-function ComingSoon() {
-  return (
-    <Box
-      textTransform="uppercase"
-      bg="#F3F3F4"
-      color="#7F7F7F"
-      borderRadius="full"
-      fontSize="sm"
-      px={3}
-    >
-      Coming Soon
-    </Box>
-  );
-}
-
-export function FeatureListA() {
+export function OurPrinciples() {
   const expandingListProps = useAutoExpandingList();
 
   return (
@@ -47,23 +31,28 @@ export function FeatureListA() {
       >
         <GridItem>
           <Text textStyle="h3" mb={2}>
-            The perfect app for everyday use
+            Our Principles
           </Text>
           <AutoExpandingList {...expandingListProps}>
             <AutoExpandingList.Item
-              chipColor={CHIP_COLORS.GREEN}
+              chipColor={CHIP_COLOR}
               heading={
                 <Heading fontSize="xl">
-                  Easy Access to Iron Fish Network
+                  Encryption is the Future of Crypto
                 </Heading>
               }
               body={
                 <Box>
+                  <Text mb={6}>
+                    Privacy is a fundamental right, and yet everyday people give
+                    away personal information — often without even realizing it.
+                    We empower users to decide when and how to share their data,
+                    by ensuring all transactions are encrypted.
+                  </Text>
                   <Text>
-                    Once the app has synced the node, you can start using $IRON
-                    and your custom assets right away. If you do use the command
-                    line wallet, anything you do there is reflected in the node
-                    app, and vice versa.
+                    We do not compromise on protection — using zero-knowledge
+                    proofs (zk-SNARKs) and the highest industry standards for
+                    encryption.
                   </Text>
                   <Box
                     mt={8}
@@ -78,15 +67,15 @@ export function FeatureListA() {
               }
             />
             <AutoExpandingList.Item
-              chipColor={CHIP_COLORS.PINK}
-              heading={
-                <Heading fontSize="xl">Centralized Account View</Heading>
-              }
+              chipColor={CHIP_COLOR}
+              heading={<Heading fontSize="xl">We Build, Together</Heading>}
               body={
                 <Box>
                   <Text>
-                    Access a centralized view of all your accounts: address
-                    book, balances, transactions, and more.
+                    As a decentralized, open-source network, Iron Fish relies on
+                    an engaged community to support protocol development and
+                    raise awareness of privacy as a social good. Our community
+                    is the heart of our platform.
                   </Text>
                   <Box
                     mt={8}
@@ -101,14 +90,16 @@ export function FeatureListA() {
               }
             />
             <AutoExpandingList.Item
-              chipColor={CHIP_COLORS.BLUE}
-              heading={<Heading fontSize="xl">Encryption Made Simple</Heading>}
+              chipColor={CHIP_COLOR}
+              heading={<Heading fontSize="xl">Common Sense Compliance</Heading>}
               body={
                 <Box>
                   <Text>
-                    The node app has the same level of security as running a
-                    node via the command line, and is more secure than using
-                    third party applications.
+                    To date, crypto privacy projects have either failed to offer
+                    necessary levels of protection or more often, they&apos;ve
+                    fallen on the wrong side of public authorities. Iron Fish
+                    addresses this impasse with a leading edge platform with
+                    built-in compliance controls.
                   </Text>
                   <Box
                     mt={8}
@@ -118,48 +109,6 @@ export function FeatureListA() {
                     }}
                   >
                     <Image alt="" src={image3} />
-                  </Box>
-                </Box>
-              }
-            />
-            <AutoExpandingList.Item
-              chipColor={CHIP_COLORS.ORANGE}
-              heading={
-                <Flex
-                  flexDirection={{
-                    base: "column",
-                    md: "row",
-                  }}
-                  alignItems={{
-                    base: "flex-start",
-                    md: "center",
-                  }}
-                  gap={{
-                    base: 4,
-                    md: 2,
-                  }}
-                  justifyContent="space-between"
-                  w="100%"
-                >
-                  <Heading fontSize="xl">Bridge Assets</Heading>
-                </Flex>
-              }
-              body={
-                <Box>
-                  <Text>
-                    We are the first to support multi-asset transactions, we
-                    pave the way for complete privacy in web3 transactions.
-                    Unlocking the true potential of a private and secure
-                    blockchain ecosystem.
-                  </Text>
-                  <Box
-                    mt={8}
-                    display={{
-                      base: "block",
-                      md: "none",
-                    }}
-                  >
-                    <Image alt="" src={image4} />
                   </Box>
                 </Box>
               }

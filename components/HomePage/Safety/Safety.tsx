@@ -12,7 +12,6 @@ import {
 import Link from "next/link";
 import { ReactNode } from "react";
 import { defineMessages, useIntl } from "react-intl";
-import { useIsClient } from "usehooks-ts";
 import nodeAppImage from "./assets/node-app.png";
 import chainportImage from "./assets/chainport.png";
 import oreoWalletImage from "./assets/oreowallet.png";
@@ -36,7 +35,7 @@ export function Safety() {
   return (
     <Box
       bg="black"
-      pt={{
+      py={{
         base: 24,
         lg: 32,
         xl: "150px",

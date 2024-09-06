@@ -1,6 +1,6 @@
 import { FancyLinkSection } from "../../FancyLinkSection/FancyLinkSection";
 
-export function Whitepaper() {
+export function Encrypt() {
   return (
     <FancyLinkSection
       heading="Encrypt your Crypto"
@@ -14,7 +14,7 @@ export function Whitepaper() {
           lg: "1600px",
         },
         w: "100%",
-        mb: {
+        py: {
           base: 24,
           md: 32,
           xl: "150px",
