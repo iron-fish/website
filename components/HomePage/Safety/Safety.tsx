@@ -8,6 +8,7 @@ import {
   ShadowBox,
   Grid,
   GridItem,
+  ShadowBoxProps,
 } from "@/lib/ui";
 import Link from "next/link";
 import { ReactNode } from "react";
@@ -73,11 +74,7 @@ const messages = defineMessages({
   },
   chainportBridgeLink: {
     id: "Safety.chainportBridgeLink",
-    defaultMessage: "Go to bridge",
-  },
-  ironFishBridge: {
-    id: "Safety.ironFishBridge",
-    defaultMessage: "Bridge.IronFish",
+    defaultMessage: "Go to Bridge",
   },
   ironFishBridgeDescription: {
     id: "Safety.ironFishBridgeDescription",
@@ -103,22 +100,17 @@ export function Safety() {
         base: 4,
       }}
     >
-      <Container
-        maxW="1000px"
-        textAlign={{
-          base: "left",
-          md: "center",
-        }}
-        mb={{
-          base: 16,
-          md: 32,
-          xl: "140px",
-        }}
-      >
+      <Container maxW="1000px" textAlign="center">
         <Text as="h2" textStyle="h3" color="white" mb={8}>
           {formatMessage(messages.safeAccessibleWallets)}
         </Text>
-        <Text color="#CCC" textStyle="lg" maxW="40ch" margin="0 auto 2rem">
+        <Text
+          color="#CCC"
+          textStyle="lg"
+          maxW="40ch"
+          margin="0 auto 2rem"
+          mb={16}
+        >
           {formatMessage(messages.walletsDescription)}
         </Text>
 
@@ -147,7 +139,7 @@ export function Safety() {
             <ItemCard
               name={formatMessage(messages.oreoWallet)}
               description={formatMessage(messages.oreoWalletDescription)}
-              href="/use/node-app"
+              href="https://oreowallet.com/"
               linkText={formatMessage(messages.oreoWalletLink)}
               imageSrc={oreoWalletImage}
             />
@@ -157,7 +149,13 @@ export function Safety() {
         <Text as="h2" textStyle="h3" color="white" mb={8}>
           {formatMessage(messages.biDirectionalBridging)}
         </Text>
-        <Text color="#CCC" textStyle="lg" maxW="40ch" margin="0 auto 2rem">
+        <Text
+          color="#CCC"
+          textStyle="lg"
+          maxW="40ch"
+          margin="0 auto 2rem"
+          mb={16}
+        >
           {formatMessage(messages.bridgingDescription)}
         </Text>
 
@@ -175,19 +173,21 @@ export function Safety() {
             <ItemCard
               name={formatMessage(messages.chainportBridge)}
               description={formatMessage(messages.chainportBridgeDescription)}
-              href="/use/node-app"
+              href="https://app.chainport.io/?from=ETHEREUM&to=IRONFISH"
               linkText={formatMessage(messages.chainportBridgeLink)}
               imageSrc={chainportImage}
+              pb={8}
             />
           </GridItem>
 
           <GridItem display="flex" alignItems="stretch">
             <ItemCard
-              name={formatMessage(messages.ironFishBridge)}
+              name="Bridge.IronFish"
               description={formatMessage(messages.ironFishBridgeDescription)}
-              href="https://testnet.bridge.ironfish.network/"
+              href="https://bridge.ironfish.network/"
               linkText={formatMessage(messages.ironFishBridgeLink)}
               imageSrc={mobileAppImage}
+              pb={8}
             />
           </GridItem>
         </Grid>
@@ -197,29 +197,22 @@ export function Safety() {
 }
 
 function FancyLink({
-  href,
   color,
   children,
 }: {
-  href: string;
   color: string;
   children: ReactNode;
 }) {
   return (
     <Flex
+      data-as="link"
       display="flex"
       alignItems="center"
       gap={2}
-      as={Link}
-      href={href}
-      pb={8}
+      pb={2}
+      mb={6}
       position="relative"
       color={color}
-      _hover={{
-        "& > div:last-child": {
-          w: "100%",
-        },
-      }}
     >
       <Text textStyle="sm">{children}</Text>
       <Box transform="scale(0.7)">
@@ -237,13 +230,14 @@ function FancyLink({
     </Flex>
   );
 }
+
 type ItemCardProps = {
   name: string;
   description: string;
   href: string;
   linkText: string;
   imageSrc: StaticImageData;
-};
+} & Omit<ShadowBoxProps, "children">;
 
 function ItemCard({
   name,
@@ -251,17 +245,35 @@ function ItemCard({
   href,
   linkText,
   imageSrc,
+  ...rest
 }: ItemCardProps) {
   return (
     <ShadowBox
+      as={Link}
+      href={href}
+      target={href.startsWith("http") ? "_blank" : undefined}
+      rel={href.startsWith("http") ? "noreferrer" : undefined}
       bg="#242424"
       borderColor="#3B3B3B"
       shadowColor="#242424"
+      borderRadius="10px"
       pt={16}
       px={8}
       display="flex"
       flexDirection="column"
       alignItems="center"
+      containerProps={{
+        _hover: {
+          "& > *": {
+            borderColor: "white",
+            transition: "border 0.15s ease-in-out",
+          },
+          "[data-as=link] > div:last-child": {
+            w: "100%",
+          },
+        },
+      }}
+      {...rest}
     >
       <Text as="h3" textStyle="h4" color="white" mb={8}>
         {name}
@@ -269,9 +281,7 @@ function ItemCard({
       <Text color="white" textStyle="md" mb={8}>
         {description}
       </Text>
-      <FancyLink href={href} color="pink.400">
-        {linkText}
-      </FancyLink>
+      <FancyLink color="pink.400">{linkText}</FancyLink>
 
       <HStack justifyContent="center" mt="auto">
         <Image src={imageSrc} alt={name} />

@@ -32,6 +32,7 @@ export function NewsDesk() {
         base: 4,
         lg: 16,
       }}
+      pb={16}
     >
       <Box>
         <Text fontSize="md" textTransform="uppercase" textAlign="center" mb={8}>
