@@ -110,18 +110,6 @@ export const links = [
     ],
   },
   {
-    label: messages.company,
-    color: "pink",
-    items: [
-      {
-        title: messages.mediaKitTitle,
-        description: messages.mediaKitDescription,
-        href: "/company/media-kit",
-        image: "/images/nav/company-vertical-fish.svg",
-      },
-    ],
-  },
-  {
     label: messages.blogTitle,
     href: "/learn/blog",
   },
