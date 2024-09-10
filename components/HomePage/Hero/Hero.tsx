@@ -96,17 +96,18 @@ export function Hero() {
             </Flex>
           </Box>
         </GridItem>
-        <GridItem position="relative">
+        <GridItem position="relative" display="flex" alignItems="center">
           <Box
             mt={{
               base: 0,
               lg: 4,
             }}
+            width="100%"
           >
-            <AspectRatio position="relative" ratio={1}>
+            <AspectRatio position="relative" ratio={657 / 424}>
               <Image
                 priority
-                src="/images/home/hero-fish.svg"
+                src="/images/home/hero-video.png"
                 alt=""
                 style={{ objectFit: "contain" }}
                 fill
