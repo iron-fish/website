@@ -1,4 +1,4 @@
-import { Box, Text } from "@/lib/ui";
+import { Box, Text, useBreakpointValue } from "@/lib/ui";
 import Marquee from "react-fast-marquee";
 import Image from "next/image";
 import { defineMessages, useIntl } from "react-intl";
@@ -19,6 +19,16 @@ const messages = defineMessages({
 export function Backers() {
   const { formatMessage } = useIntl();
 
+  const height = useBreakpointValue({
+    base: 20,
+    lg: 30,
+  });
+
+  const margin = useBreakpointValue({
+    base: 10,
+    lg: 16,
+  });
+
   return (
     <Box mb={20}>
       <Text fontSize="md" textAlign="center" textTransform="uppercase" mb={8}>
@@ -33,8 +43,8 @@ export function Backers() {
           ImgA16z,
           ImgDragonfly,
         ].map((img, i) => (
-          <Box key={i} mx={16} filter="grayscale(1)">
-            <Image src={img} height={30} alt="" />
+          <Box key={i} mx={margin} filter="grayscale(1)">
+            <Image src={img} height={height} alt="" />
           </Box>
         ))}
       </Marquee>

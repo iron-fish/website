@@ -27,17 +27,9 @@ const messages = defineMessages({
   walletsDescription: {
     id: "Safety.walletsDescription",
     defaultMessage:
-      "We provide a user-friendly decentralized currency that's secure and convenient, while supporting sophisticated applications on our encrypted network.",
+      "Iron Fish enables safe, private transactions in the decentralized economy.",
   },
-  biDirectionalBridging: {
-    id: "Safety.biDirectionalBridging",
-    defaultMessage: "Bi-Directional Bridging",
-  },
-  bridgingDescription: {
-    id: "Safety.bridgingDescription",
-    defaultMessage:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-  },
+
   nodeApp: {
     id: "Safety.nodeApp",
     defaultMessage: "The Node App",
@@ -49,33 +41,47 @@ const messages = defineMessages({
   },
   nodeAppLink: {
     id: "Safety.nodeAppLink",
-    defaultMessage: "Go to downloads",
+    defaultMessage: "Download here",
   },
+
   oreoWallet: {
     id: "Safety.oreoWallet",
     defaultMessage: "OreoWallet",
   },
   oreoWalletDescription: {
     id: "Safety.oreoWalletDescription",
-    defaultMessage: "Make secure transactions right from your browser.",
+    defaultMessage:
+      "Make secure and private transactions right from your browser.",
   },
   oreoWalletLink: {
     id: "Safety.oreoWalletLink",
-    defaultMessage: "Go to website",
+    defaultMessage: "Install OreoWallet",
   },
-  chainportBridge: {
-    id: "Safety.chainportBridge",
-    defaultMessage: "Chainport Bridge",
+
+  biDirectionalBridging: {
+    id: "Safety.biDirectionalBridging",
+    defaultMessage: "Bi-Directional Bridging",
   },
-  chainportBridgeDescription: {
-    id: "Safety.chainportBridgeDescription",
+  bridgingDescription: {
+    id: "Safety.bridgingDescription",
     defaultMessage:
-      "Encrypt assets from 24+ chains and bridge them to your Iron Fish account.",
+      "Iron Fish's advanced privacy features are accessible across 20+ EVM-compatible chains.",
   },
-  chainportBridgeLink: {
-    id: "Safety.chainportBridgeLink",
-    defaultMessage: "Go to Bridge",
+
+  chainPortBridge: {
+    id: "Safety.chainPortBridge",
+    defaultMessage: "ChainPort Bridge",
   },
+  chainPortBridgeDescription: {
+    id: "Safety.chainPortBridgeDescription",
+    defaultMessage:
+      "Encrypt and bridge assets to your account using ChainPort's predictive screening.",
+  },
+  chainPortBridgeLink: {
+    id: "Safety.chainPortBridgeLink",
+    defaultMessage: "Bridge Now",
+  },
+
   ironFishBridgeDescription: {
     id: "Safety.ironFishBridgeDescription",
     defaultMessage: "Bridge your $IRON directly to the Ethereum network.",
@@ -171,10 +177,10 @@ export function Safety() {
         >
           <GridItem display="flex" alignItems="stretch">
             <ItemCard
-              name={formatMessage(messages.chainportBridge)}
-              description={formatMessage(messages.chainportBridgeDescription)}
+              name={formatMessage(messages.chainPortBridge)}
+              description={formatMessage(messages.chainPortBridgeDescription)}
               href="https://app.chainport.io/?from=ETHEREUM&to=IRONFISH"
-              linkText={formatMessage(messages.chainportBridgeLink)}
+              linkText={formatMessage(messages.chainPortBridgeLink)}
               imageSrc={chainportImage}
               pb={8}
             />
