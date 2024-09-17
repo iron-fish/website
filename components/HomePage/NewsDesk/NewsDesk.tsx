@@ -14,7 +14,7 @@ import { defineMessages, useIntl } from "react-intl";
 const messages = defineMessages({
   heading: {
     id: "NewsDesk.heading",
-    defaultMessage: "Iron Fish on the News Desk",
+    defaultMessage: "Iron Fish on the news",
   },
 });
 

@@ -7,12 +7,12 @@ const BG = "#C7F182";
 const messages = defineMessages({
   heading: {
     id: "Tokenomics.heading",
-    defaultMessage: "Understanding our Tokenomics",
+    defaultMessage: "Tokenomics",
   },
   description: {
     id: "Tokenomics.description",
     defaultMessage:
-      "Learn how Iron Fish's tokenomics are designed to foster community participation and to secure the network, with a capped token supply and strategic distribution to reward early contributors.",
+      "Iron Fish's tokenomics are designed to foster community participation and to secure the network, with a capped token supply and strategic distribution to reward early contributors.",
   },
   ctaText: {
     id: "Tokenomics.ctaText",

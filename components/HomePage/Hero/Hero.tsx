@@ -18,12 +18,12 @@ import { defineMessages, useIntl } from "react-intl";
 const messages = defineMessages({
   heading: {
     id: "Hero.heading",
-    defaultMessage: "Seamless, Safe Crypto",
+    defaultMessage: "Safe Optional Privacy for Any Asset",
   },
   description: {
     id: "Hero.description",
     defaultMessage:
-      "Iron Fish encrypts every transaction, shielding your sensitive asset information from public view. With read-only view keys, you remain compliant and in control.",
+      "Zero-Knowledge Layer-1 blockchain giving optional privacy to assets on transparent chains",
   },
   getStarted: {
     id: "Hero.getStarted",
@@ -41,47 +41,56 @@ export function Hero() {
         lg: "1600px",
       }}
       w="100%"
-      mb={{
-        base: 24,
-        md: 32,
-        xl: "150px",
-      }}
-      pl={{
-        lg: "40px",
-        xl: "64px",
-        "2xl": "128px",
+      p={{
+        base: "64px 24px",
+        lg: "64px",
+        "2xl": "96px",
       }}
     >
       <Grid
         templateColumns={{
           base: "1fr",
-          lg: "repeat(2, 1fr)",
+          lg: "auto minmax(50%, 1fr)",
         }}
         w="100%"
         gap={{
           base: "4rem",
           lg: "2rem",
+          xl: "70px",
         }}
       >
         <GridItem display="flex" alignItems="center">
           <Box
-            padding={{
-              base: "4rem 0 0",
-              lg: "2.5rem 0 2.5rem",
-              "2xl": "6.5rem 6rem 6rem 0",
+            maxWidth={{
+              xl: "500px",
+              "2xl": "100%",
             }}
           >
-            <Heading as="h1" size="h1" mb={4}>
+            <Heading
+              as="h1"
+              fontSize={{
+                base: "3.5rem",
+                "2xl": "4.375rem",
+              }}
+              mb={6}
+            >
               {formatMessage(messages.heading)}
             </Heading>
-            <Text textStyle="lg" mb={10}>
+            <Text
+              textStyle="lg"
+              mb={8}
+              maxWidth={{
+                base: "40ch",
+                lg: "100%",
+              }}
+            >
               {formatMessage(messages.description)}
             </Text>
             <Flex
               gap={4}
               flexDirection={{
                 base: "column",
-                lg: "row",
+                md: "row",
               }}
               alignItems={{
                 base: "stretch",
@@ -96,14 +105,16 @@ export function Hero() {
             </Flex>
           </Box>
         </GridItem>
-        <GridItem position="relative" display="flex" alignItems="center">
-          <Box
-            mt={{
-              base: 0,
-              lg: 4,
-            }}
-            width="100%"
-          >
+        <GridItem
+          position="relative"
+          display="flex"
+          alignItems={{
+            base: "center",
+            lg: "flex-start",
+            xl: "center",
+          }}
+        >
+          <Box width="100%">
             <AspectRatio position="relative" ratio={657 / 424}>
               <Image
                 priority
