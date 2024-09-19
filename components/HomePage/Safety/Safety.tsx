@@ -11,12 +11,12 @@ import {
   ShadowBoxProps,
 } from "@/lib/ui";
 import Link from "next/link";
-import { ReactNode } from "react";
+import { ComponentProps, ReactNode } from "react";
 import { defineMessages, useIntl } from "react-intl";
 import nodeAppImage from "./assets/node-app.png";
 import chainportImage from "./assets/chainport.png";
 import oreoWalletImage from "./assets/oreowallet.png";
-import mobileAppImage from "./assets/mobile-app.png";
+import bridgeIronFishImage from "./assets/iron-eth.png";
 import Image, { StaticImageData } from "next/image";
 
 const messages = defineMessages({
@@ -183,7 +183,16 @@ export function Safety() {
               href="https://app.chainport.io/?from=ETHEREUM&to=IRONFISH"
               linkText={formatMessage(messages.chainPortBridgeLink)}
               imageSrc={chainportImage}
-              pb={8}
+              imageContainerProps={{
+                paddingTop: {
+                  base: "40px",
+                  lg: 0,
+                },
+                paddingBottom: {
+                  base: "30px",
+                  lg: 0,
+                },
+              }}
             />
           </GridItem>
 
@@ -193,8 +202,13 @@ export function Safety() {
               description={formatMessage(messages.ironFishBridgeDescription)}
               href="https://bridge.ironfish.network/"
               linkText={formatMessage(messages.ironFishBridgeLink)}
-              imageSrc={mobileAppImage}
-              pb={8}
+              imageSrc={bridgeIronFishImage}
+              imageContainerProps={{
+                padding: {
+                  base: "12px 0 32px",
+                  md: "90px 0",
+                },
+              }}
             />
           </GridItem>
         </Grid>
@@ -244,6 +258,7 @@ type ItemCardProps = {
   href: string;
   linkText: string;
   imageSrc: StaticImageData;
+  imageContainerProps?: ComponentProps<typeof HStack>;
 } & Omit<ShadowBoxProps, "children">;
 
 function ItemCard({
@@ -252,6 +267,7 @@ function ItemCard({
   href,
   linkText,
   imageSrc,
+  imageContainerProps,
   ...rest
 }: ItemCardProps) {
   return (
@@ -290,7 +306,7 @@ function ItemCard({
       </Text>
       <FancyLink color="pink.400">{linkText}</FancyLink>
 
-      <HStack justifyContent="center" mt="auto">
+      <HStack flexGrow={1} {...imageContainerProps}>
         <Image src={imageSrc} alt={name} />
       </HStack>
     </ShadowBox>
