@@ -190,7 +190,7 @@ export function Safety() {
                 },
                 paddingBottom: {
                   base: "30px",
-                  lg: 0,
+                  lg: 8,
                 },
               }}
             />
@@ -206,8 +206,10 @@ export function Safety() {
               imageContainerProps={{
                 padding: {
                   base: "12px 0 32px",
-                  md: "90px 0",
+                  sm: "12px 64px 32px",
+                  lg: "0 0 20px",
                 },
+                alignItems: "center",
               }}
             />
           </GridItem>
@@ -306,7 +308,7 @@ function ItemCard({
       </Text>
       <FancyLink color="pink.400">{linkText}</FancyLink>
 
-      <HStack flexGrow={1} {...imageContainerProps}>
+      <HStack flexGrow={1} alignItems="flex-end" {...imageContainerProps}>
         <Image src={imageSrc} alt={name} />
       </HStack>
     </ShadowBox>
