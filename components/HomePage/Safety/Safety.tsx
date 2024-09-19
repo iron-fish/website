@@ -75,7 +75,7 @@ const messages = defineMessages({
   chainPortBridgeDescription: {
     id: "Safety.chainPortBridgeDescription",
     defaultMessage:
-      "Encrypt and bridge assets to your account using ChainPort's predictive screening.",
+      "Encrypt and bridge assets safely, protected by ChainPort's predictive screening.",
   },
   chainPortBridgeLink: {
     id: "Safety.chainPortBridgeLink",
@@ -84,7 +84,8 @@ const messages = defineMessages({
 
   ironFishBridgeDescription: {
     id: "Safety.ironFishBridgeDescription",
-    defaultMessage: "Bridge your $IRON directly to the Ethereum network.",
+    defaultMessage:
+      "Bridge your $IRON directly to Ethereum, Base, Polygon and more.",
   },
   ironFishBridgeLink: {
     id: "Safety.ironFishBridgeLink",
