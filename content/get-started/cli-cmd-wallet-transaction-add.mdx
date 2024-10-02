@@ -1,0 +1,23 @@
+---
+title: wallet:transaction:add
+seo: Wallet Transaction Add Command
+---
+
+You can use the command line to add a signed transaction to your wallet. By default, this command is broadcasted to the network.  
+
+<Terminal
+  command="ironfish wallet:transaction:add"
+  output={`
+Paste the hex-encoded transaction to import: 01010000000000000002000000000000000000000000000000000000000000000001000000000000000000000090077eea4695d90722944fc...
+Importing transaction... done
+Transaction imported for accounts: default
+  `}
+/>
+
+
+# Flags
+
+| Flag | Description |
+| ---- | ----------- |
+| --path | Path to a file containing the transaction to import |
+| --broadcast | Broadcast the transaction to the network after importing |
