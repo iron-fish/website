@@ -477,8 +477,20 @@ export const sidebar: SidebarDefinition = [
             label: "rescan",
           },
           {
+            id: "rpc/wallet/reset_account",
+            label: "resetAccount",
+          },
+          {
             id: "rpc/wallet/send_transaction",
             label: "sendTransaction",
+          },
+          {
+            id: "rpc/wallet/set_account_head",
+            label: "setAccountHead",
+          },
+          {
+            id: "rpc/wallet/set_scanning",
+            label: "setScanning",
           },
           {
             id: "rpc/wallet/sign_transaction",
