@@ -49,10 +49,6 @@ export const sidebar: SidebarDefinition = [
             label: "RpcAccountAssetBalanceDelta",
           },
           {
-            id: "rpc/objects/rpcAccountImport",
-            label: "RpcAccountImport",
-          },
-          {
             id: "rpc/objects/rpcAccountStatus",
             label: "RpcAccountStatus",
           },
@@ -477,12 +473,16 @@ export const sidebar: SidebarDefinition = [
             label: "renameAccount",
           },
           {
-            id: "rpc/wallet/rescan_account",
-            label: "rescanAccount",
+            id: "rpc/wallet/rescan",
+            label: "rescan",
           },
           {
             id: "rpc/wallet/send_transaction",
             label: "sendTransaction",
+          },
+          {
+            id: "rpc/wallet/sign_transaction",
+            label: "signTransaction",
           },
           {
             id: "rpc/wallet/use_account",

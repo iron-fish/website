@@ -10,11 +10,14 @@ import { UAParser } from "ua-parser-js";
 export function useDownloadLinkForPlatform(
   downloadUrlsByPlatform?: DownloadUrlsByPlatform
 ) {
-  const [platformData, setPlatformData] = useState<{
-    url: string | null;
-    label: string | null;
-    platform: Platform | null;
-  } | null>(null);
+  const [platformData, setPlatformData] = useState<
+    | {
+        url: string | null;
+        label: string | null;
+        platform: Platform | null;
+      }[]
+    | null
+  >(null);
 
   useEffect(() => {
     const run = async () => {
@@ -40,7 +43,7 @@ async function getDataForPlatform(
   };
 
   if (!downloadUrlsByPlatform) {
-    return notFoundOption;
+    return [notFoundOption];
   }
 
   if (ua.os.name === "Mac OS") {
@@ -60,26 +63,49 @@ async function getDataForPlatform(
       }
     } catch (err) {}
 
-    return architecture === "arm"
-      ? {
+    if (architecture === "arm") {
+      return [
+        {
           platform: PLATFORMS.MAC_ARM,
           label: "macOS (Apple Silicon)",
           url: downloadUrlsByPlatform[PLATFORMS.MAC_ARM],
-        }
-      : {
+        },
+      ];
+    }
+
+    if (architecture === "x86") {
+      return [
+        {
           platform: PLATFORMS.MAC_INTEL,
           label: "macOS (Intel)",
           url: downloadUrlsByPlatform[PLATFORMS.MAC_INTEL],
-        };
+        },
+      ];
+    }
+
+    return [
+      {
+        platform: PLATFORMS.MAC_ARM,
+        label: "macOS (Apple Silicon)",
+        url: downloadUrlsByPlatform[PLATFORMS.MAC_ARM],
+      },
+      {
+        platform: PLATFORMS.MAC_INTEL,
+        label: "macOS (Intel)",
+        url: downloadUrlsByPlatform[PLATFORMS.MAC_INTEL],
+      },
+    ];
   }
 
   if (ua.os.name === "Windows") {
-    return {
-      platform: PLATFORMS.WINDOWS,
-      label: "Windows",
-      url: downloadUrlsByPlatform[PLATFORMS.WINDOWS],
-    };
+    return [
+      {
+        platform: PLATFORMS.WINDOWS,
+        label: "Windows",
+        url: downloadUrlsByPlatform[PLATFORMS.WINDOWS],
+      },
+    ];
   }
 
-  return notFoundOption;
+  return [notFoundOption];
 }
