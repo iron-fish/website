@@ -377,6 +377,14 @@ export const sidebar: SidebarDefinition = [
             label: "createTransaction",
           },
           {
+            id: "rpc/wallet/decrypt",
+            label: "decrypt",
+          },
+          {
+            id: "rpc/wallet/encrypt",
+            label: "encrypt",
+          },
+          {
             id: "rpc/wallet/estimate_fee_rates",
             label: "estimateFeeRates",
           },
@@ -449,6 +457,10 @@ export const sidebar: SidebarDefinition = [
             label: "importAccount",
           },
           {
+            id: "rpc/wallet/lock",
+            label: "lock",
+          },
+          {
             id: "rpc/wallet/mint_asset",
             label: "mintAsset",
           },
@@ -495,6 +507,10 @@ export const sidebar: SidebarDefinition = [
           {
             id: "rpc/wallet/sign_transaction",
             label: "signTransaction",
+          },
+          {
+            id: "rpc/wallet/unlock",
+            label: "unlock",
           },
           {
             id: "rpc/wallet/use_account",

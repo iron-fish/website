@@ -1,0 +1,27 @@
+---
+title: wallet/unlock
+description: RPC Wallet | Iron Fish Documentation
+---
+
+Unlocks the accounts in the wallet with a given passphrase.
+
+Throws an error if the passphrase is invalid. If the wallet is already unlocked, it renews the timer.
+
+The default timeout is 24 hours.
+
+#### Request
+
+```ts
+{
+  passphrase: string
+  timeout?: number
+}
+```
+
+#### Response
+
+```ts
+undefined
+```
+
+###### [View on Github](https://github.com/iron-fish/ironfish/blob/master/ironfish/src/rpc/routes/wallet/unlock.ts)

@@ -95,6 +95,8 @@ Gets (and optionally streams) the node's status
     speed: number
   }
   accounts: {
+    enabled: boolean
+    locked: boolean
     scanning?: {
       sequence: number
       endSequence: number
@@ -196,6 +198,8 @@ curl -X POST http://localhost:8021/node/getStatus
       "speed": 0
     },
     "accounts": {
+      "enabled": true,
+      "locked": false,
       "head": {
         "hash": "0000000011d7fab8c852b8ee547452fdc77a10bc55f2ac4b8487b252005cb3a7",
         "sequence": -1
