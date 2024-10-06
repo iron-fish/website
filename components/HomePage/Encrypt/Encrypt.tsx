@@ -1,10 +1,10 @@
 import { FancyLinkSection } from "../../FancyLinkSection/FancyLinkSection";
 
-export function Whitepaper() {
+export function Encrypt() {
   return (
     <FancyLinkSection
-      heading="Encrypt your Crypto"
-      description={`Multi-asset functionality enables bridge providers to transfer any crypto asset to the Iron Fish network for private transactions.`}
+      heading="First to support multi-asset transactions"
+      description={`Multi-asset support means that, with bridge provider support, any crypto asset can be imported to the Iron Fish network for private transactions.`}
       ctaText="Read our Whitepaper"
       ctaLink="/learn/whitepaper"
       imageUrl="/images/home/balloon-fish.svg"
@@ -14,7 +14,7 @@ export function Whitepaper() {
           lg: "1600px",
         },
         w: "100%",
-        mb: {
+        py: {
           base: 24,
           md: 32,
           xl: "150px",
