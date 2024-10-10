@@ -1,0 +1,115 @@
+---
+title: wallet:multisig:sign
+seo: Wallet Multisig Sign
+---
+
+Performs the entire process of signing a transaction with a multisignature account. 
+
+This CLI command is a shortcut for running the following commands in sequence:
+
+1. [`wallet:multisig:commitment:create`](/use/get-started/cli-cmd-wallet-multisig-commitment-create)
+2. [`wallet:multisig:commitment:aggregate`](/use/get-started/cli-cmd-wallet-multisig-commitment-aggregate)
+3. [`wallet:multisig:signature:create`](/use/get-started/cli-cmd-wallet-multisig-signature-create)
+4. [`wallet:multisig:signature:aggregate`](/use/get-started/cli-cmd-wallet-multisig-signature-aggregate)
+
+This command has built-in retry logic to handle failures and will not sign the transaction until all the required signature shares are collected.
+
+Furthermore, another benefit of this command is when using the `--ledger` flag, the command will retrieve the stored multi signature account from the Ledger device and handle retries/ failures for you.
+
+# Usage
+
+```sh
+ironfish wallet:multisig:sign
+```
+
+The example below demonstrates how to run the entire signing process for a group of two participants with a Ledger device.
+
+<Terminal command="ironfish wallet:multisig:sign \
+--ledger \  
+--unsignedTransaction 010100000000000000020000000000000000000000000000000000000000000000010000000000000000000000885ed508aa30b628b9d35309765c47cd5a092d8f4029dc629f97c2bc6470c4a5306bc3302921cd430e65f0b89bf93b95571662ceb9d5755e3df7be49c3c9250a306bc3302921cd430e65f0b89bf93b95571662ceb9d5755e3df7be49c3c9250aa276b3d2787a7e222b63a404bb0f83875ef1d1fdf8c855e099ee6cd71564409547ff35deae937fa071b3622375892273a0f9e7d8af2ef01fac22c0331517bf4aa6c2324183df1a1fba3d5f04cb97b5b2ece7576deedff885038fff005e6b910f105ef7f4f8aa33aa5d3e518bdfada93ead02f718686d2e5ed307228070f8b3173e9ee91e35724792391a1f7a141e8850b4baa8885332797deca8319f26e80aec56a58666584046d0465d683179747e0d2539b69728130d2c3298be75d69f2b469e8799e244f0e59c8f8d9dcb9324e07149c23209ce9e51b07846d9da2865b53df2a62a936048b96cb6e58047c20370ee3c3a6be00bfa7ceffe3cee3d2879013a24000000bd6620dbf29babe7cbdc52c61ed1d15066661a4db2253b61d513b8a6da03c1ab00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000ac87b3090ad0195d99bf1bc8d4a1fb2b9fd3e2f78d164c13ac5f314cbe1770c7d3284310055966437b3c3d49599f5ac298795012445e137a9c74eeda8ba44a7dbcf7a682846911b4d2fd19de2b6b66238dcdd5b8e6ec1166820869660f33020b0dc3ef5e8f7c820b05643c99394643e955975098ea47dccaf3d332384ca61f76e6c5ef54f9a2a90f3f3919e8bf126c068ec7ddd50f51bdf565024c05c4519b9e0b8b42366e1595be7ded23ca0c0b93fd6f47d956d612672b537d50ff9ee4641c6b07052db5893aca93e67ee3bda37c1d3d526fc40c766e6a0f5095b0ce139a68d759a0aad1f34c4f6bf6ca1d1fbcbbe3f8d50059c13abdefd6392e73bfaef3427f58c486b964ee2829696bbd9021cdcf2e0aff98ff741ec8d09d5222aed91cc3009da4d754f29e38e8633a939e20ced32f4838649fcdb6319786394ad59a2763b5798014555c6f12cf01fce4209e1aac1250eaffa2f7d4a76bc995c3b976b1acccb8af413fd9fb7fb334d2081132ce77de7c30121013f33cfb245422f55ad673eb59a6642a15bbfc556e3f6124569a438d8476fe3b7dfb561dfca660a64885fedc79a7a72f092e5e00c3e2a0d3eea4bf3bd562ca57bf93650d9252753dea2cc1aa9f91590e512e5411ebb76cc0ef15e2aabb4a09ea0a46e028a27d566f48a0515642ef95d52013fc3d5c7ac5bbee7f1c2d5d919206c361b10c6d5777e03a2ab97df3f1dc5c45a1df98c89b3225ac411b8c3a27a6aa99a312c85c20a8ba7def152319211a0f18493f6d4f9effed865c448c7c01a40f41493b96d0ad49cae2e36cd1215cc5c505662b2832992c46b59f5a657af38c26d69a7b4ace43d380ba775fd3940bf98855a62516f89388901addde58a561654aae1c59c7640fb152848551c3127b41c74afbf0a27c68923589a9d1195f319ec0b10ec28b5359f2d65aa34e62b5190071c3377131508b54fc098ccc580e19cd6386c2cc8061c957ba8e6db6828a00fbafc21d1ed6908fa9f860f7cf369aaccd6f829e1f5527336f706180d6ab97cfdd7b2f8d02fedf58aec50f7ebc58354be6b980ffdf4f2875fe8da778a7e215056a8ba476738748abd95ee3236b55df354dccad457c9f0e063bf32d1f6027b85e24782188639aca6c6c90e2f231d1de2cc6a2d3e4f78ca346c38f2d8fb6a2d079ff8515cfd42828a6c00616fc02875334ac138cdae167aa2fc6492a30dc759bb8f221f5bdca302dc2219ca6fc0b8d2a6fdd72dbda8cde69b46bb6ee75f4eebf8c8bbedfeeeda55d891a9d9fcab1e35df7c4d2db811fe51a9ee84780044c1f2d34b214da79ddeb9d2c99740f39eec3d4e1550ae96fb411e3a9871d04e3d5dc13949bd8e44e5a3e9cb87c665b50e42f412e518d5416f48a097246a9caa4ae9aa493d079fc921b90c77003fa7f240b9bdd72d15d995d35b6e30d47675740fedd49c4be2bedfe342e3d0d73791f9fe38b5070fbc0b7631f4b97229d2fd3a7785914acef23f378269b7709ab77503e073e06c3b1540ced0a0c8bea61d97211f92bebf7b898544a89c18d3136d684560e 
+"
+  output={`
+? Select account multisigLedgerDkg
+? Enter the number of participants in signing this transaction: 2
+Identity for ledger:
+72b58c3e40bb489462b998bfb700b165bb0e243c71744061fb928ffd2e0a2c6c44a587279088fe3f672b57e509e6cc7eba26a50384a1cd21a425d6a73d5e00e90a3d84c4f846183a06773dc63cea2c99aa54c8ef78b87963574268c4d93a26cd1ce800cf97fb5494992ee2893aa798730b3a1fa5a64936a5d82ad7739bcf728a08
+
+Share your participant identity with other signers.
+Enter 1 identities of the participants (excluding your own)
+Participant Identity #1: 72f9ec850199e49d1da7b95464136a6fea86970b0be2a3f4c9d910fce8791c7cfdd602bde9b38a45e9f03b34a732a2118a1b84edff85bdb2b8edb4ead7b47bae40cb2699c7102ac67050f89a3751e5eaa635386b9c5033bad03b2fd1ec65c606c4408d0c228c4fa9de60b727d161b210649fa39d3f9da23772608e857b91427b0f
+
+==================
+Notes sent:
+==================
+
+Amount:        $IRON 1.00000000
+Asset ID:      51f33a2f14f92735e562dc658a5639279ddca3d5079a6d1242b2a588a9cbf44c
+Memo:          transfer funds
+Recipient:     4d2b1d7ddc444dda84dc6b682c0faae31c01b91a31794f69246f5d5cd9255837
+Sender:        89fcba94b7c6db2f12976cddf4bb3d03d2117aecc3ecbdc86ddf6f19ecd4e2aa
+
+
+==================
+Notes received:
+==================
+
+Amount:        $IRON 8.99999999
+Asset ID:      51f33a2f14f92735e562dc658a5639279ddca3d5079a6d1242b2a588a9cbf44c
+Memo:
+Recipient:     89fcba94b7c6db2f12976cddf4bb3d03d2117aecc3ecbdc86ddf6f19ecd4e2aa
+Sender:        89fcba94b7c6db2f12976cddf4bb3d03d2117aecc3ecbdc86ddf6f19ecd4e2aa
+
+Get Commitments... done
+
+============================================
+
+Commitment:
+72b58c3e40bb489462b998bfb700b165bb0e243c71744061fb928ffd2e0a2c6c44a587279088fe3f672b57e509e6cc7eba26a50384a1cd21a425d6a73d5e00e90a3d84c4f846183a06773dc63cea2c99aa54c8ef78b87963574268c4d93a26cd1ce800cf97fb5494992ee2893aa798730b3a1fa5a64936a5d82ad7739bcf728a08b6886763c764321f9d0597750cf29497be5c022e6eb5127f307df93b2b216a8c03db1105647c35f4603d14a93154c46aa09447367dcb3cd1b8b8cba65d6e4ca46daeb6367e3590e7
+
+============================================
+
+Share your commitment with other participants.
+Enter 1 commitments of the participants (excluding your own)
+Commitment #1: 72f9ec850199e49d1da7b95464136a6fea86970b0be2a3f4c9d910fce8791c7cfdd602bde9b38a45e9f03b34a732a2118a1b84edff85bdb2b8edb4ead7b47bae40cb2699c7102ac67050f89a3751e5eaa635386b9c5033bad03b2fd1ec65c606c4408d0c228c4fa9de60b727d161b210649fa39d3f9da23772608e857b91427b0fe234a14227217b2bf4e5e3b48f3ce3510dd8d144ae99b1d55ff295385a84639ace6670b8ec796be4cba385506a7a19338dbbb06a235a6d93e664be270fb435b16daeb6367e3590e7
+Sign Transaction... done
+
+============================================
+
+Signature Share:
+72b58c3e40bb489462b998bfb700b165bb0e243c71744061fb928ffd2e0a2c6c44a587279088fe3f672b57e509e6cc7eba26a50384a1cd21a425d6a73d5e00e90a3d84c4f846183a06773dc63cea2c99aa54c8ef78b87963574268c4d93a26cd1ce800cf97fb5494992ee2893aa798730b3a1fa5a64936a5d82ad7739bcf728a08b6e09c8e548ba870a78bda94fd108f32dd8b2c946d952d98c16f086ea4e21f01
+
+============================================
+
+Share your signature share with other participants.
+Enter 1 signature shares of the participants (excluding your own)
+Signature Share #1: 72f9ec850199e49d1da7b95464136a6fea86970b0be2a3f4c9d910fce8791c7cfdd602bde9b38a45e9f03b34a732a2118a1b84edff85bdb2b8edb4ead7b47bae40cb2699c7102ac67050f89a3751e5eaa635386b9c5033bad03b2fd1ec65c606c4408d0c228c4fa9de60b727d161b210649fa39d3f9da23772608e857b91427b0ff3bfa44fa5f6d9f686d578556f9e7a6ffd8b9a0d43d19d90b7294967d879b00b
+
+Do you want to broadcast the transaction? Yes
+
+Do you want to watch the transaction? Yes
+Signing the multisig transaction... done
+Transaction: 010100000000000000020000000000000000000000000000000000000000000000010000000000000000000000885ed508aa30b628b9d35309765c47cd5a092d8f4029dc629f97c2bc6470c4a5a276b3d2787a7e222b63a404bb0f83875ef1d1fdf8c855e099ee6cd71564409547ff35deae937fa071b3622375892273a0f9e7d8af2ef01fac22c0331517bf4aa6c2324183df1a1fba3d5f04cb97b5b2ece7576deedff885038fff005e6b910f105ef7f4f8aa33aa5d3e518bdfada93ead02f718686d2e5ed307228070f8b3173e9ee91e35724792391a1f7a141e8850b4baa8885332797deca8319f26e80aec56a58666584046d0465d683179747e0d2539b69728130d2c3298be75d69f2b469e8799e244f0e59c8f8d9dcb9324e07149c23209ce9e51b07846d9da2865b53df2a62a936048b96cb6e58047c20370ee3c3a6be00bfa7ceffe3cee3d2879013a24000000bd6620dbf29babe7cbdc52c61ed1d15066661a4db2253b61d513b8a6da03c1abc504024cd6313b929ebdf51e3c968b60056c10d0781088352e1ec7edda0b7409a9a041def98182672e6153ea6caf09a2da17c7a1b066cb28799951d57c5cd00cac87b3090ad0195d99bf1bc8d4a1fb2b9fd3e2f78d164c13ac5f314cbe1770c7d3284310055966437b3c3d49599f5ac298795012445e137a9c74eeda8ba44a7dbcf7a682846911b4d2fd19de2b6b66238dcdd5b8e6ec1166820869660f33020b0dc3ef5e8f7c820b05643c99394643e955975098ea47dccaf3d332384ca61f76e6c5ef54f9a2a90f3f3919e8bf126c068ec7ddd50f51bdf565024c05c4519b9e0b8b42366e1595be7ded23ca0c0b93fd6f47d956d612672b537d50ff9ee4641c6b07052db5893aca93e67ee3bda37c1d3d526fc40c766e6a0f5095b0ce139a68d759a0aad1f34c4f6bf6ca1d1fbcbbe3f8d50059c13abdefd6392e73bfaef3427f58c486b964ee2829696bbd9021cdcf2e0aff98ff741ec8d09d5222aed91cc3009da4d754f29e38e8633a939e20ced32f4838649fcdb6319786394ad59a2763b5798014555c6f12cf01fce4209e1aac1250eaffa2f7d4a76bc995c3b976b1acccb8af413fd9fb7fb334d2081132ce77de7c30121013f33cfb245422f55ad673eb59a6642a15bbfc556e3f6124569a438d8476fe3b7dfb561dfca660a64885fedc79a7a72f092e5e00c3e2a0d3eea4bf3bd562ca57bf93650d9252753dea2cc1aa9f91590e512e5411ebb76cc0ef15e2aabb4a09ea0a46e028a27d566f48a0515642ef95d52013fc3d5c7ac5bbee7f1c2d5d919206c361b10c6d5777e03a2ab97df3f1dc5c45a1df98c89b3225ac411b8c3a27a6aa99a312c85c20a8ba7def152319211a0f18493f6d4f9effed865c448c7c01a40f41493b96d0ad49cae2e36cd1215cc5c505662b2832992c46b59f5a657af38c26d69a7b4ace43d380ba775fd3940bf98855a62516f89388901addde58a561654aae1c59c7640fb152848551c3127b41c74afbf0a27c68923589a9d1195f319ec0b10ec28b5359f2d65aa34e62b5190071c3377131508b54fc098ccc580e19cd6386c2cc8061c957ba8e6db6828a00fbafc21d1ed6908fa9f860f7cf369aaccd6f829e1f5527336f706180d6ab97cfdd7b2f8d02fedf58aec50f7ebc58354be6b980ffdf4f2875fe8da778a7e215056a8ba476738748abd95ee3236b55df354dccad457c9f0e063bf32d1f6027b85e24782188639aca6c6c90e2f231d1de2cc6a2d3e4f78ca346c38f2d8fb6a2d079ff8515cfd42828a6c00616fc02875334ac138cdae167aa2fc6492a30dc759bb8f221f5bdca302dc2219ca6fc0b8d2a6fdd72dbda8cde69b46bb6ee75f4eebf8c8bbedfeeeda55d891a9d9fcab1e35df7c4d2db811fe51a9ee84780044c1f2d34b214da79ddeb9d2c99740f39eec3d4e1550ae96fb411e3a9871d04e3d5dc13949bd8e44e5a3e9cb87c665b50e42f412e518d5416f48a097246a9caa4ae9aa493d079fc921b90c77003fa7f240b9bdd72d15d995d35b6e30d47675740fedd49c4be2bedfe342e3d0d73791f9fe38b5070fbc0b7631f4b97229d2fd3a7785914acef23f378269b7709ab77503e073e06c3b1540ced0a0c8bea61d97211f92bebf7b898544a89c18d3136d684560e
+Hash: 6c3c0ef155fe4381b1dee77137e7e6bad6dc9efe17378bd8481f8d15dc1f4763
+Fee: $IRON 0.00000001
+
+Watching transaction 6c3c0ef155fe4381b1dee77137e7e6bad6dc9efe17378bd8481f8d15dc1f4763
+Current Status... pending -> confirmed: 10s
+Current Status... done after 10s
+Multisignature sign process completed!
+`}
+/>
+
+# Flags
+
+| Flag | Description | Default |
+|------|-------------|---------|
+| `-u, --unsignedTransaction` | The unsigned transaction that needs to be signed | |
+| `-a, --account` | Name of the account to use for signing the transaction | |
+| `--ledger` | Perform operation with a ledger device | `false` |
+| `--server` | Connect to a multisig broker server | |
+| `-c, --connection` | Connection string for a multisig server session | |
+| `--hostname` | Hostname of the multisig broker server to connect to | `"multisig.ironfish.network"` |
+| `--port` | Port to connect to on the multisig broker server | `9035` |
+| `--sessionId` | Unique ID for a multisig server session to join | |
+| `--passphrase` | Passphrase to join the multisig server session | |
+| `--tls` | Connect to the multisig server over TLS (requires --server) | `true` |

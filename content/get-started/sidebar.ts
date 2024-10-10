@@ -82,6 +82,7 @@ export const sidebar: SidebarDefinition = [
               "cli-cmd-wallet-multisig-dealer-create",
               "cli-cmd-wallet-multisig-commitment-create",
               "cli-cmd-wallet-multisig-commitment-aggregate",
+              "cli-cmd-wallet-multisig-sign",
               "cli-cmd-wallet-multisig-signature-create",
               "cli-cmd-wallet-multisig-signature-aggregate",
               "cli-cmd-wallet-multisig-account-participants-list",
