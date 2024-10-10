@@ -89,6 +89,7 @@ export const sidebar: SidebarDefinition = [
               {
                 label: "dkg",
                 items: [
+                  "cli-cmd-wallet-multisig-dkg-create",
                   "cli-cmd-wallet-multisig-dkg-round1",
                   "cli-cmd-wallet-multisig-dkg-round2",
                   "cli-cmd-wallet-multisig-dkg-round3",
