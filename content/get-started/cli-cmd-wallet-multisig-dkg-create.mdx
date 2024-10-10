@@ -1,0 +1,107 @@
+---
+title: wallet:multisig:dkg:create
+seo: Wallet Multisig DKG Create
+---
+
+Performs the entire process of creating a multisignature account using the Distributed Key Generation (DKG) protocol.
+
+This CLI command is a shortcut for running the following commands in sequence:
+
+1. [`wallet:multisig:dkg:round1`](/use/get-started/cli-cmd-wallet-multisig-dkg-round1)
+2. [`wallet:multisig:dkg:round2`](/use/get-started/cli-cmd-wallet-multisig-dkg-round2)
+3. [`wallet:multisig:dkg:round3`](/use/get-started/cli-cmd-wallet-multisig-dkg-round3)
+
+This command has built-in retry logic to handle failures and will not create the account until the DKG process is successfully run.
+
+Furthermore, a primary benefit of this command is when using the `--ledger` flag, the command will retrieve the identities from the Ledger device and handle retries/ failures for you.
+
+# Usage
+
+```sh
+ironfish wallet:multisig:dkg:create
+```
+
+The example below demonstrates how to run the entire DKG process for a group of two participants, a minimum of two signers, and creating an identity using a Ledger device.
+
+<Terminal command="ironfish wallet:multisig:dkg:create \
+--ledger \
+--name MyMultisigAccount \
+--minSigners 2 \
+--totalParticipants 2
+"
+  output={`
+Getting Ledger Identity... done
+
+Collecting Participant Info and Performing Round 1...
+Identity for ledger:
+72b58c3e40bb489462b998bfb700b165bb0e243c71744061fb928ffd2e0a2c6c44a587279088fe3f672b57e509e6cc7eba26a50384a1cd21a425d6a73d5e00e90a3d84c4f846183a06773dc63cea2c99aa54c8ef78b87963574268c4d93a26cd1ce800cf97fb5494992ee2893aa798730b3a1fa5a64936a5d82ad7739bcf728a08
+
+
+Enter 1 identities of all other participants (excluding yours)
+Participant Identity #1: 72f9ec850199e49d1da7b95464136a6fea86970b0be2a3f4c9d910fce8791c7cfdd602bde9b38a45e9f03b34a732a2118a1b84edff85bdb2b8edb4ead7b47bae40cb2699c7102ac67050f89a3751e5eaa635386b9c5033bad03b2fd1ec65c606c4408d0c228c4fa9de60b727d161b210649fa39d3f9da23772608e857b91427b0f
+Round1 on Ledger... done
+
+============================================
+
+Round 1 Public Package for multisigLedgerDkg:
+72b58c3e40bb489462b998bfb700b165bb0e243c71744061fb928ffd2e0a2c6c44a587279088fe3f672b57e509e6cc7eba26a50384a1cd21a425d6a73d5e00e90a3d84c4f846183a06773dc63cea2c99aa54c8ef78b87963574268c4d93a26cd1ce800cf97fb5494992ee2893aa798730b3a1fa5a64936a5d82ad7739bcf728a088700000000c3d2051e025eaefc3e6815ccc566ead6a41537530a52d1ec68b281d6f8461a011c0f7e31ca4a39eb3dd39a9a48a362db33e9ae1a03a8844a2ef6895dcdffc95cbe22727387405757c58957b837a948bfaf128256ca11b105952dcbb88196326e48f048bac070c0bbd2356bc9f21fe368229db8d9fee3bd1a0719bcac1a549d1d2762edd6970298000000808b59d166b700c30b1cdcf7d7d299861d5594afbcdd0fbe8ea43ce3c62a6d3e78a021444f412c2d0a3c06f604b0bfe302000000200000003981b99370733e64d9b841e41b837d3fa0707922f60e32da9aa63d853e0c6634881e6a89452cda521b2c9dcbb6db51baf4f8cccf6ece0ccaf3385d75ecaa117ebc632ab2452a4628c4629bfa30a46b1be0e668fb1ea4640f83aa2caeffc0ac3884e3fe95d910a2b6
+
+============================================
+
+Share your Round 1 Public Package with other participants.
+
+Enter 1 Round 1 Public Packages (excluding yours)
+Round 1 Public Package #1: 72f9ec850199e49d1da7b95464136a6fea86970b0be2a3f4c9d910fce8791c7cfdd602bde9b38a45e9f03b34a732a2118a1b84edff85bdb2b8edb4ead7b47bae40cb2699c7102ac67050f89a3751e5eaa635386b9c5033bad03b2fd1ec65c606c4408d0c228c4fa9de60b727d161b210649fa39d3f9da23772608e857b91427b0f8700000000c3d2051e02084feb16c62165844278e5c451d3cd9bfbf34d02e0eb0c5e1f2c4deb2d5e33370c017b5e5bc79f0ba0daf608ea1018327886e347e79d2703cbf2f085c810a99b407700c397df69d905bb53d4f9842824d7f989b6b49a499e320f1a1c773eef656fa25eacd312c0eccc6caf429f0f27030fbf5e302b5827cba7952f5a5d1a984001980000004eeccd45ab153ee81935fc9233ad7c888e7321f28aa2332d52296162ce3014715727dbb10a02a4615dd20e9c8685025d020000002000000096c8111b0d5eca7c848b0311933ee29b244b953be6d36ac821696a1b3501f4787e1045c3d11db4f7ec7f83a5532aa9ee04fa45c0d7fe4b16c888c4e7d93885bfc97262367302d58c33632546d1417f069f8633b1afb246f28504f476f413494b84e3fe95d910a2b6
+
+Performing DKG Round 2...
+Round2 on Ledger... done
+
+============================================
+
+Round 2 Public Package for multisigLedgerDkg:
+72b58c3e40bb489462b998bfb700b165bb0e243c71744061fb928ffd2e0a2c6c44a587279088fe3f672b57e509e6cc7eba26a50384a1cd21a425d6a73d5e00e90a3d84c4f846183a06773dc63cea2c99aa54c8ef78b87963574268c4d93a26cd1ce800cf97fb5494992ee2893aa798730b3a1fa5a64936a5d82ad7739bcf728a080100000072f9ec850199e49d1da7b95464136a6fea86970b0be2a3f4c9d910fce8791c7cfdd602bde9b38a45e9f03b34a732a2118a1b84edff85bdb2b8edb4ead7b47bae40cb2699c7102ac67050f89a3751e5eaa635386b9c5033bad03b2fd1ec65c606c4408d0c228c4fa9de60b727d161b210649fa39d3f9da23772608e857b91427b0f2500000000c3d2051ed2c020845e216763f943bf1ccf9d99c730edf75d19dec3b62f10abec21adf6045c22190bab3678bc
+
+============================================
+
+Share your Round 2 Public Package with other participants.
+
+Enter 1 Round 2 Public Packages (excluding yours)
+Round 2 Public Package #1: 72f9ec850199e49d1da7b95464136a6fea86970b0be2a3f4c9d910fce8791c7cfdd602bde9b38a45e9f03b34a732a2118a1b84edff85bdb2b8edb4ead7b47bae40cb2699c7102ac67050f89a3751e5eaa635386b9c5033bad03b2fd1ec65c606c4408d0c228c4fa9de60b727d161b210649fa39d3f9da23772608e857b91427b0f0100000072b58c3e40bb489462b998bfb700b165bb0e243c71744061fb928ffd2e0a2c6c44a587279088fe3f672b57e509e6cc7eba26a50384a1cd21a425d6a73d5e00e90a3d84c4f846183a06773dc63cea2c99aa54c8ef78b87963574268c4d93a26cd1ce800cf97fb5494992ee2893aa798730b3a1fa5a64936a5d82ad7739bcf728a082500000000c3d2051e7ea539bf19ba923fe2b9eb561581a3a5be3f95481d8685de93171160e1e0cc085c22190bab3678bc
+Round3 on Ledger... done
+Getting Ledger DKG keys... done
+Getting Ledger Public Package... done
+
+Account multisigLedgerDkg imported with public address: 89fcba94b7c6db2f12976cddf4bb3d03d2117aecc3ecbdc86ddf6f19ecd4e2aa
+
+Creating an encrypted backup of multisig keys from your Ledger device...
+
+Backup DKG Keys... done
+
+Encrypted Ledger Multisig Backup:
+40734b1d80870b1851e7fac45c98e94299eaad41b81e9f69015c31d97bde1bbe866a281b1332467b74c2b1fb9fbf304044e9a6e16c6086806879a84cb9433d3fcaa7d231950ce84fb7fccd443e6a6221b7f444514a330da42d141a287094c24cfc2368a3d3504d2f457f9d9b794467310f63b482aca74c89978b8a522dd8849e544a09720f017b41687e731586b0c8e5b4f2631b8920c5edad334d88cfed15558fa5f365a5e7e51ddc5d74a0b89341cf215d54dcd440614381464f03659e18aae18ab260a35f8bf8d51b567c4fc7bb247d8044c58fb55b6410312e9d898e56611999eec364677c2a48ac611216dbd5e1099eaf85a38629219e49b99dd311fd83b4fc8f82c5884bcc649a4abb091554c211d39827acf2134bc3a393f1719b543d08b4f78319d9ab21c0420452b43ba20476697d933afa3165e8b9922641c31375c08c619de551a1866926cd149f922a3af18387ec544de0ff205aa5d1178b25e38f23c3f8f6a4157a432f6f7c76d8cbcd962ea61b9cbfc9b16fc528b6ec41b7f2f6ac99cdc729e6c0bf5c01700d94d7094d1ea2502e014a1b1f3ca62be7148a4ae5646d4faa4d8895b3d27d106e4a792a879720b03e3b990cac4c8f4d0227c7d665174aae48c04b481214724e5c171f29a7bfec849d26bab4178511abf60b5c2efd44ec977c252a2960e0a444493f818fe155283a2ac5494817975852a78eadbcb627ed6480249717b7d77936d0ce4d956a2e9c1c2f1d57e3cce0552faffc60c2664ec9514b45a24071482713cb71dd458f9da982f6dad5d2615f065e5d1fad56348a18a81a23f7b9a072d18bacf52c1131773d435948ab5ecb0f493546632c0e0803152c9483dd030823d72b2c15e8f74da1b77b89f8bb1dc4ba6bfe8c708f5bcdfc018d4ebe1aac1be2
+
+Please save the encrypted keys shown above.
+Use \`ironfish wallet:multisig:ledger:restore\` if you need to restore the keys to your Ledger.
+A copy of your encrypted keys have been saved at /Users/dev/.ironfish/ironfish-ledger-multisigLedgerDkg.txt
+Multisig account created successfully using DKG!
+  `}
+/>
+
+# Flags
+
+
+| Flag | Description | Default |
+|------|-------------|---------|
+| `-n, --participant` | The name of the secret to use for encryption during DKG | |
+| `-a, --name` | The name to set for the multisig account to be created | |
+| `--ledger` | Perform operation with a ledger device | `false` |
+| `--createdAt` | Block sequence to begin scanning from for the created account | Node's chain head |
+| `--server` | Connect to a multisig broker server | |
+| `-c, --connection` | Connection string for a multisig server session | |
+| `--hostname` | Hostname of the multisig broker server to connect to | `"multisig.ironfish.network"` |
+| `--port` | Port to connect to on the multisig broker server | `9035` |
+| `--sessionId` | Unique ID for a multisig server session to join | |
+| `--passphrase` | Passphrase to join the multisig server session | |
+| `--tls` | Connect to the multisig server over TLS (requires --server) | `true` |
+| `--minSigners` | Minimum signers required to sign a transaction | |
+| `--totalParticipants` | The total number of participants for the multisig account | |
