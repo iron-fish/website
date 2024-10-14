@@ -11,7 +11,7 @@ const nextConfig = {
     },
   },
   async headers() {
-    const isDev = process.env.NEXT_PUBLIC_ORIGIN !== 'https://ironfish.network/';
+    const isDev = process.env.NODE_ENV === "development"
 
     return [
       {
