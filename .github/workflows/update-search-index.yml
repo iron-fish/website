@@ -1,7 +1,7 @@
 name: Update Search Index
 
 on:
-  pull_request:
+  push:
     branches:
       - master
 
