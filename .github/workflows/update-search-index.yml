@@ -31,6 +31,13 @@ jobs:
         git config --global user.name 'github-actions[bot]'
         git config --global user.email 'github-actions[bot]@users.noreply.github.com'
 
+    - name: Skip Duplicate Actions
+      id: skip_check
+      uses: fkirc/skip-duplicate-actions@v5.3.1
+      with:
+        cancel_others: 'true'  # Cancel any previous runs for outdated commits
+        skip_after_successful_duplicate: 'false'  # Skip if a successful duplicate run exists
+
     - name: Extract Branch Name
       id: extract_branch
       shell: bash
@@ -38,6 +45,7 @@ jobs:
         echo "::set-output name=branch::${{ github.head_ref }}"
 
     - name: Commit and Push Search Index Updates
+      if: steps.skip_check.outputs.should_skip != 'true'  # Only run if not skipped
       run: |
         git add -A
         git commit -m "Update search index" || echo "No changes to commit"
