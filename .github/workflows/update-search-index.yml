@@ -35,8 +35,8 @@ jobs:
       id: skip_check
       uses: fkirc/skip-duplicate-actions@v5.3.1
       with:
-        cancel_others: 'true'  # Cancel any previous runs for outdated commits
-        skip_after_successful_duplicate: 'false' 
+        cancel_others: 'true'
+        concurrent_skipping: 'always'
 
     - name: Extract Branch Name
       id: extract_branch
