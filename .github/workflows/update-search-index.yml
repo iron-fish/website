@@ -3,7 +3,7 @@ name: Update Search Index
 on:
   push:
     branches:
-      - master
+      - rahul/test-search-index
 
 jobs:
   update-index:
