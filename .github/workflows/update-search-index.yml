@@ -36,7 +36,7 @@ jobs:
       uses: fkirc/skip-duplicate-actions@v5.3.1
       with:
         cancel_others: 'true'
-        concurrent_skipping: 'always'
+        concurrent_skipping: 'outdated_runs'
 
     - name: Extract Branch Name
       id: extract_branch
