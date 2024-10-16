@@ -69,7 +69,7 @@ ${isDev ? '' : 'upgrade-insecure-requests;'}
       },
       {
         source: "/developers/documentation",
-        destination: "/developers/documentation/integration_local",
+        destination: "/developers/documentation/install-npm",
         permanent: false,
       },
       {
