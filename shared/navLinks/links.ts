@@ -6,22 +6,10 @@ export const links = [
     color: "orange",
     items: [
       {
-        title: messages.getStartedTitle,
-        description: messages.getStartedDescription,
-        href: "/use/get-started",
-        image: "/images/nav/use-book-fish.svg",
-      },
-      {
         title: messages.nodeAppTitle,
         description: messages.nodeAppDescription,
         href: "/use/node-app",
         image: "/images/nav/use-key-fish.svg",
-      },
-      {
-        title: messages.mineIronTitle,
-        description: messages.mineIronDescription,
-        href: "/use/get-started/mining",
-        image: "/images/nav/use-strangely-normal-looking-fish.svg",
       },
       {
         title: messages.blockExplorerTitle,
@@ -35,12 +23,24 @@ export const links = [
         href: "/use/ecosystem",
         image: "/images/nav/use-ecosystem.svg",
       },
+      {
+        title: messages.mineIronTitle,
+        description: messages.mineIronDescription,
+        href: "/use/get-started/mining",
+        image: "/images/nav/use-strangely-normal-looking-fish.svg",
+      },
     ],
   },
   {
     label: messages.learn,
     color: "blue",
     items: [
+      {
+        title: messages.getStartedTitle,
+        description: messages.getStartedDescription,
+        href: "/use/get-started",
+        image: "/images/nav/learn-book-fish.svg",
+      },
       {
         title: messages.faqTitle,
         description: messages.faqDescription,
