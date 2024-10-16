@@ -5,64 +5,59 @@ import {
 } from "@/components/AutoExpandingList/AutoExpandingList";
 import Image from "next/image";
 import { AnimatePresence, motion } from "framer-motion";
+import { defineMessages, useIntl } from "react-intl";
 import image1 from "./assets/image-01.svg";
 import image2 from "./assets/image-02.svg";
 import image3 from "./assets/image-03.svg";
-import image4 from "./assets/image-04.svg";
-import { CHIP_COLORS } from "../shared/chipColors";
-import { defineMessages, useIntl } from "react-intl";
+
+export const CHIP_COLOR = "#C7F182";
 
 const IMAGE_BY_INDEX = {
   0: <Image alt="" src={image1} />,
   1: <Image alt="" src={image2} />,
   2: <Image alt="" src={image3} />,
-  3: <Image alt="" src={image4} />,
 };
 
 const messages = defineMessages({
-  title: {
-    id: "FeatureListA.title",
-    defaultMessage: "The perfect app for everyday use",
+  ourPrinciples: {
+    id: "OurPrinciples.ourPrinciples",
+    defaultMessage: "Our Principles",
   },
-  feature1Heading: {
-    id: "FeatureListA.feature1Heading",
-    defaultMessage: "Easy Access to Iron Fish Network",
+  encryptionHeading: {
+    id: "OurPrinciples.encryptionHeading",
+    defaultMessage: "Encryption is the Future of Crypto",
   },
-  feature1Body: {
-    id: "FeatureListA.feature1Body",
+  encryptionBody1: {
+    id: "OurPrinciples.encryptionBody1",
     defaultMessage:
-      "Once the app has synced the node, you can start using $IRON and your custom assets right away. If you do use the command line wallet, anything you do there is reflected in the node app, and vice versa.",
+      "Privacy is a fundamental right, and yet everyday people give away personal information — often without even realizing it. We empower users to decide when and how to share their data, by ensuring all transactions are encrypted.",
   },
-  feature2Heading: {
-    id: "FeatureListA.feature2Heading",
-    defaultMessage: "Centralized Account View",
-  },
-  feature2Body: {
-    id: "FeatureListA.feature2Body",
+  encryptionBody2: {
+    id: "OurPrinciples.encryptionBody2",
     defaultMessage:
-      "Access a centralized view of all your accounts: address book, balances, transactions, and more.",
+      "We do not compromise on protection — using zero-knowledge proofs (zk-SNARKs) and the highest industry standards for encryption.",
   },
-  feature3Heading: {
-    id: "FeatureListA.feature3Heading",
-    defaultMessage: "Encryption Made Simple",
+  buildTogetherHeading: {
+    id: "OurPrinciples.buildTogetherHeading",
+    defaultMessage: "We Build, Together",
   },
-  feature3Body: {
-    id: "FeatureListA.feature3Body",
+  buildTogetherBody: {
+    id: "OurPrinciples.buildTogetherBody",
     defaultMessage:
-      "The node app has the same level of security as running a node via the command line, and is more secure than using third party applications.",
+      "As a decentralized, open-source network, Iron Fish relies on an engaged community to support protocol development and raise awareness of privacy as a social good. Our community is the heart of our platform.",
   },
-  feature4Heading: {
-    id: "FeatureListA.feature4Heading",
-    defaultMessage: "Bridge Assets",
+  complianceHeading: {
+    id: "OurPrinciples.complianceHeading",
+    defaultMessage: "Common Sense Compliance",
   },
-  feature4Body: {
-    id: "FeatureListA.feature4Body",
+  complianceBody: {
+    id: "OurPrinciples.complianceBody",
     defaultMessage:
-      "We are the first to support multi-asset transactions, we pave the way for complete privacy in web3 transactions. Unlocking the true potential of a private and secure blockchain ecosystem.",
+      "To date, crypto privacy projects have either failed to offer necessary levels of protection or more often, they've fallen on the wrong side of public authorities. Iron Fish addresses this impasse with a leading edge platform with built-in compliance controls.",
   },
 });
 
-export function FeatureListA() {
+export function OurPrinciples() {
   const expandingListProps = useAutoExpandingList();
   const { formatMessage } = useIntl();
 
@@ -77,19 +72,20 @@ export function FeatureListA() {
       >
         <GridItem>
           <Text textStyle="h3" mb={2}>
-            {formatMessage(messages.title)}
+            {formatMessage(messages.ourPrinciples)}
           </Text>
           <AutoExpandingList {...expandingListProps}>
             <AutoExpandingList.Item
-              chipColor={CHIP_COLORS.GREEN}
+              chipColor={CHIP_COLOR}
               heading={
                 <Heading fontSize="xl">
-                  {formatMessage(messages.feature1Heading)}
+                  {formatMessage(messages.encryptionHeading)}
                 </Heading>
               }
               body={
                 <Box>
-                  <Text>{formatMessage(messages.feature1Body)}</Text>
+                  <Text mb={6}>{formatMessage(messages.encryptionBody1)}</Text>
+                  <Text>{formatMessage(messages.encryptionBody2)}</Text>
                   <Box
                     mt={8}
                     display={{
@@ -103,15 +99,15 @@ export function FeatureListA() {
               }
             />
             <AutoExpandingList.Item
-              chipColor={CHIP_COLORS.PINK}
+              chipColor={CHIP_COLOR}
               heading={
                 <Heading fontSize="xl">
-                  {formatMessage(messages.feature2Heading)}
+                  {formatMessage(messages.buildTogetherHeading)}
                 </Heading>
               }
               body={
                 <Box>
-                  <Text>{formatMessage(messages.feature2Body)}</Text>
+                  <Text>{formatMessage(messages.buildTogetherBody)}</Text>
                   <Box
                     mt={8}
                     display={{
@@ -125,15 +121,15 @@ export function FeatureListA() {
               }
             />
             <AutoExpandingList.Item
-              chipColor={CHIP_COLORS.BLUE}
+              chipColor={CHIP_COLOR}
               heading={
                 <Heading fontSize="xl">
-                  {formatMessage(messages.feature3Heading)}
+                  {formatMessage(messages.complianceHeading)}
                 </Heading>
               }
               body={
                 <Box>
-                  <Text>{formatMessage(messages.feature3Body)}</Text>
+                  <Text>{formatMessage(messages.complianceBody)}</Text>
                   <Box
                     mt={8}
                     display={{
@@ -142,45 +138,6 @@ export function FeatureListA() {
                     }}
                   >
                     <Image alt="" src={image3} />
-                  </Box>
-                </Box>
-              }
-            />
-            <AutoExpandingList.Item
-              chipColor={CHIP_COLORS.ORANGE}
-              heading={
-                <Flex
-                  flexDirection={{
-                    base: "column",
-                    md: "row",
-                  }}
-                  alignItems={{
-                    base: "flex-start",
-                    md: "center",
-                  }}
-                  gap={{
-                    base: 4,
-                    md: 2,
-                  }}
-                  justifyContent="space-between"
-                  w="100%"
-                >
-                  <Heading fontSize="xl">
-                    {formatMessage(messages.feature4Heading)}
-                  </Heading>
-                </Flex>
-              }
-              body={
-                <Box>
-                  <Text>{formatMessage(messages.feature4Body)}</Text>
-                  <Box
-                    mt={8}
-                    display={{
-                      base: "block",
-                      md: "none",
-                    }}
-                  >
-                    <Image alt="" src={image4} />
                   </Box>
                 </Box>
               }

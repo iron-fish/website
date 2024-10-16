@@ -9,12 +9,12 @@ import {
   ThickLink,
   chakra,
 } from "@/lib/ui";
-import { LogoDownloads } from "../../../components/MediaKit/LogoDownloads/LogoDownloads";
-import { BrandGuidelines } from "../../../components/MediaKit/BrandGuidelines/BrandGuidelines";
-import toothyGuy from "../../../assets/heroImages/media-kit/toothy-guy.svg";
-import school from "../../../assets/heroImages/media-kit/school.svg";
-import verticalFish from "../../../assets/heroImages/media-kit/vertical-fish.svg";
-import { IllustrationPack } from "../../../components/MediaKit/IllustrationPack/IllustrationPack";
+import { LogoDownloads } from "../../components/MediaKit/LogoDownloads/LogoDownloads";
+import { BrandGuidelines } from "../../components/MediaKit/BrandGuidelines/BrandGuidelines";
+import toothyGuy from "../../assets/heroImages/media-kit/toothy-guy.svg";
+import school from "../../assets/heroImages/media-kit/school.svg";
+import verticalFish from "../../assets/heroImages/media-kit/vertical-fish.svg";
+import { IllustrationPack } from "../../components/MediaKit/IllustrationPack/IllustrationPack";
 import Head from "next/head";
 
 const toothyGuyImage = toothyGuy as LocalImage;

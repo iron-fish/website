@@ -1,20 +1,24 @@
 import { Box, BoxProps, ChakraComponent } from "@chakra-ui/react";
 
-type Props = {
+export type ShadowBoxProps = {
   children: React.ReactNode;
   shadowColor?: BoxProps["bg"];
+  borderColor?: BoxProps["borderColor"];
   offset?: string;
+  containerProps?: BoxProps;
 } & Omit<BoxProps, "children">;
 
-export const ShadowBox: ChakraComponent<"div", Props> = ({
+export const ShadowBox: ChakraComponent<"div", ShadowBoxProps> = ({
   children,
   shadowColor = "pink.500",
   offset = "6px",
   borderRadius = "1.5px",
   borderWidth = "1.5px",
+  borderColor = "black",
   width = "100%",
+  containerProps,
   ...rest
-}: Props) => {
+}: ShadowBoxProps) => {
   return (
     <Box
       position="relative"
@@ -24,9 +28,10 @@ export const ShadowBox: ChakraComponent<"div", Props> = ({
       alignItems="stretch"
       justifyContent="stretch"
       w={width}
+      {...containerProps}
     >
       <Box
-        border={`${borderWidth} solid black`}
+        border={`${borderWidth} solid ${borderColor}`}
         position="absolute"
         borderRadius={borderRadius}
         inset={0}
@@ -36,7 +41,7 @@ export const ShadowBox: ChakraComponent<"div", Props> = ({
       />
       <Box
         bg="white"
-        border={`${borderWidth} solid black`}
+        border={`${borderWidth} solid ${borderColor}`}
         borderRadius={borderRadius}
         position="relative"
         w="100%"
