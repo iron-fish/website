@@ -61,6 +61,14 @@ export const messages = defineMessages({
     id: "nav.mineIronDescription",
     defaultMessage: "Learn how to mine $IRON.",
   },
+  cliTitle: {
+    id: "nav.cliTitle",
+    defaultMessage: "CLI Node",
+  },
+  cliDescription: {
+    id: "nav.cliDescription",
+    defaultMessage: "Interact with Iron Fish using CLI",
+  },
   whitepaperTitle: {
     id: "nav.whitepaperTitle",
     defaultMessage: "Whitepaper",

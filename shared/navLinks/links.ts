@@ -35,6 +35,12 @@ export const links = [
         href: "/use/ecosystem",
         image: "/images/nav/use-ecosystem.svg",
       },
+      {
+        title: messages.cliTitle,
+        description: messages.cliDescription,
+        href: "/use/get-started/installation",
+        image: "/images/nav/company-submarine.svg",
+      },
     ],
   },
   {
