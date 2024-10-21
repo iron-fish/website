@@ -6,6 +6,12 @@ export const links = [
     color: "blue",
     items: [
       {
+        title: messages.getStartedTitle,
+        description: messages.getStartedDescription,
+        href: "/use/get-started",
+        image: "/images/nav/learn-book-fish.svg",
+      },
+      {
         title: messages.faqTitle,
         description: messages.faqDescription,
         href: "/learn/faq",
@@ -29,12 +35,6 @@ export const links = [
     label: messages.use,
     color: "orange",
     items: [
-      {
-        title: messages.getStartedTitle,
-        description: messages.getStartedDescription,
-        href: "/use/get-started",
-        image: "/images/nav/use-book-fish.svg",
-      },
       {
         title: messages.nodeAppTitle,
         description: messages.nodeAppDescription,
