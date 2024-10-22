@@ -15,7 +15,7 @@ import { format, parse } from "date-fns";
 const messages = defineMessages({
   heading: {
     id: "NewsDesk.heading",
-    defaultMessage: "Iron Fish on the news",
+    defaultMessage: "Iron Fish in the news",
   },
 });
 
@@ -46,7 +46,6 @@ export function NewsDesk() {
   return (
     <Container
       maxW={{
-        // base: "704px",
         base: "100%",
         lg: "1600px",
       }}
@@ -73,7 +72,8 @@ export function NewsDesk() {
         />
         <Grid
           templateColumns={{
-            base: "repeat(3, 380px)",
+            base: "repeat(3, 260px)",
+            sm: "repeat(3, 380px)",
             lg: "repeat(3, 1fr)",
           }}
           gap={{

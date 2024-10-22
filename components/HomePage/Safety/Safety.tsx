@@ -107,7 +107,7 @@ export function Safety() {
         base: 4,
       }}
     >
-      <Container maxW="1000px" textAlign="center">
+      <Container maxW="1000px" textAlign="center" p={0}>
         <Text as="h2" textStyle="h3" color="white" mb={8}>
           {formatMessage(messages.safeAccessibleWallets)}
         </Text>
