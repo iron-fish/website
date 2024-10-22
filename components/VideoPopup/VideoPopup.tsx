@@ -79,6 +79,8 @@ export function VideoPopup({
               md: "calc(100vw - 64px)",
             }}
             width="960px"
+            border="none"
+            background="transparent"
           >
             <AspectRatio position="relative" ratio={1920 / 1080} width="100%">
               <video width="100%" height="100%" controls autoPlay playsInline>
