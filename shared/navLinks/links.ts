@@ -42,6 +42,12 @@ export const links = [
         image: "/images/nav/use-key-fish.svg",
       },
       {
+        title: messages.cliTitle,
+        description: messages.cliDescription,
+        href: "/use/get-started/installation",
+        image: "/images/nav/use-submarine.svg",
+      },
+      {
         title: messages.mineIronTitle,
         description: messages.mineIronDescription,
         href: "/use/get-started/mining",
