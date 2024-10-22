@@ -80,8 +80,8 @@ export function VideoPopup({
             }}
             width="960px"
           >
-            <AspectRatio position="relative" ratio={320 / 240} width="100%">
-              <video width="100%" height="100%" controls autoPlay>
+            <AspectRatio position="relative" ratio={1920 / 1080} width="100%">
+              <video width="100%" height="100%" controls autoPlay playsInline>
                 <source src={videoUrl} type="video/mp4" />
                 Your browser does not support the video tag.
               </video>
