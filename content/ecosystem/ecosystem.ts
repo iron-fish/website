@@ -18,6 +18,12 @@ export const ECOSYSTEM: Array<{
 }> = [
   {
     type: "Apps",
+    name: "OreoWallet",
+    link: "https://oreowallet.com/",
+    image: "/images/ecosystem/oreowallet.png",
+  },
+  {
+    type: "Apps",
     name: "Orescriptions",
     link: "https://www.orescriptions.com",
     image: "/images/ecosystem/orescriptions.png",
