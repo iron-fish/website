@@ -1,4 +1,5 @@
 import { BridgeDropdown } from "@/components/BridgeDropdown/BridgeDropdown";
+import { VideoPopup } from "@/components/VideoPopup/VideoPopup";
 import {
   Heading,
   Grid,
@@ -116,13 +117,15 @@ export function Hero() {
         >
           <Box width="100%">
             <AspectRatio position="relative" ratio={657 / 424}>
-              <Image
-                priority
-                src="/images/home/hero-video.png"
-                alt=""
-                style={{ objectFit: "contain" }}
-                fill
-              />
+              <VideoPopup videoUrl="https://x3mk3ilmgdzxy3rj.public.blob.vercel-storage.com/hero-video-vGWSDl6a97OlvBkJuv3tXnzqGJOwDD.mp4">
+                <Image
+                  priority
+                  src="/images/home/hero-video.png"
+                  alt=""
+                  style={{ objectFit: "contain" }}
+                  fill
+                />
+              </VideoPopup>
             </AspectRatio>
           </Box>
         </GridItem>
