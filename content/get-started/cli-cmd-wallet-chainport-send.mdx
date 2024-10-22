@@ -1,0 +1,110 @@
+---
+title: wallet:chainport:send
+seo: Ironfish Chainport Bridge
+---
+
+# Usage
+
+Bridges assets from the Ironfish network to EVM networks like Ethereum, Optimism, Arbitrum, BNB, etc.
+
+```sh
+ironfish wallet:chainport:send
+```
+
+The example below sends $IRON to the wallet address `0x52908400098527886E0F7030069857D2E4169EE7` to the Ethereum network.
+
+<Terminal command="ironfish wallet:chainport:send"
+  output={`Enter the public address of the recipient: 0x52908400098527886E0F7030069857D2E4169EE7
+? Select the asset you wish to send (Use arrow keys)
+❯ 51f33a2f14f92735e562dc658a5639279ddca3d5079a6d1242b2a588a9cbf44c ($IRON✓) (0.82835858) 
+  ed289eb0ca4211ba335f2909c2b151ab3c76849a57746e42a72cf3158d2aa8d7 (Bill Preprod) (256698000) 
+
+? Select the asset you wish to send 51f33a2f14f92735e562dc658a5639279ddca3d5079a6d1242b2a588a9cbf44c ($IRON✓) (0.82835858)
+
+Fetching available networks... done
+? Select the network you would like to bridge IRON to (Use arrow keys)
+❯ BNB Chain 
+  Ethereum 
+  Milkomeda 
+? Select the network you would like to bridge IRON to Ethereum
+
+Enter the amount in the major denomination (balance 0.82835858): 0.001
+
+Calculating fees... done
+? Select the fee you wish to use for this transaction (Use arrow keys)
+❯ Slow 0.00000002
+  Average 0.00000002
+  Fast 0.00000002
+  Enter a custom fee
+
+BRIDGE TRANSACTION SUMMARY:
+ 
+From                           testnet
+To                             0x52908400098527886E0F7030069857D2E4169EE7
+Target Network                 ETHEREUM
+Estimated Amount Received      $IRON 0.00099700
+
+Fees:
+Chainport Fee                  $IRON 0.00000300
+Target Network Fee             $IRON 0.00000003
+Ironfish Network Fee           $IRON 0.00000002
+
+Outputs                        2
+Spends                         1
+Expiration                     536407
+ 
+Do you confirm (Y/N)?: Y
+
+Block explorer: https://testnet.explorer.ironfish.network/transaction/c18e0f704df317a429267b9c7ab0348fd476139c547ee0e60cb45f5422519a27
+Run ironfish wallet:transaction c18e0f704df317a429267b9c7ab0348fd476139c547ee0e60cb45f5422519a27 to get the status of your transaction.
+Run ironfish wallet:transaction:watch c18e0f704df317a429267b9c7ab0348fd476139c547ee0e60cb45f5422519a27 to wait for the status of your transaction to be confirmed/ expired.
+`}
+/>
+
+# A note on fees
+
+- **Target Network Fee**: The fee to send the transaction on the target network.
+- **Ironfish Network Fee**: The fee to send the transaction on the Ironfish network.
+- **Chainport Fee**: The fee for bridging the asset from Ironfish to the target network. 
+
+Note: If the wallet you are sending funds to has staked PortX tokens, the Chainport fee will be charged in PortX tokens. Example:
+
+<Terminal command="fish wallet:chainport:send -t 0x5DF170F118753CaE92aaC2868A2C25Ccb6528f9a --assetId 51f33a2f14f92735e562dc658a5639279ddca3d5079a6d1242b2a588a9cbf44c -a 0.5"
+  output={`Fetching available networks... done
+? Select the network you would like to bridge IRON to Ethereum
+Calculating fees... done
+? Select the fee you wish to use for this transaction Slow 0.00000002
+
+Staked PortX detected
+
+BRIDGE TRANSACTION SUMMARY:
+
+ From                           testnet
+ To                             0x5DF170F118753CaE92aaC2868A2C25Ccb6528f9a
+ Target Network                 ETHEREUM
+ Estimated Amount Received      $IRON 0.50000000
+
+ Fees:
+ Chainport Fee                  PORTX 0.012916666666666668
+ Target Network Fee             $IRON 0.00000003
+ Ironfish Network Fee           $IRON 0.00000002
+
+ Outputs                        2
+ Spends                         1
+ Expiration                     541915
+
+Do you confirm (Y/N)?:`}
+/>
+
+# Flags
+
+| Flag | Description | Default |
+| ---- | ----------- | ------- |
+| `-f, --account` | The account to send the asset from | `default` |
+| `-t, --to` | The Ethereum public address of the recipient | | `--watch` | Wait for the transaction to be confirmed on Ironfish | `false` | |
+| `-a, --amount` | The amount of the asset in the major denomination |  |
+| `-i, --assetId` | The identifier for the asset to use when bridging |  |
+| `-o, --fee` | The fee amount in IRON |  |
+| `-r, --feeRate` | The fee rate amount in IRON/Kilobyte |  |
+| `-e, --expiration` | The block sequence after which the transaction will be removed from the mempool. Set to 0 for no expiration. | default |
+| `--watch` | Wait for the transaction to be confirmed on Ironfish | `false` |

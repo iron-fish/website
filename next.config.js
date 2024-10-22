@@ -11,6 +11,8 @@ const nextConfig = {
     },
   },
   async headers() {
+    const isDev = process.env.NODE_ENV === "development"
+
     return [
       {
         source: "/:path*",
@@ -31,7 +33,7 @@ object-src 'none';
 base-uri 'self';
 form-action 'self';
 frame-ancestors 'none';
-upgrade-insecure-requests;
+${isDev ? '' : 'upgrade-insecure-requests;'}
             `.replace(/\n/g, ""),
           },
         ],

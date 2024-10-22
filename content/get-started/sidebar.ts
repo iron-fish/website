@@ -49,9 +49,12 @@ export const sidebar: SidebarDefinition = [
           "cli-cmd-wallet-balances",
           "cli-cmd-wallet-burn",
           "cli-cmd-wallet-create",
+          "cli-cmd-wallet-decrypt",
           "cli-cmd-wallet-delete",
+          "cli-cmd-wallet-encrypt",
           "cli-cmd-wallet-export",
           "cli-cmd-wallet-import",
+          "cli-cmd-wallet-lock",
           "cli-cmd-wallet-mint",
           "cli-cmd-wallet-notes-combine",
           "cli-cmd-wallet-notes",
@@ -68,8 +71,13 @@ export const sidebar: SidebarDefinition = [
           "cli-cmd-wallet-transaction-add",
           "cli-cmd-wallet-transaction-watch",
           "cli-cmd-wallet-transaction-view",
+          "cli-cmd-wallet-unlock",
           "cli-cmd-wallet-use",
           "cli-cmd-wallet-which",
+          {
+            label: "chainport",
+            items: ["cli-cmd-wallet-chainport-send"],
+          },
           {
             label: "multisig",
             items: [
@@ -78,6 +86,7 @@ export const sidebar: SidebarDefinition = [
               "cli-cmd-wallet-multisig-dealer-create",
               "cli-cmd-wallet-multisig-commitment-create",
               "cli-cmd-wallet-multisig-commitment-aggregate",
+              "cli-cmd-wallet-multisig-sign",
               "cli-cmd-wallet-multisig-signature-create",
               "cli-cmd-wallet-multisig-signature-aggregate",
               "cli-cmd-wallet-multisig-account-participants-list",
@@ -85,6 +94,7 @@ export const sidebar: SidebarDefinition = [
               {
                 label: "dkg",
                 items: [
+                  "cli-cmd-wallet-multisig-dkg-create",
                   "cli-cmd-wallet-multisig-dkg-round1",
                   "cli-cmd-wallet-multisig-dkg-round2",
                   "cli-cmd-wallet-multisig-dkg-round3",
@@ -94,6 +104,7 @@ export const sidebar: SidebarDefinition = [
           },
         ],
       },
+
       {
         label: "config",
         items: [
