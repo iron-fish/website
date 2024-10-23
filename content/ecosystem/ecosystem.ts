@@ -5,6 +5,7 @@ export const ECOSYSTEM_TYPES = [
   "Wallets",
   "Mining Pools",
   "Mining Software",
+  "Developers",
 ] as const;
 
 type Ecosystem = (typeof ECOSYSTEM_TYPES)[number];
@@ -21,6 +22,12 @@ export const ECOSYSTEM: Array<{
     name: "OreoWallet",
     link: "https://oreowallet.com/",
     image: "/images/ecosystem/oreowallet.png",
+  },
+  {
+    type: "Developers",
+    name: "IF Labs",
+    link: "https://iflabs.network/",
+    image: "/images/ecosystem/if-labs.png",
   },
   {
     type: "Apps",
