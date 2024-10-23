@@ -288,6 +288,11 @@ function ItemCard({
       flexDirection="column"
       alignItems="center"
       containerProps={{
+        maxWidth: {
+          base: "480px",
+          lg: "100%",
+        },
+        margin: "0 auto",
         _hover: {
           "& > *": {
             borderColor: "white",
