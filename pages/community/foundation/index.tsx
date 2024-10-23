@@ -10,7 +10,7 @@ import {
   Text,
   chakra,
 } from "@/lib/ui";
-import { DiscordCTA } from "@/components/Governance/DiscordCTA/DiscordCTA";
+import { ContactUs } from "@/components/ContactUs/ContactUs";
 import flower from "../../../assets/heroImages/foundation/flower.svg";
 import key from "../../../assets/heroImages/foundation/key.svg";
 import weather from "../../../assets/heroImages/foundation/weather.svg";
@@ -222,7 +222,7 @@ export default function Governance() {
           }}
         />
       </Box>
-      <DiscordCTA />
+      <ContactUs />
     </Box>
   );
 }

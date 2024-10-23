@@ -5,8 +5,11 @@ const SOCIAL_LINKS = {
   telegram: "https://t.me/ironfishcryptochat",
 };
 
+const CONTACT_US_EMAIL = "contact@ironfish.network";
+
 export const CONSTANTS = {
   SOCIAL_LINKS,
+  CONTACT_US_EMAIL,
 };
 
 export const GRANTS_FORM_URL =
