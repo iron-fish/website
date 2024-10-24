@@ -1,0 +1,259 @@
+---
+title: Ledger
+
+---
+
+A Ledger is a hardware wallet used to securely store your crypto assets offline. The private key used to sign transactions never leaves the Ledger device, so even if your machine or wallet is compromised, your private key is never leaked. 
+
+Using Ledger for Iron Fish will enable you to manage IRON as well as any other Iron Fish asset on the Ledger device. There are two flows that will be described in this tutorial: the single-signer flow, which is the most common type of wallet, or the multi-sig wallet flow allowing a wallet to be controlled by a number of participants. 
+
+If you have any questions on how to use your Ledger for Iron Fish assets, please reach out on our [Discord](https://discord.ironfish.network/) in the questions channel.  
+
+## Video Walkthrough Tutorial
+
+The video walkthrough tutorial for both single-signer flow using the Ironfish Ledger app as well as the multi-sig wallet flow using the Ironfish DKG app can be found here: 
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/ELBw9I1AVrk?si=TM3qJzGzSRlp5uQF" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+## Single Signer Ledger Flow
+
+### Requirements
+
+You’ll need the latest version of the [Node App](https://ironfish.network/use/node-app) to see the balance, transaction history, and facilitate creating transactions for your Ledger wallet.  Please make sure to always have your Iron Fish [Node App](https://ironfish.network/use/node-app) up to date. Installing a new version will preserve all your chain and wallet history. 
+
+For your Ledger device, make sure to: 
+
+- Have [Ledger Live installed](https://support.ledger.com/article/4404389503889-zd)
+- [Set up your Ledger device](https://support.ledger.com/topic?topic=ledger-hardware-wallets)
+- Connect your device and check for any updates
+
+### Installation
+
+You’ll need a non-deprecated Ledger device that is set up with the Ironfish app.
+
+To install the **Ironfish** app on your Ledger:
+
+- Open the **Manager** in Ledger Live.
+- Connect and unlock your Ledger Device.
+- If asked, follow the onscreen instructions and **Allow Ledger Manager**.
+- Find Ironfish and/or Ironfish DKG in the app catalog.
+- Click the Install button. Your device will display **Processing…** and then the app installation is confirmed
+- Close Ledger Live.
+
+### Import the View Key for your Ledger Account into the Node App
+
+For the most common flow involving a single signer, you’ll need the [Iron Fish Node App](https://ironfish.network/use/node-app). Make sure it’s up to date by either opening up the app and having it update, or installing the latest version. Updating the Node App still preserves all your chain and wallet data. 
+
+To connect your Iron Fish Node App to your Ledger, click on `+ Add Account` button on the top right, and click `Connect Ledger`
+
+<img src="/images/blog/ledger/1.png" width="30%"/>
+
+The Node App will then prompt you to unlock your device and approve sharing the view keys about your Ledger account with the Node App. Iron Fish is a full privacy chain, and Iron Fish accounts have private keys for signing, public keys for requesting funds, and view keys for revealing balance, revealing transaction history, or creating *unsigned* transactions. Importing the Ledger view key therefore gives the Node App the ability to give you your balance while the private key that’s needed to finalize the transaction through signing never leaves the Ledger device. 
+
+<div className="side-by-side-images-container">
+  <img 
+    src="/images/blog/ledger/2.png" 
+    style={{ maxWidth: '45%', height: 'auto' }}
+  />
+  <img 
+    src="/images/blog/ledger/3.png" 
+    style={{ maxWidth: '45%', height: 'auto' }}
+  />
+</div>
+
+<div className="side-by-side-images-container">
+  <img 
+    src="/images/blog/ledger/4.png" 
+    style={{ maxWidth: '45%', height: 'auto' }}
+  />
+  <img 
+    src="/images/blog/ledger/5.png" 
+    style={{ maxWidth: '45%', height: 'auto' }}
+  />
+</div>
+
+### How to View Account Balance
+
+After you’ve imported the view  key for your Ledger wallet, you should see your Ledger wallet displayed as a *view only* account on the Node App. It’ll take a few moments for your wallet to sync. After it’s synced, you should see your wallet balance displayed in the Node App.
+
+<div className="side-by-side-images-container">
+  <img 
+    src="/images/blog/ledger/6.png" 
+    style={{ maxWidth: '45%', height: 'auto' }}
+  />
+  <img 
+    src="/images/blog/ledger/7.png" 
+    style={{ maxWidth: '45%', height: 'auto' }}
+  />
+</div>
+
+### How to Receive Funds
+
+After importing the Ledger account into the Node App, you can find the public address for that wallet either by clicking on the public address below account name to save it to your clipboard, navigating to walelt details or by going to the Receive tab:
+
+<div className="side-by-side-images-container">
+  <img 
+    src="/images/blog/ledger/8.png" 
+    style={{ maxWidth: '45%', height: 'auto' }}
+  />
+  <img 
+    src="/images/blog/ledger/9.png" 
+    style={{ maxWidth: '45%', height: 'auto' }}
+  />
+</div>
+
+### How to Send Funds
+
+To send funds, you can either click on the `Send` button directly, use the `Send` tab, or navigate to the wallet details and click on the `Send` button from there: 
+
+<div className="side-by-side-images-container">
+  <img 
+    src="/images/blog/ledger/10.png" 
+    style={{ maxWidth: '45%', height: 'auto' }}
+  />
+  <img 
+    src="/images/blog/ledger/11.png" 
+    style={{ maxWidth: '45%', height: 'auto' }}
+  />
+</div>
+
+You’ll then be able to construct your transaction: 
+
+![](/images/blog/ledger/12.png)
+
+You’ll be prompted to fill in the **To** input field for the receiving public address, which **Asset** you’re sending if your wallet has multiple assets, the **Amount** you’re sending, the **Fee** (with suggested amounts for fast/medium/slow transaction times), and an optional **Memo** field to describe the transaction (only visible to sender/recipient). 
+
+After clicking on the `Send Asset` button, you’ll need to review and approve the transaction on the Ledger device. If anything looks incorrect, you’ll have the chance to reject the transaction. 
+
+Iron Fish is a UTXO model, so a transaction consumes and produces new Notes (e.g. UTXOs). During the review process on the Ledger device you’ll see those Notes being consumed or created and the corresponding `AssetID` ,`Amount` ,`Owner` for that note displayed: 
+
+![](/images/blog/ledger/13.png)
+
+Please note that amounts in Iron Fish are displayed without decimal points, meaning that 1 IRON will be displayed as 10000000 since Iron Fish has 8 decimal points for precision. 
+
+## Multi-sig Wallet Ledger Flow
+
+### Requirements
+
+For the Multi-signer Ledger flow you’ll need the [Node App](https://ironfish.network/use/node-app) as well as the Iron Fish CLI. The easiest way to install the Iron Fish CLI is through NPM. If you already have NodeJS on your computer, you can install Iron Fish CLI by simply running the command `npm install -g ironfish`. For full instructions, please reference the [installation docs](https://ironfish.network/use/get-started/installation).
+
+For your Ledger device, make sure to: 
+
+- Have [Ledger Live installed](https://support.ledger.com/article/4404389503889-zd)
+- [Set up your Ledger device](https://support.ledger.com/topic?topic=ledger-hardware-wallets)
+- Connect your device and check for any updates
+
+### Installation
+
+You’ll need a non-deprecated Ledger device that is set up with the **Ironfish DKG** app. 
+
+To install the **Ironfish DKG** app on your Ledger:
+
+- Open the **Manager** in Ledger Live.
+- Connect and unlock your Ledger Device.
+- If asked, follow the onscreen instructions and **Allow Ledger Manager**.
+- Find Ironfish and/or Ironfish DKG in the app catalog.
+- Click the Install button. Your device will display **Processing…** and then the app installation is confirmed
+- Close Ledger Live.
+
+### How to create your Multi-Sig Wallet
+
+To create a multi-sig wallet you’ll need information from other participants. Let’s run through an example of how to create a multi-sig wallet that’ll have 3 participants, and will need at least 2 of them to sign a transaction to move funds out of that wallet (e.g. a 2 of 3 multi-sig). One of these participants in this example is going to be using their Ledger and the **Ironfish DKG** app.
+
+*Please note that the highest number of participants that is currently supported is 4 participants.* 
+
+First, we’ll create the two other participants that are not using Ledger (in this example we’ll use Alice and Bob). 
+
+**Creating Alice’s portion for the multi-sig wallet**
+
+Alice will use the Iron Fish CLI tool to create her identity using the server service to broker the interactive part of creating a multi-sig wallet. 
+
+`ironfish wallet:multisig:dkg:create --name dkg-alice --server`
+
+- the `--name` flag gives this wallet a human-readable name or label
+- the `--server` flag uses the server broker service to streamline the interactive part of creating a multi-sig wallet. If for some reason you want to do this step manually, see the documentation for that [here](https://ironfish.network/use/get-started/multisig-creation-dkg).
+
+The initial output of this command will give you a **DKG session connection string** that you can give to other participants to streamline the interactive part of making a multi-sig wallet: 
+
+![](/images/blog/ledger/14.png)
+
+**Creating Bob’s portion for the multi-sig wallet**
+
+Using the session ID that Alice would provide, Bob can create his own multi-sig wallet by running the command:
+
+`ironfish wallet:multisig:dkg:create --name dkg-bob -c tcp://c1b4d640-e55a-4d95-8fda-3adf0a8f38fe:Beanss@multisig.ironfish.network:9035`
+
+- the `--name` flag gives Bob a human readable label for his wallet
+- the `-c` flag gives Bob the ability to use the session ID string that Alice gave him to streamline the interactive portion of creating a multi-sig account
+
+**Creating a portion for the multi-sig wallet using Ledger**
+
+To create a Ledger multi-sig account:
+
+`ironfish wallet:multisig:dkg:create --name ledger-dkg --ledger -c tcp://c1b4d640-e55a-4d95-8fda-3adf0a8f38fe:Beanss@multisig.ironfish.network:9035`
+
+- the `--name` allows you to give this wallet a human readable name or label
+- the `-c` flag gives you the ability to use the connection session ID string to streamline the interactive portion of creating the multi-sig account with other participants
+- the `--ledger` flag indicates that this portion of the multi-sig wallet is going to live on Ledger such that signatures approving transactions for this wallet will only be created within the Ledger device for this participant
+
+Since the secret seed for approving transactions for this wallet lives in Ledger, you’ll have to manually approve `Round 1`,`Round 2` and `Round 3` on your Ledger device to interactively create this multi-sig wallet with the other two participants (in this example Alice and Bob). 
+
+![](/images/blog/ledger/15.png)
+
+After approving the three interactive Rounds on your Ledger device, you’ll see the prompt to save your Backup DKG Keys on the Ledger device and verifying once again that you’ve created a 2 of 3 multi-sig account and its newly created public address. This public address can now be used to receive funds. 
+
+*Please note that the highest number of participants that is currently supported is 4 participants.* 
+
+### Add your Ledger Multi-Sig Account into the Iron Fish Node App
+
+The easiest way to interact with the multi-sig Ledger wallet after creation is by using the Iron Fish [Node App](https://ironfish.network/use/node-app). In order for us to use the Node App, we’ll first need to import the newly created Ledger multi-sig wallet. As of now, importing the Ledger DKG multi-sig wallet is only enabled on the CLI tool with this command: 
+
+`ironfish wallet:import --ledger --multisig`
+
+(Please note if you’re on an older version of the Iron Fish CLI tool, the is going to be `ironfish wallet:multisig:ledger:import`. You’ll also need to make sure that the Node App is *not* open when you’re importing the wallet). 
+
+After you’ve run this command to import your Ledger multi-sig wallet, you can open the Node App and see that it’s there as a *view-only* account:
+
+![](/images/blog/ledger/16.png)
+
+### How to Receive Funds
+
+During multi-sig account creation, you’ll see the Public Address associated with this Ledger multi-sig account. This is the Public Address that you can use to request funds. 
+
+To receive funds you can retrieve the Public Address by either clicking on the clipboard button below the wallet name, clicking into the wallet to see more details, or by clicking on the `Receive` button. Note that this is the same Public Address you’ve witnessed on the Ledger device during account creation. 
+
+![](/images/blog/ledger/17.png)
+
+### How to Send Funds
+
+After adding your Ledger multi-sig account into the Iron Fish Node App, we can then construct *unsigned* transactions for that multi-sig wallet in the Node App, use the Ledger device to product a signature share, and then aggregate signatures from other participants to sign and broadcast it out. 
+
+**Constructing an unsigned transaction**
+
+First, navigate to the `Multisig Ledger` tab on the left navigation, and click on `Create Transfer Transaction` tab. Fill in the recipient, asset type, amount, fee, and optional memo, and click on the `Create Unsigned Transaction` button. 
+
+![](/images/blog/ledger/18.png)
+
+This will produce an unsigned transaction that you can then share out with other participants:
+
+![](/images/blog/ledger/19.png)
+
+For other participants, you’ll also be prompted to enter in their Identity (this would be either Alice or Bob in this example): 
+
+![](/images/blog/ledger/20.png)
+
+And then you’ll be able to review and sign this transaction on your Ledger device. Please make sure to review all details of the transaction on your Ledger device during this step: 
+
+![](/images/blog/ledger/21.png)
+
+The other participant(s) in this transaction would also have to provide their signature commitments and shares: 
+
+![](/images/blog/ledger/22.png)
+
+After signature shares from the minimum number of participants required for this transaction are shared and aggregated in the Node App, the transaction can be submitted to the Iron Fish network: 
+
+![](/images/blog/ledger/23.png)
+
+## Where to Ask for Help
+
+The best way to ask for help is through our [Discord questions channel](https://discord.gg/THvGgbU89U). If email is preferred, you can also reach out at contact@ironfish.network.
