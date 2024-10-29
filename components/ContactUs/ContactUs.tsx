@@ -1,20 +1,19 @@
 import { Box, Text, Container, ArrowButton, Flex } from "@/lib/ui";
-import Link from "next/link";
 import { defineMessages, useIntl } from "react-intl";
-import { CONSTANTS } from "../../../shared/constants";
+import { CONSTANTS } from "../../shared/constants";
 
 const messages = defineMessages({
   heading: {
-    id: "joinCommunity.heading",
-    defaultMessage: "Join Our Diverse Community",
+    id: "ContactUs.heading",
+    defaultMessage: "Want to say hello?",
   },
-  button: {
-    id: "joinCommunity.button",
-    defaultMessage: "Dive into Discord",
+  emailLink: {
+    id: "ContactUs.contact",
+    defaultMessage: "Drop us a line",
   },
 });
 
-export function DiscordCTA() {
+export function ContactUs() {
   const { formatMessage } = useIntl();
   return (
     <Box
@@ -50,20 +49,16 @@ export function DiscordCTA() {
           sm: "row",
         }}
         justifyContent="center"
-        gap={{
-          base: 6,
-          sm: 8,
-        }}
       >
         <ArrowButton
           as="a"
-          href={CONSTANTS.SOCIAL_LINKS.discord}
+          href={`mailto:${CONSTANTS.CONTACT_US_EMAIL}`}
           target="_blank"
           rel="noreferrer"
           size="sm"
           colorScheme="white"
         >
-          {formatMessage(messages.button)}
+          {formatMessage(messages.emailLink)}
         </ArrowButton>
       </Flex>
     </Box>
