@@ -46,3 +46,11 @@ table th {
 .katex-display {
   margin: 0.5em 0;
 }
+
+.side-by-side-images-container {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;  /* Added bottom margin */
+}
