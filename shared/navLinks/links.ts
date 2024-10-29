@@ -68,24 +68,6 @@ export const links = [
     ],
   },
   {
-    label: messages.developers,
-    color: "yellow",
-    items: [
-      {
-        title: messages.documentationTitle,
-        description: messages.documentationDescription,
-        href: "/developers/documentation",
-        image: "/images/nav/dev-blowfish.svg",
-      },
-      {
-        title: messages.githubTitle,
-        description: messages.githubDescription,
-        href: "https://github.com/iron-fish/ironfish",
-        image: "/images/nav/dev-tv-fish.svg",
-      },
-    ],
-  },
-  {
     label: messages.community,
     color: "green",
     items: [
@@ -136,6 +118,24 @@ export const links = [
         description: messages.contactUsDescription,
         href: "mailto:contact@ironfish.network",
         image: "/images/nav/company-jellyfish.svg",
+      },
+    ],
+  },
+  {
+    label: messages.developers,
+    color: "yellow",
+    items: [
+      {
+        title: messages.documentationTitle,
+        description: messages.documentationDescription,
+        href: "/developers/documentation",
+        image: "/images/nav/dev-blowfish.svg",
+      },
+      {
+        title: messages.githubTitle,
+        description: messages.githubDescription,
+        href: "https://github.com/iron-fish/ironfish",
+        image: "/images/nav/dev-tv-fish.svg",
       },
     ],
   },
