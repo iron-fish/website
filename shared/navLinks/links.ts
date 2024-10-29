@@ -2,36 +2,6 @@ import { messages } from "./messages";
 
 export const links = [
   {
-    label: messages.learn,
-    color: "blue",
-    items: [
-      {
-        title: messages.getStartedTitle,
-        description: messages.getStartedDescription,
-        href: "/use/get-started",
-        image: "/images/nav/learn-book-fish.svg",
-      },
-      {
-        title: messages.faqTitle,
-        description: messages.faqDescription,
-        href: "/learn/faq",
-        image: "/images/nav/learn-mag-glass.svg",
-      },
-      {
-        title: messages.whitepaperTitle,
-        description: messages.whitepaperDescription,
-        href: "/learn/whitepaper",
-        image: "/images/nav/learn-whitepaper.svg",
-      },
-      {
-        title: messages.tokenomicsTitle,
-        description: messages.tokenomicsDescription,
-        href: "/learn/tokenomics",
-        image: "/images/nav/learn-tokenomics.svg",
-      },
-    ],
-  },
-  {
     label: messages.use,
     color: "orange",
     items: [
@@ -64,6 +34,36 @@ export const links = [
         description: messages.ecosystemDescription,
         href: "/use/ecosystem",
         image: "/images/nav/use-ecosystem.svg",
+      },
+    ],
+  },
+  {
+    label: messages.learn,
+    color: "blue",
+    items: [
+      {
+        title: messages.getStartedTitle,
+        description: messages.getStartedDescription,
+        href: "/use/get-started",
+        image: "/images/nav/learn-book-fish.svg",
+      },
+      {
+        title: messages.faqTitle,
+        description: messages.faqDescription,
+        href: "/learn/faq",
+        image: "/images/nav/learn-mag-glass.svg",
+      },
+      {
+        title: messages.whitepaperTitle,
+        description: messages.whitepaperDescription,
+        href: "/learn/whitepaper",
+        image: "/images/nav/learn-whitepaper.svg",
+      },
+      {
+        title: messages.tokenomicsTitle,
+        description: messages.tokenomicsDescription,
+        href: "/learn/tokenomics",
+        image: "/images/nav/learn-tokenomics.svg",
       },
     ],
   },
