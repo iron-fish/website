@@ -2,36 +2,47 @@ import { SidebarDefinition } from "@/lib/markdown";
 
 export const sidebar: SidebarDefinition = [
   {
-    label: "Installation",
+    label: "CLI Setup",
     items: [
       "install-npm",
-      "install-brew",
-      "install-docker",
-      "install-source",
-      "install-standalone",
+      {
+        label: "Alternative installations",
+        items: [
+          "install-brew",
+          "install-docker",
+          "install-source",
+          "install-standalone",
+        ],
+      },
+      "run-a-node",
+      "networks",
     ],
   },
-  "run-a-node",
-  "node-health",
-  "node-config",
-  "node-datadir",
-  "setting-up-an-account",
-  "transactions",
-  "integration_keys",
-  "integration_local",
-  "integration_mining",
-
-  "offline-transaction-signing",
   {
-    label: "Multisig",
+    label: "CLI Basics",
+    items: ["setting-up-an-account", "transactions", "integration_keys"],
+  },
+  {
+    label: "CLI Advanced",
     items: [
-      "multisig-creation-tdk",
-      "multisig-creation-dkg",
-      "multisig-signing",
+      "node-health",
+      "integration_mining",
+      "integration_local",
+      "node-config",
+      "offline-transaction-signing",
+      "bootstrap-nodes",
+      {
+        label: "Multisig",
+        items: [
+          "multisig-creation-tdk",
+          "multisig-creation-dkg",
+          "multisig-signing",
+        ],
+      },
     ],
   },
   {
-    label: "CLI Reference",
+    label: "CLI Commands",
     items: [
       "cli/cli-help",
       "cli/cli-cmd-start",
@@ -168,10 +179,10 @@ export const sidebar: SidebarDefinition = [
         ],
       },
       {
-        label: "Reference",
+        label: "API Routes",
         items: [
           {
-            label: "Response Objects",
+            label: "API Response Objects",
             items: [
               {
                 id: "rpc/objects/rpcAccountAssetBalanceDelta",
@@ -660,12 +671,13 @@ export const sidebar: SidebarDefinition = [
       },
     ],
   },
-  "glossary",
-  "networks",
-  "bootstrap-nodes",
-  "hardfork-update-process",
   {
-    label: "Contribute Open Source",
-    items: ["contribute/lint_and_format", "release-versioning"],
+    label: "Contribute To Iron Fish",
+    items: [
+      "contribute/lint_and_format",
+      "release-versioning",
+      "hardfork-update-process",
+    ],
   },
+  "glossary",
 ];

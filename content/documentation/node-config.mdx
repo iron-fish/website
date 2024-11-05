@@ -1,7 +1,29 @@
 ---
 title: Configure your node
-seo-title: Node Config Options
+seo-title: Node Config Options | Node Data Directory
 ---
+
+## Data directory
+
+By default, the database and configuration files for the Iron Fish node are created in the `~/.ironfish` directory.
+
+The file structure is composed of the following:
+
+```sh
+[Iron Fish Node]
+├── config.json
+├── internal.json
+└── databases
+...└── chain
+...└── wallet
+```
+
+You can change the working directory by passing the flag `--datadir` when running a command. Doing so will require you to sync the node again with the network.
+
+Configuration files can be edited by the commands described [here](/use/get-started/cli-cmd-config-set).
+
+
+## Configuration
 
 To change configuration of your node, you can do so from the command line using the [config:set command](/use/get-started/cli-cmd-config-set).
 
