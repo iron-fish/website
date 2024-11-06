@@ -14,7 +14,7 @@ export const links = [
       {
         title: messages.cliTitle,
         description: messages.cliDescription,
-        href: "/use/get-started/installation",
+        href: "/developers/documentation/install-npm",
         image: "/images/nav/use-submarine.svg",
       },
       {

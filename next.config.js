@@ -69,7 +69,7 @@ ${isDev ? '' : 'upgrade-insecure-requests;'}
       },
       {
         source: "/developers/documentation",
-        destination: "/developers/documentation/integration_local",
+        destination: "/developers/documentation/install-npm",
         permanent: false,
       },
       {
@@ -84,7 +84,7 @@ ${isDev ? '' : 'upgrade-insecure-requests;'}
       },
       {
         source: "/docs/onboarding/iron-fish-tutorial",
-        destination: "/use/get-started/installation",
+        destination: "/developers/documentation/install-npm",
         permanent: true,
       },
       {
@@ -94,7 +94,7 @@ ${isDev ? '' : 'upgrade-insecure-requests;'}
       },
       {
         source: "/docs/onboarding/installation-iron-fish",
-        destination: "/use/get-started/installation",
+        destination: "/developers/documentation/install-npm",
         permanent: true,
       },
       {
@@ -109,12 +109,12 @@ ${isDev ? '' : 'upgrade-insecure-requests;'}
       },
       {
         source: "/docs/onboarding/iron-fish-wallet-commands",
-        destination: "/use/get-started/cli-how-to-use",
+        destination: "/developers/documentation/cli-help",
         permanent: true,
       },
       {
         source: "/docs/onboarding/start-an-iron-fish-node",
-        destination: "/use/get-started/run-a-node",
+        destination: "/developers/documentation/run-a-node",
         permanent: true,
       },
       {
@@ -124,7 +124,7 @@ ${isDev ? '' : 'upgrade-insecure-requests;'}
       },
       {
         source: "/docs/onboarding/iron-fish-cli",
-        destination: "/use/get-started/cli-how-to-use",
+        destination: "/developers/documentation/cli-help",
         permanent: true,
       },
       {
@@ -134,12 +134,12 @@ ${isDev ? '' : 'upgrade-insecure-requests;'}
       },
       {
         source: "/docs/onboarding/send-receive-iron-fish-transactions",
-        destination: "/use/get-started/transactions",
+        destination: "/developers/documentation/transactions",
         permanent: true,
       },
       {
         source: "/docs/onboarding/iron-fish-node-health",
-        destination: "/use/get-started/node-health",
+        destination: "/developers/documentation/node-health",
         permanent: true,
       },
       {
@@ -175,7 +175,7 @@ ${isDev ? '' : 'upgrade-insecure-requests;'}
       },
       {
         source: "/use/get-started/multisig-creation",
-        destination: "/use/get-started/multisig-creation-tdk",
+        destination: "/developers/documentation/multisig-creation-tdk",
         permanent: true,
       },
     ];

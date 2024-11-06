@@ -54,6 +54,41 @@ ec7d8422f70b5449a5aabb18c9507b1875b6ec49b8ada1ba991ca09900c1c3b1c7b282a7b93866be
 
 The node will now sync your local chain with the network. It might take a while for the full sync to be complete. But you can still use the node in the meantime.
 
+## Node Status
+
+Run the status command to display the status of your node.
+
+<Terminal
+  command="ironfish status"
+  output={`\
+Version              1.8.0 @ src
+Node                 STARTED
+Node Name
+Peer ID              f5uI8nrLATmehVD/Efg3ADimWv6fSO0EubeTdnaG2kM=
+Block Graffiti
+Network              Mainnet
+Memory               Heap: 69.48 MiB -> 116.65 MiB / 3.99 GiB (1.7%), RSS: 516.59 MiB (3.2%), Free: 421.37 MiB (97.4%)
+CPU                  Cores: 10, Current: 296.8%
+P2P Network          CONNECTED - In: 406.37 KB/s, Out: 3.91 KB/s, peers 31
+Mining               STARTED - 0 miners, 0 mined
+Mem Pool             Count: 0 tx, Bytes: 0 B / 57.22 MiB (0.00%), Evictions: 0
+Syncer               SYNCING - 35.79 blocks synced/sec, 69.69 blocks downloaded/sec, 89.53 blocks added/sec, progress: 94.41%
+Blockchain           000000000000005913624fa8a48383ad1893f5a46744c1878cc9c877099574c3 (164432), Since HEAD: 161h 25m (NOT SYNCED)
+Accounts             SCANNING - 12381 / 159633
+Telemetry            STARTED - 0 <- 1 pending
+Workers              STARTED - 0 -> 1 / 6 - 0 jobs Δ, 498.85 jobs/s
+`}/>
+
+
+The node can have the following status:
+
+| Status       | Description                                                                                                  |
+| :-----------:| :-----------------------------------------------------------------------------------------------------------:|
+| STARTED      | Node is running                                                                                              |
+| STOPPED      | Node is not running. Start it with `ironfish start`                                                          |
+| ERROR        | An error occured while running the node. Run `ironfish logs -v` to see the latest error messages             |
+
+
 ## Downloading a chain snapshot
 
 To sync your local chain with the network more quickly you can download a snapshot of the chain database.
@@ -67,7 +102,7 @@ ironfish chain:download
 ## Advanced Options
 
 ### Using a different directory
-By default, the node stores its data in the `~/.ironfish` directory (see [node data dir](/use/get-started/node-datadir)).
+By default, the node stores its data in the `~/.ironfish` directory (see [node data dir](/developers/documentation/node-config)).
 
 You can use a different directory for the database and configuration files by using the `--datadir` flag.
 
@@ -94,8 +129,4 @@ E.g.
 ```sh
 ironfish start --port=9045
 ```
-
-## Next steps
-
-[Check the health and status of your node](/use/get-started/node-health)
 

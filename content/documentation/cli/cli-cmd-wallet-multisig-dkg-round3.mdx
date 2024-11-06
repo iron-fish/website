@@ -11,9 +11,9 @@ Performs round 3 of the FROST DKG protocol for multisig account creation.
 ironfish wallet:multisig:dkg:round3
 ```
 
-The example below demonstrates how to run round 3 of DKG for a group of two participants and the secret name `participant0`. Use the [`wallet:multisig:multisig:dkg:round2`](/use/get-started/cli-cmd-wallet-multisig-dkg-round2) command to create an encrypted secret package.
+The example below demonstrates how to run round 3 of DKG for a group of two participants and the secret name `participant0`. Use the [`wallet:multisig:multisig:dkg:round2`](/developers/documentation/cli/cli-cmd-wallet-multisig-dkg-round2) command to create an encrypted secret package.
 
-`round3` requires the round 1 public packages that all participants generated using [`wallet:multisig:multisig:dkg:round1`](/use/get-started/cli-cmd-wallet-multisig-dkg-round1) (including your own).
+`round3` requires the round 1 public packages that all participants generated using [`wallet:multisig:multisig:dkg:round1`](/developers/documentation/cli/cli-cmd-wallet-multisig-dkg-round1) (including your own).
 
 To run `round3` you must also enter the round 2 public packages that each _other_ participant in the group generated for your identity.
 
