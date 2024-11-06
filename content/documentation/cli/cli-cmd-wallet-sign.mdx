@@ -3,7 +3,7 @@ title: wallet:sign
 seo: Wallet Sign Command
 ---
 
-Use this command to sign an unsigned transaction. You do not need to specify the account, the RPC will iterate through all accounts to find the one that can sign the transaction. You can produce an unsigned transaction by running [`ironfish wallet:send`](/use/get-started/cli-cmd-wallet-send) / [`ironfish wallet:mint`](/use/get-started/cli-cmd-wallet-mint) / [`ironfish wallet:burn`](/use/get-started/cli-cmd-wallet-burn) with the `--unsignedTransaction` flag.
+Use this command to sign an unsigned transaction. You do not need to specify the account, the RPC will iterate through all accounts to find the one that can sign the transaction. You can produce an unsigned transaction by running [`ironfish wallet:send`](/developers/documentation/cli/cli-cmd-wallet-send) / [`ironfish wallet:mint`](/developers/documentation/cli/cli-cmd-wallet-mint) / [`ironfish wallet:burn`](/developers/documentation/cli/cli-cmd-wallet-burn) with the `--unsignedTransaction` flag.
 
 <Terminal command="ironfish wallet:sign"
   output={`
@@ -17,7 +17,7 @@ Fee: $IRON 0.00000001
 />
 
 
-You can post the transaction to the Ironfish network either using the `--broadcast` flag or you can use the [`ironfish wallet:transaction:add`](/use/get-started/cli-cmd-wallet-transaction-add) command to add the signed transaction to your wallet.
+You can post the transaction to the Ironfish network either using the `--broadcast` flag or you can use the [`ironfish wallet:transaction:add`](/developers/documentation/cli/cli-cmd-wallet-transaction-add) command to add the signed transaction to your wallet.
 
 
 

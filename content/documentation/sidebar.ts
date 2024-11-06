@@ -156,33 +156,33 @@ export const sidebar: SidebarDefinition = [
     ],
   },
   {
+    label: "Recipes",
+    items: [
+      "integration_transactions",
+      "integration_deposits",
+      "recipes_combining_notes",
+      "recipes_maximizing_transaction_size",
+      "recipes_splitting_notes",
+      {
+        label: "Multisig",
+        items: [
+          "recipes_multisig_create_account",
+          "recipes_multisig_create_account_dkg",
+          "recipes_multisig_sign_transaction",
+        ],
+      },
+    ],
+  },
+  {
     label: "RPC",
     items: [
       "integration_rpc",
       "rpc/protocol",
       {
-        label: "Recipes",
-        items: [
-          "integration_transactions",
-          "integration_deposits",
-          "recipes_combining_notes",
-          "recipes_maximizing_transaction_size",
-          "recipes_splitting_notes",
-          {
-            label: "Multisig",
-            items: [
-              "recipes_multisig_create_account",
-              "recipes_multisig_create_account_dkg",
-              "recipes_multisig_sign_transaction",
-            ],
-          },
-        ],
-      },
-      {
-        label: "API Routes",
+        label: "Routes",
         items: [
           {
-            label: "API Response Objects",
+            label: "Response Objects",
             items: [
               {
                 id: "rpc/objects/rpcAccountAssetBalanceDelta",
@@ -679,5 +679,4 @@ export const sidebar: SidebarDefinition = [
       "hardfork-update-process",
     ],
   },
-  "glossary",
 ];

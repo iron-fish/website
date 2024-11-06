@@ -1,3 +1,8 @@
 import { SidebarDefinition } from "@/lib/markdown";
 
-export const sidebar: SidebarDefinition = ["get-started", "mining", "ledger"];
+export const sidebar: SidebarDefinition = [
+  "get-started",
+  "mining",
+  "ledger",
+  "glossary",
+];
