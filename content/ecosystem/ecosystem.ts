@@ -18,7 +18,7 @@ export const ECOSYSTEM: Array<{
   highlight?: string;
 }> = [
   {
-    type: "Apps",
+    type: "Wallets",
     name: "OreoWallet",
     link: "https://oreowallet.com/",
     image: "/images/ecosystem/oreowallet.png",
