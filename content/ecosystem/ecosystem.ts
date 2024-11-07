@@ -18,7 +18,7 @@ export const ECOSYSTEM: Array<{
   highlight?: string;
 }> = [
   {
-    type: "Apps",
+    type: "Wallets",
     name: "OreoWallet",
     link: "https://oreowallet.com/",
     image: "/images/ecosystem/oreowallet.png",
@@ -208,7 +208,7 @@ export const ECOSYSTEM: Array<{
     image: "/images/ecosystem/node-app.png",
   },
   {
-    type: "Wallets",
+    type: "Tools",
     name: "Standalone Wallet",
     link: "https://github.com/iron-fish/ironfish-wallet-cli",
     image: "/images/ecosystem/iflabs-standalone-wallet.png",
