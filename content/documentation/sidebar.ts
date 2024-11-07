@@ -54,6 +54,7 @@ export const sidebar: SidebarDefinition = [
       {
         label: "wallet",
         items: [
+          "cli/cli-cmd-wallet-account",
           "cli/cli-cmd-wallet-accounts",
           "cli/cli-cmd-wallet-address",
           "cli/cli-cmd-wallet-assets",
