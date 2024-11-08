@@ -29,6 +29,7 @@ export const sidebar: SidebarDefinition = [
     label: "Reference",
     items: ["node-config", "node-datadir", "bootstrap-nodes"],
   },
+  "ledger",
   {
     label: "CLI Commands",
     items: [
