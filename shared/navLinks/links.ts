@@ -44,7 +44,7 @@ export const links = [
       {
         title: messages.getStartedTitle,
         description: messages.getStartedDescription,
-        href: "/use/get-started",
+        href: "/get-started",
         image: "/images/nav/learn-book-fish.svg",
       },
       {
