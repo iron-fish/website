@@ -38,37 +38,36 @@ const sections = [
           addresses attempting to bridge to Iron Fish will have their funds
           frozen.
         </Text>
-        <Flex mt="">
-          <Flex
-            as={Link}
-            href="/learn/blog/2024-08-15-safety"
-            display="flex"
-            alignItems="center"
-            gap={2}
-            pb={2}
-            position="relative"
-            color="#c54ade"
-            _hover={{
-              '[data-name="link-underline"]': {
-                width: "100%",
-              },
-            }}
-          >
-            <Text>Learn more.</Text>
-            <Box transform="scale(0.7)">
-              <FancyArrowRight />
-            </Box>
-            <Box
-              data-name="link-underline"
-              w="0%"
-              h="2px"
-              bg="currentColor"
-              position="absolute"
-              bottom="0"
-              left="0"
-              transition="width 0.15s ease-in-out"
-            />
-          </Flex>
+        <Flex
+          w="fit-content"
+          as={Link}
+          href="/learn/blog/2024-08-15-safety"
+          display="flex"
+          alignItems="center"
+          gap={2}
+          pb={2}
+          position="relative"
+          color="#c54ade"
+          _hover={{
+            '[data-name="link-underline"]': {
+              width: "100%",
+            },
+          }}
+        >
+          <Text>Learn more.</Text>
+          <Box transform="scale(0.7)">
+            <FancyArrowRight />
+          </Box>
+          <Box
+            data-name="link-underline"
+            w="0%"
+            h="2px"
+            bg="currentColor"
+            position="absolute"
+            bottom="0"
+            left="0"
+            transition="width 0.15s ease-in-out"
+          />
         </Flex>
       </Grid>
     ),
