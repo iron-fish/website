@@ -28,13 +28,7 @@ export function BridgeDropdown() {
   return (
     <Box position="relative">
       <ButtonContents hidden />
-      <ButtonContents
-        disabled
-        position="absolute"
-        top={0}
-        left={0}
-        zIndex={1}
-      />
+      <ButtonContents position="absolute" top={0} left={0} zIndex={1} />
     </Box>
   );
 }
@@ -42,7 +36,6 @@ export function BridgeDropdown() {
 function ButtonContents({
   hidden,
   children,
-  disabled,
   ...rest
 }: BoxProps & {
   hidden?: boolean;
@@ -61,36 +54,11 @@ function ButtonContents({
       borderRadius={28}
       onClick={toggleIsOpen}
       w="100%"
-      disabled={disabled}
-      _disabled={{
-        cursor: "not-allowed",
-        bg: "#F3F3F4",
-      }}
       {...rest}
     >
-      <Flex
-        flexDir="column"
-        px={10}
-        h={14}
-        alignItems="center"
-        gap={disabled ? 0 : 2}
-        justifyContent="center"
-      >
-        {disabled ? (
-          <>
-            <Text lineHeight="1.2" fontSize="sm" color="#686868">
-              {formatMessage(messages.bridge)}
-            </Text>
-            <Text whiteSpace="nowrap" fontSize="xs" color="#686868">
-              {formatMessage(messages.comingSoon)}
-            </Text>
-          </>
-        ) : (
-          <>
-            <Text fontSize="xl">Bridge</Text>
-            {isOpen ? <IoChevronUp size={20} /> : <IoChevronDown size={20} />}
-          </>
-        )}
+      <Flex px={10} h={14} alignItems="center" gap={2} justifyContent="center">
+        <Text fontSize="xl">Bridge</Text>
+        {isOpen ? <IoChevronUp size={20} /> : <IoChevronDown size={20} />}
       </Flex>
       {!hidden && isOpen && (
         <>
