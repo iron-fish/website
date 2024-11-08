@@ -199,6 +199,24 @@ export function Footer() {
             >
               |
             </Text>
+            <Text
+              as={Link}
+              href="/media-kit"
+              _hover={{
+                textDecoration: "underline",
+              }}
+            >
+              Media Kit
+            </Text>
+            <Text
+              mx={2}
+              display={{
+                base: "none",
+                md: "block",
+              }}
+            >
+              |
+            </Text>
             <Text>Copyright {new Date().getFullYear()} Iron Fish.</Text>
           </Flex>
         </Flex>

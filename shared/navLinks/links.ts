@@ -98,30 +98,6 @@ export const links = [
     ],
   },
   {
-    label: messages.company,
-    color: "pink",
-    items: [
-      {
-        title: messages.aboutUsTitle,
-        description: messages.aboutUsDescription,
-        href: "/company/about-us",
-        image: "/images/nav/company-submarine.svg",
-      },
-      {
-        title: messages.mediaKitTitle,
-        description: messages.mediaKitDescription,
-        href: "/company/media-kit",
-        image: "/images/nav/company-vertical-fish.svg",
-      },
-      {
-        title: messages.contactUsTitle,
-        description: messages.contactUsDescription,
-        href: "mailto:contact@ironfish.network",
-        image: "/images/nav/company-jellyfish.svg",
-      },
-    ],
-  },
-  {
     label: messages.developers,
     color: "yellow",
     items: [

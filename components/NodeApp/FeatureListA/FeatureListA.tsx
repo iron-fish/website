@@ -10,6 +10,7 @@ import image2 from "./assets/image-02.svg";
 import image3 from "./assets/image-03.svg";
 import image4 from "./assets/image-04.svg";
 import { CHIP_COLORS } from "../shared/chipColors";
+import { defineMessages, useIntl } from "react-intl";
 
 const IMAGE_BY_INDEX = {
   0: <Image alt="" src={image1} />,
@@ -18,23 +19,52 @@ const IMAGE_BY_INDEX = {
   3: <Image alt="" src={image4} />,
 };
 
-function ComingSoon() {
-  return (
-    <Box
-      textTransform="uppercase"
-      bg="#F3F3F4"
-      color="#7F7F7F"
-      borderRadius="full"
-      fontSize="sm"
-      px={3}
-    >
-      Coming Soon
-    </Box>
-  );
-}
+const messages = defineMessages({
+  title: {
+    id: "FeatureListA.title",
+    defaultMessage: "The perfect app for everyday use",
+  },
+  feature1Heading: {
+    id: "FeatureListA.feature1Heading",
+    defaultMessage: "Easy Access to Iron Fish Network",
+  },
+  feature1Body: {
+    id: "FeatureListA.feature1Body",
+    defaultMessage:
+      "Once the app has synced the node, you can start using $IRON and your custom assets right away. If you do use the command line wallet, anything you do there is reflected in the node app, and vice versa.",
+  },
+  feature2Heading: {
+    id: "FeatureListA.feature2Heading",
+    defaultMessage: "Centralized Account View",
+  },
+  feature2Body: {
+    id: "FeatureListA.feature2Body",
+    defaultMessage:
+      "Access a centralized view of all your accounts: address book, balances, transactions, and more.",
+  },
+  feature3Heading: {
+    id: "FeatureListA.feature3Heading",
+    defaultMessage: "Encryption Made Simple",
+  },
+  feature3Body: {
+    id: "FeatureListA.feature3Body",
+    defaultMessage:
+      "The node app has the same level of security as running a node via the command line, and is more secure than using third party applications.",
+  },
+  feature4Heading: {
+    id: "FeatureListA.feature4Heading",
+    defaultMessage: "Bridge Assets",
+  },
+  feature4Body: {
+    id: "FeatureListA.feature4Body",
+    defaultMessage:
+      "We are the first to support multi-asset transactions, we pave the way for complete privacy in web3 transactions. Unlocking the true potential of a private and secure blockchain ecosystem.",
+  },
+});
 
 export function FeatureListA() {
   const expandingListProps = useAutoExpandingList();
+  const { formatMessage } = useIntl();
 
   return (
     <Container w="100%" maxW="container.xl" py="150px">
@@ -47,24 +77,19 @@ export function FeatureListA() {
       >
         <GridItem>
           <Text textStyle="h3" mb={2}>
-            The perfect app for everyday use
+            {formatMessage(messages.title)}
           </Text>
           <AutoExpandingList {...expandingListProps}>
             <AutoExpandingList.Item
               chipColor={CHIP_COLORS.GREEN}
               heading={
                 <Heading fontSize="xl">
-                  Easy Access to Iron Fish Network
+                  {formatMessage(messages.feature1Heading)}
                 </Heading>
               }
               body={
                 <Box>
-                  <Text>
-                    Once the app has synced the node, you can start using $IRON
-                    and your custom assets right away. If you do use the command
-                    line wallet, anything you do there is reflected in the node
-                    app, and vice versa.
-                  </Text>
+                  <Text>{formatMessage(messages.feature1Body)}</Text>
                   <Box
                     mt={8}
                     display={{
@@ -80,14 +105,13 @@ export function FeatureListA() {
             <AutoExpandingList.Item
               chipColor={CHIP_COLORS.PINK}
               heading={
-                <Heading fontSize="xl">Centralized Account View</Heading>
+                <Heading fontSize="xl">
+                  {formatMessage(messages.feature2Heading)}
+                </Heading>
               }
               body={
                 <Box>
-                  <Text>
-                    Access a centralized view of all your accounts: address
-                    book, balances, transactions, and more.
-                  </Text>
+                  <Text>{formatMessage(messages.feature2Body)}</Text>
                   <Box
                     mt={8}
                     display={{
@@ -102,14 +126,14 @@ export function FeatureListA() {
             />
             <AutoExpandingList.Item
               chipColor={CHIP_COLORS.BLUE}
-              heading={<Heading fontSize="xl">Encryption Made Simple</Heading>}
+              heading={
+                <Heading fontSize="xl">
+                  {formatMessage(messages.feature3Heading)}
+                </Heading>
+              }
               body={
                 <Box>
-                  <Text>
-                    The node app has the same level of security as running a
-                    node via the command line, and is more secure than using
-                    third party applications.
-                  </Text>
+                  <Text>{formatMessage(messages.feature3Body)}</Text>
                   <Box
                     mt={8}
                     display={{
@@ -141,18 +165,14 @@ export function FeatureListA() {
                   justifyContent="space-between"
                   w="100%"
                 >
-                  <Heading fontSize="xl">Bridge Assets</Heading>
-                  <ComingSoon />
+                  <Heading fontSize="xl">
+                    {formatMessage(messages.feature4Heading)}
+                  </Heading>
                 </Flex>
               }
               body={
                 <Box>
-                  <Text>
-                    Soon you&apos;ll be able to encrypt assets like Bitcoin and
-                    Ethereum, we pave the way for complete privacy in web3
-                    transactions. Unlocking the true potential of a private and
-                    secure blockchain ecosystem.
-                  </Text>
+                  <Text>{formatMessage(messages.feature4Body)}</Text>
                   <Box
                     mt={8}
                     display={{

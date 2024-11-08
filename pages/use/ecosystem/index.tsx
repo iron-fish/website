@@ -16,6 +16,7 @@ import {
   Filter,
   useFilterOptions,
   chakra,
+  HStack,
 } from "@/lib/ui";
 import plug from "@/assets/heroImages/ecosystem/plug.svg";
 import hands from "@/assets/heroImages/ecosystem/hands.svg";
@@ -110,29 +111,30 @@ function Cards() {
                   <Text as="h3" textStyle="h4" marginBottom={8}>
                     {item.name}
                   </Text>
-                  <ArrowButton
-                    as="a"
-                    target="_blank"
-                    rel="noreferrer"
-                    href={item.link}
-                    size="sm"
-                    colorScheme="white"
-                    arrowStyle="tilted"
-                  >
-                    Visit
-                  </ArrowButton>
-                  {item.highlight && (
+                  <HStack gap={2}>
                     <ArrowButton
-                      as={Link}
-                      href={item.highlight}
+                      as="a"
+                      target="_blank"
+                      rel="noreferrer"
+                      href={item.link}
                       size="sm"
                       colorScheme="white"
-                      arrowStyle="hidden"
-                      mt={4}
+                      arrowStyle="tilted"
                     >
-                      Read More
+                      Visit
                     </ArrowButton>
-                  )}
+                    {item.highlight && (
+                      <ArrowButton
+                        as={Link}
+                        href={item.highlight}
+                        size="sm"
+                        colorScheme="white"
+                        arrowStyle="hidden"
+                      >
+                        Read More
+                      </ArrowButton>
+                    )}
+                  </HStack>
                 </Box>
               </ShadowBox>
             </GridItem>
