@@ -110,7 +110,7 @@ export function ExpandingItem({
   );
 }
 
-function ChipCounter({
+export function ChipCounter({
   active,
   spacer,
   num = 0,

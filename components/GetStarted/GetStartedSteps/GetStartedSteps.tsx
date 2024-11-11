@@ -1,14 +1,17 @@
-import { Container, Text, Heading, Grid, GridItem, Box, Flex } from "@/lib/ui";
+import { Container, Text, Heading, Grid, GridItem, Box, Flex, Button, FlexProps } from "@/lib/ui";
 import {
   AutoExpandingList,
   useAutoExpandingList,
 } from "@/components/AutoExpandingList/AutoExpandingList";
+import Link from "next/link";
 import Image from "next/image";
 import { AnimatePresence, motion } from "framer-motion";
 import { defineMessages, useIntl } from "react-intl";
 import image1 from "./assets/image-01.svg";
 import image2 from "./assets/image-02.svg";
 import image3 from "./assets/image-03.svg";
+import { ChipCounter } from "@/components/AutoExpandingList/ChipCounter/ChipCounter";
+import { useMemo } from "react";
 
 export const CHIP_COLOR = "#C7F182";
 
@@ -25,35 +28,35 @@ const messages = defineMessages({
   },
   encryptionHeading: {
     id: "OurPrinciples.encryptionHeading",
-    defaultMessage: "Install a Wallet",
+    defaultMessage: "Create a Wallet",
   },
   encryptionBody1: {
     id: "OurPrinciples.encryptionBody1",
     defaultMessage:
-      "Privacy is a fundamental right, and yet everyday people give away personal information — often without even realizing it. We empower users to decide when and how to share their data, by ensuring all transactions are encrypted.",
+      "Install a wallet that supports Iron Fish and create your wallet. You'll need to get your wallet's address to receive your encrypted funds.",
   },
   encryptionBody2: {
     id: "OurPrinciples.encryptionBody2",
     defaultMessage:
-      "We do not compromise on protection — using zero-knowledge proofs (zk-SNARKs) and the highest industry standards for encryption.",
+      "You'll need to get your wallet's address to receive your encrypted funds.",
   },
   buildTogetherHeading: {
     id: "OurPrinciples.buildTogetherHeading",
-    defaultMessage: "Encrypt your Assets",
+    defaultMessage: "Bridge Assets In",
   },
   buildTogetherBody: {
     id: "OurPrinciples.buildTogetherBody",
     defaultMessage:
-      "As a decentralized, open-source network, Iron Fish relies on an engaged community to support protocol development and raise awareness of privacy as a social good. Our community is the heart of our platform.",
+      "Use the Chainport bridge to encrypt your assets. Once your assets are in Iron Fish, they will be fully private.",
   },
   complianceHeading: {
     id: "OurPrinciples.complianceHeading",
-    defaultMessage: "Common Sense Compliance",
+    defaultMessage: "Bridge Assets Out",
   },
   complianceBody: {
     id: "OurPrinciples.complianceBody",
     defaultMessage:
-      "To date, crypto privacy projects have either failed to offer necessary levels of protection or more often, they've fallen on the wrong side of public authorities. Iron Fish addresses this impasse with a leading edge platform with built-in compliance controls.",
+      "You can bridge your assets out of Iron Fish into over 20 chains using Chainport.",
   },
 });
 
@@ -85,7 +88,57 @@ export function GetStartedSteps() {
               body={
                 <Box>
                   <Text mb={6}>{formatMessage(messages.encryptionBody1)}</Text>
-                  <Text>{formatMessage(messages.encryptionBody2)}</Text>
+
+                  <Box mt={4}>
+                    <Chip active={true} text='Easy'></Chip>
+                    OreoWallet is a browser based extension.<br/>
+                    <Button
+                      as={Link}
+                      href={'google.com'}
+                      size="sm"
+                      bg="white"
+                      _hover={{
+                        bg: "gray.200",
+                      }}
+                    >
+                      Install OreoWallet
+                    </Button>
+                  </Box>
+
+                  <Box mt={8}>
+                    <Chip active={true} text='Medium'></Chip>
+                    Node App is a GUI app that runs a node and a wallet. It will download the full blockchain.
+                    <br/>
+                    <Button
+                      as={Link}
+                      href={'google.com'}
+                      size="sm"
+                      bg="white"
+                      _hover={{
+                        bg: "gray.200",
+                      }}
+                    >
+                      Install Iron Fish CLI
+                    </Button>
+                  </Box>
+
+                  <Box mt={8}>
+                    <Chip active={true} text='Hard'></Chip>
+                    CLI runs a node and a wallet in the terminal. It will download the full blockchain.
+                    <br/>
+                    <Button
+                      as={Link}
+                      href={'google.com'}
+                      size="sm"
+                      bg="white"
+                      _hover={{
+                        bg: "gray.200",
+                      }}
+                    >
+                      Install CLI
+                    </Button>
+                  </Box>
+
                   <Box
                     mt={8}
                     display={{
@@ -108,6 +161,21 @@ export function GetStartedSteps() {
               body={
                 <Box>
                   <Text>{formatMessage(messages.buildTogetherBody)}</Text>
+
+                  <Box mt={4}>
+                    <Button
+                        as={Link}
+                        href={'https://app.chainport.io/?from=ETHEREUM&to=IRONFISH'}
+                        size="sm"
+                        bg="white"
+                        _hover={{
+                          bg: "gray.200",
+                        }}
+                    >
+                      Use Chainport Bridge
+                    </Button>
+                  </Box>
+
                   <Box
                     mt={8}
                     display={{
@@ -130,6 +198,24 @@ export function GetStartedSteps() {
               body={
                 <Box>
                   <Text>{formatMessage(messages.complianceBody)}</Text>
+
+                  <Box mt={4}>
+
+                  <Text>
+                    Use your wallet to bridge out, or try our web based bridge DAPP. <Button
+                        as={Link}
+                        href={'https://tesnet.bridge.ironfish.network'}
+                        size="sm"
+                        bg="white"
+                        _hover={{
+                          bg: "gray.200",
+                        }}
+                        >
+                      Use Iron Fish Bridge DAPP
+                    </Button>
+                  </Text>
+                  </Box>
+
                   <Box
                     mt={8}
                     display={{
@@ -167,5 +253,55 @@ export function GetStartedSteps() {
         </GridItem>
       </Grid>
     </Container>
+  );
+}
+
+export function Chip({
+  active,
+  spacer,
+  color = "gray.200",
+  theme = "light",
+  text = '',
+  ...rest
+}: {
+  active?: boolean;
+  spacer?: boolean;
+  theme?: string;
+  color?: string;
+  text?: string;
+} & FlexProps) {
+  const { bg, color: textColor } = useMemo(() => {
+    if (active) {
+      return {
+        bg: color,
+        color: "black",
+      };
+    }
+
+    return {
+      bg: theme === "light" ? "black" : "white",
+      color: theme === "light" ? "white" : "black",
+    };
+  }, [active, color, theme]);
+
+  return (
+    <Flex
+      bg={bg}
+      borderRadius="full"
+      h="30px"
+      minW="45px"
+      w="45px"
+      justifyContent="center"
+      alignItems="center"
+      transition="background-color 0.3s ease-in-out"
+      opacity={spacer ? 0 : 1}
+      {...rest}
+    >
+      {!spacer && (
+        <Text textStyle="sm" color={textColor} transform="translateY(1px)">
+          {text}
+        </Text>
+      )}
+    </Flex>
   );
 }
