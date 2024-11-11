@@ -142,12 +142,6 @@ export const ECOSYSTEM: Array<{
   },
   {
     type: "Exchanges",
-    name: "KuCoin",
-    link: "https://www.kucoin.com/",
-    image: "/images/ecosystem/kucoin.png",
-  },
-  {
-    type: "Exchanges",
     name: "Gate.io",
     link: "https://www.gate.io/",
     image: "/images/ecosystem/gate.png",
