@@ -98,7 +98,7 @@ export function Hero() {
                 lg: "center",
               }}
             >
-              <Button size="lg" as={Link} href="/use/get-started">
+              <Button size="lg" as={Link} href="/get-started">
                 <Box mr={4}>{formatMessage(messages.getStarted)}</Box>
                 <FancyArrowRight />
               </Button>

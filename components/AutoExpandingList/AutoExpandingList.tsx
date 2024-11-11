@@ -13,10 +13,10 @@ import { ExpandingItem } from "./ExpandingItem/ExpandingItem";
 const CYCLE_DURATION = 5000;
 const TOGGLE_DURATION = 300;
 
-export function useAutoExpandingList() {
+export function useAutoExpandingList(props?: { isAutoExpanding?: boolean }) {
   const [itemCount, setItemCount] = useState(0);
   const [activeIndex, setActiveIndex] = useState(0);
-  const [isAutoExpanding, setIsAutoExpanding] = useState(true);
+  const [isAutoExpanding, setIsAutoExpanding] = useState(props?.isAutoExpanding ?? true);
 
   useEffect(() => {
     const interval = setInterval(() => {
