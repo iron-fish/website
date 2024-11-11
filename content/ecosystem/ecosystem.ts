@@ -30,6 +30,24 @@ export const ECOSYSTEM: Array<{
     image: "/images/ecosystem/if-labs.png",
   },
   {
+    type: "Developers",
+    name: "Chainport",
+    link: "https://www.chainport.io/",
+    image: "/images/ecosystem/chainport.png",
+  },
+  {
+    type: "Developers",
+    name: "Zondax",
+    link: "https://zondax.ch/",
+    image: "/images/ecosystem/zondax.png",
+  },
+  {
+    type: "Developers",
+    name: "Oreolabs",
+    link: "https://github.com/oreoslabs/",
+    image: "/images/ecosystem/oreowallet.png",
+  },
+  {
     type: "Apps",
     name: "Orescriptions",
     link: "https://www.orescriptions.com",
