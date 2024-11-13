@@ -44,7 +44,7 @@ export function Backers() {
           ImgDragonfly,
         ].map((img, i) => (
           <Box key={i} mx={margin} filter="grayscale(1)">
-            <Image src={img} height={height} alt="" />
+            <Image src={img} height={height} alt="" loading="eager" />
           </Box>
         ))}
       </Marquee>
