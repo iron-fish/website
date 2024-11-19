@@ -1,0 +1,35 @@
+---
+title: Export Transactions for Accounting
+description: Recipes | Accounting Export Transactions | Iron Fish Documentation
+---
+
+It's some times important to be able to export transactions for accountants or tax preparation agents.
+
+You can do this with the `wallet:transactions` command
+
+Here is an example that exports the transactions for all wallets between October 1st, 2024 and November 1st, 2024.
+
+```bash
+ironfish wallet:transactions \
+    --no-account \
+    --filter.start 10/1/2024 \
+    --filter.end 11/01/2024 \
+    --output csv \
+    --format transfers
+```
+
+**Notes**
+ - `--format=transfers` will project the data in an accounting friendly format which excludes change notes
+ - `--no-account` will ensure that all wallets are included. Only the default account is included otherwise.
+
+If you want to export transactions for a specific set of accounts, like `alice` and `bob`, you can specify each like this:
+
+```bash
+ironfish wallet:transactions \
+    --account alice \
+    --account bob \
+    --filter.start 10/1/2024 \
+    --filter.end 11/01/2024 \
+    --output csv \
+    --format transfers
+```
