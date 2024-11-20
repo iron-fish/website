@@ -48,6 +48,22 @@ ${isDev ? '' : 'upgrade-insecure-requests;'}
         permanent: true,
       },
       {
+        source: "/use/get-started/cli-how-to-use",
+        destination: "/developers/documentation/install-npm",
+        permanent: true,
+      },
+      {
+        source: "/use/get-started/installation",
+        destination: "/developers/documentation/install-npm",
+        permanent: true,
+      },
+      {
+        source: "/use/get-started/cli-cmd-start",
+        destination:
+          "/developers/documentation/run-a-node",
+        permanent: true,
+      },
+      {
         source: "/faq",
         destination: "/learn/faq",
         permanent: true,
