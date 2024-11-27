@@ -166,12 +166,6 @@ export const ECOSYSTEM: Array<{
   },
   {
     type: "Exchanges",
-    name: "BitMart",
-    link: "https://www.bitmart.com/",
-    image: "/images/ecosystem/bitmart.png",
-  },
-  {
-    type: "Exchanges",
     name: "SafeTrade",
     link: "https://safe.trade/",
     image: "/images/ecosystem/safe-trade.png",
