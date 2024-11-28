@@ -17,8 +17,15 @@ The optional `createdAt` field can be used to set the block sequence to start sc
   name?: string
   rescan?: boolean
   createdAt?: number
+  format?: AccountFormat
 }
 ```
+
+Supported [AccountFormats](https://github.com/iron-fish/ironfish/blob/master/ironfish/src/wallet/account/encoder/encoder.ts#L27)
+ - Base64Json: The full account and all keys as a JSON string then encoded in base64.
+ - JSON: The full account and all keys as a JSON string
+ - Mnemonic: The private key encoded as 24 word BIP39 mnemonic phrase in the specified language
+ - SpendingKey: The private key as a hex-encoded string.
 
 #### Response
 
