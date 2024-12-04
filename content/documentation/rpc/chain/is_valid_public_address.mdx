@@ -1,0 +1,26 @@
+---
+title: chain/isValidPublicAddress
+description: RPC Chain | Iron Fish Documentation
+---
+
+Gets if a given public address is valid
+
+A valid public address is one that is well formed, not one that is guaranteed to belong to a wallet.
+
+#### Request
+
+```ts
+{
+  address: string
+}
+```
+
+#### Response
+
+```ts
+{
+  valid: boolean;
+}
+```
+
+###### [View on Github](https://github.com/iron-fish/ironfish/blob/master/ironfish/src/rpc/routes/chain/isValidPublicAddress.ts)
