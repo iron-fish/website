@@ -307,6 +307,10 @@ export const sidebar: SidebarDefinition = [
                 id: "rpc/chain/show_chain",
                 label: "showChain",
               },
+              {
+                id: "rpc/chain/is_valid_public_address",
+                label: "isValidPublicAddress",
+              },
             ],
           },
           {
