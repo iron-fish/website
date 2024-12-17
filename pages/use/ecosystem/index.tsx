@@ -158,7 +158,7 @@ export default function Ecosystem() {
           bg="orange.500"
           heading="Ecosystem"
           subheading="How Will You Use Iron Fish?"
-          description="Our ecosystem is vast and offers a variety of apps and integrations to choose from."
+          description="Our ecosystem is vast and offers a variety of wallets, apps and integrations to choose from."
           images={
             <>
               <HeroImageUtil
