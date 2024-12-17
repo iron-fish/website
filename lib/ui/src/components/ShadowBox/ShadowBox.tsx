@@ -1,8 +1,9 @@
-import { Box, BoxProps, ChakraComponent } from "@chakra-ui/react";
+import { Box, BoxProps, ChakraComponent, useBoolean } from "@chakra-ui/react";
 
 export type ShadowBoxProps = {
   children: React.ReactNode;
   shadowColor?: BoxProps["bg"];
+  hoverShadowColor?: BoxProps["bg"];
   borderColor?: BoxProps["borderColor"];
   offset?: string;
   containerProps?: BoxProps;
@@ -11,6 +12,7 @@ export type ShadowBoxProps = {
 export const ShadowBox: ChakraComponent<"div", ShadowBoxProps> = ({
   children,
   shadowColor = "pink.500",
+  hoverShadowColor,
   offset = "6px",
   borderRadius = "1.5px",
   borderWidth = "1.5px",
@@ -19,6 +21,8 @@ export const ShadowBox: ChakraComponent<"div", ShadowBoxProps> = ({
   containerProps,
   ...rest
 }: ShadowBoxProps) => {
+  const [isHovered, setHovered] = useBoolean(false);
+
   return (
     <Box
       position="relative"
@@ -28,6 +32,8 @@ export const ShadowBox: ChakraComponent<"div", ShadowBoxProps> = ({
       alignItems="stretch"
       justifyContent="stretch"
       w={width}
+      onMouseEnter={setHovered.on}
+      onMouseLeave={setHovered.off}
       {...containerProps}
     >
       <Box
@@ -37,7 +43,7 @@ export const ShadowBox: ChakraComponent<"div", ShadowBoxProps> = ({
         inset={0}
         mt={offset}
         ml={offset}
-        bg={shadowColor}
+        bg={isHovered ? hoverShadowColor : shadowColor}
       />
       <Box
         bg="white"
