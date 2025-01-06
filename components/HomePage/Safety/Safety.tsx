@@ -137,7 +137,7 @@ export function Safety() {
               name={formatMessage(messages.nodeApp)}
               description={formatMessage(messages.nodeAppDescription)}
               href="/use/node-app"
-              ctaText={formatMessage(messages.nodeAppLink)}
+              linkText={formatMessage(messages.nodeAppLink)}
               imageSrc={nodeAppImage}
             />
           </GridItem>
@@ -147,7 +147,7 @@ export function Safety() {
               name={formatMessage(messages.oreoWallet)}
               description={formatMessage(messages.oreoWalletDescription)}
               href="https://oreowallet.com/"
-              ctaText={formatMessage(messages.oreoWalletLink)}
+              linkText={formatMessage(messages.oreoWalletLink)}
               imageSrc={oreoWalletImage}
             />
           </GridItem>
@@ -180,8 +180,8 @@ export function Safety() {
             <ItemCard
               name={formatMessage(messages.chainPortBridge)}
               description={formatMessage(messages.chainPortBridgeDescription)}
-              // href="https://app.chainport.io/?from=ETHEREUM&to=IRONFISH"
-              ctaText="COMING SOON"
+              href="https://app.chainport.io/?from=ETHEREUM&to=IRONFISH"
+              linkText={formatMessage(messages.chainPortBridgeLink)}
               imageSrc={chainportImage}
               imageContainerProps={{
                 paddingTop: {
@@ -200,8 +200,8 @@ export function Safety() {
             <ItemCard
               name="Bridge.IronFish"
               description={formatMessage(messages.ironFishBridgeDescription)}
-              // href="https://bridge.ironfish.network/"
-              ctaText="COMING SOON"
+              href="https://bridge.ironfish.network/"
+              linkText={formatMessage(messages.ironFishBridgeLink)}
               imageSrc={bridgeIronFishImage}
               imageContainerProps={{
                 padding: {
@@ -257,8 +257,8 @@ function FancyLink({
 type ItemCardProps = {
   name: string;
   description: string;
-  href?: string;
-  ctaText: string;
+  href: string;
+  linkText: string;
   imageSrc: StaticImageData;
   imageContainerProps?: ComponentProps<typeof HStack>;
 } & Omit<ShadowBoxProps, "children">;
@@ -267,24 +267,17 @@ function ItemCard({
   name,
   description,
   href,
-  ctaText,
+  linkText,
   imageSrc,
   imageContainerProps,
   ...rest
 }: ItemCardProps) {
-  const isLink = !!href;
-  const linkProps = isLink
-    ? {
-        as: Link,
-        href,
-        target: href.startsWith("http") ? "_blank" : undefined,
-        rel: href.startsWith("http") ? "noreferrer" : undefined,
-      }
-    : null;
-
   return (
     <ShadowBox
-      {...linkProps}
+      as={Link}
+      href={href}
+      target={href.startsWith("http") ? "_blank" : undefined}
+      rel={href.startsWith("http") ? "noreferrer" : undefined}
       bg="#242424"
       borderColor="#3B3B3B"
       shadowColor="#242424"
@@ -312,21 +305,13 @@ function ItemCard({
       }}
       {...rest}
     >
-      <Text mb={8} as="h3" textStyle="h4" color="white">
+      <Text as="h3" textStyle="h4" color="white" mb={8}>
         {name}
       </Text>
       <Text color="white" textStyle="md" mb={8}>
         {description}
       </Text>
-      {isLink ? (
-        <FancyLink color="pink.400">{ctaText}</FancyLink>
-      ) : (
-        <Box mb={8} bg="#2F3A1F" borderRadius="4px">
-          <Text px={6} py={2} color="#C7F182">
-            {ctaText}
-          </Text>
-        </Box>
-      )}
+      <FancyLink color="pink.400">{linkText}</FancyLink>
 
       <HStack flexGrow={1} alignItems="flex-end" {...imageContainerProps}>
         <Image src={imageSrc} alt={name} />
