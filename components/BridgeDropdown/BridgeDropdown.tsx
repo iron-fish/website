@@ -83,7 +83,7 @@ function BridgeLink({ direction }: { direction: "out" | "in" }) {
       href={
         direction === "out"
           ? "https://bridge.ironfish.network/"
-          : "https://app.chainport.io/?from=ETHEREUM&to=IRONFISH"
+          : "https://app.chainport.io/?from=ETHEREUM&token=USDC&to=IRONFISH&token=USDC"
       }
       target="_blank"
       rel="noreferrer"
