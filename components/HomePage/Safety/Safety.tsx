@@ -180,7 +180,7 @@ export function Safety() {
             <ItemCard
               name={formatMessage(messages.chainPortBridge)}
               description={formatMessage(messages.chainPortBridgeDescription)}
-              href="https://app.chainport.io/?from=ETHEREUM&to=IRONFISH"
+              href="https://app.chainport.io/?from=ETHEREUM&token=USDC&to=IRONFISH&token=USDC"
               linkText={formatMessage(messages.chainPortBridgeLink)}
               imageSrc={chainportImage}
               imageContainerProps={{
