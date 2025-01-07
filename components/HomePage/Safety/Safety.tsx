@@ -178,6 +178,7 @@ export function Safety() {
         >
           <GridItem display="flex" alignItems="stretch">
             <ItemCard
+              comingSoon
               name={formatMessage(messages.chainPortBridge)}
               description={formatMessage(messages.chainPortBridgeDescription)}
               href="https://app.chainport.io/?from=ETHEREUM&token=USDC&to=IRONFISH&token=USDC"
@@ -198,6 +199,7 @@ export function Safety() {
 
           <GridItem display="flex" alignItems="stretch">
             <ItemCard
+              comingSoon
               name="Bridge.IronFish"
               description={formatMessage(messages.ironFishBridgeDescription)}
               href="https://bridge.ironfish.network/"
@@ -261,6 +263,7 @@ type ItemCardProps = {
   linkText: string;
   imageSrc: StaticImageData;
   imageContainerProps?: ComponentProps<typeof HStack>;
+  comingSoon?: boolean;
 } & Omit<ShadowBoxProps, "children">;
 
 function ItemCard({
@@ -270,14 +273,21 @@ function ItemCard({
   linkText,
   imageSrc,
   imageContainerProps,
+  comingSoon,
   ...rest
 }: ItemCardProps) {
+  const linkProps = comingSoon
+    ? null
+    : {
+        as: Link,
+        href,
+        target: href.startsWith("http") ? "_blank" : undefined,
+        rel: href.startsWith("http") ? "noreferrer" : undefined,
+      };
+
   return (
     <ShadowBox
-      as={Link}
-      href={href}
-      target={href.startsWith("http") ? "_blank" : undefined}
-      rel={href.startsWith("http") ? "noreferrer" : undefined}
+      {...linkProps}
       bg="#242424"
       borderColor="#3B3B3B"
       shadowColor="#242424"
@@ -311,7 +321,15 @@ function ItemCard({
       <Text color="white" textStyle="md" mb={8}>
         {description}
       </Text>
-      <FancyLink color="pink.400">{linkText}</FancyLink>
+      {comingSoon ? (
+        <Box mb={8} bg="#2F3A1F" borderRadius="4px">
+          <Text px={6} py={2} color="#C7F182">
+            Coming Soon
+          </Text>
+        </Box>
+      ) : (
+        <FancyLink color="pink.400">{linkText}</FancyLink>
+      )}
 
       <HStack flexGrow={1} alignItems="flex-end" {...imageContainerProps}>
         <Image src={imageSrc} alt={name} />
