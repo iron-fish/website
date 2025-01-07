@@ -75,7 +75,12 @@ ${isDev ? '' : 'upgrade-insecure-requests;'}
       },
       {
         source: "/use/get-started",
-        destination: "/use/get-started/get-started",
+        destination: "/get-started",
+        permanent: false,
+      },
+      {
+        source: "/learn/get-started",
+        destination: "/get-started",
         permanent: false,
       },
       {

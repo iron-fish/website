@@ -153,12 +153,12 @@ export function Footer() {
       <Flex
         alignItems={{
           base: "flex-start",
-          lg: "center",
+          xl: "center",
         }}
         w="100%"
         flexDirection={{
           base: "column",
-          lg: "row",
+          xl: "row",
         }}
       >
         <Flex
@@ -166,7 +166,7 @@ export function Footer() {
           w="100%"
           mb={{
             base: 16,
-            lg: 0,
+            xl: 0,
           }}
         >
           <Circle />
@@ -181,6 +181,24 @@ export function Footer() {
               md: "row",
             }}
           >
+            <Text
+              as={Link}
+              href="/terms-and-conditions"
+              _hover={{
+                textDecoration: "underline",
+              }}
+            >
+              Terms and Conditions
+            </Text>
+            <Text
+              mx={2}
+              display={{
+                base: "none",
+                md: "block",
+              }}
+            >
+              |
+            </Text>
             <Text
               as={Link}
               href="/privacy-policy"

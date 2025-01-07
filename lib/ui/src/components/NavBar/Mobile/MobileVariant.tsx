@@ -164,7 +164,7 @@ export function MobileVariant({ content }: { content: NavItems }) {
               );
             })}
             <Box py={6}>
-              <Button size="lg" as={Link} href="/use/get-started">
+              <Button size="lg" as={Link} href="/get-started">
                 <Box mr={4}>Get Started</Box>
                 <FancyArrowRight />
               </Button>

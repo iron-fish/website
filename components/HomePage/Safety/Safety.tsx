@@ -276,18 +276,12 @@ function ItemCard({
   comingSoon,
   ...rest
 }: ItemCardProps) {
-  const linkProps = comingSoon
-    ? null
-    : {
-        as: Link,
-        href,
-        target: href.startsWith("http") ? "_blank" : undefined,
-        rel: href.startsWith("http") ? "noreferrer" : undefined,
-      };
-
   return (
     <ShadowBox
-      {...linkProps}
+      as={Link}
+      href={href}
+      target={href.startsWith("http") ? "_blank" : undefined}
+      rel={href.startsWith("http") ? "noreferrer" : undefined}
       bg="#242424"
       borderColor="#3B3B3B"
       shadowColor="#242424"
@@ -321,15 +315,7 @@ function ItemCard({
       <Text color="white" textStyle="md" mb={8}>
         {description}
       </Text>
-      {comingSoon ? (
-        <Box mb={8} bg="#2F3A1F" borderRadius="4px">
-          <Text px={6} py={2} color="#C7F182">
-            Coming Soon
-          </Text>
-        </Box>
-      ) : (
-        <FancyLink color="pink.400">{linkText}</FancyLink>
-      )}
+      <FancyLink color="pink.400">{linkText}</FancyLink>
 
       <HStack flexGrow={1} alignItems="flex-end" {...imageContainerProps}>
         <Image src={imageSrc} alt={name} />
