@@ -13,4 +13,5 @@ export const sidebar: SidebarDefinition = [
     ],
   },
   "networking",
+  "glossary",
 ];
