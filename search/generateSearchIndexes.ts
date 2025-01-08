@@ -1,6 +1,6 @@
 import fs from "fs";
-import path from "path";
 import lunr from "lunr";
+import path from "path";
 import {
   ContentItem,
   createContentItems,
@@ -60,7 +60,7 @@ async function main() {
     },
     {
       contentDir: ["content", "get-started"],
-      slugRoot: "/use/get-started",
+      slugRoot: "/get-started",
     },
     {
       contentDir: ["content", "grants"],
