@@ -86,7 +86,7 @@ const messages = defineMessages({
   wIronContractAddressesDescription: {
     id: "GetStarted.wIronContractAddressesDescription",
     defaultMessage:
-      "Below are the contract addresses for wIRON on various chains. Use these addresses to verify the wIRON contract on the destination chain.",
+      "Below are the contract addresses for wIRON on various chains. Please ensure you're using the correct address when buying or bridging wIRON.",
   },
 });
 
