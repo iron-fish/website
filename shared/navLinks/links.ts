@@ -35,6 +35,12 @@ export const links = [
         href: "/use/ecosystem",
         image: "/images/nav/use-ecosystem.svg",
       },
+      {
+        title: messages.ledgerTitle,
+        description: messages.ledgerDescription,
+        href: "/use/get-started/ledger",
+        image: "/images/nav/use-ledger.svg",
+      },
     ],
   },
   {

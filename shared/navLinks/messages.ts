@@ -45,6 +45,14 @@ export const messages = defineMessages({
     id: "nav.nodeAppDescription",
     defaultMessage: "Download our desktop node application.",
   },
+  ledgerTitle: {
+    id: "nav.ledgerTitle",
+    defaultMessage: "Ledger App",
+  },
+  ledgerDescription: {
+    id: "nav.ledgerDescription",
+    defaultMessage: "Use Iron Fish on Ledger.",
+  },
   blockExplorerTitle: {
     id: "nav.blockExplorerTitle",
     defaultMessage: "Block Explorer",
