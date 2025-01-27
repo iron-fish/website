@@ -448,6 +448,10 @@ export const sidebar: SidebarDefinition = [
                 label: "Multisig",
                 items: [
                   {
+                    id: "rpc/wallet/multisig/get_account_identity",
+                    label: "getAccountIdentity",
+                  },
+                  {
                     id: "rpc/wallet/multisig/get_participant",
                     label: "getParticipant",
                   },
