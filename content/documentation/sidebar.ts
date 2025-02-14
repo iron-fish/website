@@ -156,6 +156,7 @@ export const sidebar: SidebarDefinition = [
       },
     ],
   },
+  "ironfish-wasm",
   {
     label: "Recipes",
     items: [
