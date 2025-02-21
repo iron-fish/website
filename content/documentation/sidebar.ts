@@ -156,6 +156,7 @@ export const sidebar: SidebarDefinition = [
       },
     ],
   },
+  "ironfish-wasm",
   {
     label: "Recipes",
     items: [
@@ -448,12 +449,12 @@ export const sidebar: SidebarDefinition = [
                 label: "Multisig",
                 items: [
                   {
-                    id: "rpc/wallet/multisig/get_participant",
-                    label: "getParticipant",
+                    id: "rpc/wallet/multisig/get_account_identities",
+                    label: "getAccountIdentities",
                   },
                   {
-                    id: "rpc/wallet/multisig/get_participants",
-                    label: "getParticipants",
+                    id: "rpc/wallet/multisig/get_participant",
+                    label: "getParticipant",
                   },
                   {
                     id: "rpc/wallet/multisig/create_participant",
