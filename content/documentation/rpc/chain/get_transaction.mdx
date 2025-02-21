@@ -20,18 +20,6 @@ Gets a transaction from a block hash and transaction hash
 RpcTransaction & {
   noteSize: number
   blockHash: string
-  /**
-   * @deprecated Please use `notes.length` instead
-   */
-  notesCount: number
-  /**
-   * @deprecated Please use `spends.length` instead
-   */
-  spendsCount: number
-  /**
-   * @deprecated Please use `notes` instead
-   */
-  notesEncrypted: string[]
 }
 ```
 
