@@ -8,7 +8,6 @@ export const sidebar: SidebarDefinition = [
       {
         label: "Alternative installations",
         items: [
-          "install-brew",
           "install-docker",
           "install-source",
           "install-standalone",
