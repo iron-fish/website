@@ -17,3 +17,21 @@ Timestamp               Status    Type    Hash     Expiration Fee Paid ($IRON) A
 3/9/2023 2:26:48 PM PST confirmed receive a4360... 74854                       $IRON (d7c86) 0.00000001
   `}
 />
+
+To export transactions as a CSV for a specific account:
+
+```sh
+ironfish wallet:transactions --account <account_name> --output csv --format transfers
+```
+
+To export transactions as a CSV for a specific account with an _optional_ filter for start and end date: 
+
+```sh
+ironfish wallet:transactions --account <account_name> --filter.start 2024-01-01 --filter.end 2024-12-31 --output csv --format transfers
+```
+
+You can also export *all* transactions in a given wallet by replacing the `--account <account_name>` flag with `--no-account` and you can also pipe it into a file given a path: 
+
+```sh
+ironfish wallet:transactions --no-account --filter.start 2024-01-01 --filter.end 2024-12-31 --output csv --format transfers > <path_to_where_you_want_it_saved>
+```
