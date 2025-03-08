@@ -66,8 +66,8 @@ export function SearchModal({ domain, suggestions, isOpen, onClose }: Props) {
 
   const hasQuery = debouncedQuery.length > 0;
   const showResults = hasQuery && !isLoading && data?.length > 0;
-  const showNoReultsFound = hasQuery && !isLoading && data?.length === 0;
-  const showSuggested = !!suggestions && (!hasQuery || showNoReultsFound);
+  const showNoResultsFound = hasQuery && !isLoading && data?.length === 0;
+  const showSuggested = !!suggestions && (!hasQuery || showNoResultsFound);
 
   return (
     <Modal isOpen={isOpen} onClose={handleClose}>
@@ -126,7 +126,7 @@ export function SearchModal({ domain, suggestions, isOpen, onClose }: Props) {
                     </SearchSection.Item>
                   );
                 })}
-              {showNoReultsFound && (
+              {showNoResultsFound && (
                 <Text textAlign="center" py={4}>
                   No results found
                 </Text>
