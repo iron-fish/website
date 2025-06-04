@@ -201,6 +201,24 @@ export function Footer() {
             </Text>
             <Text
               as={Link}
+              href="/terms-and-conditions-ledger"
+              _hover={{
+                textDecoration: "underline",
+              }}
+            >
+              Terms and Conditions for Ledger Campaign
+            </Text>
+            <Text
+              mx={2}
+              display={{
+                base: "none",
+                md: "block",
+              }}
+            >
+              |
+            </Text>
+            <Text
+              as={Link}
               href="/privacy-policy"
               _hover={{
                 textDecoration: "underline",
