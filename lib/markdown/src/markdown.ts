@@ -6,6 +6,8 @@ import rehypeHighlight from "rehype-highlight";
 
 export function renderMarkdown(markdownContent: string) {
   return serialize(markdownContent || "", {
+    // Repository MDX uses JSX expressions (e.g. style={{ ... }}); trusted content only.
+    blockJS: false,
     mdxOptions: {
       remarkPlugins: [remarkGfm, remarkMath],
       rehypePlugins: [rehypeHighlight, rehypeKatex],
